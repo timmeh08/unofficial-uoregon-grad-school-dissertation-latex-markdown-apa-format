@@ -31,7 +31,7 @@
 %% Identification
 %%----------------------------------------------------------------------------%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{uothesisapa} %[2012/02/08 v2.5.6 Submission to University of Oregon Graduate School]
+\ProvidesClass{uothesis} %[2012/02/08 v2.5.6 Submission to University of Oregon Graduate School]
 \typeout{UO Dissertation Class for APA style}
 \typeout{}
 \typeout{Based on the UO Thesis macros by Bart Massey, et al.}
