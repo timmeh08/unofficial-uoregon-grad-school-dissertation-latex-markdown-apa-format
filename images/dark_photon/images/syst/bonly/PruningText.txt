@@ -1,0 +1,1653 @@
+-------///////                 ///////-------
+-------/////// IN PRUNING PLOT ///////-------
+-------///////                 ///////-------
+In Region : SR
+ -> In Sample : ggHyyd
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is norm only
+ --->>  EG_SCALE_ALL      is kept
+ --->>  JET_BJES_Response      is norm only
+ --->>  JET_EffectiveNP_Detector1      is norm only
+ --->>  JET_EffectiveNP_Detector2      is norm only
+ --->>  JET_EffectiveNP_Mixed1      is norm only
+ --->>  JET_EffectiveNP_Mixed2      is norm only
+ --->>  JET_EffectiveNP_Mixed3      is norm only
+ --->>  JET_EffectiveNP_Modelling1      is norm only
+ --->>  JET_EffectiveNP_Modelling2      is norm only
+ --->>  JET_EffectiveNP_Modelling3      is norm only
+ --->>  JET_EffectiveNP_Modelling4      is norm only
+ --->>  JET_EffectiveNP_Statistical1      is norm only
+ --->>  JET_EffectiveNP_Statistical2      is norm only
+ --->>  JET_EffectiveNP_Statistical3      is norm only
+ --->>  JET_EffectiveNP_Statistical4      is norm only
+ --->>  JET_EffectiveNP_Statistical5      is norm only
+ --->>  JET_EffectiveNP_Statistical6      is norm only
+ --->>  JET_EtaIntercalibration_Modelling      is kept
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is norm only
+ --->>  JET_EtaIntercalibration_TotalStat      is norm only
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is norm only
+ --->>  JET_Flavor_Composition      is norm only
+ --->>  JET_Flavor_Response      is norm only
+ --->>  JET_InSitu_NonClosure_PreRec      is kept
+ --->>  JET_JESUnc_Noise_PreRec      is norm only
+ --->>  JET_JERUnc_Noise_PreRec      is kept
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is norm only
+ --->>  JET_Pileup_OffsetMu      is norm only
+ --->>  JET_Pileup_OffsetNPV      is norm only
+ --->>  JET_Pileup_PtTerm      is norm only
+ --->>  JET_Pileup_RhoTopology      is norm only
+ --->>  JET_SingleParticle_HighPt      is norm only
+ --->>  JET_fJvtEfficiency      is norm only
+ --->>  MET_SoftTrk_Scale      is norm only
+ --->>  JET_fJvtEfficiency      is norm only
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is norm only
+ --->>  JET_JER_EffectiveNP_2      is norm only
+ --->>  JET_JER_EffectiveNP_3      is norm only
+ --->>  JET_JER_EffectiveNP_4      is norm only
+ --->>  JET_JER_EffectiveNP_5      is norm only
+ --->>  JET_JER_EffectiveNP_6      is norm only
+ --->>  JET_JER_EffectiveNP_7      is norm only
+ --->>  JET_JER_EffectiveNP_8      is norm only
+ --->>  JET_JER_EffectiveNP_9      is norm only
+ --->>  JET_JER_EffectiveNP_10      is norm only
+ --->>  JET_JER_EffectiveNP_11      is norm only
+ --->>  JET_JER_EffectiveNP_12restTerm      is norm only
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is norm only
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is norm only
+ --->>  pu_weight_syst_PRW_DATASF      is norm only
+ -> In Sample : VBFHyyd
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is dropped
+ --->>  EG_SCALE_ALL      is shape only
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is dropped
+ --->>  JET_EffectiveNP_Mixed2      is dropped
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is dropped
+ --->>  JET_EffectiveNP_Modelling2      is dropped
+ --->>  JET_EffectiveNP_Modelling3      is dropped
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is dropped
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is shape only
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is kept
+ --->>  JET_EtaIntercalibration_TotalStat      is dropped
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is dropped
+ --->>  JET_Flavor_Composition      is shape only
+ --->>  JET_Flavor_Response      is norm only
+ --->>  JET_InSitu_NonClosure_PreRec      is kept
+ --->>  JET_JESUnc_Noise_PreRec      is dropped
+ --->>  JET_JERUnc_Noise_PreRec      is dropped
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is norm only
+ --->>  JET_Pileup_OffsetMu      is shape only
+ --->>  JET_Pileup_OffsetNPV      is dropped
+ --->>  JET_Pileup_PtTerm      is dropped
+ --->>  JET_Pileup_RhoTopology      is dropped
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MET_SoftTrk_Scale      is shape only
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is shape only
+ --->>  JET_JER_EffectiveNP_2      is shape only
+ --->>  JET_JER_EffectiveNP_3      is dropped
+ --->>  JET_JER_EffectiveNP_4      is dropped
+ --->>  JET_JER_EffectiveNP_5      is dropped
+ --->>  JET_JER_EffectiveNP_6      is shape only
+ --->>  JET_JER_EffectiveNP_7      is dropped
+ --->>  JET_JER_EffectiveNP_8      is dropped
+ --->>  JET_JER_EffectiveNP_9      is dropped
+ --->>  JET_JER_EffectiveNP_10      is dropped
+ --->>  JET_JER_EffectiveNP_11      is dropped
+ --->>  JET_JER_EffectiveNP_12restTerm      is dropped
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is norm only
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is norm only
+ --->>  pu_weight_syst_PRW_DATASF      is kept
+ -> In Sample : WHyyd
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is shape only
+ --->>  EG_SCALE_ALL      is shape only
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is dropped
+ --->>  JET_EffectiveNP_Mixed2      is dropped
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is shape only
+ --->>  JET_EffectiveNP_Modelling2      is dropped
+ --->>  JET_EffectiveNP_Modelling3      is dropped
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is dropped
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is dropped
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is kept
+ --->>  JET_EtaIntercalibration_TotalStat      is dropped
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is shape only
+ --->>  JET_Flavor_Composition      is kept
+ --->>  JET_Flavor_Response      is kept
+ --->>  JET_InSitu_NonClosure_PreRec      is kept
+ --->>  JET_JESUnc_Noise_PreRec      is dropped
+ --->>  JET_JERUnc_Noise_PreRec      is shape only
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is kept
+ --->>  JET_Pileup_OffsetMu      is dropped
+ --->>  JET_Pileup_OffsetNPV      is dropped
+ --->>  JET_Pileup_PtTerm      is dropped
+ --->>  JET_Pileup_RhoTopology      is dropped
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MET_SoftTrk_Scale      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is shape only
+ --->>  JET_JER_EffectiveNP_2      is shape only
+ --->>  JET_JER_EffectiveNP_3      is shape only
+ --->>  JET_JER_EffectiveNP_4      is shape only
+ --->>  JET_JER_EffectiveNP_5      is shape only
+ --->>  JET_JER_EffectiveNP_6      is shape only
+ --->>  JET_JER_EffectiveNP_7      is kept
+ --->>  JET_JER_EffectiveNP_8      is dropped
+ --->>  JET_JER_EffectiveNP_9      is dropped
+ --->>  JET_JER_EffectiveNP_10      is dropped
+ --->>  JET_JER_EffectiveNP_11      is shape only
+ --->>  JET_JER_EffectiveNP_12restTerm      is shape only
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is norm only
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is norm only
+ --->>  pu_weight_syst_PRW_DATASF      is kept
+ -> In Sample : ZHyyd
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is shape only
+ --->>  EG_SCALE_ALL      is kept
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is dropped
+ --->>  JET_EffectiveNP_Mixed2      is dropped
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is shape only
+ --->>  JET_EffectiveNP_Modelling2      is kept
+ --->>  JET_EffectiveNP_Modelling3      is kept
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is kept
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is kept
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is kept
+ --->>  JET_EtaIntercalibration_TotalStat      is kept
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is shape only
+ --->>  JET_Flavor_Composition      is kept
+ --->>  JET_Flavor_Response      is kept
+ --->>  JET_InSitu_NonClosure_PreRec      is kept
+ --->>  JET_JESUnc_Noise_PreRec      is shape only
+ --->>  JET_JERUnc_Noise_PreRec      is kept
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is kept
+ --->>  JET_Pileup_OffsetMu      is kept
+ --->>  JET_Pileup_OffsetNPV      is kept
+ --->>  JET_Pileup_PtTerm      is kept
+ --->>  JET_Pileup_RhoTopology      is shape only
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MET_SoftTrk_Scale      is shape only
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is kept
+ --->>  JET_JER_EffectiveNP_2      is kept
+ --->>  JET_JER_EffectiveNP_3      is kept
+ --->>  JET_JER_EffectiveNP_4      is shape only
+ --->>  JET_JER_EffectiveNP_5      is shape only
+ --->>  JET_JER_EffectiveNP_6      is shape only
+ --->>  JET_JER_EffectiveNP_7      is shape only
+ --->>  JET_JER_EffectiveNP_8      is kept
+ --->>  JET_JER_EffectiveNP_9      is kept
+ --->>  JET_JER_EffectiveNP_10      is dropped
+ --->>  JET_JER_EffectiveNP_11      is shape only
+ --->>  JET_JER_EffectiveNP_12restTerm      is kept
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is kept
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is kept
+ --->>  pu_weight_syst_PRW_DATASF      is kept
+ -> In Sample : Wgamma
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is dropped
+ --->>  EG_SCALE_ALL      is dropped
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is dropped
+ --->>  JET_EffectiveNP_Mixed2      is dropped
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is dropped
+ --->>  JET_EffectiveNP_Modelling2      is dropped
+ --->>  JET_EffectiveNP_Modelling3      is dropped
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is dropped
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is shape only
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is kept
+ --->>  JET_EtaIntercalibration_TotalStat      is dropped
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is dropped
+ --->>  JET_Flavor_Composition      is dropped
+ --->>  JET_Flavor_Response      is norm only
+ --->>  JET_InSitu_NonClosure_PreRec      is kept
+ --->>  JET_JESUnc_Noise_PreRec      is dropped
+ --->>  JET_JERUnc_Noise_PreRec      is kept
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is kept
+ --->>  JET_Pileup_OffsetMu      is kept
+ --->>  JET_Pileup_OffsetNPV      is dropped
+ --->>  JET_Pileup_PtTerm      is norm only
+ --->>  JET_Pileup_RhoTopology      is dropped
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MET_SoftTrk_Scale      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MUON_CB      is dropped
+ --->>  MUON_SAGITTA_DATASTAT      is dropped
+ --->>  MUON_SAGITTA_GLOBAL      is dropped
+ --->>  MUON_SAGITTA_PTEXTRA      is dropped
+ --->>  MUON_SAGITTA_RESBIAS      is dropped
+ --->>  MUON_SCALE      is dropped
+ --->>  JET_JER_EffectiveNP_1      is dropped
+ --->>  JET_JER_EffectiveNP_2      is norm only
+ --->>  JET_JER_EffectiveNP_3      is dropped
+ --->>  JET_JER_EffectiveNP_4      is dropped
+ --->>  JET_JER_EffectiveNP_5      is dropped
+ --->>  JET_JER_EffectiveNP_6      is dropped
+ --->>  JET_JER_EffectiveNP_7      is dropped
+ --->>  JET_JER_EffectiveNP_8      is dropped
+ --->>  JET_JER_EffectiveNP_9      is dropped
+ --->>  JET_JER_EffectiveNP_10      is dropped
+ --->>  JET_JER_EffectiveNP_11      is dropped
+ --->>  JET_JER_EffectiveNP_12restTerm      is dropped
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is kept
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is kept
+ --->>  pu_weight_syst_PRW_DATASF      is kept
+ -> In Sample : jets_faking_photons
+ --->>  ff_jy      is norm only
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is not present
+ --->>  EG_SCALE_ALL      is not present
+ --->>  JET_BJES_Response      is not present
+ --->>  JET_EffectiveNP_Detector1      is not present
+ --->>  JET_EffectiveNP_Detector2      is not present
+ --->>  JET_EffectiveNP_Mixed1      is not present
+ --->>  JET_EffectiveNP_Mixed2      is not present
+ --->>  JET_EffectiveNP_Mixed3      is not present
+ --->>  JET_EffectiveNP_Modelling1      is not present
+ --->>  JET_EffectiveNP_Modelling2      is not present
+ --->>  JET_EffectiveNP_Modelling3      is not present
+ --->>  JET_EffectiveNP_Modelling4      is not present
+ --->>  JET_EffectiveNP_Statistical1      is not present
+ --->>  JET_EffectiveNP_Statistical2      is not present
+ --->>  JET_EffectiveNP_Statistical3      is not present
+ --->>  JET_EffectiveNP_Statistical4      is not present
+ --->>  JET_EffectiveNP_Statistical5      is not present
+ --->>  JET_EffectiveNP_Statistical6      is not present
+ --->>  JET_EtaIntercalibration_Modelling      is not present
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is not present
+ --->>  JET_EtaIntercalibration_TotalStat      is not present
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is not present
+ --->>  JET_Flavor_Composition      is not present
+ --->>  JET_Flavor_Response      is not present
+ --->>  JET_InSitu_NonClosure_PreRec      is not present
+ --->>  JET_JESUnc_Noise_PreRec      is not present
+ --->>  JET_JERUnc_Noise_PreRec      is not present
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is not present
+ --->>  JET_Pileup_OffsetMu      is not present
+ --->>  JET_Pileup_OffsetNPV      is not present
+ --->>  JET_Pileup_PtTerm      is not present
+ --->>  JET_Pileup_RhoTopology      is not present
+ --->>  JET_SingleParticle_HighPt      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MET_SoftTrk_Scale      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is not present
+ --->>  JET_JER_EffectiveNP_2      is not present
+ --->>  JET_JER_EffectiveNP_3      is not present
+ --->>  JET_JER_EffectiveNP_4      is not present
+ --->>  JET_JER_EffectiveNP_5      is not present
+ --->>  JET_JER_EffectiveNP_6      is not present
+ --->>  JET_JER_EffectiveNP_7      is not present
+ --->>  JET_JER_EffectiveNP_8      is not present
+ --->>  JET_JER_EffectiveNP_9      is not present
+ --->>  JET_JER_EffectiveNP_10      is not present
+ --->>  JET_JER_EffectiveNP_11      is not present
+ --->>  JET_JER_EffectiveNP_12restTerm      is not present
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is not present
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is not present
+ --->>  pu_weight_syst_PRW_DATASF      is not present
+ -> In Sample : electrons_faking_photons
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is norm only
+ --->>  scf_ey      is kept
+ --->>  EG_RESOLUTION_ALL      is not present
+ --->>  EG_SCALE_ALL      is not present
+ --->>  JET_BJES_Response      is not present
+ --->>  JET_EffectiveNP_Detector1      is not present
+ --->>  JET_EffectiveNP_Detector2      is not present
+ --->>  JET_EffectiveNP_Mixed1      is not present
+ --->>  JET_EffectiveNP_Mixed2      is not present
+ --->>  JET_EffectiveNP_Mixed3      is not present
+ --->>  JET_EffectiveNP_Modelling1      is not present
+ --->>  JET_EffectiveNP_Modelling2      is not present
+ --->>  JET_EffectiveNP_Modelling3      is not present
+ --->>  JET_EffectiveNP_Modelling4      is not present
+ --->>  JET_EffectiveNP_Statistical1      is not present
+ --->>  JET_EffectiveNP_Statistical2      is not present
+ --->>  JET_EffectiveNP_Statistical3      is not present
+ --->>  JET_EffectiveNP_Statistical4      is not present
+ --->>  JET_EffectiveNP_Statistical5      is not present
+ --->>  JET_EffectiveNP_Statistical6      is not present
+ --->>  JET_EtaIntercalibration_Modelling      is not present
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is not present
+ --->>  JET_EtaIntercalibration_TotalStat      is not present
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is not present
+ --->>  JET_Flavor_Composition      is not present
+ --->>  JET_Flavor_Response      is not present
+ --->>  JET_InSitu_NonClosure_PreRec      is not present
+ --->>  JET_JESUnc_Noise_PreRec      is not present
+ --->>  JET_JERUnc_Noise_PreRec      is not present
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is not present
+ --->>  JET_Pileup_OffsetMu      is not present
+ --->>  JET_Pileup_OffsetNPV      is not present
+ --->>  JET_Pileup_PtTerm      is not present
+ --->>  JET_Pileup_RhoTopology      is not present
+ --->>  JET_SingleParticle_HighPt      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MET_SoftTrk_Scale      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is not present
+ --->>  JET_JER_EffectiveNP_2      is not present
+ --->>  JET_JER_EffectiveNP_3      is not present
+ --->>  JET_JER_EffectiveNP_4      is not present
+ --->>  JET_JER_EffectiveNP_5      is not present
+ --->>  JET_JER_EffectiveNP_6      is not present
+ --->>  JET_JER_EffectiveNP_7      is not present
+ --->>  JET_JER_EffectiveNP_8      is not present
+ --->>  JET_JER_EffectiveNP_9      is not present
+ --->>  JET_JER_EffectiveNP_10      is not present
+ --->>  JET_JER_EffectiveNP_11      is not present
+ --->>  JET_JER_EffectiveNP_12restTerm      is not present
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is not present
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is not present
+ --->>  pu_weight_syst_PRW_DATASF      is not present
+ -> In Sample : gammajets_direct
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is not present
+ --->>  EG_SCALE_ALL      is not present
+ --->>  JET_BJES_Response      is not present
+ --->>  JET_EffectiveNP_Detector1      is not present
+ --->>  JET_EffectiveNP_Detector2      is not present
+ --->>  JET_EffectiveNP_Mixed1      is not present
+ --->>  JET_EffectiveNP_Mixed2      is not present
+ --->>  JET_EffectiveNP_Mixed3      is not present
+ --->>  JET_EffectiveNP_Modelling1      is not present
+ --->>  JET_EffectiveNP_Modelling2      is not present
+ --->>  JET_EffectiveNP_Modelling3      is not present
+ --->>  JET_EffectiveNP_Modelling4      is not present
+ --->>  JET_EffectiveNP_Statistical1      is not present
+ --->>  JET_EffectiveNP_Statistical2      is not present
+ --->>  JET_EffectiveNP_Statistical3      is not present
+ --->>  JET_EffectiveNP_Statistical4      is not present
+ --->>  JET_EffectiveNP_Statistical5      is not present
+ --->>  JET_EffectiveNP_Statistical6      is not present
+ --->>  JET_EtaIntercalibration_Modelling      is not present
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is not present
+ --->>  JET_EtaIntercalibration_TotalStat      is not present
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is not present
+ --->>  JET_Flavor_Composition      is not present
+ --->>  JET_Flavor_Response      is not present
+ --->>  JET_InSitu_NonClosure_PreRec      is not present
+ --->>  JET_JESUnc_Noise_PreRec      is not present
+ --->>  JET_JERUnc_Noise_PreRec      is not present
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is not present
+ --->>  JET_Pileup_OffsetMu      is not present
+ --->>  JET_Pileup_OffsetNPV      is not present
+ --->>  JET_Pileup_PtTerm      is not present
+ --->>  JET_Pileup_RhoTopology      is not present
+ --->>  JET_SingleParticle_HighPt      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MET_SoftTrk_Scale      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is not present
+ --->>  JET_JER_EffectiveNP_2      is not present
+ --->>  JET_JER_EffectiveNP_3      is not present
+ --->>  JET_JER_EffectiveNP_4      is not present
+ --->>  JET_JER_EffectiveNP_5      is not present
+ --->>  JET_JER_EffectiveNP_6      is not present
+ --->>  JET_JER_EffectiveNP_7      is not present
+ --->>  JET_JER_EffectiveNP_8      is not present
+ --->>  JET_JER_EffectiveNP_9      is not present
+ --->>  JET_JER_EffectiveNP_10      is not present
+ --->>  JET_JER_EffectiveNP_11      is not present
+ --->>  JET_JER_EffectiveNP_12restTerm      is not present
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is not present
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is not present
+ --->>  pu_weight_syst_PRW_DATASF      is not present
+ -> In Sample : Zgamma
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is dropped
+ --->>  EG_SCALE_ALL      is shape only
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is dropped
+ --->>  JET_EffectiveNP_Mixed2      is dropped
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is dropped
+ --->>  JET_EffectiveNP_Modelling2      is dropped
+ --->>  JET_EffectiveNP_Modelling3      is dropped
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is dropped
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is dropped
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is kept
+ --->>  JET_EtaIntercalibration_TotalStat      is dropped
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is dropped
+ --->>  JET_Flavor_Composition      is shape only
+ --->>  JET_Flavor_Response      is norm only
+ --->>  JET_InSitu_NonClosure_PreRec      is kept
+ --->>  JET_JESUnc_Noise_PreRec      is dropped
+ --->>  JET_JERUnc_Noise_PreRec      is norm only
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is kept
+ --->>  JET_Pileup_OffsetMu      is dropped
+ --->>  JET_Pileup_OffsetNPV      is shape only
+ --->>  JET_Pileup_PtTerm      is norm only
+ --->>  JET_Pileup_RhoTopology      is shape only
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MET_SoftTrk_Scale      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MUON_CB      is dropped
+ --->>  MUON_SAGITTA_DATASTAT      is dropped
+ --->>  MUON_SAGITTA_GLOBAL      is dropped
+ --->>  MUON_SAGITTA_PTEXTRA      is dropped
+ --->>  MUON_SAGITTA_RESBIAS      is dropped
+ --->>  MUON_SCALE      is dropped
+ --->>  JET_JER_EffectiveNP_1      is dropped
+ --->>  JET_JER_EffectiveNP_2      is dropped
+ --->>  JET_JER_EffectiveNP_3      is dropped
+ --->>  JET_JER_EffectiveNP_4      is dropped
+ --->>  JET_JER_EffectiveNP_5      is dropped
+ --->>  JET_JER_EffectiveNP_6      is dropped
+ --->>  JET_JER_EffectiveNP_7      is dropped
+ --->>  JET_JER_EffectiveNP_8      is dropped
+ --->>  JET_JER_EffectiveNP_9      is dropped
+ --->>  JET_JER_EffectiveNP_10      is dropped
+ --->>  JET_JER_EffectiveNP_11      is dropped
+ --->>  JET_JER_EffectiveNP_12restTerm      is dropped
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is kept
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is kept
+ --->>  pu_weight_syst_PRW_DATASF      is norm only
+In Region : OneMuCR
+ -> In Sample : ggHyyd
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is dropped
+ --->>  EG_SCALE_ALL      is dropped
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is dropped
+ --->>  JET_EffectiveNP_Mixed2      is dropped
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is dropped
+ --->>  JET_EffectiveNP_Modelling2      is dropped
+ --->>  JET_EffectiveNP_Modelling3      is dropped
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is dropped
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is dropped
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is dropped
+ --->>  JET_EtaIntercalibration_TotalStat      is dropped
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is dropped
+ --->>  JET_Flavor_Composition      is dropped
+ --->>  JET_Flavor_Response      is dropped
+ --->>  JET_InSitu_NonClosure_PreRec      is dropped
+ --->>  JET_JESUnc_Noise_PreRec      is dropped
+ --->>  JET_JERUnc_Noise_PreRec      is dropped
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is dropped
+ --->>  JET_Pileup_OffsetMu      is dropped
+ --->>  JET_Pileup_OffsetNPV      is dropped
+ --->>  JET_Pileup_PtTerm      is dropped
+ --->>  JET_Pileup_RhoTopology      is dropped
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MET_SoftTrk_Scale      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is dropped
+ --->>  JET_JER_EffectiveNP_2      is dropped
+ --->>  JET_JER_EffectiveNP_3      is dropped
+ --->>  JET_JER_EffectiveNP_4      is dropped
+ --->>  JET_JER_EffectiveNP_5      is dropped
+ --->>  JET_JER_EffectiveNP_6      is dropped
+ --->>  JET_JER_EffectiveNP_7      is dropped
+ --->>  JET_JER_EffectiveNP_8      is dropped
+ --->>  JET_JER_EffectiveNP_9      is dropped
+ --->>  JET_JER_EffectiveNP_10      is dropped
+ --->>  JET_JER_EffectiveNP_11      is dropped
+ --->>  JET_JER_EffectiveNP_12restTerm      is dropped
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is dropped
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is dropped
+ --->>  pu_weight_syst_PRW_DATASF      is dropped
+ -> In Sample : VBFHyyd
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is dropped
+ --->>  EG_SCALE_ALL      is dropped
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is dropped
+ --->>  JET_EffectiveNP_Mixed2      is dropped
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is dropped
+ --->>  JET_EffectiveNP_Modelling2      is dropped
+ --->>  JET_EffectiveNP_Modelling3      is dropped
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is dropped
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is dropped
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is dropped
+ --->>  JET_EtaIntercalibration_TotalStat      is dropped
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is dropped
+ --->>  JET_Flavor_Composition      is dropped
+ --->>  JET_Flavor_Response      is dropped
+ --->>  JET_InSitu_NonClosure_PreRec      is dropped
+ --->>  JET_JESUnc_Noise_PreRec      is dropped
+ --->>  JET_JERUnc_Noise_PreRec      is dropped
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is dropped
+ --->>  JET_Pileup_OffsetMu      is dropped
+ --->>  JET_Pileup_OffsetNPV      is dropped
+ --->>  JET_Pileup_PtTerm      is dropped
+ --->>  JET_Pileup_RhoTopology      is dropped
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MET_SoftTrk_Scale      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is dropped
+ --->>  JET_JER_EffectiveNP_2      is dropped
+ --->>  JET_JER_EffectiveNP_3      is dropped
+ --->>  JET_JER_EffectiveNP_4      is dropped
+ --->>  JET_JER_EffectiveNP_5      is dropped
+ --->>  JET_JER_EffectiveNP_6      is dropped
+ --->>  JET_JER_EffectiveNP_7      is dropped
+ --->>  JET_JER_EffectiveNP_8      is dropped
+ --->>  JET_JER_EffectiveNP_9      is dropped
+ --->>  JET_JER_EffectiveNP_10      is dropped
+ --->>  JET_JER_EffectiveNP_11      is dropped
+ --->>  JET_JER_EffectiveNP_12restTerm      is dropped
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is dropped
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is dropped
+ --->>  pu_weight_syst_PRW_DATASF      is dropped
+ -> In Sample : WHyyd
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is shape only
+ --->>  EG_SCALE_ALL      is kept
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is dropped
+ --->>  JET_EffectiveNP_Mixed2      is dropped
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is shape only
+ --->>  JET_EffectiveNP_Modelling2      is dropped
+ --->>  JET_EffectiveNP_Modelling3      is dropped
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is dropped
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is shape only
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is kept
+ --->>  JET_EtaIntercalibration_TotalStat      is dropped
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is dropped
+ --->>  JET_Flavor_Composition      is shape only
+ --->>  JET_Flavor_Response      is kept
+ --->>  JET_InSitu_NonClosure_PreRec      is kept
+ --->>  JET_JESUnc_Noise_PreRec      is shape only
+ --->>  JET_JERUnc_Noise_PreRec      is shape only
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is kept
+ --->>  JET_Pileup_OffsetMu      is shape only
+ --->>  JET_Pileup_OffsetNPV      is shape only
+ --->>  JET_Pileup_PtTerm      is shape only
+ --->>  JET_Pileup_RhoTopology      is shape only
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MET_SoftTrk_Scale      is shape only
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is kept
+ --->>  JET_JER_EffectiveNP_2      is kept
+ --->>  JET_JER_EffectiveNP_3      is shape only
+ --->>  JET_JER_EffectiveNP_4      is dropped
+ --->>  JET_JER_EffectiveNP_5      is shape only
+ --->>  JET_JER_EffectiveNP_6      is kept
+ --->>  JET_JER_EffectiveNP_7      is shape only
+ --->>  JET_JER_EffectiveNP_8      is shape only
+ --->>  JET_JER_EffectiveNP_9      is shape only
+ --->>  JET_JER_EffectiveNP_10      is shape only
+ --->>  JET_JER_EffectiveNP_11      is shape only
+ --->>  JET_JER_EffectiveNP_12restTerm      is shape only
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is dropped
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is norm only
+ --->>  pu_weight_syst_PRW_DATASF      is shape only
+ -> In Sample : ZHyyd
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is dropped
+ --->>  EG_SCALE_ALL      is dropped
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is dropped
+ --->>  JET_EffectiveNP_Mixed2      is dropped
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is dropped
+ --->>  JET_EffectiveNP_Modelling2      is dropped
+ --->>  JET_EffectiveNP_Modelling3      is dropped
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is dropped
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is dropped
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is dropped
+ --->>  JET_EtaIntercalibration_TotalStat      is dropped
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is dropped
+ --->>  JET_Flavor_Composition      is dropped
+ --->>  JET_Flavor_Response      is dropped
+ --->>  JET_InSitu_NonClosure_PreRec      is dropped
+ --->>  JET_JESUnc_Noise_PreRec      is dropped
+ --->>  JET_JERUnc_Noise_PreRec      is dropped
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is dropped
+ --->>  JET_Pileup_OffsetMu      is dropped
+ --->>  JET_Pileup_OffsetNPV      is dropped
+ --->>  JET_Pileup_PtTerm      is dropped
+ --->>  JET_Pileup_RhoTopology      is dropped
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MET_SoftTrk_Scale      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is dropped
+ --->>  JET_JER_EffectiveNP_2      is dropped
+ --->>  JET_JER_EffectiveNP_3      is dropped
+ --->>  JET_JER_EffectiveNP_4      is dropped
+ --->>  JET_JER_EffectiveNP_5      is dropped
+ --->>  JET_JER_EffectiveNP_6      is dropped
+ --->>  JET_JER_EffectiveNP_7      is dropped
+ --->>  JET_JER_EffectiveNP_8      is dropped
+ --->>  JET_JER_EffectiveNP_9      is dropped
+ --->>  JET_JER_EffectiveNP_10      is dropped
+ --->>  JET_JER_EffectiveNP_11      is dropped
+ --->>  JET_JER_EffectiveNP_12restTerm      is dropped
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is dropped
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is dropped
+ --->>  pu_weight_syst_PRW_DATASF      is dropped
+ -> In Sample : Wgamma
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is dropped
+ --->>  EG_SCALE_ALL      is shape only
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is dropped
+ --->>  JET_EffectiveNP_Mixed2      is dropped
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is dropped
+ --->>  JET_EffectiveNP_Modelling2      is dropped
+ --->>  JET_EffectiveNP_Modelling3      is dropped
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is dropped
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is shape only
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is shape only
+ --->>  JET_EtaIntercalibration_TotalStat      is dropped
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is dropped
+ --->>  JET_Flavor_Composition      is shape only
+ --->>  JET_Flavor_Response      is kept
+ --->>  JET_InSitu_NonClosure_PreRec      is kept
+ --->>  JET_JESUnc_Noise_PreRec      is dropped
+ --->>  JET_JERUnc_Noise_PreRec      is dropped
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is norm only
+ --->>  JET_Pileup_OffsetMu      is shape only
+ --->>  JET_Pileup_OffsetNPV      is shape only
+ --->>  JET_Pileup_PtTerm      is norm only
+ --->>  JET_Pileup_RhoTopology      is shape only
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MET_SoftTrk_Scale      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MUON_CB      is dropped
+ --->>  MUON_SAGITTA_DATASTAT      is dropped
+ --->>  MUON_SAGITTA_GLOBAL      is dropped
+ --->>  MUON_SAGITTA_PTEXTRA      is dropped
+ --->>  MUON_SAGITTA_RESBIAS      is dropped
+ --->>  MUON_SCALE      is dropped
+ --->>  JET_JER_EffectiveNP_1      is dropped
+ --->>  JET_JER_EffectiveNP_2      is dropped
+ --->>  JET_JER_EffectiveNP_3      is dropped
+ --->>  JET_JER_EffectiveNP_4      is dropped
+ --->>  JET_JER_EffectiveNP_5      is dropped
+ --->>  JET_JER_EffectiveNP_6      is dropped
+ --->>  JET_JER_EffectiveNP_7      is dropped
+ --->>  JET_JER_EffectiveNP_8      is dropped
+ --->>  JET_JER_EffectiveNP_9      is dropped
+ --->>  JET_JER_EffectiveNP_10      is dropped
+ --->>  JET_JER_EffectiveNP_11      is dropped
+ --->>  JET_JER_EffectiveNP_12restTerm      is dropped
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is dropped
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is dropped
+ --->>  pu_weight_syst_PRW_DATASF      is dropped
+ -> In Sample : jets_faking_photons
+ --->>  ff_jy      is norm only
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is not present
+ --->>  EG_SCALE_ALL      is not present
+ --->>  JET_BJES_Response      is not present
+ --->>  JET_EffectiveNP_Detector1      is not present
+ --->>  JET_EffectiveNP_Detector2      is not present
+ --->>  JET_EffectiveNP_Mixed1      is not present
+ --->>  JET_EffectiveNP_Mixed2      is not present
+ --->>  JET_EffectiveNP_Mixed3      is not present
+ --->>  JET_EffectiveNP_Modelling1      is not present
+ --->>  JET_EffectiveNP_Modelling2      is not present
+ --->>  JET_EffectiveNP_Modelling3      is not present
+ --->>  JET_EffectiveNP_Modelling4      is not present
+ --->>  JET_EffectiveNP_Statistical1      is not present
+ --->>  JET_EffectiveNP_Statistical2      is not present
+ --->>  JET_EffectiveNP_Statistical3      is not present
+ --->>  JET_EffectiveNP_Statistical4      is not present
+ --->>  JET_EffectiveNP_Statistical5      is not present
+ --->>  JET_EffectiveNP_Statistical6      is not present
+ --->>  JET_EtaIntercalibration_Modelling      is not present
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is not present
+ --->>  JET_EtaIntercalibration_TotalStat      is not present
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is not present
+ --->>  JET_Flavor_Composition      is not present
+ --->>  JET_Flavor_Response      is not present
+ --->>  JET_InSitu_NonClosure_PreRec      is not present
+ --->>  JET_JESUnc_Noise_PreRec      is not present
+ --->>  JET_JERUnc_Noise_PreRec      is not present
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is not present
+ --->>  JET_Pileup_OffsetMu      is not present
+ --->>  JET_Pileup_OffsetNPV      is not present
+ --->>  JET_Pileup_PtTerm      is not present
+ --->>  JET_Pileup_RhoTopology      is not present
+ --->>  JET_SingleParticle_HighPt      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MET_SoftTrk_Scale      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is not present
+ --->>  JET_JER_EffectiveNP_2      is not present
+ --->>  JET_JER_EffectiveNP_3      is not present
+ --->>  JET_JER_EffectiveNP_4      is not present
+ --->>  JET_JER_EffectiveNP_5      is not present
+ --->>  JET_JER_EffectiveNP_6      is not present
+ --->>  JET_JER_EffectiveNP_7      is not present
+ --->>  JET_JER_EffectiveNP_8      is not present
+ --->>  JET_JER_EffectiveNP_9      is not present
+ --->>  JET_JER_EffectiveNP_10      is not present
+ --->>  JET_JER_EffectiveNP_11      is not present
+ --->>  JET_JER_EffectiveNP_12restTerm      is not present
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is not present
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is not present
+ --->>  pu_weight_syst_PRW_DATASF      is not present
+ -> In Sample : electrons_faking_photons
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is norm only
+ --->>  scf_ey      is kept
+ --->>  EG_RESOLUTION_ALL      is not present
+ --->>  EG_SCALE_ALL      is not present
+ --->>  JET_BJES_Response      is not present
+ --->>  JET_EffectiveNP_Detector1      is not present
+ --->>  JET_EffectiveNP_Detector2      is not present
+ --->>  JET_EffectiveNP_Mixed1      is not present
+ --->>  JET_EffectiveNP_Mixed2      is not present
+ --->>  JET_EffectiveNP_Mixed3      is not present
+ --->>  JET_EffectiveNP_Modelling1      is not present
+ --->>  JET_EffectiveNP_Modelling2      is not present
+ --->>  JET_EffectiveNP_Modelling3      is not present
+ --->>  JET_EffectiveNP_Modelling4      is not present
+ --->>  JET_EffectiveNP_Statistical1      is not present
+ --->>  JET_EffectiveNP_Statistical2      is not present
+ --->>  JET_EffectiveNP_Statistical3      is not present
+ --->>  JET_EffectiveNP_Statistical4      is not present
+ --->>  JET_EffectiveNP_Statistical5      is not present
+ --->>  JET_EffectiveNP_Statistical6      is not present
+ --->>  JET_EtaIntercalibration_Modelling      is not present
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is not present
+ --->>  JET_EtaIntercalibration_TotalStat      is not present
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is not present
+ --->>  JET_Flavor_Composition      is not present
+ --->>  JET_Flavor_Response      is not present
+ --->>  JET_InSitu_NonClosure_PreRec      is not present
+ --->>  JET_JESUnc_Noise_PreRec      is not present
+ --->>  JET_JERUnc_Noise_PreRec      is not present
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is not present
+ --->>  JET_Pileup_OffsetMu      is not present
+ --->>  JET_Pileup_OffsetNPV      is not present
+ --->>  JET_Pileup_PtTerm      is not present
+ --->>  JET_Pileup_RhoTopology      is not present
+ --->>  JET_SingleParticle_HighPt      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MET_SoftTrk_Scale      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is not present
+ --->>  JET_JER_EffectiveNP_2      is not present
+ --->>  JET_JER_EffectiveNP_3      is not present
+ --->>  JET_JER_EffectiveNP_4      is not present
+ --->>  JET_JER_EffectiveNP_5      is not present
+ --->>  JET_JER_EffectiveNP_6      is not present
+ --->>  JET_JER_EffectiveNP_7      is not present
+ --->>  JET_JER_EffectiveNP_8      is not present
+ --->>  JET_JER_EffectiveNP_9      is not present
+ --->>  JET_JER_EffectiveNP_10      is not present
+ --->>  JET_JER_EffectiveNP_11      is not present
+ --->>  JET_JER_EffectiveNP_12restTerm      is not present
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is not present
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is not present
+ --->>  pu_weight_syst_PRW_DATASF      is not present
+ -> In Sample : gammajets_direct
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is not present
+ --->>  EG_SCALE_ALL      is not present
+ --->>  JET_BJES_Response      is not present
+ --->>  JET_EffectiveNP_Detector1      is not present
+ --->>  JET_EffectiveNP_Detector2      is not present
+ --->>  JET_EffectiveNP_Mixed1      is not present
+ --->>  JET_EffectiveNP_Mixed2      is not present
+ --->>  JET_EffectiveNP_Mixed3      is not present
+ --->>  JET_EffectiveNP_Modelling1      is not present
+ --->>  JET_EffectiveNP_Modelling2      is not present
+ --->>  JET_EffectiveNP_Modelling3      is not present
+ --->>  JET_EffectiveNP_Modelling4      is not present
+ --->>  JET_EffectiveNP_Statistical1      is not present
+ --->>  JET_EffectiveNP_Statistical2      is not present
+ --->>  JET_EffectiveNP_Statistical3      is not present
+ --->>  JET_EffectiveNP_Statistical4      is not present
+ --->>  JET_EffectiveNP_Statistical5      is not present
+ --->>  JET_EffectiveNP_Statistical6      is not present
+ --->>  JET_EtaIntercalibration_Modelling      is not present
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is not present
+ --->>  JET_EtaIntercalibration_TotalStat      is not present
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is not present
+ --->>  JET_Flavor_Composition      is not present
+ --->>  JET_Flavor_Response      is not present
+ --->>  JET_InSitu_NonClosure_PreRec      is not present
+ --->>  JET_JESUnc_Noise_PreRec      is not present
+ --->>  JET_JERUnc_Noise_PreRec      is not present
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is not present
+ --->>  JET_Pileup_OffsetMu      is not present
+ --->>  JET_Pileup_OffsetNPV      is not present
+ --->>  JET_Pileup_PtTerm      is not present
+ --->>  JET_Pileup_RhoTopology      is not present
+ --->>  JET_SingleParticle_HighPt      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MET_SoftTrk_Scale      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is not present
+ --->>  JET_JER_EffectiveNP_2      is not present
+ --->>  JET_JER_EffectiveNP_3      is not present
+ --->>  JET_JER_EffectiveNP_4      is not present
+ --->>  JET_JER_EffectiveNP_5      is not present
+ --->>  JET_JER_EffectiveNP_6      is not present
+ --->>  JET_JER_EffectiveNP_7      is not present
+ --->>  JET_JER_EffectiveNP_8      is not present
+ --->>  JET_JER_EffectiveNP_9      is not present
+ --->>  JET_JER_EffectiveNP_10      is not present
+ --->>  JET_JER_EffectiveNP_11      is not present
+ --->>  JET_JER_EffectiveNP_12restTerm      is not present
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is not present
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is not present
+ --->>  pu_weight_syst_PRW_DATASF      is not present
+ -> In Sample : Zgamma
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is dropped
+ --->>  EG_SCALE_ALL      is dropped
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is dropped
+ --->>  JET_EffectiveNP_Mixed2      is dropped
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is dropped
+ --->>  JET_EffectiveNP_Modelling2      is dropped
+ --->>  JET_EffectiveNP_Modelling3      is dropped
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is dropped
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is dropped
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is dropped
+ --->>  JET_EtaIntercalibration_TotalStat      is dropped
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is dropped
+ --->>  JET_Flavor_Composition      is shape only
+ --->>  JET_Flavor_Response      is kept
+ --->>  JET_InSitu_NonClosure_PreRec      is kept
+ --->>  JET_JESUnc_Noise_PreRec      is dropped
+ --->>  JET_JERUnc_Noise_PreRec      is kept
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is kept
+ --->>  JET_Pileup_OffsetMu      is kept
+ --->>  JET_Pileup_OffsetNPV      is shape only
+ --->>  JET_Pileup_PtTerm      is norm only
+ --->>  JET_Pileup_RhoTopology      is shape only
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MET_SoftTrk_Scale      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MUON_CB      is dropped
+ --->>  MUON_SAGITTA_DATASTAT      is dropped
+ --->>  MUON_SAGITTA_GLOBAL      is dropped
+ --->>  MUON_SAGITTA_PTEXTRA      is dropped
+ --->>  MUON_SAGITTA_RESBIAS      is dropped
+ --->>  MUON_SCALE      is dropped
+ --->>  JET_JER_EffectiveNP_1      is shape only
+ --->>  JET_JER_EffectiveNP_2      is kept
+ --->>  JET_JER_EffectiveNP_3      is dropped
+ --->>  JET_JER_EffectiveNP_4      is shape only
+ --->>  JET_JER_EffectiveNP_5      is dropped
+ --->>  JET_JER_EffectiveNP_6      is dropped
+ --->>  JET_JER_EffectiveNP_7      is shape only
+ --->>  JET_JER_EffectiveNP_8      is shape only
+ --->>  JET_JER_EffectiveNP_9      is shape only
+ --->>  JET_JER_EffectiveNP_10      is dropped
+ --->>  JET_JER_EffectiveNP_11      is shape only
+ --->>  JET_JER_EffectiveNP_12restTerm      is dropped
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is dropped
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is dropped
+ --->>  pu_weight_syst_PRW_DATASF      is dropped
+In Region : TwoMuCR
+ -> In Sample : ggHyyd
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is dropped
+ --->>  EG_SCALE_ALL      is dropped
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is dropped
+ --->>  JET_EffectiveNP_Mixed2      is dropped
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is dropped
+ --->>  JET_EffectiveNP_Modelling2      is dropped
+ --->>  JET_EffectiveNP_Modelling3      is dropped
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is dropped
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is dropped
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is dropped
+ --->>  JET_EtaIntercalibration_TotalStat      is dropped
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is dropped
+ --->>  JET_Flavor_Composition      is dropped
+ --->>  JET_Flavor_Response      is dropped
+ --->>  JET_InSitu_NonClosure_PreRec      is dropped
+ --->>  JET_JESUnc_Noise_PreRec      is dropped
+ --->>  JET_JERUnc_Noise_PreRec      is dropped
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is dropped
+ --->>  JET_Pileup_OffsetMu      is dropped
+ --->>  JET_Pileup_OffsetNPV      is dropped
+ --->>  JET_Pileup_PtTerm      is dropped
+ --->>  JET_Pileup_RhoTopology      is dropped
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MET_SoftTrk_Scale      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is dropped
+ --->>  JET_JER_EffectiveNP_2      is dropped
+ --->>  JET_JER_EffectiveNP_3      is dropped
+ --->>  JET_JER_EffectiveNP_4      is dropped
+ --->>  JET_JER_EffectiveNP_5      is dropped
+ --->>  JET_JER_EffectiveNP_6      is dropped
+ --->>  JET_JER_EffectiveNP_7      is dropped
+ --->>  JET_JER_EffectiveNP_8      is dropped
+ --->>  JET_JER_EffectiveNP_9      is dropped
+ --->>  JET_JER_EffectiveNP_10      is dropped
+ --->>  JET_JER_EffectiveNP_11      is dropped
+ --->>  JET_JER_EffectiveNP_12restTerm      is dropped
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is dropped
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is dropped
+ --->>  pu_weight_syst_PRW_DATASF      is dropped
+ -> In Sample : VBFHyyd
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is dropped
+ --->>  EG_SCALE_ALL      is dropped
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is dropped
+ --->>  JET_EffectiveNP_Mixed2      is dropped
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is dropped
+ --->>  JET_EffectiveNP_Modelling2      is dropped
+ --->>  JET_EffectiveNP_Modelling3      is dropped
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is dropped
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is dropped
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is dropped
+ --->>  JET_EtaIntercalibration_TotalStat      is dropped
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is dropped
+ --->>  JET_Flavor_Composition      is dropped
+ --->>  JET_Flavor_Response      is dropped
+ --->>  JET_InSitu_NonClosure_PreRec      is dropped
+ --->>  JET_JESUnc_Noise_PreRec      is dropped
+ --->>  JET_JERUnc_Noise_PreRec      is dropped
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is dropped
+ --->>  JET_Pileup_OffsetMu      is dropped
+ --->>  JET_Pileup_OffsetNPV      is dropped
+ --->>  JET_Pileup_PtTerm      is dropped
+ --->>  JET_Pileup_RhoTopology      is dropped
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MET_SoftTrk_Scale      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is dropped
+ --->>  JET_JER_EffectiveNP_2      is dropped
+ --->>  JET_JER_EffectiveNP_3      is dropped
+ --->>  JET_JER_EffectiveNP_4      is dropped
+ --->>  JET_JER_EffectiveNP_5      is dropped
+ --->>  JET_JER_EffectiveNP_6      is dropped
+ --->>  JET_JER_EffectiveNP_7      is dropped
+ --->>  JET_JER_EffectiveNP_8      is dropped
+ --->>  JET_JER_EffectiveNP_9      is dropped
+ --->>  JET_JER_EffectiveNP_10      is dropped
+ --->>  JET_JER_EffectiveNP_11      is dropped
+ --->>  JET_JER_EffectiveNP_12restTerm      is dropped
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is dropped
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is dropped
+ --->>  pu_weight_syst_PRW_DATASF      is dropped
+ -> In Sample : WHyyd
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is dropped
+ --->>  EG_SCALE_ALL      is dropped
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is dropped
+ --->>  JET_EffectiveNP_Mixed2      is dropped
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is dropped
+ --->>  JET_EffectiveNP_Modelling2      is dropped
+ --->>  JET_EffectiveNP_Modelling3      is dropped
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is dropped
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is dropped
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is dropped
+ --->>  JET_EtaIntercalibration_TotalStat      is dropped
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is dropped
+ --->>  JET_Flavor_Composition      is dropped
+ --->>  JET_Flavor_Response      is dropped
+ --->>  JET_InSitu_NonClosure_PreRec      is dropped
+ --->>  JET_JESUnc_Noise_PreRec      is dropped
+ --->>  JET_JERUnc_Noise_PreRec      is dropped
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is dropped
+ --->>  JET_Pileup_OffsetMu      is dropped
+ --->>  JET_Pileup_OffsetNPV      is dropped
+ --->>  JET_Pileup_PtTerm      is dropped
+ --->>  JET_Pileup_RhoTopology      is dropped
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MET_SoftTrk_Scale      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is dropped
+ --->>  JET_JER_EffectiveNP_2      is dropped
+ --->>  JET_JER_EffectiveNP_3      is dropped
+ --->>  JET_JER_EffectiveNP_4      is dropped
+ --->>  JET_JER_EffectiveNP_5      is dropped
+ --->>  JET_JER_EffectiveNP_6      is dropped
+ --->>  JET_JER_EffectiveNP_7      is dropped
+ --->>  JET_JER_EffectiveNP_8      is dropped
+ --->>  JET_JER_EffectiveNP_9      is dropped
+ --->>  JET_JER_EffectiveNP_10      is dropped
+ --->>  JET_JER_EffectiveNP_11      is dropped
+ --->>  JET_JER_EffectiveNP_12restTerm      is dropped
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is dropped
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is dropped
+ --->>  pu_weight_syst_PRW_DATASF      is dropped
+ -> In Sample : ZHyyd
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is dropped
+ --->>  EG_SCALE_ALL      is dropped
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is dropped
+ --->>  JET_EffectiveNP_Mixed2      is dropped
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is dropped
+ --->>  JET_EffectiveNP_Modelling2      is dropped
+ --->>  JET_EffectiveNP_Modelling3      is dropped
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is dropped
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is dropped
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is dropped
+ --->>  JET_EtaIntercalibration_TotalStat      is dropped
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is dropped
+ --->>  JET_Flavor_Composition      is dropped
+ --->>  JET_Flavor_Response      is dropped
+ --->>  JET_InSitu_NonClosure_PreRec      is dropped
+ --->>  JET_JESUnc_Noise_PreRec      is dropped
+ --->>  JET_JERUnc_Noise_PreRec      is dropped
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is dropped
+ --->>  JET_Pileup_OffsetMu      is dropped
+ --->>  JET_Pileup_OffsetNPV      is dropped
+ --->>  JET_Pileup_PtTerm      is dropped
+ --->>  JET_Pileup_RhoTopology      is dropped
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MET_SoftTrk_Scale      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is dropped
+ --->>  JET_JER_EffectiveNP_2      is dropped
+ --->>  JET_JER_EffectiveNP_3      is dropped
+ --->>  JET_JER_EffectiveNP_4      is dropped
+ --->>  JET_JER_EffectiveNP_5      is dropped
+ --->>  JET_JER_EffectiveNP_6      is dropped
+ --->>  JET_JER_EffectiveNP_7      is dropped
+ --->>  JET_JER_EffectiveNP_8      is dropped
+ --->>  JET_JER_EffectiveNP_9      is dropped
+ --->>  JET_JER_EffectiveNP_10      is dropped
+ --->>  JET_JER_EffectiveNP_11      is dropped
+ --->>  JET_JER_EffectiveNP_12restTerm      is dropped
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is dropped
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is dropped
+ --->>  pu_weight_syst_PRW_DATASF      is dropped
+ -> In Sample : Wgamma
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is dropped
+ --->>  EG_SCALE_ALL      is dropped
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is kept
+ --->>  JET_EffectiveNP_Mixed2      is kept
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is kept
+ --->>  JET_EffectiveNP_Modelling2      is kept
+ --->>  JET_EffectiveNP_Modelling3      is kept
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is dropped
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is kept
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is kept
+ --->>  JET_EtaIntercalibration_TotalStat      is dropped
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is dropped
+ --->>  JET_Flavor_Composition      is kept
+ --->>  JET_Flavor_Response      is kept
+ --->>  JET_InSitu_NonClosure_PreRec      is kept
+ --->>  JET_JESUnc_Noise_PreRec      is kept
+ --->>  JET_JERUnc_Noise_PreRec      is kept
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is kept
+ --->>  JET_Pileup_OffsetMu      is kept
+ --->>  JET_Pileup_OffsetNPV      is kept
+ --->>  JET_Pileup_PtTerm      is kept
+ --->>  JET_Pileup_RhoTopology      is kept
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is kept
+ --->>  MET_SoftTrk_Scale      is kept
+ --->>  JET_fJvtEfficiency      is kept
+ --->>  MUON_CB      is dropped
+ --->>  MUON_SAGITTA_DATASTAT      is dropped
+ --->>  MUON_SAGITTA_GLOBAL      is dropped
+ --->>  MUON_SAGITTA_PTEXTRA      is dropped
+ --->>  MUON_SAGITTA_RESBIAS      is dropped
+ --->>  MUON_SCALE      is dropped
+ --->>  JET_JER_EffectiveNP_1      is kept
+ --->>  JET_JER_EffectiveNP_2      is kept
+ --->>  JET_JER_EffectiveNP_3      is kept
+ --->>  JET_JER_EffectiveNP_4      is kept
+ --->>  JET_JER_EffectiveNP_5      is kept
+ --->>  JET_JER_EffectiveNP_6      is kept
+ --->>  JET_JER_EffectiveNP_7      is kept
+ --->>  JET_JER_EffectiveNP_8      is kept
+ --->>  JET_JER_EffectiveNP_9      is kept
+ --->>  JET_JER_EffectiveNP_10      is kept
+ --->>  JET_JER_EffectiveNP_11      is dropped
+ --->>  JET_JER_EffectiveNP_12restTerm      is kept
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is dropped
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is dropped
+ --->>  pu_weight_syst_PRW_DATASF      is dropped
+ -> In Sample : jets_faking_photons
+ --->>  ff_jy      is norm only
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is not present
+ --->>  EG_SCALE_ALL      is not present
+ --->>  JET_BJES_Response      is not present
+ --->>  JET_EffectiveNP_Detector1      is not present
+ --->>  JET_EffectiveNP_Detector2      is not present
+ --->>  JET_EffectiveNP_Mixed1      is not present
+ --->>  JET_EffectiveNP_Mixed2      is not present
+ --->>  JET_EffectiveNP_Mixed3      is not present
+ --->>  JET_EffectiveNP_Modelling1      is not present
+ --->>  JET_EffectiveNP_Modelling2      is not present
+ --->>  JET_EffectiveNP_Modelling3      is not present
+ --->>  JET_EffectiveNP_Modelling4      is not present
+ --->>  JET_EffectiveNP_Statistical1      is not present
+ --->>  JET_EffectiveNP_Statistical2      is not present
+ --->>  JET_EffectiveNP_Statistical3      is not present
+ --->>  JET_EffectiveNP_Statistical4      is not present
+ --->>  JET_EffectiveNP_Statistical5      is not present
+ --->>  JET_EffectiveNP_Statistical6      is not present
+ --->>  JET_EtaIntercalibration_Modelling      is not present
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is not present
+ --->>  JET_EtaIntercalibration_TotalStat      is not present
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is not present
+ --->>  JET_Flavor_Composition      is not present
+ --->>  JET_Flavor_Response      is not present
+ --->>  JET_InSitu_NonClosure_PreRec      is not present
+ --->>  JET_JESUnc_Noise_PreRec      is not present
+ --->>  JET_JERUnc_Noise_PreRec      is not present
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is not present
+ --->>  JET_Pileup_OffsetMu      is not present
+ --->>  JET_Pileup_OffsetNPV      is not present
+ --->>  JET_Pileup_PtTerm      is not present
+ --->>  JET_Pileup_RhoTopology      is not present
+ --->>  JET_SingleParticle_HighPt      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MET_SoftTrk_Scale      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is not present
+ --->>  JET_JER_EffectiveNP_2      is not present
+ --->>  JET_JER_EffectiveNP_3      is not present
+ --->>  JET_JER_EffectiveNP_4      is not present
+ --->>  JET_JER_EffectiveNP_5      is not present
+ --->>  JET_JER_EffectiveNP_6      is not present
+ --->>  JET_JER_EffectiveNP_7      is not present
+ --->>  JET_JER_EffectiveNP_8      is not present
+ --->>  JET_JER_EffectiveNP_9      is not present
+ --->>  JET_JER_EffectiveNP_10      is not present
+ --->>  JET_JER_EffectiveNP_11      is not present
+ --->>  JET_JER_EffectiveNP_12restTerm      is not present
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is not present
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is not present
+ --->>  pu_weight_syst_PRW_DATASF      is not present
+ -> In Sample : electrons_faking_photons
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is dropped
+ --->>  scf_ey      is dropped
+ --->>  EG_RESOLUTION_ALL      is not present
+ --->>  EG_SCALE_ALL      is not present
+ --->>  JET_BJES_Response      is not present
+ --->>  JET_EffectiveNP_Detector1      is not present
+ --->>  JET_EffectiveNP_Detector2      is not present
+ --->>  JET_EffectiveNP_Mixed1      is not present
+ --->>  JET_EffectiveNP_Mixed2      is not present
+ --->>  JET_EffectiveNP_Mixed3      is not present
+ --->>  JET_EffectiveNP_Modelling1      is not present
+ --->>  JET_EffectiveNP_Modelling2      is not present
+ --->>  JET_EffectiveNP_Modelling3      is not present
+ --->>  JET_EffectiveNP_Modelling4      is not present
+ --->>  JET_EffectiveNP_Statistical1      is not present
+ --->>  JET_EffectiveNP_Statistical2      is not present
+ --->>  JET_EffectiveNP_Statistical3      is not present
+ --->>  JET_EffectiveNP_Statistical4      is not present
+ --->>  JET_EffectiveNP_Statistical5      is not present
+ --->>  JET_EffectiveNP_Statistical6      is not present
+ --->>  JET_EtaIntercalibration_Modelling      is not present
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is not present
+ --->>  JET_EtaIntercalibration_TotalStat      is not present
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is not present
+ --->>  JET_Flavor_Composition      is not present
+ --->>  JET_Flavor_Response      is not present
+ --->>  JET_InSitu_NonClosure_PreRec      is not present
+ --->>  JET_JESUnc_Noise_PreRec      is not present
+ --->>  JET_JERUnc_Noise_PreRec      is not present
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is not present
+ --->>  JET_Pileup_OffsetMu      is not present
+ --->>  JET_Pileup_OffsetNPV      is not present
+ --->>  JET_Pileup_PtTerm      is not present
+ --->>  JET_Pileup_RhoTopology      is not present
+ --->>  JET_SingleParticle_HighPt      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MET_SoftTrk_Scale      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is not present
+ --->>  JET_JER_EffectiveNP_2      is not present
+ --->>  JET_JER_EffectiveNP_3      is not present
+ --->>  JET_JER_EffectiveNP_4      is not present
+ --->>  JET_JER_EffectiveNP_5      is not present
+ --->>  JET_JER_EffectiveNP_6      is not present
+ --->>  JET_JER_EffectiveNP_7      is not present
+ --->>  JET_JER_EffectiveNP_8      is not present
+ --->>  JET_JER_EffectiveNP_9      is not present
+ --->>  JET_JER_EffectiveNP_10      is not present
+ --->>  JET_JER_EffectiveNP_11      is not present
+ --->>  JET_JER_EffectiveNP_12restTerm      is not present
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is not present
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is not present
+ --->>  pu_weight_syst_PRW_DATASF      is not present
+ -> In Sample : gammajets_direct
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is not present
+ --->>  EG_SCALE_ALL      is not present
+ --->>  JET_BJES_Response      is not present
+ --->>  JET_EffectiveNP_Detector1      is not present
+ --->>  JET_EffectiveNP_Detector2      is not present
+ --->>  JET_EffectiveNP_Mixed1      is not present
+ --->>  JET_EffectiveNP_Mixed2      is not present
+ --->>  JET_EffectiveNP_Mixed3      is not present
+ --->>  JET_EffectiveNP_Modelling1      is not present
+ --->>  JET_EffectiveNP_Modelling2      is not present
+ --->>  JET_EffectiveNP_Modelling3      is not present
+ --->>  JET_EffectiveNP_Modelling4      is not present
+ --->>  JET_EffectiveNP_Statistical1      is not present
+ --->>  JET_EffectiveNP_Statistical2      is not present
+ --->>  JET_EffectiveNP_Statistical3      is not present
+ --->>  JET_EffectiveNP_Statistical4      is not present
+ --->>  JET_EffectiveNP_Statistical5      is not present
+ --->>  JET_EffectiveNP_Statistical6      is not present
+ --->>  JET_EtaIntercalibration_Modelling      is not present
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is not present
+ --->>  JET_EtaIntercalibration_TotalStat      is not present
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is not present
+ --->>  JET_Flavor_Composition      is not present
+ --->>  JET_Flavor_Response      is not present
+ --->>  JET_InSitu_NonClosure_PreRec      is not present
+ --->>  JET_JESUnc_Noise_PreRec      is not present
+ --->>  JET_JERUnc_Noise_PreRec      is not present
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is not present
+ --->>  JET_Pileup_OffsetMu      is not present
+ --->>  JET_Pileup_OffsetNPV      is not present
+ --->>  JET_Pileup_PtTerm      is not present
+ --->>  JET_Pileup_RhoTopology      is not present
+ --->>  JET_SingleParticle_HighPt      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MET_SoftTrk_Scale      is not present
+ --->>  JET_fJvtEfficiency      is not present
+ --->>  MUON_CB      is not present
+ --->>  MUON_SAGITTA_DATASTAT      is not present
+ --->>  MUON_SAGITTA_GLOBAL      is not present
+ --->>  MUON_SAGITTA_PTEXTRA      is not present
+ --->>  MUON_SAGITTA_RESBIAS      is not present
+ --->>  MUON_SCALE      is not present
+ --->>  JET_JER_EffectiveNP_1      is not present
+ --->>  JET_JER_EffectiveNP_2      is not present
+ --->>  JET_JER_EffectiveNP_3      is not present
+ --->>  JET_JER_EffectiveNP_4      is not present
+ --->>  JET_JER_EffectiveNP_5      is not present
+ --->>  JET_JER_EffectiveNP_6      is not present
+ --->>  JET_JER_EffectiveNP_7      is not present
+ --->>  JET_JER_EffectiveNP_8      is not present
+ --->>  JET_JER_EffectiveNP_9      is not present
+ --->>  JET_JER_EffectiveNP_10      is not present
+ --->>  JET_JER_EffectiveNP_11      is not present
+ --->>  JET_JER_EffectiveNP_12restTerm      is not present
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is not present
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is not present
+ --->>  pu_weight_syst_PRW_DATASF      is not present
+ -> In Sample : Zgamma
+ --->>  ff_jy      is not present
+ --->>  ff_ey      is not present
+ --->>  scf_ey      is not present
+ --->>  EG_RESOLUTION_ALL      is dropped
+ --->>  EG_SCALE_ALL      is shape only
+ --->>  JET_BJES_Response      is dropped
+ --->>  JET_EffectiveNP_Detector1      is dropped
+ --->>  JET_EffectiveNP_Detector2      is dropped
+ --->>  JET_EffectiveNP_Mixed1      is dropped
+ --->>  JET_EffectiveNP_Mixed2      is dropped
+ --->>  JET_EffectiveNP_Mixed3      is dropped
+ --->>  JET_EffectiveNP_Modelling1      is dropped
+ --->>  JET_EffectiveNP_Modelling2      is dropped
+ --->>  JET_EffectiveNP_Modelling3      is dropped
+ --->>  JET_EffectiveNP_Modelling4      is dropped
+ --->>  JET_EffectiveNP_Statistical1      is dropped
+ --->>  JET_EffectiveNP_Statistical2      is dropped
+ --->>  JET_EffectiveNP_Statistical3      is dropped
+ --->>  JET_EffectiveNP_Statistical4      is dropped
+ --->>  JET_EffectiveNP_Statistical5      is dropped
+ --->>  JET_EffectiveNP_Statistical6      is dropped
+ --->>  JET_EtaIntercalibration_Modelling      is dropped
+ --->>  JET_EtaIntercalibration_NonClosure_0p2_PreRec      is kept
+ --->>  JET_EtaIntercalibration_TotalStat      is dropped
+ --->>  JET_FCal_MC23_NonClosure_PreRec      is dropped
+ --->>  JET_Flavor_Composition      is norm only
+ --->>  JET_Flavor_Response      is norm only
+ --->>  JET_InSitu_NonClosure_PreRec      is kept
+ --->>  JET_JESUnc_Noise_PreRec      is dropped
+ --->>  JET_JERUnc_Noise_PreRec      is kept
+ --->>  JET_JESUnc_VertexingAlg_PreRec      is kept
+ --->>  JET_Pileup_OffsetMu      is dropped
+ --->>  JET_Pileup_OffsetNPV      is norm only
+ --->>  JET_Pileup_PtTerm      is norm only
+ --->>  JET_Pileup_RhoTopology      is norm only
+ --->>  JET_SingleParticle_HighPt      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MET_SoftTrk_Scale      is dropped
+ --->>  JET_fJvtEfficiency      is dropped
+ --->>  MUON_CB      is dropped
+ --->>  MUON_SAGITTA_DATASTAT      is dropped
+ --->>  MUON_SAGITTA_GLOBAL      is dropped
+ --->>  MUON_SAGITTA_PTEXTRA      is dropped
+ --->>  MUON_SAGITTA_RESBIAS      is dropped
+ --->>  MUON_SCALE      is dropped
+ --->>  JET_JER_EffectiveNP_1      is dropped
+ --->>  JET_JER_EffectiveNP_2      is dropped
+ --->>  JET_JER_EffectiveNP_3      is shape only
+ --->>  JET_JER_EffectiveNP_4      is dropped
+ --->>  JET_JER_EffectiveNP_5      is dropped
+ --->>  JET_JER_EffectiveNP_6      is dropped
+ --->>  JET_JER_EffectiveNP_7      is dropped
+ --->>  JET_JER_EffectiveNP_8      is dropped
+ --->>  JET_JER_EffectiveNP_9      is shape only
+ --->>  JET_JER_EffectiveNP_10      is dropped
+ --->>  JET_JER_EffectiveNP_11      is dropped
+ --->>  JET_JER_EffectiveNP_12restTerm      is dropped
+ --->>  ph_SF_syst_PH_EFF_ID_Uncertainty      is dropped
+ --->>  ph_SF_syst_PH_EFF_ISO_Uncertainty      is dropped
+ --->>  pu_weight_syst_PRW_DATASF      is dropped

@@ -1,0 +1,194 @@
+The standard ATLAS hard-scatter vertex selection is based on the vertex with the highest sum of the transverse momenta of its associated tracks. During each bunch crossing, multiple proton-proton interactions occur, resulting in the reconstruction of several vertices. Each vertex is built from at least two tracks, with each track having a transverse momentum (\( p_T \)) exceeding 0.5\,GeV. The vertex with the highest scalar sum of the squared transverse momenta (\( \sum p_T^2 \)) of its associated tracks is typically identified as the hard-scatter (HS) vertex which serves as the reference point for the reconstruction and calibration of all physics objects in the event.\\
+In this analysis the final state is \( \gamma + E_T^{\text{miss}} \), which is typically characterized by low track activity due to the absence of charged leptons or significant hadronic activity, the standard hardest-vertex selection procedure may fail to correctly identify the correct HS vertex. In such scenarios, a pile-up vertex, resulting from multiple interactions, can sometimes have a higher sum of track transverse momenta than the HS vertex, causing it to be mistakenly identified as the primary vertex (PV). This misassignment leads to notable complications in both signal efficiency and background modeling. \\
+For signal events, incorrect identification of the HS vertex leads to a miscalculation of \( E_T^{\text{miss}} \), causing a shift in the \( m_T \) distribution peak away from the Higgs boson mass, thereby degrading the resolution and sensitivity of the analysis. Furthermore, jets originating from the true hard-scatter process may be wrongly rejected when applying Jet Vertex Tagger (JVT) cleaning because they appear to be unassociated with the HS vertex. For background events, a wrongly reconstructed vertex can lead to a significant mismeasurement of \( E_T^{\text{miss}} \), often generating large fake \( E_T^{\text{miss}} \).\\
+This study aims to identify and reject events in which the HS vertex is incorrectly reconstructed. Rather than explicitly attempting to select the correct vertex, the strategy focuses on removing events that are likely to have a misassigned HS vertex. To this end, a Boosted Decision Tree (BDT) classifier is trained using the Toolkit for Multivariate Analysis (TMVA) framework.\\
+\subsection{Vertex BDT}
+An event is labeled as a \textit{good vertex} case if the reconstructed vertex is spatially consistent with the true PV, defined by the condition \( |z_{\text{reco}} - z_{\text{truth}}| < 0.5\,\text{mm} \). In contrast, events that do not meet this criterion are classified as \textit{wrong vertex} cases.The training is performed inclusively by combining signal and background processes: $\gamma$+jets, V+jets, and V$\gamma$, on top of the selections listed in Section \ref{sec:selection}. Dijet samples are not included, as their large event weights could bias the BDT. In addition, a cut on the event weight is applied to remove high-weight events that cause spikes and might further bias the BDT. The training and testing samples are split using a k-fold cross-validation technique with \( k=4 \). This method divides the dataset into four subsets based on the event number, in each iteration, three subsets are used for training and one subset for testing. This approach helps to mitigate overfitting and provides a more robust evaluation of the BDT's performance across different datasets.\\
+The input variables to the BDT include a set of features related to the reconstructed vertex, photon, (\( E_T^{\text{miss}} \)), and jets. Figure \ref{fig:input_variables_all_part1}, Figure \ref{fig:input_variables_all_part2} and Figure \ref{fig:input_variables_all_part3} shows the distribution of the variables for events with good and wrong vertex inclusively. However, Figure \ref{fig:input_variables_by_sample_part1}, Figure \ref{fig:input_variables_by_sample_part2}, and Figure \ref{fig:input_variables_by_sample_part3} shows the distributions of variables for each sample. These variables are carefully selected based on their physical relevance and their sensitivity to vertex misassignment. In particular, the training leverages the kinematic correlation between the photon and \( E_T^{\text{miss}} \), as well as a variable \( E_{\text{T{NoJVT}}}^{\text{miss }} \) involving jets without applying  JVT cleaning, in order to preserve the full jet kinematic information. The ranking of the importance of these variables are listed in the table \ref{tab:variable_importance_ranking} including their respective importances and thier meaning.\\
+\subsection{BDT performance}
+The training of the BDT have done with folds. The separation is based on the event number, and the performance of the BDT classifier was evaluated inside the TMVA framework with several metrics. The plots in the Figures \ref{fig:bdt_response_distribution}, \ref{fig:bdt_roc_folds} show the BDT response distribution for each fold and their corresponding ROC curves respectively.
+The area under the ROC curve (AUC) provides a quantitative measure of the model’s overall performance, and in this case, the BDT achieves an AUC of approximately 95\%.
+The BDT response plot shows good separation between event with \textit{good vertex} and events with \textit{wrong vertex} for both the training and testing samples. A Kolmogorov–Smirnov (KS) test was performed for both events with \textit{good vertex} and events with \textit{wrong vertex}, with probabilities of 0.47 and 0.7 respectively. Relatively high KS probabilities indicate a good agreement between the training and testing samples, suggesting that the model is not overfitting and generalizes well to unseen data.
+The ROC curve further demonstrates excellent performance, with high rejection of events with \textit{wrong vertex} across a wide range of events with \textit{good vertex} efficiencies.\\
+Since the BDT was trained on a combination of signal and background samples, an additional check was performed to evaluate its performance on each individual sample. Figure \ref{fig:roc_per_sample} shows the ROC curves, BDT Distributions for each sample. Furthermore, the efficiency of identifying events with a good vertex, denoted as $\varepsilon_{\mathrm{PV}}$, is shown in Figure \ref{fig:pv_efficiency_with_without_bdt} for both the signal and the main background processes.
+This evaluation was done after applying the preselections, both with and without a BDT score threshold cut of 0.1. The efficiency is defined as follows:
+
+\[
+\varepsilon_{PV} = \frac{N_{\text{goodPV}}}{N_{\text{Total}}}
+\]
+where $N_{\text{goodPV}}$ is the number of events with good vertex, and $N_{\text{Total}}$ is the total number of events. 
+\begin{figure}[!htbp]
+    \centering
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/input/1_all_var.pdf}}
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/input/2_all_var.pdf}} \\
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/input/3_all_var.pdf}} 
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/input/4_all_var.pdf}} 
+    \caption{Distributions of the input variables fed into the BDT.}
+    \label{fig:input_variables_all_part1}
+\end{figure}
+
+The efficiency plot shows that after applying a cut on the BDT score, the efficiency of correctly identifying events with a good vertex improves significantly for both signal and background processes across different selections. The BDT is effective in ensuring that all the analysis regions (including the CR and VR) contain mostly events with a good PV.\\
+
+\begin{figure}[!htbp]
+    \centering
+     \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/input/5_all_var.pdf}}
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/input/6_all_var.pdf}}\\
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/input/7_all_var.pdf}\label{fig:input_variables_dmet_all}}
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/input/8_all_var.pdf}} 
+    \caption{Distributions of the input variables fed into the BDT }
+    \label{fig:input_variables_all_part2}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/input/9_all_var.pdf}}
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/input/10_all_var.pdf}} \\
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/input/11_all_var.pdf}}
+    \caption{Distributions of the input variables fed into the BDT.}
+    \label{fig:input_variables_all_part3}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/inputBDT_S_B/1_all_var.pdf}}
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/inputBDT_S_B/2_all_var.pdf}} \\
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/inputBDT_S_B/3_all_var.pdf}} 
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/inputBDT_S_B/4_all_var.pdf}} 
+    \caption{Distributions of the input variables fed into the BDT.}
+    \label{fig:input_variables_by_sample_part1}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+     \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/inputBDT_S_B/5_all_var.pdf}}
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/inputBDT_S_B/6_all_var.pdf}}\\
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/inputBDT_S_B/7_all_var.pdf}\label{fig:input_variables_dmet_sample}}
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/inputBDT_S_B/8_all_var.pdf}} 
+    \caption{Distributions of the input variables fed into the BDT.}
+    \label{fig:input_variables_by_sample_part2}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/inputBDT_S_B/9_all_var.pdf}}
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/inputBDT_S_B/10_all_var.pdf}} \\
+    \subfloat[]{\includegraphics[width=0.48\textwidth]{images/vertex_study/inputBDT_S_B/11_all_var.pdf}}
+    \caption{Distributions of the input variables fed into the BDT.}
+    \label{fig:input_variables_by_sample_part3}
+\end{figure}
+
+\paragraph{selections}
+\label{sec:selection}
+\begin{itemize}[nosep]
+  \item Trigger: HLT\_g50\_tight\_xe40\_cell\_xe70\_pfopufit\_80mTAC\_L1eEM26M
+  \item $N_{\text{jets\_central}} \leq$ 3
+  \item \ETmiss $>$ 100 \GeV
+  \item $m_T$ $>$ 80 \GeV
+  \item Photon $p_T$ $>$ 50 \GeV
+  \item $N_{\text{leptons}}=0$, for baseline leptons
+\end{itemize}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/vertex_study/BDT_perf/DistributionsBDTResponse.pdf}
+
+    \caption{BDT response, The solid lines represent the goodPV distribution for each fold, while the dashed lines represent the wrongPV distribution for each fold.}
+    \label{fig:bdt_response_distribution}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/vertex_study/BDT_perf/ROC.pdf}
+    \caption{The ROC curve for folds}
+    \label{fig:bdt_roc_folds}
+\end{figure}
+
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/vertex_study/inputBDT_S_B/BDTScore.pdf}
+    \caption{The ROC curve for folds for each sample}
+    \label{fig:bdt_roc_per_sample}
+\end{figure}
+
+
+\begin{table}[!htbp]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{c l c l}
+    \hline
+    \hline
+    \textbf{Rank} & \textbf{Variable} & \textbf{Importance} & \textbf{Description} \\
+    \hline
+    1  & $\log\left(\sum P_{T}^{2}(\text{tracks})\right)$ & 1.321e-01 & Logarithm of the sum of squared track transverse momenta \\
+    2  & $\Delta\phi = |\phi(\vec{p}_{\text{vtx.}}) - \phi(\vec{p}_\gamma)|$ & 1.296e-01 & Azimuthal separation between vertex momentum and photon \\
+    3  & $\Delta\phi(E_T^{\text{miss}}, E_T^{\text{jet}})$ & 1.107e-01 & Azimuthal angle between missing transverse energy and leading jet \\
+    4  & $\Delta\phi(\text{Jet}_1, \text{Jet}_2)$ & 1.073e-01 & Azimuthal separation between the two leading jets \\
+    5  & $\Delta(E_{T}^{\text{miss}}(\text{no JVT}) - E_{T}^{\text{miss}})$ & 8.578e-02 & Difference in $E_T^{\text{miss}}$ with and without JVT selection \\
+    6  & $E_{T}^{\text{miss}}$ significance & 8.477e-02 & Significance of the missing transverse energy \\
+    7  & Pointing & 8.453e-02 & \( \frac{\Delta(Z_{\text{reco}} - Z_{\text{pointing}})}{\sigma_{Z_{\text{pointing}}}} \): normalized difference between reconstructed and pointing vertex positions.\\
+    8  & $z_{\text{skewn}}$ & 7.327e-02 & Skewness of the $z$-position of tracks in the vertex \\
+    9  & Number of central jets & 7.274e-02 & Number of jets in the central region ($|\eta|<2.5$) \\
+    10 & Balance & 6.489e-02 & Transverse momentum balance between photon $+$ \( E_T^{\text{miss}} \) and jets \\
+    11 & $z_{\text{kur}}$ & 5.438e-02 & Kurtosis of the $z$-position of tracks in the vertex \\
+    \hline
+    \hline
+  \end{tabular}%
+  }
+  \caption{Variable importance ranking and their physical meanings.}
+  \label{tab:variable_importance_ranking}
+\end{table}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/vertex_study/BDT_perf/roc_cato_signal.pdf} 
+    \caption{ROC curves of each samples}
+    \label{fig:roc_per_sample}
+    
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/vertex_study/BDT_perf/signal_eff_vs_bdt.pdf} 
+    \caption{Signal efficiency as a function of the BDT score for each sample}
+    \label{fig:signal_efficiency_vs_bdt}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/vertex_study/BDT_perf/background_eff_vs_bdt.pdf} 
+    \caption{Background efficiency as a function of the BDT score for each sample}
+    \label{fig:background_efficiency_vs_bdt}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/vertex_study/efficiency_plot.pdf}
+    \caption{Efficiency of the events with good vertex with and without applying BDT score cut.}
+    \label{fig:pv_efficiency_with_without_bdt}
+\end{figure}
+
+\begin{table}[!htbp]
+    \centering
+    \caption{Event yields per selection and sample.}
+        \label{tab:event_yields_per_selection}
+    \begin{tabular}{lcccc}
+        \hline\hline
+        \textbf{Sample} & \textbf{Baseline} & \textbf{BDTScore Baseline} & \textbf{SR} & \textbf{BDTScore SR BDT} \\
+        \hline
+        $ggH \rightarrow \gamma\gamma$          & 13006.43 & 7481.23 & 5109.44 & 4804.69 \\
+        VBF $H \rightarrow \gamma\gamma$        & 2579.00  & 1850.25 & 1398.64 & 1141.77 \\
+        $ZH \rightarrow \gamma\gamma$           & 814.84   & 367.41  & 177.10  & 171.55 \\
+        $WH \rightarrow \gamma\gamma$           & 800.13   & 532.91  & 300.43  & 295.11 \\
+        $\gamma+\text{jets (frag)}$             & 113227.49 & 15817.34 & 363.71 & 314.59 \\
+        $\gamma+\text{jets (dirc)}$             & 167228.20 & 9437.14  & 80.35  & 42.74 \\
+        $Z(\nu\nu)+\gamma$                     & 9633.17  & 2865.42  & 260.88  & 249.86 \\
+        $Z(\nu\nu)+\text{jets}$                & 591.71   & 143.72   & 16.48   & 15.49 \\
+        $W(\ell\nu)+\gamma$                    & 6425.62  & 2676.95  & 467.11  & 448.17 \\
+        $W(\ell\nu)+\text{jets}$               & 8548.59  & 3815.26  & 682.53  & 659.65 \\
+        Multijets                              & 76264979.94 & 38795.10 & 27.39 & 12.53 \\
+        \hline\hline
+    \end{tabular}
+\end{table}
+
+The modeling of the BDT by the data is described in a dedicated validation region, described in sec. \ref{sec:crvr} and the comparison shown in sec. \ref{sec:vertex-VR}.

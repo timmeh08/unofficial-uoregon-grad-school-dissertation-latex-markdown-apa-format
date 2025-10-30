@@ -1,0 +1,385 @@
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Trigger & Variable & Data-MC agreement \\
+        \hline 
+      \multirow{2}{*}{Analysis} & $\eta$ & \includegraphics[width=0.02\textwidth]{images/spunta_copy.jpg}\\ & $p_T$ & \includegraphics[width=0.02\textwidth]{images/spunta_copy.jpg}\\
+      \hline
+       \multirow{2}{*}{$p_T^{miss}$} & $\eta$ & \includegraphics[width=0.02\textwidth]{images/spunta_copy.jpg}\\ & $p_T$ & \includegraphics[width=0.02\textwidth]{images/spunta.jpg}\\
+       \hline
+       \multirow{2}{*}{Leptonic} & $\eta$ & \includegraphics[width=0.02\textwidth]{images/spunta.jpg}\\ & $p_T$ & \includegraphics[width=0.02\textwidth]{images/spunta_copy.jpg}\\
+        \hline
+    \end{tabular}
+    \caption{Summary of the possible configurations. Some of them can be excluded a priori due to disagreement between data and Monte Carlo samples of $\eta$ or $p_T$. }
+    \label{tab: spectra}
+\end{table}
+
+
+
+After checking the agreement between data and Monte Carlo in $\eta, p_T$ distributions, some configurations have been excluded, as summarized in Table \ref{tab: spectra}. Among the remaining configurations, the one providing the smallest systematic errors on fake factors is chosen. The process to do this choice is the following: 
+\begin{enumerate}
+    \item First of all, it is necessary to compute $R_\mu$ and $R_\sigma$ mean values in all the $p_T$ bins in the case of the region inclusive in $\eta$ and in all the $\eta$ bins in the case of the region inclusive in $p_T$. These are the nominal values $R_{\mu, nom}$ and $ R_{\sigma, nom}$;
+    
+    \item Then, using the nominal values of $R_\mu$ and $R_\sigma$, the tight fake photons isolation distributions in data (for each bin of $\eta$ or $p_T$) can be extrapolated; 
+    \item In addition to this, it is necessary to perform the extrapolation using also varied values of $R$ and $R_b$: $R_{\mu, up}, R_{\sigma, up}$, $R_{\mu, down}, R_{\sigma, down}$, where one of the two varied values is equal to $1$ and the other one equal to $2R_{\mu, nom}-1, 2R_{\sigma, nom}-1$. Varied extrapolations are 4 in total. 
+    The choice to take as reference value for the computation of varied $R_\mu, R_\sigma$ the unitary value is justified by the fact that the more $R_\mu, R_\sigma$ are close to 1 the more the hypothesis about the median (Equation \ref{eq: mean}) and about the width (Equation \ref{eq: sigma}) adopted in the extrapolation method is safe. 
+    \item It is then possible to calculate fake factor on the extrapolated distributions, the nominal and the varied ones, for a total of 5 fake factors ($ff(R_{\mu, nom},R_{\sigma, nom})$, $ff(R_{\mu, nom},R_{\sigma, up})$, $ff(R_{\mu, nom},R_{\sigma, down})$, $ff(R_{\mu, up},R_{\sigma, nom})$, $ff(R_{\mu, down},R_{\sigma, nom})$) in each region $\eta, p_T$ bin for each trigger. The uncertainty on the nominal fake factor is assumed equal to: 
+    \begin{equation}
+         \sigma_{ff} = \sqrt{(\sigma_{R_\mu})^2+(\sigma_{R_\sigma})^2}
+    \end{equation}
+    where 
+       \begin{equation}
+         \sigma_{R} = \Biggl(\frac{ff(R_{\mu, up},R_{\sigma, nom})-ff(R_{\mu, down},R_{\sigma, nom})}{2}\Biggr)
+    \end{equation}
+       \begin{equation}
+         \sigma_{R_b} = \Biggl(\frac{ff(R_{\mu, nom},R_{\sigma, up})-ff(R_{\mu, nom},R_{\sigma, down})}{2}\Biggr)
+    \end{equation}
+\end{enumerate}
+
+%where $ff(R_{\mu, nom},R_{\sigma, up})$ is the fake factor calculated on the distribution extrapolated using nominal value of $R$ and up-variation of $R_b$, $ff(R_{\mu, nom},R_{\sigma, down})$ is the fake factor calculated on the distribution extrapolated using nominal value of $R$ and down-variation of $R_b$, $ff(R_{\mu, up},R_{\sigma, nom})$ is the fake factor calculated on the distribution extrapolated using nominal value of $R_b$ and up-variation of $R$ and $ff(R_{\mu, down},R_{\sigma, nom})$ is the fake factor calculated on the distribution extrapolated using nominal value of $R_b$ and down-variation of $R$. 
+
+Nominal and varied values of $R_\mu, R_\sigma$ are summarised in Table \ref{tab: sumRRupRdown}. 
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        Trigger & Inclusive Region & $R_{\mu, nom}$ & $R_{\mu, up}$  & $R_{\mu, down}$  & $R_{\sigma, nom}$ & $R_{\sigma, up}$  & $R_{\sigma, down}$ \\
+        \hline 
+      \multirow{2}{*}{Analysis} & $\eta$ & 1.10 & 1.20 &1.00 & 1.36 & 1.72 & 1.00 \\
+&  $p_T$& 1.06 & 1.12 & 1.00 & 1.28 & 1.56 & 1.00  \\
+  \hline
+   $p_T^{miss}$ & $\eta$ & 0.82 & 1.00 & 0.64 & 1.06 & 1.12 & 1.00 \\
+  
+        \hline
+        
+       Leptonic & $p_T$ & 0.79 & 1.00 & 0.58 & 1.02 & 1.04 & 1.00 \\
+ \hline
+    \end{tabular}
+    \caption{Nominal and varied values of $R$ and $R_b$ for the different configurations of inclusive region and trigger possible. }
+    \label{tab: sumRRupRdown}
+\end{table}
+
+
+As an example, Figures \ref{fig:ptincl-R} and \ref{fig:ptincl-Rb} show the distributions extrapolated using nominal and varied values of $R_\mu, R_\sigma$, in the inclusive $p_T$ configuration using Analysis Trigger. In this case, all the distributions are quite stable in the different $\eta$ bins and also varying $R_\mu$ and $R_\sigma$. 
+
+\begin{figure}[H]\label{fig:track-true}
+  \centering
+  \subfloat[$\eta$ bin 01.]{%
+      \includegraphics[width=0.49\textwidth]{images/Rcomp_ptincl_mw_g50_met70_mt80/Rcomp_etabin01.pdf}
+  }
+  \subfloat[$\eta$ bin 02.]{%
+      \includegraphics[width=0.49\textwidth]{images/Rcomp_ptincl_mw_g50_met70_mt80/Rcomp_etabin02.pdf}
+  }\\
+  \subfloat[$\eta$ bin 04.]{%
+      \includegraphics[width=0.49\textwidth]{images/Rcomp_ptincl_mw_g50_met70_mt80/Rcomp_etabin04.pdf}
+  }
+  \subfloat[$\eta$ bin 05.]{%
+      \includegraphics[width=0.49\textwidth]{images/Rcomp_ptincl_mw_g50_met70_mt80/Rcomp_etabin05.pdf}
+  }
+  \caption{Extrapolated distributions of fake tight photons in data, extrapolated from loose using varied values of $R_\mu$ and nominal value of $R_\sigma=1.28$ in different $\eta$ bins, in the inclusive region in $p_T$ using Analysis Trigger.}
+  \label{fig:ptincl-R}
+\end{figure}
+
+\begin{figure}[H]\label{fig:track-fake-varied}
+  \centering
+  \subfloat[$\eta$ bin 01.]{%
+      \includegraphics[width=0.49\textwidth]{images/Rcomp_ptincl_mw_g50_met70_mt80/Rbcomp_etabin01.pdf}
+  }
+  \subfloat[$\eta$ bin 02.]{%
+      \includegraphics[width=0.49\textwidth]{images/Rcomp_ptincl_mw_g50_met70_mt80/Rbcomp_etabin02.pdf}
+  }\\
+  \subfloat[$\eta$ bin 04.]{%
+      \includegraphics[width=0.49\textwidth]{images/Rcomp_ptincl_mw_g50_met70_mt80/Rbcomp_etabin04.pdf}
+  }
+  \subfloat[$\eta$ bin 05.]{%
+      \includegraphics[width=0.49\textwidth]{images/Rcomp_ptincl_mw_g50_met70_mt80/Rbcomp_etabin05.pdf}
+  }
+  \caption{Extrapolated distributions of fake tight photons in data, extrapolated from loose using nominal value of $R_\mu=1.06$ and varied values of $R_\sigma$ in different $\eta$ bins, in the inclusive region in $p_T$ using Analysis Trigger.}
+  \label{fig:ptincl-Rb}
+\end{figure}
+
+
+
+ Fake factors have been then computed using Equation \ref{eq: ff} for all the possible configurations, listed in Table \ref{tab: spectra}. In the optimal configuration, fake factors should be as small as possible, have a small uncertainty and should not suffer from high fluctuations when varying $R_\mu, R_\sigma$ from their nominal values. Tables \ref{tab: ff unc} and \ref{tab: ff unc 2} shows fake factors with their absolute uncertainties for all the configurations. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+$\eta$ bin & ff & $\sigma_{ff}$  & \% \\
+\hline
+ 1 & 1.51 & 0.18 & 11.7 \% \\
+\hline
+ 2 & 2.03 & 0.35 & 17.1 \% \\
+\hline
+ 4 & 1.95 & 0.34 & 17.2 \% \\
+\hline
+ 5 & 1.70 & 0.27 & 15.7 \% \\
+\hline
+\end{tabular}
+\hspace{0.5cm}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$\eta$ bin & ff & $\sigma_{ff}$  & \% \\
+\hline
+ 1 & 2.29 & 0.74 & 32.2 \% \\
+\hline
+ 2 & 1.82 & 0.41 & 22.6 \% \\
+\hline
+ 4 & 2.25 & 0.49 & 21.8 \% \\
+\hline
+ 5 & 2.47 & 0.65 & 26.4 \% \\
+\hline
+\end{tabular}
+\caption{Fake factors in $p_T$ inclusive region using Analysis Trigger (left) and Leptonic Trigger (right).}
+\label{tab: ff unc 2}
+\end{table}
+
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+$p_T$ bin & ff & $\sigma_{ff}$  & \% \\
+\hline
+ 3 & 0.71 & 0.06 & 8.7 \% \\
+\hline
+ 4 & 0.71 & 0.10 & 13.8 \% \\
+\hline
+ 5 & 1.50 & 0.33 & 22.3 \% \\
+\hline
+ 6 & 1.36 & 0.42 & 30.5 \% \\
+\hline
+ 7 & 1.82 & 0.52 & 28.5 \% \\
+\hline
+ 8 & 1.34 & 0.16 & 11.7 \% \\
+\hline
+\end{tabular}
+\hspace{0.5cm}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$p_T$ bin & ff & $\sigma_{ff}$  & \% \\
+\hline
+ 3 & 0.94 & 0.40 & 42.3 \% \\
+\hline
+ 4 & 0.67 & 0.32 & 47.6 \% \\
+\hline
+ 5 & 1.02 & 0.40 & 39.6 \% \\
+\hline
+ 6 & 1.46 & 0.54 & 37.0 \% \\
+\hline
+ 7 & 1.30 & 0.60 & 45.8 \% \\
+\hline
+ 8 & 1.27 & 0.40 & 31.4 \% \\
+\hline
+\end{tabular}
+\caption{Fake factors in the $\eta$ inclusive region using Analysis Trigger (left) and $p_T^{miss}$ Trigger (right).}
+\label{tab: ff unc}
+\end{table}
+
+
+
+In order to choose the optimal configuration we elect a figure of merit $M$ that assumes low values when fake factors relative uncertainties are smaller: 
+\begin{equation}
+    M = \frac{1}{N-1} \sum_i \Bigl(\frac{\sigma_{ff}}{ff}\Bigr)_i^2 
+    \end{equation}
+where $N$ is the number of $p_T$ bins in the case of an inclusive region in $\eta$ and viceversa, while $\sigma_{ff,i}$ is the uncertainty on the i-th fake factor. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Trigger & Inclusive region  & M \\
+\hline
+Analysis & $\eta$ &0.0440593\\
+\hline
+$p_T^{miss}$ & $\eta$  & 0.167976 \\
+\hline
+%\rowcolor{yellow!30}
+Analysis & $p_T$  & 0.0242612\\
+\hline
+Leptonic & $p_T$ & 0.0679255\\
+\hline
+\end{tabular}
+\caption{Figure of merit and its contributions for each of the possible configuration of trigger and inclusive region.}
+\label{tab: fom}
+\end{table}
+
+Table \ref{tab: fom} shows the figure of merit for each of the possible configurations. It is finally possible to conclude that Analysis Trigger in the $p_T$ inclusive region is the optimal configuration. Fake factors values in each $\eta$ bin, for the nominal and varied $R_\mu, R_\sigma$ values are reported in Figure \ref{fig:ff-stability}. 
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Trigger} & \textbf{Inclusive region}  & \textbf{Isolated Region} & \textbf{Non-Isolated Region }\\
+\hline
+Analysis & $p_T$ &isol$<0.022$ & isol$>0.1$\\
+\hline
+\multicolumn{4}{|c|}{\textbf{Fake Factors}} \\
+\hline 
+$\eta$ bin & ff & $\sigma_{ff}$  & \% \\
+\hline
+ 0-0.6 & 1.51 & 0.18 & 11.7 \% \\
+\hline
+ 0.6-1.15 & 2.03 & 0.35 & 17.1 \% \\
+\hline
+ 1.37-1.81 & 1.95 & 0.34 & 17.2 \% \\
+\hline
+ 1.81-2.37 & 1.70 & 0.27 & 15.7 \% \\
+\hline
+\end{tabular}
+\caption{Summary of the final configuration for fake factors computation.}
+\label{tab: summ}
+\end{table}
+\begin{figure}[H]
+  \centering
+  
+  \subfloat[$R_{\mu, nom}, R_{\sigma, up}$]{\includegraphics[width=0.44\textwidth]{images/ff_R=1p06_R=1p56_ptincl_g50_met70_mt80.pdf}}
+  \subfloat[$R_{\mu, nom}, R_{\sigma, down}$]{\includegraphics[width=0.44\textwidth]{images/ff_R=1p06_R=1p00_ptincl_g50_met70_mt80.pdf}}
+
+  \subfloat[$R_{\mu, nom}, R_{b, nom}$]{\includegraphics[width=0.44\textwidth]{images/ff_R=1p06_R=1p28_ptincl_g50_met70_mt80.pdf}}
+  
+  \subfloat[$R_{\mu, up}, R_{b, nom}$]{\includegraphics[width=0.44\textwidth]{images/ff_R=1p12_R=1p28_ptincl_g50_met70_mt80.pdf}}
+  \subfloat[$R_{\mu, down}, R_{b, nom}$]{\includegraphics[width=0.44\textwidth]{images/ff_R=1p00_R=1p28_ptincl_g50_met70_mt80.pdf}}
+  
+\caption{Fake factors stability check using Analysis Trigger in the $p_T$ inclusive region, with nominal and varied values of $R_\mu, R_\sigma$. The uncertainties reported in these tables are only statistic.}
+  \label{fig:ff-stability}
+\end{figure}
+
+In a previous attempt, $R_{\mu}, R_\sigma$ from L5 have been used; in the final configuration a mean on all the possible definitions of L5 and L4 has been used in order to get a more stable values of the fake factors. 
+In that case, the nominal value for fake factors was assumed to be the one obtained using as $R_{\mu,nom}, R_{\sigma,nom}$ the mean values of $R_\mu, R_\sigma$ in different $\eta$ bins, in the inclusive $p_T$ region, from L5. Varied values of fake factors are indeed the ones obtained using varied values of $R_\mu, R_\sigma$: $R_{\mu, up}, R_{\sigma,up}$, $R_{\mu, down}, R_{\sigma,down}$, where one of the two varied values is equal to $1$ and the other one equal to $2R_{\mu, nom}-1, 2R_{\sigma,nom}-1$. 
+Fake factors with their total uncertainty in this configuration are showed in Table \ref{tab: tableff_pre}. 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+\hline
+$\eta$ bin & ff & $\sigma_{ff}$  & \% \\
+\hline
+0-0.6 & 1.51 & 0.18 & 11.7 \% \\
+\hline
+0.6-1.37 & 2.03 & 0.35 & 17.1 \% \\
+\hline
+ 1.51-1.81 & 1.95 & 0.34 & 17.2 \% \\
+\hline
+ 1.81-2.37 & 1.70 & 0.27 & 15.7 \% \\
+\hline
+\end{tabular}
+    \caption{Fake factors (preliminary study) for jets faking photons, computed using Analysis Trigger in the $p_T$ inclusive region. }
+    \label{tab: tableff_pre}
+\end{table}
+
+The following plots show the signal contamination in the two Validation Regions for jets faking photons. 
+
+% === Dmet ===
+\begin{figure}[H]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/Dmet_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore__BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/Dmet_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_dphiMetPhterm1_metsigval2_BDTscore__BDT.png}
+  }
+  \caption{Distribution of variable $\Delta p_T^{miss}$ in the two Validation Regions for signal and backgrounds, estimated from MC simulations.}
+\end{figure}
+
+
+% === abspheta ===
+\begin{figure}[H]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/abspheta_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore__BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/abspheta_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_dphiMetPhterm1_metsigval2_BDTscore__BDT.png}
+  }
+  \caption{Distribution of variable $\eta^\gamma$ in the two Validation Regions for signal and backgrounds, estimated from MC simulations.}
+\end{figure}
+
+
+% === dphiMetJetterm ===
+\begin{figure}[H]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/dphiMetJetterm_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore__BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/dphiMetJetterm_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_dphiMetPhterm1_metsigval2_BDTscore__BDT.png}
+  }
+  \caption{Distribution of variable $\Delta \Phi (p_T^{miss}, [p_T^{miss}]_{jet})$ in the two Validation Regions for signal and backgrounds, estimated from MC simulations.}
+\end{figure}
+
+% === dphiMetPhPt ===
+\begin{figure}[H]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/dphiMetPhterm_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore__BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/dphiMetPhterm_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_dphiMetPhterm1_metsigval2_BDTscore__BDT.png}
+  }
+  \caption{Distribution of variable $\Delta \Phi (p_T^{miss}, [p_T^{miss}]_\gamma)$ in the two Validation Regions for signal and backgrounds, estimated from MC simulations.}
+\end{figure}
+
+
+% === met ===
+\begin{figure}[H]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/met_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore__BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/met_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_dphiMetPhterm1_metsigval2_BDTscore__BDT.png}
+  }
+  \caption{Distribution of variable $p_T^{miss}$ in the two Validation Regions for signal and backgrounds, estimated from MC simulations.}
+\end{figure}
+
+% === metsig ===
+\begin{figure}[H]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/metsig_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore__BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/metsig_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_dphiMetPhterm1_metsigval2_BDTscore__BDT.png}
+  }
+  \caption{Distribution of variable $S_{p_T^{miss}}$ in the two Validation Regions for signal and backgrounds, estimated from MC simulations.}
+\end{figure}
+
+% === mt ===
+\begin{figure}[H]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/mt_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore__BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/mt_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_dphiMetPhterm1_metsigval2_BDTscore__BDT.png}
+  }
+  \caption{Distribution of variable $m_T$ in the two Validation Regions for signal and backgrounds, estimated from MC simulations.}
+\end{figure}
+
+% === phPt ===
+\begin{figure}[H]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/phPt_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore__BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/phPt_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_dphiMetPhterm1_metsigval2_BDTscore__BDT.png}
+  }
+  \caption{Distribution of variable $p_T^\gamma$ in the two Validation Regions for jets faking photons, }
+\end{figure}
+

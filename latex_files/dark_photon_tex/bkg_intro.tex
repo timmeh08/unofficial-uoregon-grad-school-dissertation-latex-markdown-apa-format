@@ -1,0 +1,42 @@
+% -*- latex -*-
+
+%As already mentioned in \ref{sec:mc}, three categories of background affect the analysis: events with true photon, events with fake photon from misidentified electron or jet, and event with fake $\ETmiss$. The last two contributions actually overlap, i.e. in order to pass the SR selections, some of the background processes must contain both fake photon and fake $\ETmiss$. The only process which constitutes a background fully due to fake $\ETmiss$ is $\gamma jets$ with direct photons, which is subdominant in the analysis regions and is therefore estimated purely from MC simulation.
+
+As the vertex BDT underlies the full analysis, we look at the data/MC comparison of the vertex BDT in section~\ref{sec:vertex-VR}. This comparison is dependent on other backgrounds, which are outlined below. 
+
+As already mentioned in \ref{sec:mc}, three categories of background affect the analysis:
+\begin{itemize}
+\item [(a)] events with a genuine photon and genuine $p_T^{miss}$: coming from $Z(\to\nu\nu)\gamma$ and $W(\to\ell\nu)\gamma$ processes --- in the latter, the charged lepton is lost or not identified;
+\item [(b)] events with a jet or an electron misidentified as a photon --- called $j\rightsquigarrow\gamma$ and $e\rightsquigarrow\gamma$ respectively;
+\item [(c)] events without genuine $p_T^{miss}$
+\end{itemize}
+
+Most of the events belonging to category (c) are also characterized by $j\rightsquigarrow\gamma$, as they arise from multijet processes, or $\gamma$-jets final states where the photon emerge from a parton shower (``fragmentation photon''). The only process with fake $p_T^{miss}$ but genuine photon is the $\gamma$-jets final state with a photon arising from the matrix element (``direct photon''): such a process is subdominant in the analysis regions and is therefore estimated purely from MC simulation. The treatment of direct and fragmentation photons may be analysis-dependent: in several inclusive photon measurements from QCD, direct and fragmentation photons are both considered together as signal. Instead, in this analysis, fragmentation photons are treated as $j\rightsquigarrow\gamma$, for the following reasons: these photons are typically embedded into a hadronic jet, and therefore their isolation profile is more similar to that of a jet rather than that of an isolated photon; moreover, the signal sought in this analysis, $H\to\gamma\gamma_d$, is characterized by an isolated photon much more similar to a direct photon than to a fragmentation photon --- we do not expect fragmentation photons from Higgs boson decays.
+
+\begin{figure}[p]
+  \begin{center}
+    \includegraphics[height=0.8\textheight]{images/sketch-SR-CRs.pdf}
+    \caption{Sketch of the SR and all CR and probe regions used for background estimates.}
+    \label{fig:sketch-SR-CRs}
+  \end{center}
+\end{figure}
+
+The strategy for the estimation of the other backgrounds with true photons ($W\gamma$ and $Z\gamma$) is described in section \ref{sec:irreducible}, while the data-driven strategy for fake photons are detailed in section \ref{sec:fakephotonintro}.
+
+What follows is a quick guide to the rest of this section: see Figure~\ref{fig:sketch-SR-CRs} for reference.
+\begin{itemize}
+\item The background from $Z(\to\nu\nu)\gamma$ is modelled from MC simulation, corrected by a scaling factor $K_{Z\gamma}$ which is derived from a 2$\mu$-CR, enriched of $Z(\to\mu\mu)\gamma$ events; the scaling factor is computed as
+  $\displaystyle K_{Z\gamma}=\frac{N_{data}(Z(\to\mu\mu)\gamma)}{N_{MC}(Z(\to\mu\mu)\gamma)}$, after subtracting events with fake photons from the data 2$\mu$-CR.
+\item The background from $W(\to\ell\nu)\gamma$ is modelled from MC simulation, corrected by scaling factors $K_{W\gamma}$ derived from a 1$\mu$-CR, enriched of $W(\to\mu\nu)\gamma$ events; the scaling factors are computed as
+  $\displaystyle K_{W\gamma}=\frac{N_{data}(W(\to\mu\nu)\gamma)}{N_{MC}(W(\to\mu\nu)\gamma)}$, after subtracting events with fake photons from the data 1$\mu$-CR.
+\item The background from $j\rightsquigarrow\gamma$, both in SR and in 1$\mu$-CR and 2$\mu$-CR, is computed starting from events in non-isolated-$\gamma$-probe regions, defined with a non-isolated photon instead of the photon; each event is weighted by a fake rate
+  $\displaystyle f_{j\gamma}=\frac{N_{isol}(j\rightsquigarrow\gamma)}{N_{nonisol}(j\rightsquigarrow\gamma)}$, defined as the ratio of $j\rightsquigarrow\gamma$ that pass or fail an isolation criterion. 
+  To compute the $f_{j\gamma}$, one needs to know the isolation profile of $j\rightsquigarrow\gamma$ passing the Tight identification. The MC simulation is not reliable for that, therefore the isolation profile of $j\rightsquigarrow\gamma$ passing the Tight identification is inferred from a data sample of reconstructed photon objects passing Loose identification and failing the Tight identification (which are mostly $j\rightsquigarrow\gamma$), applying a transform extracted from two MC samples of $j\rightsquigarrow\gamma$, satisfying the Loose-not-Tight and the Tight identification respectively.
+  This study is detailed in Section~\ref{sec:jetfake}.
+\item The background from $e\rightsquigarrow\gamma$, both in SR and in 1$\mu$-CR and 2$\mu$-CR, is computed starting from events in $e$-probe regions, defined by requiring an electron instead of the photon; each event is weighted by a fake rate
+  $\displaystyle f_{e\gamma}=\frac{N(e\rightsquigarrow\gamma)}{N(e\rightsquigarrow e)}$, defined as the ratio of electrons that are (wrongly) reconstructed as photons, and those that are (correctly) reconstructed as electrons.
+  The $f_{e\gamma}$ is computed as ratios between event counts reconstructed as $\gamma e$ and as $ee$ with invariant mass around the $Z$-peak. Most of the $\gamma e$ events come from $Z\to ee$ with one $e\rightsquigarrow\gamma$, however a sizable contribution with genuine photon comes from $W(\to e\nu)\gamma$: such a contribution is estimated and subtracted using events $\gamma\mu$ (mostly due to $W(\to\mu\nu)\gamma$). This approach is described in Section~\ref{sec:elefake}.
+\end{itemize}
+
+\clearpage
+

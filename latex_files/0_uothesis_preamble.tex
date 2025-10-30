@@ -82,6 +82,9 @@
 % Added by Jacob L. following https://tex.stackexchange.com/questions/148314/undefined-control-sequence-in-printbibliography-biblatex to allow UTF-8 (non-ASCII) characters in the bibliography .bib file.
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
+% \usepackage[switch,modulo]{lineno} % line numbers on outer margin in twoside docs
+\AtBeginDocument{\linenumbers}      % enable numbers automatically
+% \modulolinenumbers[5]             % uncomment for every 5th line number
 
 %------------------------------------------------------------------------------%
 % BIBLIOGRAPHY
@@ -116,4 +119,10 @@
 \appto{\normalsize}{\zerodisplayskips}
 \appto{\small}{\zerodisplayskips}
 \appto{\footnotesize}{\zerodisplayskips}
+\newcommand{\gammad}{\ensuremath{\gamma_\mathrm{D}}\xspace}
+\providecommand{\ETmiss}{\ensuremath{E_{\mathrm{T}}^{\mathrm{miss}}}\xspace}
+\providecommand{\pT}{\ensuremath{p_{\mathrm{T}}}\xspace}
+\providecommand{\HT}{\ensuremath{H_{\mathrm{T}}}\xspace}
+\providecommand{\gammad}{\ensuremath{\gamma_{\mathrm{D}}}\xspace}
+
 

@@ -1,0 +1,504 @@
+To compute the \efakey\ fake rate \fey, the $Z\to e^+e^-$ decays are exploited: events with reconstructed final state $\gamma e$ with an invariant mass $m_{\gamma e}\simeq m_Z$ are obviously affected by \efakey.
+Therefore,
+$$
+\fey=\frac{N(\efakey)}{N(e\rightsquigarrow e)}
+$$
+where $N(\efakey)$ is counted from all reconstructed $\gamma e$ and $N(e\rightsquigarrow e)$ is counted from reconstructed $e^+e^-$, both for 2-body invariant masses about the $Z$-peak. For reconstructed $e^+e^-$, in principle either of the two electrons may fake a photon: for this reason, both $e^\pm$ are counted into $N(e\rightsquigarrow e)$. The \fey\ computation can be carried out also in bins of $|\eta|$ and $p_T$: in this case, the photon in the $\gamma e$ final state, and both electrons in the $e^+e^-$ final state are counted into the $(|\eta|,p_T)$ bin they belong to.
+
+While the $e^+e^-$ final state is essentially pure, the $\gamma e$ final state contains a sizable contribution from $W(\to e\nu)\gamma$ events, which contain a genuine photon, and therefore must be subtracted. The $m_{\gamma e}$ spectrum for $W(\to e\nu)\gamma$ events has a non-trivial shape, quite difficult to model, as it is shaped by the kinematic cuts in a complicated way. To estimate such a contribution, we exploit the $W(\to\mu\nu)\gamma$ process, which is in principle kinematically identical to the $W(\to e\nu)\gamma$ one. In practice, the two processes exhibit differences in yields, due to the different acceptances of electrons and muons. For this reason, the $m_{\gamma\mu}$ spectrum is normalized to the $m_{\gamma e}$ one in the invariant mass tails, before the subtraction.
+
+\subsubsection{Event selection}
+The dataset is preselected with kinematic requirements on the transverse momentum of the leading and subleading objects, respectively $p_T^{l} > 45 $ GeV and $p_T^{sl} > 10 $ GeV.
+However, for $ee$ events both the leading and subleading electrons are used to compute $N(e\rightsquigarrow e)$ and without aligning the selection criteria, the kinematic requirement would be applied correctly only half the time depending on the electron ordering.
+Events are also required to pass a preselection based on a logical $OR$ of missing transverse momentum criteria:
+$$p_T^{\text{miss}}> 50 \text{GeV} \parallel p_T^{miss, no-\mu}> 50 \text{GeV}  \parallel  p_T^{miss, no-e}> 50 \text{GeV} $$
+An additional offline selection on $p_T^{\text{miss}}$ is applied, as $Z \rightarrow ee$ events are typically back-to-back, making the impact of removing two electrons approximately zero. \\
+To have perfectly consistent definition of the SR and the probe-e CR, the computation of fake rates should be carried out on events passing the analysis trigger (see~\ref{sec:fakephotonintro}). 
+This approach turned out to be not convenient for this study, the reasons being the large drop in the statistics and a misalignment of the $\gamma \mu$ channel caused by the $p_T^{miss, no-\mu}$ selection. This method is investigated in detail in Appendix~\ref{sec:efy-appendix}. \\
+The adopted strategy involves applying a single-electron trigger to the $\gamma e$ channel, with the trigger acting on the tag electron. 
+In the $ee$ sample, a di-electron trigger is used, allowing either electron to be treated as a tag or a probe. 
+For the $\gamma\mu$ channel, a single-muon trigger is applied, consistently acting on the tag particle. \\
+Taking all these elements into account, the event selection is defined as follows:
+\begin{itemize}
+    \item \textit{Tight} and \textit{Isolated} $\gamma$ with $p_T^{\gamma} > 45 $ GeV
+    \item \textit{Selected} $e, \mu$ with $p_T^{\ell} > 45 $ GeV
+    \item $p_T^{\text{miss}} > 50$ GeV
+    \item lepton triggers 
+\end{itemize}
+The fake rates are computed as functions of the electron’s kinematic variables $\eta$ and $p_T$, as reconstruction efficiencies vary across different regions of the detector and depend on the energy of the particle.
+The range is divided into 5 bins, according to the detector geometry and optimized to ensure similar statistics across the $p_T$ bins:
+\begin{itemize} 
+    \item 5 bins in $|\eta|$: $0 - 0.6$, $0.6 - 1.37$, $1.37 - 1.52$, $1.52 - 1.81$, $1.81 - 2.37$ 
+    \item 5 bins in $p_T$ (GeV): $25 - 35$, $35 - 45$, $45 - 60$, $60 - 95$, $95 - 1000$
+\end{itemize}
+
+\subsubsection{Background subtraction}
+Processes with genuine electrons and photons, such as $W(e\nu)\gamma$, constitute the main background for this study and must be estimated to compute fake rates.  
+The background is approximated using the similar $W(\mu\nu)\gamma$ process, which does not produce a resonant peak around the $Z$ mass. 
+The $\gamma\mu$ background is normalized to the $\gamma e$ one using the sidebands of the invariant mass distribution and it is then used to subtract the non resonant processes beneath the $Z$ peak. 
+The fake rate is finally computed using the number of events in the peak and around the sides of the invariant mass distribution (note that this subtraction method is applied only to $\gamma e$, while for the $ee$ channel a very small background is expected):
+\[
+f_{e\rightsquigarrow\gamma} = \frac{N_{\gamma e}^{\text{peak}} - N_{\gamma \mu}^{\text{peak}} \cdot \frac{N_{\gamma e}^{\text{side}}}{N_{\gamma \mu}^{\text{side}}}}{N_{ee}^{\text{peak}}}
+\]
+The normalization in the sidebands can be performed using the lower sideband, the upper sideband, or both, and the choice of the method introduces a systematic uncertainty, which must be taken into account.
+Additional sources of systematic uncertainty arise from the definition of the integration intervals that define the peak and sideband regions.
+
+MC simulations are used to validate the use of the $\gamma\mu$ channel as a proxy for the background in the $\gamma e$ channel. \\ 
+A first step consists in looking at background composition of the invariant mass distributions in the three channels, in order to verify the assumptions made.  
+The contribution of different processes in the $\gamma e$ and $\gamma\mu$ channel is illustrated in Figure~\ref{fig:MCye} and  Figure~\ref{fig:MCyu} respectively.
+As expected, both sidebands of the $\gamma e$ distribution are dominated by $W\gamma$ background, which are also the main contribution in the $\gamma\mu$ channel.  
+Additionally, the $ee$ channel (Figure~\ref{fig:MCee}) shows a negligible background contamination, confirming that the subtraction method can be applied to the numerator only. 
+
+\begin{figure} [H]%[!htbp] t!
+    \centering
+    \includegraphics[width=0.7\textwidth]{plot_efy/closure/canvas_fey_trigger_MC_ye_minv_mTcut000_etabin00_ptbin00.pdf}
+    \caption{Invariant mass distribution in the $\gamma e$ channel.}
+    \label{fig:MCye}
+\end{figure}
+\begin{figure} [H]%[!htbp] t!
+    \centering
+    \includegraphics[width=0.7\textwidth]{plot_efy/closure/canvas_fey_trigger_MC_ymu_minv_mTcut000_etabin00_ptbin00.pdf}
+    \caption{Invariant mass distribution in the $\gamma \mu$ channel}
+    \label{fig:MCyu}
+\end{figure}
+\begin{figure} [H]%[!htbp] t!
+    \centering
+    \includegraphics[width=0.7\textwidth]{plot_efy/closure/canvas_fey_trigger_MC_ee_minv_mTcut000_etabin00_ptbin00.pdf}
+    \caption{Invariant mass distribution in the $ee$ channel}
+    \label{fig:MCee}
+\end{figure}
+
+Since the number of signal events from $Z$\textit{jets} is known in MC simulations, it is possible to validate the background subtraction strategy by comparing the true number of events under the $Z$ peak $N^{\text{true}}$ with the number of events estimated using the subtraction method:
+\[
+N^{\text{calc}} = N_{\gamma e}^{\text{peak}} - N_{\gamma \mu}^{\text{peak}} \cdot \frac{N_{\gamma e}^{\text{side}}}{N_{\gamma \mu}^{\text{side}}},
+\qquad scf = \frac{N_{\gamma e}^{\text{side}}}{N_{\gamma \mu}^{\text{side}}}
+\]
+where $scf$ is the normalization factor in the sidebands.
+The integration intervals are defined as follows:
+\begin{itemize}
+    \item Peak region: [80, 100] GeV
+    \item Sidebands: [0, 70] $\cup$ [110, 200] GeV
+\end{itemize}
+For each $[\eta, p_T]$ bin, the difference between the calculated and true number of events is computed, along with its relative value (i.e. the bias):
+\[
+\Delta[\eta, p_T] = N^{\text{true}}[\eta, p_T] - N^{\text{calc}}[\eta, p_T], \qquad 
+\Delta_{\text{rel}}[\eta, p_T] = \frac{\Delta[\eta, p_T]}{N^{\text{true}}[\eta, p_T]}
+\]
+To assess the overall accuracy of the method, statistical estimators are used:
+\[
+\chi^2 = \sum_{\eta, p_T} \frac{\Delta[\eta, p_T]^2}{\sigma_\Delta[\eta, p_T]^2}, \qquad 
+\sum_{\eta, p_T} \Delta_{\text{rel}}[\eta, p_T]^2
+\]
+The results are summarized in Table~\ref{tab:closure} in each $[\eta, p_T]$ bin, where both tails are used to normalize the $\gamma \mu$ background.
+Table~\ref{tab:closure-chi2} presents the statistical estimators for different normalization methods. 
+Normalizing using only the lower tail results in the largest bias and is therefore excluded. 
+To improve statistics, normalization using both tails is preferred over using only the upper one.
+
+\begin{table}
+    \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|} \hline
+    etabin & ptbin & N true & N calc & delta/err & bias & scf \\ \hline
+  etabin00 & ptbin00 &2064.5 $\pm$ 26.0 & 2087.6 $\pm$ 46.0  & 0.437  & 0.011  & 1.01 $\pm$ 0.03   \\    
+  etabin00 & ptbin03 &1146.3 $\pm$ 24.6 & 1172.5 $\pm$ 40.0  & 0.557  & 0.023  & 0.99 $\pm$ 0.07     \\  
+  etabin00 & ptbin04 &560.8 $\pm$ 7.5   & 542.9 $\pm$ 24.6   & -0.694 & -0.032 & 1.04 $\pm$ 0.03       \\
+  etabin00 & ptbin05 &357.4 $\pm$ 3.4   & 374.2 $\pm$ 10.7   & 1.498  & 0.047  & 0.99 $\pm$ 0.04       \\
+  etabin01 & ptbin00 &399.1 $\pm$ 11.3  & 418.8 $\pm$ 22.4   & 0.782  & 0.049  & 0.97 $\pm$ 0.04       \\
+  etabin01 & ptbin03 &222.3 $\pm$ 10.6  & 240.3 $\pm$ 18.7   & 0.840  & 0.081  & 0.95 $\pm$ 0.08       \\
+  etabin01 & ptbin04 &111.8 $\pm$ 3.6   & 116.3 $\pm$ 12.0   & 0.359  & 0.040  & 0.96 $\pm$ 0.06       \\
+  etabin01 & ptbin05 &65.0 $\pm$ 1.4    & 62.8 $\pm$ 4.0     & -0.522 & -0.034 & 1.04 $\pm$ 0.04       \\
+  etabin02 & ptbin00 &598.8 $\pm$ 13.7  & 594.6 $\pm$ 29.8   & -0.128 & -0.007 & 1.02 $\pm$ 0.04       \\
+  etabin02 & ptbin03 &331.0 $\pm$ 13.0  & 329.0 $\pm$ 23.8   & -0.074 & -0.006 & 1.05 $\pm$ 0.08       \\
+  etabin02 & ptbin04 &164.7 $\pm$ 3.9   & 137.6 $\pm$ 18.2   & -1.456 & -0.164 & 1.07 $\pm$ 0.06       \\
+  etabin02 & ptbin05 &103.0 $\pm$ 1.9   & 122.0 $\pm$ 8.1    & 2.265  & 0.184  & 0.90 $\pm$ 0.05       \\
+  etabin04 & ptbin00 &348.7 $\pm$ 10.7  & 347.6 $\pm$ 13.8   & -0.066 & -0.003 & 1.14 $\pm$ 0.08       \\
+  etabin04 & ptbin03 &188.5 $\pm$ 10.1  & 193.3 $\pm$ 11.8   & 0.315  & 0.026  & 1.05 $\pm$ 0.09       \\
+  etabin04 & ptbin04 &88.1 $\pm$ 3.2    & 88.8 $\pm$ 5.4     & 0.101  & 0.007  & 1.10 $\pm$ 0.10       \\
+  etabin04 & ptbin05 &72.2 $\pm$ 1.6    & 66.9 $\pm$ 4.0     & -1.238 & -0.073 & 1.33 $\pm$ 0.26       \\
+  etabin05 & ptbin00 &709.0 $\pm$ 15.6  & 717.2 $\pm$ 22.3   & 0.301  & 0.012  & 0.97 $\pm$ 0.11       \\
+  etabin05 & ptbin03 &400.9 $\pm$ 14.9  & 403.3 $\pm$ 21.9   & 0.091  & 0.006  & 0.89 $\pm$ 0.26       \\
+  etabin05 & ptbin04 &193.3 $\pm$ 4.2   & 197.1 $\pm$ 10.1   & 0.344  & 0.019  & 1.08 $\pm$ 0.09       \\
+  etabin05 & ptbin05 &114.7 $\pm$ 1.9   & 118.1 $\pm$ 2.7    & 1.022  & 0.030  & 0.90 $\pm$ 0.07\\ \hline
+        \end{tabular}
+        \caption{Number of true events under the $Z$ peak compared to the number estimated using the subtraction method, for different $(\eta, p_T)$ bins. Also shown are the differences over the error, the bias and the normalization factor (scf) with its uncertainty.}
+        \label{tab:closure}
+    \end{table}
+
+\begin{table}
+        \centering
+            \begin{tabular}{|c|c|c|c|c|} \hline
+        tail & chi2/Ndf & <bias2> & Ndf &  <bias>  \\ \hline
+        both & 0.931 & 0.080 & 12  & 0.0096 \\
+        low  & 0.959 & 0.076 & 12 & 0.0441 \\
+        up   & 1.053 & 0.088 & 12 & -0.0070 \\ \hline
+        \end{tabular}
+        \caption{Statistical estimators for different choices of normalization method.}
+        \label{tab:closure-chi2}
+\end{table}
+
+\subsubsection{Fake rates}
+The parameters used to compute the fake rates in each $[\eta, p_T]$ bin are defined as follows:
+\begin{itemize}
+    \item Normalization method: both tails
+    \item Peak region: [80, 100] GeV
+    \item Sidebands: [0, 70] $\cup$ [110, 200] GeV
+\end{itemize}
+
+\begin{figure} [H]%[!htbp] t!
+  \centering
+  \includegraphics[width=0.7\textwidth]{plot_efy/fake_rate/canvas_fey_slides_trigger_minv_mTcut000_side_both_syst_nominal_etabin00_ptbin00.pdf}
+  \caption{Invariant mass distribution of $\gamma e$ events and normalized $\gamma \mu$ background in inclusive $\eta$ and $p_T$ bins.
+  The integration interval for the peak and the sidebands are represented by the green and red vertical line respectively.}
+  \label{fig:efy-inclusive}
+\end{figure}
+
+Each choice of the parameters used to compute the fake rates corresponds to a potential source of systematic errors and to evaluate these uncertainties, fake rates are recomputed by varying each parameter from its nominal value.
+
+\underline{Normalization method} \\
+The nominal normalization method uses both tails of the invariant mass distributions.
+The variation is computed as the difference between the lower-tail and upper-tail fake rates:
+\[
+\Delta f_{\text{norm}} = f_{\text{low}} - f_{\text{up}}
+\]
+The associated systematic error is computed as:
+\[
+\sigma_{\text{norm}} = \frac{1}{2} \sqrt{(\Delta f_{\text{norm}})^2 - (\sigma_{\text{norm}}^{\text{stat}})^2} 
+\]
+where $\sigma_{\text{norm}}^{\text{stat}}$ is the statistical uncertainty on $\Delta f_{\text{norm}}$.
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/fake_rate/canvas_fey_slides_trigger_minv_mTcut000_side_low_syst_nominal_etabin00_ptbin00.pdf}%
+  }
+  \hfill
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/fake_rate/canvas_fey_slides_trigger_minv_mTcut000_side_upp_syst_nominal_etabin00_ptbin00.pdf}%
+  }
+  \caption{Invariant mass distribution of $\gamma e$ events and $\gamma \mu$ background, normalized using only the lower tail (left) or the upper tail (right).}
+\end{figure}
+
+\underline{Integration interval}\\
+The variation of the integration parameters is performed by modifying the width of the peak region and the range of the sidebands:
+\begin{itemize} 
+\item Varied peak region: [75, 105] GeV 
+\item Varied sidebands: [0, 60] $\cup$ [120, 200] GeV
+\end{itemize}
+For each parameter, the distance from the nominal fake rate $\Delta f$ is defined:
+\[
+\Delta f = f_{\text{var}} - f_{\text{nom}},
+\]
+where $f_{\text{var}}$ and $f_{\text{nom}}$ are the fake rates obtained with the varied and nominal parameters, respectively. \\
+Unlike the previous case, $\Delta f$ is computed using correlated quantities, as one of the two fake rates is derived from a subset of the data used for the other. \\
+The idea is to treat the fake rate derived from the larger dataset as having no statistical uncertainty and consider only the uncertainty derived from the subset (i.e. the $\max[\sigma_{nom}^{\text{stat}}, \sigma_{var}^{\text{stat}}]$ should be considered, where  $\sigma_{\text{nom}}^{\text{stat}}$ and $\sigma_{\text{var}}^{\text{stat}}$ are the statistical uncertainties of $f_{\text{nom}}$ and $f_{\text{var}}$).
+However, to provide a more conservative estimate of the systematic error, the minimum of the two statistical uncertainties is subtracted instead:
+\[
+\sigma_{\text{syst}} = 
+\begin{cases}
+\sqrt{(\Delta f)^2 - \left( \min\left[\sigma_{\text{nom}}^{\text{stat}}, \sigma_{\text{var}}^{\text{stat}} \right] \right)^2} & \text{if } (\Delta f)^2 - \left( \min\left[\sigma_{\text{nom}}^{\text{stat}}, \sigma_{\text{var}}^{\text{stat}} \right] \right)^2 > 0 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/fake_rate/canvas_fey_slides_trigger_minv_mTcut000_side_both_syst_peak_width_etabin00_ptbin00.pdf}%
+  }
+  \hfill
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/fake_rate/canvas_fey_slides_trigger_minv_mTcut000_side_both_syst_tail_length_etabin00_ptbin00.pdf}%
+  }
+  \caption{Invariant mass distribution of $\gamma e$ events and $\gamma \mu$ background, using the varied definition of peak region (left) and sidebands (right).}
+\end{figure}
+
+The total uncertainty is then obtained by summing all contributions in quadrature:
+\[
+\sigma_{\text{tot}} = \sqrt{(\sigma_{\text{norm}})^2 + (\sigma_{\text{peak}})^2 + (\sigma_{\text{side}})^2 + (\sigma_{\text{stat}})^2}
+\]
+where \(\sigma_{\text{norm}}\), \(\sigma_{\text{peak}}\), and \(\sigma_{\text{side}}\) are the systematic uncertainties associated with the normalization, peak region, and sidebands, respectively, and \(\sigma_{\text{stat}}\) is the statistical uncertainty.
+
+The fake rate as a function of $\eta$ and $p_T$ is shown in Figure~\ref{fig:ff-efy} and the corresponding values are summarized in Table~\ref{tab:efy-binned}. 
+The different contributions of statistical and systematic uncertainties are reported, showing that the total uncertainty is dominated by the statistical component, followed by the systematic uncertainty associated with the choice of the normalization tail. 
+At fixed $\eta$, the fake rates across different $p_T$ bins are consistent, with the exception of the highest $\eta$ bin ($1.81 \leq \eta \leq 2.37$), which does not contribute to the signal region. 
+As a result, $p_T$-inclusive fake rates are computed and presented in Table~\ref{tab:efy-results}, yielding a lower overall uncertainty.
+
+\begin{table}
+\centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+etabin & ptbin & fey & stat & peak & tail & side & rel err  \\ \hline
+etabin01 & ptbin03 & 0.02856 $\pm$ 0.00235 & 0.00235  & 0.00000 & 0.00000 & 0.00006 & 0.082 \\
+etabin01 & ptbin04 & 0.02733 $\pm$ 0.00394 & 0.00364  & 0.00066 & 0.00000 & 0.00138 & 0.144 \\
+etabin01 & ptbin05 & 0.02841 $\pm$ 0.00429 & 0.00422  & 0.00000 & 0.00000 & 0.00076 & 0.151\\ \hline
+etabin02 & ptbin03 & 0.02930 $\pm$ 0.00277 & 0.00234  & 0.00000 & 0.00000 & 0.00149 & 0.095 \\
+etabin02 & ptbin04 & 0.03042 $\pm$ 0.00372 & 0.00345  & 0.00000 & 0.00000 & 0.00139 & 0.122\\
+etabin02 & ptbin05 & 0.02920 $\pm$ 0.00388 & 0.00372  & 0.00000 & 0.00000 & 0.00111 & 0.133 \\ \hline
+etabin04 & ptbin03 & 0.05487 $\pm$ 0.00569 & 0.00495  & 0.00000 & 0.00000 & 0.00280 & 0.104 \\
+etabin04 & ptbin04 & 0.05202 $\pm$ 0.00896 & 0.00832  & 0.00000 & 0.00000 & 0.00332 & 0.172 \\
+etabin04 & ptbin05 & 0.06762 $\pm$ 0.00846 & 0.00845  & 0.00000 & 0.00000 & 0.00027 & 0.125 \\ \hline
+etabin05 & ptbin03 & 0.08759 $\pm$ 0.00594 & 0.00558  & 0.00000 & 0.00000 & 0.00202 & 0.068 \\
+etabin05 & ptbin04 & 0.09742 $\pm$ 0.00908 & 0.00904  & 0.00000 & 0.00000 & 0.00083 & 0.093 \\
+etabin05 & ptbin05 & 0.12391 $\pm$ 0.01302 & 0.01296  & 0.00000 & 0.00000 & 0.00125 & 0.105 \\ \hline
+    \end{tabular}
+    \caption{Fake rates for exclusive bins of $[\eta, p_T]$ and the total error. The different contributions of statistical and systematic errors are shown.}
+        \label{tab:efy-binned}
+\end{table}
+
+\begin{figure} [H]%[!htbp] t!
+    \centering
+    \includegraphics[width=0.8\textwidth]{plot_efy/fake_rate/canvas_fey_trigger_vs_pt.pdf}
+    \caption{Fake rate as a function of $p_T$ in different $\eta$ bins.}
+    \label{fig:ff-efy}
+\end{figure}
+
+\begin{table}
+\centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+etabin & ptbin & fey & stat & peak & tail & side & rel err  \\ \hline
+etabin01 & ptbin00 & 0.02808 $\pm$ 0.00180 & 0.00179  & 0.00000 & 0.00000 & 0.00017 & 0.064\\
+etabin02 & ptbin00 & 0.02975 $\pm$ 0.00190 & 0.00171  & 0.00000 & 0.00000 & 0.00083 & 0.064\\
+etabin04 & ptbin00 & 0.05631 $\pm$ 0.00446 & 0.00381  & 0.00000 & 0.00000 & 0.00233 & 0.079 \\
+etabin05 & ptbin00 & 0.09524 $\pm$ 0.00464 & 0.00442  & 0.00021 & 0.00000 & 0.00139 & 0.049 \\ \hline
+    \end{tabular}
+    \caption{Fake rates and the total error for different $\eta$ bins and inclusive binning in $p_T$. The different contributions of statistical and systematic errors are shown.}
+        \label{tab:efy-results}
+\end{table}
+
+
+\subsubsection{Trigger scale factor on $e$-to-$\gamma$ fake rate}
+To obtain the number of events with electrons faking photons in the SR, the fake rates are used to rescale the data in the probe-e CR. \\
+The SR and the probe-e CR are both defined by applying the analysis trigger in order to have a similare topology of the phase space (see~\ref{sec:fakephotonintro}) and the events in the probe-e CR are required to pass a single electron trigger in order to be consistent with the fake rate evaluation.
+So far, the effect of the analysis trigger was neglected in the computation of fake rates, but its efficiency on the objects $\gamma$ and $e$ must be taken into account to provide a consistent evaluation. \\
+The idea is to derive the efficiencies $\epsilon_{\gamma}(p_T)$ and $\epsilon_{e}(p_T)$ from appropriate channels, and use them as a trigger scale factor to correct the fake rates:
+$$f_{e\gamma}^{\text{corr}}(p_T)=f_{e\gamma}\frac{\epsilon_{\gamma}(p_T)}{\epsilon_{e}(p_T)}$$
+The analysis trigger efficiency on $\gamma$-objects can be evaluated using a $\gamma$-channel or a $\gamma \mu$-channel, selected with a single-$\mu$ baseline trigger and applying the offline cuts on $p_T^{miss, no \mu}$ and $ m_T(\gamma,p_T^{miss, no \mu})$, to treat the muon as invisible.
+Its effect on $e$-objects is computed in a $e$-channel, selected with a single-$e$ baseline trigger and offline cuts on $p_T^{\text{miss}}$ and $ m_T(e,p_T^{\text{miss}})$. \\
+Higher offline selections are applied on $p_T^{\text{miss}}$ and $m_T$, in order to cover the trigger impact and isolate it effect on the $\gamma$ or $e$.
+Several configurations of increasing thresholds are tested, trying to maximize trigger efficiency $\epsilon(p_T)$:
+\begin{itemize}
+     \item $p_T^{\text{miss}} > $ 70, 100, 150, 200, 300, 400 GeV
+      \item $m_T > $ 80, 100, 150, 200 GeV
+\end{itemize}
+The best offline cuts for the different channels are summarized in Table~\ref{tab:eff-cuts} and their effect on the trigger efficiency is shown in Figure~\ref{fig:eff-best}.
+\begin{table}[htbp]
+  \centering
+\begin{tabular}{|c|c|c|}
+  \hline
+  Channel & $p_T^{\text{miss}}$ cut & $m_T$ cut \\
+  \hline
+  $\gamma\mu$ & 150 GeV & 100 GeV \\
+  $\gamma$   & 300 GeV & 100 GeV \\
+  $e$        & 200 GeV & 100 GeV \\
+  \hline
+  \end{tabular}
+  \caption{Best offline selections for each channel.}
+  \label{tab:eff-cuts}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[$\gamma\mu$ channel]{
+    \includegraphics[width=0.32\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss150_mT100_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[$\gamma$ channel]{
+    \includegraphics[width=0.32\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss300_mT100_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[$e$ channel]{
+    \includegraphics[width=0.32\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss200_mT100_etabin00.pdf}
+  }
+  \caption{Trigger efficiency as a function of transverse momentum in the $\gamma\mu$, $\gamma$, and $e$ channels when the corresponding best cuts are applied.}
+  \label{fig:eff-best}
+\end{figure}
+
+Systematic errors are evaluated with the same strategy adopted for the computation of systematic effects on fake rates. \\
+Each parameter is varied from its nominal value and used to recompute $\epsilon_{\gamma}(p_T)$ and $\epsilon_{e}(p_T)$. \\
+The trigger efficiency on electrons is affected only by the selections on $p_T^{\text{miss}}$ and $m_T$ and the variations in the selections are applied by tightening the selection thresholds.
+For photons, three sources of systematic uncertainty are considered: the selections on $p_T^{\text{miss}}$ and $m_T$, as well as the choice of the channel $\gamma \mu$ used to compute $\epsilon_{\gamma}(p_T)$. 
+The $\gamma$ channel is used as the variation for the latter.
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  \textbf{Efficiency} & \textbf{Parameters} & \textbf{Nominal} & \textbf{Variation} \\
+  \hline
+  $\epsilon_{\gamma}(p_T)$ & Channel & $\gamma\mu$ & $\gamma$ \\
+                           & $p_T^{miss, \text{no } \mu}$ & 150 GeV &  200 GeV \\
+                           & $m_T(\gamma, p_T^{miss, \text{no } \mu})$ & 100 GeV &  150 GeV \\
+  \hline
+  $\epsilon_{e}(p_T)$      & $p_T^{\text{miss}}$ &  200 GeV &  250 GeV \\
+                           & $m_T(e, p_T^{\text{miss}})$ &  100 GeV &  150 GeV \\
+  \hline
+  \end{tabular}
+  \caption{Nominal and variated parameters used to compute systematic errors on $\epsilon_{\gamma}(p_T)$ and $\epsilon_{e}(p_T)$.}
+  \label{tab:eff-syst}
+  \end{table}
+
+The total error on the trigger scale factor is then computed as:
+$$ \sigma_{tot} = \sqrt{(\sigma_{channel})^2 + (\sigma_{pTmiss,e})^2 + (\sigma_{pTmiss,\gamma})^2 + (\sigma_{mT,e})^2 + (\sigma_{mT,\gamma})^2 + (\sigma_{stat})^2}$$
+The computed scale factorr and total errors as a function of $p_T$ are reported in Table~\ref{tab:scf-results}.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+      \hline
+      $p_T$ [GeV] & scf $\pm$ tot err & stat & channel & $p_T^{\text{miss}}(\gamma)$ & $m_T(\gamma)$ &  $p_T^{\text{miss}}(e)$ & $m_T(e)$ & rel err \\
+      \hline
+      $[50, 52]$   & $1.078 \pm 0.301$ & 0.108 & 0.281 & 0.000 & 0.000 & 0.000 & 0.000 & 0.279 \\
+      $[52, 54]$   & $1.220 \pm 0.191$ & 0.074 & 0.000 & 0.063 & 0.000 & 0.164 & 0.000 & 0.156 \\
+      $[54, 56]$   & $1.142 \pm 0.163$ & 0.049 & 0.122 & 0.000 & 0.000 & 0.100 & 0.000 & 0.142 \\
+      $[56, 58]$   & $1.110 \pm 0.064$ & 0.036 & 0.000 & 0.000 & 0.000 & 0.055 & 0.000 & 0.057 \\
+      $[58, 60]$   & $1.125 \pm 0.061$ & 0.044 & 0.000 & 0.000 & 0.000 & 0.000 & 0.045 & 0.054 \\
+      $[60, 62]$   & $1.162 \pm 0.077$ & 0.040 & 0.000 & 0.000 & 0.000 & 0.000 & 0.063 & 0.066 \\
+      $[62, 65]$   & $1.118 \pm 0.104$ & 0.043 & 0.000 & 0.000 & 0.000 & 0.084 & 0.045 & 0.093 \\
+      $[65, 70]$   & $1.104 \pm 0.082$ & 0.025 & 0.032 & 0.000 & 0.000 & 0.045 & 0.055 & 0.075 \\
+      $[70, 80]$   & $1.052 \pm 0.023$ & 0.016 & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 & 0.022 \\
+      $[80, 100]$  & $1.086 \pm 0.063$ & 0.013 & 0.000 & 0.000 & 0.000 & 0.032 & 0.055 & 0.058 \\
+      $[100, 200]$ & $1.023 \pm 0.042$ & 0.007 & 0.000 & 0.000 & 0.000 & 0.000 & 0.045 & 0.041 \\
+      \hline
+  \end{tabular}
+  \caption{Scale factor and total error as a function of $p_T$. The different contributions of statistical and systematic errors are shown.}
+  \label{tab:scf-results}
+\end{table}
+
+
+\subsubsection{Validation}
+The expected electrons-faking-photons background is compared to data in a Validation Region (VR), where signal contamination is expected to be negligible.
+The validation of the method is therefore performed in a low transverse mass region, below the Higgs production threshold, while keeping most of the other SR selections unchanged. 
+Additionally, the requirement $|\eta^\gamma| < 1.75$ is not applied, in order to enhance the background contribution. \\
+The signal contamination is estimated assuming a ggF signal with branching ratio $BR = 1\%$ and using MC estimates from $Z$jets and $W$jets to approximate the electrons faking photons background.
+In Figure~\ref{fig:mT-contamination}, the inclusive signal and background contributions in the transverse mass slice $80~\mathrm{GeV} < m_T < 90~\mathrm{GeV}$ are shown, corresponding to a signal fraction of approximately 0.65\%. 
+The distributions of the other kinematic variables are provided in the appendix. \\
+
+\begin{figure} [H]%[!htbp] t!
+    \centering
+    \includegraphics[width=0.6\textwidth]{plot_efy/validation/mt_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
+    \caption{Signal contamination in the low $m_T$ region. Here the electrons faking photons and the jet faking photons backgrounds are derived from MC simulations.}
+    \label{fig:mT-contamination}
+\end{figure}
+
+Given the negligible signal contamination, the total background prediction can be compared to data in the VR to validate the fake rates method.
+To include the data-driven estiamtion, all the selections that involve $\gamma$-related quantities are replaced with their corresponding selections on $e$.
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/mt_nel_nmu0_ntau_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_data_BDT.pdf}
+  }
+  \hfill
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/mt_nmu0_ntau_MET100_njet_trigger_BDTscore_data_BDT.pdf}
+  }
+  \caption{$m_T$ distribution in the VR when the electrons faking photons background is derived from (a) MC simulations and (b) the fake rate method.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/phPt_nel_nmu0_ntau_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_data_BDT.pdf}
+  }
+  \hfill
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/phPt_nmu0_ntau_MET100_njet_trigger_BDTscore_data_BDT.pdf}
+  }
+  \caption{$p_T^{\gamma}$ distribution in the VR when the electrons faking photons background is derived from (a) MC simulations and (b) the fake rate method.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/abspheta_nel_nmu0_ntau_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_data_BDT.pdf}
+  }
+  \hfill
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/abspheta_nmu0_ntau_MET100_njet_trigger_BDTscore_data_BDT.pdf}
+  }
+  \caption{$|\eta^\gamma|$ distribution in the VR when the electrons faking photons background is derived from (a) MC simulations and (b) the fake rate method.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/met_nel_nmu0_ntau_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_data_BDT.pdf}
+  }
+  \hfill
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/met_nmu0_ntau_MET100_njet_trigger_BDTscore_data_BDT.pdf}
+  }
+  \caption{$p_T^{\text{miss}}$ distribution in the VR when the electrons faking photons background is derived from (a) MC simulations and (b) the fake rate method.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/metsig_nel_nmu0_ntau_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_data_BDT.pdf}
+  }
+  \hfill
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/metsig_nmu0_ntau_MET100_njet_trigger_BDTscore_data_BDT.pdf}
+  }
+  \caption{$S_{p_T^{\text{miss}}}$ distribution in the VR when the electrons faking photons background is derived from (a) MC simulations and (b) the fake rate method.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/Dmet_nel_nmu0_ntau_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_data_BDT.pdf}
+  }
+  \hfill
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/Dmet_nmu0_ntau_MET100_njet_trigger_BDTscore_data_BDT.pdf}
+  }
+  \caption{$\Delta p_T^{\text{miss}}$ distribution in the VR when the electrons faking photons background is derived from (a) MC simulations and (b) the fake rate method.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/dphiJJ_nel_nmu0_ntau_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_data_BDT.pdf}
+  }
+  \hfill
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/dphiJJ_nmu0_ntau_MET100_njet_trigger_BDTscore_data_BDT.pdf}
+  }
+  \caption{$\Delta \Phi(j_1,j_2)$ distribution in the VR when the electrons faking photons background is derived from (a) MC simulations and (b) the fake rate method.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/dphiMetJetterm_nel_nmu0_ntau_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_data_BDT.pdf}
+  }
+  \hfill
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/dphiMetJetterm_nmu0_ntau_MET100_njet_trigger_BDTscore_data_BDT.pdf}
+  }
+  \caption{$\Delta \Phi (p_T^{\text{miss}}, [p_T^{\text{miss}}]_{jet})$ distribution in the VR when the electrons faking photons background is derived from (a) MC simulations and (b) the fake rate method.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/dphiMetPhPt_nel_nmu0_ntau_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_data_BDT.pdf}
+  }
+  \hfill
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/dphiMetPhPt_nmu0_ntau_MET100_njet_trigger_BDTscore_data_BDT.pdf}
+  }
+  \caption{$\Delta \Phi (p_T^{\text{miss}}, p_T^\gamma)$ distribution in the VR when the electrons faking photons background is derived from (a) MC simulations and (b) the fake rate method.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/dphiMetPhterm_nel_nmu0_ntau_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_data_BDT.pdf}
+  }
+  \hfill
+  \subfloat[]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/dphiMetPhterm_nmu0_ntau_MET100_njet_trigger_BDTscore_data_BDT.pdf}
+  }
+  \caption{$\Delta \Phi (p_T^{\text{miss}}, [p_T^{\text{miss}}]_{\gamma})$ distribution in the VR when the electrons faking photons background is derived from (a) MC simulations and (b) the fake rate method.}
+\end{figure}
+
+\clearpage

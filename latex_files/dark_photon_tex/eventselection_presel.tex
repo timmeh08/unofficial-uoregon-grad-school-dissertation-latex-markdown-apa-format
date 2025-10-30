@@ -1,0 +1,19 @@
+A set of pre-selections is applied to remove events with poor data quality, either due to instrumental limitations such as known detector defects or problematic lumiblocks, or due to large contamination from non-collision background such as cosmic rays or beam-induced background. 
+These pre-selections follow the Data Preparation recommendations: 
+\begin{itemize}
+	\item{Only events in the GRL are retained, to remove events collected in lumiblocks with not fully functional detector;}	
+	\item{Remove events collected in data-taking periods affected by LAr noise burst, Tile corrupted events, single SCT upsets, or incomplete events due to TTC restart;}
+	\item{Jet cleaning is applied to remove jets arising from non-collision background. Events with any $LooseBad$ jet, overlapping with neither leptons nor photons, with calibrated $p_{\mathrm{T}}>20$ GeV are rejected;}
+    \item{At least one primary vertex must be reconstructed, with at least two associated good-quality tracks with $p_{\mathrm{T}}>400$ MeV and $|\eta|<2.5$;}
+\end{itemize}
+
+
+In addition to the quality selections, offline thresholds on the trigger variables are applied, with values chosen as a compromise between acceptance and trigger efficiency. 
+\begin{itemize}
+	\item{$\ETmiss>100$ GeV;}
+	\item{$\pTy>50$ GeV;}
+	\item{$\mT>80$ GeV;}
+\end{itemize}
+
+The selection on $\pTy$ and $\mT>80$ GeV are consistent with the trigger thresholds, taking advandage of the extremely fast turn-on, while a more conservative approach is used for the offline cut on $\ETmiss$. 
+Since these offline selections do not allow to reach a 100\% trigger efficiency, trigger Scale Factors are evaluated as described in section \ref{sec:triggerSF} to correct possible mismodelling in MC simulations. 

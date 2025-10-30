@@ -1,0 +1,127 @@
+Given the Signal and Control Regions (SR and CRs) previously described, a simultaneous fit technique is used to derive an upper limit on the branching ratio $BR(H\rightarrow \gamma \gamma_d)$, exploiting the constraint given by data in SR and all CRs at the same time. The simultaneous fitting technique is used as the baseline technique for the background estimation and for the signal interpretation. This approach allows the estimation of signal and background yields in Control Regions (CRs) and Signal Region (SR), leveraging data constraints across all these regions at once. By using a simultaneous fitting method, multiple CRs can be combined easily, and the correlation of systematic uncertainties across different regions can be treated in a consistent way.
+
+We can define the mean number of events counted in each region (R) as
+\begin{equation}
+    \langle N^{[R]} \rangle=\mu^{[R]}=\mu_s^{[R]}+\sum_b \mu_b^{[R]}
+\end{equation}
+
+where $\mu_s^{[R]}=L\cdot\epsilon\cdot\sigma\cdot BR$ and $\mu_b^{[R]}$ represent signal and background yields 
+%=K_b(\mu_b^{[R]})_{MC}
+respectively. Background normalization factors $k_b$, indeed called "k-factors" are used to correct the Monte Carlo simulations of electroweak backgrounds $b$, they are extrapolated from the fit and are the same across all regions, given a specific background. On the other hand, jets faking photons and electrons faking photons events are estimated with data-driven techniques, while $\gamma$jets direct events are taken directly from Monte Carlo simulation, also considering that they account for a very small portion of the total background in SR. The number of background events in a region R can be written as:
+\begin{equation}
+    N_R^{bkg} \propto k_Z (N^{Z\gamma}_R) + k_W (N^{W\gamma}_R) + N^{\gamma \: jets \:direct}_r + N_R^{j\gamma} + N_R^{e\gamma} 
+\end{equation}
+whose expectation value is given by the sum of:
+\begin{itemize}
+    \item the signal yield in the region R, given by the product of the integrated luminosity, signal cross section and signal Branching Ratio,
+    acceptance and efficiency $L \times \varepsilon \times \sigma  \times BR$ :
+    \item the expected yield (MC) for the Z$\gamma$ background, rescaled by a factor $k_Z$; 
+    \item the expected yield (MC) for the W$\gamma$ background, rescaled by a factor $k_W$; 
+    \item the expected yield (MC) for the $\gamma$+jets background, 
+    \item the expected yields for electrons faking photons and jets faking photons background. 
+\end{itemize}
+The transverse mass ($m_T$) of the system represented by the visible photon and the missing transverse momentum is taken as discriminating variable between signal and background. Its spectrum is indeed expected to be peaked at $m_H\sim\SI{125}{GeV}$ for the signal, while it has a different distribution for the background processes. Data are thus split in different $m_T$ bins:
+
+\begin{equation}
+   \mu^{[R,i]}=\mu_s^{[R,i]}+\sum_b \mu_b^{[R,i]} 
+\end{equation}
+\noindent
+$i$ being the number of $m_T$ bins. The binning displayed in the next plots has been optimized in order to limit the impact of statistical uncertainties while keeping the signal sensitivity of each bin as high as possible. The chosen $m_T$ binning is the following: 
+\begin{itemize}
+    \item (80-110) $\SI{}{GeV}$, the lowest edge at $\SI{80}{GeV}$ is set by the cut of the trigger and of the offline selections defining the SR; 
+    \item (110-140) $\SI{}{GeV}$, the most sensitive bin centred on the Higgs mass, where signal distribution is expected to be peaked; 
+    \item (140-200) $\SI{}{GeV}$, the highest edge coincides with the end-point of the signal $m_T$ distribution; 
+    \item (200-300) $\SI{}{GeV}$, the last bin where there is no signal is only used for the normalization of the background. 
+\end{itemize}
+
+A simultaneous likelihood is then built by multiplying the likelihoods obtained for each region.
+
+
+\begin{equation}
+    \mathcal{L}=\prod_R \prod_i \frac{e^{-\mu^{[R,i]}}\cdot (\mu^{[R,i]})^{N^{[R,i]}}}{(N^{[R,i]})!}
+\end{equation}
+The related \textit{Negative Log-Likelihood} (NLL) can be written as: 
+
+\begin{equation}
+-\ln\mathcal{L}=\sum_r\sum_i(\mu^{[R,i]}-N^{[R,i]}\ln\mu^{[R,i]}) 
+\end{equation} 
+
+Considering the dependence of the parameters on uncertainties caused by the modeling, we can write the complete NLL:
+{\footnotesize
+\begin{equation}
+    -\ln\mathcal{L}(\sigma, \{K\}, \{\nu\})=
+     \sum_r\sum_i(\mu^{[R,i]}(\sigma, \{K\}, \{\nu\})-N^{[R,i]}(\sigma, \{K\}, \{\nu\})\cdot \ln(\mu^{[R,i]}(\sigma, \{K\}, \{\nu\})))
+     +\sum_j\frac{\nu_j^2}{2}
+\end{equation}
+}
+where there is the Poisson term and the Gaussian constraints. The free parameters of the fit are the Parameter of Interest,  the Branching Ratio $BR(H\rightarrow \gamma \gamma_d)$, and the k-factors used for the normalisation of $Z\gamma$ and $W\gamma$ background. With $\nu$ are denoted the Nuisance Parameters (NPs) associated to systematic uncertainties, these NPs give the background components a constraint modeled by a Gaussian distribution centered at zero with width given by the value of the corresponding uncertainty. The systematics given by data-driven estimations are included in the fit as correlated among the $m_T$ bins.\\
+
+The test statistics is defined by means of the profile likelihood ratio $\Lambda$, namely the ratio between the conditional maximum of $\mathcal{L}$ for the signal strength (s) under test and the absolute maximum of $\mathcal{L}$ occurring at $(\hat{s}, \hat{\nu})$:
+
+\begin{equation}
+    \Lambda(s)=\frac{\mathcal{L}(\textit{data};s,\hat{\hat{\nu}})}{\mathcal{L}(\textit{data}; \hat{s}, \hat{\nu})}
+\end{equation}
+\noindent
+which finally leads to our test statistics
+
+\begin{equation}
+    q_s=-2\ln\Lambda(s)
+\end{equation}
+\noindent
+where the hypothesis under test is the signal strength $s$ and the alternative hypothesis is given by all the other possible values of $s$.
+
+\noindent
+The definition of the likelihood function and the statistical treatment of the results is performed by means of the software TRExFitter. \\
+Different types of fit are performed in the analysis:
+\begin{itemize}
+    \item Background-only fit: performed on all CRs to estimate the k-factors needed to evaluate the
+    background yields in the SR before unblinding.
+    \item Model-dependent signal fit: performed on all CRs plus the SR including a signal component to
+    set exclusion/discovery limits. This strategy is employed after the unblinding of the SR.
+\end{itemize}
+Additional information on the fit can be found in Table \ref{tab: trex}. 
+\begin{longtable}{|l|l|p{5cm}|}
+\caption{TreXFitter parameters setting.}
+\label{tab: trex}\\
+\hline
+\textbf{Section} & \textbf{Parameter} & \textbf{Value} \\
+\hline
+\endfirsthead
+\hline
+\textbf{Section} & \textbf{Parameter} & \textbf{Value} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+
+\textbf{JOB} & Luminosity & 25.8 fb$^{-1}$ \\
+\textbf{JOB} & MC stat Threshold & 0.001 \\
+\textbf{JOB} & MC stat Constraint & POISSON \\
+\textbf{JOB} & Syst Control Plots & TRUE \\
+\textbf{JOB} & Syst Pruning (Shape) & 0.01 \\
+\textbf{JOB} & Syst Pruning (Norm) & 0.01 \\
+\textbf{JOB} & Syst Category Tables & TRUE \\
+\textbf{JOB} & Remove Syst on Empty Sample & TRUE \\
+\textbf{JOB} & Correlation Threshold & 0.20 \\
+\textbf{JOB} & Histo Checks & NOCRASH \\
+\textbf{JOB} & Split Histo Files & TRUE \\
+\textbf{JOB} & Merge Under/Overflow & TRUE \\
+
+\textbf{FIT} & Fit Name & fit \\
+\textbf{FIT} & Fit Type & SPLUSB or BONLY \\
+\textbf{FIT} & Fit Region & CRSR \\
+\textbf{FIT} & POI Asimov Value & 0 \\
+\textbf{FIT} & Use Minos & all \\
+
+\textbf{LIMIT} & Limit Type & ASYMPTOTIC \\
+\textbf{LIMIT} & Fit Strategy & 3 \\
+
+\end{longtable}
+
+In the following results, data-driven estimations of $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ backgrounds are included, but the BDT score cut is not included yet (\textcolor{red}{will be updated soon, but we don't expect huge changes: the effect of the vertex BDT on top of the SR selections  and the effect of it's integration in the fit (stat only) was observed to be relatively negligible. The importance of it is mostly making sure to have the "cleanest" possible dataset in terms of vertex identification, especially for the validation of the jet faking photon estimate}). The fit takes into consideration the systematic uncertainties on the data-driven $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ estimations, together with the MC experimental systematic uncertainties. \\
+Each source of uncertainty is treated as correlated among the analysis regions, and MC systematics are also correlated among the different processes ($Z\gamma$ and $W\gamma$). A pruning threshold of 1\% is applied, acting separately on the normalization and shape effects of the various Nuisance Parameters. The effect of this pruning is summarized in figure \ref{fig:pruning}. \textcolor{red}{TO DO: check if any systematic needs smoothing due to high statistical fluctuation, and apply it using the TRexFitter utilities.}\\

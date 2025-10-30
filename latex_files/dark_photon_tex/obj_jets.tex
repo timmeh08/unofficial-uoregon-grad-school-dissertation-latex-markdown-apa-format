@@ -1,0 +1,31 @@
+Particle flow (PFlow) jets are reconstructed using the anti-kt algorithm with a radius parameter of
+$R = 0.4$, taking as input charged constituents associated with the primary vertex and neutral PFlow constituents.
+Jet candidates are required to have $p_{\mathrm{T}}>20$ GeV and $|\eta|<4.5$. A NN based jet vertex tagger (NNJvt) discriminant
+is used to identify central jets (within $|\eta|<2.5$) originating from the hard scattered (HS) interaction, employing the \texttt{FixedEffPt} WP. For more forward jets, a forward jet vertex tagging algorithm (fJVT) is applied with \texttt{Loose} WP. 
+Jets containing b-hadrons (b-jets) are identified through the \texttt{GN2v01} tagger with \texttt{Continuous} WP. 
+
+
+
+\begin{table}[ht]
+  \caption{Jet reconstruction criteria.}%
+  \label{tab:object:jet1}
+  \centering
+  % \resizebox{\textwidth}{!}{
+  \begin{tabular}{ll}
+  \toprule
+  Feature & Criterion \\
+  \midrule
+  Algorithm & \texttt{Anti--kt}  \\
+  $R$-parameter & 0.4 \\
+  Input constituent & PFlow \\
+  Calibration configuration & {\tiny \texttt{AntiKt4EMPFlow\_MC23a\_PreRecR22\_Phase2\_CalibConfig\_ResPU\_EtaJES\_GSC\_241208\_InSitu.config}} \\
+  Jet cleaning & \texttt{LooseBad} \\
+  \pT & $p_{\mathrm{T}}> 20$ GeV \\
+  $|\eta|$ & $< 4.5$ \\
+  JVT Working point & \texttt{FixedEffPt} \\
+  fJVT Working point & \texttt{Loose} \\
+  \bottomrule
+  \end{tabular}
+  % }
+\end{table}
+

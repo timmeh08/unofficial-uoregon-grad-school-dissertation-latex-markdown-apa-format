@@ -1,0 +1,33 @@
+Muons are reconstructed by matching ID tracks to MS tracks or track segments, by matching ID tracks to
+a calorimeter energy deposit compatible with a minimum-ionizing particle, or by identifying MS tracks
+passing the loose requirement and compatible with the IP. Baseline muons in this analysis must fulfil $p_{\mathrm{T}}>10$ GeV and $|\eta|<2.7$. A \texttt{Medium} identification WP is applied, and similar selection on the longitudinal and transverse impact parameter as for electrons. 
+On top of these selections, selected muons must pass the \texttt{PflowLoose\_VarRad} Isolation WP. 
+
+
+\begin{table}[ht]
+  \caption{Muon selection criteria.}%
+  \label{tab:object:muon}
+  \centering
+  % \resizebox{\textwidth}{!}{
+  \begin{tabular}[ht]{ll}
+    \toprule
+    Feature & Criterion \\
+    Object quality & Bad Muon Veto \\
+    %Momentum calibration & Sagitta correction [used/not used] \\
+    $p_{\mathrm{T}}$ cut & $p_{\mathrm{T}}>10$ GeV \\
+    $|\eta|$ cut & $< 2.7$ \\
+    $d_{0}$ significance cut & 3 \\
+    $z_{0}$ cut & 0.5 mm \\
+    \midrule
+    \midrule
+    \textbf{Baseline} &\\
+    \midrule
+    Identification working point & \texttt{Medium} \\
+    \textbf{Selected} &\\
+    \midrule
+    Identification working point & \texttt{Medium} \\
+    Isolation working point & \texttt{PflowLoose\_VarRad}\\
+    \bottomrule
+  \end{tabular} 
+  % }
+\end{table}

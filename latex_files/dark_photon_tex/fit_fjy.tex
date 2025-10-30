@@ -1,0 +1,92 @@
+Jets faking photons background is then estimated with the data-driven technique explained in Section \ref{sec:jetfake} and included in the fit with its systematic. The 10\% flat systematic is then applied to all the samples, with the exception of jets faking photons. $\gamma$jets fragmentation, dijets and $W$jets, $Z$jets without electrons faking photons have been then removed from the fit, while including the data-driven estimation. $W$jets, $Z$jets with electrons faking photons are selected requiring the truth type of the photon being equal to 2 (i.e. electron). This leads to a varied composition of backgrounds in SR, where jets faking photons account for a larger portion of background, as it can be seen in Figure \ref{fig:pie_jfy}. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/jfy/PieChart.pdf} 
+    \caption{SR and CRs composition.}
+    \label{fig:pie_jfy}
+\end{figure}
+Pre-fit and post-fit $m_T$ distribution in SR, $1\mu$CR and $2\mu$CR are showed in Figure \ref{fig:prepost_jfy}. Adding data-driven jets faking photons, $Z$jets contribution to background is very low, so that is not visible in the plots; this is expected as this events enter the SR only when multiple things happen at the same time: the Z boson decays in the electronic channel, an electron is lost giving a fake $p_T^{miss}$, the other electron is mis-reconstructed as photon. 
+\begin{figure}[H]
+    \centering
+
+    % Prima riga
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/jfy/SR.pdf}
+        \caption*{(a) Pre-fit SR}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/jfy/OneMuCR.pdf}
+        \caption*{(b) Pre-fit $1\mu$CR}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/jfy/TwoMuCR.pdf}
+        \caption*{(c) Pre-fit $2\mu$CR}
+    \end{minipage}
+
+    \vspace{0.4cm}
+
+    % Seconda riga
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/jfy/SR_postFit.pdf}
+        \caption*{(d) Post-fit SR}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/jfy/OneMuCR_postFit.pdf}
+        \caption*{(e) Post-fit $1\mu$CR}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/jfy/TwoMuCR_postFit.pdf}
+        \caption*{(f) Post-fit $2\mu$CR}
+    \end{minipage}
+
+    \caption{Pre-fit and post-fit distributions in SR and CRs using data-driven $j \to \gamma$ estimation.}
+    \label{fig:prepost_jfy}
+\end{figure}
+
+k-factors are showed in Table \ref{tab: kfac_jfy}. $k_Z$ is now closer to 1 with reference to the only Monte Carlo configuration, thanks to the data-driven estimation of jets faking photons. 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c|c|c}
+        \toprule
+        $m_T$ \textbf{bin [GeV]} & \textbf{$k_W$} & \textbf{Error up} & \textbf{Error down}  \\
+        \hline
+         80-110 & 0.826057 &+0.119916 &-0.103399\\
+      
+        110-140 & 0.831074 & +0.0905051 & -0.0871422 \\
+    
+        140-200 & 0.89956 &  +0.0983367 & -0.0859015\\
+    
+        200-300 &  1.1688 & +0.144942 & -0.124162\\
+  \hline
+    $m_T$ \textbf{bin [GeV]} & \textbf{$k_Z$} & \textbf{Error up} & \textbf{Error down}  \\
+    \hline
+    inclusive & 0.8081 &+0.131243 &-0.143476\\ 
+    \bottomrule
+    \end{tabular}
+        \caption{k-factors including data-driven jets faking photons. }
+    \label{tab: kfac_jfy}
+\end{table}
+The expected limit in this configuration is 0.016014. 
+\begin{table}[H]
+    \centering
+    
+    \begin{tabular}{l
+                    S[table-format=1.6]
+                    S[table-format=1.6]
+                    S[table-format=1.6]
+                    S[table-format=1.6]
+                    S[table-format=1.6]}
+        \toprule
+        & {Nominal} & {$-1\sigma$} & {$+1\sigma$} & {$-2\sigma$} & {$+2\sigma$} \\
+        \midrule
+        Expected limit &
+        0.016014 & 0.011235 & 0.023131 & 0.008226 & 0.032520 \\
+        
+        \bottomrule
+    \end{tabular}
+    \caption{Expected limit including jets faking photons data-driven estimation.}
+\end{table}

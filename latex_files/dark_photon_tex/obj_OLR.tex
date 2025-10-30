@@ -1,0 +1,32 @@
+In order to solve ambiguities among overlapping objects, the standard overlap removal procedure is applied, using the \texttt{AssociationUtils} tool. 
+Table \ref{tab:or} summarizes the criteria used to remove the overlaps between objects.
+
+\begin{table}[ht]
+  % \resizebox{\textwidth}{!}{
+  \caption{Overlap removal criteria.}%
+  \label{tab:or}
+  \centering 
+  \begin{tabular}{lll}
+    \toprule
+    Reject & Against & Criteria \\
+    \midrule
+    Electron	& Electron & shared track, \(p_{\text{T},1} < p_{\text{T},2}\) \\
+    Tau      	 	& Electron & \(\Delta R <\) 0.2 \\
+    Tau       	 	& Muon     & \(\Delta R <\) 0.2 \\
+    Muon     	& Electron & is Calo-Muon and shared ID track \\
+    Electron 	& Muon     & shared ID track \\
+    Photon   	& Electron & \(\Delta R < 0.4\) \\
+    Photon   	& Muon     & \(\Delta R < 0.4\) \\
+    Jet      		& Electron & \(\Delta R < 0.2\) \\
+    Electron 	& Jet      & \(0.2\ < \Delta R < 0.4\) \\
+    Jet      		& Muon     & \(\texttt{NumTrack} < 3\) and (ghost-associated or \(\Delta R < 0.2\)) \\
+                       	
+    Muon     	& Jet      & None \\
+    Jet      		& Tau      & \(\Delta R < 0.2\) \\
+    Jet   	& Photon      & \(\Delta R < 0.4\) \\
+ %   Fat-jet  		& Electron & \(\Delta R < 1.0\) \\
+  %  Jet      		& Fat-jet  & \(\Delta R < 1.0\) \\
+    \bottomrule
+  \end{tabular}
+  % }
+\end{table}

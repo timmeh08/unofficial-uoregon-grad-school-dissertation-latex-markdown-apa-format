@@ -1,0 +1,35 @@
+Electrons are reconstructed by matching clustered energy deposits in the EM calorimeters to tracks in the
+Inner Detector. Electron candidates must have $p_{\mathrm{T}}>10$ GeV and $|\eta|<2.47$. The identification is based on the LH method, which combines the likelihood of an
+electron candidate being a true electron and the likelihood of it originating from background processes into a discriminant on which a cut is applied. Baseline candidates must satisfy the LooseAndBLayerLLH Identification WP. In addition, the longitudinal and transverse impact parameters are required to satisfy respectively $|z_0\sin(\theta)|<5$ mm and $|d_0/\sigma(d_0)<50$ mm, to reject electrons not originating from primary vertex.
+Selected electrons (used only for the data-driven estimate of $\efakey$) must fulfil a tighter identification WP, the \texttt{TightLLH}, and be additionally isolated with \texttt{Tight\_VarRad} WP. 
+
+\begin{table}[ht]
+  \caption{Electron selection criteria.}%
+  \label{tab:object:electron}
+  \centering
+  % \resizebox{\textwidth}{!}{
+  \begin{tabular}{ll}
+    \toprule
+    Feature & \multicolumn{1}{c}{Criterion} \\
+    \midrule
+    Object quality & Not from a bad calorimeter cluster (\texttt{BADCLUSELECTRON})\\ 
+    Energy calibration & \texttt{es2022\_R22\_PRE} (ESModel)\\
+    Pseudorapidity range &  $(|\eta| < 1.37) \quad || \quad (1.52 < |\eta| < 2.47)$\\
+    Transverse momentum & $p_{\mathrm{T}} >10$ GeV \\
+    \multirow{2}{*}{Track to vertex association} & $|d_{0}^{\text{BL}}(\sigma)| < 5$ \\ %\cline{2-2}
+    & $|\Delta z_{0}^{\text{BL}} \sin{\theta}| <0.5$ mm \\
+    \midrule
+ %   Energy & $E > \SI[parse-numbers=false]{XX}{\GeV}$ \\
+    %DecorrelationModel  & TOTAL \\
+    \textbf{Baseline} & \\
+    \midrule
+    Identification & \texttt{LooseAndBLayerLLH}\\
+    \midrule
+	  \textbf{Selected} & \\
+    \midrule
+    Identification & \texttt{TightLLH}\\
+    Isolation & \texttt{Tight\_VarRad} \\
+    \bottomrule
+  \end{tabular}
+  % }
+\end{table}

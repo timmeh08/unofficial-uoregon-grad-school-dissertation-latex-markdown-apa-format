@@ -22,3 +22,9 @@ acs-main.bib
 .DS_Store
 *.swp
 *.swo
+# images and plots
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.eps

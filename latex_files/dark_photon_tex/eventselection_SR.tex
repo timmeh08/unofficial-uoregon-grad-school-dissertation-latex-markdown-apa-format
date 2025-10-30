@@ -1,0 +1,93 @@
+The kinematics of the signals and of the primary backgrounds have been studied in detail to identify key discriminating variables for an effective background suppression. Maintaining a reasonable signal acceptance is especially important for this analysis, as the trigger - though designed specifically for this signature - already rejects a significant portion of events as a compromise between acceptance and the trigger rate. 
+Additionally, the analysis phase space is challenging, being dominated by "fake" photons and "fake" $\ETmiss$ backgrounds, which are not well represented by Monte Carlo simulations. \\
+An important role in the optimization procedure has been given to the impact of wrong identification of primary vertices on the events kinematics: the misidentification of the primary vertex strongly affect the $\ETmiss$ related variables, thus affecting the background and signal acceptance. In particular, the $\ETmiss$ spectrum tends to become harder for signal, and looser for the background arising from $\gamma+$jets and multi-jet background, suppressing the former and enhancing the latter. Furthermore, the vertex identification, as a result of its impact on $\ETmiss$, artificially shapes the transverse mass distribution leading to a bulk of events (either background or signal) at $m_{T} \sim 150$ GeV. 
+A comparison of the $\ETmiss$ and $m_{\mathrm{T}}$ distributions for events with correctly identified and misidentified Primary Vertex is shown,as an example, for the signal and for the $\gamma+$jets background, in figure \ref{fig:vertexstudy} \\  %\ref{fig:$\ETmiss$mt_vertex}. \\
+
+
+\begin{figure} [H]%[!htbp] t!
+    \centering
+    \includegraphics[width=0.45\textwidth]{../images/MCplots/ggHyyd_met_goodvswrong.png}
+    \includegraphics[width=0.45\textwidth]{../images/MCplots/ggHyyd_mt_goodvswrong.png}
+    \includegraphics[width=0.45\textwidth]{../images/MCplots/gammajets_met_goodvswrong.png}
+    \includegraphics[width=0.45\textwidth]{../images/MCplots/gammajets_mt_goodvswrong.png}
+    \caption{Comparison between events with correctly identified and misidentified PV. The $\ETmiss$ (left) and $m_T$ (right) distributions are shown for the signal (top) and $\gamma$jets background (bottom)}
+    \label{fig:vertexstudy}
+\end{figure}
+
+\paragraph{Optimization}
+Several variables have been considered for the preliminary optimization of the main analysis selections, including the kinematics of the photon, angular separations between $\ETmiss$, photons, and jets in different combinations, as well as other $\ETmiss$-related variables such as the $\ETmiss$ significance, the $\ETmiss$ soft term, and a $\DeltaMET=\ETmiss-\ETmissNoJVT$. The last variable is designed to enhance the rejection of events with misidentified PV, through the comparison between the standard $\ETmiss$ reconstruction and an alternative $\ETmiss$ with no PU subtraction ($\ETmissNoJVT$). If the vertex identified as HS vertex is actually a PU vertex, HS jets will be flagged as PU jets and not included into the $\ETmiss$ Jet Term, while PU jets will feed the Jet Term. In this scenario, assuming that the impact of loosing HS jets is greater than the effect of PU jets, the $\ETmissNoJVT$ is expected to be closer to the true $\ETmiss$ value than the standard one. This is observed indeed in the variable distribution in Figure \ref{fig:variables_dmet}, showing a bulk of events, with wrong vertex, at $-60 < \Delta\ETmiss < -20$ GeV, consistent with the $p_{T}$ region in which the JVT selection is applied.
+The $\ETmiss$ significance helps suppressing events with fake $\ETmiss$, which are typically characterized by a lower value. 
+It is evaluated taking into account the resolution of the objects entering the $\ETmiss$ calculation, and defined as $\mathcal{S}=\frac{\ETmiss}{[\sigma^2_{L}(1-\rho_{LT}^2)]^{1/2}}$, where $\sigma_L$ is the  total standard deviation in the longitudinal plane with respect to $\ETmiss$, and $\rho_{LT}$ is the correlation factor between the longitudinal and transverse measurements.\\
+The photon $\eta$ was found to help reducing background from $W/Z+\gamma$. 
+Some of the most discriminating variables are shown in Figures \ref{fig:MCpresel} and \ref{fig:MCpreselbdt}, for preselection only and including also the selection on the vertex BDT respectively. The \Htoyyd signal (in gluon-gluon fusion channel) is compared to each background, with the bin-by-bin significance displayed in the lower panel.\\
+
+
+\begin{figure} [H]%[!htbp] t!
+    \centering
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/mt_baseline_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/met_baseline_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/ph_eta_baseline_sigGoodPV_stack.png}\\
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/n_jet_central_baseline_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/metsig_baseline_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/dmet_baseline_sigGoodPV_stack.png}\\
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_met_phterm_baseline_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_met_jetterm_baseline_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_central_jj_baseline_sigGoodPV_stack.png}\\
+    \caption{Background vs signal comparison for the main discriminant variables, used to define the SR. Only preselection cuts are applied. The bottom panel shows the bin-by-bin significance ($s/\sqrt{b}$). A $BR(H\to\gamma\gamma)=1\%$ is represented as a benchmark.}
+    \label{fig:MCpresel}
+\end{figure}
+
+
+\begin{figure} [H]%[!htbp] t!
+    \centering
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/mt_baseline_BDT01_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/met_baseline_BDT01_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/ph_eta_baseline_BDT01_sigGoodPV_stack.png}\\
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/n_jet_central_baseline_BDT01_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/metsig_baseline_BDT01_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/dmet_baseline_BDT01_sigGoodPV_stack.png}\\
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_met_phterm_baseline_BDT01_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_met_jetterm_baseline_BDT01_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_central_jj_baseline_BDT01_sigGoodPV_stack.png}\\
+    \caption{Background vs signal comparison for the main discriminant variables, used to define the SR. Only preselection cuts and the vertex BDT score selection are applied. The bottom panel shows the bin-by-bin significance ($s/\sqrt{b}$). A $BR(H\to\gamma\gamma)=1\%$ is represented as a benchmark.}
+    \label{fig:MCpreselbdt}
+\end{figure}
+The optimization was performed iteratively, starting with a set of 14 variables. At each step, ROC curves, significance plots and significance $\times$ acceptance plots were produced for each variable and collectively used as a metric to define which variable to prioritize, and identify the best cut. The optimization is repeated at each step, incorporating the previously defined selections, until a stable sensitivity is achieved. \\
+The final SR selection, as determined by this procedure, is outlined in the following section.
+
+
+\paragraph{SR selections}
+The final set of rectangular cuts resulting from the previously described optimization is the following:
+\begin{itemize}[nosep]
+    \item $N_{\gamma}=1$, with  $N_{\gamma}$ the number of selected photons;
+    \item $N_{\text{leptons}}=0$, for baseline leptons
+    \item $N_{\text{jet,central}} \leq 3$
+    \item $\pTy > 50$ GeV;
+    \item $|\eta^\gamma|<1.75$;
+    \item $\ETmiss > 100$ GeV;
+    \item $\ETmiss$ significance $> 6$;
+    \item $\DeltaMET > -10$ GeV;
+    \item $\mT>80$ GeV;
+    \item $\dphimety>1.25$;
+    \item $\dphimetj<0.75$;
+    \item $\Delta\phi(j_1,j_2)<2.5$;
+    \item $BDT_{score}^{vertex}>0.1$;
+\end{itemize}
+
+The n-1 distributions after SR selections are shown in figure \ref{fig:MCsr}
+
+
+\begin{figure} [H]%[!htbp] t!
+    \centering
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/mt_SR_BDT01_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/met_SR_BDT01_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/ph_eta_SR_BDT01_sigGoodPV_stack.png}\\
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/n_jet_central_SR_BDT01_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/metsig_SR_BDT01_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/dmet_SR_BDT01_sigGoodPV_stack.png}\\
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_met_phterm_SR_BDT01_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_met_jetterm_SR_BDT01_sigGoodPV_stack.png}
+    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_central_jj_SR_BDT01_sigGoodPV_stack.png}\\
+    \caption{Background vs signal comparison for the main discriminant variables, used to define the SR. The n-1 distributions are shown in SR. The bottom panel shows the bin-by-bin significance ($s/\sqrt{b}$). A $BR(H\to\gamma\gamma)=1\%$ is represented as a benchmark.}
+    \label{fig:MCsr}
+\end{figure}

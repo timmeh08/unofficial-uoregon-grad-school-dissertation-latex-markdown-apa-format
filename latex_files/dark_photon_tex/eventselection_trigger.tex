@@ -1,0 +1,18 @@
+The analysis uses a trigger implemented in 2023, see \href{https://its.cern.ch/jira/browse/ATR-26410}{ATR-26410}. 
+The signal trigger requires a single photon with 26 GeV at L1 -- which is shared with the single electron L1 item. The HLT is a multi-object trigger that requires a 50 GeV tight ID photon (g50), 40 GeV of cell \met (xe40\_cell) and 70 GeV of ``pfopufit'' \met (xe70\_pfopufit). There transverse mass computed between the photon and the \met, defined as $m_T = \sqrt{2 E_{T}^{\gamma}\ETmiss (1-cos(\Delta \phi)))}$, and a requirement of $m_T > 80$ GeV applied (80mTAC).\\
+
+This trigger is consistently applied in all the analysis regions (described in section \ref{sec:crvr}), which are generally characterized by signatures allowing reasonable trigger acceptance: $1\mu+\gamma$, $2\mu+\gamma$, 1 non-isolated $\gamma+\ETmiss$, $1e+\ETmiss$. For the muon-CRs, it is possible to apply the analysis trigger taking advantage of the fact that muons are not included in the trigger-level $\ETmiss$ computation. The most critical final state is the $1e+\ETmiss$: in this case, and OR of multiple single electron trigger and of the analysis trigger is applied. The studies leading to this choice are documented in section \ref{sec:elefake}
+
+\begin{table}[ht]
+\centering
+\caption{Triggers used in the analysis.}
+\label{tab:trigger-list}
+\begin{tabular}{ll}
+\toprule
+Use & Trigger name \\
+\midrule
+All regions & HLT\_g50\_tight\_xe40\_cell\_xe70\_pfopufit\_80mTAC\_L1eEM26M \\
+$1e+\ETmiss$ region &  OR of single-e triggers \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,123 @@
+
+Various sources of experimental uncertainties are taken into account. These can be divided into three categories: instrumental uncertainties, theoretical uncertainties, and uncertainties related to the data-driven background estimates. The first two sources of uncertainty, applied only to MC simulations of the signal and the $Z\gamma$, $W\gamma$ and $\gamma$jets contributions, are described in the following sections, while the latter is described in details in section \ref{sec:fakephotonintro}. \\
+The variation of the background and signal yields due to all the systematic uncertainties are included as nuisance parameters in the fit. Each nuisance parameter is described by a Gaussian centered on zero and of width one. Zero corresponds to the nominal rate in all regions, while $\pm$ correspond to the "up" and "down" systematic variations.
+The experimental systematic contributions associated to MC simulations are treated as correlated among the analysis regions and among background MC samples. The systematic uncertainties of data-driven background estimates are correlated among regions. 
+All the considered sources of uncertainty are listed in Table~\ref{tab:SysDescription} with a brief description.
+In the table for each source of uncertainty it is also indicated if that particular uncertainty is treated as correlated or uncorrelated among different regions in the fit. \\
+The listed nuisance parameters are treated as uncorrelated among each other. If residual correlations are found, the final error on the fitted total background in the various regions is estimated by properly taking into account of the correlation matrix between the different errors.\\
+\\
+
+\section{Instrumental uncertainties}
+\label{sec:expsysts}
+
+The instrumental uncertainties taken into account are the ones provided by the CP groups: for each source of such uncertainties the corresponding variation on the final yield for each process is obtained by varying  the relevant quantity (calibration scale, identification and reconstruction scale factor or efficiency), as per CP recommendation, and by propagating its impact through the full analysis chain. \\
+Table \ref{tab:impacts} reports the relative impact of each category of uncertainty on the signal strength, quoted as its relative contribution with respect to the total POI uncertainty. The aboslute impact of each source of uncertainty is estimated by performing a fit to the data with the corresponding nuisance parameter fixed to zero, and then comparing the resulting uncertainty on the POI with the one obtained in the nominal fit. 
+\subsection{Luminosity}
+The integrated luminosity is measured with a precision of \textcolor{red}{4\% (?) not included yet in the fit}, combining measurements from the LUCID-2 detector and complementary information from Inner Detector and calorimeters. This uncertainty is applied to all MC samples, including the signal and background processes, as a global normalization uncertainty. The uncertainty is treated as correlated among all analysis regions and samples.
+This uncertainty is applied as a normalization systematic to all the simulated samples, and treated as fully correlated among samples and analysis regions. 
+
+
+\subsection{Pile-up reweighing}
+A pile-up reweighing is applied to simulation in order to match the pile-up profile observed in data. The uncertainty associated to this procedure is taken into account by varying the corresponding weight in the \texttt{PRW\_DATASF} NP.
+
+\subsection{Photons}
+The uncertainty on the photon identification and isolation efficiencies is taken into account in form of variations of the corresponding scale factors, as per CP recommendations. The NPs associated to these systematic uncertainties are called \texttt{PH\_EFF\_ID\_Uncertainty} and \texttt{PH\_EFF\_ISO\_Uncertainty}, respectively. 
+The NPs \texttt{EG\_SCALE} and \texttt{EG\_RESOLUTION\_ALL} account for the uncertainty on photon energy scale and resolution. The \texttt{es2022\_R22\_PRE} ESModel is used \textcolor{red}{will update to \texttt{es2024\_Run3\_v0}}, in the simplified correlation scheme \texttt{1NP\_v1} resulting in one parameter for the scale uncertainty and one for the resolution one. 
+
+\subsection{Muons}
+The uncertainty on muon identification and isolation efficiencies and on they energy scale and resolution is relevant especially for the muon CRs. 
+The scale factor variations for the muon identification and isolation are splitted into a systematic and a statistical component. The same applies to the uncertainty on the Track-to-vertex association, leading to 6 NPs in total affecting the scale factors: \texttt{MUON\_EFF\_RECO\_SYS}, \texttt{MUON\_EFF\_RECO\_STAT}, \texttt{MUON\_ISO\_SYST} and \texttt{MUON\_ISO\_STAT}, \texttt{MUON\_EFF\_TTVA\_STAT} and \texttt{MUON\_EFF\_TTVA\_SYS}. Release \texttt{240711\_Preliminary\_r24run3} is used \textcolor{red}{to be updated with \texttt{250418\_Preliminary\_r24run3}}. 
+The scale and resolution uncertainty includes charge-dependent corrections (\texttt{MUON\_SAGITTA\_DATASET},\texttt{MUON\_SAGITTA\_RESBIAS}, \texttt{MUON\_SAGITTA\_GLOBAL} and \texttt{MUON\_SAGITTA\_PTEXTRA}) and charge-independent ones (\texttt{MUON\_CB} for Combined Muons track resolution and \texttt{MUON\_SCALE} for the momentum scale correction). The calibration release is \texttt{Recs2024\_05\_06\_Run2Run3} \textcolor{red}{to be updated with \texttt{Recs2025\_03\_26\_Run2Run3}}. 
+
+\subsection{Jets}
+Jet-related uncertainties include several different sources, categorized into jet energy scale (JES) and resolution (JER), and jet vertex tagger (JVT and fJVT) efficiency. The latter are obtained from the variations of the scale factors, and are accounted for in the \texttt{JET\_JvtEfficiency} and \texttt{JET\_fJvtEfficiency} NPs. 
+For jet energy scale and resolution, the \texttt{rel22/Summer2024\_PreRec/R4\_CategoryReduction\_FullJER.config} correlation scheme is employed, resulting in about 30 NPs for JES and 13 for JER.\\
+More specifically, the JER systematics include 12 \texttt{JET\_JER\_EffectiveNP} parameters and one \texttt{JET\_JERUnc\_Noise\_PreRec} related to in situ non-closure between R21 and R22.
+The JES uncertainties are divided into 2 detector-related ones (\texttt{JET\_EffectiveNP\_Detector}), 4 related to the modeling (\texttt{JET\_EffectiveNP\_Modelling}), 3 mixed parameters (\texttt{JET\_EffectiveNP\_Mixed}) and 6 statistical ones (\texttt{JET\_EffectiveNP\_Statistical}). In addition, uncertainties related to eta intercalibration are accounted for in 3 additional parameters (\texttt{JET\_EtaIntercalibration\_Modelling},\texttt{JET\_EtaIntercalibration\_TotalStat}, \texttt{JET\_EtaIntercalibration\_NonClosure\_0p2\_PreRec}). Flavor-related uncertainties are covered by the 3 parameters \texttt{JET\_Flavor\_Composition}, \texttt{JET\_Flavor\_Response} and \texttt{JET\_BJES\_Response}. Finally, four additional non-closure uncertainties are considered: in situ non-closure (\texttt{JET\_InSitu\_NonClosure\_PreRec}), Changes in vertexing algorithm and calorimeter noise thresholds (\texttt{JET\_JESUnc\_VertexingAlg\_PreRec} and \texttt{JET\_JESUnc\_Noise\_PreRec}) and changes in simulation in the FCAL region (\texttt{JET\_FCal\_MC23\_NonClosure\_PreRec}). The effects of pile-up is also covered in 4 NPs: \texttt{JET\_Pileup\_OffsetMu}, \texttt{JET\_Pileup\_OffsetNPV}, \texttt{JET\_Pileup\_PtTerm} and \texttt{JET\_Pileup\_RhoTopology}. 
+
+\subsection{$\ETmiss$}
+The $\ETmiss$ value is affected by 3 sources of systematic uncertainties, related to its soft and hard components: the parallel scale (\texttt{MET\_SoftTrk\_Scale}) is the parallel projection of the soft term along the hard term, the parallel and transverse resolutions ( \texttt{MET\_SoftTrk\_ResoPara} and \texttt{MET\_SoftTrk\_ResoPerp} respectively) are defined as the RMS of the soft term and it’s perpendicular component with respect to the hard term. 
+
+\begin{table}[!htbp]
+  \scriptsize
+  \center
+    \begin{tabular}{ c | c  | c | c}
+      \hline
+      Name         &      Description of the uncertainty &  \makecell{ Corr. \\ regions }	  &  \makecell{ Corr. \\ samples }\\ \hline
+      gamma\_stat\_REGION     & limited MC statistics in each analysis region       & no   & no   \\ \hline
+      Luminosity   &  computation of the integrated luminosity	 &    yes   & MC samples \\ \hline
+      PRW\_DATASF         &	variation of data scale factor for pile-up reweighting  & yes   & MC samples  \\
+      PH\_EFF\_ID\_Uncertainty         &	variation of data scale factor for photon identification  & yes  & MC samples   \\
+      PH\_EFF\_ISO\_Uncertainty         &	variation of data scale factor for photon isolation  & yes  & MC samples   \\
+      \makecell{EG\_SCALE   \\ EG\_RESOLUTION\_ALL  }      & \makecell{scale and resolution of all photons (and electrons) \\
+        due to egamma calibration procedure (simplified correlation model)}	  & yes   & MC samples    \\  \hline
+      \makecell{ MUON\_EFF\_RECO\_STAT \\
+        MUON\_EFF\_RECO\_SYS  \\ } &    reconstruction efficiency of muons          & yes    \\ 
+      \makecell{MUON\_ISO\_SYST     \\
+        MUON\_ISO\_STAT}           &	isolation efficiency of muons  & yes      \\ 
+      MUON\_SCALE    & scale of the momentum of the muons    & yes  & MC samples \\ 
+      \makecell{MUON\_EFF\_TTVA\_SYST \\
+        MUON\_EFF\_TTVA\_STAT \\}  & Track To Vertex Association scale factor   & yes  \\ 
+      MUON\_SAGITTA & variations in the scale of the momentum (charge dependent)   & yes   & MC samples  \\ 
+      MUON\_CB &  combined muon momentum resolution   & yes  & MC samples   \\ 
+      MUON\_SCALE &  combined muon momentum scale   & yes  & MC samples   \\ \hline
+      \makecell{JET\_JvtEfficiency \\
+      JET\_fJvtEfficiency} &  (Forward) Jet Vertex Tagger efficiency  & yes    \\ 
+      JET\_JER  &  energy resolution uncertainty  & yes & MC samples  \\ 
+      JERUnc\_Noise\_PreRec  & In situ non-closure (R21 vs R22)   & yes & MC samples  \\ 
+      \makecell{JET\_EffectiveNP\_Modelling \\
+      JET\_EffectiveNP\_Mixed\\
+      JET\_EffectiveNP\_Detector\\
+      JET\_EffectiveNP\_Statistical} &  energy scale uncertainty & yes  & MC samples \\ 
+      \makecell{JET\_EtaIntercalibration\_Modelling \\
+      JET\_EtaIntercalibration\_TotalStat \\
+      JET\_EtaIntercalibration\_NonClosure} &  calibrate the scale of FRW jets wrt central jets  & yes & MC samples  \\ 
+      JET\_InSitu\_NonClosure\_PreRec  &  In situ non-closure (R21 vs R22)  & yes  & MC samples \\ 
+      JET\_JESUnc\_VertexingAlg\_PreRec &  Changes in vertexing algorithm  & yes & MC samples  \\ 
+      JET\_JESUnc\_Noise\_PreRec &  Changes in noise thresholds  & yes  & MC samples \\ 
+      JET\_FCal\_MC23\_NonClosure\_PreRec &  Changes in simulation in the FCAL region  & yes  & MC samples \\ 
+      JET\_Flavor & Flavour-related uncertainties   & yes & MC samples \\ 
+      JET\_Pileup & Pile-up related uncertainties  & yes & MC samples \\ \hline
+      MET\_SoftTrk\_Scale      &	scale of SoftTerm   & yes  & MC samples     \\ 
+      \makecell{ MET\_SoftTrk\_ResoPerp   \\
+      MET\_SoftTrk\_ResoPara }      &	resolution of SoftTerm    & yes  & MC samples   \\ \hline
+      ff\_jy  &  uncertainty associated to $\jfakey$ fake factor  & yes  & no  \\ 
+      ff\_ey  &  uncertainty associated to $\efakey$ fake factor  & yes & no   \\ 
+      scf\_ey  &  uncertainty associated to trigger scale factor in probe-e CR  & yes  & no  \\ \hline
+      %JET\_fJvtEfficiency  &  Forward Jet Vertex Tagger efficiency  & yes    \\ \hline
+      %% TAUS\_TRUEHADTAU\_EFF\_JETID \_ &  ID uncertainty for n-prong  taus & yes    \\ \hline
+      %PRW\_DATASF         &	variation of data scale factor for pile-up reweighting  & yes    \\ \hline
+      \hline
+    \end{tabular}
+  \caption{List and description of the systematic contributions of uncertainty considered for the background estimation. }
+  \label{tab:SysDescription}
+\end{table}
+
+
+
+\begin{table}[!htbp]
+  \scriptsize
+  \center
+    \begin{tabular}{ c | c  }
+      \hline
+      Category         &      Contribution to total uncertainty (\%) \\ \hline
+      Statistical & 80\%\\
+      MC only statistics & 17\%\\
+      Systematic & 57\%\\\hline
+      $k_Z$ normalization factor & 10\% \\
+      $k_W$ Shape factors & 7\% \\
+      Pile-up reweighting & 11\% \\
+      Photons & 12\% \\
+      Muons & 0\% \textcolor{red}{to double-check} \\
+      Photons & 12\% \\
+      Jet Energy Resolution & 1\% \\
+      Jet Energy Scale & 19\% \\
+      Jet Flavor& 1.5\% \\
+      MET & 0.5\% \textcolor{red}{to double-check} \\
+      $\efakey$ & 11\% \\
+      $\jfakey$ & 48\% \\
+      \hline
+    \end{tabular}
+  \caption{Impact of each category of uncertainty on the signal yields, quoted as the relative contribution to the total signal strength uncertainty (0.0 $\pm$ 0.01). }
+  \label{tab:impacts}
+\end{table}

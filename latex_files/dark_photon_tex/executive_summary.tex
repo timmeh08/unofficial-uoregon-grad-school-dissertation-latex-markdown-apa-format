@@ -1,0 +1,35 @@
+In this paper, we present a new strategy to search for exotic Higgs boson decays 
+to a final state with a photon and missing transverse energy, $\ETmiss$ using 25.8$\fbinv$ of 2023 data.
+Exotic decays of the 125 GeV Higgs boson are well motivated by potential explanations of dark matter. 
+This signature can arise from a variety of theoretical models, including dark sector models and supersymmetry. 
+
+We focus on a Higgs boson with a mass of 125 GeV, decaying into a photon and a dark photon ($H\to\gamma\gamma_{D}$). This leads to a photon with an average photon energy, ($E_\gamma=m_H/2$) and similar \ETmiss in the Higgs center-of-mass frame due to the escaping \gammad. Though the ZH and VBF production provide cleaner final states, the cross-section of the gluon-gluon fusion production channel is an order of magnitude larger than the VBF channel. Developments in the trigger between Run 2 and Run 3 led to the implementation of a lower $\ETmiss$ and photon $\pT$ threshold trigger that increases the acceptance of ggF events by approximately a factor of two (using loose selections). The trigger was implemented in 2023 and collected 25.8\fbinv in that year. 
+
+This final state is quite challenging, due to the high contamination of low $\ETmiss$ region with background arising from fake $\ETmiss$, and to the possible misidentification of HS primary vertex. The signal is typically characterized by low track activity due to the absence of charged leptons or significant hadronic activity, therefore the standard vertex selection may fail to correctly identify the correct vertex. In such scenarios, a pile-up vertex can have a higher sum of track transverse momenta, causing it to be mistakenly identified as the primary vertex. An incorrect vertex identification enhances also the contribution from background events where a sizeable fake $\ETmiss$ arises from jets that are mistakenly flagged as PU jets. To mitigate these effects, we implemented a BDT classifier to reject events with the incorrect vertex assignment. 
+
+The optimized analysis selection requires zero leptons (electrons, muons or taus), at most 3 central jets, $\pTy > 50$ GeV, $\ETmiss > 100$ GeV, and the transverse mass between the photon and \ETmiss greater than 80 GeV. Additional requirements to suppress backgrounds from events without real \ETmiss are imposed, including a selection on the \ETmiss significance, on the angular separations between the photon or the leading jet and the $\ETmiss$, and on $\DeltaMET=\ETmissNoJVT-\ETmiss$, where \ETmissNoJVT is computed using all jets, including those that fail JVT, in order to "recover" potentially rejected HS jets due to misidentified vertex. The transverse mass of the photon and $\ETmiss$ is used as discriminant variable in the fit, in four bins defined in order to have one bin centered around the Higgs mass peak and the other three allowing a reasonable statistics while covering the rest of the transverse mass spectrum to improve the constraint on the background.  
+
+There are three categories of background affecting the analysis: events with true photons ($W(\ell\nu)\gamma$ with a non reconstructed lepton and $Z(\nu\nu)\gamma$), events with fake photon from misidentified electron (\efakey, mostly $W(e\nu)+jets$) or misidentified jet (\jfakey, di-jets, $W$jets, $Z$jets and $\gamma$jets with fragmentation photons), and events with fake $\ETmiss$ ($\gamma$jets with fragmentation or direct photons, di-jets ). Most of the background events entering the analysis region due to fake $\ETmiss$ are also characterized by the presence of a fake photon from jet misidentification, therefore this contribution is estimated as part of the \jfakey one. In particular, $\gamma$jets with fragmentation photons are treated as \jfakey due to the fact that thet display similar features, in terms of isolation, to photons from neutral meson decays, being embedded into hadronic jets. 
+Both \efakey and \jfakey are estimated using data-driven techniques based on a fake-rate method. For \efakey, the fake rate is measured using a sample of $Z\rightarrow ee$ events and applied to a CR with an electron instead of the photon. 
+The \jfakey are estimated exploiting photon isolation to compute fake rates: isolation profiles of tight fake photons are derived using an extrapolation technique that transforms the
+distribution observed in data with loose photons, into the ones expected for tight photons via an affine mapping derived from MC simulations. The evaluated fake rates are then applied to a non-isolated photon CR. 
+The remaining background with real photons is estimated from MC simulations, constrained in control regions with either one or two muons. The one muon control region is used to constrain $W\gamma$ in bins of transverse mass, while an inclusive two muon control region is used for $Z\gamma$ events, due to limited statistics. 
+Validation regions with low \ETmiss significance, low $\Delta\phi(\ETmiss,\gamma)$ or low $m_T$ were used to validate the vertex BDT and the data-driven background modelling.
+
+Systematic uncertainties on the background come from experimental uncertainties provided by the CP groups, such as the ones associated to the energy scale and resolution of the different physics objects, as well as the uncertainty on the identification and isolation efficiencies. As the primary backgrounds are derived from data, the data driven methods have thei own associated uncertainties depending on the data-driven method itself. For MC samples, theoretical uncertainties are also taken into account, including the effect of variations of the PDF and renormalization/factorization scales. 
+All the uncertainties are included in the fit as nuisance parameters with a gaussian constraint. 
+A simultaneous fit of the signal region and control regions was performed (validation regions were not included in the fit). The resulting (blinded) expected limit is 1.96\% on the branching ratio of Higgs to $\gamma\gammad$. We also implemented a combination with Run 2 $ZH$ and VBF channels, which improves the expected limit to 1.2\%. 
+
+\subsection*{TO DO}
+
+\begin{itemize}
+	\item Edit support note (June)
+	\item Theory uncertainties (second half of July) 
+	\item More detailed studies and finalization of correlation scheme and smoothing (if needed) (end of july)
+	\item Final Ntuples production (end of august / september)
+	\item Analysis FAR review (September) 
+	\item If recommendations available, add 2024 data (start in September)
+\end{itemize} 
+
+
+

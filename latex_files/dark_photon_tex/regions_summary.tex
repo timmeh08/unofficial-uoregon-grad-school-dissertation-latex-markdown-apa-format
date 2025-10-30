@@ -1,0 +1,37 @@
+% -*- latex -*-
+
+Table \ref{tab:region_summary} summarizes the selections in the various analysis regions.
+
+
+\begin{table}[ht]
+  \begin{center}
+    \scriptsize
+    \begin{tabular}{c||c||c|c||c|c|c}
+    \toprule
+    Cut variable & SR & $1\mu$ CR & $2\mu$ CR & Low $\ETmiss$ sig. VR  & Low $\dphimety$ VR & Low $\mT$ VR\\
+    \hline
+    Preselections & \multicolumn{6}{c}{\checkmark} \\ \hline
+    % $N_{\gamma}$ & 1 & 1 & 1 & 1 & 1 & 1\\\hline
+    $N_{\gamma}$ & \multicolumn{6}{c}{1 (tight \&\&\ isolated)} \\ \hline
+    $N_{e, \tau}$ & \multicolumn{6}{c}{0 (baseline)} \\\hline
+    $N_{\mu}$ & 0 (baseline) & 1 (selected) & 2 (selected) & \multicolumn{3}{c} {0 (baseline) } \\\hline
+    $N_{jet,central}$ & \multicolumn{2}{c|}{$\leq 3$} & --- & \multicolumn{3}{c} {$\leq 3$}\\\hline
+    $\mT$ & \multicolumn{5}{c|}{ $>90$ GeV } & $[80;90]$ GeV\\\hline
+    %$p_T^{\gamma}$  & $>50$ GeV & $>50$ GeV & $>50$ GeV & $>50$ GeV & $>50$ GeV  & $>50$ GeV\\
+    %$E_T^{miss} $  & $>100$ GeV & $>50$ GeV & $>50$ GeV & $>50$ GeV & $>50$ GeV  & $>50$ GeV\\
+    $E_T^{miss}$ significance & \multicolumn{2}{c|}{ $>6$} & --- & $[2, 6]$ & \multicolumn{2}{c}{ $>6$}  \\\hline
+    $\Delta E_T^{miss}$ & \multicolumn{2}{c|}{$>-10$ GeV} & --- & \multicolumn{3}{c} {$>-10$ GeV} \\\hline
+    $\dphimety$ & \multicolumn{4}{c|} { $>1.25$} & $[0.5, 1]$  & $>1.25$\\\hline
+    $\Delta\phi(E_T^{miss},E_T^{miss,jet})$ & \multicolumn{2}{c|} {$<0.75$} & ---& \multicolumn{3}{c} { $<0.75$}  \\\hline
+    $\Delta\phi(j_1,j_2)$ & \multicolumn{2}{c|} {$<2.5$ }& --- & \multicolumn{3}{c} {$<2.5$}\\\hline
+    % $m_{\mu\mu\gamma}$ & --- & --- & --- & --- & ---  & $>100$ GeV\\\hline
+    $m_{\mu\mu\gamma}$ & \multicolumn{2}{c}{---} & $>100$ GeV & \multicolumn{3}{c}{---} \\ \hline
+    $\mathrm{BDT}_{\mathrm{vertex}}$ & \multicolumn{6}{c} { $>0.1$  }\\\hline
+    \bottomrule
+    \end{tabular}
+  \end{center}
+  \caption{
+    Summary of the selections applied in the analysis regions. In the muon CRs, the $\ETmiss$(inv. $\mu$) is used.
+  }
+  \label{tab:region_summary}
+\end{table}

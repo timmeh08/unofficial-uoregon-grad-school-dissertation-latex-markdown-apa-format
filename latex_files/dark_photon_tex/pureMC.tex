@@ -1,0 +1,114 @@
+
+
+A first attempt of blind simultaneous fit has been done relying on Monte Carlo samples for the signal and for all the background processes. MC samples included in the fit are: 
+\begin{itemize}
+    \item for the signal: ggF, VBF, ZH, WH; 
+    \item for the background: $W\gamma, Z\gamma,W$jets, $Z$jets, $\gamma$jets direct, $\gamma$jets fragmentation, dijets
+\end{itemize}
+A flat systematic of 10\% is applied to all the samples. 
+The composition of SR and CRs in terms of samples is showed in Figure \ref{fig:pie_onlyMC}. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/MConly/PieChart.pdf} 
+    \caption{SR and CRs composition from Monte Carlo.}
+    \label{fig:pie_onlyMC}
+\end{figure}
+\begin{figure}[H]
+    \centering
+
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/MConly/SR.pdf}
+        \caption*{(a) Pre-fit SR}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/MConly/OneMuCR.pdf}
+        \caption*{(b) Pre-fit $1\mu$CR}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/MConly/TwoMuCR.pdf}
+        \caption*{(c) Pre-fit $2\mu$CR}
+    \end{minipage}
+
+    \vspace{0.5cm}
+
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/MConly/SR_postFit.pdf}
+        \caption*{(d) Post-fit SR}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/MConly/OneMuCR_postFit.pdf}
+        \caption*{(e) Post-fit $1\mu$CR}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/MConly/TwoMuCR_postFit.pdf}
+        \caption*{(f) Post-fit $2\mu$CR}
+    \end{minipage}
+
+    \caption{Pre-fit and post-fit distributions using Monte Carlo only in SR and control regions.}
+    \label{fig:prepost_onlyMC}
+\end{figure}
+
+Pre-fit and post-fit $m_T$ distribution in SR, $1\mu$CR and $2\mu$CR are showed in Figure \ref{fig:prepost_onlyMC}. Taking in consideration $m_T$ distribution in SR: 
+\begin{itemize}
+    \item $W$jets events are mainly located in the first bin, as these events are a background for the analysis only when the W decays in the electronic channel and the electron is mis-reconstructed as a photon; in such a case, the transverse mass $\gamma-p_T^{miss}$ is peaked on the W-boson mass ($\sim\SI{80}{GeV}$); 
+    \item $Z\gamma$ events have a $m_T$ distribution quite similar to the one of the signal, being the irreducible background, with a peak in the central bin; 
+    \item $W\gamma$ events contain real $p_T^{miss}$ so their spectrum reaches high values of $m_T$; 
+    \item $\gamma$jets direct events are absent in the last bin as for such events the $p_T^{miss}$ is fake and is unlikely that a huge fake $p_T^{miss}$ is mis-reconstructed.
+\end{itemize}
+Regarding ratio plots: 
+\begin{itemize}
+    \item in SR, the ratio plots are empty as data are blind; 
+    \item in $1\mu$CR, the ratio plot pre-fit presents the discrepancies between data and Monte Carlo, while post-fit Monte Carlo simulations are corrected with k-factors, so the ratio plot becomes flat; 
+    \item in $2\mu$CR, the post-fit ratio plot is not flat as an inclusive $k_Z$ is used due to low statistics. 
+\end{itemize}
+
+
+k-factors are showed in Table \ref{tab: kfac_onlyMC}. $k_Z$ is particularly far from 1, quite unexpected for an electroweak background such as $Z\gamma$. This is mostly due to the under-estimation of jets faking photons contribution to $2\mu$CR by Monte Carlo simulations. 
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c|c|c}
+        \toprule
+        $m_T$ \textbf{bin [GeV]} & \textbf{$k_W$} & \textbf{Error up} & \textbf{Error down}  \\
+        \hline
+         80-110 &  1.09996 &+0.139674 &-0.116532\\
+      
+        110-140 &  1.10981 &+0.103179 &-0.0936811\\
+    
+        140-200 & 1.22607 &+0.115021 &-0.0956884\\
+    
+        200-300 &  1.38527 &+0.15409 &-0.130573\\
+  \hline
+    $m_T$ \textbf{bin [GeV]} & \textbf{$k_Z$} & \textbf{Error up} & \textbf{Error down}  \\
+    \hline
+    inclusive & 1.41432& +0.155818 &-0.140022\\ 
+    \bottomrule
+    \end{tabular}
+    \caption{k-factors in the only Monte Carlo configuration. }
+    \label{tab: kfac_onlyMC}
+\end{table}
+
+The expected limit in this configuration is 0.015053. 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{l
+                    S[table-format=1.6]
+                    S[table-format=1.6]
+                    S[table-format=1.6]
+                    S[table-format=1.6]
+                    S[table-format=1.6]}
+        \toprule
+        & {Nominal} & {$-1\sigma$} & {$+1\sigma$} & {$-2\sigma$} & {$+2\sigma$} \\
+        \midrule
+        Expected limit &
+        0.015053 & 0.010567 & 0.021724 & 0.007740 & 0.030515 \\
+        
+        \bottomrule
+    \end{tabular}
+    \caption{Expected limit in the only Monte Carlo configuration. }
+\end{table}
+

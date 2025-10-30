@@ -1,0 +1,137 @@
+The MC samples were processed using p-tag \textbf{p6491} or \textbf{p6320 }. 
+
+The signal samples were showered from common Higgs LHE samples generated using Powheg. The decay process implemented as part of the shower was implemented using Pythia. The relevant JIRA tickets can be found at: \href{https://its.cern.ch/jira/browse/ATLMCPROD-10773}{ATLMCPROD-10733}, \href{https://its.cern.ch/jira/browse/ATLMCPROD-10819}{ATLMCPROD-10819}, \href{https://its.cern.ch/jira/browse/ATLMCPROD-10916}{ATLMCPROD-10916} and the sample validation at: \href{https://twiki.cern.ch/twiki/bin/view/AtlasProtected/MC23HLRSHyydValidation}{MC23HLRSHyydValidation}. The signal sample paths are shown in table~\ref{tab:signal-samples}. 
+
+\begin{table}[ht]
+\centering
+\tiny
+\caption{List of signal MC samples used in this analysis.}
+\label{tab:signal-samples}
+\begin{tabular}{l}
+\toprule
+mc23\_13p6TeV.602402.PhPy8EG\_ggH\_H125yyd.deriv.DAOD\_PHYS.e8537\_e8528\_s4159\_s4114\_r15224\_r15225\_p6320 \\
+mc23\_13p6TeV.602403.PhPy8EG\_VBF\_H125yyd.deriv.DAOD\_PHYS.e8523\_e8528\_s4159\_s4114\_r15224\_r15225\_p6320 \\
+mc23\_13p6TeV.602913.PhPy8EG\_qqZH\_H125yyd.deriv.DAOD\_PHYS.e8523\_e8528\_s4159\_s4114\_r15224\_r15225\_p6320 \\
+mc23\_13p6TeV.602914.PhPy8EG\_WpH\_H125yyd.deriv.DAOD\_PHYS.e8523\_e8528\_s4159\_s4114\_r15224\_r15225\_p6320 \\
+mc23\_13p6TeV.602915.PhPy8EG\_WmH\_H125yyd.deriv.DAOD\_PHYS.e8523\_e8528\_s4159\_s4114\_r15224\_r15225\_p6320 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The primary backgrounds for the analysis include processes with a true photon in the final states, and processes with a fake photon due to misidentified jets or electrons, and/or fake $\ETmiss$. The former include $Z\gamma$ and $W\gamma$, where the vector boson can decay to a lepton that is not reconstructed or to neutrinos.
+The background due to jets or electrons misidentified as photons is mainly given by $Zjets$, $Wjets$, di-jets and $\gamma jets$ with fragmentation photon. The $Zjets$, di-jets and $\gamma(frag) jets$ events are also characterized by fake $\ETmiss$ due to mismeaured or not reconstructed jets. Finally, $\gamma jets$ with direct photon ($\gamma (direct)jets$) enter the analysis regions exclusively due to the presence of fake $\ETmiss$. \\
+The list of MC samples used in this analysis is shown in table~\ref{tab:gammajet-samples} for $\gamma jets$, table~\ref{tab:dijet-samples} for di-jets, table~\ref{tab:Vy-samples} for $W\gamma/Z\gamma$, table~\ref{tab:V-samples} for $W/Z$.
+%photon + jet (table~\ref{tab:jet-faking-samples}), dijet events (e.g., fake \ETmiss, table~\ref{tab:dijet-samples}), $W\gamma$ or $Z\gamma$ (table~\ref{tab:Vy-samples}) where the vector boson can decay to a lepton that is not reconstructed or to neutrinos, and $W$ or $Z$ events where a jet is misreconstructed as a photon (table~\ref{tab:V-samples}). 
+
+\begin{table}[ht]
+\centering
+\tiny
+\caption{List of $\gamma jets$ MC samples used in this analysis.}
+\label{tab:gammajet-samples}
+\begin{tabular}{l}
+\toprule
+mc23\_13p6TeV.801649.Py8\_gammajet\_frag\_DP8\_17\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801650.Py8\_gammajet\_frag\_DP17\_35\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801651.Py8\_gammajet\_frag\_DP35\_50\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801652.Py8\_gammajet\_frag\_DP50\_70\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801653.Py8\_gammajet\_frag\_DP70\_140\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801654.Py8\_gammajet\_frag\_DP140\_280\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801655.Py8\_gammajet\_frag\_DP280\_500\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801656.Py8\_gammajet\_frag\_DP500\_800\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801657.Py8\_gammajet\_frag\_DP800\_1000\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801658.Py8\_gammajet\_frag\_DP1000\_1500\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801659.Py8\_gammajet\_frag\_DP1500\_2000\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801660.Py8\_gammajet\_frag\_DP2000\_inf\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801663.Py8\_gammajet\_direct\_DP8\_17\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801664.Py8\_gammajet\_direct\_DP17\_35\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801665.Py8\_gammajet\_direct\_DP35\_50\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801666.Py8\_gammajet\_direct\_DP50\_70\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801667.Py8\_gammajet\_direct\_DP70\_140\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801668.Py8\_gammajet\_direct\_DP140\_280\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801669.Py8\_gammajet\_direct\_DP280\_500\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801670.Py8\_gammajet\_direct\_DP500\_800\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801671.Py8\_gammajet\_direct\_DP800\_1000\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801672.Py8\_gammajet\_direct\_DP1000\_1500\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801673.Py8\_gammajet\_direct\_DP1500\_2000\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801674.Py8\_gammajet\_direct\_DP2000\_2500\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801675.Py8\_gammajet\_direct\_DP2500\_3000\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801676.Py8\_gammajet\_direct\_DP3000\_inf\_FullSW.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}[ht]
+\centering
+\tiny
+\caption{List of dijet MC samples used in this analysis}
+\label{tab:dijet-samples}
+\begin{tabular}{l}
+\toprule
+mc23\_13p6TeV.801165.Py8EG\_A14NNPDF23LO\_jj\_JZ0.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15578\_r15514\_p6491 \\
+mc23\_13p6TeV.801166.Py8EG\_A14NNPDF23LO\_jj\_JZ1.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801166.Py8EG\_A14NNPDF23LO\_jj\_JZ1.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15578\_r15514\_p6491 \\
+mc23\_13p6TeV.801167.Py8EG\_A14NNPDF23LO\_jj\_JZ2.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801167.Py8EG\_A14NNPDF23LO\_jj\_JZ2.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15578\_r15514\_p6491 \\
+mc23\_13p6TeV.801168.Py8EG\_A14NNPDF23LO\_jj\_JZ3.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801169.Py8EG\_A14NNPDF23LO\_jj\_JZ4.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801170.Py8EG\_A14NNPDF23LO\_jj\_JZ5.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801171.Py8EG\_A14NNPDF23LO\_jj\_JZ6.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\ 
+mc23\_13p6TeV.801172.Py8EG\_A14NNPDF23LO\_jj\_JZ7.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801173.Py8EG\_A14NNPDF23LO\_jj\_JZ8.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.801174.Py8EG\_A14NNPDF23LO\_jj\_JZ9incl.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\tiny
+\caption{List of $W\gamma/Z\gamma$ MC samples used in this analysis}
+\label{tab:Vy-samples}
+\begin{tabular}{l}
+\toprule
+mc23\_13p6TeV.700770.Sh\_2214\_eegamma.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700771.Sh\_2214\_mumugamma.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700772.Sh\_2214\_tautaugamma.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700773.Sh\_2214\_enugamma.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700774.Sh\_2214\_munugamma.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700775.Sh\_2214\_taunugamma.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700776.Sh\_2214\_nunugamma.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\tiny
+\caption{List of $W/Z$ MC samples used in this analysis.}
+\label{tab:V-samples}
+\begin{tabular}{l}
+\toprule
+mc23\_13p6TeV.700777.Sh\_2214\_Wenu\_maxHTpTV2\_BFilter.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700778.Sh\_2214\_Wenu\_maxHTpTV2\_CFilterBVeto.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700779.Sh\_2214\_Wenu\_maxHTpTV2\_CVetoBVeto.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15530\_r15514\_p6491 \\
+mc23\_13p6TeV.700780.Sh\_2214\_Wmunu\_maxHTpTV2\_BFilter.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700781.Sh\_2214\_Wmunu\_maxHTpTV2\_CFilterBVeto.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700782.Sh\_2214\_Wmunu\_maxHTpTV2\_CVetoBVeto.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15530\_r15514\_p6491 \\
+mc23\_13p6TeV.700783.Sh\_2214\_Wtaunu\_maxHTpTV2\_BFilter.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700784.Sh\_2214\_Wtaunu\_maxHTpTV2\_CFilterBVeto.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700785.Sh\_2214\_Wtaunu\_maxHTpTV2\_CVetoBVeto.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15530\_r15514\_p6491 \\
+mc23\_13p6TeV.700786.Sh\_2214\_Zee\_maxHTpTV2\_BFilter.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700787.Sh\_2214\_Zee\_maxHTpTV2\_CFilterBVeto.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700788.Sh\_2214\_Zee\_maxHTpTV2\_CVetoBVeto.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15530\_r15514\_p6491 \\
+mc23\_13p6TeV.700789.Sh\_2214\_Zmumu\_maxHTpTV2\_BFilter.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700790.Sh\_2214\_Zmumu\_maxHTpTV2\_CFilterBVeto.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700791.Sh\_2214\_Zmumu\_maxHTpTV2\_CVetoBVeto.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15530\_r15514\_p6491 \\
+mc23\_13p6TeV.700792.Sh\_2214\_Ztautau\_maxHTpTV2\_BFilter.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700793.Sh\_2214\_Ztautau\_maxHTpTV2\_CFilterBVeto.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700794.Sh\_2214\_Ztautau\_maxHTpTV2\_CVetoBVeto.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15530\_r15514\_p6491 \\
+mc23\_13p6TeV.700795.Sh\_2214\_Znunu\_pTV2\_BFilter.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700796.Sh\_2214\_Znunu\_pTV2\_CFilterBVeto.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15224\_r15225\_p6491 \\
+mc23\_13p6TeV.700797.Sh\_2214\_Znunu\_pTV2\_CVetoBVeto.deriv.DAOD\_PHYS.e8514\_e8528\_s4159\_s4114\_r15530\_r15514\_p6491 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+As detailed later, in section \ref{sec:bkg}, MC simulations are eventually emploied only for true photon backgrounds (including the $\gamma(direct) jets$), while the contribution from events with fake photons are estimated through fully data-driven methods. MC simulations were used for preliminary studies and optimization of the analysis selection. 

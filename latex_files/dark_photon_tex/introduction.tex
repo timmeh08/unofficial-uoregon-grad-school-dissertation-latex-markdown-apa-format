@@ -1,0 +1,25 @@
+In this paper, we present a new strategy to search for exotic Higgs boson decays 
+to a final state with a photon and missing transverse energy, $E_T^{\text{miss}}$.
+Exotic decays of the 125 GeV Higgs boson are well motivated by potential explanations of dark matter. 
+Theoretical models that generate this signature can arise from a variety of models, including dark sector models and supersymmetry. 
+
+We consider a specific signal model -- the dark photon model with a \( U(1)_D \) gauge group~\cite{Gabrielli:2014oya,Biswas:2016jsh}. Such models arise in the vector portal, where kinetic mixing occurs between a dark and a visible Abelian gauge boson. Specifically, the visible photon corresponds to the \( U(1) \) gauge group of electromagnetism (or hypercharge above the electroweak symmetry-breaking scale), while the dark photon (\gammad) is linked to an additional \( U(1)_D \) gauge group of the dark sector. Kinetic mixing arises naturally, as the field strengths of two Abelian gauge fields can combine into a dimension-four operator, allowing the two gauge bosons to mix during propagation. This mixing provides the portal linking the two sectors and enables experimental detection of dark photons. Depending on the parameters of the model, the branching ratios for \( H \to \gamma \gamma_d \) can reach a few percent, and leads to the decay process $H\rightarrow \gamma\gamma_{d}$, or a $\gamma + E_T^{\text{miss}}$~\cite{Beauchesne2023a,Beauchesne2023b} as shown in Fig.~\ref{fig:Feynman-ggF}. We consider massless dark photons, as massive dark photons tend to result in other decay channels. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{../images/dark_photon/images/Feynman_ggF}
+    \caption{Feynman diagram illustrating the gluon-gluon fusion (ggF) process.}
+    \label{fig:Feynman-ggF}
+\end{figure}
+
+We focus on a Higgs boson with a mass of 125 GeV. This leads to a photon with an average photon energy, \( E_\gamma = m_H/2 \) and similar \ETmiss in the Higgs center-of-mass frame due to the escaping \gammad. Though the $z$-component of the \gammad momentum escapes the detector, the transverse mass variable between the photon and \ETmiss results in a resonant like behavior near the Higgs mass at 125 GeV. While we focus on massless dark photons, the kinematics are not sensitive to the mass of the dark photon up to around 10 GeV~\cite{EXOT-2021-17}. 
+
+Searches for the \( \gamma + E_T^{\text{miss}} \) signature have been conducted extensively at the LHC~\cite{HDBS-2019-13, EXOT-2021-17, EXOT-2018-63, CMS-EXO-19-007,EXOT-2014-06,CMS-EXO-12-047,CMS-HIG-14-025,CMS-EXO-20-005}. CMS probed the decay using Higgs events produced in association with a \( Z \) boson (\( ZH \), \( Z \to \ell^+\ell^- \)) with 137 fb\(^{-1}\), setting a 95\% CL upper limit of 4.6\% (3.6\% expected), while ATLAS performed a search with a limit of 2.8\% (2.3\% expected) with 139 fb\(^{-1}\)~\cite{HDBS-2019-13}. 
+
+In vector-boson fusion (VBF) production with 130 fb\(^{-1}\), CMS achieved a 3.5\% (2.8\% expected) limit. ATLAS set a more stringent 1.8\% (1.7\% expected) limit in the VBF channel with 139 fb\(^{-1}\)~\cite{EXOT-2021-17}. The combination of ATLAS results for ZH and VBF leads to a combined limit of 1.3\% (1.5\% expected) with 139 fb\(^{-1}\) of data. 
+
+Though the ZH and VBF production models are clean final states, the gluon-gluon fusion production model is an order of magnitude larger than the VBF channel. Though CMS has searched for the production channel in (ggF)~\cite{CMS-HIG-14-025}. This channel has not yet been pursued by ATLAS -- though the inclusive signature with a single photon has been pursued in the context of other exotic models~\cite{EXOT-2018-63}. One of the challenges is that the ggF production mode leads to relatively few trigger signatures that are accessible in the trigger. 
+
+Developments in the trigger between Run 2 and Run 3 led to the implementation of a lower threshold trigger that increases the acceptance of ggF events by approximately a factor of two (using loose selections). The trigger was implemented in 2023, and relies on an electromagnetic L1 item, \textit{L1\_eEM26M}, which selects electrons or photons at L1 with a threshold of approximately 26 GeV. The HLT sequence subsequently relies on the \textit{pfopufit} algorithm, or particle plow constituents with a dedicated pileup subtraction algorithm unique to the HLT~\cite{TRIG-2019-01}. To reduce the rate in the HLT sufficiently, the trigger also includes a minimum requirement on the transverse mass between the $\gamma$ and the \ETmiss (more details are included in).%~\ref{sec:trigger}). 
+
+% We describe the data samples in section~\ref{sec:samples}, the physics objects in section~\ref{sec:objects} and the selections and trigger in section~\ref{sec:selections}. The background estimation is described in section~\ref{sec:bkg}, uncertainties in section~\ref{sec:systs}, statistical analysis in section~\ref{sec:statanalysis}, results in section~\ref{sec:results} and conclusions in section~\ref{sec:conclusion}. 

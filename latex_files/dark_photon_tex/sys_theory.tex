@@ -1,0 +1,12 @@
+\textcolor{red}{PRELIMINARY draft }
+Theory uncertainties for MC samples are estimated following the PmgSystematics recommendations, using the on-the-fly weights available in the MC samples. 
+
+%An uncertainty of $\pm6\%$ is assigned on the inclusive \ttbar production cross-section at NNLO+NNLL which is the result of adding in quadrature contributions from renormalisation and factorisation scale variations (obtained by independently varying the parameters $\mu_R$ and $\mu_F$ by a factor $0.5$ and $2.0$ and taking the envelope), PDF and $\alpha_S$ variations (where variations follow the PDF4LHC treatment~\cite{ThePDF4LHCWorGroIntRec} with the typical \texttt{Var3c} variations of the strong coupling constant $\alpha_S$) and mass uncertainty (which follows from variations of the top mass by $\pm 1~\GeV$)~\cite{syst:ttbarxsec}. The associated systematic is labelled \texttt{ttbar\_cross\_section}.
+Missing higher order contributions are estimated by adding in quadrature contributions from renormalisation and factorisation scale variations, which are obtained by independently varying the parameters $\mu_R$ and $\mu_F$ by a factor $0.5$ and $2.0$ and taking the envelope. 
+
+Uncertainties on the choice of the PDF set used for event simulation are estimated by using the PDF4LHC and NNPDF error sets following the typical PDF4LHC recommendation~\cite{ThePDF4LHCWorGroIntRec} and taking the envelope.  The uncertainty on the strong coupling constant $\alpha_S$ is evaluated by using the same PDF set with two different choices of $\alpha_S$. In the fit, both parameters are added in quadrature and treated as correlated parameters.
+
+The initial state radiation (ISR) modelling, i.e. the amount of predicted ISR in an event by the parton showering algorithm can be estimated by making use of the built-in up and down variations of the \texttt{Var3c} parameter. 
+
+The amount of final state radiation (FSR) in an event is estimated by varying the factorisation scale by factors $0.5$ and $2.0$ inside \texttt{Pythia}. 
+

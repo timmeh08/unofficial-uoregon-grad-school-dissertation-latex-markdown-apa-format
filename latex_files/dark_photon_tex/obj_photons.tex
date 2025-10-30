@@ -1,0 +1,32 @@
+Photon candidates (baseline photons) are reconstructed from clustered energy deposits in the EM calorimeter. They must
+fulfil $p_{\mathrm{T}}>25$ GeV, $|\eta|<2.37$, outside of the transition region between barrel and endcap calorimeters ($1.37< |\eta| < 1.52$), and \texttt{Tight} identification criteria. \\
+Selected photons are additionally required to be isolated according to the \texttt{TightCaloOnly} Workin Point (WP). An additional selection on the photon $p_{\mathrm{T}}$ is applied at event level, requiring one selected photon with $p_{\mathrm{T}}>50$ GeV. 
+
+\begin{table}[ht]
+  \caption{Photon selection criteria.}%
+  \label{tab:object:photon} 
+  \centering
+  % \resizebox{\textwidth}{!}{
+  \begin{tabular}{ll}
+    \toprule
+    Feature & \multicolumn{1}{c}{Criterion} \\
+    Object quality & Not from a bad calorimeter cluster (\texttt{BADCLUSPHOTON})\\ %\cline{2-2}
+    Photon cleaning & \texttt{passOQquality} \\
+    Pseudorapidity range & $(|\eta| < 1.37) \quad || \quad (1.52 < |\eta| < 2.37)$ \\
+    Energy calibration & \texttt{es2022\_R22\_PRE} (ESModel)\\
+    \midrule\midrule
+    \textbf{Baseline photons} &\\ 
+    \midrule
+ %   Energy & $E > \SI[parse-numbers=false]{XX}{\GeV}$ \\
+    Transverse energy & $p_{\mathrm{T}}>10$ GeV \\
+    Identification & \texttt{Loose} \\
+    \midrule
+    \textbf{Selected photon} &\\ 
+    \midrule
+    Transverse energy & $p_{\mathrm{T}}>50$ GeV \\
+    Identification & \texttt{Tight} \\
+    Isolation &  \texttt{TightCaloOnly} \\
+    \bottomrule
+  \end{tabular}
+  %  }
+\end{table}

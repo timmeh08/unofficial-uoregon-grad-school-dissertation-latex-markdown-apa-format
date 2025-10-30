@@ -1,0 +1,765 @@
+Jets faking photons background concerns all the events with a photon mis-reconstructed as a jet, thus corresponding to the following MC samples: $\gamma$+jets (fragmentation), dijets, $W$jets and $Z$jets. 
+
+All these studies have been done using dijets, $\gamma+$jets, $Z+$jets and $W+$jets Monte Carlo samples (MC23c and MC23d) and 2023 data sample. 
+
+As Monte Carlo simulations underestimate events with jets faking photons, a data-driven technique is needed for the estimation of such a background. 
+
+Some observations lead to exclude the possibility of relying on Monte Carlo and of applying a standard ABCD-like method. 
+\begin{itemize}
+    \item the isolation profile of fake loose, L5 (L5) and loose4 (L4) is different in data and Monte Carlo (Figures \ref{fig:cfrMCDATA}). This exclude the possibility to rely on Monte Carlo and suggests the need of a data-driven techniques. 
+    \item the isolation profiles of fake loose, L5, L4 and tight photons are different from each other in Monte Carlo  (Figures \ref{fig:cfrMC}). This means that isolation and tightness are highly correlated, excluding the possibility to apply a standard ABCD-like method for the estimation of this background. 
+    
+     \begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.5]{images/confrontoIDMC2.png}
+  \caption{Calorimeter relative isolation in Monte Carlo for fake photons with different ID: tight (blue), loose (yellow), L4 (pink) and L5 (green).}
+    \label{fig:cfrMC}
+\end{figure}
+\end{itemize}
+
+\begin{figure}[!htbp]\label{fig:calo}
+    \centering
+\subfloat[]{\includegraphics[scale=0.34]{images/korange.png}}
+\subfloat[]{\includegraphics[scale=0.34]{images/loose_5.png}}\\
+\subfloat[]{\includegraphics[scale=0.34]{images/loose_4.png}}
+  \caption{Calorimeter relative isolation in MC and DATA for loose (yellow), L5 (green) and L4 (pink) photons. }
+    \label{fig:cfrMCDATA}
+\end{figure}
+
+Relative isolation in the calorimeter as been hence used as a discriminant variable in the development of a fake factors-like method. 
+
+ It is defined as the ratio between the energy $E_T^{calo40}$ deposited into an isolation cone defined by $\Delta R = 0.40$ in the $\eta-\phi$ plane, corrected with a underlying "pedestal" ($\SI{2.45}{GeV}$), and the transverse momentum of the inspected particle.   
+    \begin{equation}
+      {isol}_{calo}^{rel} = \frac{E_T^{calo40}-2450}{p_T^\gamma}
+    \end{equation}
+where $p_T^{\gamma}$ is the transverse momentum of the photon, $\SI{2450}{}$ is the pedestal and  $E_T^{calo40}$ is defined as: 
+\begin{equation}
+        E_T^{calo40}=E_T-E_T^{core}-E_T^{leakage}(\eta, \Delta R)-E_T^{pile-up}(\eta, \Delta R)
+    \end{equation}
+where $E_T$ is the energy of all the clusters located in a cone of radius $\Delta R=0.40$ and centred in the candidate cluster. All the subtracted terms account for other event contributions to the energy:
+\begin{itemize}
+\item $E_T^{core}$ is the energy of the candidate (electron or photon),
+\item $E_T^{leakage}$ is the energy not belonging to the cluster but probably related to the candidate, and
+\item $E_T^{pile-up}$ is the energy due to pile-up.
+\end{itemize}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.4]{images/relative.png}
+    \caption{Relative isolation in the calorimeter for fake and true photons in the dijets sample.}
+    \label{fig:HyyDgluonfusion}
+\end{figure}
+
+In this study, MCTruthClassifier categories have been used to discriminate true and fake photons. It has been decided to consider as true photons only the so-called IsoPhotons (MCTruth- Classifier=14), i.e. isolated photons. NonIsoPhotons (MCTruthClassifier=15), Unknown- Photons (MCTruthClassifier=13) and BkgPhotons (MCTruthClassifier=16) have been tagged as fake; they are respectively non isolated photons, photons with unknown mother particle and background photons. They are all fragmentation photons, i.e. originated for example in a jet produced by a gluon radiated from one of the branch of the Feynmann diagram of the process. Direct photons are instead originated directly in one of the vertices of the Feynmann diagram of the process.
+
+The basic idea is to compute fake factors as a ratio between the number of jets faking photons in a Non-Isolated Region $N_{j\gamma}^{non-isol}$ and the number of jets faking photons in an Isolated Region $N_{j\gamma}^{isol}$: 
+  \begin{equation}
+        f = \Bigg(\frac{N_{j\gamma}^{isol}}{N_{j\gamma}^{non-isol}}\Bigg)
+        \label{eq: ff}
+    \end{equation}
+Later fake factors are applied to a Control Region (CR), to obtain the final estimation of jets faking photons background in Signal Region. 
+
+
+In order to compute fake factors, the isolation profile of tight jets faking photons is needed. 
+
+
+L5 and L4 are two categories with lower statistics than the loose one, more similar to the tight category and hence with a larger true photons contamination. L5 photons are photons satisfying the loose criteria and passing tight cuts on all egamma shower shapes of HCAL and ECAL Middle layer. L4 photons are included in the L5 category and pass tight cuts on $w_{s,tot}$ shower shape of the ECAL Strips.
+
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{c|c|c|c|ccccc}
+\hline
+& loose & tight & loose5 & L4\_Wstot & L4\_deltaE & L4\_Eratio & L4\_fside & L4\_ws3 \\
+\hline\hline
+$R_{had}$     &  X (looser)  &  X  &  X  &  X & X & X & X & X \\
+\hline
+$R_{\eta}$    &  X (looser)  &  X  &   X   &   X  &  X  &  X  &  X  &  X  \\
+$w_{\eta 2}$  &  X (looser)  &  X  &   X   &   X  &  X  &  X  &  X  &  X  \\
+$R_{\phi}$    &  X (looser)  &  X  &   X   &   X  &  X  &  X  &  X  &  X  \\
+\hline
+$w_{stot}$    &     ---      &  X  &  ---  &   X  & --- & --- & --- & --- \\
+$\Delta E$    &     ---      &  X  &  ---  &  --- &  X  & --- & --- & --- \\
+$E_{ratio}$   &     ---      &  X  &  ---  &  --- & --- &  X  & --- & --- \\
+$f_{side}$    &     ---      &  X  &  ---  &  --- & --- & --- &  X  & --- \\
+$w_{s3}$      &     ---      &  X  &  ---  &  --- & --- & --- & --- &  X  \\
+\hline
+\end{tabular}
+%\begin{tabular}{c|ccc}
+%\hline
+% & Shower shapes & Shower widths & Energy Ratios  \\
+%\hline
+% loose & $f_1, f_{side}, R_\eta, R_\phi, R_{had}$ & $w_{s,3}, w_{s,tot}, w_{\eta,2}$&  $\Delta$E, $E_{ratio} $\\
+% L4 & $ R_\eta, R_\phi, R_{had}$ & $w_{s,tot}, w_{\eta,2}$& - \\
+% L5 & $ R_\eta, R_\phi, R_{had}$ & $w_{\eta,2}$& - \\
+%
+%\hline
+%\end{tabular}
+\caption{Variables used for the definition of loose, tight, L5 and L4 WPs. }
+\label{tab:loose4}
+\end{table}
+
+The idea is hence to extrapolate the isolation profile of tight fake photons from the isolation profile of loose photons in data, using an affine transformation \enquote{L $\xrightarrow[]{}$T} extracted from Monte Carlo. This requires some assumptions: 
+\begin{itemize}
+    \item loose photons in data are mostly fake; 
+    \item the transformation L $\xrightarrow[]{}$T that links tight and loose distributions in MC is \enquote{somehow} related to the one that links tight and loose in data \enquote{L $\xrightarrow[]{}$T}. 
+\end{itemize} 
+The steps of this method, illustrated in Figure \ref{fig:lt}, are the following: 
+\begin{enumerate}
+    \item find the transformation L $\xrightarrow[]{}$T linking tight and loose distributions in MC; 
+    \item adapt the transformation L $\xrightarrow[]{}$T in a proper way to make it appropriate for data; 
+    \item apply the found transformation \enquote{L $\xrightarrow[]{}$T} to loose fake photons in data. 
+\end{enumerate}
+This process is done separately for each $\eta,p_T$ bin. 
+
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/schem9.png}
+    \caption{Extrapolation method scheme. The assumption is that the L $\xrightarrow[]{}$T transformation linking loose and tight fake photons in Monte Carlo is somehow related to the \enquote{L $\xrightarrow[]{}$T} transformation linking loose and tight fake photons in data.}
+    \label{fig:lt}
+\end{figure}
+
+\underline{1. Find the transformation L $\xrightarrow[]{}$T linking tight and loose distributions in MC}
+
+Let's assume that tight $x_T^{MC}$ and loose $x_L^{MC}$ distributions in MC are linked by an affine transformation, the easiest transformation to reproduce mean and standard deviation of the start distribution:
+    \begin{equation}
+        x_T^{MC} = a^{MC} + b^{MC} x_L^{MC}
+    \end{equation}
+where $a^{MC},b^{MC}$ are some parameters to be found such that:
+    \begin{equation}
+        x_T^{MC} =  \mu_T^{MC}  + \frac{\sigma_T^{MC}}{\sigma_L^{MC}} (x_L^{MC} - \mu_L^{MC} ) 
+    \end{equation}
+    where $\mu_T^{MC}, \mu_L^{MC}$ are the medians of the tight and loose fake photons isolation distribution in MC and $\sigma_T^{MC}, \sigma_L^{MC}$ the widths of tight and loose fake photons isolation distribution in MC, so parameters $a^{MC},b^{MC}$ can be written as: 
+   \begin{equation}
+        a^{MC} = \mu_T^{MC}  - \frac{\sigma_T^{MC}}{\sigma_L^{MC}} \mu_L^{MC}
+    \end{equation}
+
+    \begin{equation}
+        b^{MC} = \frac{\sigma_T^{MC}}{\sigma_L^{MC}} 
+    \end{equation}
+    The transformation linking L $\xrightarrow[]{}$T linking tight and loose distributions in MC is identified by these two parameters. The width of the distribution is defined as the integral of distribution calculated between the 16th and the 84th quantile of the distribution. 
+
+\underline{2. Adapt the transformation L $\xrightarrow[]{}$T to make it proper for data}
+
+The found parameters $a^{MC},b^{MC}$ cannot be directly applied to loose photons data distribution. It is necessary to find the proper parameters $a^{data},b^{data}$. 
+
+For the scale factor $b$, the assumption is that it stays the same going from Monte Carlo to data. 
+\begin{equation}
+     b^{data} = \frac{\sigma_T^{data}}{\sigma_L^{data}} = b^{MC} = \frac{\sigma_T^{MC}}{\sigma_L^{MC}}
+     \label{eq: sigma}
+\end{equation}
+where $\sigma_T^{data}, \sigma_L^{data}$ are the widths of tight and loose fake photons distribution in data and $\sigma_T^{MC}, \sigma_L^{MC}$ the widths of tight and loose fake photons distribution in MC. 
+
+The offset $a^{data}$ in data should depend on the scale factor $b^{data}$, assumed to be the same as in MC, on $\mu_L^{data}$, which is known as loose photons in data are assumed to be fake, and on $\mu_T^{data}$, which is unknown. 
+    \begin{equation}
+        a^{data} = \mu_T^{data}  - \frac{\sigma_T^{data}}{\sigma_L^{data}} \mu_L^{data}
+    \end{equation}
+ where $\mu_T^{data}, \mu_L^{data}$ are the medians of the tight and loose fake photons distribution in data and $\sigma_T^{data}, \sigma_L^{data}$ the widths of tight and loose fake photons distribution in data. 
+ 
+    In order to estimate $\mu_T^{data}$, let's assume the shift of the average going from loose to tight is proportional to the standard deviation of the loose distribution in both data and MC. 
+      \begin{equation}
+        \frac{\mu_T^{data} -\mu_L^{data}}{\sigma_L^{data}} =   \frac{\mu_T^{MC} - \mu_L^{MC}}{\sigma_L^{MC}} 
+    \end{equation}
+where $\mu_T^{data}, \mu_L^{data}, \sigma_L^{data}$ are the medians of the tight and loose fake photons distribution in data and the width of the loose fake photons distribution in data and $\mu_T^{MC}, \mu_L^{MC}, \sigma_L^{MC}$ are the medians of the tight and loose fake photons distribution in MC and width of the loose fake photons distribution in MC. Solving this equation for $\mu_T^{data}$:  
+    \begin{equation}
+        \mu_T^{data} = \mu_L^{data} +  \frac{\sigma_L^{data}}{\sigma_L^{MC}} (\mu_T^{MC} - \mu_L^{MC} ) 
+        \label{eq: mean}
+    \end{equation}
+
+Joining all the elements together, the final  \enquote{L $\xrightarrow[]{}$T} transformation linking loose and tight fake photons isolation distribution in data is then given by: 
+\begin{equation}
+    x_T^{data} =  \mu_L^{data} +  \frac{\sigma_L^{data}}{\sigma_L^{MC}} (\mu_T^{MC} - \mu_L^{MC} )  +  \frac{\sigma_T^{MC}}{\sigma_L^{MC}} (x_L^{data} - \mu_L^{data} ) 
+\end{equation}
+This transformation \enquote{L $\xrightarrow[]{}$T} can be applied to loose photons in data distribution to get the tight fake photons distributions in data. 
+
+Before applying the found transformation to loose data, a validation of the hypothesis about the median (Equation \ref{eq: mean}) and about the width (Equation \ref{eq: sigma}) adopted in the extrapolation method is needed. It can be done by extrapolating distributions from loose to L5 or L4 instead of extrapolating from loose to tight. Indeed, assuming they are mostly fake, loose fake photons isolation distributions are known in data. 
+
+
+ The parameters $R_\mu, R_\sigma$  are inserted in Equation \ref{eq: mean} and Equation \ref{eq: sigma} in order to perform the validation:  
+
+\begin{equation}
+    \frac{\mu_{L_{i}}^{data} -\mu_L^{data}}{\sigma_L^{data}} =   \textit{\textcolor{red}{$R_\mu^{i}$}} \frac{\mu_{L_{i}}^{MC} - \mu_L^{MC}}{\sigma_L^{MC}} 
+\end{equation}
+\begin{equation}
+     \frac{\sigma_{L_{i}}^{data}}{\sigma_L^{data}} = \textit{\textcolor{red}{$R_\sigma^i$ }}\frac{\sigma_{L_{i}}^{MC}}{\sigma_L^{MC}}
+\end{equation}
+where $L_{i} \in \{L5, L4\_\textit{Fside}, L4\_\textit{Wstot}, L4\_\textit{Ws3}, L4\_\textit{deltaE}, L4\_\textit{Eratio} \}$ is one of the possible definition of L5 or L4. These photon identifications $L4_X$ are defined by removing the relative cut on the shower shape $X$ from the standard L4 definition. For example, $L4\_\textit{Fside}$ is defined by applying all the cut on the shower shape variable required in L4, with the exception of the cut on $F_{side}$. 
+
+In order to find the configuration where $R_\mu, R_\sigma$ are more stable in different $\eta, p_T$ bins, different studies have been done. 
+ \begin{itemize}
+     \item It has been decided to exclude the events with MC weight higher than 100, because they affect the distribution and the transformation without adding any information to the shape. \\
+     $\Longrightarrow$ MC weight $>100 $
+     \item Other parameters than median and width have been considered for the transformation. As a central value indicator, three additional options were considered: $\mu$, the average of the distribution, $\mu_{trunc}$, the average of the distribution truncated at $1\sigma$ of distance from the average of the original distribution and $\mu_{smooth}$, the average of a smoothed version of the original distribution. As a spread indicator, three additional options were considered: $\sigma$, the standard deviation of the distribution; $\sigma_{trunc}$, the standard deviation of the distribution truncated at $1$ standard deviation of distance from the average of the original distribution; $\sigma_{smooth}$, the standard deviation of a smoothed version of the original distribution. Median and width happen to be the variables providing most stable $R_\mu, R_\sigma$ values in different kinematic bins. \\
+     $\Longrightarrow$ median and width
+     \item The trigger that provides most stable values of $R_\mu', R'_\sigma$ has been chosen. Several configuration have been tested: 
+\begin{itemize}
+    \item Analysis Trigger, applying the analysis trigger; 
+    \item $p_T^{miss}$ trigger, requiring $p_T^{miss}>90$. This trigger will reduce a lot the statistic of dijets and $\gamma+$jets sample, which do not contain genuine missing transverse momentum.
+  \item Leptonic Trigger, selecting events with $N_{e} = 1$, $N_\mu = 1$, $N_{e} = 2$ or $N_{\mu} = 2$. 
+  \end{itemize}
+  
+Analysis Trigger has the advantage to be the one specific for this analysis, so in the fake factors calculation we would have both numerator and denominator computed using the same Trigger; the down-side is that it applies a selection on the photon, requiring it to be tight and this leave us with a smaller number of loose photons and weakens the hypothesis that all the loose photons are fake. 
+
+On the other side, $p_T^{miss}$ and Leptonic Trigger don't introduce any selection on the photon, but they would lead to the calculation of fake factors as ratios of two yields obtained using different triggers. 
+
+  $\Longrightarrow$ When testing the trigger, it has been observed that it is not possible to use different $R$ and $R_\sigma$ in each $\eta, p_T$ bin: fluctuations are too high.
+
+\end{itemize}
+It has been hence decided to calculate $R_\mu$ and $R_\sigma$ being either inclusive in $\eta$ or in $p_T$ and elect as nominal values the mean values of the distributions of $R,R_\sigma$ in different $p_T$ or $\eta$ bins. The following step has been then to make two choices: 
+\begin{itemize}
+    \item choose the region where to calculate a mean value of $R_\mu, R_\sigma$ ($p_T$ inclusive region or $\eta$ inclusive region); 
+    \item choose the trigger to use in the extrapolation (Analysis, $p_T^{miss}$, Leptonic). 
+\end{itemize}
+
+
+First of all, the spectra of $\eta$ and $p_T$ for photons selected with the three different triggers in Monte Carlo and in data have been observed and the cases where there is no compatibility between Monte Carlo and data distributions have been excluded. 
+
+\begin{figure}[!htbp]
+    \centering
+    \subfloat[Loose photons.]{\includegraphics[scale=0.4]{images/eta_loose_trigger_g50_met70_mt80.pdf}}
+    \subfloat[Tight photons.]{\includegraphics[scale=0.4]{images/eta_tight_trigger_g50_met70_mt80.pdf}}
+  
+  \caption{$\eta$ distribution for loose and tight $\gamma$ in data and MC samples (Analysis Trigger).}
+    \label{fig:eta-ana}
+\end{figure}
+
+
+\begin{figure}[!htbp]
+    \centering
+    \subfloat[Loose photons.]{\includegraphics[scale=0.4]{images/eta_loose_trigger_met90.pdf}}
+    \subfloat[Tight photons.]{\includegraphics[scale=0.4]{images/eta_tight_trigger_met90.pdf}}
+  \caption{$\eta$ distribution for loose and tight $\gamma$ in data and MC samples ($p_T^{miss}$ Trigger).}
+    \label{fig:eta-met}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \subfloat[Loose photons.]{\includegraphics[scale=0.4]{images/eta_loose_(trigger_el||trigger_mu||trigger_diel||trigger_dimu).pdf}}
+    \subfloat[Tight photons.]{\includegraphics[scale=0.4]{images/eta_tight_(trigger_el||trigger_mu||trigger_diel||trigger_dimu).pdf}}
+  
+  \caption{$\eta$ distribution for loose and tight $\gamma$ in data and MC samples (Leptonic Trigger).}
+
+    \label{fig:eta-lept}
+\end{figure}
+
+
+\begin{figure}[!htbp]
+    \centering
+   
+    \subfloat[Loose photons.]{\includegraphics[scale=0.4]{images/pt_loose_trigger_g50_met70_mt80.pdf}}
+    \subfloat[Tight photons.]{\includegraphics[scale=0.4]{images/pt_tight_trigger_g50_met70_mt80.pdf}}
+  
+  \caption{$p_T$ distribution for loose and tight $\gamma$ in data and MC (Analysis Trigger).}
+  
+    \label{fig:pt-ana}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \subfloat[Loose photons.]{\includegraphics[scale=0.4]{images/pt_loose_trigger_met90.pdf}}
+    \subfloat[Tight photons.]{\includegraphics[scale=0.4]{images/pt_tight_trigger_met90.pdf}}
+  
+  \caption{$p_T$ distribution for loose and tight $\gamma$ in data and MC ($p_T^{miss}$ Trigger).}
+    \label{fig:pt-met}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \subfloat[Loose photons.]{\includegraphics[scale=0.4]{images/pt_loose_(trigger_el||trigger_mu||trigger_diel||trigger_dimu).pdf}}
+    \subfloat[Tight photons.]{\includegraphics[scale=0.4]{images/pt_tight_(trigger_el||trigger_mu||trigger_diel||trigger_dimu).pdf}}
+  
+  \caption{$p_T$ distribution for loose and tight $\gamma$ in data and MC (Leptonic Trigger).}
+    \label{fig:pt-lept}
+\end{figure}
+
+Since the analysis trigger configuration shows a good agreement between Monte Carlo and data fo both $\eta$ and $p_T$ distributions, it has been chosen for fake factors calculation. The analysis trigger happens to be the one providing the best performance also in terms of systematic uncertainties on fake factors, as explained in Appendix \ref{sec:jfy-appendix}. In particular, the configuration providing the smallest systematic uncertainties and the highest stability between bins is the inclusive $p_T$ configuration. 
+
+In order to compute fake factors, the Non-Isolated Region needs to be defined such to be contain almost only fake photons. 
+To decide where to put the cut on isolation such that almost no true photons are included in the Non Isolated Region, a pure sample of true photons has been observed. This sample can be obtained looking at 3-bodies decay $Z\xrightarrow[]{}\mu\mu\gamma$, requiring the invariant mass to be compatible with the Z-boson mass. This requirement will select the events where the photon is radiated by one of the two muons in which the Z boson can decay, excluding the cases where the photon is produced directly from the primary vertex of the collision, cases in which we cannot be sure it is a true photon. Indeed, a muon cannot radiate a gluon or a quark, while in the primary vertex of the collision also a quark or a gluon could be produced together with a $Z$. 
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.6]{images/h2d_minv2_minv3_tight.pdf} 
+  \caption{Invariant mass $m_{\mu\mu\gamma}$ and invariant mass $m_{\mu\mu}$ for $Z\mu\mu\gamma$ events. }
+    \label{fig:calomu}
+\end{figure}
+Figure \ref{fig:calomu} shows a 2-dimensional plot of 3-bodies invariant mass and 2-bodies invariant mass; the strip of events around $m_{\mu\mu\gamma} \sim \SI{90}{GeV}$ represents radiative events, while the strip of events around $m_{\mu\mu} \sim \SI{90}{GeV}$ represents non-radiative events. In order to select radiative events, where we are sure the photon is a true photon, events with 3-bodies invariant mass in a range around $m_Z$ have been selected:   
+$\SI{80}{GeV} < m_{\mu\mu\gamma} < \SI{100}{GeV}$. 
+
+Using this selection and requiring the photon to pass Tight ID, relative isolation in the calorimeter has been plotted for these photons (Figure \ref{fig:mumu-2d}). 
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[scale=0.8]{images/Caloisolation,Zradiative,tight,zoom.pdf} 
+  \caption{Relative isolation in the calorimeter for tight photons in $Z\xrightarrow[]{}\mu\mu\gamma$ radiative events. }
+    \label{fig:mumu-2d}
+\end{figure}
+
+For isolation values $>0.2$ there are not true photons anymore. Anyway, in order not to reduce too much the statistic of the Non-Isolated Region, it has been decided it is safe enough to put the cut defining the Non-Isolated Region at $isol_{calo}^{rel} > 0.1$. 
+
+In order to compute final fake factors: 
+\begin{itemize}
+    \item $R_\mu^i, R_\sigma^i$ have been computed for all the possible definition of L4 and L5 for each $\eta$ bin and mean values through the $\eta$ bins, $R_{\mu, mean}^i, R_{\sigma, mean}^i$ has been computed for each $L_i$ (Table \ref{tab:Rmu_step1}, Table \ref{tab:Rsigma_step1}), where $L_{i} \in \{L5, L4\_\textit{Fside}, L4\_\textit{Wstot}, L4\_\textit{Ws3}, L4\_\textit{deltaE}, L4\_\textit{Eratio} \}$; 
+    \item $R_{\mu, mean}^i, R_{\sigma, mean}^i$ have been used to calculate fake factors ff$_i(\eta)$ in each $\eta$ bin for all the possible photon identifications (Tables \ref{tab:1}-\ref{tab:6} and Figure \ref{fig:ff_step2}); 
+    \item At this point, fake factors from different photon identifications have been mediated in each $\eta$ bin to get the final fake factors (Table \ref{tab:ff_step3}). 
+\end{itemize}
+
+\begin{table}[!htbp]
+    \centering
+\begin{tabular}{|l|c|c|c|c|c|}
+    \hline
+    Method & etabin & $R_\mu$ & Error & $R_{\mu, up}$  & $R_{\mu, down}$ \\
+    \hline
+    loose$\xrightarrow{}$L5 & 1 & 0.825 & 0.175 & 1.000 & 0.650 \\
+    
+    loose$\xrightarrow{}$L5 & 2 & 1.009 & 0.009 & 1.018 & 1.000 \\
+    
+    loose$\xrightarrow{}$L5 & 4 & 1.042 & 0.042 & 1.084 & 1.000 \\
+    
+    loose$\xrightarrow{}$L5 & 5 & 0.838 & 0.162 & 1.000 & 0.676 \\
+    \hline
+    loose$\xrightarrow{}$L4\_Wstot & 1 & 0.825 & 0.175 & 1.000 & 0.650 \\
+    
+    loose$\xrightarrow{}$L4\_Wstot & 2 & 1.009 & 0.009 & 1.018 & 1.000 \\
+    
+    loose$\xrightarrow{}$L4\_Wstot & 4 & 1.250 & 0.250 & 1.500 & 1.000 \\
+    
+    loose$\xrightarrow{}$L4\_Wstot & 5 & 0.838 & 0.162 & 1.000 & 0.676 \\
+    \hline
+    loose$\xrightarrow{}$L4\_Fside & 1 & 0.825 & 0.175 & 1.000 & 0.650 \\
+    
+    loose$\xrightarrow{}$L4\_Fside & 2 & 1.009 & 0.009 & 1.018 & 1.000 \\
+    
+    loose$\xrightarrow{}$L4\_Fside & 4 & 0.833 & 0.167 & 1.000 & 0.666 \\
+    
+    loose$\xrightarrow{}$L4\_Fside & 5 & 0.783 & 0.217 & 1.000 & 0.566 \\
+    \hline
+    loose$\xrightarrow{}$L4\_Ws3 & 1 & 0.825 & 0.175 & 1.000 & 0.650 \\
+    
+    loose$\xrightarrow{}$L4\_Ws3 & 2 & 1.261 & 0.261 & 1.522 & 1.000 \\
+    
+    loose$\xrightarrow{}$L4\_Ws3 & 4 & 1.250 & 0.250 & 1.500 & 1.000 \\
+    
+    loose$\xrightarrow{}$L4\_Ws3 & 5 & 0.942 & 0.058 & 1.000 & 0.884 \\
+    \hline
+    loose$\xrightarrow{}$L4\_deltaE & 1 & 0.825 & 0.175 & 1.000 & 0.650 \\
+    
+    loose$\xrightarrow{}$L4\_deltaE & 2 & 1.009 & 0.009 & 1.018 & 1.000 \\
+    
+    loose$\xrightarrow{}$L4\_deltaE & 4 & 1.042 & 0.042 & 1.084 & 1.000 \\
+    
+    loose$\xrightarrow{}$L4\_deltaE & 5 & 0.838 & 0.162 & 1.000 & 0.676 \\
+    \hline
+    loose$\xrightarrow{}$L4\_Eratio & 1 & 0.825 & 0.175 & 1.000 & 0.650 \\
+    
+    loose$\xrightarrow{}$L4\_Eratio & 2 & 1.009 & 0.009 & 1.018 & 1.000 \\
+    
+    loose$\xrightarrow{}$L4\_Eratio & 4 & 1.250 & 0.250 & 1.500 & 1.000 \\
+    
+    loose$\xrightarrow{}$L4\_Eratio & 5 & 0.838 & 0.162 & 1.000 & 0.676 \\
+    \hline
+    \hline
+    \multicolumn{6}{|c|}{\textbf{$R_\mu$ Mean values }} \\
+    \hline
+    loose$\xrightarrow{}$L4\_Eratio & - & 0.980 & 0.020 & 1.000 & 0.961 \\
+    \hline
+    loose$\xrightarrow{}$L4\_Fside & - & 0.862 & 0.138 & 1.000 & 0.725 \\
+    \hline
+    loose$\xrightarrow{}$L4\_Ws3 & - & 1.069 & 0.069 & 1.139 & 1.000 \\
+    \hline
+    loose$\xrightarrow{}$L4\_Wstot & - & 0.980 & 0.020 & 1.000 & 0.961 \\
+    \hline
+    loose$\xrightarrow{}$L4\_deltaE & - & 0.928 & 0.072 & 1.000 & 0.857 \\
+    \hline
+    loose$\xrightarrow{}$L5 & - & 0.928 & 0.072 & 1.000 & 0.857 \\
+    \hline
+    \end{tabular}
+    \caption{$R_\mu$ values for each $L_{i}$ definition, in each $\eta$ bin, with an uncertainty derived from $|R_\mu-1|$. Mean values are computed for each $L_i$ through different $\eta$ bins.}
+    \label{tab:Rmu_step1}
+    \end{table}
+
+
+    \begin{table}[!htbp]
+        \centering
+    \begin{tabular}{|l|c|c|c|c|c|}
+        \hline
+        Method & etabin & $R_\mu$ & Error & $R_{\sigma, up}$  & $R_{\sigma, down}$ \\
+        \hline 
+        loose$\xrightarrow{}$L5 & 1 & 1.195 & 0.195 & 1.390 & 1.000 \\
+
+        loose$\xrightarrow{}$L5 & 2 & 1.409 & 0.409 & 1.818 & 1.000 \\
+
+        loose$\xrightarrow{}$L5 & 4 & 1.406 & 0.406 & 1.812 & 1.000 \\
+ 
+        loose$\xrightarrow{}$L5 & 5 & 1.077 & 0.077 & 1.154 & 1.000 \\
+        \hline
+        loose$\xrightarrow{}$L4\_Wstot & 1 & 1.195 & 0.195 & 1.390 & 1.000 \\
+    
+        loose$\xrightarrow{}$L4\_Wstot & 2 & 1.497 & 0.497 & 1.994 & 1.000 \\
+      
+        loose$\xrightarrow{}$L4\_Wstot & 4 & 1.500 & 0.500 & 2.000 & 1.000 \\
+     
+        loose$\xrightarrow{}$L4\_Wstot & 5 & 1.077 & 0.077 & 1.154 & 1.000 \\
+        \hline
+        loose$\xrightarrow{}$L4\_Fside & 1 & 1.038 & 0.038 & 1.076 & 1.000 \\
+      
+        loose$\xrightarrow{}$L4\_Fside & 2 & 1.401 & 0.401 & 1.802 & 1.000 \\
+    
+        loose$\xrightarrow{}$L4\_Fside & 4 & 1.406 & 0.406 & 1.812 & 1.000 \\
+    
+        loose$\xrightarrow{}$L4\_Fside & 5 & 0.936 & 0.064 & 1.000 & 0.872 \\
+        \hline
+        loose$\xrightarrow{}$L4\_Ws3 & 1 & 1.290 & 0.290 & 1.580 & 1.000 \\
+     
+        loose$\xrightarrow{}$L4\_Ws3 & 2 & 1.483 & 0.483 & 1.966 & 1.000 \\
+      
+        loose$\xrightarrow{}$L4\_Ws3 & 4 & 1.250 & 0.250 & 1.500 & 1.000 \\
+     
+        loose$\xrightarrow{}$L4\_Ws3 & 5 & 1.077 & 0.077 & 1.154 & 1.000 \\
+        \hline
+        loose$\xrightarrow{}$L4\_deltaE & 1 & 1.195 & 0.195 & 1.390 & 1.000 \\
+      
+        loose$\xrightarrow{}$L4\_deltaE & 2 & 1.409 & 0.409 & 1.818 & 1.000 \\
+      
+        loose$\xrightarrow{}$L4\_deltaE & 4 & 1.500 & 0.500 & 2.000 & 1.000 \\
+      
+        loose$\xrightarrow{}$L4\_deltaE & 5 & 1.131 & 0.131 & 1.262 & 1.000 \\
+        \hline
+        loose$\xrightarrow{}$L4\_Eratio & 1 & 1.146 & 0.146 & 1.292 & 1.000 \\
+       
+        loose$\xrightarrow{}$L4\_Eratio & 2 & 1.497 & 0.497 & 1.994 & 1.000 \\
+      
+        loose$\xrightarrow{}$L4\_Eratio & 4 & 1.417 & 0.417 & 1.834 & 1.000 \\
+      
+        loose$\xrightarrow{}$L4\_Eratio & 5 & 1.077 & 0.077 & 1.154 & 1.000 \\
+        \hline
+        \hline
+        \multicolumn{6}{|c|}{\textbf{$R_\sigma$ mean values }} \\
+        \hline
+        loose$\xrightarrow{}$L4\_Eratio & - & 1.284 & 0.284 & 1.568 & 1.000 \\
+        \hline
+        loose$\xrightarrow{}$L4\_Fside & - & 1.195 & 0.195 & 1.390 & 1.000 \\
+        \hline
+        loose$\xrightarrow{}$L4\_Ws3 & - & 1.275 & 0.275 & 1.550 & 1.000 \\
+        \hline
+        loose$\xrightarrow{}$L4\_Wstot & - & 1.317 & 0.317 & 1.635 & 1.000 \\
+        \hline
+        loose$\xrightarrow{}$L4\_deltaE & - & 1.309 & 0.309 & 1.618 & 1.000 \\
+        \hline
+        loose$\xrightarrow{}$L5 & - & 1.272 & 0.272 & 1.543 & 1.000 \\
+        \hline
+        \end{tabular}
+        \caption{$R_\sigma$ values for each $L_i$ definition, in each $\eta$ bin, with an uncertainty derived from $|R_\sigma-1|$. Mean values are computed for each $L_i$ through different $\eta$ bins.}
+        \label{tab:Rsigma_step1}
+        \end{table}
+
+
+        \begin{figure}[!htbp]
+            \centering
+            \includegraphics[scale=0.6]{images/ff.png} 
+          \caption{Fake factors computed using  $R_\mu, R_\sigma$ from different photon identifications.}
+            \label{fig:ff_step2}
+        \end{figure}
+      
+        
+        \begin{minipage}[t]{0.32\textwidth}
+        \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{4}{|c|}{\textbf{L4\_deltaE}} \\
+        \hline
+        $\eta$ bin & ff & $\sigma_{ff}$ & \% \\
+        \hline
+        1 & 1.74 & 0.31 & 17.6 \% \\
+        \hline
+        2 & 2.01 & 0.42 & 21.1 \% \\
+        \hline
+        4 & 1.89 & 0.31 & 16.2 \% \\
+        \hline
+        5 & 2.06 & 0.43 & 21.0 \% \\
+        \hline
+        \end{tabular}
+        \caption{Fake factors computed using $R_\mu, R_\sigma$ from L4\_deltaE}
+        \label{tab:1}
+        \end{table}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.32\textwidth}
+        \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            \multicolumn{4}{|c|}{\textbf{L4\_Eratio}} \\
+            \hline
+            $\eta$ bin & ff & $\sigma_{ff}$  & \% \\
+            \hline
+             1 & 1.90 & 0.29 & 15.1 \% \\
+            \hline
+             2 & 2.20 & 0.42 & 19.0 \% \\
+            \hline
+             4 & 2.04 & 0.30 & 14.5 \% \\
+            \hline
+             5 & 2.29 & 0.41 & 18.0 \% \\
+            \hline
+            \end{tabular}
+            \caption{Fake factors computed using $R_\mu, R_\sigma$ from L4\_Eratio}
+        \label{tab:2}
+        \end{table}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.32\textwidth}
+        \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            \multicolumn{4}{|c|}{\textbf{L4\_Ws3}} \\
+            \hline
+            $\eta$ bin & ff & $\sigma_{ff}$  & \% \\
+            \hline
+             1 & 2.17 & 0.44 & 20.4 \% \\
+            \hline
+             2 & 2.50 & 0.59 & 23.6 \% \\
+            \hline
+             4 & 2.28 & 0.42 & 18.6 \% \\
+            \hline
+             5 & 2.68 & 0.64 & 23.9 \% \\
+            \hline
+            \end{tabular}
+            \caption{Fake factors computed using $R_\mu, R_\sigma$ from L4\_Ws3}
+        \label{tab:3}
+        \end{table}
+        \end{minipage}
+        
+        \vspace{0.5cm} % spazio tra le due righe
+        
+        % Riga 2
+        \noindent
+        \begin{minipage}[t]{0.32\textwidth}
+        \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            \multicolumn{4}{|c|}{\textbf{L4\_Fside}} \\
+            \hline
+            $\eta$ bin & ff & $\sigma_{ff}$  & \% \\
+            \hline
+             1 & 1.62 & 0.42 & 26.0 \% \\
+            \hline
+             2 & 1.91 & 0.51 & 26.6 \% \\
+            \hline
+             4 & 1.81 & 0.39 & 21.5 \% \\
+            \hline
+             5 & 1.89 & 0.60 & 31.7 \% \\
+            \hline
+            \end{tabular}
+        \caption{Fake factors computed using $R_\mu, R_\sigma$ from L4\_Fside}
+        \label{tab:4}
+        \end{table}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.32\textwidth}
+        \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            \multicolumn{4}{|c|}{\textbf{L5}} \\
+            \hline
+            $\eta$ bin & ff & $\sigma_{ff}$  & \% \\
+            \hline
+             1 & 1.77 & 0.30 & 16.8 \% \\
+            \hline
+             2 & 2.05 & 0.41 & 19.8 \% \\
+            \hline
+             4 & 1.93 & 0.29 & 15.3 \% \\
+            \hline
+             5 & 2.10 & 0.42 & 20.1 \% \\
+            \hline
+            \end{tabular}
+            \caption{Fake factors computed using $R_\mu, R_\sigma$ from L5}
+        \label{tab:5}
+        \end{table}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.32\textwidth}
+        \begin{table}[H]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            \multicolumn{4}{|c|}{\textbf{L4\_Wstot}} \\
+            \hline
+            $\eta$ bin & ff & $\sigma_{ff}$  & \% \\
+            \hline
+             1 & 1.87 & 0.30 & 16.2 \% \\
+            \hline
+             2 & 2.16 & 0.44 & 20.3 \% \\
+            \hline
+             4 & 2.02 & 0.31 & 15.5 \% \\
+            \hline
+             5 & 2.25 & 0.43 & 19.2 \% \\
+            \hline
+        \end{tabular}
+        \caption{Fake factors computed using $R_\mu, R_\sigma$ from L4\_Wstot}
+        \label{tab:6}
+        \end{table}
+        \end{minipage}
+
+      
+        
+The uncertainties on the nominal fake factors have been computed using an "envelope-like" method, i.e. taking, in each $\eta$ bin, the highest difference of fake factors from the nominal value. 
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \multicolumn{4}{|c|}{\textbf{Mean Fake Rates per $\eta$ Bin}} \\
+    \hline
+    $\eta$ Bin & Fake Rate & Uncertainty & Relative Uncertainty \\
+    \hline
+    1 & 1.843 & 0.328 & 17.82\% \\
+    \hline
+    2 & 2.136 & 0.372 & 17.42\% \\
+    \hline
+    4 & 1.993 & 0.290 & 14.52\% \\
+    \hline
+    5 & 2.210 & 0.476 & 21.52\% \\
+    \hline
+    \end{tabular}
+    \caption{Final Fake Rates per $\eta$ Bin.}
+    \label{tab:ff_step3}
+\end{table}
+    
+
+Finally, fake factors are applied to a Non-Isolated Control Region, defined as the Signal Region but with a reversed cut on the relative isolation in the calorimeter ($isol>0.1$), to obtain the final estimation of jets faking photons in the Signal Region. 
+
+The method has been validated in two different Validation Regions (VRs) orthogonal to the SR and enriched of the jets faking photons background. 
+\begin{itemize}
+    \item low $p_T^{miss}$ significance region, defined by $2<S_{p_T^{miss}}<6$ and $\Delta \Phi(p_T^{miss}, [p_T^{miss}]_\gamma)>0,5$; 
+    \item low $\Delta \Phi(p_T^{miss}, [p_T^{miss}]_\gamma)$ region, defined by $0.5<\Delta \Phi(p_T^{miss}, [p_T^{miss}]_\gamma)<1$ and $S_{p_T^{miss}}>2$. 
+\end{itemize}
+At first, the signal contamination in these regions has been evaluated considering gluon fusion $H\xrightarrow{}\gamma\gamma_d$ yield from Monte Carlo simulations, with a branching ratio of $10\%$. In both VRs, signal contamination has been observed to be lower than 0.5\%. Relative plots can be found in the appendix (Appendix \ref{sec:jfy-appendix}). 
+
+After this check, the distribution of the total background, including data-driven jets faking photons, has been compared to data, for different kinematic variables, in these two VRs. 
+
+%plot di validation 
+\begin{figure}[htbp]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/dphiMetPhterm_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore_data_BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/dphiMetPhterm_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm1_dphiMetPhterm05_metsigval2_BDTscore_data_BDT.png}
+  }
+  \caption{Distribution for variable $\Delta \Phi (p_T^{miss}, [p_T^{miss}]_\gamma)$ in the two Validation Regions for all the backgrounds. Jets faking photons are estimated using the data-driven technique.}
+\end{figure}
+
+
+% === Dmet ===
+\begin{figure}[!htbp]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/Dmet_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore_data_BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/Dmet_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm1_dphiMetPhterm05_metsigval2_BDTscore_data_BDT.png}
+  }
+  \caption{Distribution for variable $\Delta p_T^{miss}$ in the two Validation Regions for all the backgrounds. Jets faking photons are estimated using the data-driven technique.}
+\end{figure}
+
+
+% === abspheta ===
+\begin{figure}[!htbp]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/abspheta_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore_data_BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/abspheta_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm1_dphiMetPhterm05_metsigval2_BDTscore_data_BDT.png}
+  }
+  \caption{Distribution for variable $\eta^\gamma$ in the two Validation Regions for all the backgrounds. Jets faking photons are estimated using the data-driven technique.}
+\end{figure}
+
+
+% === dphiMetJetterm ===
+\begin{figure}[!htbp]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/dphiMetJetterm_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore_data_BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/dphiMetJetterm_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm1_dphiMetPhterm05_metsigval2_BDTscore_data_BDT.png}
+  }
+  \caption{Distribution for variable $\Delta \Phi (p_T^{miss}, [p_T^{miss}]_{jet})$ in the two Validation Regions for all the backgrounds. Jets faking photons are estimated using the data-driven technique.}
+\end{figure}
+
+% === dphiMetPhPt ===
+\begin{figure}[!htbp]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/dphiMetPhPt_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore_data_BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/dphiMetPhPt_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm1_dphiMetPhterm05_metsigval2_BDTscore_data_BDT.png}
+  }
+  \caption{Distribution for variable $\Delta \Phi (p_T^{miss}, p_T^\gamma)$ in the two Validation Regions for all the backgrounds. Jets faking photons are estimated using the data-driven technique.}
+\end{figure}
+
+
+% === met ===
+\begin{figure}[!htbp]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/met_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore_data_BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/met_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm1_dphiMetPhterm05_metsigval2_BDTscore_data_BDT.png}
+  }
+  \caption{Distribution for variable $p_T^{miss}$ in the two Validation Regions for all the backgrounds. Jets faking photons are estimated using the data-driven technique.}
+\end{figure}
+
+% === metsig ===
+\begin{figure}[!htbp]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/metsig_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore_data_BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/metsig_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm1_dphiMetPhterm05_metsigval2_BDTscore_data_BDT.png}
+  }
+  \caption{Distribution for variable $S_{p_T^{miss}}$ in the two Validation Regions for all the backgrounds. Jets faking photons are estimated using the data-driven technique.}
+\end{figure}
+
+% === mt ===
+\begin{figure}[!htbp]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/mt_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore_data_BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/mt_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm1_dphiMetPhterm05_metsigval2_BDTscore_data_BDT.png}
+  }
+  \caption{Distribution for variable $m_T$ in the two Validation Regions for all the backgrounds. Jets faking photons are estimated using the data-driven technique.}
+\end{figure}
+
+% === phPt ===
+\begin{figure}[!htbp]
+  \centering
+  \subfloat[low $p_T^{miss}$ significance region]{
+    \includegraphics[width=0.45\textwidth]{images/phPt_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore_data_BDT.png}
+  }
+  \hfill
+  \subfloat[low $\Delta \Phi$ region]{
+    \includegraphics[width=0.45\textwidth]{images/phPt_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm1_dphiMetPhterm05_metsigval2_BDTscore_data_BDT.png}
+  }
+  \caption{Distribution for variable $p_T^\gamma$ in the two Validation Regions for all the backgrounds. Jets faking photons are estimated using the data-driven technique.}
+\end{figure}
+
+\clearpage

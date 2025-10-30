@@ -1,0 +1,597 @@
+\subsection{Analysis trigger}
+The analysis trigger is defined with the following criteria:
+\begin{itemize}
+    \item 1 $\gamma$ Tight with $p_T^{\gamma} > 50$ GeV
+    \item $p_T^{\text{miss}} > 70$ GeV
+    \item $m_T(\gamma, p_T^{\text{miss}}) > 80$ GeV
+\end{itemize}
+The effect of these selections is illustrated in Figure~\ref{fig:minv-anatrig}, showing a significant difference in the behavior of the $\gamma\mu$ channel compared to the $\gamma e$ channel in the sidebands. 
+This misalignment arises from the trigger level selection on $p_T^{\text{miss}}$, which corresponds to an offline selection on $p_T^{miss, no \mu}$.
+As a result, a larger number of events pass the selection in the $\gamma\mu$ channel, since the trigger does not detect the muon, treating it as invisible. \\
+Since the background subtraction method relies on the assumption that the two channels exhibit similar behaviors, this discrepancy must be properly treted to recover the expected distributions.
+Hence, specific selections are applied to the $\gamma\mu$ channel alone, in order to realign its distribution to the $\gamma e$ channel. 
+Two strategies are explored: applying higher thresholds on $p_T^{\text{miss}}$, or trying to reproduce the effect of the trigger-level $p_T^{\text{miss}}$ by taking into account the muon momentum. \\
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[No trigger]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_anatrigger_minv_notrigger.pdf}
+  }
+  \hfill
+  \subfloat[Analysis trigger]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_anatrigger_minv.pdf}
+  }
+  \caption{Invariant mass distribution in the $\gamma e$ (blue) and $\gamma \mu$ (red) channels before and after applying the analysis trigger.}
+  \label{fig:minv-anatrig}
+\end{figure}
+
+The first strategy tests three increasing $p_T^{\text{miss}}$ selections.
+As shown in Figure~\ref{fig:ptmisscut-anatrig}, the additional cut flattens the $\gamma\mu$ distribution in the upper sideband, leading to a better agreement with the shape of the $\gamma e$ events.
+However, the transition between the approximately flat sidebands occurs beneath the invariant mass peak, where a steep slope is observed.
+This behavior weakens the reliability of the method, as it impacts the region where background subtraction is performed.
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[$p_T^{\text{miss}} >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.32\textwidth]{plot_efy/trigger/canvas_anatrigger_minv_cutphi_met80.pdf}
+  }
+  \hfill
+  \subfloat[$p_T^{\text{miss}} >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.32\textwidth]{plot_efy/trigger/canvas_anatrigger_minv_cutphi_met100.pdf}
+  }
+  \hfill
+  \subfloat[$p_T^{\text{miss}} >120~\mathrm{GeV}$]{
+    \includegraphics[width=0.32\textwidth]{plot_efy/trigger/canvas_anatrigger_minv_cutphi_met120.pdf}
+  }
+  \caption{Invariant mass distribution in the $\gamma e$ (blue) and $\gamma \mu$ (red) channels when the analysis trigger is applied together with a $p_T^{\text{miss}}$ selection on the $\gamma\mu$ channel.}
+  \label{fig:ptmisscut-anatrig}
+\end{figure}
+
+In the second strategy, the effect of the trigger-level $p_T^{\text{miss}}$ is approximated by combining $p_T^{\text{miss, no } \mu}$ and $p_T^{\mu}$, using the relation:
+$$p_T^{\text{miss}} = p_T^{\text{miss, no } \mu}- p_T^{\mu}$$
+Depending on the angle between these two vectors, events that pass the $p_T^{\text{miss, no } \mu}$ threshold may fall below the cut once the vector sum is computed.
+This situation is illustrated in Figure~\ref{fig:plot-ptimiss}, where the excluded region below the trigger threshold is represented by the grey area. \\
+To account for this effect, a selection is applied on the angle $\Phi(p_T^{\text{miss, no } \mu}, p_T^{\mu})$, in order to exclude events where the vectors are closely aligned (i.e., where $\cos\Phi$ is close to one).
+The results for three angular selections are shown in Figure~\ref{fig:phicut-anatrig}, showing the same problem as the first strategy. \\
+
+\begin{figure} [H]%[!htbp] t!
+  \centering
+  \includegraphics[width=0.9\textwidth]{plot_efy/trigger/plot_ptmiss.png}
+  \caption{Illustration of two possible scenarios. In both cases, the events satisfy a selection on $p_T^{\text{miss, no } \mu}$, but the corresponding $p_T^{\text{miss}}$ may fall below the threshold (grey area), depending on its angular distance from $p_T^{\mu}$.}
+  \label{fig:plot-ptimiss}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[$\cos(\Phi(p_T^{miss, no \mu}, p_T^{\mu}))<0.50$]{
+    \includegraphics[width=0.32\textwidth]{plot_efy/trigger/canvas_anatrigger_minv_cutphi_50.pdf}
+  }
+  \hfill
+  \subfloat[$\cos(\Phi(p_T^{miss, no \mu}, p_T^{\mu}))<0.65$]{
+    \includegraphics[width=0.32\textwidth]{plot_efy/trigger/canvas_anatrigger_minv_cutphi_65.pdf}
+  }
+  \hfill
+  \subfloat[$\cos(\Phi(p_T^{miss, no \mu}, p_T^{\mu}))<0.80$]{
+    \includegraphics[width=0.32\textwidth]{plot_efy/trigger/canvas_anatrigger_minv_cutphi_80.pdf}
+  }
+  \caption{Invariant mass distribution in the $\gamma e$ (blue) and $\gamma \mu$ (red) channels when the analysis trigger is applied together with a $\cos(\Phi(p_T^{miss, no \mu}, p_T^{\mu}))$ selection on the $\gamma\mu$ channel.}
+  \label{fig:phicut-anatrig}
+\end{figure}
+
+\clearpage
+
+\subsection{Trigger efficiency on electrons and photons}
+
+In order to evaluate the analysis trigger effect on photons and electrons, higher offline selections are applied on the other variables that define the trigger, $p_T^{\text{miss}}$ and $m_T$, in order to cover their impact on the event selection. \\
+Several configurations of increasing thresholds are tested:
+\begin{itemize}
+     \item $p_T^{\text{miss}} > $ 70, 100, 150, 200, 300, 400 GeV
+      \item $m_T > $ 80, 100, 150, 200 GeV
+\end{itemize}
+The best selections for each channel is determined by maximizing the trigger efficiency as a function of transverse momentum, $\epsilon(p_T)$. \\
+All tested configurations are presented separately for each channel.
+
+\subsubsection{$\gamma\mu$ channel} 
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >70~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss070_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >70~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss070_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $\gamma \mu$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >70~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss070_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >70~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss070_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $\gamma \mu$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >100~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss100_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >100~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss100_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $\gamma \mu$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >100~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss100_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >100~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss100_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $\gamma \mu$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >150~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss150_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >150~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss150_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $\gamma \mu$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >150~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss150_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >150~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss150_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $\gamma \mu$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >200~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss200_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >200~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss200_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $\gamma \mu$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >200~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss200_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >200~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss200_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $\gamma \mu$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >300~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss300_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >300~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss300_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $\gamma \mu$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >300~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss300_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >300~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss300_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $\gamma \mu$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >400~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss400_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >400~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss400_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $\gamma \mu$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >400~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss400_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >400~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_ymu_pTmiss400_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $\gamma \mu$ channel.}
+\end{figure}
+
+\clearpage
+
+\subsubsection{$\gamma$ channel}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >70~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss070_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >70~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss070_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $y$ channel.}
+\end{figure}
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >70~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss070_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >70~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss070_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $y$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >100~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss100_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >100~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss100_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $y$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >100~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss100_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >100~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss100_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $y$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >150~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss150_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >150~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss150_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $y$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >150~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss150_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >150~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss150_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $y$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >200~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss200_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >200~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss200_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $y$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >200~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss200_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >200~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss200_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $y$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >300~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss300_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >300~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss300_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $y$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >300~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss300_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >300~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss300_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $y$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >400~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss400_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >400~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss400_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $y$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >400~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss400_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >400~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_y_pTmiss400_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $y$ channel.}
+\end{figure}
+
+\clearpage
+\subsubsection{$e$ channel}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >70~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss070_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >70~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss070_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $e$ channel.}
+\end{figure}
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >70~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss070_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >70~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss070_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $e$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >100~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss100_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >100~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss100_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $e$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >100~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss100_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >100~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss100_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $e$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >150~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss150_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >150~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss150_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $e$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >150~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss150_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >150~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss150_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $e$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >200~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss200_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >200~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss200_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $e$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >200~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss200_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >200~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss200_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $e$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >300~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss300_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >300~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss300_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $e$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >300~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss300_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >300~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss300_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $e$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >400~\mathrm{GeV},~m_T >80~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss400_mT080_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >400~\mathrm{GeV},~m_T >100~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss400_mT100_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $e$ channel.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[ $p_T^{\text{miss}} >400~\mathrm{GeV},~m_T >150~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss400_mT150_etabin00.pdf}
+  }
+  \hfill
+  \subfloat[ $p_T^{\text{miss}} >400~\mathrm{GeV},~m_T >200~\mathrm{GeV}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/trigger/canvas_eff_anatrig_vs_pT_e_pTmiss400_mT200_etabin00.pdf}
+  }
+  \caption{Top: all events (black) and events passing the analysis trigger (red) vs $p_T$. Bottom: analysis trigger efficiency (blue) vs $p_T$ in the $e$ channel.}
+\end{figure}
+
+\clearpage
+
+\subsection{Signal contamination in low transverse mass region}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[$m_T$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/mt_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
+  }
+  \hfill
+  \subfloat[$p_T^{\gamma}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/phPt_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
+  }
+  \caption{Signal contamination in the low $m_T$ region for different kinematic variables. Here the electrons faking photons and the jet faking photons backgrounds are derived from MC simulations.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[$|\eta^{\gamma}|$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/abspheta_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
+  }
+  \hfill
+  \subfloat[$p_T^{\text{miss}}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/met_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
+  }
+  \caption{Signal contamination in the low $m_T$ region for different kinematic variables. Here the electrons faking photons and the jet faking photons backgrounds are derived from MC simulations.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[$S_{p_T^{\text{miss}}}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/metsig_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
+  }
+  \hfill
+  \subfloat[$\Delta p_T^{\text{miss}}$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/Dmet_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
+  }
+  \caption{Signal contamination in the low $m_T$ region for different kinematic variables. Here the electrons faking photons and the jet faking photons backgrounds are derived from MC simulations.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[$\Delta \Phi(j_1, j_2)$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/dphiJJ_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
+  }
+  \hfill
+  \subfloat[$\Delta \Phi(p_T^{\text{miss}}, \{p_T^{\text{miss}}\}_{\text{jet}})$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/dphiMetPhterm_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
+  }
+  \caption{Signal contamination in the low $m_T$ region for different kinematic variables. Here the electrons faking photons and the jet faking photons backgrounds are derived from MC simulations.}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subfloat[$\Delta \Phi(p_T^{\text{miss}}, p_T^{\gamma})$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/dphiMetPhPt_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
+  }
+  \hfill
+  \subfloat[$\Delta \Phi(p_T^{\text{miss}}, \{p_T^{\text{miss}}\}_{\gamma})$]{
+    \includegraphics[width=0.45\textwidth]{plot_efy/validation/dphiMetJetterm_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
+  }
+  \caption{Signal contamination in the low $m_T$ region for different kinematic variables. Here the electrons faking photons and the jet faking photons backgrounds are derived from MC simulations.}
+\end{figure}
+
+\clearpage

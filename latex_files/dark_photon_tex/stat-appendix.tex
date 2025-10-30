@@ -1,0 +1,435 @@
+\subsection{Blind fit with pure Monte Carlo}
+\label{sec:pureMC}
+
+A first attempt of blind simultaneous fit has been done relying on Monte Carlo samples for the signal and for all the background processes. MC samples included in the fit are: 
+\begin{itemize}
+    \item for the signal: ggF, VBF, ZH, WH; 
+    \item for the background: $W\gamma, Z\gamma,W$jets, $Z$jets, $\gamma$jets direct, $\gamma$jets fragmentation, dijets
+\end{itemize}
+A flat systematic of 10\% is applied to all the samples. 
+The composition of SR and CRs in terms of samples is showed in Figure \ref{fig:pie_onlyMC}. 
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/MConly/PieChart.pdf} 
+    \caption{SR and CRs composition from Monte Carlo.}
+    \label{fig:pie_onlyMC}
+\end{figure}
+\begin{figure}[!htbp]
+    \centering
+
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/MConly/SR.pdf}
+        \caption*{(a) Pre-fit SR}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/MConly/OneMuCR.pdf}
+        \caption*{(b) Pre-fit $1\mu$CR}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/MConly/TwoMuCR.pdf}
+        \caption*{(c) Pre-fit $2\mu$CR}
+    \end{minipage}
+
+    \vspace{0.5cm}
+
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/MConly/SR_postFit.pdf}
+        \caption*{(d) Post-fit SR}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/MConly/OneMuCR_postFit.pdf}
+        \caption*{(e) Post-fit $1\mu$CR}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/MConly/TwoMuCR_postFit.pdf}
+        \caption*{(f) Post-fit $2\mu$CR}
+    \end{minipage}
+
+    \caption{Pre-fit and post-fit distributions using Monte Carlo only in SR and control regions.}
+    \label{fig:prepost_onlyMC}
+\end{figure}
+
+Pre-fit and post-fit $m_T$ distribution in SR, $1\mu$CR and $2\mu$CR are showed in Figure \ref{fig:prepost_onlyMC}. Taking in consideration $m_T$ distribution in SR: 
+\begin{itemize}
+    \item $W$jets events are mainly located in the first bin, as these events are a background for the analysis only when the W decays in the electronic channel and the electron is mis-reconstructed as a photon; in such a case, the transverse mass $\gamma-p_T^{miss}$ is peaked on the W-boson mass ($\sim\SI{80}{GeV}$); 
+    \item $Z\gamma$ events have a $m_T$ distribution quite similar to the one of the signal, being the irreducible background, with a peak in the central bin; 
+    \item $W\gamma$ events contain real $p_T^{miss}$ so their spectrum reaches high values of $m_T$; 
+    \item $\gamma$jets direct events are absent in the last bin as for such events the $p_T^{miss}$ is fake and is unlikely that a huge fake $p_T^{miss}$ is mis-reconstructed.
+\end{itemize}
+Regarding ratio plots: 
+\begin{itemize}
+    \item in SR, the ratio plots are empty as data are blind; 
+    \item in $1\mu$CR, the ratio plot pre-fit presents the discrepancies between data and Monte Carlo, while post-fit Monte Carlo simulations are corrected with k-factors, so the ratio plot becomes flat; 
+    \item in $2\mu$CR, the post-fit ratio plot is not flat as an inclusive $k_Z$ is used due to low statistics. 
+\end{itemize}
+
+
+k-factors are showed in Table \ref{tab:kfac_onlyMC}. $k_Z$ is particularly far from 1, quite unexpected for an electroweak background such as $Z\gamma$. This is mostly due to the under-estimation of jets faking photons contribution to $2\mu$CR by Monte Carlo simulations. 
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{c|c|c|c}
+        \toprule
+        $m_T$ \textbf{bin [GeV]} & \textbf{$k_W$} & \textbf{Error up} & \textbf{Error down}  \\
+        \hline
+         80-110 &  1.09996 &+0.139674 &-0.116532\\
+      
+        110-140 &  1.10981 &+0.103179 &-0.0936811\\
+    
+        140-200 & 1.22607 &+0.115021 &-0.0956884\\
+    
+        200-300 &  1.38527 &+0.15409 &-0.130573\\
+  \hline
+    $m_T$ \textbf{bin [GeV]} & \textbf{$k_Z$} & \textbf{Error up} & \textbf{Error down}  \\
+    \hline
+    inclusive & 1.41432& +0.155818 &-0.140022\\ 
+    \bottomrule
+    \end{tabular}
+    \caption{k-factors in the only Monte Carlo configuration. }
+    \label{tab:kfac_onlyMC}
+\end{table}
+
+The expected limit in this configuration is 0.015053. 
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{l
+                    S[table-format=1.6]
+                    S[table-format=1.6]
+                    S[table-format=1.6]
+                    S[table-format=1.6]
+                    S[table-format=1.6]}
+        \toprule
+        & {Nominal} & {$-1\sigma$} & {$+1\sigma$} & {$-2\sigma$} & {$+2\sigma$} \\
+        \midrule
+        Expected limit &
+        0.015053 & 0.010567 & 0.021724 & 0.007740 & 0.030515 \\
+        
+        \bottomrule
+    \end{tabular}
+    \caption{Expected limit in the only Monte Carlo configuration. }
+\end{table}
+
+\subsection{Blind fit including data-driven jet faking photon}
+\label{sec:fit_fjy}
+Jets faking photons background is then estimated with the data-driven technique explained in Section \ref{sec:jetfake} and included in the fit with its systematic. The 10\% flat systematic is then applied to all the samples, with the exception of jets faking photons. $\gamma$jets fragmentation, dijets and $W$jets, $Z$jets without electrons faking photons have been then removed from the fit, while including the data-driven estimation. $W$jets, $Z$jets with electrons faking photons are selected requiring the truth type of the photon being equal to 2 (i.e. electron). This leads to a varied composition of backgrounds in SR, where jets faking photons account for a larger portion of background, as it can be seen in Figure \ref{fig:pie_jfy}. 
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/jfy/PieChart.pdf} 
+    \caption{SR and CRs composition.}
+    \label{fig:pie_jfy}
+\end{figure}
+Pre-fit and post-fit $m_T$ distribution in SR, $1\mu$CR and $2\mu$CR are showed in Figure \ref{fig:prepost_jfy}. Adding data-driven jets faking photons, $Z$jets contribution to background is very low, so that is not visible in the plots; this is expected as this events enter the SR only when multiple things happen at the same time: the Z boson decays in the electronic channel, an electron is lost giving a fake $p_T^{miss}$, the other electron is mis-reconstructed as photon. 
+\begin{figure}[!htbp]
+    \centering
+
+    % Prima riga
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/jfy/SR.pdf}
+        \caption*{(a) Pre-fit SR}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/jfy/OneMuCR.pdf}
+        \caption*{(b) Pre-fit $1\mu$CR}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/jfy/TwoMuCR.pdf}
+        \caption*{(c) Pre-fit $2\mu$CR}
+    \end{minipage}
+
+    \vspace{0.4cm}
+
+    % Seconda riga
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/jfy/SR_postFit.pdf}
+        \caption*{(d) Post-fit SR}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/jfy/OneMuCR_postFit.pdf}
+        \caption*{(e) Post-fit $1\mu$CR}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/jfy/TwoMuCR_postFit.pdf}
+        \caption*{(f) Post-fit $2\mu$CR}
+    \end{minipage}
+
+    \caption{Pre-fit and post-fit distributions in SR and CRs using data-driven $j \to \gamma$ estimation.}
+    \label{fig:prepost_jfy}
+\end{figure}
+
+k-factors are showed in Table \ref{tab:kfac_jfy}. $k_Z$ is now closer to 1 with reference to the only Monte Carlo configuration, thanks to the data-driven estimation of jets faking photons. 
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{c|c|c|c}
+        \toprule
+        $m_T$ \textbf{bin [GeV]} & \textbf{$k_W$} & \textbf{Error up} & \textbf{Error down}  \\
+        \hline
+         80-110 & 0.826057 &+0.119916 &-0.103399\\
+      
+        110-140 & 0.831074 & +0.0905051 & -0.0871422 \\
+    
+        140-200 & 0.89956 &  +0.0983367 & -0.0859015\\
+    
+        200-300 &  1.1688 & +0.144942 & -0.124162\\
+  \hline
+    $m_T$ \textbf{bin [GeV]} & \textbf{$k_Z$} & \textbf{Error up} & \textbf{Error down}  \\
+    \hline
+    inclusive & 0.8081 &+0.131243 &-0.143476\\ 
+    \bottomrule
+    \end{tabular}
+        \caption{k-factors including data-driven jets faking photons. }
+    \label{tab:kfac_jfy}
+\end{table}
+The expected limit in this configuration is 0.016014. 
+\begin{table}[!htbp]
+    \centering
+    
+    \begin{tabular}{l
+                    S[table-format=1.6]
+                    S[table-format=1.6]
+                    S[table-format=1.6]
+                    S[table-format=1.6]
+                    S[table-format=1.6]}
+        \toprule
+        & {Nominal} & {$-1\sigma$} & {$+1\sigma$} & {$-2\sigma$} & {$+2\sigma$} \\
+        \midrule
+        Expected limit &
+        0.016014 & 0.011235 & 0.023131 & 0.008226 & 0.032520 \\
+        
+        \bottomrule
+    \end{tabular}
+    \caption{Expected limit including jets faking photons data-driven estimation.}
+\end{table}
+
+\subsection{Blind fit with data-driven backgrounds and BDT score cut}
+
+This section displays the results of a blind simultaneous fit in which data-driven estimations of $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ backgrounds (see \ref{sec:jetfake} and \ref{sec:elefake} for details) are included, together with the selection applied on the BDT score obtained in section \ref{sec:vertex}. The fit takes into consideration the systematic uncertainties on the data-driven $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ estimations, and a "guess" 10\% flat systematic, applied to all other backgrounds so as to mimic the foreseen effects of the experimental and theoretical uncertainties that will be included later.\\
+To allow for the calculation of the exclusion limit, the configuration is a \textit{signal+background} (SPLUSB) fit, in which the POI was set to 0 in order to put ourselves in the case with no injected signal.\\
+Comparing the background composition in the three regions resulting from a fit with MC-estimated $e \rightsquigarrow \gamma$ (\ref{sec:stat-appendix}) and data-driven $e \rightsquigarrow \gamma$ (figure \ref{fig:piecharts}), it emerges that a data-driven estimation leads to $e \rightsquigarrow \gamma$ being the dominant background in SR, much differently from the case in which it was taken from MC simulations.\\
+
+\begin{figure}[h!]
+\centering
+    \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/PieChart.pdf}
+    \caption*{(a) Pre-fit pie charts.}
+    \label{fig:pie_pre}
+    \end{minipage}
+\quad
+    \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/PieChart_postFit.pdf}
+    \caption*{(b) Post-fit pie charts.}
+    \label{fig:pie_post}
+    \end{minipage}
+
+\caption{Pre-fit and post-fit SR and CRs composition.}
+\label{fig:piecharts}
+
+\end{figure}
+
+\noindent
+The 1$\mu$CR is populated by $e\rightsquigarrow\gamma$, differently from the pure MC case (section ??) due to processes such as $W(\rightarrow e\nu)W(\rightarrow \mu\nu)$ which are not used among the MC sample. 
+
+\vspace{1 cm}
+
+\noindent
+Numerically, the background yields displayed in the pie charts are summarized in tables \ref{tab:yields_pre} and \ref{tab:yields_post}.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+       \textbf{Process}  & \textbf{SR} & \textbf{1$\mu$CR} & \textbf{2$\mu$CR} \\
+    \hline
+    $ggF_{dark}$ & 0 $\pm$ 0& 0 $\pm$ 0 & 0 $\pm$ 0\\
+    \hline
+     $VBF_{dark}$  & 0 $\pm$ 0 & 0 $\pm$ 0 & 0 $\pm$ 0 \\
+    \hline
+      $WH_{dark}$ & 0 $\pm$ 0 & 0 $\pm$ 0 & 0 $\pm$ 0 \\
+    \hline
+      $ZH_{dark}$ & 0 $\pm$ 0 & 0 $\pm$ 0 & 0 $\pm$ 0 \\
+    \hline
+      $W\gamma$ & 450.797 $\pm$ 45.6681& 739.316 $\pm$ 74.3611& 0.203071 $\pm$ 0.0207582\\
+    \hline
+      $Z\gamma$ & 251.242 $\pm$ 25.5152& 21.7076 $\pm$ 2.1859& 87.9189 $\pm$ 8.91118\\
+    \hline
+      $\gamma$jets(direct) &48.0859 $\pm$ 5.04346 &0.0358423 $\pm$ 0.00365839 & 3.94582e-06 $\pm$ 6.1096e-08\\
+    \hline
+     $j \rightsquigarrow \gamma$  &619.18 $\pm$ 105.79 & 263.35 $\pm$ 45.34& 53.22 $\pm$ 9.46\\
+    \hline
+     $e \rightsquigarrow \gamma$  & 835.789 $\pm$ 81.0756& 68.2427 $\pm$ 6.75506& 4e-06 $\pm$ 0\\
+    \hline
+     Total  &2205.09 $\pm$ 153.494 & 1092.65 $\pm$ 89.2254& 141.342 $\pm$ 13.0103\\
+    \hline
+     Data  & 0 & 937& 124\\
+    \hline
+    
+    \end{tabular}
+    \caption{Pre-fit yields.}
+    \label{tab:yields_pre}
+\end{table}
+
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+       \textbf{Process}  & \textbf{SR} & \textbf{1$\mu$CR} & \textbf{2$\mu$CR} \\
+    \hline
+    $ggF_{dark}$ & 0.154324 $\pm$ 19.3776& 0 $\pm$ 0 & 0 $\pm$ 0\\
+    \hline
+     $VBF_{dark}$  & 0.0372225 $\pm$ 4.67381 & 0 $\pm$ 0 & 0 $\pm$ 0 \\
+    \hline
+      $WH_{dark}$ & 0.00935622 $\pm$ 1.1748 & 0.000513275 $\pm$ 0.0644495  & 0 $\pm$ 0 \\
+    \hline
+      $ZH_{dark}$ & 0.00610652 $\pm$ 0.76676 &  2.56389e-05 $\pm$ 0.00321934 & 0 $\pm$ 0 \\
+    \hline
+      $W\gamma$ & 345.859 $\pm$ 31.2352& 581.178 $\pm$ 48.6794& 0.154028 $\pm$ 0.014861\\
+    \hline
+      $Z\gamma$ & 194.355 $\pm$ 37.8637 & 16.7927 $\pm$ 3.27518 & 68.0693 $\pm$ 13.2259\\
+    \hline
+      $\gamma$jets(direct) & 48.0868 $\pm$ 4.92906 & 0.0358432 $\pm$ 0.00363269 & 3.9456e-06 $\pm$ 6.10261e-08\\
+    \hline
+     $j \rightsquigarrow \gamma$  & 636.495 $\pm$ 94.3173 & 270.771 $\pm$ 40.4266 & 54.7681 $\pm$ 8.43809\\
+    \hline
+     $e \rightsquigarrow \gamma$  & 835.7 $\pm$ 45.3879 & 68.2354 $\pm$ 3.78041 & 4e-06 $\pm$ 0 \\
+    \hline
+     Total  &2060.7 $\pm$ 45.0162 & 937.013 $\pm$ 29.8062 & 122.991 $\pm$ 9.63825\\
+    \hline
+     Data  & 0 & 937& 124\\
+    \hline
+    
+    \end{tabular}
+    \caption{Post-fit yields.}
+    \label{tab:yields_post}
+\end{table}
+
+\noindent
+The plots in figure \ref{fig:regions_jy_ey_Fit} show the pre- and post-fit $m_T$ distributions in SR, 1$\mu$CR and 2$\mu$CR:\\
+
+\begin{figure}[h!]
+\centering
+    \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/SR.pdf}
+    \caption*{(a) Pre-fit SR.}
+    \label{fig:SR}
+    \end{minipage}
+\quad
+    \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/OneMuCR.pdf}
+    \caption*{(b) Pre-fit 1$\mu$CR.}
+    \label{fig:1mu}
+    \end{minipage}
+\quad
+    \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/TwoMuCR.pdf}
+    \caption*{(c) Pre-fit 2$\mu$CR.}
+    \label{fig:2mu}
+    \end{minipage}
+
+
+    \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/SR_postFit.pdf}
+    \caption*{(d) Post-fit SR.}
+    \label{fig:SR_post}
+    \end{minipage}
+\quad
+    \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/OneMuCR_postFit.pdf}
+    \caption*{(e) Post-fit 1$\mu$CR.}
+    \label{fig:1mu_post}
+    \end{minipage}
+\quad
+    \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/TwoMuCR_postFit.pdf}
+    \caption*{(f) Post-fit 2$\mu$CR.}
+    \label{fig:2mu_post}
+    \end{minipage}
+
+\caption{Pre-fit and post-fit distributions in SR and CRs.}
+\label{fig:regions_jy_ey_Fit}
+    
+\end{figure}
+
+\vspace{5cm}
+\noindent
+using a binned $k_W$ allows to have a data/background ratio exactly equal to 1, while an inclusive $k_Z$ provides a less precise ratio, but still within 1$\sigma$. The values of the k-factors and their related statistical uncertainties are listed in table \ref{tab:kfactors}.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+      \textbf{$m_T$ bin [GeV]} & \textbf{$k_W$} & \textbf{Error up} & \textbf{Error down} \\
+    \hline
+      80-110 & 0.710612 & +0.135519 & -0.11107  \\
+    \hline
+      110-140 & 0.69346 & +0.118731 &  -0.10161 \\
+    \hline
+      140-200   & 0.802358 & +0.135485 & -0.109737 \\
+    \hline
+     200-300 & 1.10656 & +0.174307 & -0.145853 \\
+    \hline
+     \textbf{$m_T$ bin [GeV]} & \textbf{$k_Z$} & \textbf{Error up} & \textbf{Error down}\\
+    \hline
+     Inclusive & 0.773567 & +0.183894 & -0.158675 \\
+    \hline
+    \end{tabular}
+    \caption{Normalization factors.}
+    \label{tab:kfactors}
+\end{table}
+
+\noindent
+The expected upper limit on $BR(H\rightarrow \gamma \gamma_d)$ in this configuration is 0.019642 (see table \ref{tab:limit}):\\
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+       & \textbf{-2$\sigma$} & \textbf{-1$\sigma$} & \textbf{Median} & \textbf{1$\sigma$} & \textbf{2$\sigma$} \\
+       \hline
+     \textbf{Expected limit} & 0.010329 & 0.013982 & 0.019642 & 0.027846 & 0.038455 \\
+     \hline
+    \end{tabular}
+    \caption{Expected upper limit on $BR(H\rightarrow \gamma \gamma_d)$ at 95\% CL.}
+    \label{tab:limit}
+\end{table}
+
+\vspace{2 cm}
+\noindent
+The value of the limit is slightly lowered by the BDT selection applied in the three regions, with respect to the case in which it wasn't used.\\
+\noindent
+Figures \ref{fig:pullplot} and \ref{fig:corr} display the pull plot and the correlation matrix, respectively, referred to the nuisance parameters involved in the fit.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{images/NuisPar.pdf}
+    \caption{Nuisance parameters pull plot: \texttt{ff\_jy} and \texttt{ff\_ey} are the systematic uncertainties on the data-driven $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ fake rates, while \texttt{fey\_syst} is the systematic on the trigger scale factor for $e \rightsquigarrow \gamma$ estimation; \texttt{guess\_syst} refers to the 10\% guess systematic on MC backgrounds.\\
+    $[$Comment: TRExFitter seems not to include the inclusive normalization factor kz in the pull plot, while it is displayed in the correlation matrix$]$.}
+    \label{fig:pullplot}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{images/CorrMatrix.pdf}
+    \caption{Correlation matrix: \texttt{ff\_jy} and \texttt{ff\_ey} are the systematic uncertainties on the data-driven $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ fake rates, while \texttt{fey\_syst} is the systematic on the trigger scale factor for $e \rightsquigarrow \gamma$ estimation; \texttt{guess\_syst} refers to the 10\% guess systematic on MC backgrounds.}
+    \label{fig:corr}
+\end{figure}
+
+
+
+
+

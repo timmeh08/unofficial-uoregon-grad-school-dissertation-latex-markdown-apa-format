@@ -1,0 +1,60 @@
+% -*- latex -*-
+
+Some objects, other than photons, could be wrongly reconstructed as isolated photon candidates passing isolation requirement, therefore providing sources of reducible background: these are typically referred to as ``fake photons'', and generally written as \fakey, where the symbol $\rightsquigarrow$ reads ``wrongly reconstructed as''.
+There are two typologies of fake photons:
+\begin{itemize}
+\item ``jets faking photons'' (\jfakey): hadronic jets, mostly characterized by a leading $\pi^0$ decaying to 2 collimated photons that the ECAL strips are not able to resolve;
+\item ``electrons faking photons'' (\efakey): electrons, which under some circumstances may appear as early converted photons, with one of the two conversion tracks being lost.
+\end{itemize}
+In both cases, the description of such backgrounds in MC simulation is not accurate enough, and therefore data-driven techniques must be exploited to estimate their magnitude and shape. In this section, some general concepts are introduced; the specific treatment of \efakey\ and \jfakey\ cases are treated in dedicated subsections~\ref{sec:jetfake} and~\ref{sec:elefake}.
+
+In this section, the ``object'' that fakes a photon (be it a jet or an electron) is called ``signal-like objects'' (SLO); on the opposite, if it is not selected as a photon candidate, it is named ``background-like objects'' (BLO).
+For \efakey\ the BLO is chosen as an electron candidate, while for \jfakey\ it is chosen as a photon passing tight identification but failing isolation.
+The SR contains both events with a genuine photon, and with a SLO. 
+
+The general strategy is to find a control region with a kinematics as similar as possible to the SR, but with a BLO instead of a photon candidate --- we'll call it BLO-CR. The number of events with SLO in the SR is obtained from the events in the BLO-CR, each scaled by an appropriate fake rate, defined as:
+\begin{equation}
+  f = \frac{N_{SLO}}{N_{BLO}}
+  \label{eq:fakerate}
+\end{equation}
+that for \efakey\ and \jfakey\ read as:
+\begin{equation}                                                                                                                                                                                                                                    
+  \fey=\frac{N(\efakey)}{N(e\rightsquigarrow e)}
+  ~~~~~;~~~~~
+  \fjy=\frac{N(\jfakey)}{N(j\rightsquigarrow\gamma^{nonisol})}
+  \label{eq:fey-fjy}
+\end{equation}
+
+The fake rate in Eqs~\ref{eq:fakerate},~\ref{eq:fey-fjy} is a property of the object and how it is selected, and is assumed not to depend on the general topology if the event it belongs to. Therefore $f$ can be computed from data, choosing samples that are dominated by the BLO or the SLO, and depleted of genuine photons. The selection of SLO and BLO must be as consistent as possible between the computation of the fake rate $f$, and the definition of the SR and the BLO-CR.
+
+In the present analysis, the trigger requires a trigger-level tight photon with $p_T>50~\mathrm{GeV}$, a trigger-level $p_T^{miss}>70~\mathrm{GeV}$, and a trigger-level $m_T(\gamma;\pTmiss)>80~\mathrm{GeV}$. Therefore the trigger strongly shapes the kinematics of the SR, which must be enforced also in the BLO-CR. Given that the offline $p_T^{miss}$ may differ significantly from the trigger-level one, the most reliable way to impose the same kinematics to the SR and the BLO-CR is to apply the analysis trigger to the latter, too. The drawback is that in this way the trigger also affects the selection of the BLO in the BLO-CR. If the computation of $f$ could be done on BLO- and SLO-enriched samples passing the analysis trigger, the definition of BLO and SLO would be perfectly consistent; however, this approach would impose kinematics constraints on the events as a whole, which are unnecessary for the purpose of $f$ calculation, and would strongly reduce the statistics. As we'll see, this is still possible (and convenient) for \jfakey\ (see~\ref{sec:jetfake}), but is largely suboptimal for \efakey\ (see~\ref{sec:elefake}).
+
+To introduce to the following sections, the selection of SLO and BLO for the computation of $f$, and the triggers used in the SR and in the BLO-CR are summarized in Table~\ref{tab:BLO-SLO-def}.
+
+\begin{table}[ht]
+  \begin{center}
+  \small 
+    \begin{tabular}{c|cc|cc|cc|cc}
+      & \multicolumn{4}{c|}{$f$ computation} & \multicolumn{4}{c}{SLO estimation in SR} \\
+      & SLO & LSO trigger & BLO & BLO trigger & SR & SR trigger & BLO-CR & BLO-CR trigger \\
+      \hline
+      \multirow{2}{*}{\efakey}
+      & $\gamma$ & --- & selected $e$ & $e$ & $\gamma$ & analysis & selected $e$ & analysis \&\& $e$ \\
+      & $\gamma$ & analysis & selected $e$ & analysis & $\gamma$ & analysis & selected $e$ & analysis \\
+      \hline
+      \multirow{3}{*}{\jfakey}
+      & $\gamma$ & analysis & non-isol $\gamma$ & analysis & $\gamma$ & analysis & non-isol $\gamma$ & analysis \\
+      & $\gamma$ & $p_T^{miss}$ & non-isol $\gamma$ & \pTmiss\ & $\gamma$ & analysis & non-isol $\gamma$ & analysis \\
+      & $\gamma$ & lepton & non-isol $\gamma$ & lepton & $\gamma$ & analysis & non-isol $\gamma$ & analysis \\ 
+    \end{tabular}
+  \end{center}
+  \caption{
+    Definition of BLO and SLO for the computation of the fake factor $f$ and in the BLO-CR and SR.
+    Here $\gamma$ means recosntructed photon passing Tight identification and isolation (unless ``non-isol'' appears), and $e$ means selected electron; ``analysis'' under the ``trigger'' columns means analysis trigger, which requires a trigger-level tight photon.
+    For both \efakey\ and \jfakey, more choices are listed, as discussed in following sections.
+  }
+  \label{tab:BLO-SLO-def}
+\end{table}
+
+\clearpage
+
