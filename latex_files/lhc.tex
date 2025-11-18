@@ -1,4 +1,4 @@
-The LHC (insert reference here), located near Geneva, Switzerland, is the world's largest and most powerful hadron accelerator. 
+The LHC \cite{Evans:2008zzb}, located near Geneva, Switzerland, is the world's largest and most powerful particle accelerator. 
 It collides protons at a center-of-mass (COM) energy of 13.6 TeV during Run 3 operations, with plans to reach its design energy of 14 TeV in the High-Luminosity LHC (HL-LHC) era.
 The two opposing beams of protons travel in a 27-kilometer ring of super-conducting magnets and are made to collide at four evenly spaced interaction points highlighted in Fig. \ref{accelerator_complex} every 25 ns.
 There are 2 general-purpose detectors, ATLAS \cite{PERF-2007-01} and CMS \cite{CMS-CMS-00-001}, and 2 specialized detectors, LHCb (ref) and ALICE(ref), located at the interaction points to observe and record the results of the proton-proton collisions.
@@ -26,15 +26,62 @@ The beams collide at the 4 interaction points every 25 ns, resulting in a maximu
 Each system in the chain uses radio-frequency (RF) cavities for acceleration, while the synchrotrons also include magnetic dipoles for beam steering and magnetic quadrupoles for focusing.
 Since protons are charged particles, RF cavities use oscillating electric fields to accelerate them.
 These cavities are shaped to resonate at frequencies that match the timing of the proton bunches, accelerating them forward while keeping the bunches tightly packed. 
-The frequency is gradually increased as the protons gain energy, imparting a "pull" as they enter the cavity and a "push" as they exit.
-The bunches are shaped longitudinally by the RF cavities.
-This is done by having the protons encounter the fields at the crest of the wave, slightly pushing the forward protons back and the trailing protons forward, keeping the bunches compact.
-Opposite polarity fields are applied by dipole magnets shown in Fig. (insert refrence and figure) bend the beam trajectories along the ring in opposing directions.
+The frequency is gradually increased as the protons gain energy, imparting a ``pull" as they enter the cavity and a ``push" as they exit.
+The bunches are also shaped longitudinally by the RF cavities.
+This is done by having the protons encounter the fields at the crest of the wave, slightly pushing the forward protons back and the trailing protons forward, keeping the bunches compact and compressed.
+There are 8 RF cavities in the LHC ring, providing a total of 16 MV per turn at 400 MHz to reach the final energy of 6.8 TeV per beam.
+RF cavities must be cooled down to 4.5K using liquid helium to maintain their superconducting state and operating efficiency.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../images/my_images/9906025_01.jpeg}
+    \caption{LHC dipole magnet schematic \cite{Team:40524}}
+    \label{dipole}
+\end{figure}
 
+Opposite polarity fields applied by dipole magnets shown in Fig. \ref{dipole} bend the beam trajectories along the ring in opposing directions.
+This design allows for the opposing beams to circulate in separate beam pipes within the same magnet structure, reducing the overall size of the beam pipe to fit within the LEP tunnel.
+The 1232 dipole magnets are superconducting as well, and the specially designed NbTi Rutherford wires are cooled to 1.9K with liquid helium, generating magnetic fields up to 8.3 T.
+While the overall shape of the LHC is circular, the path is more accurately described by straight sections with bends at the dipoles.
+The PSB, PS, and SPS use superconducting dipole magnets similarly, with field strengths of .087, 1.24, and 2.02 T respectively \cite{Tommasini:1233948}.
+The quadrupole magnets focus the beams in these straight sections, keeping protons tightly packed and prepared for collision at the interaction points.
+Single quadrupole magnets focus on one axis while defocusing the other, so they are arranged in sequences of alternating orientations.
 
+\subsection{Proton-Proton Collisions and Luminosity}
+Once the two proton beams reach their target energy and are prepared for collision by the focusing magnets, they are directed to cross paths at the interaction points.
+There are 2808 equally spaced bunches in each beam, colliding at the interaction points with a frequency of 40 MHz (every 25 ns).
+The number of proton collisions is characterized by the luminosity and cross section:
 
+\begin{equation}\label{N_collisions}
+    N = \sigma \mathcal{L}
+\end{equation}
 
+Where $\sigma$ is the cross section of the proton-proton interaction process, and $\mathcal{L}$ is the luminosity integrated over a time interval.
+The inelastic proton-proton cross section at a COM energy of 13 TeV is approximately 80 mb (1 mb = $10^{-27}$ cm$^2$) \cite{Aaboud:2016mmw}.
+The equation is also valid for a rate of events, where $N$ is replaced by $\frac{dN}{dt}$ and $\mathcal{L}$ is replaced by the instantaneous luminosity $\mathcal{L}_{inst}$.
+The instantaneous luminosity depends on properties of the LHC beams and is given by:
 
+\begin{equation}\label{luminosity}
+    \mathcal{L}_{inst} \propto \frac{N^2 f_{rev}}{4 \epsilon \beta^*}
+\end{equation}
 
+Where $N$ is the number of protons per bunch, $f_{rev}$ is the revolution frequency of the beams, $\epsilon$ is the normalized transverse beam emittance, and $\beta^*$ is the beta function at the interaction point.
+The emittance characterizes the spread of the beam in position and moment space, while beta is a measure of the magnetic focusing strength at the interaction point.
+$\epsilon$ and $\beta^*$ have units of length, so the luminosity has units of cm$^{-2}$s$^{-1}$.
+The beams are designed to collide at a slight crossing angle, giving a gamma and geometric factor which are ommitted here for simplicity.
+Given nominal values of $N=1.15\times10^{11}$ protons per bunch, $f_{rev}=11.245$ kHz, $\epsilon=3.75$ $\mu$m, and $\beta^*=0.55$ m, the approximate LHC instantaneous luminosity is $1\times10^{34}$ cm$^{-2}$s$^{-1}$ \cite{Bruening:782076}.
+This design luminosity was surpassed in Run 2 and Run 3, reaching peak instantaneous luminosities above  $2.1\times10^{34}$ cm$^{-2}$s$^{-1}$.
+
+A more tractable measure of proton-proton collisions is the interactions per bunch crossing, as shown in Fig. \ref{pileup}.
+Within the ATLAS detector, the average interactions per bunch crossing $\langle\mu\rangle$ was ~35 in Run 2, and has reached values above 60 in Run 3.
+While higher pileup increases the likelihood of a collision of interest, the extra interactions in a bunch crossing create outgoing particles or jets that need to be addressed during event reconstruction.
+This effect is known as pileup, scales with instantaneous luminosity, and must be accounted for when reconstructing events or physics objects within a detector.
+Pileup can be in-time, where multiple interactions occur within the same bunch crossing, or out-of-time, where interactions from previous bunch crossings are recorded in the current window due to detector response times.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../images/my_images/mu_run123.pdf}
+    \caption{Average interactions per bunch crossing (pileup) recorded by the ATLAS detector during Runs 1 and 2, and the on-going Run 3 data-taking periods \cite{ATLAS:DataSummary-2025-mu-run123}.}
+    \label{pileup}
+\end{figure}
 
