@@ -1,7 +1,15 @@
-The ATLAS detector is a general purpose detector at point 1 of the LHC ring.
+The ATLAS detector is a general purpose detector at Point 1 of the LHC ring.
 It is designed to detect and measure the scattering products of collisions provided by the LHC.
 Cylindrical in design, it is symmetric about the z-axis, and measures approximately 25 m in height and 44 m in length, with a total mass of about 7000 tons. \cite{PERF-2007-01}.
-ATLAS consists of several sub-detector systems arranged in layers around the interaction point, as shown in Fig. \ref{atlas_schematic}.
+ATLAS consists of several detector subsystems, magnets, and cryostats arranged in layers around the interaction point, as shown in Fig. \ref{atlas_schematic}.
+The first detector layer surrounding the interaction point is the Inner Detector (ID) which tracks charged particles.
+Around the ID are multiple calorimeter systems which measure and absorb the energy of all Standard Model particles except muons and neutrinos.
+The final detector component is the Muon Spectrometer (MS) which tracks muons as they pass through ATLAS.
+The detector systems are divided into barrel and end cap regions, with the barrel covering the region perpendicular to the beamline and the end caps covering regions parallel to the beamline.
+This design allows for near 4$\pi$ coverage around the interaction point, and is sensitive to a wide range of particle signatures, motivated partly by the prediction that the Higgs boson would decay to multiple final states.
+There are two main magnet systems in ATLAS: a solenoid magnet surrounding the ID, and a toroidal magnet surrounding the calorimeters and sections of the MS.
+Bathing sections of the detector in strong magnetic fields allows for the measurement of charged particle momenta by curving their trajectories.
+A vital off-detector system is the Trigger and Data Acquisition (TDAQ) system, which takes input from the detector components and selects interesting collision events for further analysis. 
 
 \begin{figure}[htbp]
     \centering
@@ -9,3 +17,25 @@ ATLAS consists of several sub-detector systems arranged in layers around the int
     \caption{Schematic diagram of the ATLAS detector and its sub-systems \cite{PERF-2007-01}.}
     \label{atlas_schematic}
 \end{figure}
+
+\subsection{The ATLAS Coordinate System}\label{subsec:atlas_coordinates}
+ATLAS uses a right-handed coordinate system with its origin at the interaction point, $\hat{y}$ pointed upwards, $\hat{x}$ pointed radially inward towards the center of the LHC ring, and $\hat{z}$ pointed along the beamline.
+The cylindrical symmetry of the detector and typical particle trajectories often motivates the use of two angular coordinates with $\theta$ the angle from the $\hat{z}$ axis, and $\phi$ the azimuthal angle in the transverse (x-y) plane.
+
+To better describe particle trajectories in a flat geometry, the pseudorapidity $\eta$ replaces the polar angle $\theta$ and is defined as:
+
+\begin{equation}\label{pseudorapidity}
+    \eta = -\ln\left(\tan\left(\frac{\theta}{2}\right)\right)
+\end{equation}
+
+Pseudorapidity is valid in the highly relativistic conditions of the LHC where $pc \gg mc^2$, and has the advantage of being invariant under Lorentz boosts along the beam axis.
+A common measure of distance in the detector, since it is also invariant under boosts along the beam axis, is $\Delta R$ defined as:
+
+\begin{equation}\label{deltaR}
+    \Delta R = \sqrt{(\Delta \eta)^2 + (\Delta \phi)^2}
+\end{equation} 
+
+Since the LHC collides protons essentially head-on, they have an initial transverse energy of zero.
+It is therefore useful to define and measure physical quantities in the transverse plane, such as transverse momentum $p_T$ and missing transverse energy $E_T^{miss}$ often referred to as MET.
+
+\subsection{The Inner Detector}\label{subsec:inner_detector}
