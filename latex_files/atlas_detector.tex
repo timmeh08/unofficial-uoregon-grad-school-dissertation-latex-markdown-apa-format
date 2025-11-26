@@ -39,3 +39,60 @@ Since the LHC collides protons essentially head-on, they have an initial transve
 It is therefore useful to define and measure physical quantities in the transverse plane, such as transverse momentum $p_T$ and missing transverse energy $E_T^{miss}$ often referred to as MET.
 
 \subsection{The Inner Detector}\label{subsec:inner_detector}
+
+The ID is the innermost detector system seen in Fig. \ref{ID}, tracking charged particle trajectories as they emerge from the interaction point with minimal energy loss as they pass through \cite{ATLAS-TDR-04}.
+It is composed of three subsystems and covers an $\eta$ range of $|\eta| < 2.5$.
+The whole ID is immersed in a 2T magnetic field provided by the solenoid magnet.
+
+Tracking is performed by measuring the charge, position, and timing of charged particles.
+As a charged particle passes through a layer of the ID, it ionizes the detector material, creating electron-hole pairs.
+Each layer is under high voltage, and these free charges are collected to provide a \textit{hit} in the detector.
+Combining hits from multiple layers allows for the reconstruction of the particle trajectory, or \textit{track}.
+The direction of curvature of the track due to the magnetic field gives the charge of the particle, while the radius of curvature gives the momentum.
+Tracks are also traced back to the beamline to identify the vertex of the associated particle. 
+If a track does not originate from the beamline, it might have originated from a secondary vertex, indicating the decay of a long-lived particle or as a product of a parent particle decay.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../images/my_images/IDbriefing_figure1.png}
+    \caption{Diagram of the ATLAS Inner Detector and its three subsystems \cite{PERF-2007-01}.}
+    \label{ID}
+\end{figure}
+
+The innermost subsystem is the Pixel Detector \cite{ATLAS-TDR-11}, starting at a distance of 33.25 mm from the beamline and extending to 122.5 mm.
+It is composed of layers of 92 million silicon pixel sensors, each measuring 50 $\mu$m by 400-600 $\mu$m in size.
+Sensors are stacked in four overlapping layers in the barrel region, and 3 disks on each end cap providing coverage out to $|\eta| < 2.5$.
+The overlapping geometry provides a granularity of approximately 10 $\mu$m.
+The closest layer to the beamline is the Insertable B-Layer (IBL) added in 2014 for Run 2 operation and beyond \cite{ATLAS-TDR-19}.
+The purpose of the IBL upgrade is to improve the resolution of secondary vertices and thus b-tagging performance, as well as further suppress pileup vertices.
+
+Surrounding the Pixel Detector is the Semiconductor Tracker (SCT) \cite{IDET-2013-01} at a radial distance of 122.5 mm to 520 mm, composed of silicon microstrip sensors.
+SCT sensors are arranged in pairs of back-to-back strips and are larger than pixel sensors.
+There are four SCT barrel layers out to $\eta$ < 1, and nine end cap disks on each side extending coverage to $|\eta| < 2.5$.
+The precision of the SCT is approximately 16 $\mu$m in the r-$\phi$ direction and 580 $\mu$m in the z direction.
+
+The outermost subsystem of the ID is the Transition Radiation Tracker (TRT) \cite{PERF-2007-01}, extending from a radial distance of 563 mm to 1066 mm.
+It uses a completely different technology than the inner two systems, consisting of 298,304 drift tubes, or straws.
+Each straw is a 4 mm diameter tube filled with an ionizing gas mixture and a central grounded wire made of gold plated tungsten.
+The gas mixture is 70\% Xe, 27\% CO$_2$, and 3\% O$_2$.
+Extending out to $|\eta| < 2.0$, the TRT has a barrel section with straws parallel to the beamline, and two end cap sections with straws arranged radially, and provides ~36 additional hits to improve tracking.
+As particles pass through the polypropylene material between straws, they emit transition radiation, which ionizes the gas in the straws.
+The larger size of the TRT provides a better measurement of the bend of tracks in the magnetic field, improving momentum resolution.
+
+\subsection{The Calorimeter System}\label{subsec:calorimeters}
+
+The purpose of the ATLAS calorimeter system is to absorb and measure the energy of particles after they pass through the ID.
+There are two main sampling calorimeter technologies used in ATLAS, Liquid Argon (LAr) and scintillating tiles (Tile), composing multiple layers as shown in Fig. \ref{calorimeters}.
+LAr calorimeters are used in the electromagnetic (EM) barrel, hadronic and EM end caps (HEC and EMEC), and the forward calorimeter (FCAL).
+The Tile barrel and extended barrel use scintillating tiles, and are for hadronic object reconstruction.
+With over 188,000 readout channels, the calorimeter system covers the range $|\eta| < 4.9$ \cite{ATLAS-TDR-02}.
+The calorimeters were designed to fully contain particle showers up to a few TeV in energy and provide identification of electrons and photons.
+Hadronic showering primarily occurs in the Tile systems, but jet reconstruction takes input from all calorimeters.
+Muons and neutrinos are the only particles that escape the calorimeters with minimal energy loss, however, muons are tracked in the MS and neutrinos can be inferred from the missing transverse energy in an event.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../images/my_images/calorimeter.jpg}
+    \caption{Diagram of the ATLAS calorimeter system labeled by subsystem \cite{PERF-2007-01}.}
+    \label{calorimeters}
+\end{figure}
