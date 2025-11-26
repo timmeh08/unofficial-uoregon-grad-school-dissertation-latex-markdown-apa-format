@@ -96,3 +96,33 @@ Muons and neutrinos are the only particles that escape the calorimeters with min
     \caption{Diagram of the ATLAS calorimeter system labeled by subsystem \cite{PERF-2007-01}.}
     \label{calorimeters}
 \end{figure}
+
+Sampling calorimetry involves alternating layers of dense absorbing material and active sensing material.
+Absorbing layers induce particle showers by scattering the incoming particle(s).
+The particle showers interact with the active layers through ionization or scintillation, allowing for multiple measurements of energy deposition as they pass through the calorimeter.
+The calorimter resolution within ATLAS is generally parameterized as:
+
+\begin{equation}\label{calorimeter_resolution}
+    \frac{\sigma_E}{E} = \frac{a}{\sqrt{E}} \oplus \frac{b}{E} \oplus c
+\end{equation}
+
+and depends on stochastic effects ($a$), electronic noise ($b$), and other detector effects ($c$).
+In practice, resolution varies between calorimeter subsystems, but typical values for jets range from 6-25\% for 20 GeV $< E <$ 300 GeV \cite{JETM-2018-05}.  
+
+\subsubsection{Electromagnetic Calorimeters}\label{subsubsec:em_calorimeters}
+
+The ATLAS EM calorimeters \cite{ATLAS-TDR-02} primarily measure the energy of electrons and photons, and are sectioned into a barrel and two end cap regions.
+All regions use LAr as the active material and lead as the absorber, with radiation lengths of ~24 $X_0$ in the barrel and ~26 $X_0$ in the end caps to fully capture electromagnetic showers.
+The barrel covers the region $|\eta| < 1.475$, while the two end cap sections cover $1.375 < |\eta| < 3.2$.
+An accordion geometry is used for the lead absorbers as shown in Fig. \ref{em_calorimeter}, with LAr filling the gaps between sheets. 
+Electrodes are placed in the LAr gaps and are sectioned into "cells" in $\eta$ and $\phi$ to provide highly-granular spatial resolution.
+This design allows for full $\phi$ coverage and fast signal collection.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{../images/my_images/accordion.png}
+    \includegraphics[width=0.45\textwidth]{../images/my_images/lar_cells.png}
+    \caption{Accordion geometry of the ATLAS electromagnetic calorimeter with readout schematic (left) \cite{Cai:2023oxy}. EM barrel layout with cells showing coverage in $\eta$ and $\phi$ (right) \cite{ATLAS-TDR-02}.}
+    \label{em_calorimeter}
+\end{figure}
+% with coverage out to $|\eta| < 3.2$ \cite{ATLAS-TDR-02}.
