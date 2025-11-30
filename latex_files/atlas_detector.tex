@@ -112,17 +112,66 @@ In practice, resolution varies between calorimeter subsystems, but typical value
 \subsubsection{Electromagnetic Calorimeters}\label{subsubsec:em_calorimeters}
 
 The ATLAS EM calorimeters \cite{ATLAS-TDR-02} primarily measure the energy of electrons and photons, and are sectioned into a barrel and two end cap regions.
-All regions use LAr as the active material and lead as the absorber, with radiation lengths of ~24 $X_0$ in the barrel and ~26 $X_0$ in the end caps to fully capture electromagnetic showers.
+All regions use LAr as the active material and lead as the absorber, chosen for its high Z value, with radiation lengths of ~24 $X_0$ in the barrel and ~26 $X_0$ in the end caps.
 The barrel covers the region $|\eta| < 1.475$, while the two end cap sections cover $1.375 < |\eta| < 3.2$.
 An accordion geometry is used for the lead absorbers as shown in Fig. \ref{em_calorimeter}, with LAr filling the gaps between sheets. 
-Electrodes are placed in the LAr gaps and are sectioned into "cells" in $\eta$ and $\phi$ to provide highly-granular spatial resolution.
+Electrodes are placed in the LAr gaps and are sectioned into "cells" in $\eta$ and $\phi$ to provide highly granular spatial resolution.
 This design allows for full $\phi$ coverage and fast signal collection.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.45\textwidth]{../images/my_images/accordion.png}
     \includegraphics[width=0.45\textwidth]{../images/my_images/lar_cells.png}
-    \caption{Accordion geometry of the ATLAS electromagnetic calorimeter with readout schematic (left) \cite{Cai:2023oxy}. EM barrel layout with cells showing coverage in $\eta$ and $\phi$ (right) \cite{ATLAS-TDR-02}.}
+    \caption{Accordion geometry of the ATLAS electromagnetic calorimeter with readout schematic (left) \cite{nikiforou2013performanceatlasliquidargon}. EM barrel layout with cells showing coverage in $\eta$ and $\phi$ (right) \cite{ATLAS-TDR-02}.}
     \label{em_calorimeter}
 \end{figure}
-% with coverage out to $|\eta| < 3.2$ \cite{ATLAS-TDR-02}.
+
+There are three layers in the barrel region, with an additional presampler in front of the barrel to allow for energy loss corrections due to material in front of the calorimeter.
+As electrons and photons pass through the layers, they interact with the lead absorbers, producing a shower of more electrons and photons primarily through Bremsstrahlung and pair production.
+This cascade continues, with measurements and showering occuring in turns until all the energy is absorbed.
+The first layer has very fine granularity in $\eta$-$\phi$, 0.003 $\times$ 0.1, to distinguish between single photons and overlapping photons from $\pi^0$ decays.
+Most of the energy is deposited in the second layer as it is the thickest, with a trade off between slightly lower $\eta$ granularity than layer one, but higher $\phi$ granularity at 0.025 $\times$ 0.025.
+The third layer is thinner and collects the tail ends of showers with a granularity of 0.050 $\times$ 0.025.
+The EM end caps have a similar accordion geometry and layer structure, with an additional presampler between the barrel and end caps, but are arranged in a disk shape to cover the forward regions.
+EMEC cells are segmented in cells that have varying granularity with $\eta$ and layer and are larger than barrel cells.
+There are over 170,000 readout channels in the EM calorimeters.
+
+The readout of the EM calorimeters is delayed by the ion drift time in the LAr, which varies between 450-600 ns depending on the layer \cite{LARG-2009-02}.
+This delayed signal is longer than the LHC collision rate of 24 ns, necessitating the use of pulse shaping to mitigate out-of-time pileup from previous bunch crossings.
+Analog circuits in the front end electronics use a bipolar shaping filter to create a sharply peaked pulse and long negative tail as shown in Fig. \ref{pulse_shaping}.
+The shaped pulse has a total integral of zero, canceling out contributions from out-of-time pileup.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../images/my_images/pulse_shape.png}
+    \caption{Pulse shape of LAr calorimeter signal to mitigate out-of-time pileup \cite{ATLAS-TDR-22}.}
+    \label{pulse_shaping}
+\end{figure}
+
+\subsubsection{Hadronic Calorimeters}\label{subsubsec:hadronic_calorimeters}
+
+The physically largest component of the ATLAS calorimeter system is the hadronic calorimeters, which capture and measure the energy of hadrons.
+Particles such as charged and neutral pions, kaons, and protons punch through the EM calorimeters and interact via the strong interaction with nuclei in the absorber material, producing hadronic showers.
+These showers are commonly described through the interaction length $\lambda$, where a hadron has a $1-\frac{1}{e}$ chance of interacting with a nucleus.
+Composed of the Tile calorimeter in the range $|\eta| < 1.475$, and the HEC in $1.475 < |\eta| < 3.2$, scintillators and LAr are used respectively.
+
+The Tile calorimeter \cite{ATLAS-TDR-03} uses steel as the absorber and plastic scintillating tiles as the active material as shown in Fig. \ref{tile_calorimeter}.
+It takes its name from the rectangular plastic scintillating tiles that are arranged in layers between steel absorber plates.
+When shower particles passes through the tiles, they excite molecules in the plastic, which in turn emit photons as they return to their ground state.
+Photons are then collected by wavelength shifting fibers and directed to photomultioplier tubes (PMTs) which convert the light to a voltage signal, which is proportional to the energy deposited in the tile.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../images/my_images/tile_calorimeter.png}
+    \caption{Tile calorimeter wedge module showing the scintillating tiles, steel absorber plates, and PMTs \cite{ATLAS-TDR-28}.}
+    \label{tile_calorimeter}
+\end{figure}
+
+
+
+
+
+
+
+
+\subsection{Changes for Run 3}\label{subsec:run3_config}
