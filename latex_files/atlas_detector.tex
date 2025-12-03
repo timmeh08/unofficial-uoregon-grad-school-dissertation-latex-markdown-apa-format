@@ -111,12 +111,12 @@ In practice, resolution varies between calorimeter subsystems, but typical value
 
 \subsubsection{Electromagnetic Calorimeters}\label{subsubsec:em_calorimeters}
 
-The ATLAS EM calorimeters \cite{ATLAS-TDR-02} primarily measure the energy of electrons and photons, and are sectioned into a barrel and two end cap regions.
+The ATLAS EM calorimeters \cite{ATLAS-TDR-02} primarily measure the energy of electrons and photons, and are sectioned into a barrel and two end cap regions, extending out to a radius of 2 m.
 All regions use LAr as the active material and lead as the absorber, chosen for its high Z value, with radiation lengths of ~24 $X_0$ in the barrel and ~26 $X_0$ in the end caps.
 The barrel covers the region $|\eta| < 1.475$, while the two end cap sections cover $1.375 < |\eta| < 3.2$.
 An accordion geometry is used for the lead absorbers as shown in Fig. \ref{em_calorimeter}, with LAr filling the gaps between sheets. 
 Electrodes are placed in the LAr gaps and are sectioned into "cells" in $\eta$ and $\phi$ to provide highly granular spatial resolution.
-This design allows for full $\phi$ coverage and fast signal collection.
+This design allows for full $\eta$-$\phi$ coverage and fast signal collection.
 
 \begin{figure}[htbp]
     \centering
@@ -154,24 +154,46 @@ The physically largest component of the ATLAS calorimeter system is the hadronic
 Particles such as charged and neutral pions, kaons, and protons punch through the EM calorimeters and interact via the strong interaction with nuclei in the absorber material, producing hadronic showers.
 These showers are commonly described through the interaction length $\lambda$, where a hadron has a $1-\frac{1}{e}$ chance of interacting with a nucleus.
 Composed of the Tile calorimeter in the range $|\eta| < 1.475$, and the HEC in $1.475 < |\eta| < 3.2$, scintillators and LAr are used respectively.
+Interaction lengths extend out to ~17 in Tile and ~11 in the HEC.
 
-The Tile calorimeter \cite{ATLAS-TDR-03} uses steel as the absorber and plastic scintillating tiles as the active material as shown in Fig. \ref{tile_calorimeter}.
+The Tile calorimeter \cite{ATLAS-TDR-03} uses steel as the absorber and plastic scintillating tiles as the active material as shown in Fig. \ref{tile_calorimeter}, with a radius from 2.28 m to 4.25 m.
 It takes its name from the rectangular plastic scintillating tiles that are arranged in layers between steel absorber plates.
 When shower particles passes through the tiles, they excite molecules in the plastic, which in turn emit photons as they return to their ground state.
-Photons are then collected by wavelength shifting fibers and directed to photomultioplier tubes (PMTs) which convert the light to a voltage signal, which is proportional to the energy deposited in the tile.
+Photons are then collected by wavelength shifting fibers and directed to photomultioplier tubes (PMTs) which convert the light to a voltage signal, and is proportional to the energy deposited in the tile.
+Tiles are grouped together by the PMTs into cells with coarser granularity than the EM calorimeters due to the larger size of hadronic showers, with $\eta \times \phi$ sizes of 0.1 $\times$ 0.1 in the barrel and 0.1 $\times$ 0.2 in the extended barrel.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{../images/my_images/tile_calorimeter.png}
+    \includegraphics[width=0.5\textwidth]{../images/my_images/tile_calorimeter.png}
     \caption{Tile calorimeter wedge module showing the scintillating tiles, steel absorber plates, and PMTs \cite{ATLAS-TDR-28}.}
     \label{tile_calorimeter}
 \end{figure}
 
+Just past the EMEC in $z$ is the HEC, which is similar in design to the EM calorimeters, using LAr as the active material and copper as the absorber \cite{ATLAS-TDR-02} arranged in the accordion geometry.
+As seen in Fig. \ref{hec_calorimeter}, each end cap has two wheels contained in the same cryostat as the EMEC and FCAL.
+The cells also vary in size depending on $\eta$ and layer due to the wheel geometry.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../images/my_images/hec.png}
+    \caption{Diagram of the ATLAS hadronic end cap calorimeter along with the EMEC and FCAL \cite{ATLAS-TDR-02}.}
+    \label{hec_calorimeter}
+\end{figure}
 
+\subsection{The Muon Spectrometer}\label{subsec:muon_spectrometer}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../images/my_images/muon_spec.png}
+    \caption{Diagram of the ATLAS Muon Spectrometer chambers \cite{PERF-2007-01}.}
+    \label{muon_spectrometer}
+\end{figure}
 
-
+The outermost detector subsystem is the Muon Spectrometer (MS) \cite{ATLAS-TDR-10}, which tracks muons since they pass through ATLAS with minimal energy loss, and measures their momenta.
+There are multiple layers of tracking chambers using different technologies with coverage out to $|\eta| < 2.7$ as shown in Fig. \ref{muon_spectrometer}.
+A toroid magnet system provides the magnetic field for momentum measurements, and is placed between layers of the MS.
+Monitored Drift Tubes (MDT) are the most common tracking chambers in the MS, covering the full $\eta$ range.
+The MDTs are composed of 3 cm diameter aluminum tubes filled with a gas mixture of 93\% Ar and 7\% CO$_2$, with a wire held at high voltage running through the tube.
 
 
 \subsection{Changes for Run 3}\label{subsec:run3_config}
