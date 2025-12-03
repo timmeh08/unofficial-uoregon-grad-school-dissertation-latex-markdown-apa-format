@@ -148,7 +148,7 @@ The shaped pulse has a total integral of zero, canceling out contributions from 
     \label{pulse_shaping}
 \end{figure}
 
-\subsubsection{Hadronic Calorimeters}\label{subsubsec:hadronic_calorimeters}
+\subsubsection{Hadronic Calorimeter}\label{subsubsec:hadronic_calorimeter}
 
 The physically largest component of the ATLAS calorimeter system is the hadronic calorimeters, which capture and measure the energy of hadrons.
 Particles such as charged and neutral pions, kaons, and protons punch through the EM calorimeters and interact via the strong interaction with nuclei in the absorber material, producing hadronic showers.
@@ -180,7 +180,35 @@ The cells also vary in size depending on $\eta$ and layer due to the wheel geome
     \label{hec_calorimeter}
 \end{figure}
 
+\subsubsection{Forward Calorimeter}\label{subsubsec:forward_calorimeter}
+
+The Forward Calorimeter (FCAL) \cite{ATLAS-TDR-02} covers the extreme forward region of $3.1 < |\eta| < 4.9$ and is designed to withstand the high radiation dose and particle flux.
+Using similar LAr technology as the EM and HEC, the FCAL is composed of three modules arranged in series along the beamline and integrated in the same cryostat as the EMEC and HEC as shown in Fig. \ref{hec_calorimeter}.
+The first section is made of copper, while the other two are made of tungsten.
+Each contains a matrix of small concentric rods and tubes, with the rods held at high voltage and the gap between filled with LAr as seen in Fig. \ref{fcal_cells}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../images/my_images/fcal.png}
+    \caption{Schematic of the ATLAS Forward Calorimeter matrix structure \cite{ATLAS-TDR-02}.}
+    \label{fcal_cells}
+\end{figure}
+
+The LAr gap between a rod and tube contains a PEEK spacer to maintain a gap of ~260 $\mu$m in the first module and ~500 $\mu$m in the other two modules for fast and uniform signal collection.
+A dense absorber with matrix cells is necessary to contain the high energy particle showers in this region, with interaction lengths of ~8 in the copper module and ~10 in the tungsten modules.
+
+
+
 \subsection{The Muon Spectrometer}\label{subsec:muon_spectrometer}
+
+The outermost detector subsystem is the Muon Spectrometer (MS) \cite{ATLAS-TDR-10}, which tracks muons since they pass through ATLAS with minimal energy loss, and measures their momenta.
+There are multiple layers of tracking chambers using different technologies with coverage out to $|\eta| < 2.7$ as shown in Fig. \ref{muon_spectrometer}.
+A toroid magnet system provides the magnetic field for momentum measurements, and is placed between layers of the MS.
+Monitored Drift Tubes (MDT) are the most common tracking chambers in the MS, covering the full $\eta$ range.
+The MDTs are composed of 3 cm diameter aluminum tubes filled with a gas mixture of 93\% Ar and 7\% CO$_2$, with an anode wire held at high voltage running through the tube.
+Cathode Strip Chambers are used in the forward regions near the end cap toroids where there is a higher occupancy and radiation dose, covering $2.0 < |\eta| < 2.7$.
+These chambers are multi-wire proportional chambers with segmented cathode strips to provide a precise position measurement.
+All MDT and CSC chambers were constructed with a high precision mechanical assembly and aligned using an in situ optical alignment system to meet the design tracking resolution.
 
 \begin{figure}[htbp]
     \centering
@@ -189,11 +217,18 @@ The cells also vary in size depending on $\eta$ and layer due to the wheel geome
     \label{muon_spectrometer}
 \end{figure}
 
-The outermost detector subsystem is the Muon Spectrometer (MS) \cite{ATLAS-TDR-10}, which tracks muons since they pass through ATLAS with minimal energy loss, and measures their momenta.
-There are multiple layers of tracking chambers using different technologies with coverage out to $|\eta| < 2.7$ as shown in Fig. \ref{muon_spectrometer}.
-A toroid magnet system provides the magnetic field for momentum measurements, and is placed between layers of the MS.
-Monitored Drift Tubes (MDT) are the most common tracking chambers in the MS, covering the full $\eta$ range.
-The MDTs are composed of 3 cm diameter aluminum tubes filled with a gas mixture of 93\% Ar and 7\% CO$_2$, with a wire held at high voltage running through the tube.
+In the barrel region, Resistive Plate Chambers (RPC) are used for muon triggering.
+The RPCs are composed of two parallel resistive plates with a gap inbetween filled with tetrafluoroethane gas.
+Readout strips on the outside of the plates provide $x$and $y$ track measurements.
+The inner RPC layers are used for a low $p_T$ trigger, while the combined layers are used for a high $p_T$ trigger.
+While the RPCs provide a fast response for triggering, they have a coarser spatial resolution than the MDTs.
+Triggering in the end caps is provided by Thin Gap Chambers (TGC) covering $|\eta|$ out to 2.4.
+TGCs are similar to the CSCs, with a smaller gap between the anode wires and cathode planes to provide a fast response time.
+The inner TGC layers provide a measurement of $\phi$ for tracking, while the outer layers are used for high and low $p_T$ triggering.
+
+\subsection{Magnet System}\label{subsec:magnet_system}
+
+\subsection{Trigger and Data Acquisition (TDAQ)}\label{subsec:tdaq}
 
 
 \subsection{Changes for Run 3}\label{subsec:run3_config}
