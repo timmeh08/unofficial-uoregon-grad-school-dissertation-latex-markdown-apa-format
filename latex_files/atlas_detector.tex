@@ -202,11 +202,12 @@ A dense absorber with matrix cells is necessary to contain the high energy parti
 \subsection{The Muon Spectrometer}\label{subsec:muon_spectrometer}
 
 The outermost detector subsystem is the Muon Spectrometer (MS) \cite{ATLAS-TDR-10}, which tracks muons since they pass through ATLAS with minimal energy loss, and measures their momenta.
-There are multiple layers of tracking chambers using different technologies with coverage out to $|\eta| < 2.7$ as shown in Fig. \ref{muon_spectrometer}.
+There are multiple layers of tracking chambers using different technologies with coverage out to $|\eta| < 2.7$ as shown in Fig. \ref{muon_spectrometer}, arranged in a barrel and two end cap regions.
 A toroid magnet system provides the magnetic field for momentum measurements, and is placed between layers of the MS.
 Monitored Drift Tubes (MDT) are the most common tracking chambers in the MS, covering the full $\eta$ range.
+All three barrel layers and the two outermost end cap layers use MDTs.
 The MDTs are composed of 3 cm diameter aluminum tubes filled with a gas mixture of 93\% Ar and 7\% CO$_2$, with an anode wire held at high voltage running through the tube.
-Cathode Strip Chambers are used in the forward regions near the end cap toroids where there is a higher occupancy and radiation dose, covering $2.0 < |\eta| < 2.7$.
+Cathode Strip Chambers (CSC) are used in the forward regions near the end cap toroids where there is a higher occupancy and radiation dose, covering $2.0 < |\eta| < 2.7$.
 These chambers are multi-wire proportional chambers with segmented cathode strips to provide a precise position measurement.
 All MDT and CSC chambers were constructed with a high precision mechanical assembly and aligned using an in situ optical alignment system to meet the design tracking resolution.
 
@@ -228,7 +229,104 @@ The inner TGC layers provide a measurement of $\phi$ for tracking, while the out
 
 \subsection{Magnet System}\label{subsec:magnet_system}
 
+The ATLAS magnet system is composed of a solenoid magnet surrounding the ID, and a toroidal magnet system surrounding the calorimeters and sections of the MS \cite{PERF-2007-01}.
+All magnet systems use superconducting coils cooled to 4.5 K with liquid helium, and are shown in Fig. \ref{atlas_magnets}.
+The solenoid magnet provides a 2T magnetic field for the ID, allowing for momentum and charge measurements as particles pass through with minimal magnet material interaction.
+It covers the range $|\eta| < 2.5$ and is 5.3 m in length with a diameter of 2.5 m.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../images/my_images/atlas_magnets.png}
+    \caption{Diagram of the ATLAS barrel solenoid and barrel and endcap toroidal magnets \cite{PERF-2007-01}.}
+    \label{atlas_magnets}
+\end{figure}
+
+The toroidal magnet system is composed of a barrel toroid and two end cap toroids.
+The barrel toroid is made of eight superconducting coils arranged symmetrically around the beamline inbetween the outer calorimeters and the muon chambers, providing a magnetic field up to 3.5 T in the MS barrel region.
+The two end cap toroids are each made of eight superconducting coils arranged in a disk shape, providing a magnetic field up to 5 T in the MS end cap regions.
+
+
+
 \subsection{Trigger and Data Acquisition (TDAQ)}\label{subsec:tdaq}
+
+At the LHC bunch crossing rate of 40 MHz, ATLAS produces an enormous amount of data, over 1 PB per second if all detector information were to be recorded.
+Storing and processing this amount of data is not feasible, so a trigger system is implemented to select events based on distinctive features or characteristics that indicate physics processes of interest.
+The ATLAS Trigger and Data Acquisition (TDAQ) system \cite{tdaq_2016} utilizes a two level trigger system to reduce the 40 MHz LHC bunch crossing rate to a manageable 1 kHz for offline storage and analysis.
+Events are selected based on trigger signatures designed to capture the interesting physics while rejecting backgrounds, optimized for the computing and storage resources available.
+Triggers are prioritized based on physics goals and needs of analysis groups, with high event yield triggers prescaled to reduce their rate.
+The TDAQ system can be seen in Fig. \ref{tdaq_system}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../images/my_images/tdaq_2.png}
+    \caption{Schematic of the ATLAS Trigger and Data Acquisition system showing the L1 trigger, HLT, and dataflow between systems and to permanent storage \cite{tdaq_2016}.}
+    \label{tdaq_system}
+\end{figure}
+
+In Run 2, the first level trigger (L1) is a hardware based system that primarily uses information from the calorimeters and muon spectrometer, L1Calo and L1Muon, to make a decision within 2.5 $\mu$s \cite{TRIG-2016-01}.
+The 40 MHz collision rate is reduced to a maximum of 100 kHz before data is sent to the high level trigger (HLT).
+L1Calo uses LAr and Tile calorimeter information to identify electrons, photons, and jets using coarse granularity trigger towers of size 0.1 $\times$ 0.1 in $\eta$-$\phi$.
+Fast algorithms identify high energy deposits and apply isolation criteria to select EM objects within a region of interest (ROI).
+L1Muon uses hits from the RPCs and TGCs to identify muon candidates and measure their transverse momentum for triggering within $|\eta| < 2.4$.
+The reconstructed objects are sent to the L1 central trigger processor where a decision is made based on programmable trigger menus.
+If an event is accepted, data and an associated ROI are sent to the HLT for further processing.
+
+The HLT is a software level trigger that further reduces the L1 acceptance rate of 100 kHz to ~1 kHz for permanent storage \cite{TRIG-2016-01}.
+This is implemented on a large computing farm using offline-like algorithms to reconstruct physics objects within the ROIs identified by L1.
+Events are distributed to HLT nodes where ATLAS reconstruction software within Athena processes the data.
+High granularity readout from all detector subsystems, including tracking information, and more sophisticated algorithms allow for better reconstruction and identification for a final trigger decision based on HLT trigger menus.
+The HLT uses a two-step process, where a fast first step rejects the majority of events, and is followed by a precision reconstruction step for the remaining events.
+Accepted events are sent to the dataflow system where they are assembled and formatted for permanent storage.
 
 
 \subsection{Changes for Run 3}\label{subsec:run3_config}
+
+The ATLAS detector underwent several upgrades during the Long Shutdown 2 (LS2) from 2019-2021 in preparation for Run 3 data-taking \cite{Aad_2024}.
+New electronic readout systems were installed in the LAr and Tile calorimeters to handle higher trigger rates and improve performance.
+The New Small Wheels (NSWs) in the MS end caps replaced the existing Small Wheels, with the data recorded using new readout electronics.
+With the incorporation of the NSW and the new LAr and Tile readout systems, the trigger system was also upgraded to utilize higher granularity information at L1 while maintaining the 100 kHz acceptance rate.
+
+\subsubsection{New Small Wheel}\label{subsubsec:new_small_wheel}
+
+The largest hardware upgrade to ATLAS for Run 3 was the installation of the New Small Wheel (NSW) in the MS end caps \cite{ATLAS-TDR-20}, seen in Fig. \ref{new_small_wheel}.
+Designed to withstand the high particle flux and meet the triggering and tracking needs of Run 3 and beyond, two new technologies were implemented in the NSW.
+The first is small-strip Thin Gap Chambers (sTGC), while the second is micro-mesh gaseous structure (Micromegas) detectors.
+The sTGCs are multi-wire proportional chambers similar to the existing TGCs, but with smaller strip pitches and wire spacing to provide higher spatial resolution.
+Micromegas technology permits very thin planar gaseous detectors, with the traditional planes of HV wires replaced by a metallic micro-mesh.
+These allow for improved azimuthal resolution and precision tracking, thus increasing the trigger resolution and background rejection.
+A lower $p_T$ threshold for muon triggering is also achievable with the NSW while maintaining an acceptable trigger rate.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../images/my_images/new_small_wheel.png}
+    \caption{Diagram of the NSWs, including the support structure.  \cite{ATLAS-TDR-20}.}
+    \label{new_small_wheel}
+\end{figure}
+
+\subsubsection{Readout and TDAQ upgrades}\label{subsubsec:readout_tdaq_upgrades}
+
+During Runs 1 and 2, calorimeter signals were sent to the trigger system in trigger towers of size 0.1 $\times$ 0.1 in $\eta$-$\phi$.
+A new digital trigger path was installed in the LAr calorimeter readout system during LS2, allowing for the use of supercells with finer granularity of up to 0.025 $\times$ 0.1 in $\eta$-$\phi$ at L1 \cite{ATLAS-TDR-22}.
+The trigger path utilizes new front-end boards, LAr Trigger Digitizer Boards (LTDB), to digitize and process the supercell signals.
+To support the LTDBs, modifications to the Front End Crates and the Front End Boards were made to sum cells with within supercells.
+The full Run 3 readout architecture for the LAr calorimeter can be seen in Fig. \ref{lar_run3_readout}.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../images/my_images/lar_run3_readout.png}
+    \caption{Block diagram of the LAr Run 3 readout architecture, read upwards through the front end crates to the off-detector electronics \cite{Aad_2024}.}
+    \label{lar_run3_readout}
+\end{figure}
+
+Off detector electronics were also upgraded to readout the LTDBs.
+The Front-End Link eXchange (FELIX) system over optical links configures and monitors the LTDBs, while the readout is handled by the LAr Digital Processing System (LDPS).
+
+With full detector information available and higher granularity calorimeter data at L1, the TDAQ system was also upgraded for Run 3, and an overview can be seen in Fig. \ref{run3_tdaq}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../images/my_images/run3_tdaq.png}
+    \caption{Schematic of the ATLAS Run 3 Trigger and Data Acquisition system \cite{Aad_2024}.}
+    \label{run3_tdaq}
+\end{figure}
+
+While the two level trigger architecture remains the same, both the L1 and HLT systems were improved to support the new detector readout from the calorimeters and NSW and advance the ATLAS physics goals for Run 3.
