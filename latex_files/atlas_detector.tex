@@ -268,7 +268,7 @@ The 40 MHz collision rate is reduced to a maximum of 100 kHz before data is sent
 L1Calo uses LAr and Tile calorimeter information to identify electrons, photons, and jets using coarse granularity trigger towers of size 0.1 $\times$ 0.1 in $\eta$-$\phi$.
 Fast algorithms identify high energy deposits and apply isolation criteria to select EM objects within a region of interest (ROI).
 L1Muon uses hits from the RPCs and TGCs to identify muon candidates and measure their transverse momentum for triggering within $|\eta| < 2.4$.
-The reconstructed objects are sent to the L1 central trigger processor where a decision is made based on programmable trigger menus.
+The reconstructed trigger objects (TOBs) are sent to the L1 central trigger processor where a decision is made based on programmable trigger menus.
 If an event is accepted, data and an associated ROI are sent to the HLT for further processing.
 
 The HLT is a software level trigger that further reduces the L1 acceptance rate of 100 kHz to ~1 kHz for permanent storage \cite{TRIG-2016-01}.
@@ -330,3 +330,11 @@ With full detector information available and higher granularity calorimeter data
 \end{figure}
 
 While the two level trigger architecture remains the same, both the L1 and HLT systems were improved to support the new detector readout from the calorimeters and NSW and advance the ATLAS physics goals for Run 3.
+Within the L1 system, new feature extractors (FEX) boards exploit the higher granularity calorimeter data to perform more advanced object reconstruction and identification.
+These include the eFEX for electrons, photons, and taus; jFEX for jets, taus, and $E_T^{\text{miss}}$; gFEX for large-R jets, $E_T^{\text{miss}}$, and $H_T$.
+The FEXs use custom FPGA-based hardware to implement fast algorithms for reconstruction within the L1 latency budget.
+Tile calorimeter energies are now digitized by the Tile REciever EXchange (TREX) board.
+The L1Muon system was also upgraded to incorporate the NSW data for improved muon triggering in the end cap regions.
+The HLT was refined to handle the data more efficiently and implement more advanced algorithms.
+FELIX is used to route data more efficiently to the HLT servers running software readout drivers. 
+New software support of multi-threading within the HLT allows for operation at higher event rates without reaching computing resource limits.
