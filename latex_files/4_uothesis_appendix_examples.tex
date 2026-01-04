@@ -19,3 +19,111 @@
 \section{Appendix Two Section One}
 \subsection{Chapter two section one sub-section one}
 
+\section{Shell Count Studies}\label{shell_studies}
+
+Other shell counts for the growth section of the USCA algorithm were considered, between 1 and 5.
+Preliminary physics studies shown in this section were conducted to narrow down to 2 and 3 shells.
+As seen in Fig. \ref{et_full_shells}, 1 shell of growth does not seem to capture enough of the detector response to particles even with the merging stage, leading to lower energy clusters.
+The cluster multiplicities are higher for the 1-shell clusters, averaging at \~70 more clusters per event than the 2-shell clusters.
+The opposite is seen for the 4-shell clusters, there does not seem to be much of a benefit at the cluster energy or multiplicity level by going to a higher shell count.
+Further studies have shown that most clusters do not reach more than a few shells of $2\sigma$ cells, and the merging stage takes care of the clusters that are physically larger.
+More evidence of this is seen in the jet $p_T$ distributions shown in Fig. \ref{jet_pt_fullshells}.
+The distributions are almost identical for the different shell counts.
+Fixed threshold trigger efficiency curves are shown in Fig. \ref{trigger_fullshells}.
+Again, there is diminishing returns seen for higher shell counts, with the 1-shell algorithm leading to a shallower turn-on curve.
+These studies led to the conclusion that 1-shell clusters are not ideal since the multiplicities are too high and the performance does not meet the needs of the Global Trigger, and 4-shell clusters are more computational work without a large benefit to performance.
+
+More work with other shell counts could be done to really study the difference, but this is not of the highest priority since the Global Trigger is assumed to have the bandwidth for at least 2-shell clusters.
+A study of where the USCA algorithm breaks down could also be done, meaning push the shell count very high.
+This could be used to see if over-merged clusters are formed, or the creation of large R jets that contain the detector response to multiple particles.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/eta_cut_plots/cluster_etnormal_etacut_HH4b.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/eta_cut_plots/cluster_leadinget_etacut_HH4b.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/eta_cut_plots/cluster_totalet_etacut_HH4b.png}
+
+    \caption{Cluster $E_T$ plots for a HH $\rightarrow$ 4b sample with 1-4 shells used during the algorithm growth stage.}
+    \label{et_full_shells}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/eta_cut_plots/cluster_mult_etacut_HH4b.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/eta_cut_plots/2d_plot_etacut_HH4b.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/eta_cut_plots/cluster_etas_etacut_HH4b.png}
+    \caption{Cluster multiplicities, $\eta$, and positions for a HH $\rightarrow$ 4b sample with 1-4 shells used during the algorithm growth stage.}
+    \label{clus_pos_fullshells}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.99\textwidth]{../images/my_images/eta_cut_plots/jetpt_etacut_HH4b.png}
+    \caption{Reconstructed jet $p_T$ for a HH $\rightarrow$ 4b sample with 1-4 shells used during the algorithm growth stage.}
+    \label{jet_pt_fullshells}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/eta_cut_plots/HH4b_jetturnon_0.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/eta_cut_plots/HH4b_jetturnon_2.png}
+    \caption{Fixed threshold trigger efficiency curves for leading and 3rd leading jets using a HH $\rightarrow$ 4b sample with 1-4 shells used during the algorithm growth stage.}
+    \label{trigger_fullshells}
+\end{figure}
+
+
+\section{Jet $p_T$ 2-D and Ratio Plots}
+
+Through the comparisons in this paper, the reconstructed jets from USCA and 422 clusters were concluded to have small differences as expected.
+More in-depth comparisons between the highest $p_T$ jets are shown in this appendix to reinforce the conclusions.
+The $p_T$ differences between $\Delta$R matched jets for the leading 6 jets are plotted in Fig. \ref{2d_jets}.
+Jets from the HH $\rightarrow$ 4b sample are more similar between algorithms compared to the background sample.
+Both clustering algorithms are more likely to contain the detector response to particles if the cells are more closely clustered and at higher $E_T$.
+In the JZ0 sample plots, the scattering of USCA jets that are higher in $p_T$ than their 422 counterparts is believed to come from the fact that there is no splitting.
+This leads to more jets that contain too many clustered cells from nearby background QCD jets.
+Fig. \ref{2d_jets_ratio} shows the ratio of USCA leading jet $p_T$ to their matched 422 jets for reference.
+As expected, the ratio is near 1 for signal events, and centered at 1, but larger in spread for the background events.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/Etcomparisonclustercut_jets_extended_JZ0W2.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/Etcomparisonclustercut_jets_extended_JZ0W3.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/Etcomparisonclustercut_jets_extended_HH4b2.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/Etcomparisonclustercut_jets_extended_HH4b3.png}
+    \caption{2-D Comparisons between the leading 6 in $p_T$ reconstructed jets from USCA and 422 clusters for background (top) and HH $\rightarrow$ 4b (bottom). The plots are divided between 2-shell (left) and 3-shell (right) USCA jets.}
+    \label{2d_jets}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/ratiocalib_jets_extended_JZ0W20.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/ratiocalib_jets_extended_JZ0W30.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/ratiocalib_jets_extended_HH4b20.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/ratiocalib_jets_extended_HH4b30.png}
+    \caption{Ratio of USCA jet $p_T$ over 422 jet $p_T$ as a function of 422 jet $p_T$. Background (top) and HH $\rightarrow$ 4b (bottom) samples are shown divided between 2-shell (left) and 3-shell (right) USCA jets.}
+    \label{2d_jets_ratio}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/ratiocalib_jets_extended_JZ0W24200.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/ratiocalib_jets_extended_JZ0W34200.png}
+    \caption{Ratio of USCA jet $p_T$ over 420 jet $p_T$ as a function of 420 jet $p_T$ for a background sample.}
+    \label{2d_jets_ratiocalib}
+\end{figure}
+
+A next step for the topoclustering studies is to calculate the jet energy resolution, and calibrate the USCA jets. 
+Plotted in Fig. \ref{2d_jets_ratiocalib} are ratio plots, USCA $p_T$/420 $p_T$ vs 420 $p_T$, for the leading jets using the background sample.
+These are a first step in making the aforementioned calculations.
+USCA jets will be much lower in $p_T$ compared to their 420 counterparts on average, but there is a clear increase in the ratios for the 3-shell version of the algorithm.
+For the background sample, jets from USCA clusters tend to be higher in $p_T$, so there is a large population of USCA jets that are at or above a ratio of 1, especially past 100 GeV, and near 10 GeV.
+For the jets near 10 GeV, mis-reconstruction may be the main cause of being higher in $p_T$ than the 420 counterparts.
+
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=.49\textwidth]{plots/ratiocalib_jets_extended_JZ0W24200.png}
+%     \includegraphics[width=.49\textwidth]{plots/ratiocalib_jets_extended_JZ0W34200.png}
+%     \caption{Ratio of USCA jet $p_T$ over 420 jet $p_T$ as a function of 420 jet $p_T$ for a background sample.}
+%     \label{2d_jets_ratiocalib}
+% \end{figure}
+% \newpage
+

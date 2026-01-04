@@ -1,0 +1,609 @@
+The LHC will undergo a series of upgrades during long shutdown 3, this High Luminosity LHC (HL-LHC) is planned to begin operations in 2030. 
+The upgrades will aid in providing experiments with 10 times the integrated luminosity compared to previous runs after 12 years of HL-LHC data taking, with instantaneous luminosities in the range of $\mathcal{L}=5-7.5 \times 10^{34}$ cm$^{-2}$ s$^{-1}$ and approximately 200 interactions per bunch crossing.
+The HL-LHC upgrade necessitates changes to ATLAS to not only manage, but take advantage of the increase in particle interactions and efficiently store events of interest to the physics goals. 
+The largest upgrade to ATLAS is the complete replacement of the Inner Detector with a new all-silicon Inner Tracker (ITk) \cite{ATLAS-TDR-25}, which will provide higher granularity tracking and has the ability to withstand the higher collision rates and subsequent radiation doses.
+A completely new subsystem, the High-Granularity Timing Detector (HGTD) \cite{ATLAS-TDR-31}, will be installed in front of the end cap calorimeters to provide precision timing information for pile-up mitigation.
+The TDAQ system, dataflow from the detectors to permanent storage of events, will receive a complete overhaul in order to take full advantage of the higher pileup and manage unprecedented data rates \cite{ATLAS-TDR-29}.
+Changes to the LAr and Tile readout system are thus necessary to achieve full granularity calorimeter information at the trigger level \cite{ATLAS-TDR-27, ATLAS-TDR-28}.\\
+
+\subsection{ATLAS Global Trigger}
+ATLAS will rely on a Level-0 hardware trigger, called the Global Trigger within TDAQ, that reduces the event rate to 1 MHz. 
+The purpose of the Global Trigger is to bring offline-inspired algorithms to the Level-0 trigger system, improving trigger object definitions for final selection in the central trigger processor (CTP). 
+As seen in Figure \ref{tdaq_global}, Muon data and full granularity cell data from LAr and Tile (hadronic calorimeter), along with the legacy L0Calo trigger objects, will be sent to the Global Trigger at a rate of 40 MHz through a series of time-multiplexers (MUX).
+The MUX will distribute events tagged by bunch crossing ID (BCID) to the Global Event Processors (GEPs) 48 events at a time, where they will be processed in parallel.  
+Each GEP node is housed on a Xilinx Versal Premium 1802 Field Programmable Gate Array (FPGA), allowing for flexible and optimized firmware to be run.
+The current best estimate for total time the GEPs have to process an event is $4.27\mu$s, and the maximum possible value for processing time is $5.72\mu$s \cite{Begel:2791119}.
+After the GEPs process an event, it is passed to the demultiplexing CTP interface where the final trigger decision is made.
+If an event passes the CTP, it will reach the Event Filter, which will store data at a rate of 10kHz on tape~\cite{ATLAS-TDR-29}. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{../images/my_images/figures/global.png}
+    \caption{Illustration of TDAQ with emphasis on the Global Trigger System.}
+    \label{tdaq_global}
+\end{figure}
+
+The following upgrade sections will discuss the development and preformance studies of the topological clustering algorithm to be implemented in the Global Trigger as part of the qualification task.
+
+\subsection{Topological Cell Clustering Algorithms}
+
+Topological clusters (topoclusters) are three-dimensional groups of neighboring calorimeter cells within ATLAS \cite{PERF-2014-07}.
+The goal of grouping cell signals together from an event is to separate physics signals from background electronic noise and pile-up.
+Formation of clusters is based on signal significance of the cells, and where cells are in relation to others in $\eta$, $\phi$, and across layers.
+The neighboring cells energies are summed, and the location of the resulting cluster can be determined from the cell locations and energies.
+Clusters may contain the full or fractional detector response to a particle shower, or the merged response to nearby particles, depending on the types of particles and their energies.
+These clusters are the basis of jet and tau reconstruction, and vital for identifying electrons, muons, and photons.
+They are also necessary inputs for energy flow observables such as missing transverse momentum.
+As with jets, the algorithm used greatly affects the physical representation of the cluster.
+Two common topoclustering algorithms are the ``420" and ``422" schemes.
+
+
+\subsubsection{ATLAS 420 and 422 algorithm}
+
+ATLAS utilizes a robust offline topoclustering method called the ``420" scheme, which groups segmented sections of the calorimeters, or cells, into clusters based on various levels of signal significance: 
+
+\begin{equation}
+    \varsigma^{EM}_{cell} = \frac{E^{EM}_{cell}}{\sigma^{EM}_{noise,cell}}
+\end{equation},
+
+where $E^{EM}_{cell}$ is the cell signal and $\sigma^{EM}_{noise,cell}$ is the quadrature sum of the cell electronics and pile-up noise.
+These signals are measured on the electromagnetic (EM) energy scale, and corrections for hadrons must be added later \cite{PERF-2014-07}.
+% need to make a few cell ET distributions
+A distribution of cell transverse energies ($E_T$) is shown in Fig. \ref{cell_et} for reference.
+Clusters are formed using the following selection variables:
+
+\begin{equation}\label{S}
+    |\varsigma^{EM}_{cell}| > S \textrm{   primary seed threshold}
+\end{equation}
+\begin{equation}\label{N}
+     |\varsigma^{EM}_{cell}| > N \textrm{   threshold for growth control}
+\end{equation}
+\begin{equation}\label{P}
+    |\varsigma^{EM}_{cell}| > P \textrm{   principal cell filter}
+ \end{equation}.
+ 
+For the 420 scheme, $S=4$, $N=2$, and $P=0$.
+A cluster starts with a seed cell satisfying Eq. \ref{S}, and cells adjacent to the seed passing the criteria in Eqs. \ref{N} and \ref{P} are added to the cluster.
+If one of these newly clustered cells passes Eqs. \ref{N}, its neighbors are collected if they satisfy at least Eq. \ref{P}.
+This process repeats, where neighbors of cells that pass Eqs. \ref{N} are added to the cluster.
+A cluster is made for each seed cell, called a proto-cluster, and these proto-clusters are merged or split using a weighting calculation until clusters are finalized \cite{PERF-2014-07}. 
+An example of clusters from the 420 scheme are shown in Fig. \ref{calorimeters}.\\
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/cell_et_JZ0W.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/cell_et_HH4b.png}
+    \caption{Cell $E_T$ for a background (left) and signal (right) sample.}
+    \label{cell_et}
+\end{figure}
+
+422 clusters are also available for use in ATLAS offline analysis.
+The process for growing clusters is the same as the 420, except in the growth control parameter, which is now $P=2$.
+This means that only neighboring cells that have $|E| > 2\sigma^{EM}_{noise,cell}$ can be added to a cluster.
+In terms of performance, there have not been many in-depth comparisons between 420 and 422 clusters or reconstructed observables from them.
+This qualification task has the added benefit of conducting some of these studies as a by product, and the results are discussed in Sections \ref{physics_perf} and \ref{trigger_perf}.\\
+
+Since the selection variables only rely on the absolute value of cell significance, negative cell signals can be used in clustering.
+This comes from pile-up and electronic noise fluctuations.
+Clusters seeded from negative cell energies are used for noise diagnostics offline, and are included in the list of clusters within the ATLAS software framework {\fontfamily{cmtt}\selectfont athena}.
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.49\textwidth]{../images/my_images/figures/calorimeters.png}
+    \includegraphics[width=0.49\textwidth]{../images/my_images/figures/2d_clusters.png}
+    \includegraphics[width=0.9\textwidth]{../images/my_images/figures/lar_cells.png}
+    \caption{ATLAS LAr and Tile calorimeter system, where cells segmented in $\eta$ and $\phi$ are used for topoclustering (left). Clustered cells from the FCAL calorimeter for a simulated dijet event using the 420 scheme (right). A closeup of the segmentation of cells in the LAr EM Barrel (bottom).}
+    \label{calorimeters}
+\end{figure}
+
+\subsubsection{422 Scheme for the Global Trigger Topoclusters}
+
+With access to the full granularity cell information from the LAr and Tile calorimeters, seen in Fig. \ref{calorimeters}, the GEPs will reconstruct topoclusters online, which will then be included in the Trigger Objects (TOBs) for trigger algorithms downstream. 
+The location and energy information in the topoclusters are especially important for the anti-k$_t$ jet finding trigger. 
+The planned version of topoclustering on the GEPs will follow the offline ``422" scheme described above with a few notable differences.
+Given the challenging time constraints the Global Trigger has to process events, a balance between speed and accuracy in topocluster reconstruction is needed.
+The calorimeters are also limited in how fast they can output cell information, and will only be passing positive energy cells with $E_T$ above $2\sigma$, or ``zero-suppressed" data.
+422-like algorithms output less clusters per event and less cells per cluster than the 420 scheme, and is more ideal for the Global Trigger.
+The need for a comprehensive split/merge step for the global trigger clustering algorithm was questioned, with splitting removed entirely in the current version.
+
+The GEPs will be given 2 lists of noise-suppressed cell index ``masks" for topoclustering, cells above $4\sigma$ and $2\sigma$, along with the full raw cell $E_T$ data.
+This differs from the 422 and 420 clusters which use full cell energy.
+It is important to note that topoclustering on the GEPs will only be made out to  $\lvert \eta \rvert < 3.2 $.
+Topoclusters will be reconstructed in less than 2 $\mu$s and output TOBs will contain the topoclusters $E_T$, $p_{x,y,z}$, max $E_T$ cell $\eta$ and $\phi$, and the constituent cell IDs. \\
+
+The current topoclustering algorithm candidate, Unique Seed Cell Association (USCA), is designed to perform similarly to the 422 algorithm while maintaining simplicity and efficiency for the Global Trigger.  
+This qualification task will give recommendations for the firmware topoclustering algorithm used within the Global Trigger, using the USCA algorithm,based on physics performance and constraints. 
+
+\subsection{Unique Seed Cell Association Algorithm}
+
+The USCA algorithm is designed to be similar to the offline ``422" version in {\fontfamily{cmtt}\selectfont athena} and uses only zero-suppressed cells from $4\sigma$ and $2\sigma$ lists.
+Neighboring cells are defined to be those physically nearby in the same layer, or that overlap in $\eta$ and $\phi$ in adjacent calorimeter layers.
+For a specific cell, the neighboring cells are defined as ``shell 1" around the cell.  
+The neighbors of the cells in shell 1 are labeled as ``shell 2" relative to the original cell and so on for each new shell.
+Only the cluster $E_T$ is calculated, coming from the sum of cell $E_T$'s.
+$\eta$, and $\phi$ are simply taken from the highest energy cell in the cluster, while the 422 and 420 algorithms use cluster moments to calculate the cluster location \cite{PERF-2014-07}.
+The major steps of the USCA algorithm, as seen in Fig. \ref{fssm}, are seeding and adding direct neighbors, fixed shell growth, and seed merging.
+From here on, ``$n$-shell clusters" refers to the number of iterations in the fixed shell growth step.
+
+
+\begin{itemize}
+  \item Seeding and Adding Direct Neighbors
+  \begin{itemize}
+    \item Start with a $4\sigma$ seed from the list.
+    \item Every neighboring cell is considered to be in shell 1, and cells above $2\sigma$ are added to the cluster.
+  \end{itemize}
+  \item Fixed Shell Growth
+  \begin{itemize}
+    \item For each new cell added to shell 1, check if it has neighboring cells above $2\sigma$ and add them to the cluster. This is now a 2 shell proto-cluster
+    \item Repeat for ``n" iterations, creating a ``$n$ shell proto-cluster".
+  \end{itemize}
+  \item Seed Merging
+  \begin{itemize}
+    \item After all seeds have a proto-cluster, iterate through the list of clusters.
+    \item If the current proto-cluster contains seed cells from other proto-clusters, merge cells from those proto-clusters to the current proto-cluster.
+    \item Remove merged proto-clusters from the list and move to next proto-cluster.
+  \end{itemize}
+\end{itemize}
+
+% Diagram of steps here!
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.99\textwidth]{../images/my_images/figures/FSSM.png}
+    \caption{Diagram of the USCA algorithm, in 2 dimensions for simplicity. $2\sigma$ cells are in green and $4\sigma$ in red. The central $4\sigma$ cell is the seed for the current cluster, and there are 3 shells of growth. The cluster for the top left $4\sigma$ cell is merged into current cluster.}
+    \label{fssm}
+\end{figure}
+
+A 3-dimensional visualization of a USCA cluster with different shells is shown in Fig. \ref{cluster_3d} for reference.
+All seeds make proto-clusters, but a cluster may or may not contain more than one seed.  
+If clusters with 2 shells or more are produced, and a seed does not have any cells above $2\sigma$ in its 1st shell, it will not add any potential $2\sigma$ cells from its 2nd shell.
+This is not common for signal events since particle showers tend to leave a trail of energy deposits through the detector, not singular pockets of energy.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.99\textwidth]{../images/my_images/figures/FSSM_cluster.png}
+    \caption{A USCA cluster after 1,2, and 3 shells of growth. The cell volumes are scaled by their energy. Courtesy of Ryan Stuve.}
+    \label{cluster_3d}
+\end{figure}
+
+Splitting does not become vital to prevent overly large clusters since
+there are only a fixed number of shells in the growing stage, as compared to the offline 422 and 420 algorithms.
+This is observed in a typical spread of $2\sigma$ and $4\sigma$ cells from an HH4b sample in the LAr calorimeters, shown in Fig. \ref{cells_2d}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.49\textwidth]{../images/my_images/plots/percent_overlap_JZ0W.png}
+    \includegraphics[width=0.49\textwidth]{../images/my_images/plots/percent_overlap_HH4b.png}
+    \caption{Percent of cell overlap per event for background (left) and signal (right) samples.}
+    \label{cells_overlap}
+\end{figure}
+It is possible for $2\sigma$ cells on the edges of clusters to be double-counted.
+If two separate clusters are nearby and not close enough to share seeds, but have shared $2\sigma$ cells in their outer shells, this will cause overlapping clusters and the double-counting of cells.
+This happens rarely since there are usually enough $4\sigma$ seeds nearby to resolve this issue in the merging step.
+Fig. \ref{cells_overlap} shows the percent of total cells that are double-counted per event for background and signal samples on a log scale.
+Virtually all events have less than .05\%  percent of total cells shared, with only a handful out of thousands having more than a few cells overlapping.
+% maybe include reference to a chapter instead of a short defense of no splitting here.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.99\textwidth]{../images/my_images/plots/cells_2d.png}
+    \caption{A map of $2\sigma$ (left) and $4\sigma$ (right) cell locations in the first two LAr Calorimeter layers in $\eta$, $\phi$ space from an HH4b sample.}
+    \label{cells_2d}
+\end{figure}
+
+\subsection{Physics Performance and Comparison} \label{physics_perf}
+
+The USCA algorithm is implemented in the Global Trigger Performance (GTP) package in {\fontfamily{cmtt}\selectfont athena} release 21.9.26 found on this fork\footnote{\href{https://gitlab.cern.ch/tmathew/athena.git}{\normalfont \slshape https://gitlab.cern.ch/tmathew/athena.git }} in the athena/Trigger/TrigL0GepPerf folder. 
+The GTP framework was created by Maria Mazza and collaborators from Michigan State University for developers to run performance studies on custom trigger algorithms.
+It also includes ATLAS offline algorithms, including the 422 and 420 clusters, for comparison studies.
+The main goal of the GTP package is to allow algorithms to be written more easily in {\fontfamily{cmtt}\selectfont C++} and then interface them with the ATLAS analysis framework {\fontfamily{cmtt}\selectfont athena}.
+The framework can be setup following instructions from the wiki page\footnote{\href{https://twiki.cern.ch/twiki/bin/viewauth/Atlas/GlobalTriggerPerformance }{\normalfont \slshape https://twiki.cern.ch/twiki/bin/viewauth/Atlas/GlobalTriggerPerformance }}.
+The USCA algorithm is currently stored on a separate fork of {\fontfamily{cmtt}\selectfont athena} 21.9.
+With release 21 of {\fontfamily{cmtt}\selectfont athena} being deprecated in 2024, the GTP framework is in the process of being moved to release 24.
+A diagram of the GTP workflow is shown in Fig. \ref{gtp}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.45\textwidth]{../images/my_images/figures/gtp.png}
+    \caption{Global Trigger Performance framework.}
+    \label{gtp}
+\end{figure}
+
+The primary samples used for the physics performance studies are a signal HH $\rightarrow$ 4b\footnote{\href{https://rucio-ui.cern.ch/did?scope=mc15_14TeV&name=mc15_14TeV.600463.PhPy8EG_PDF4LHC15_HH4b_cHHH01d0.recon.AOD.e8222_s3654_s3657_r12442}{\normalfont \slshape HH $\rightarrow$ 4b sample}}, and background JZ0\footnote{\href{https://rucio-ui.cern.ch/did?scope=mc15_14TeV&name=mc15_14TeV.800290.Py8EG_A14NNPDF23LO_jetjet_JZ0WithSW.recon.AOD.e8185_s3595_s3600_r12065}{JZ0 sample}}, which are described in Table \ref{samples}.
+Both were generated at a center of mass energy of $\sqrt{s} = 14$ TeV and average pileup of $\langle\mu\rangle$ = 200.
+Note that new samples will be produced for the release 24 GTP framework.
+All code for the analysis and plots in this paper is stored on ATLAS gitlab repositories, topo\_perf\footnote{\href{https://gitlab.cern.ch/tmathew/topo_perf}{Tim Mathew gitlab repository}}and topo\_code\footnote{\href{https://gitlab.cern.ch/rstuve/topo_code}{Ryan Stuve gitlab repository}}. 
+
+\begin{table}[h!]
+\centering
+\caption{Physics simulated samples used for topocluster studies}
+\begin{tabular}{ c c c } 
+ \hline
+ Physics Process & Sample Name & Number of Events \\
+ \hline
+ HH $\rightarrow$ 4b & {\tiny mc15\_14TeV.600463.PhPy8EG\_PDF4LHC15\_HH4b\_cHHH01d0.recon.AOD.e8222\_s3654\_s3657\_r12442} & 9000 \\ 
+ JZ0 & {\tiny mc15\_14TeV.800290.Py8EG\_A14NNPDF23LO\_jetjet\_JZ0WithSW.recon.AOD.e8185\_s3595\_s3600\_r12065} & 18000 \\
+ $t\bar{t}$ & {\tiny  mc15\_14TeV.600012.PhPy8EG\_A14\_ttbar\_hdamp258p75\_nonallhad.recon.AOD.e8185\_s3595\_s3600\_r12063} & 8200 \\
+\hline
+\end{tabular}
+\label{samples}
+\end{table}
+
+As noted above, the Global Trigger is planned to only have access to cells within $\lvert \eta \rvert < 3.2 $, and the following plots are made with 422 and 420 clusters within those $\eta$ bounds unless otherwise stated.
+There is also a cluster $E_T$ cut of 1 GeV applied to all clusters before they are sent to other algorithms.
+The motivation of this energy cut is to improve the jet reconstruction performance and reduces background noise and pile-up.  
+This cut is applied before splitting for the 420 and 422 clusters, and cannot be changed currently because of how the GTP framework interfaces with {\fontfamily{cmtt}\selectfont athena} algorithms.
+The two candidate versions of the USCA clusters are with 2 and 3 shells, which is reflected in the performance plots. 
+Some initial studies that led to narrowing down from 1-5 shells are in Appendix \ref{shell_studies}.
+
+\subsubsection{Cluster Energies}
+
+The primary metrics of the USCA algorithm performance is comparing the various cluster variables to that of the 422 and 420 algorithms.
+The cluster $E_T$ will be included in the TOBs within the Global Trigger and is the most natural place to begin studying physics performance. 
+USCA clusters from 2 and 3 shells are shown in Figure~\ref{et_norm} for signal and background.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/cluster_etnormal_etacut_JZ0W.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/cluster_etnormal_etacut_HH4b.png}
+    \caption{Cluster $E_T$ for background JZ0 (left) and HH $\rightarrow$ 4b (right).}
+    \label{et_norm}
+\end{figure}
+The distributions are clearly similar, with the only major difference being the transverse energies below 1 GeV for the 420 and 422 clusters from splitting.
+The USCA clusters have $E_T$ values close to the 422 clusters, while the 420 clusters have a distribution that leans to slightly higher values on average due to there being more cells in the sums, although the difference is small, again due to the fact that large clusters are split.
+The differences between the USCA and 420 or 422 clusters becomes more apparent at high energy.\\
+The leading 50 clusters in $E_T$ are shown in Fig. \ref{leading_et}.
+For high energy, large $\Delta R$, or close-by particle showers, the USCA clustering algorithm will have more high $E_T$ clusters on average because there is no splitting. 
+This effect is heightened with a larger shell count in the growing stage, and is seen in the separation of the 3-shell distribution compared to its 2-shell counterpart or the 420 and 422 algorithms.\\
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/cluster_leadinget_etacut_JZ0W.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/cluster_leadinget_etacut_HH4b.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/cluster_totalet_etacut_JZ0W.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/cluster_totalet_etacut_HH4b.png}
+    \caption{The leading 50 clusters in $E_T$ for background JZ0 (top left) and HH $\rightarrow$ 4b (top right). Total $E_T$ distributions for background JZ0 (bottom left) and HH $\rightarrow$ 4b (bottom right)}
+    \label{leading_et}
+\end{figure}
+The sum of all cluster transverse energies is shown in Fig. \ref{leading_et}.  
+USCA cluster total $E_T$ closely matches the 422 clusters and is lower than the 420 as expected.
+Without the edge $0 < E_T < 2\sigma$ cells, the 422 and USCA clusters will be a few hundred GeV less than the 420 with $\sqrt{s} = 14$ TeV collisions, as seen in the plot.
+The difference between 2 or 3 shells is small since most cells that would get picked up by a cluster are included in a cluster, even though the growing stage is 1 less iteration.
+The reason for this is because cells with high energy are necessarily nearby, so even though there might be more clusters on average for the 2-shell USCA algorithm compared to the 3-shell, there are enough seeds to grab nearby $2\sigma$ cells that should be in a cluster.
+There is also evidence from cluster multiplicity studies that using higher shell counts for the USCA clusters does not lead to significantly larger clusters, again supporting the conclusion that high energy cells are close enough to be picked up in 2 or 3 iterations of growing.
+
+\subsubsection{Cluster Multiplicity and Locations}
+
+Where the clusters are located is a major part of jet reconstruction and accurately capturing detector response to particle showers.
+The USCA cluster $\eta$ and $\phi$ are taken from the highest $E_T$ cell, which is close, but not precisely the location of 422 or 420 clusters which use the cluster moment calculations.
+Even with this difference, the cluster $\eta$ distributions are similar for the USCA and 422 algorithms as seen in Fig. \ref{cluster_locations}.
+The 420 distribution is flatter, with more clusters having values away from 0.
+This could be from the splitting, since the number of clusters near a specific $\eta$ value would double for each split cluster.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/cluster_etas_etacut_JZ0W.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/cluster_etas_etacut_HH4b.png}
+    \caption{Cluster $\eta$ for background JZ0 (left) and HH $\rightarrow$ 4b (right).}
+    \label{cluster_locations}
+\end{figure}
+
+Cluster locations for a single background or signal event are shown in Fig. \ref{cluster_2d_locations}, with the dots scaled by energy.
+While there are minor differences, the majority of clusters are overlapping between the different algorithms, and the difference in how cluster $\eta$ and $\phi$ are calculated does not lead to large discrepancies in location.
+After looking into the leading 50 cluster energies in more detail, the main differences between algorithms come from which clusters make the cut in the leading 50.
+Specifically, clusters near the 50 cut-off may be ordered different for each algorithm.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/2d_plot_etacut_JZ0W.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/2d_plot_etacut_HH4b.png}
+    \caption{Cluster locations for the 50 leading $E_T$ clusters for background JZ0 (left) and HH $\rightarrow$ 4b (right).}
+    \label{cluster_2d_locations}
+\end{figure}
+
+For 422-like clusters, initial evidence that splitting may not be necessary is seen in cluster multiplicity studies. 
+The growing stage is limited compared to the 420 algorithm, leading to less physically large clusters.
+The 420 merging stage will merge clusters that have shared edge cells, so two nearby particle showers can become merged into a large cluster just from one shared cell that has energy less than $2\sigma$, thus the splitting step becomes
+important.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/cluster_mult_etacut_JZ0W.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/cluster_mult_etacut_HH4b.png}
+    \caption{Cluster multiplicity for background JZ0 (left) and HH $\rightarrow$ 4b (right).}
+    \label{cluster_mult}
+\end{figure}
+Limited bandwidth and latency within the Global Trigger requires the topoclustering algorithm to balance computation time and physics performance. 
+Multiplicity is shown for signal and background in Fig. \ref{cluster_mult}.
+It is clearly seen that even without a splitting step, the multiplicity is almost identical between 422 and USCA clusters.
+In this case, the gauge for similarity was taken to be the gaussian mean of the distributions.
+The conclusion from the study is that the splitting step in the 422 clusters rarely finds multiple local maxima within a cluster, and the USCA clusters perform similarly.
+This also supports the earlier statement that the differences between the 2- and 3-shell USCA clusters is minimal, meaning that the merging step counteracts the smaller growing stage.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/num_cells_clus_JZ0W.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/num_cells_clus_HH4b.png}
+    \caption{Number of cells per cluster for background JZ0 (left) and HH $\rightarrow$ 4b (right).}
+    \label{cluster_numcells}
+\end{figure}
+
+The expected number of cells per cluster is plotted in Fig. \ref{cluster_numcells}.
+The USCA clusters again have distributions that are similar to the 422, with the motivation to not use 420 clusters becoming clear with the much higher number of cells per cluster.
+This coupled with the cluster multiplicity gives the firmware engineers concrete numbers to estimate bandwidth usage and computation time. 
+Even though 2- to 3-shell clusters can have have more than 25 cells before merging, the plots show that on average, post-merged clusters have roughly half that number or less for signal and background events.
+There are many lower energy clusters from background/pileup interactions, and only using $2\sigma$ cells limits growth of the clusters.
+Signal events may also not create physically large clusters, the particles tend to be collimated into a smaller R regions with high energy deposits in a smaller number of cells.
+The number of larger R clusters in signal events seems to be smaller, especially since this usually means the cluster has essentially captured most of the detector's response to the particle and is the only cluster used in the reconstruction of the resulting jet.
+In Fig. \ref{cells_2d}, energies from signal particle showers are seen to be grouped together in smaller R regions, supporting these arguments.
+
+
+
+\subsubsection{Cluster Missing Transverse Energy}
+
+Clusters will be given as inputs to the missing $E_T$ (MET) algorithms on the Global Trigger, specifically for calculating the MET soft term.
+Cluster MET is not directly used for physics or trigger performance, but is included here as a preliminary step for more detailed studies to be done by the MET trigger group.
+The MET is calculated as the vector sum of all cluster $E_T$, and the plots shown in Fig. \ref{cluster_met} are divided into the x and y components.
+Nothing stands out in the distributions, and again, it is seen that the USCA clusters perform similarly to the 422 clusters.
+For background or HH $\rightarrow$ 4b events, it is not expected to see large amounts of MET, and it may be interesting to explore the MET distributions for a signal sample that would expect a larger amount from neutrinos or a dark matter candidate.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/cluster_etmissx_etacut_JZ0W.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/cluster_etmissy_etacut_JZ0W.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/cluster_etmissx_etacut_HH4b.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/cluster_etmissy_etacut_HH4b.png}
+    \caption{Cluster MET for background JZ0 (top) and HH $\rightarrow$ 4b (bottom) split into x and y components.}
+    \label{cluster_met}
+\end{figure}
+
+
+\subsubsection{Reconstructed Jet Performance}
+
+Jets for all clustering algorithms are reconstructed using the offline athena anti-$k_T$ algorithm.
+Future studies should use the USCA clusters as inputs to the Global Trigger jet reconstruction algorithm candidates, such as the cone jets algorithm implemented by Maria Mazza.
+Jet $p_T$ is shown in Fig. \ref{jet_pt} for background and signal samples. 
+Distributions of the jet $p_T$ reconstructed from USCA clusters is very similar to the 422 jets, which is especially obvious on the log scale. 
+This is not surprising given the similarities between the clusters themselves.
+If there are comparable clusters by location and $E_T$, then the resulting jets should be similar in location, energy, and number.
+The USCA and 422 jet $p_T$ from JZ0 events diverge from their 420 counterparts, distributions are noticeably different in the 24-125 GeV range. 
+This may come from the higher spread in energy deposits from background processes, but most importantly the USCA and 422 jets behave similarly.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/jetpt_etacut_JZ0W.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/jetpt_etacut_HH4b.png}
+    \caption{Jet $p_T$ for background JZ0 (left) and HH $\rightarrow$ 4b (right).}
+    \label{jet_pt}
+\end{figure}
+
+The $\eta$ of reconstructed jets can be seen in Fig. \ref{jet_eta}, and again the distributions are similar between USCA and 422, with the 420 jets having a flatter profile because there is more splitting, allowing for jet locations that span the physical detector gaps.
+These dips are seen in the cluster $\eta$ plots as well, and are a direct consequence from the cluster positions.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/jeteta_JZ0W.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/jeteta_HH4b.png}
+    \caption{Jet $\eta$ for background JZ0 (left) and HH $\rightarrow$ 4b (right).}
+    \label{jet_eta}
+\end{figure}
+
+\subsection{Trigger Performance} \label{trigger_perf}
+
+The main metric for Global Trigger algorithms is the trigger efficiencies and performance, especially since the goal is to improve useful event collection from the detector.
+For the trigger efficiency plots show in this section, anti-k$_T$ jets with $R=0.4$ are reconstructed from USCA, 422, and 420 clusters. 
+The baseline jets for comparison are from the 420 clusters, and all trigger efficiency curves are shown as a function of this reconstructed offline jet $p_T$.
+There are two measures of trigger efficiency used in the plots, both fixed-threshold and at a fixed-rate of 60 kHz. 
+Only jets within $\eta <$2.5 are shown to reduce the amount of high $p_T$ jets that flood the rates in the higher $\eta$ regions of the detector.
+
+Fig. \ref{turn_on} shows the fixed-threshold trigger efficiencies for single and multi-jet triggers, with thresholds taken from the current run 3 trigger thresholds.
+USCA jets perform similarly to the 422 jets, with slightly steeper turn-ons for the 3-shell algorithm.
+All triggers are fully efficient within roughly 30 GeV of the thresholds despite the shallower turn-ons for the 2-shell jets.
+This is to be expected since 3-shell USCA clusters can more accurately represent 422 clusters, especially if the 422 clusters are large.
+Plots with higher shell counts are in appendix blah, and show diminishing returns for 4- and 5-shell USCA clusters.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_jetturnon_etcut_0.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_jetturnon_etcut_1.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_jetturnon_etcut_2.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_jetturnon_etcut_3.png}
+    \caption{Fixed-threshold jet trigger efficiencies. The x-axis is the offline reconstructed jet $p_T$ from 420 clusters.}
+    \label{turn_on}
+\end{figure}
+
+Rate plots using jets from the JZ0 sample are shown in Fig. \ref{rate_plots} for all 4 jet triggers. 
+The $p_T$ cuts at the 60 kHz rate are almost identical between the 3-shell USCA jets and the 422 jets, with the 2-shell USCA jets having slightly lower cuts.
+There are no major deviations in the plots between USCA and 422 jets.
+The cuts are reflected in the trigger efficiency plots at fixed-rate seen in Fig. \ref{turn_on_fixedrate}.
+The difference in turn-on steepness becomes more pronounced for the 2-shell USCA jets, which have shallower curves then their 3-shell counterparts, although this may be improved with a calibration of the USCA jets.
+To really study this difference, jet $p_T$ resolution plots should be made in the next iteration of cluster performance studies.
+It is expected to see a difference in the resolution of the 2-shell vs 3-shell or 422 jets leading to the shallower turn-ons.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_fixedrate_etcut_0.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_fixedrate_etcut_1.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_fixedrate_etcut_2.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_fixedrate_etcut_3.png}
+    \caption{Rate plots using the JZ0 sample for single and multijets with a target rate of 60 kHz highlighted.}
+    \label{rate_plots}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_jetturnon_fixedrate_etcut_0.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_jetturnon_fixedrate_etcut_1.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_jetturnon_fixedrate_etcut_2.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_jetturnon_fixedrate_etcut_3.png}
+    \caption{Fixed rate jet trigger turn on curves. A rate of 60 kHz was chosen for all single and multijet triggers.}
+    \label{turn_on_fixedrate}
+\end{figure}
+
+\subsubsection{Seed-Only Trigger Efficiencies}
+
+For commissioning the Global Trigger, it is suggested to build and use seed-only clusters for downstream algorithms for simplicity.
+Only $4\sigma$ cells would be used as inputs to the clustering algorithm, outputting ultra pileup suppressed clusters for the jet reconstruction algorithm.
+Preliminary physics performance plots were made to test the viability of triggering on these jets during commissioning.
+The seed-only clusters are referred to as proto-clusters in the plots.
+Rate plots for jets from these seed-only clusters are shown in Fig. \ref{rate_plots_seeds} in comparison to the regular 422 jets.
+Thresholds are much lower as expected, with all $p_T$ thresholds below 50 GeV.
+Efficiency plots are shown in Fig. \ref{turn_on_fixedrate_seeds} using the aforementioned thresholds at fixed-rate.
+The turn-ons are very slow, especially for the multi-jet triggers that have ranges of \~40 GeV before becoming fully efficient.
+However, from these studies alone, the seed-only clusters may be sufficient for commissioning.
+The single jet trigger with an online threshold of 50 GeV should be efficient enough to reconstruct jets from signal events with offline $p_T$'s of 115 GeV or above.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_fixedrate_proto_0.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_fixedrate_proto_1.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_fixedrate_proto_2.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_fixedrate_proto_3.png}
+    \caption{Seed-only rate plots using the JZ0 sample for single and multijets with a target rate of 60 kHz highlighted.}
+    \label{rate_plots_seeds}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_jetturnon_fixedrate_proto_0.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_jetturnon_fixedrate_proto_1.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_jetturnon_fixedrate_proto_2.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/plots/HH4b_jetturnon_fixedrate_proto_3.png}
+    \caption{Seed-only fixed rate jet trigger turn on curves. A rate of 60 kHz was chosen for all single and multijet triggers.}
+    \label{turn_on_fixedrate_seeds}
+\end{figure}
+
+
+
+\subsection{Test Vectors}
+
+Part of the development process for the Global Trigger involves running firmware simulations in Verilog on test-bench FPGAs.  
+Files called ``test vectors" containing cell or cluster level information are created to validate the firmware.
+Starting with HH4b and JZ0W simulated physics samples with $\langle\mu\rangle=200$, cell information is extracted using the GTP framework, and output to {\fontfamily{cmtt}\selectfont root} files. 
+Our stand-alone {\fontfamily{cmtt}\selectfont python} package \footnote{\href{https://gitlab.cern.ch/rstuve/topo_code.git }{\normalfont \slshape https://gitlab.cern.ch/rstuve/topo\_code.git }} encodes the cell $E_T$ into 10-bit binary strings following Table \ref{binary}, and the cell IDs (which contains position information) into 32-bit strings organized by event and position in $\eta$ and $\phi$ space.
+The $E_T$ strings are output to one test vector file, and the corresponding IDs to another file, both in {\fontfamily{cmtt}\selectfont coe} format.
+The test vectors mimic the register size of input to the FPGAs: 128 bits wide, and 256 bits deep. 
+An example of a test vector containing cell $E_T$ is shown in Fig. \ref{test_vectors}.\\
+
+\begin{table}[h!]
+\centering
+\caption{Binary encoding conversion to 10 bit strings. The first 2 bits represent the energy range, the other 8 bits are the index in that range. This format is subject to change as of March 2024.}
+\begin{tabular}{ c c c c } 
+ \hline
+ Leading 2 bits & Low (MeV) & High (MeV) & Step (MeV)\\
+ \hline
+ 00 & 32 & 1024 & 3.875 \\ 
+ 01 & 1024 & 8192 & 28 \\ 
+ 10 & 8192 & 65536 & 224 \\ 
+ 11 & 65536 & 524288 & 1792\\
+\hline
+\end{tabular}
+\label{binary}
+\end{table}
+
+Validation of, and studies with the test vectors were conducted to ensure accuracy and track the amount of expected data coming to the Global Trigger.
+Cell $E_T$ from the {\fontfamily{cmtt}\selectfont coe} files were compared to the original data, and plotted in Fig. \ref{test_vectors} as well.
+The data replication and translation to binary works as expected. 
+Approximately 2.3\% and .44\% of cells are above $2\sigma$ and $4\sigma$ respectively for the HH4b sample.
+These values give the firmware engineers an expectation of data size for useful signal events.
+A future task is to create output test vectors for topoclusters, which will contain clusters in TOB format for downstream trigger algorithms.
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/test_vec.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/test_vec_comparison.png}
+    \caption{Example of {\fontfamily{cmtt}\selectfont coe} test vector file with cell $E_T$ converted to 10 bit binary strings (left). Comparison of cell $E_T$ directly from the GTP output {\fontfamily{cmtt}\selectfont root} file to cell $E_T$ from the test vector file (right).}
+    \label{test_vectors}
+\end{figure}
+
+\subsection{Cell Neighbor and Translator Files}
+
+The  newest iteration of {\fontfamily{cmtt}\selectfont coe} files includes a lookup table of 2 shells of neighbors for every cell within $\lvert \eta \rvert <$ 3.2.
+Seen in Fig. \ref{neighbor_list}, the 32 bit online cell IDs are used, and the file has a 64 bit width. 
+The first column is the potential seed cell's online ID, the second column is the first neighboring cell ID.
+Every line after is the list of other neighbors in the last 32 bits, while the first 32 bits are zero padded.
+This repeats for the next potential seed cell when the first 32 bits are non-zero again.
+179,304 calorimeter cells are within the $\eta$ boundary, and most have on average \~25 neighboring cells in their 2 shells, depending on the region of the calorimeter.
+A cross check was done on the {\fontfamily{cmtt}\selectfont coe} file, seen in the middle of Fig. \ref{neighbor_list}.
+A 3-D visualization of a seed cell with 1 shell of neighbors, and a visualization of 2 shells of neighbors is shown.
+The lookup table of neighbors is stored on the Oregon tier 3 computing cluster:/export/home/topo/neighbors.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.55\textwidth]{../images/my_images/figures/neighbors_list.png}
+    \includegraphics[width=.45\textwidth]{../images/my_images/figures/neighbors1.png}
+    \includegraphics[width=.45\textwidth]{../images/my_images/figures/neighbor2.png}
+    \caption{Example of {\fontfamily{cmtt}\selectfont coe} file with list of 2 shells of neighbors for every potential seed cell within $\lvert \eta \rvert <$ 3.2 (top). Visualization of a specific seed cell and 1 shell of neighbors (bottom left) and 2 shells of neighbors (bottom right).}
+    \label{neighbor_list}
+\end{figure}
+
+The other new file is a lookup table that translates from online cell ID or offline cell ID to the new internal GEP ID for each cell that will be sent to the Global Trigger.
+The current GEP ID format is an 18 bit ID: 5 bits for which mux the cell arrives on, 6 bits for the specific fiber, and 7 bits for the channel identifier of the cell.
+There are a maximum of 128 channels per fiber. 
+The lookup table is also shown in Fig. \ref{gep_list}, with the first 64 bits of each row the offline and online cell IDs, and the last 18 bits the GEP cell IDs.
+The lookup table is also stored on the Oregon computing cluster:/export/home/topo/neighbors/GEP\_cell\_IDs.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.7\textwidth]{../images/my_images/figures/translator.png}
+    \caption{The lookup table {\fontfamily{cmtt}\selectfont coe} file with online, offline, and GEP cell IDs.}
+    \label{gep_list}
+\end{figure}
+
+\subsubsection{Cells per Fiber}
+
+LAr will only have the bandwidth to send 32 $2\sigma$ cells per fiber.
+This is in order of cells on each front-end board, not by energy, and the effects of this have not been studied yet.
+For higher energy particle showers, there could be a loss of cells.
+The latest test vector study was plotting the number of $2\sigma$ and $4\sigma$ cells per LASP fiber using a background and signal sample, and the GEP cell IDs.
+As seen in Fig. \ref{cells_fiber}, most fibers have less than 32 $2\sigma$ cells on average for the background sample.
+There are even less $4\sigma$ cells per fiber, but there are some fibers well above 32.
+In the bottom plots, only events that have a 420 jet with $p_T$ > 50 GeV are plotted, which increases the average number of cells per fiber by removing many of the empty fibers.
+The same plots are shown in Fig. \ref{cells_fiber2} for the HH $\rightarrow$ 4b sample, with notably less cells per fiber with and without the jet $p_T$ cut.
+As discussed in section \ref{physics_perf}, the signal particle showers tend to be more collimated, which will help limit the loss of cells being sent to the Global Trigger.
+This effect needs to be propagated to the clusters to see how the cluster growing stage is affected and subsequently the jet triggering efficiencies.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/atl_plots/JZ0W_2sig.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/atl_plots/JZ0W_4sig.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/atl_plots/JZ0W_2sig_jet.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/atl_plots/JZ0W_4sig_jet.png}
+    \caption{Number of $2\sigma$ (top left) and $4\sigma$ (top right) cells per LASP fiber for the JZ0 sample. A leading 420 jet $p_T$ cut at 50 GeV is applied for the bottom plots.}
+    \label{cells_fiber}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.49\textwidth]{../images/my_images/atl_plots/HH4B_2sig.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/atl_plots/HH4B_4sig.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/atl_plots/HH4B_2sig_jet.png}
+    \includegraphics[width=.49\textwidth]{../images/my_images/atl_plots/HH4B_4sig_jet.png}
+    \caption{Number of $2\sigma$ (top left) and $4\sigma$ (top right) cells per LASP fiber for the HH $\rightarrow$ 4b sample. A leading 420 jet $p_T$ cut at 50 GeV is applied for the bottom plots.}
+    \label{cells_fiber2}
+\end{figure}
+
+\section{Topological Cluster ALgorithm Conclusions and Outlook}
+
+Topological clusters are formed first on the Global Trigger and are used as inputs for many vital algorithms, including jet and tau reconstruction, pileup suppression, topotowers, and isolation-type variable calculations.
+Thus an efficient and optimized topoclustering algorithm that maximizes physics performance is required by the Global Trigger.
+The USCA clustering algorithm is currently the first and most ideal software emulation of the Global Trigger firmware clustering algorithm.
+Based on the findings in the above studies, the 3-shell USCA algorithm would be the best choice if there were no bandwidth or memory constraints and enough clock cycles available. 
+However, the 2-shell version still performs comparable to the 422 algorithm in terms of trigger efficiencies, with only a small change in jet energy resolution and speed of the trigger turn-on.
+It is thus the official recommendation of these studies to start implementing a firmware algorithm that most closely resembles the 2-shell USCA algorithm. 
+Work is currently being done by the firmware engineers to make a working version of this algorithm, aided by the test vectors provided.
+
+Future work needs to be done on the clustering algorithm to fully understand the physics performance and there is room to further optimize the software version algorithm.
+The highest priority item is to integrate the USCA algorithm into the GTP package within release 24 of {\fontfamily{cmtt}\selectfont athena}. 
+Detailed jet energy resolution studies can still be done with the current ntuples, as well as plots showing the signal acceptance vs background rejection of the various jet triggers.
+Continued collaboration with the firmware engineers is needed to replicate the software version in firmware and validate its performance.
+The merging calculation in the USCA algorithm is one of its benefits, and a major task is to optimize and test its feasibility in firmware.
+Since the algorithm doesn't require cell $E_T$ for growing or merging, it is possible to run this step before the energies arrive on the GEPs, but the firmware may need to use dynamical lists to accomplish the merging.
+Continued work on the firmware side will also include creating more test vectors, input and output TOB files, and a future bit-wise simulation of the algorithm.
+% merging in firmware
+
+
+
+% \section{Raw Algorithm Code}
+% \lstset{postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}}
+% \lstinputlisting[language=C++,breaklines=true]{USCATopoClustering.cxx}
+
+
+
+% \end{document}
