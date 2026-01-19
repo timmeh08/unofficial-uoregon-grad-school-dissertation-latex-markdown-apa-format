@@ -18,6 +18,8 @@ This chapter will discuss the Standard Model briefly, with emphasis on electrowe
 The Standard Model is a quantum field theory (QFT) describing known particles and three of the four fundamental forces of nature, the strong, electromagentic (EM), and weak forces through fermion fields interacting via gauge boson fields.
 These fields are colloquially referred to as particles, with the fermions as the matter particles and the gauge bosons as the force carriers.
 Fermion field masses are generated through interactions with the Higgs field via the Higgs mechanism, and the broken electroweak symmetry gives mass to the weak gauge bosons as well.
+The fermions are spin 1/2 particles, the force carriers are spin 1 particles, and the Higgs boson is a spin 0 particle.
+Fermions are further classified as quarks and leptons, with quarks charged under both the strong and electroweak interactions, while leptons only interact via the electroweak interaction.
 All SM particles are visualized in Fig. \ref{sm_particles}.
 
 \begin{figure}[htbp]
@@ -26,3 +28,108 @@ All SM particles are visualized in Fig. \ref{sm_particles}.
     \caption{The Standard Model particles \cite{Dominguez:2002395}. The three generations of fermions are shown at left, the Higgs boson at the center, and the gauge bosons at right.}
     \label{sm_particles}
 \end{figure}
+
+As a gauge theory, the SM is invariant under the symmetry group $SU(3)_C \times SU(2)_L \times U(1)_Y$.
+$SU(3)_C$ describes the strong interaction with color charge $C$, and $SU(2)_L \times U(1)_Y$ describes the electroweak interaction with weak isospin $L$, since weak charge currents only interact with left-handed fermions, and hypercharge $Y$ acting on right and left-handed particles to give the observed electric charge of particles.
+Table \ref{sm_charges} summarizes the gauge quantum numbers of the SM fermions under these symmetry groups.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Particle & $SU(3)_C$ & $SU(2)_L$ & $U(1)_Y$ \\
+        \hline
+        Left-handed quark doublet $Q_L$ & 3 & 2 & 1/6 \\
+        Right-handed up quark $u_R$ & 3 & 1 & 2/3 \\
+        Right-handed down quark $d_R$ & 3 & 1 & -1/3 \\
+        Left-handed lepton doublet $L_L$ & 1 & 2 & -1/2 \\
+        Right-handed electron $e_R$ & 1 & 1 & -1 \\
+        \hline
+    \end{tabular}
+    \caption{Gauge quantum numbers of the Standard Model fermion fields. The three fermion generations are not shown, as all generations have the same quantum numbers.}
+    \label{sm_charges}
+\end{table}
+
+
+\subsection{Electroweak Symmetry Breaking and the Higgs Mechanism}
+
+In the SM, the electroweak symmetry $SU(2)_L \times U(1)_Y$ is unbroken at high energies.
+The gauge fields associated with this symmetry are the $W^1$, $W^2$, and $W^3$ bosons for $SU(2)_L$ and the $B$ boson for $U(1)_Y$.
+However, at low energies, the Higgs field spontaneously breaks this symmetry to the electromagnetic symmetry $U(1)_{EM}$, giving mass to the weak gauge bosons and fermions.
+This is accomplished through the introduction of a complex scalar doublet field $\phi$ into the SM
+
+\begin{equation}
+    V(\phi) = \frac{1}{2}\mu^2 \phi^\dagger \phi + \frac{1}{4}\lambda (\phi^\dagger \phi)^2,
+    \label{higgs_potential}
+\end{equation}
+
+which has stationary points at $\phi^\dagger \phi = 0, \pm\mu^2/\lambda$.
+For $\mu^2 < 0$ and $\lambda > 0$, the minimum at 0 is unstable.
+Even if the field is initially at 0, the field would evolve into the non-zero minima, spontaneously breaking the electroweak symmetry since all non-zero minima are degenerate.
+Choosing $v = \sqrt{-\mu^2/\lambda}$ as the vacuum expectation value (VEV) of the Higgs field, we can write the Higgs field in unitary gauge as
+
+\begin{equation}
+    \phi = \frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ v + H(x) \end{pmatrix},
+    \label{higgs_field}
+\end{equation}
+
+With $v \approx 246$ GeV and $H(x)$ the physical Higgs boson field.
+Plugging Eq. \ref{higgs_field} into the SM Lagrangian gives mass terms for the weak gauge bosons and fermions, with the photon remaining massless, as well as a mass term for the Higgs boson itself.
+The $W^1$, $W^2$, and $W^3$ bosons mix with the $B$ boson to give the physical $W^{\pm}$, $Z$, and $\gamma$ bosons.
+The masses of the weak gauge bosons are given by 
+\begin{equation}
+    m_W = \frac{1}{2}vg, \quad m_Z = \frac{1}{2}v\sqrt{g^2 + g'^2},
+    \label{weak_boson_masses}
+\end{equation}
+where $g$ and $g'$ are the $SU(2)_L$ and $U(1)_Y$ coupling constants, respectively.
+Fermion masses are generated through Yukawa interactions with the Higgs field, with the mass of a fermion $f$ given by 
+\begin{equation}
+    m_f = \frac{y_f v}{\sqrt{2}},
+    \label{fermion_masses}
+\end{equation}
+where $y_f$ is the Yukawa coupling of the fermion to the Higgs field.
+With the Higgs field incorporated into the SM, tri and quartic self-interactions of the Higgs boson are also generated, with the Higgs boson mass given by 
+\begin{equation}
+    m_H = \sqrt{2\lambda} v.
+    \label{higgs_mass}
+\end{equation}
+The discovery of the Higgs boson at the LHC with a mass of approximately 125 GeV \cite{HIGG-2012-27,CMS-HIG-12-028} confirms a viable candidate for the SM Higgs boson.
+However, there are still many properties of the Higgs and electroweak symmetry breaking that remain to be measured and understood, including the Higgs self-couplings and possible couplings to BSM particles.
+
+\section{Evidence for Dark Matter and Beyond the Standard Model Physics}
+
+As mentioned previously, there are several observations that the Standard Model is unable to explain, motivating searches for physics beyond the Standard Model.
+One of the most compelling pieces of evidence for BSM physics is the existence of dark matter. 
+Astrophysical and cosmological observations provide strong evidence through the gravitational effects of dark matter on visible matter.
+This includes galaxy rotation curves \cite{Rubin:1980zd}, gravitational lensing \cite{Clowe:2006eq}, and the cosmic microwave background (CMB) anisotropies \cite{Planck:2018vyg}.
+Current attempts to explain these observations through modifications to gravity have not been successful in explaining all observed phenomena, leading to the conclusion that dark matter is most likely composed of new, yet-undiscovered particles.
+While the evidence is strong, its physical nature remains unknown currently.
+However, dark matter must meet several criteria from current observational constraints, including being stable on cosmological timescales, non-baryonic, having weak or no interactions with electromagnetic radiation, and the correct relic abundance to account for the observed dark matter density in the universe.
+These criteria have led to many proposed candidates for dark matter particles, including weakly interacting massive particles (WIMPs), axions, and sterile neutrinos, among others.
+It is possible that dark matter might be contained within a dark sector, with its own particles and interactions, accessible to the Standard Model only through so-called portal interactions.
+The Higgs boson is a prime candidate for such a portal, given its unique properties, coupling to mass, and the current lack of constraints on the Higgs ito invisible branching ratio.
+In order to explore these possiblities experimentally, there must be some particle(s) that mediate the interactions between the dark sector and the Standard Model, and have an accessible mass scale for current experiments such as the LHC.
+This section will discuss two possible dark sector models that could be probed through Higgs portal interactions at the LHC: the dark meson sector of stealth dark matter and a dark photon model.
+
+\subsection{Stealth Dark Matter and Dark Mesons}
+
+Dark matter has eluded direct detection thus far, with increasingly stringent limits being placed on the interaction cross section of dark matter with Standard Model particles.
+This has led to the creation and exploration of models where the absence of an experimental signature so far is a natural consequence of the model itself.
+One such area of dark sector models is stealth dark matter \cite{Kribs_2016}, which posits a new confining non-Abelian gauge group, similar to quantum chromodynamics (QCD), with dark fermions that are charged under the dark gauge group and transform as vector-like representations of the SM electroweak group.
+
+The specific dark meson model explored in this thesis is detailed in Ref. \cite{kribs_2019}.
+The dark matter candidate in this model is a composite baryonic scalar of an $SU(N)_D$ strongly interacting dark sector, with $N$ even.
+The lightest baryonic scalar is stable due to an accidental $U(1)_{dark baryon}$ symmetry of the dark sector, making it a viable dark matter candidate.
+The dark fermions also form mesonic bound states, called dark mesons, that could be accessible at the LHC.
+These dark mesons are previously unconstrained by existing searches due to the nature of BSM searches that typically require high MET or high mass ressonances while the dark meson mass regime is lower.
+
+This new dark sector contains at least one triplet of dark pions and dark rhos, $(\pi^{\pm}_D,\pi^0_D)$ and $(\rho^{\pm}_D,\rho^0_D)$, which are pseudoscalars and vectors respectively.
+Charged under the electroweak interaction and $SU(N)_D$, the dark fermions break the global chiral symmetry of the dark sector, leading to the decay of the dark pions and rhos to Standard Model particles through electroweak interactions.
+The Lagrangian is thus
+\begin{equation}
+    \mathcal{L}_{dark sector} = \mathcal{L}_{kinetic} + \mathcal{L}_{mass} + \mathcal{L}_{\pi_D,\rho_D} + \mathcal{L}_{kinetic mixing} + \mathcal{L}_{decay},
+    \label{dark_sector_lagrangian}
+\end{equation}
+
+and includes kinetic terms, mass terms, dark meson interaction terms, kinetic mixing terms between the dark sector and SM gauge bosons, and decay terms for the dark mesons to SM particles.
+
