@@ -101,10 +101,23 @@ However, there are still many properties of the Higgs and electroweak symmetry b
 As mentioned previously, there are several observations that the Standard Model is unable to explain, motivating searches for physics beyond the Standard Model.
 One of the most compelling pieces of evidence for BSM physics is the existence of dark matter. 
 Astrophysical and cosmological observations provide strong evidence through the gravitational effects of dark matter on visible matter.
-This includes galaxy rotation curves \cite{Rubin:1980zd}, gravitational lensing \cite{Clowe:2006eq}, and the cosmic microwave background (CMB) anisotropies \cite{Planck:2018vyg}.
+This includes galaxy rotation curves \cite{1980ApJ...238..471R}, gravitational lensing \cite{Massey_2010}, and the cosmic microwave background (CMB) anisotropies \cite{Hu_2002}.
+In particular, the rotation curve of galaxy M33, where the observed rotation curve does not match the expectation due to visible matter, indicates the presence of additional unseen mass, attributed to dark matter.
+The observation of the Bullet Cluster, where two galaxy clusters have collided and the dark matter component has been observed to separate from the baryonic matter, provides a clear picture of graviational lensing.
+Both examples can be seen in Fig. \ref{galaxy_rotation_curve}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{../images/my_images/astronomy-02-00007-g001.png}
+    \includegraphics[width=0.45\textwidth]{../images/my_images/bullet_cluster.png}
+    \caption{The observed rotation curve of galaxy M33 compared to the expected rotation curve from visible matter \cite{astronomy2020007} (left) and the Bullet Cluster showing the separation of dark matter and baryonic matter through gravitational lensing \cite{Massey_2010} (right).}
+    \label{galaxy_rotation_curve}
+\end{figure}
+
 Current attempts to explain these observations through modifications to gravity have not been successful in explaining all observed phenomena, leading to the conclusion that dark matter is most likely composed of new, yet-undiscovered particles.
-While the evidence is strong, its physical nature remains unknown currently.
-However, dark matter must meet several criteria from current observational constraints, including being stable on cosmological timescales, non-baryonic, having weak or no interactions with electromagnetic radiation, and the correct relic abundance to account for the observed dark matter density in the universe.
+In addition to observational evidence, large scale structure formation and simulations of galaxy formation also require the presence of dark matter to match observations \cite{2020NatRP...2...42V}.
+While the evidence is strong, the exact physical nature of dark matter remains unknown as of now.
+Dark matter must meet several criteria from current observational constraints, however, including being stable on cosmological timescales, non-baryonic, having weak or no interactions with electromagnetic radiation, and the correct relic abundance to account for the observed dark matter density in the universe.
 These criteria have led to many proposed candidates for dark matter particles, including weakly interacting massive particles (WIMPs), axions, and sterile neutrinos, among others.
 It is possible that dark matter might be contained within a dark sector, with its own particles and interactions, accessible to the Standard Model only through so-called portal interactions.
 The Higgs boson is a prime candidate for such a portal, given its unique properties, coupling to mass, and the current lack of constraints on the Higgs ito invisible branching ratio.
@@ -118,14 +131,16 @@ This has led to the creation and exploration of models where the absence of an e
 One such area of dark sector models is stealth dark matter \cite{Kribs_2016}, which posits a new confining non-Abelian gauge group, similar to quantum chromodynamics (QCD), with dark fermions that are charged under the dark gauge group and transform as vector-like representations of the SM electroweak group.
 
 The specific dark meson model explored in this thesis is detailed in Ref. \cite{kribs_2019}.
-The dark matter candidate in this model is a composite baryonic scalar of an $SU(N)_D$ strongly interacting dark sector, with $N$ even.
+The dark matter candidate in this model is a composite baryonic scalar of an $SU(N)_D$ strongly interacting dark sector, with $N$ being even.
 The lightest baryonic scalar is stable due to an accidental $U(1)_{dark baryon}$ symmetry of the dark sector, making it a viable dark matter candidate.
 The dark fermions also form mesonic bound states, called dark mesons, that could be accessible at the LHC.
 These dark mesons are previously unconstrained by existing searches due to the nature of BSM searches that typically require high MET or high mass ressonances while the dark meson mass regime is lower.
 
 This new dark sector contains at least one triplet of dark pions and dark rhos, $(\pi^{\pm}_D,\pi^0_D)$ and $(\rho^{\pm}_D,\rho^0_D)$, which are pseudoscalars and vectors respectively.
-Charged under the electroweak interaction and $SU(N)_D$, the dark fermions break the global chiral symmetry of the dark sector, leading to the decay of the dark pions and rhos to Standard Model particles through electroweak interactions.
+Charged under the electroweak interaction and $SU(N)_D$, the dark fermions break the global chiral symmetry of the dark sector, leading to the decay of the dark pions and rhos to Standard Model particles through electroweak interactions. 
+The dark meson model has a custodial Higgs symmetry with SU(2) dark flavor symmetry, which protects the electroweak $T$ parameter from large corrections.
 The Lagrangian is thus
+
 \begin{equation}
     \mathcal{L}_{dark sector} = \mathcal{L}_{kinetic} + \mathcal{L}_{mass} + \mathcal{L}_{\pi_D,\rho_D} + \mathcal{L}_{kinetic mixing} + \mathcal{L}_{decay},
     \label{dark_sector_lagrangian}
@@ -133,3 +148,74 @@ The Lagrangian is thus
 
 and includes kinetic terms, mass terms, dark meson interaction terms, kinetic mixing terms between the dark sector and SM gauge bosons, and decay terms for the dark mesons to SM particles.
 
+Searches for dark mesons at the LHC can be parameterized by the dark pion mass $m_{\pi_D}$, along with the ratio of the dark pion mass to the dark rho mass,
+
+\begin{equation}
+    \eta = \frac{m_{\pi_D}}{m_{\rho_D}}
+    \label{eta_definition}
+\end{equation}
+
+If $\eta$ < .5, the dark rho can decay to two dark pions with a branching fraction near 1, while if $\eta$ > .5, the dark rho decays to pairs of SM fermions.
+The electroweak portal between the dark sector and SM is primarily through the kinetic mixing term,
+
+\begin{equation}
+    \mathcal{L}_{kinetic mixing} = \frac{\epsilon}{2} \rho^{a}_{D,\mu\nu} F^{a\mu\nu}.
+    \label{kinetic_mixing}
+\end{equation}
+
+Two mixing models are allowed, SU(2)$_R$ and SU(2)$_L$, with the former having the dark rho mix with the full SM $W$ boson triplet and the latter having the dark rho mix with the B field only.
+The SU(2)$_L$ model has a significantly higher cross section, and is thus the focus of Chapter \ref{ch:dark_mesons}.
+Fig. \ref{dark_meson_feynman} shows the relevant Feynman diagrams for dark meson production at leading order, both through kinetic mixing and via Drell-Yan production.
+The resonant production via kinetic mixing is the dominant production mode, with the dark pions decaying to SM top and bottom quarks.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../images/my_images/dark_meson_feynman.png}
+    \caption{Dark meson production at leading order. The dominant production mechanism through kinetic mixing is shown on the left and middle, while Drell-Yan pair production is shown on the right.}
+    \label{dark_meson_feynman}
+\end{figure}
+
+\subsection{The Dark Photon}
+
+Another more minimal extension to the Standard Model to access a dark sector that has gained traction in recent years is through the introduction of a new $U(1)_D$ gauge symmetry, with the associated gauge boson being the dark photon, $\gamma_D$.
+The dark photon can either be massless or massive, with the former being the focus of this thesis.
+For a massive dark photon, kinetic mixing between the dark photon and the SM hypercharge gauge boson $B$ is allowed.
+A massless dark photon cannot couple at tree level to any SM particles, and interacts via messenger fields of dimension higher than 4.
+The generic Lagrangion for the SM U(1) and the dark U(1)$_D$ is given by
+\begin{equation}
+    \mathcal{L} = -\frac{1}{4} F_{\mu\nu} F^{\mu\nu} - \frac{1}{4} F'_{\mu\nu} F'^{\mu\nu} + \frac{\epsilon}{2} F_{\mu\nu} F'^{\mu\nu} + \frac{1}{2} m^2_{\gamma_D} A'_\mu A'^\mu + J^\mu_{EM} A_\mu + J^\mu_{dark} A'_\mu,
+    \label{dark_photon_lagrangian}
+\end{equation}
+
+where $F_{\mu\nu}$ and $F'_{\mu\nu}$ are the field strength tensors for the SM photon and dark photon, respectively, $\epsilon$ is the kinetic mixing parameter, $m_{\gamma_D}$ is the mass of the dark photon, and $J^\mu_{EM}$ and $J^\mu_{dark}$ are the electromagnetic and dark currents, respectively.
+Assuming $m_{\gamma_D}$ = 0, we can cancel the kinetic mixing term through a field redefinition, leaving the dark photon with no tree-level couplings to SM particles.
+This redifinition is done by defining new fields $A_\mu$ and $A'_\mu$ as follows:
+
+\begin{equation}
+    \begin{pmatrix} A'^\mu \\ A^\mu \end{pmatrix} = \begin{pmatrix} \frac{1}{\sqrt{1-\epsilon^2}} & 0 \\ -\frac{\epsilon}{\sqrt{1-\epsilon^2}} & 1 \end{pmatrix} \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix} \begin{pmatrix} \tilde{A}^\mu_d \\ \tilde{A}^\mu \end{pmatrix},
+    \label{field_redefinition}
+\end{equation}
+
+where $\tilde{A}^\mu_d$ and $\tilde{A}^\mu$ are the new fields after the redefinition, and $\theta$ is a mixing angle that can diagonolize the kinetic terms.
+Since $\theta$ can take any arbitry angle without a dark photon mass term, interactions between the dark photon and SM particles only happen through higher order operators.
+
+The dark photon model of interest in \ref{ch:dark_photons} is a minimal model that assumes a generic messenger sector that allows for interactions between the dark photon and the SM through the afformentioned higher order operators \cite{Biswas_2022}.
+The doublet messenger fields, denoted by $S_i$, carry both SM and dark U(1)$_D$ charges, and generate an interaction between the dark photon and the SM at the one loop level.
+An interaction Lagrangian for this model can be written as
+
+\begin{equation}
+    \mathcal{L}_{int} = \lambda_S S_0 (\tilde{H}^\dagger S^{U}_{L} S^{U}_{R} + H^\dagger S^{D}_{L} S^{D}_{R}) + h.c.
+    \label{dark_photon_interaction_lagrangian}
+\end{equation}
+
+where $\lambda$ is a universal coupling, the $S_0$ is a singlet scalar field with a vev, and $S^{U}_{L,R}$ and $S^{D}_{L,R}$ are the doublet up-type and down-type messenger fields, respectively.
+Once the scalar field $S_0$ acquires a vev, the messenger fields acquire mass and generate trilinear couplings between the dark photon and the SM Higgs boson at one loop level, $H_{\gamma\gamma_D}$ and $H_{\gamma_D\gamma_D}$, with couplings proportional to $\mu_S=\lambda_S<S_0>$.
+After electroweak symmetry breaking, a mixing term between the left and right messenger fields is generated, proportional to $\mu_S\nu$ where $\nu$ is the Higgs vev.
+Feynman diagrams that contribute to the $H_{\gamma\gamma_D}$ coupling are shown in Fig. \ref{dark_photon_feynman}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../images/my_images/dark_photon_feynman.png}
+    \caption{Feynman diagrams that contribute to the $H_{\gamma\gamma_D}$ coupling at one loop level. The dark photon is denoted by $\gamma_D$, the Higgs boson by $H$, and the messenger fields by $S$.}
+    \label{dark_photon_feynman}
+\end{figure}
