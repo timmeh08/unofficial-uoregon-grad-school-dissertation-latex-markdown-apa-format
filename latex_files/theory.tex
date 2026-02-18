@@ -2,12 +2,14 @@ It cannot be overstated that humanity is driven to understand the nature of the 
 One of these great achievements, a combined effort of many across decades and through multiple experiments, is the formulation of a framework to describe the fundamental particles and their interactions.
 This framework is known as the Standard Model (SM) of particle physics.
 Complete in its ability to describe and predict the phenomena of the observed particles it contains, it remains the starting point for virtually every investigation in particle physics.
-The most recent confirmations of the SM are the top quark observation at Fermilab in 1995 by the D0 and CDF experiments \cite{PhysRevLett.74.2626,PhysRevLett.74.2632} and the Higgs boson discovery at CERN in 2012 by the ATLAS and CMS experiments \cite{HIGG-2012-27,CMS-HIG-12-028}.
+Some of the most recent confirmations of the SM are the top quark observation at Fermilab in 1995 by the D0 and CDF experiments \cite{PhysRevLett.74.2626,PhysRevLett.74.2632} and the Higgs boson discovery at CERN in 2012 by the ATLAS and CMS experiments \cite{HIGG-2012-27,CMS-HIG-12-028}.
+Recent measurements of the W boson mass, which initially showed a significant deviation from the SM prediction, have been updated with new measurements that are consistent with the SM \cite{science.abk1781,atlas_2024}, further confirming that the SM is able to withstand intense scrutiny.
 
 
 Despite its successes, however, the Standard Model is known to be incomplete in regards to several observations.
 We know that over 85\% of the matter in the observable universe is in the form of dark matter (DM), which does not have any observed interactions with the SM and thus must be explained with new physics.
-Additionally, the SM requires neutrinos to be massless, which is condraticted by neutrino oscillation observations, and the extensions needed to explain neutrino masses are beyond the scope of this thesis.
+Additionally, at certain energy scales, the SM requiresneutrinos to be massless, which is contradicted by neutrino oscillation observations.
+The extensions to the SM and discussion needed to explain neutrino masses are beyond the scope of this thesis.
 The matter-antimatter asymmetry observed in the universe is also not fully explained by the SM, requiring some new mechanism to generate the observed abundance of matter.
 A strongly-coupled theory of quantum gravity is unable to be incorporated into the SM, and there is no explanation within the SM for dark energy at the scales observed in cosmology.
 These shortcomings and others motivate searches for physics beyond the Standard Model (BSM).
@@ -31,7 +33,7 @@ All SM particles are visualized in Fig. \ref{sm_particles}.
 
 As a gauge theory, the SM is invariant under the symmetry group $SU(3)_C \times SU(2)_L \times U(1)_Y$.
 $SU(3)_C$ describes the strong interaction with color charge $C$, and $SU(2)_L \times U(1)_Y$ describes the electroweak interaction with weak isospin $L$, since weak charge currents only interact with left-handed fermions, and hypercharge $Y$ acting on right and left-handed particles to give the observed electric charge of particles.
-Table \ref{sm_charges} summarizes the gauge quantum numbers of the SM fermions under these symmetry groups.
+Table \ref{sm_charges} summarizes the gauge representations of the SM fermions under these symmetry groups.
 
 \begin{table}[htbp]
     \centering
@@ -46,12 +48,12 @@ Table \ref{sm_charges} summarizes the gauge quantum numbers of the SM fermions u
         Right-handed electron $e_R$ & 1 & 1 & -1 \\
         \hline
     \end{tabular}
-    \caption{Gauge quantum numbers of the Standard Model fermion fields. The three fermion generations are not shown, as all generations have the same quantum numbers.}
+    \caption{Gauge representations of the Standard Model fermion fields. The three fermion generations are not shown, as all generations have the same quantum numbers.}
     \label{sm_charges}
 \end{table}
 
 
-\subsection{Electroweak Symmetry Breaking and the Higgs Mechanism}
+\subsection{Electroweak Symmetry Breaking and the Higgs Mechanism}\label{sec:ewsb}
 
 In the SM, the electroweak symmetry $SU(2)_L \times U(1)_Y$ is unbroken at high energies.
 The gauge fields associated with this symmetry are the $W^1$, $W^2$, and $W^3$ bosons for $SU(2)_L$ and the $B$ boson for $U(1)_Y$.
@@ -63,10 +65,10 @@ This is accomplished through the introduction of a complex scalar doublet field 
     \label{higgs_potential}
 \end{equation}
 
-which has stationary points at $\phi^\dagger \phi = 0, \pm\mu^2/\lambda$.
+which has stationary points at $\phi^\dagger \phi = 0, -\mu^2/\lambda$.
 For $\mu^2 < 0$ and $\lambda > 0$, the minimum at 0 is unstable.
 Even if the field is initially at 0, the field would evolve into the non-zero minima, spontaneously breaking the electroweak symmetry since all non-zero minima are degenerate.
-Choosing $v = \sqrt{-\mu^2/\lambda}$ as the vacuum expectation value (VEV) of the Higgs field, we can write the Higgs field in unitary gauge as
+Choosing $v = \sqrt{-\mu^2/\lambda}$ as the vacuum expectation value (vev) of the Higgs field, we can write the Higgs field in unitary gauge as
 
 \begin{equation}
     \phi = \frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ v + H(x) \end{pmatrix},
@@ -75,7 +77,7 @@ Choosing $v = \sqrt{-\mu^2/\lambda}$ as the vacuum expectation value (VEV) of th
 
 With $v \approx 246$ GeV and $H(x)$ the physical Higgs boson field.
 Plugging Eq. \ref{higgs_field} into the SM Lagrangian gives mass terms for the weak gauge bosons and fermions, with the photon remaining massless, as well as a mass term for the Higgs boson itself.
-The $W^1$, $W^2$, and $W^3$ bosons mix with the $B$ boson to give the physical $W^{\pm}$, $Z$, and $\gamma$ bosons.
+The $W^3$ boson mixes with the $B$ boson to give the physical $Z$ and $\gamma$ bosons, while the $W^1$ and $W^2$ bosons combine to form the $W^{\pm}$ bosons.
 The masses of the weak gauge bosons are given by 
 \begin{equation}
     m_W = \frac{1}{2}vg, \quad m_Z = \frac{1}{2}v\sqrt{g^2 + g'^2},
@@ -103,7 +105,7 @@ One of the most compelling pieces of evidence for BSM physics is the existence o
 Astrophysical and cosmological observations provide strong evidence through the gravitational effects of dark matter on visible matter.
 This includes galaxy rotation curves \cite{1980ApJ...238..471R}, gravitational lensing \cite{Massey_2010}, and the cosmic microwave background (CMB) anisotropies \cite{Hu_2002}.
 In particular, the rotation curve of galaxy M33, where the observed rotation curve does not match the expectation due to visible matter, indicates the presence of additional unseen mass, attributed to dark matter.
-The observation of the Bullet Cluster, where two galaxy clusters have collided and the dark matter component has been observed to separate from the baryonic matter, provides a clear picture of graviational lensing.
+The observation of the Bullet Cluster, where galaxies have collided and the dark matter component has been observed through gravitational lensing and is separate from the baryonic matter, provides clear evidence for the existence of dark matter.
 Both examples can be seen in Fig. \ref{galaxy_rotation_curve}.
 
 \begin{figure}[htbp]
@@ -121,7 +123,7 @@ While the evidence is strong, the exact physical nature of dark matter remains u
 Dark matter must meet several criteria from current observational constraints, however, including being stable on cosmological timescales, non-baryonic, having weak or no interactions with electromagnetic radiation, and the correct relic abundance to account for the observed dark matter density in the universe.
 These criteria have led to many proposed candidates for dark matter particles, including weakly interacting massive particles (WIMPs), axions, and sterile neutrinos, among others.
 It is possible that dark matter might be contained within a dark sector, with its own particles and interactions, accessible to the Standard Model only through so-called portal interactions.
-The Higgs boson is a prime candidate for such a portal, given its unique properties, coupling to mass, and the current lack of constraints on the Higgs ito invisible branching ratio.
+The Higgs boson is a prime candidate for such a portal, given its unique properties, coupling to mass, and the current constraints on the Higgs to invisible branching ratio.
 In order to explore these possiblities experimentally, there must be some particle(s) that mediate the interactions between the dark sector and the Standard Model, and have an accessible mass scale for current experiments such as the LHC.
 This section will discuss two possible dark sector models that could be probed through Higgs portal interactions at the LHC: the dark meson sector of stealth dark matter and a dark photon model.
 
@@ -135,7 +137,7 @@ The specific dark meson model explored in this thesis is detailed in Ref. \cite{
 The dark matter candidate in this model is a composite baryonic scalar of an $SU(N)_D$ strongly interacting dark sector, with $N$ being even.
 The lightest baryonic scalar is stable due to an accidental $U(1)_{dark baryon}$ symmetry of the dark sector, making it a viable dark matter candidate.
 The dark fermions also form mesonic bound states, called dark mesons, that could be accessible at the LHC.
-These dark mesons are previously unconstrained by existing searches due to the nature of BSM searches that typically require high MET or high mass ressonances while the dark meson mass regime is lower.
+These dark mesons are previously unconstrained by existing searches due to the nature of BSM searches that typically require high MET or high mass resonances while the dark meson mass regime is lower.
 
 This new dark sector contains at least one triplet of dark pions and dark rhos, $(\pi^{\pm}_D,\pi^0_D)$ and $(\rho^{\pm}_D,\rho^0_D)$, which are pseudoscalars and vectors respectively.
 Charged under the electroweak interaction and $SU(N)_D$, the dark fermions break the global chiral symmetry of the dark sector, leading to the decay of the dark pions and rhos to Standard Model particles through electroweak interactions. 
@@ -156,7 +158,7 @@ Searches for dark mesons at the LHC can be parameterized by the dark pion mass $
     \label{eta_definition}
 \end{equation}
 
-If $\eta$ < .5, the dark rho can decay to two dark pions with a branching fraction near 1, while if $\eta$ > .5, the dark rho decays to pairs of SM fermions.
+If $\eta < 0.5$, the dark rho can decay to two dark pions with a branching fraction near 1, while if $\eta > 0.5$, the dark rho decays to pairs of SM fermions.
 The electroweak portal between the dark sector and SM is primarily through the kinetic mixing term,
 
 \begin{equation}
@@ -178,7 +180,7 @@ The resonant production via kinetic mixing is the dominant production mode, with
 
 \subsection{The Dark Photon}
 
-Another more minimal extension to the Standard Model to access a dark sector that has gained traction in recent years is through the introduction of a new $U(1)_D$ gauge symmetry, with the associated gauge boson being the dark photon, $\gamma_D$.
+Another minimal extension to the Standard Model, that has gained traction in recent years, and allows access to a dark sector is through the introduction of a new $U(1)_D$ gauge symmetry, with the associated gauge boson being the dark photon, $\gamma_D$.
 The dark photon can either be massless or massive, with the former being the focus of this thesis.
 For a massive dark photon, kinetic mixing between the dark photon and the SM hypercharge gauge boson $B$ is allowed.
 A massless dark photon cannot couple at tree level to any SM particles, and interacts via messenger fields of dimension higher than 4.
@@ -210,7 +212,8 @@ An interaction Lagrangian for this model can be written as
 \end{equation}
 
 where $\lambda$ is a universal coupling, the $S_0$ is a singlet scalar field with a vev, and $S^{U}_{L,R}$ and $S^{D}_{L,R}$ are the doublet up-type and down-type messenger fields, respectively.
-Once the scalar field $S_0$ acquires a vev, the messenger fields acquire mass and generate trilinear couplings between the dark photon and the SM Higgs boson at one loop level, $H_{\gamma\gamma_D}$ and $H_{\gamma_D\gamma_D}$, with couplings proportional to $\mu_S=\lambda_S<S_0>$.
+This vev is similar to the Higgs vev described in Section \ref{sec:ewsb}, and allows for the messenger fields to acquire mass and generate the necessary interactions between the dark photon and the SM.
+Once the scalar field $S_0$ acquires a vev, the messenger fields acquire mass and generate trilinear couplings between the dark photon and the SM Higgs boson at one loop level, $H\gamma\gamma_D$ and $H\gamma_D\gamma_D$, with couplings proportional to $\mu_S=\lambda_S<S_0>$.
 After electroweak symmetry breaking, a mixing term between the left and right messenger fields is generated, proportional to $\mu_S\nu$ where $\nu$ is the Higgs vev.
 Feynman diagrams that contribute to the $H_{\gamma\gamma_D}$ coupling are shown in Fig. \ref{dark_photon_feynman}.
 
