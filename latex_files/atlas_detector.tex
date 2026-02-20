@@ -14,7 +14,7 @@ A vital off-detector system is the Trigger and Data Acquisition (TDAQ) system, w
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{../images/my_images/atlas_schematic.jpg}
-    \caption{Schematic diagram of the ATLAS detector and its sub-systems \cite{PERF-2007-01}.}
+    \caption{Schematic diagram of the Run 2 ATLAS detector and its sub-systems \cite{PERF-2007-01}.}
     \label{atlas_schematic}
 \end{figure}
 
@@ -63,19 +63,19 @@ The innermost subsystem is the Pixel Detector \cite{ATLAS-TDR-11}, starting at a
 It is composed of layers of 92 million silicon pixel sensors, each measuring 50 $\mu$m by 400-600 $\mu$m in size.
 Sensors are stacked in four overlapping layers in the barrel region, and 3 disks on each end cap providing coverage out to $|\eta| < 2.5$.
 The overlapping geometry provides a granularity of approximately 10 $\mu$m.
-The closest layer to the beamline is the Insertable B-Layer (IBL) added in 2014 for Run 2 operation and beyond \cite{ATLAS-TDR-19}.
-The purpose of the IBL upgrade is to improve the resolution of secondary vertices and thus b-tagging performance, as well as further suppress pileup vertices.
+The closest layer to the beamline is the Insertable B-Layer (IBL), which was added in 2014 for Run 2 operation and beyond \cite{ATLAS-TDR-19}.
+The purpose of the IBL upgrade is to improve the resolution of secondary vertices and thus $b$-tagging performance, as well as further suppress pileup vertices.
 
 Surrounding the Pixel Detector is the Semiconductor Tracker (SCT) \cite{IDET-2013-01} at a radial distance of 122.5 mm to 520 mm, composed of silicon microstrip sensors.
 SCT sensors are arranged in pairs of back-to-back strips and are larger than pixel sensors.
-There are four SCT barrel layers out to $\eta$ < 1, and nine end cap disks on each side extending coverage to $|\eta| < 2.5$.
+There are four SCT barrel layers out to $|\eta| < 1$, and nine end cap disks on each side extending coverage to $|\eta| < 2.5$.
 The precision of the SCT is approximately 16 $\mu$m in the r-$\phi$ direction and 580 $\mu$m in the z direction.
 
 The outermost subsystem of the ID is the Transition Radiation Tracker (TRT) \cite{PERF-2007-01}, extending from a radial distance of 563 mm to 1066 mm.
 It uses a completely different technology than the inner two systems, consisting of 298,304 drift tubes, or straws.
 Each straw is a 4 mm diameter tube filled with an ionizing gas mixture and a central grounded wire made of gold plated tungsten.
 The gas mixture is 70\% Xe, 27\% CO$_2$, and 3\% O$_2$.
-Extending out to $|\eta| < 2.0$, the TRT has a barrel section with straws parallel to the beamline, and two end cap sections with straws arranged radially, and provides ~36 additional hits to improve tracking.
+Extending out to $|\eta| < 2.0$, the TRT has a barrel section with straws parallel to the beamline, and two end cap sections with straws arranged radially, and provides $\sim36$ additional hits to improve tracking.
 As particles pass through the polypropylene material between straws, they emit transition radiation, which ionizes the gas in the straws.
 The larger size of the TRT provides a better measurement of the bend of tracks in the magnetic field, improving momentum resolution.
 
@@ -100,7 +100,7 @@ Muons and neutrinos are the only particles that escape the calorimeters with min
 Sampling calorimetry involves alternating layers of dense absorbing material and active sensing material.
 Absorbing layers induce particle showers by scattering the incoming particle(s).
 The particle showers interact with the active layers through ionization or scintillation, allowing for multiple measurements of energy deposition as they pass through the calorimeter.
-The calorimter resolution within ATLAS is generally parameterized as:
+The calorimeter resolution within ATLAS is generally parameterized as:
 
 \begin{equation}\label{calorimeter_resolution}
     \frac{\sigma_E}{E} = \frac{a}{\sqrt{E}} \oplus \frac{b}{E} \oplus c
@@ -154,7 +154,7 @@ The physically largest component of the ATLAS calorimeter system is the hadronic
 Particles such as charged and neutral pions, kaons, and protons punch through the EM calorimeters and interact via the strong interaction with nuclei in the absorber material, producing hadronic showers.
 These showers are commonly described through the interaction length $\lambda$, where a hadron has a $1-\frac{1}{e}$ chance of interacting with a nucleus.
 Composed of the Tile calorimeter in the range $|\eta| < 1.475$, and the HEC in $1.475 < |\eta| < 3.2$, scintillators and LAr are used respectively.
-Interaction lengths extend out to ~17 in Tile and ~11 in the HEC.
+The detector extends out to $\sim17$ interaction lengths in Tile and $\sim11$ interaction lengths in the HEC.
 
 The Tile calorimeter \cite{ATLAS-TDR-03} uses steel as the absorber and plastic scintillating tiles as the active material as shown in Fig. \ref{tile_calorimeter}, with a radius from 2.28 m to 4.25 m.
 It takes its name from the rectangular plastic scintillating tiles that are arranged in layers between steel absorber plates.
@@ -194,8 +194,8 @@ Each contains a matrix of small concentric rods and tubes, with the rods held at
     \label{fcal_cells}
 \end{figure}
 
-The LAr gap between a rod and tube contains a PEEK spacer to maintain a gap of ~260 $\mu$m in the first module and ~500 $\mu$m in the other two modules for fast and uniform signal collection.
-A dense absorber with matrix cells is necessary to contain the high energy particle showers in this region, with interaction lengths of ~8 in the copper module and ~10 in the tungsten modules.
+The LAr gap between a rod and tube contains a polyether ether ketone (PEEK) spacer to maintain a gap of $\sim260$ $\mu$m in the first module and $\sim500$ $\mu$m in the other two modules for fast and uniform signal collection.
+A dense absorber with matrix cells is necessary to contain the high energy particle showers in this region, with interaction lengths of $\sim8$ in the copper module and $\sim10$ in the tungsten modules.
 
 
 
@@ -220,7 +220,7 @@ All MDT and CSC chambers were constructed with a high precision mechanical assem
 
 In the barrel region, Resistive Plate Chambers (RPC) are used for muon triggering.
 The RPCs are composed of two parallel resistive plates with a gap inbetween filled with tetrafluoroethane gas.
-Readout strips on the outside of the plates provide $x$and $y$ track measurements.
+Readout strips on the outside of the plates provide $x$ and $y$ track measurements.
 The inner RPC layers are used for a low $p_T$ trigger, while the combined layers are used for a high $p_T$ trigger.
 While the RPCs provide a fast response for triggering, they have a coarser spatial resolution than the MDTs.
 Triggering in the end caps is provided by Thin Gap Chambers (TGC) covering $|\eta|$ out to 2.4.
@@ -249,9 +249,9 @@ The two end cap toroids are each made of eight superconducting coils arranged in
 
 \subsection{Trigger and Data Acquisition (TDAQ)}\label{subsec:tdaq}
 
-At the LHC bunch crossing rate of 40 MHz, ATLAS produces an enormous amount of data, over 1 PB per second if all detector information were to be recorded.
+At the LHC bunch crossing rate of 40 MHz, ATLAS produces an enormous amount of data at a rate of over 1 PB per second if all detector information were to be recorded.
 Storing and processing this amount of data is not feasible, so a trigger system is implemented to select events based on distinctive features or characteristics that indicate physics processes of interest.
-The ATLAS Trigger and Data Acquisition (TDAQ) system \cite{tdaq_2016} utilizes a two level trigger system to reduce the 40 MHz LHC bunch crossing rate to a manageable 1 kHz for offline storage and analysis.
+The ATLAS Trigger and Data Acquisition (TDAQ) system \cite{tdaq_2016} utilizes a two-level trigger system to reduce the 40 MHz LHC bunch crossing rate to a manageable 1 kHz in Run 2 for offline storage and analysis.
 Events are selected based on trigger signatures designed to capture the interesting physics while rejecting backgrounds, optimized for the computing and storage resources available.
 Triggers are prioritized based on physics goals and needs of analysis groups, with high event yield triggers prescaled to reduce their rate.
 The TDAQ system can be seen in Fig. \ref{tdaq_system}.
@@ -263,7 +263,7 @@ The TDAQ system can be seen in Fig. \ref{tdaq_system}.
     \label{tdaq_system}
 \end{figure}
 
-In Run 2, the first level trigger (L1) is a hardware based system that primarily uses information from the calorimeters and muon spectrometer, L1Calo and L1Muon, to make a decision within 2.5 $\mu$s \cite{TRIG-2016-01}.
+In Run 2, the first level trigger (L1) is a hardware-based system that primarily uses information from the calorimeters and muon spectrometer, L1Calo and L1Muon, to make a decision within 2.5 $\mu$s \cite{TRIG-2016-01}.
 The 40 MHz collision rate is reduced to a maximum of 100 kHz before data is sent to the high level trigger (HLT).
 L1Calo uses LAr and Tile calorimeter information to identify electrons, photons, and jets using coarse granularity trigger towers of size 0.1 $\times$ 0.1 in $\eta$-$\phi$.
 Fast algorithms identify high energy deposits and apply isolation criteria to select EM objects within a region of interest (ROI).
@@ -285,6 +285,14 @@ The ATLAS detector underwent several upgrades during the Long Shutdown 2 (LS2) f
 New electronic readout systems were installed in the LAr and Tile calorimeters to handle higher trigger rates and improve performance.
 The New Small Wheels (NSWs) in the MS end caps replaced the existing Small Wheels, with the data recorded using new readout electronics.
 With the incorporation of the NSW and the new LAr and Tile readout systems, the trigger system was also upgraded to utilize higher granularity information at L1 while maintaining the 100 kHz acceptance rate.
+ATLAS in the Run 3 configuration can be seen in Fig. \ref{atlas_run3}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{../images/my_images/atlas_schematic_new.png}
+    \caption{Schematic of the ATLAS detector in the Run 3 configuration, with the New Small Wheel highlighted\cite{Aad_2024}.}
+    \label{atlas_run3}
+\end{figure}
 
 \subsubsection{New Small Wheel}\label{subsubsec:new_small_wheel}
 
@@ -329,12 +337,12 @@ With full detector information available and higher granularity calorimeter data
     \label{run3_tdaq}
 \end{figure}
 
-While the two level trigger architecture remains the same, both the L1 and HLT systems were improved to support the new detector readout from the calorimeters and NSW and advance the ATLAS physics goals for Run 3.
-Within the L1 system, new feature extractors (FEX) boards exploit the higher granularity calorimeter data to perform more advanced object reconstruction and identification.
-These include the eFEX for electrons, photons, and taus; jFEX for jets, taus, and $E_T^{\text{miss}}$; gFEX for large-R jets, $E_T^{\text{miss}}$, and $H_T$.
+While the two-level trigger architecture remains the same, both the L1 and HLT systems were improved to support the new detector readout from the calorimeters and NSW and advance the ATLAS physics goals for Run 3.
+Within the L1 system, new feature extractor (FEX) boards exploit the higher granularity calorimeter data to perform more advanced object reconstruction and identification.
+These include the eFEX for electrons, photons, and taus; jFEX for jets, taus, and $E_T^{\text{miss}}$; gFEX for large-R jets, $E_T^{\text{miss}}$, and the scalar sum of transverse momenta of jets, ($H_T$).
 The FEXs use custom FPGA-based hardware to implement fast algorithms for reconstruction within the L1 latency budget.
 Tile calorimeter energies are now digitized by the Tile REciever EXchange (TREX) board.
 The L1Muon system was also upgraded to incorporate the NSW data for improved muon triggering in the end cap regions.
 The HLT was refined to handle the data more efficiently and implement more advanced algorithms.
 FELIX is used to route data more efficiently to the HLT servers running software readout drivers. 
-New software support of multi-threading within the HLT allows for operation at higher event rates without reaching computing resource limits.
+New software support of multi-threading within the HLT allows for operation at higher event rates, 3 kHz, without reaching computing resource limits.

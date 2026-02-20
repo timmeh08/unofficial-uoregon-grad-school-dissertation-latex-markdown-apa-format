@@ -19,7 +19,7 @@ The High-Luminosity LHC (HL-LHC) is scheduled to begin operations in  2030 after
 The CERN accelerator complex prepares and accelerates protons before injecting them into the LHC as seen in Fig. \ref{accelerator_complex}.
 Prior to Run 3, hydrogen gas is ionized to produce protons, which are then accelerated to an energy of 50 MeV in the linear accelerator (LINAC2) before being injected into the Proton Synchrotron Booster (PSB).
 Run 3 replaced LINAC2 with LINAC4, which accelerates negative hydrogen ions (H-) to 160 MeV before being injected into the PSB.
-Next, a series of synchrotrons further the acceleration process: the PSB accelerates protons to 2 GeV, followed by the Proton Synchrotron (PS) with 26 GeV, and finally the Super Proton Synchrotron (SPS) where protons reach an energy of 450 GeV.
+Next, a series of synchrotrons furthers the acceleration process: the PSB accelerates protons to 2 GeV, followed by the Proton Synchrotron (PS) with 26 GeV, and finally the Super Proton Synchrotron (SPS) where protons reach an energy of 450 GeV.
 Within the PS, the protons are grouped into bunches containing ~$10^{11}$ protons each, and these bunches are split into opposing beams in the SPS.
 The two beams are finally ready to be injected into the LHC for the final acceleration up to 6.5 TeV per beam in Run 2, and 6.8 TeV per beam in Run 3.
 The beams collide at the 4 interaction points every 25 ns, resulting in a maximum of 40 million collisions per second. 
@@ -44,7 +44,7 @@ Opposite polarity fields applied by dipole magnets shown in Fig. \ref{dipole} be
 This design allows for the opposing beams to circulate in separate beam pipes within the same magnet structure, reducing the overall size of the beam pipe to fit within the LEP tunnel.
 The 1232 dipole magnets are superconducting as well, and the specially designed NbTi Rutherford wires are cooled to 1.9K with liquid helium, generating magnetic fields up to 8.3 T.
 While the overall shape of the LHC is circular, the path is more accurately described by straight sections with bends at the dipoles.
-The PSB, PS, and SPS use superconducting dipole magnets similarly, with field strengths of .087, 1.24, and 2.02 T respectively \cite{Tommasini:1233948}.
+The PSB, PS, and SPS use superconducting dipole magnets similarly, with field strengths of .087, 1.24, and 2.02 T, respectively \cite{Tommasini:1233948}.
 The quadrupole magnets focus the beams in these straight sections, keeping protons tightly packed and prepared for collision at the interaction points.
 Single quadrupole magnets focus on one axis while defocusing the other, so they are arranged in sequences of alternating orientations.
 
@@ -54,21 +54,21 @@ There are 2808 equally spaced bunches in each beam, colliding at the interaction
 The number of proton collisions is characterized by the luminosity and cross section:
 
 \begin{equation}\label{N_collisions}
-    N = \sigma \mathcal{L}
+    N = \sigma \mathcal{L},
 \end{equation}
 
-Where $\sigma$ is the cross section of the proton-proton interaction process, and $\mathcal{L}$ is the luminosity integrated over a time interval.
-The inelastic proton-proton cross section at a COM energy of 13 TeV is approximately 80 mb (1 mb = $10^{-27}$ cm$^2$) \cite{Aaboud:2016mmw}.
+where $\sigma$ is the cross section of the proton-proton interaction process, and $\mathcal{L}$ is the luminosity integrated over a time interval.
+The inelastic proton-proton cross section at a center-of-mass energy of 13 TeV is approximately 80 mb (1 mb = $10^{-27}$ cm$^2$) \cite{Aaboud:2016mmw}.
 The equation is also valid for a rate of events, where $N$ is replaced by $\frac{dN}{dt}$ and $\mathcal{L}$ is replaced by the instantaneous luminosity $\mathcal{L}_{inst}$.
 The instantaneous luminosity depends on properties of the LHC beams and is given by:
 
 \begin{equation}\label{luminosity}
-    \mathcal{L}_{inst} \propto \frac{N^2 f_{rev}}{4 \epsilon \beta^*}
+    \mathcal{L}_{inst} \propto \frac{N^2 f_{rev}}{4 \epsilon \beta^*},
 \end{equation}
 
-Where $N$ is the number of protons per bunch, $f_{rev}$ is the revolution frequency of the beams, $\epsilon$ is the normalized transverse beam emittance, and $\beta^*$ is the beta function at the interaction point.
+where $N$ is the number of protons per bunch, $f_{rev}$ is the revolution frequency of the beams, $\epsilon$ is the normalized transverse beam emittance, and $\beta^*$ is the beta function at the interaction point.
 The emittance characterizes the spread of the beam in position and moment space, while beta is a measure of the magnetic focusing strength at the interaction point.
-$\epsilon$ and $\beta^*$ have units of length, so the luminosity has units of cm$^{-2}$s$^{-1}$.
+$\epsilon$ and $\beta^*$ have units of length, so the instantaneous luminosity has units of cm$^{-2}$s$^{-1}$.
 The beams are designed to collide at a slight crossing angle, giving a gamma and geometric factor which are ommitted here for simplicity.
 Given nominal values of $N=1.15\times10^{11}$ protons per bunch, $f_{rev}=11.245$ kHz, $\epsilon=3.75$ $\mu$m, and $\beta^*=0.55$ m, the approximate LHC instantaneous luminosity is $1\times10^{34}$ cm$^{-2}$s$^{-1}$ \cite{Bruening:782076}.
 This design luminosity was surpassed in Run 2 and Run 3, reaching peak instantaneous luminosities above  $2.1\times10^{34}$ cm$^{-2}$s$^{-1}$.
@@ -86,8 +86,8 @@ Pileup can be in-time, where multiple interactions occur within the same bunch c
     \label{pileup}
 \end{figure}
 
-With Run 3 coming to an end in mid 2026, the LHC will undergo a third long shutdown to prepare for the HL-LHC era, beginning in 2030 as shown in Fig. \ref{hl_lhc_timeline}. 
-The HL-LHC will increase the instantaneous luminosity to $7.5\times10^{34}$ cm$^{-2}$s$^{-1}$, with a goal of reaching the design COM energy of 14 TeV and collecting up to 3000 fb$^{-1}$ of integrated luminosity over a decade of operation \cite{Apollinari:2284929}.
+With Run 3 coming to an end in mid 2026, the LHC will undergo a third long shutdown to prepare for the HL-LHC era, planned to begin in 2030 as shown in Fig. \ref{hl_lhc_timeline}. 
+The HL-LHC will increase the instantaneous luminosity to $7.5\times10^{34}$ cm$^{-2}$s$^{-1}$, with a goal of reaching the design center-of-mass energy of 14 TeV and collecting up to 3000 fb$^{-1}$ of integrated luminosity over a decade of operation \cite{Apollinari:2284929}.
 Pileup is expected to reach an average of 200 interactions per bunch crossing, requiring significant upgrades to the LHC and experiments to handle and take advantage of the factor of 4 increase in pileup.
 
 Chapter \ref {ch:hl-lhc-atlas-upgrades} will discuss the HL-LHC and corresponding upgrades to ATLAS in more detail.
