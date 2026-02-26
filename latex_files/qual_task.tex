@@ -613,12 +613,17 @@ Based on the findings in the above studies, the 3-shell USCA algorithm would be 
 However, the 2-shell version still performs comparable to the 422 algorithm in terms of trigger efficiencies, with only a small change in jet energy resolution and speed of the trigger turn-on.
 It is thus the official recommendation of these studies to start implementing a firmware algorithm that most closely resembles the 2-shell USCA algorithm. 
 Future studies are needed on the clustering algorithm to fully understand the physics performance and there is room to further optimize the software version of the algorithm.
-The highest priority item is to test the USCA algorithm on release 24 upgrade samples within {\fontfamily{cmtt}\selectfont athena}. 
-Detailed jet energy resolution studies can still be done with the current ntuples, as well as plots showing the signal acceptance vs background rejection of the various jet triggers.
-Continued collaboration with the firmware engineers is needed to replicate the software version in firmware and validate its performance.
-The merging calculation in the USCA algorithm is one of its benefits, and a major task is to optimize and test its feasibility in firmware.
-Since the algorithm doesn't require cell $E_T$ for growing or merging, it is possible to run this step before the energies arrive on the GEPs, but the firmware may need to use dynamical lists to accomplish the merging.
-Continued work on the firmware side will also include creating more test vectors, input and output TOB files, and a future bit-wise simulation of the algorithm.
+As of this writing, Global Trigger integration tests are being conducted at CERN with a modified version of clustering called cell towers.
+These towers are formed by summing the $E_T$ of all cells in a 0.1 x 0.1 $\eta$-$\phi$ region, and are used as inputs to pileup suppression and the jet reconstruction algorithm instead of clusters for the time being.
+It is expected that the cell towers will be used for commissioning the Global Trigger and initial data taking. 
+The Global Trigger is primarily a firmware project, and its dynamic nature allows for implementation of the USCA algorithm in firmware at a later time with some modifications to optimize for latency and bandwidth.
+Steps to incorporate the USCA algorithm, or one like it, onto the GEPs can be taken in parallel to the current integration tests with continued software and firmware studies.
+% The highest priority item is to test the USCA algorithm on release 24 upgrade samples within {\fontfamily{cmtt}\selectfont athena}. 
+% Detailed jet energy resolution studies can still be done with the current ntuples, as well as plots showing the signal acceptance vs background rejection of the various jet triggers.
+% Continued collaboration with the firmware engineers is needed to replicate the software version in firmware and validate its performance.
+% The merging calculation in the USCA algorithm is one of its benefits, and a major task is to optimize and test its feasibility in firmware.
+% Since the algorithm doesn't require cell $E_T$ for growing or merging, it is possible to run this step before the energies arrive on the GEPs, but the firmware may need to use dynamical lists to accomplish the merging.
+% Continued work on the firmware side will also include creating more test vectors, input and output TOB files, and a future bit-wise simulation of the algorithm.
 % merging in firmware
 
 
