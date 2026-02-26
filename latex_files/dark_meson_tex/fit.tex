@@ -1,0 +1,180 @@
+Signal hypotheses are evaluated against the data by performing profile-likelihood fits in each analysis channel. 
+The set of nuisance parameters $\theta$ that corresponds to the systematic uncertainties is scaled in such a fashion that, before the fit, all individual uncertainties $j$ have $\theta_j=0$. In addition, the uncertainties of these nuisance parameters $\sigma$ are scaled to fulfill $\sigma_j=1$ before fitting. Defining $\gamma$ as the set of statistical uncertainties with $\gamma_i$ the uncertainty on the number of predicted events of a specific bin $i$, the set is scaled to be a factor around 1. %Similarly, the set of uncertainties on the nuisance parameters modeling the systematic uncertainties $\sigma$ are scaled to fulfill $\sigma_j=1$ prior to fitting.
+The profile-likelihood fit is then performed by minimizing the quantity $q(\mu)=-2\log\mathcal{L}$, where the likelihood $\mathcal{L}$ is defined as
+\begin{equation}
+\mathcal{L}(\mu,\theta|S,B,N)=\prod_{i\in\text{bins}}\mathcal{P}\left(N_i|\mu S_i+B_i\right)\times\mathcal{P}\left(S_i+B_i|\gamma_i\right)\prod_{j\in\text{syst.}}\mathcal{G}\left(\theta_j,\sigma_j\right)
+\label{eq:likelihood}
+%See: https://cds.cern.ch/record/1456844/files/CERN-OPEN-2012-016.pdf
+\end{equation}
+with $N$ being the number of data events, $S$ the predicted number of signal events and $B$ the expected number of background events.
+Statistical and systematic uncertainties are taken to be Poissonian ($\mathcal{P}$) and Gaussian ($\mathcal{G}$) distributed parameters, respectively.
+The fit is evaluated using the \textsc{RooFit}~\cite{RooFit} package with the minimization conducted with the \textsc{Minuit2} package~\cite{ref:1589282}, which yields the optimal values for $\mu$ and the set of parameters $\theta_i$, $\gamma_i$ and $\sigma_i$ in a signal plus background fit. %From these parameters it is possible to create a modified set of plots showing the post-fit distributions. 
+
+\subsection{All-hadronic channel}
+\label{sec:fit_allhad}
+
+The fit in the \allhad channel is performed over all nine SR bins simultaneously. 
+Since the multijet estimate constrains background to the data, most systematic uncertainties (other than from the multijet estimate) have limited impact on the final result and all systematic uncertainties below $1\%$ are ignored. Surviving uncertainties are kept as nuisance parameters in the fit. Because simulated backgrounds constitute less than $20\%$ of the total SM background in the SR, no CRs are used to scale the simulated estimates.
+
+\begin{figure}[tbp]
+  \centering
+  %\subfloat[]{\includegraphics[width=0.495\textwidth]{313279_allhad_sr_prefit.pdf}\label{fig:prefit}}
+  %\subfloat[]{\includegraphics[width=0.495\textwidth]{313279_allhad_sr_postfit.pdf}\label{fig:postfit}}
+  \includegraphics[width=0.495\textwidth]{313279_allhad_sr_postfit.pdf}
+  \caption{Comparison of the events yields in data and the background prediction after the fit under the background-only hypothesis in all bins of the \allhad SR. The dashed line is stacked onto the SM background and shows an example \sul signal with $\etaD=0.25$ and $\dpmass=500~\GeV$. The uncertainty bands contain all statistical and systematic uncertainties. The horizontal axis labels reflect the different SR bins, with the first number indicating the lower boundary of the leading large-$R$ jet mass bin and the second number the lower boundary of the sub-leading large-$R$ jet mass bin.}
+  \label{fig:postfit_distribution}
+\end{figure}
+
+Figure~\ref{fig:postfit_distribution} shows the distributions in all SR bins after fitting. No significant pulls or constraints are observed for the fitted nuisance parameters. The results are also summarized in Table~\ref{tab:allhad_sr_yields}. As can be seen the data are very well described by the background-only hypothesis with no significant excess of events above the SM prediction. 
+
+\begin{table}[htb]
+    \caption{Observed and predicted event yields after the fit under the background-only hypothesis in all nine \allhad SR mass bins. The name of each column corresponds to the SR bins: the leading large-$R$ jet lower mass boundary in \GeV is followed by the sub-leading large-$R$ jet lower mass boundary; the same convention is used in Figure~\ref{fig:postfit_distribution}. The quoted uncertainties contain statistical and systematic components. The total post-fit uncertainty can be smaller than the sum in quadrature of the different components due to correlations resulting from the fit to data.}
+    \label{tab:allhad_sr_yields}
+    \centering
+    \begin{tabular}{c|r@{}lr@{}lr@{}l}
+       & \multicolumn{2}{c}{SR300\_250} & \multicolumn{2}{c}{SR300\_300} & \multicolumn{2}{c}{SR300\_350} \\ 
+      \toprule
+      V+jets & \multicolumn{2}{c}{$<0.01$}  & $\,\,1.97\,\pm\,$ & $0.89$ & $\,\,0.28\,\pm\,$ & $0.06$ \\ 
+      Single top & $0.12\,\pm\,$ & $0.07$ & $0.00\,\pm\,$ & $0.03$ & \multicolumn{2}{c}{$<0.01$}  \\ 
+      $t\bar{t}+X$ & $0.30\,\pm\,$ & $0.04$ & $0.21\,\pm\,$ & $0.09$ & $0.17\,\pm\,$ & $0.04$  \\ 
+      $t\bar{t}$ & $2.9\,\pm\,$ & $1.9$ & $1.6\,\pm\,$ & $1.1$ & $1.78\,\pm\,$ & $0.76$ \\ 
+      Multijet & $16.5\,\pm\,$ & $4.3$ & $10.5\,\pm\,$ & $3.6$ & $11.1\,\pm\,$ & $3.1$  \\ 
+      \midrule
+       Total SM & $19.8\,\pm\,$ & $4.0$ & $14.2\,\pm\,$ & $3.3$ & $13.4\,\pm\,$ & $2.9$ \\ 
+      \midrule
+      Data & \multicolumn{2}{c}{20} & \multicolumn{2}{c}{14} & \multicolumn{2}{c}{16} \\ 
+      \bottomrule
+      \multicolumn{4}{c}{\phantom{0}}\\
+
+       & \multicolumn{2}{c}{SR325\_250} & \multicolumn{2}{c}{SR325\_300} & \multicolumn{2}{c}{SR325\_350} \\ 
+      \toprule
+      V+jets & $\,\,0.74\,\pm\,$ & $0.64$ & $\,\,0.12\,\pm\,$ & $0.18$ & $\,\,0.19\,\pm\,$ & $0.16$ \\ 
+      Single top & $0.36\,\pm\,$ & $0.06$ & $0.12\,\pm\,$ & $0.13$ & $0.27\,\pm\,$ & $0.15$ \\ 
+      $t\bar{t}+X$ & $0.35\,\pm\,$ & $0.06$ & $0.44\,\pm\,$ & $0.11$ & $0.50\,\pm\,$ & $0.07$ \\ 
+      $t\bar{t}$ & $6.4\,\pm\,$ & $3.6$ & $4.0\,\pm\,$ & $2.0$ & $4.4\,\pm\,$ & $2.1$ \\ 
+      Multijet & $33.4\,\pm\,$ & $6.7$ & $23.3\,\pm\,$ & $5.2$ & $18.1\,\pm\,$ & $5.0$ \\ 
+      \midrule
+       Total SM & $41.2\,\pm\,$ & $5.6$ & $28.0\,\pm\,$ & $4.8$ & $23.5\,\pm\,$ & $4.6$ \\ 
+      \midrule
+      Data & \multicolumn{2}{c}{41} & \multicolumn{2}{c}{28} & \multicolumn{2}{c}{23} \\ 
+      \bottomrule
+      \multicolumn{4}{c}{\phantom{0}}\\
+
+        & \multicolumn{2}{c}{SR400\_250} & \multicolumn{2}{c}{SR400\_300} & \multicolumn{2}{c}{SR400\_350} \\ 
+      \toprule
+      V+jets & $\,\,0.71\,\pm\,$ & $0.55$ & \multicolumn{2}{c}{$<0.01$}  & $\,\,1.19\,\pm\,$ & $0.30$ \\ 
+      Single top & \multicolumn{2}{c}{$<0.01$}  & $0.47\,\pm\,$ & $0.08$ & $0.11\,\pm\,$ & $0.02$ \\ 
+      $t\bar{t}+X$ & $0.34\,\pm\,$ & $0.07$ & $0.40\,\pm\,$ & $0.07$ & $0.73\,\pm\,$ & $0.10$ \\ 
+      $t\bar{t}$ & $3.7\,\pm\,$ & $1.8$ & $3.1\,\pm\,$ & $2.5$ & $6.1\,\pm\,$ & $3.9$ \\ 
+      Multijet & $20.2\,\pm\,$ & $5.3$ & $14.7\,\pm\,$ & $4.6$ & $28\,\pm\,$ & $12$ \\ 
+      \midrule
+      Total SM & $25.0\,\pm\,$ & $4.8$ & $18.6\,\pm\,$ & $4.0$ & $36\,\pm\,$ & $11$ \\ 
+      \midrule
+      Data & \multicolumn{2}{c}{27} & \multicolumn{2}{c}{20} & \multicolumn{2}{c}{45} \\ 
+      \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{One-lepton channel}
+\label{sec:fit_onelep}
+In the \onelep channel, a profile-likelihood fit is performed to the binned \dave spectrum in the six SRs and the six CRs defined based on jet and \bjet multiplicity requirements, simultaneously.
+As already indicated in Section~\ref{sec:bkg_onelep}, two independent normalization factors are used for the \ttbar background depending on whether in addition to \ttbar any $b$-quarks are present in the event. These two normalization factors are denoted by \kttb and \kttnb. 
+To avoid over-constraining the background modeling nuisance parameters, the theoretical systematic uncertainties are treated as uncorrelated among different \ttbar flavors, jet and \bjet multiplicity bins, and between their shape and acceptance components.
+
+The event yields for all SRs, CRs and VRs are shown after a fit to the data under the background-only hypothesis in Figure~\ref{fig:1lep_summary}. 
+The corresponding distributions of \dave are shown in Figure~\ref{fig:1lep_postfit_SR} for all jet and \bjet multiplicity bins of the SR. The SM background estimate is in good agreement with data after the background-only fit. The post-fit normalization factors for the \ttbar background components are $\kttnb=0.92^{+0.09}_{-0.08}$ and $\kttb=1.60^{+0.19}_{-0.17}$. No pulls greater than 1$\sigma$ are observed for the fitted nuisance parameters, with only some constraints in the nuisance parameters describing the theoretical modeling. Data and post-fit background event yields are shown in Table~\ref{tab:1lep_sr_yields}. Good agreement between the background prediction and data is observed in all regions. %The lowest observed p-value is $0.14707\pm0.00003$, corresponding to a signal with $\etaD=0.15$ and $\dpmass=400~\GeV$.  
+
+\begin{figure}[btp]
+  \centering
+  \includegraphics[width=0.995\textwidth]{1lepton_splusbfit_summary_postfit_unblind.pdf}\label{fig:1leppostfit}
+  \caption{Comparison of the events yields in data and the background prediction in the SRs, CRs, and VRs in the \onelep channel, after the fit to data in all CRs and SRs under the background-only hypothesis. The uncertainty bands contain all statistical and systematic uncertainties. Two example \sul signal points are overlaid in the SRs.}
+  \label{fig:1lep_summary}
+\end{figure}
+
+\begin{figure}[btp]
+  \centering
+  \subfloat[]{\includegraphics[width=0.35\textwidth,page=7]{1lepton_splusbfit_regions_postfit_unblind.pdf}\label{fig:1lep_postfit_SR5j3b}}
+  \subfloat[]{\includegraphics[width=0.35\textwidth,page=8]{1lepton_splusbfit_regions_postfit_unblind.pdf}\label{fig:1lep_postfit_SR5j4b}} \\
+  \subfloat[]{\includegraphics[width=0.35\textwidth,page=9]{1lepton_splusbfit_regions_postfit_unblind.pdf}\label{fig:1lep_postfit_SR6j3b}}
+  \subfloat[]{\includegraphics[width=0.35\textwidth,page=10]{1lepton_splusbfit_regions_postfit_unblind.pdf}\label{fig:1lep_postfit_SR6j4b}} \\
+  \subfloat[]{\includegraphics[width=0.35\textwidth,page=11]{1lepton_splusbfit_regions_postfit_unblind.pdf}\label{fig:1lep_postfit_SR7j3b}}
+  \subfloat[]{\includegraphics[width=0.35\textwidth,page=12]{1lepton_splusbfit_regions_postfit_unblind.pdf}\label{fig:1lep_postfit_SR7j4b}}
+  \caption{Distributions of \dave in \protect\subref{fig:1lep_postfit_SR5j3b} SR\_5j3b, \protect\subref{fig:1lep_postfit_SR5j4b} SR\_5j4b, \protect\subref{fig:1lep_postfit_SR6j3b} SR\_6j3b, \protect\subref{fig:1lep_postfit_SR6j4b} SR\_6j4b, \protect\subref{fig:1lep_postfit_SR7j3b} SR\_7j3b, and \protect\subref{fig:1lep_postfit_SR7j4b} SR\_7j4b, after the fit to data in all CRs and SRs under the background-only hypothesis.
+  Two example \sul signal point with $\etaD=0.25$ and $\dpmass=400~\GeV$ is stacked on top of the background. The uncertainty bands contain all statistical and systematic uncertainties. The dashed line in the ratio panel shows the ratio of signal plus background event yields over just background event yields.}
+  \label{fig:1lep_postfit_SR}
+\end{figure}
+
+%\begin{table}[htb]
+%  \caption{Post-fit event yields in all six SR jet and \bjet multiplicity bins of the \onelep channel. The name of each column corresponds to the bins described in Section~\ref{sec:evtsel_onelep} and illustrated in Figure~\ref{fig:1lepregionbins}. The quoted uncertainties contain statistical and systematic components. \red{Table needs some formatting of numbers.}}
+%  \label{tab:1lep_sr_yields}
+%  \centering
+%  \begin{tabular}{c|r@{}lr@{}lr@{}l}
+%     & \multicolumn{2}{c}{SR\_5j3b} & \multicolumn{2}{c}{SR\_5j4b} & \multicolumn{2}{c}{SR\_6j3b} \\ 
+%    \toprule
+%    $t\bar{t}$+light   & 23100 $\pm$ &1870 & 269 $\pm$ &67.5 & 14300 $\pm$ &1200   \\
+%    $t\bar{t}+\geq 1b$   & 12400 $\pm$ &2570 & 1150 $\pm$ &178 & 9370 $\pm$ &1750 \\
+%    $t\bar{t}$+c   & 5940 $\pm$ &480 & 225 $\pm$& 39.5 & 5440 $\pm$ &558  \\
+%    Single Top   & 1750 $\pm$ &528 & 58.6 $\pm$ &17.8 & 1080 $\pm$ &331  \\
+%    V+jets   & 274 $\pm$ &29.5 & 10.2 $\pm$ &1.52 & 192 $\pm$ &22.2  \\
+%    Other MC   & 416 $\pm$ &14.7 & 60.7 $\pm$ &3.84 & 465 $\pm$ &17.1 \\ 
+%    \midrule
+%    Total SM & 10500 $\pm$ & 102 & 402 $\pm$&  19.7 & 8430 $\pm$ & 109 \\
+%    \midrule
+%    Data & \multicolumn{2}{c}{10462} & \multicolumn{2}{c}{403} & \multicolumn{2}{c}{8438} \\ 
+%    \bottomrule
+%    \multicolumn{4}{c}{\phantom{0}}\\
+%
+%     & \multicolumn{2}{c}{SR\_6j4b} & \multicolumn{2}{c}{SR\_7j3b} & \multicolumn{2}{c}{SR\_7j4b} \\ 
+%    \toprule
+%    $t\bar{t}$+light& 219 $\pm$ &45.2 & 8460 $\pm$ & 1490 & 182 $\pm$ &48.4  \\
+%    $t\bar{t}+\geq 1b$ & 1210 $\pm$ &122 & 9910 $\pm$ &2500 & 1900 $\pm$ &364 \\
+%    $t\bar{t}$+c   & 247 $\pm$ &44.9 & 5360 $\pm$ &789 & 350 $\pm$ &89.9 \\
+%    Single Top   &  59.1 $\pm$ &18.1 & 708 $\pm$ &224 & 66.2 $\pm$ & 20.9 \\
+%    V+jets   &  7.65 $\pm$ &1.18 & 170 $\pm$ &19.5 & 14.9 $\pm$& 1.86  \\
+%    Other MC   & 99.2 $\pm$ &6 & 621 $\pm$ &41.7 & 187 $\pm$ &14.3 \\ 
+%    \midrule
+%    Total SM & 477 $\pm$ & 21.6 & 6600 $\pm$ & 121 & 640 $\pm$ & 38 \\
+%    \midrule
+%    Data & \multicolumn{2}{c}{465} & \multicolumn{2}{c}{6598} & \multicolumn{2}{c}{641} \\ 
+%    \bottomrule
+%    \multicolumn{4}{c}{\phantom{0}}\\
+%  \end{tabular}
+%\end{table}
+
+\begin{table}[htb]
+  \caption{Observed and predicted event yields after the fit under the background-only hypothesis in the six SR bins in the \onelep channel. The name of each column corresponds to the bins described in Section~\ref{sec:evtsel_onelep}, identified with the number of jets followed by the number of \bjets. The quoted uncertainties contain statistical and systematic components. The total post-fit uncertainty can be smaller than the sum in quadrature of the different components due to correlations resulting from the fit to data.}
+  \label{tab:1lep_sr_yields}
+  \centering
+  \begin{tabular}{c|r@{}lr@{}lr@{}l}
+     & \multicolumn{2}{c}{SR\_5j3b} & \multicolumn{2}{c}{SR\_5j4b} & \multicolumn{2}{c}{SR\_6j3b} \\ 
+    \toprule
+    \ttb   & 12400$\,\pm\,$&2600 & 1150$\,\pm\,$&180 & 9400$\,\pm\,$&1800 \\
+    \ttc   & 5900$\,\pm\,$&500 & 230$\,\pm\,$& 40 & 5400$\,\pm\,$&600  \\
+    \ttlight   & 23100$\,\pm\,$&1900 & 270$\,\pm\,$ &70 & 14300$\,\pm\,$&1200   \\
+    Single top   & 1800$\,\pm\,$&500 & 59$\,\pm\,$&18 & 1080$\,\pm\,$&330  \\
+    V+jets   & 274$\,\pm\,$&30 & 10.2$\,\pm\,$&1.5 & 192$\,\pm\,$&22  \\
+    Other MC   & 416$\,\pm\,$&15 & 61$\,\pm\,$&4 & 465$\,\pm\,$&17 \\ 
+    \midrule
+    Total SM & 10500$\,\pm\,$& 100 & 402$\,\pm\,$&  20 & 8430$\,\pm\,$& 110 \\
+    \midrule
+    Data & \multicolumn{2}{c}{10462} & \multicolumn{2}{c}{403} & \multicolumn{2}{c}{8438} \\ 
+    \bottomrule
+    \multicolumn{4}{c}{\phantom{0}}\\
+
+     & \multicolumn{2}{c}{SR\_6j4b} & \multicolumn{2}{c}{SR\_7j3b} & \multicolumn{2}{c}{SR\_7j4b} \\ 
+    \toprule
+    \ttb & 1210$\,\pm\,$&120 & 9900$\,\pm\,$&2500 & 1900$\,\pm\,$&400 \\
+    \ttc   & 247$\,\pm\,$&45 & 5400$\,\pm\,$&800 & 350$\,\pm\,$& 90 \\
+    \ttlight & 220$\,\pm\,$&50 & 8500$\,\pm\,$& 1500 & 180$\,\pm\,$&50  \\
+    Single top   &  59$\,\pm\,$&18 & 710$\,\pm\,$&220 & 66$\,\pm\,$& 21 \\
+    V+jets   &  7.7$\,\pm\,$&1.2 & 170$\,\pm\,$&20 & 14.9$\,\pm\,$& 1.9  \\
+    Other MC   & 99$\,\pm\,$&6 & 620$\,\pm\,$&40 & 187$\,\pm\,$&14 \\ 
+    \midrule
+    Total SM & 477$\,\pm\,$& 22 & 6600$\,\pm\,$& 120 & 640$\,\pm\,$& 40 \\
+    \midrule
+    Data & \multicolumn{2}{c}{465} & \multicolumn{2}{c}{6598} & \multicolumn{2}{c}{641} \\ 
+    \bottomrule
+    \multicolumn{4}{c}{\phantom{0}}\\
+  \end{tabular}
+\end{table}
+

@@ -1,0 +1,105 @@
+%!TEX root = ../ANA-EXOT-2023-09-PAPER.tex
+
+Preselected events are separated into signal, control, and validation regions based on the properties of the large-$R$ and small-$R$ jets in the event, as well as the signal lepton for the \onelep channel. Signal regions (SRs) are signal-enriched regions while the control regions (CRs) are used to estimate the SM background contributions. The validation regions (VRs) are used to validate the background estimation methods. The analysis strategies for the \allhad and \onelep channels are detailed below.
+
+%The number of data events in the SRs were blinded until the selection criteria, background estimation technique, signal extraction method, and systematic uncertainties were finalized. The selection criteria were optimized by independently varying each requirement, computing the full background estimate, and then maximizing the expected significance.
+
+\subsection{All-hadronic channel}
+\label{sec:evtsel_allhad}
+In the \allhad channel, the leading two large-$R$ jets define the overall SR, where the leading large-$R$ jet satisfies $m_{\text{jet,R=1.2}}>300~\GeV$ and the sub-leading large-$R$ jet satisfies $m_{\text{jet,R=1.2}}>250~\GeV$ as shown in Figure~\ref{fig:rcjet_masses} for distributions after preselection. To suppress multijet events containing, for example, gluon to $\bbbar$ splitting, a selection on \mptbb, defined as the ratio of the mass to the transverse momentum of the pair of $b$-tagged jets closest to the center of the large-$R$ jet, is applied to both large-$R$ jets. In signal events \mptbb is expected to take on larger values than in background events, thus a cut of $\mptbb > 0.25$ is required. Further, both large-$R$ jets must satisfy a $bb_i$ tag, where the $\Delta R$ between the leading ($i=1$) or sub-leading ($i=2$) large-$R$ jet and the second closest $b$-tagged jet, defined as $\drbj$, is less than $1.0$ and thus both $b$-tagged jets are well contained within the volume of the large-$R$ jet. This variable is designed to suppress \ttbar events where the second closest \bjet arises from the other top quark in the event and can thus have a large $\Delta R$ with the large-$R$ jet. In signal, on the other hand, the decay products of the dark pion always include two $b$-quarks no matter whether the $tttb$ or $ttbb$ final state is considered and the $\Delta R$ therefore tends to be small. The overall SR is then subdivided into nine separate bins in the leading versus sub-leading large-$R$ jet mass plane. 
+% The division of the SR into these nine bins can be seen from Figure~\ref{fig:SRbins}, which shows normalized distributions for the expected background and a benchmark signal point with $\etaD=0.25$ and $\dpmass=500~\GeV$. 
+A large-$R$ jet is considered $\pitagi$ tagged if its mass falls into one of the nine mass bins. The SR requires both large-$R$ jets to satisfy both tagging selections (i.e. both jets must be $bb_i$ and $\pitagi$ tagged). The events where the two leading large-$R$ jets satisfy only one or two out of the four possible tags form the CRs used for the data-driven multijet extrapolation; events that satisfy three tags allow for a validation of the method and thus form the VRs. The SR selection criteria are summarized in Table~\ref{tab:SR_tags}.
+ 
+\begin{figure}[tb]
+  \centering
+   \subfloat[]{ \includegraphics[width=0.495\textwidth]{allhad_Jets_12_m_0.pdf}\label{fig:leadingJetMass}}
+   \subfloat[]{\includegraphics[width=0.495\textwidth]{allhad_Jets_12_m_1.pdf}\label{fig:subleadingJetMass}}
+  \caption{Mass of the \protect\subref{fig:leadingJetMass} leading and \protect\subref{fig:subleadingJetMass} sub-leading large-$R$ jet for all simulated backgrounds overlaid with three example distributions for various signal points after preselection in the \allhad channel. Also shown is a simplified data-driven estimate of the multijet background which was created by taking the event yields for data and subtracting all simulated backgrounds from it. Statistical uncertainties stemming from MC are indicated by the shaded region. The SR is to the right of the vertical line in both the subfigures. Individual SR bins select sub-regions of leading and sub-leading large-$R$ jet mass for improved background discrimination. The last bin contains the overflow.}
+  \label{fig:rcjet_masses}
+\end{figure}
+
+\begin{table}[!htb]
+  \centering
+  \caption{Summary of selection criteria for the SR (``Tag selection''). Nine bins are defined in the leading large-$R$ jet vs.\ sub-leading large-$R$ jet mass plane. The inverted selection (``Anti-tag selection'') is also defined for use in the data-driven multijet extrapolation described in Section~\ref{sec:bkg_allhad}.}
+  %\resizebox{\textwidth}{!}{
+  \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l|cc|cc}
+    \toprule
+     & Tag & Variable & Tag selection & Anti-tag selection  \\
+    \toprule
+    %Both large-$R$ jets &  & \mptbb & \multicolumn{2}{c}{ $> 0.25$} \\
+    Both large-$R$ jets &  & \mptbb & $> 0.25$ & $> 0.25$ \\
+    \midrule
+    Leading large-$R$ jet & $bb_1$ & $\drbj$ &  $<1.0$ &  $\geq 1.0$                           \\
+    \midrule
+    Sub-leading large-$R$ jet & $bb_2$ & $\drbj$ &  $<1.0$  &  $\geq 1.0$                     \\
+    \midrule
+    \multirow{3}{*}{Leading large-$R$ jet} & \multirow{3}{*}{\pitagone} & \multirow{3}{*}{\makttwelve} & $[300-325~\GeV,$ & \multirow{3}{*}{$\leq 300~\GeV$} \\
+    & & & $325-400~\GeV,$ & \\
+    & & & $>400~\GeV]$ & \\
+    \midrule
+    \multirow{3}{*}{Sub-leading large-$R$ jet} & \multirow{3}{*}{\pitagtwo} & \multirow{3}{*}{\makttwelve} & $[250-300~\GeV,$ & \multirow{3}{*}{$\leq250~\GeV$ } \\
+     & & & $300-350~\GeV,$ & \\
+    & & & $>350~\GeV]$ & \\
+    \bottomrule
+  \end{tabular*}
+  %}
+  \label{tab:SR_tags}
+\end{table}
+
+\subsection{One-lepton channel}
+\label{sec:evtsel_onelep}
+%Events satisfying the preselection requirements for the \onelep channel are categorized into SRs, CRs and VRs based on two kinematic variables defined in terms of the properties of the small-$R$ and large-$R$ jets. The first variable, \deltaR, is defined as the angle between the lepton in the event and the second closest $b$-jet to this lepton. It is expected to take on small values for signal events, as the decay products of the leptonically decaying dark pion always include two $b$-quarks, in both the $tttb$ and $ttbb$ final states.
+Events satisfying the preselection requirements for the \onelep channel are categorized into SRs, CRs and VRs based on two kinematic variables defined in terms of the properties of the small-$R$ and large-$R$ jets. The first variable, \deltaR, is defined as the angle between the lepton in the event and the second closest $b$-jet to this lepton and aims to suppress \ttbar background similar to $\drbj$ in the all-hadronic channel. 
+%In \ttbar events the second closest \bjet arises from the second top quark, which could be located in the opposite hemisphere of the detector, resulting in large \deltaR values. For signal, on the other hand, where the decay products of the leptonically decaying dark pion always include two $b$-quarks no matter whether the $tttb$ or $ttbb$ final state is considered, the expected value for \deltaR is small.
+% , one coming from the same top-quark as the lepton and the other coming either directly from the dark pion decay (tb decay) or from the other top quark (\ttbar decay).
+% The distribution of this variable peaks at lower values than the background distribution for all signal points, and in general, signal points with lower \etaD values and higher dark pion masses
+% peak at lower values than the signals with relatively less boosted systems.
+% This trend is only broken by the \(\etaD=0.15\) points 
+% in which the dominating production mode are Drell-Yan-type processes.
+The kinematics of the second \bjet as distinguishing characteristic of signal events is also utilized for the second variable, \bbinvm, defined as the invariant mass of the two $b$-jets in the event that are closest to each other. This is effective for discriminating high dark pion mass signal points against background in which the two $b$-quarks closest to each other come e.g. from gluon splitting. 
+The distributions of these variables in signal and background MC simulations are shown in Figure~\ref{fig:regiondefinitionvariables} for preselected events. 
+
+\begin{figure}[btp]
+    \centering
+    \subfloat[]{ \includegraphics[width=0.495\textwidth]{figures/deltaRLep2ndClosestBJet.pdf}\label{fig:deltaR}}
+   \subfloat[]{\includegraphics[width=0.495\textwidth]{figures/bb_m_for_minDeltaR.pdf}\label{fig:bbm}}    
+    \caption{Normalized distributions of \protect\subref{fig:deltaR} $\deltaR$ and \protect\subref{fig:bbm} \bbinvm for all simulated backgrounds with two example signal distributions overlaid after the \onelep channel preselection. Statistical uncertainties stemming from MC are indicated by a shaded region, but are not visible on the scale of the $y$-axis. The vertical dashed lines indicate the selection requirements applied to events in the SR, CR and VR, as indicated by the labels.}%The background samples are shown as stacked solid histograms and the signal samples as overlaid dashed lines. The vertical dashed lines indicate the selection requirements applied to events in the SR, CR and VR, as indicated by the labels.}
+    \label{fig:regiondefinitionvariables}
+  \end{figure}
+
+The SR is defined by requiring $\deltaR < 2.7$ and $\bbinvm > 100~\GeV$. 
+% Typical signal acceptance times efficiency values for the signal models considered in the SR range between \red{XX-YY}\%.
+A CR for the \ttbar+HF background is defined by the requirements {2.7~<~\deltaR~<~3.5}, and {40~\GeV~<~\bbinvm~<~100~\GeV}, thus ensuring orthogonality to the SR. This region is used to correct for mismodeling in \ttbar+HF events and has a background composition similar to that in the SR. 
+Typical signal contamination in the CR, from signal points that are not already excluded through re-interpretation of other collider searches~\cite{Butterworth:2021jto}, is below 1\%. 
+The \ttbar+HF background estimate is validated in a VR defined by the requirements {2.7~<~\deltaR~<~3.5}, and {\bbinvm~>~100~\GeV}, making it orthogonal to both the SR and the CR while also exhibiting a background composition similar to that of the SR and CR. 
+% The definition of all regions is illustrated in Figure~\ref{fig:1lepregions}. 
+
+% \begin{table}[!hbtp]
+%   \centering
+%   \caption{Analysis region definitions for the \onelep channel.}
+%   \label{tab:1lepregions}
+%   \begin{tabular}{|l|l|l|l|}
+%     \hline
+%     \hline
+%     Region & \deltaR & \bbinvm \\
+%     \hline
+%     \hline
+%     % CR2b   & See Table~\ref{tab:1lpresel}  & >= 4   &  $=2$     &   -     &    -    \\
+%     SR    &  <2.7   &>100 GeV \\
+%     CR    &  >2.7,<3.5   &>40 \GeV,<100 GeV \\
+%     VR    &  >2.7,<3.5   &>100 GeV \\
+%     \hline  
+%     \hline
+%   \end{tabular}
+% \end{table}
+
+The statistical analysis in the \onelep channel relies on a profile-likelihood fit to the distribution of the sum of the masses of the reclustered jets, described in Section~\ref{sec:reco}, \dave. This discriminating variable is shown in Figure~\ref{fig:dave} for preselected events. For the fit, all events are further classified into regions split into bins based on the number of jets and \bjets in the event. Six bins are defined labeled XR\_5j3b, XR\_5j4b, XR\_6j3b, XR\_6j4b, XR\_7j3b and XR\_7j4b, where the number before the 'j' indicates the number of jets, the number before the 'b' the number of \bjets and 'X' can take on the values 'S' for an SR, 'C' for a CR and 'V' for a VR bin. In all cases, the highest jet or \bjet multiplicity is inclusive, e.g. the region CR\_7j4b is a CR that contains events with $\geq7$ jets and $\geq4$ \bjets. 
+% The region binning is illustrated in Figure~\ref{fig:1lepregionbins}.
+
+\begin{figure}[btp]
+  \centering
+  \includegraphics[width=0.495\textwidth]{figures/LJet_m_plus_RCJet_m_12.pdf}
+  \caption{Normalized distributions of \dave for all simulated backgrounds overlaid with two example distributions for various signal points after the \onelep channel preselection. Statistical uncertainties stemming from MC are indicated by a shaded region, but are not visible on the scale of the $y$-axis.}%The background samples are shown as stacked solid histograms and the signal samples as overlaid dashed lines.}
+  \label{fig:dave}
+\end{figure}
+

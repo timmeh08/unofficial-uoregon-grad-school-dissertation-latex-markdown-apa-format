@@ -64,6 +64,8 @@
 \usepackage{mathtools,amsmath,amsfonts,amsthm,amssymb,bm, bbm}
 \usepackage{dcolumn,booktabs,longtable}
 \usepackage[singlelinecheck=false]{caption}
+\usepackage{subcaption}
+\providecommand{\subfloat}[2][]{\subcaptionbox{#1}{#2}}
   \captionsetup[subfigure]{singlelinecheck=on, labelfont=normalfont}
   \captionsetup[figure]{labelfont=it}
 \usepackage{placeins}
@@ -83,6 +85,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[numbers,sort&compress]{natbib} % numeric [1], [1–3]
 \usepackage{hyperref}                      % load after natbib
+\pdfstringdefDisableCommands{\def\uppercase#1{#1}}
 % \usepackage[switch,modulo]{lineno} % line numbers on outer margin in twoside docs
 \AtBeginDocument{\linenumbers}      % enable numbers automatically
 % \modulolinenumbers[5]             % uncomment for every 5th line number
@@ -126,5 +129,15 @@
 \providecommand{\pT}{\ensuremath{p_{\mathrm{T}}}\xspace}
 \providecommand{\HT}{\ensuremath{H_{\mathrm{T}}}\xspace}
 \providecommand{\gammad}{\ensuremath{\gamma_{\mathrm{D}}}\xspace}
-
-
+\providecommand{\piD}{\ensuremath{\pi_{\mathrm{D}}}\xspace}
+\providecommand{\rhoD}{\ensuremath{\rho_{\mathrm{D}}}\xspace}
+\providecommand{\etaD}{\ensuremath{\eta_{\mathrm{D}}}\xspace}
+\providecommand{\dpmass}{\ensuremath{m_{\pi_{\mathrm{D}}}}\xspace}
+\providecommand{\Wboson}{\ensuremath{W}\xspace}
+\providecommand{\Zboson}{\ensuremath{Z}\xspace}
+\providecommand{\sul}{\ensuremath{\mathrm{SU}(2)_{\mathrm{L}}}\xspace}
+\providecommand{\sur}{\ensuremath{\mathrm{SU}(2)_{\mathrm{R}}}\xspace}
+\providecommand{\lumi}{140~\ensuremath{\mathrm{fb}^{-1}}\xspace}
+\providecommand{\pp}{\ensuremath{pp}\xspace}
+\providecommand{\allhad}{all-hadronic\xspace}
+\providecommand{\onelep}{one-lepton\xspace}

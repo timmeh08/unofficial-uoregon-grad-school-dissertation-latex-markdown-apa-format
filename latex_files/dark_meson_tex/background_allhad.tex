@@ -1,0 +1,64 @@
+%!TEX root = ../ANA-EXOT-2023-09-PAPER.tex
+
+The dominant background for the analysis in the \allhad channel originates from multijet events and constitutes about $75\%-85\%$ of the total background in each SR bin. A data-driven method is used to estimate this background, while MC simulation is used to account for the remaining sub-dominant SM processes as described in Section~\ref{sec:samples}. Typical ABCD multijet extrapolations are based on two discriminating variables. Here, however, an extended ABCD method is employed that relies on four instead of two discriminating variables, which allows the correction of correlations between pairs of discriminating variables and provide validation regions close to the SR selection.
+
+The multijet background is estimated by extrapolating from regions with small leading and sub-leading \makttwelve and large \drbj to SR bins with large leading and sub-leading \makttwelve and small \drbj. The method is similar to the one detailed in Ref.~\cite{TOPQ-2016-09}. To this end, two additional anti-tags denoted by a slashed tag label (with orthogonal selections to the already described $bb_i$ and $\pitagi$ tags) are defined. The tag $\cancel{bb_i}$ inverts the $bb_i$ selection, while $\cancel{\pitagi}$ places upper requirements on the large-$R$ jet mass, as summarized in Table~\ref{tab:SR_tags}. The combinations of possible tags and anti-tags in an event result in 16 separate regions shown in Figure~\ref{fig:ABCDlabels}. The extended ABCD method extrapolates from regions with one tag to each of the nine SR bins. Two-tag regions are used to determine correlation correction factors and three-tag regions are used for validation of the multijet estimate. 
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.65\textwidth]{Region_labels_ABCDtable.pdf}
+  \caption{Region labels for the 16 regions used in the data-driven multijet estimate in the \allhad channel. Region $S$ labels the SR, regions $B$, $C$, $E$ and $I$ are used for the ABCD extrapolation, regions $D$, $F$, $G$, $H$, $J$ and $O$ are used to compute correlation correction factors, and regions $K$, $L$, $M$ and $N$ are validation regions. The background estimate is performed independently for all nine SR bins.}
+  \label{fig:ABCDlabels}
+\end{figure}
+
+The concept of the extended ABCD method is detailed here by explicitly stating the computations for one VR, however, analogous derivations have to be carried out for all SRs and VRs. Considering only region $K$ in Figure~\ref{fig:ABCDlabels}, a 2-variable ABCD estimate for this region would be computed in the standard way through $\hat{K} = \frac{J\cdot D}{B}$, where $J$, $D$ and $B$ are the number of data events minus the number of simulated events in the respective regions. If $\pi_{D,1}$ and $\pi_{D,2}$ are uncorrelated, $\hat{K}$ would be a valid estimate. However, if $\pi_{D,1}$ and $\pi_{D,2}$ are correlated, then $\hat{K}$ needs to be corrected by a correlation factor ($k$-factor). As long as there is no significant additional three-tag correlation with the $bb_2$ tag, this correlation factor, $k_{\pi_{D,1},\pi_{D,2}}$, can be measured from $\frac{F\cdot A}{C\cdot E}$ since $\frac{K\cdot B}{J\cdot D}=\frac{F\cdot A}{C\cdot E}$. Thus,
+\begin{align}
+  \hat{K} &= \frac{J\cdot D}{B} \cdot \frac{F\cdot A}{C\cdot E} = \frac{J\cdot D}{B} \cdot k_{\pitagone,\pitagtwo}~.
+\label{eq:K2var}
+\end{align}
+%Note that this is only valid if there is no additional three-tag correlation with the $bb_2$ tag.
+
+One can also consider the estimate of region $K$ using a three-variable ABCD estimate computed with two correlation correction factors:
+\begin{align}
+  \hat{K} &= \frac{J\cdot C}{A} \cdot k_{\pitagone,\pitagtwo} \cdot k_{\pitagone,bb_2}~,
+\label{eq:K3var}
+\end{align}
+where $k_{\pitagone,bb_2}=\frac{D\cdot A}{B\cdot C}$. 
+%where each correlation factor is computed by comparing its two variable (conventional) ABCD estimate to $\text{data}-\text{MC}$ in the region with both tags. The full list of correlation factors (or k-factors) is defined as:
+%\begin{align}
+%\label{eq:2tag}
+%  k_{\pi_{D,1},\pi_{D,2}} &= \frac{FA}{CE}, \\
+%  k_{\pi_{D,1},bb1} &= \frac{OA}{CI},\\
+%  k_{\pi_{D,1},bb2} &= \frac{DA}{BC},\\
+%  k_{\pi_{D,2},bb1} &= \frac{GA}{EI},\\
+%  k_{\pi_{D,2},bb2}  &= \frac{JA}{BE},\\
+%  k_{bb1,bb2}&= \frac{HA}{BI}.
+%\label{eq:2tag2}
+%\end{align}
+Substituting this correlation factor into Eq.~(\ref{eq:K3var}) yields once again Eq.~(\ref{eq:K2var}).
+All other $k$-factors can be defined according to the same principle as $k_{\pi_{D,1},\pi_{D,2}}$ and $k_{\pitagone,bb_2}$.
+
+The final multijet background estimate requires a four-variable ABCD estimate $\hat{S}'$ that is computed from data minus event counts from MC simulated backgrounds in the regions $B$, $C$, $E$, and $I$ where exactly one tag is applied and region $A$ with no applied tags according to
+% Equation for estimate in region S_bin
+\begin{align}
+  \hat{S}' &= \frac{B\cdot C\cdot E\cdot I}{A^3}~.
+  \label{eq:ABCD_Sprime}
+\end{align}
+This estimate is then multiplied by six $k$-factors to correct for correlations between tags,
+\begin{align}
+  \label{eq:ABCD_S}
+  \hat{S} &= \hat{S}' \cdot k_{\pitagone,bb_1} \cdot k_{\pitagtwo,bb_2} \cdot k_{\pitagone,bb_2} \cdot k_{\pitagtwo,bb_1} \cdot k_{\pitagone,\pitagtwo} \cdot k_{bb_1,bb_2}~.
+\end{align}
+%with the k-factors defined above.
+
+If the selection criteria defined by these tags are independent from each other then the expectation value of the corresponding $k$-factor will be $1$. Correlation factors around $1.5$ are observed between the \pitagone and $bb_1$ tags as well as the \pitagtwo and $bb_2$ tags. The $bb_1$ and $bb_2$ tags are highly correlated with a $k$-factor of $0.1$ due to the preselection requirement of three $b$-tagged jets. This could be mitigated by requiring four $b$-tagged jets, however, this would result in low statistics and high signal contamination for the four-variable ABCD extrapolation regions.
+
+Typical signal contaminations in the extrapolation regions are less than $5\%$ and small compared to the uncertainty applied to the multijet background discussed in Section~\ref{sec:systematics}. The method is validated through the closure of the estimate in the four 3-tag validation regions $K$, $L$, $M$ and $N$. Figure~\ref{fig:VR_hists} compares data to estimated background yields for each validation region in each bin of the SR. If significant 3-tag correlations occurred, a discrepancy between multijet estimate and data yields should be visible in the validation regions. However, all data yields are compatible with the background estimate within the uncertainty bands for all validation regions. The uncertainty includes a non-closure systematic uncertainty, which by design covers non-linear correlations and the impact of multijet estimation regions with low statistics. It ranges between $33\%$ and $57\%$ and is derived and discussed in Section~\ref{sec:systematics}. The procedure was further validated by performing signal injection tests as well as stability tests over time, under variation of the selection criteria and with scaled simulated background contributions. In all cases the resulting background estimates where stable and thus consistent with the nominal estimate.
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.99\textwidth]{allhad_vr.pdf}
+  \caption{The four \allhad channel validation regions $K$, $L$, $M$ and $N$ from Figure~\ref{fig:ABCDlabels} for each of the nine SR mass bins with the following naming convention: the leading large-$R$ jet lower mass boundary in \GeV is followed by the sub-leading large-$R$ jet lower mass boundary. The shaded region indicates the uncertainty on the background estimate in each bin that includes the statistical uncertainties from the limited sample sizes in data and simulation as well as a multijet non-closure systematic uncertainty, as detailed in Section~\ref{sec:systematics}.
+}
+  \label{fig:VR_hists}
+\end{figure}

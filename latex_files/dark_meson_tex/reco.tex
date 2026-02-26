@@ -1,0 +1,63 @@
+%!/TEX root = ../ANA-EXOT-2023-09-PAPER.tex
+
+%You can find some text snippets that can be used in papers in \texttt{latex/atlassnippets.sty}.
+%To use them, provide the \texttt{snippets} option to \texttt{atlasphysics}.
+
+For each event, interaction vertices are reconstructed from ID charged particle tracks, where the tracks are required to have transverse momenta (\pt) greater than $500~\MeV$~\cite{ATL-PHYS-PUB-2015-026}. Candidates for the primary vertex are required to have at least two associated tracks. If multiple vertices are reconstructed, the vertex with the largest sum of the squares of the transverse momenta of associated tracks is taken as the primary vertex. Events that fail the primary vertex reconstruction are rejected. 
+
+Electrons are reconstructed from energy deposits in the electromagnetic calorimeter that are matched to charged-particle tracks in the ID~\cite{EGAM-2018-01}. They are identified using a likelihood-based (LH) identification which employs calorimeter and tracking information to discriminate between electrons and jets and that combines this likelihood and the likelihood of it originating from background processes into a single discriminant. Only electron candidates with $\pt>10~\GeV$ within $|\eta|< 1.37$ or $1.52 < |\eta| < 2.47$ are considered. %, corresponding to the central region of the detector excluding the transition region between barrel and endcap calorimeters, are considered. 
+Electrons are required to be well isolated using criteria based on the properties of the topological clusters in the calorimeter and of ID tracks around the reconstructed electron. Further requirements of $|z_0\sin\theta|<0.5~$mm and $|d_0|/\sigma(d_0)<5$ are placed on the longitudinal and transverse impact parameters to select electrons originating from the primary vertex. 
+Electrons are further categorized as “baseline” or “signal”. For the \allhad channel, baseline electrons are identified by the \emph{LooseAndBLayer} likelihood-based identification working point and are required to fulfill the \emph{Loose} isolation criteria~\cite{PERF-2017-01,EGAM-2018-01}. Events containing a baseline electron candidate satisfying these baseline criteria are rejected. 
+For the \onelep channel, baseline electrons are identified with the \emph{Medium} working point~\cite{EGAM-2018-01} and are not subject to any isolation requirement. Signal electrons are identified by the \emph{Tight} working point and are subject to the \emph{Tight} track-based isolation criteria~\cite{EGAM-2018-01}. The \pt-requirement of the signal electrons is increased to $\pt>28~\GeV$. Signal electrons constitute a subset of the baseline electrons.
+% Only events containing exactly one signal lepton and no additional baseline leptons are retained for the analysis in the \onelep channel.
+
+Muon candidates are reconstructed by combining tracks in the MS with tracks in the ID and are subject to cut-based identification criteria which are based on the numbers of hits in the different ID and MS subsystems, and on the significance of the charge-to-momentum ratio $q/p$~\cite{MUON-2018-03}. All muon candidates are required to be within the acceptance region of the ID at $|\eta| < 2.5$ and to have $\pt>10~\GeV$. Muons are required to satisfy isolation requirements based on the properties of ID tracks around the reconstructed muon~\cite{MUON-2018-03}. Similarly to electrons, requirements on the longitudinal and transverse impact parameters, $|z_0\sin\theta|<0.5~$mm and $|d_0|/\sigma(d_0)<3$, are also applied.
+Baseline muons are identified in the \allhad channel by the \emph{Loose} quality working point and are required to fulfill the \emph{Loose} isolation criteria~\cite{MUON-2018-03}. Events containing a muon candidate satisfying these baseline criteria are rejected. In the \onelep channel, baseline muons are identified by the \emph{Medium} quality working point~\cite{MUON-2018-03} and are not subject to any isolation criteria. 
+For the selection of signal muons the \emph{Medium} quality working point is applied and the muon candidates are required to fulfill the \emph{Tight} isolation criteria based on the $p_T^{\text{varcone30}}$ variable defined in Ref.~\cite{MUON-2018-03} and have $\pT>28~\GeV$. Signal muons constitute a subset of the baseline muons. Events are selected for the \onelep channel if they contain exactly one signal and no additional baseline leptons (electrons or muons).
+
+Jet candidates are reconstructed using a particle-flow reconstruction algorithm~\cite{PERF-2015-09} combining charged particle tracks from the ID and three-dimensional topological energy clusters~\cite{PERF-2014-07} in the calorimeter. %The energy deposited in the calorimeter by charged particles is subtracted from the observed topological clusters and replaced by the momenta of tracks that are matched to those clusters, allowing particle momentum measurements to be taken from charged particle tracking information whenever the ID resolution outperforms the calorimeter resolution. 
+Jets are reconstructed using the \antikt\ algorithm~\cite{Cacciari:2008gp} implemented in the FastJet package~\cite{Fastjet} with a fixed radius parameter $R=0.4$ using charged constituents associated with the primary vertex and neutral particle flow objects as inputs. 
+ In order to minimize the contribution from pileup jets, a requirement on the jet-vertex tagger~\cite{PERF-2014-03} is made for jets with \pt below 60~\GeV.  
+
+Slight differences in the efficiency of the association of jets to vertices in data and simulation are addressed by applying scale factors to simulation. Jet energy scale corrections, derived from MC simulation, are used to calibrate the average energies of jet candidates to the scale of their constituent particles~\cite{JETM-2018-05}. Remaining differences between data and simulated events are evaluated and corrected for using in situ techniques, which exploit the transverse momentum balance between a jet and a reference object such as a photon, \Zboson\ boson, or multijet system in data. After these calibrations, all jets in the event with $\pT > 20~\GeV$ must satisfy a set of loose jet-quality requirements~\cite{DAPR-2012-01} designed to reject jets originating from sporadic bursts of detector noise, large coherent noise or isolated pathological cells in the calorimeter system, hardware issues, beam-induced background or cosmic-ray muons~\cite{ATLAS-CONF-2015-029}. 
+In the \onelep channel, the jets are required to satisfy $|\eta|<2.5$, while in the  \allhad channel, they are required to satisfy $|\eta|<2.8$ to match the $\eta$ range of the $H_T$ trigger. If these jet requirements are not met, the jet is discarded. 
+
+Jets are tagged as containing a $b$-hadron ($b$-tagged) by a deep neural network algorithm trained on a simulated hybrid sample composed of \ttbar and $Z'\rightarrow\ttbar$ events~\cite{FTAG-2019-07,ATL-PHYS-PUB-2017-013} at a working point corresponding to a $77\%$ \bjet efficiency, as measured on an inclusive \ttbar sample. This working point has a rejection factor of $5$ and $170$ on charm and light-flavored jets, respectively. 
+Flavor-tagging efficiency differences between data and simulation are corrected by a reweighting procedure detailed in Refs.~\cite{FTAG-2018-01,FTAG-2019-02,FTAG-2020-08}.
+
+To resolve any reconstruction ambiguities between electrons, muons and jets, an overlap removal procedure is applied in a prioritized sequence, based on baseline leptons and jets, as follows. First, if a electron shares the same ID track with another electron, the electron with lower \pt is discarded, and then any electron sharing the same ID track with a muon is rejected. 
+%No muon rejection here since we don't have calo-tagged muons
+%No photon rejection since we don't have photons
+Next, jets are rejected if they lie within $\Delta R = 0.2$ of an electron. Similarly, jets within $\Delta R = 0.2$ of a muon are rejected if the jet has fewer than three associated tracks or if the muon is matched to the jet through ghost association~\cite{Cacciari:2008gp}. Finally, electrons that are close to a remaining jet are discarded if their distance from the jet is $\Delta R < 0.4$, while for muons the distance is $\Delta R < \text{min}(0.4, 0.04 + 10~\GeV/\pt)$.
+
+Large-$R$ jets are reclustered from the calibrated $R=0.4$ jets described above using the \antikt algorithm with a fixed radius parameter of $R=1.2$~\cite{Nachman_2015}. The large-$R$ jets aim to fully contain the dark pion decay products and the $R$ parameter is optimized for the dark pion mass range of the targeted signal points. 
+For the \onelep channel the signal lepton is added to the $R=0.4$ jet collection before the reclustering, which then proceeds in the same way as in the \allhad channel. After reclustering, the large-$R$ jet containing the lepton is referred to as \jlep and the leading fully hadronic large-$R$ jet \jhad. Both large-$R$ jets originate from the same reclustering procedure, ensuring there is no overlap between the two.
+
+Events are selected for the \allhad channel using triggers on \Ht, defined as the scalar sum of the transverse momenta of all the reconstructed jets in the event with $|\eta_{\text{jet}}|<2.8$~\cite{TRIG-2012-01}. The \Ht-trigger threshold was $850~\GeV$ in 2015 and the first half of 2016, and was increased to $1000~\GeV$ in the latter half of 2016 for the remainder of Run~2. Since the trigger decision is based on \Ht computed from trigger-level jet momenta (which lack a detailed calibration), the triggers show a slow onset behavior with respect to \Ht computed from jet momenta of fully calibrated jets. A requirement of $\Ht > 1150~\GeV$ ensures that the trigger is fully efficient to minimize systematic uncertainties resulting from imprecise modeling of the onset behavior in simulation. The \Ht variable computed from fully calibrated jets is used for the remainder of this search.
+
+Events are selected for the \onelep channel using a combination of single-lepton triggers~\cite{TRIG-2018-01,TRIG-2018-05,TRIG-2019-04,TRIG-2019-03}. The single-lepton triggers require the presence of a muon or an electron with \pt higher than a certain threshold and, in some cases, impose identification and lepton-isolation requirements. The lowest \pt threshold was 24 (20)~\GeV for electrons (muons) during the 2015 data-taking period and 26~\GeV for both electrons and muons in the data-taking periods from 2016 to 2018.
+The efficiencies of the single-lepton triggers range between $20\%$ and $50\%$ in the simulated signal samples. To account for small differences in the single-lepton trigger efficiency between data and simulation, all triggered simulated events receive an event weight to match data.
+
+The analysis strategy relies on the reconstruction of each dark pion
+using a large-$R$ jet.
+In the \allhad channel, events are required to have six or more $R=0.4$ jets with $\pt>25~\GeV$, in addition to the $\Ht > 1150~\GeV$ requirement and the lepton veto. At least three jets within the ID acceptance ($|\eta| < 2.5$) must be $b$-tagged. At least two large-$R$ jets with jet mass $\makttwelve>190~\GeV$ are required in all events. Events for the \onelep channel are required to have at least five jets, out of which at least three have to be $b$-tagged, and to have $\Ht>300~\GeV$. Here the \Ht is defined similar to the \allhad channel, however only jets with $|\eta_{\text{jet}}|<2.5$ are considered. Events passing all selection requirements listed here are considered preselected for the analysis. The preselection requirements are summarized for both the analysis channels in Table~\ref{tab:preselection}.
+
+\begin{table}[]
+\centering
+\caption{Summary of the preselection criteria for the \allhad and \onelep channels, in terms of the number of baseline and signal leptons, $R=0.4$ and $R=1.2$ jets, number of \bjets, and \Ht. The definitions of the physics objects for the two channels are given in the text. Signal leptons constitute a subset of the baseline leptons.
+}
+\label{tab:preselection}
+    \resizebox{0.5\textwidth}{!}{%
+    \begin{tabular}{@{}l|cc@{}}
+%    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} lcc}
+    \toprule
+    Variable            & All-hadronic channel & One-lepton channel \\ \midrule
+    \nlep(baseline)     & $0$               & $1$              \\
+    \nlep(signal)       & -                 & $1$              \\
+    \njets($R=0.4$)     & $\geq 6$          & $\geq 5$         \\
+    \njets($R=1.2$)     & $\geq 2$          & -                \\    
+    \nbjets             & $\geq 3$          & $\geq 3$         \\ 
+    \Ht                 & $\geq 1150~\GeV$ & $\geq 300~\GeV$ \\ \bottomrule 
+    \end{tabular}%
+    }
+\end{table}

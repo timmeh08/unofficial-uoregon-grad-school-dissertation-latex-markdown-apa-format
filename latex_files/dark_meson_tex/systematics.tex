@@ -1,0 +1,69 @@
+%!TEX root = ../ANA-EXOT-2023-09-PAPER.tex
+
+The predicted signal and background event yields in the SR bins are affected by various sources of systematic uncertainties stemming from instrumentation, the data-driven multijet estimation and theoretical considerations. 
+For the \allhad channel, the total uncertainty is dominated by the uncertainty on the multijet background estimate.
+In the \onelep channel, the theoretical sources of uncertainty on the background modeling dominate the total uncertainty.
+
+\subsection{Experimental uncertainties}
+The uncertainty in the combined 2015--2018 integrated luminosity is $0.83\%$~\cite{DAPR-2021-01}, obtained using the LUCID-2 detector~\cite{LUCID2} for the primary luminosity measurements, complemented by measurements using the ID and calorimeters. A systematic variation that might be introduced by the reweighting of simulated samples to match the pileup profile observed in data is estimated by varying the scale factor applied to the pileup distributions. 
+The onset of the \Ht trigger used in the \allhad channel was studied and potential effects of mismodeling were evaluated. All three of these uncertainties were found to have a negligible impact on the analysis ($<1\%$ in the \allhad channel, and ranking from $<1\%$ to a few percent depending on the signal in the \onelep channel).
+
+Slight performance differences between data and simulation in lepton reconstruction, identification and isolation are corrected by the application of scale factors that are estimated from tag-and-probe experiments in data and simulation~\cite{EGAM-2018-01,MUON-2018-03}. The impact of lepton momentum scale corrections is evaluated by $\pm1\sigma$ scale variations. For resolution uncertainties the lepton energy or momentum is smeared. In total seven (twelve) separate variations for electrons (muons) are considered. The impact of lepton uncertainties is less than $1\%$ in both channels.
+
+The determination of the jet energy scale and resolution is done by combining information from collision data, test beam data and simulation as described in Ref.~\cite{JETM-2018-05}. Effects from jet flavor composition, single-particle response and pileup are considered. In the \onelep channel, 29 parameters are evaluated for scale variations, while 13 parameters are evaluated for jet \pT\ resolution systematic uncertainties. 
+In the \allhad channel the variations are simplified since the data-driven background estimation method largely compensates yield changes by different systematic variations and causes most of the systematic uncertainties to be negligibly small. As such, 23 parameters arise from scale variations, while for jet \pT\ resolution systematic uncertainties 8 parameters are evaluated. The impact of these uncertainties on the final result is small, ranging between $<1\%$ to about $4\%$ in the \allhad channel, and remaining $<10\%$ in the \onelep channel.
+
+Uncertainties on the corrections of $b$-tagging efficiency differences between data and simulation are derived from dedicated flavor-enriched subsets of the data~\cite{FTAG-2018-01}. Also considered are uncertainties due to the mis-tagging of $c$-jets~\cite{FTAG-2020-08} and light-flavor jets~\cite{FTAG-2019-02}. %For the \allhad channel, nine independent parameters were evaluated for \bjets~\cite{FTAG-2018-01}, five parameters for \cjets and six parameters from light jets. For the \onelep channel, nine independent parameters were evaluated for \bjets, four parameters for \cjets and four parameters from light jets. 
+Additionally, variations to extrapolate the measured uncertainties to the high-\pt region are considered for both channels~\cite{ATL-PHYS-PUB-2021-003}. The impact of flavor-tagging systematic uncertainties is less than $1\%$ on the final result in the \allhad channel, while a larger contribution is observed in the \onelep channel, reaching values of the order of 10\%.
+
+\subsection{Modeling uncertainties in background simulations}
+For the \allhad channel, uncertainties in modeling of the \ttbar background are included. %Other possible backgrounds are only included as part of the data-driven estimation. 
+For the \onelep channel, uncertainties in modeling the \ttbar, \ttbb, and single top-quark backgrounds are included. All other simulated backgrounds are negligible in both channels and no systematic uncertainties are assigned to them. For the single top-quark background, a 30\% normalization uncertainty is applied~\cite{EXOT-2022-14} with an impact ranging between $<1\%$ and a few percent. Details on the \ttbar and \ttbb uncertainties are described below. 
+
+\subsubsection{\ttbar uncertainties}
+\label{sec:ttbaruncertainty}
+Several uncertainties in the theoretical modeling of the \ttbar background samples are considered. In the \onelep channel the \ttbar theory systematic uncertainties apply only on the \ttlight and \ttc background components as they are estimated from the five-flavor scheme \ttbar sample, while the \ttb background has dedicated systematic uncertainties. 
+
+Missing higher order contributions in perturbative expansion of the \ttbar production cross-section are estimated by adding in quadrature contributions from renormalization and factorization scale variations, which are obtained by independently varying the parameters $\mu_R$ and $\mu_F$ by a factor $0.5$ and $2.0$ and taking the envelope. 
+Uncertainties on the choice of PDF set used for event simulation are estimated by using the PDF4LHC and NNPDF error sets following the PDF4LHC prescription~\cite{ThePDF4LHCWorGroIntRec} and taking the envelope. 
+The initial-state radiation (ISR) modeling is estimated by variations of the strong coupling constant $\alpha_S$ through the \textsc{Var3c} tune variation. 
+The amount of final-state radiation (FSR) in an event is estimated by varying the factorization scale by factors $0.5$ and $2.0$ inside \pythia. 
+% To assess the uncertainty in the matching of NLO matrix elements to the parton shower, the \powhegbox~v2 sample was compared with a sample of events generated with \mgamc~\textsc{v2.6.0} interfaced with \pythia.230. The \mgamc calculation used the \nnpdfnlo set of PDFs and \pythia used the A14 set of tuned parameters and the \nnpdftwo set of PDFs. The decays of bottom and charm hadrons were simulated using the \evtgen~\textsc{1.6.0} program. 
+To assess the uncertainty in the matching of NLO matrix elements to the parton shower, the nominal sample is compared to an alternative sample obtained setting the \texttt{pthard} \pythia parameter to 1 (the default is 0). This parameter regulates the definition of the vetoed region of the showering, important to avoid holes and overlaps in the phase space filled by \powheg and \pythia. This recommendation follows the description included in Ref.~\cite{Hoche:2021mkv}. The alternative sample was produced using \powheg interfaced with \pythia.306 using the \nnpdftwo PDF set and the A14 set of tuned parameters.
+The impacts of using a different parton shower and hadronization model were evaluated by comparing the nominal \ttbar sample with another event sample produced with the \powhegbox~v2 generator. For the parton shower variation the \nnpdfnlo PDF set was used, while events in the sample used to estimate the impact of the hadronization model were interfaced with \herwig~\textsc{7.04}~\cite{Bahr:2008pv,Bellm:2015jjp}, using the H7UE set of tuned parameters~\cite{Bellm:2015jjp} and the \mmhtlo PDF set~\cite{Harland-Lang:2014zoa}. The impact of a variation of the \hdamp parameter is assessed by comparing the nominal samples to an alternative set of samples for which \hdamp is set to $3m_{\text{top}}$. 
+
+All alternative samples used to derive the systematic uncertainties are corrected to match the NNLO in QCD and NLO in EW predictions of the top/antitop-quark \pt and the top-quark mass distribution using the procedure outlined in Section~\ref{sec:ttbarBackground}.
+A systematic uncertainty associated with this reweighting itself is derived from the maximum and minimum 7-point scale variations, independently for the top/antitop-quark \pt and the top-quark mass. The variations are taken into account in the final statistical fit by including them as scale variations on the \ttbar background.
+
+To avoid over-constraining the \ttbar modeling nuisance parameters in the \onelep channel, the theoretical systematic uncertainties are treated as uncorrelated among \ttlight and \ttc, jet and \bjet multiplicity bins, and between their shape and acceptance components.
+
+The impact of \ttbar modeling uncertainties on the final result is found to range between $<1\%$ and $10\%$.
+
+\subsubsection{\ttbb uncertainties}
+\label{sec:syst_ttbb_theory}
+
+Theory uncertainties on the \ttbb sample are only applied to the \ttb component in the \onelep channel, as all other \ttbar components are estimated from the bulk \ttbar sample.
+
+The scale, PDF, ISR, and FSR uncertainties for the \ttbb sample are derived in the same way as the bulk \ttbar sample. The impacts of using a different parton shower and hadronization model are evaluated by comparing the nominal \ttbar sample to another sample produced with the \powhegbox~v2 generator. For the parton shower variation the \nnpdfnlo PDF set was used, while events in the sample estimating the impact of the hadronization model were interfaced with \herwig~\textsc{7.1}, using the \textsc{H7.1-Default} set of tuned parameters and the \mmhtlo PDF set~\cite{Harland-Lang:2014zoa}.
+
+The matching uncertainty is evaluated by comparing the nominal sample with an alternative sample obtained by setting the \texttt{pthard} \pythia parameter to 1. The alternative sample was produced using \powheg interfaced with \pythia.307 using the \nnpdftwo PDF set and the A14 set of tuned parameters. 
+
+The \ttbb uncertainty nuisance parameters are treated as uncorrelated between the different regions of jet and \bjet multiplicities and are further split up into their shape and acceptance components to avoid over-constraining them in the fit. They constitute the dominant systematic contribution in the \onelep channel, with an impact on the final results ranging from 1\% to about 30\%. 
+
+% \subsubsection{Single top uncertainties}
+
+% The background arising from single top production is small in all SRs and CRs. Significant contributions of the order of 10\% of the total background appear only in a few bins at large values of \dave. A simplified approach to estimating the single-top uncertainty is therefore chosen. The single-top background is vastly dominated (>90\%) by the $tW$-channel where the main systematic uncertainty arises from the single-top interference scheme (diagram removal vs diagram subtraction). Other analyses working in similar phase spaces as the present search, e.g. the SM $t\bar{t}t\bar{t}$ analysis~\cite{EXOT-2022-14}, have conservatively estimated the total uncertainty on the single-top background at $30\%$. A flat $30\%$ uncertainty is applied for the single-top background. The impact of this uncertainty ranges between $<1\%$ and a few percent.
+
+% In order to verify this estimation we have repeated the fit while setting the single-top uncertainty to $100\%$ and found that the results were unchanged by the increase in systematic uncertainty.
+
+\subsection{Data-driven background estimation uncertainties}
+
+In the \allhad channel, the dominant systematic uncertainty originates from the multijet estimation method. Deviations of the ratio between data and SM estimate from unity in the VRs, denoted by $k_{VR} = (\text{data}-\text{MC})/\text{multijet}$, are used to estimate a non-closure systematic uncertainty. These $k$-factors are a measure of the remaining correlations between 3-tags in the multijet estimation method and are expected to be close to unity. The statistical uncertainties on the $k$-factors $\sigma_{k_{VR}}$ are added in quadrature so that the final multijet uncertainty is calculated according to:
+\begin{equation}
+  \sigma_{ABCD} = \sqrt{ \left(1 - \prod_{VR} k_{VR}\right)^2+\sum_{VR}\sigma^2_{k_{VR}}}\quad,
+\end{equation}
+where the first term under the square root describes the non-closure component of the systematic uncertainty calculated from the $k$-factors and the second term the statistical uncertainty summed up in quadrature over all four VRs. The statistical component dominates in most regions and is driven by region $H$ in Figure~\ref{fig:ABCDlabels} which has the lowest number of events. The computation is done separately for each bin of the SR producing values ranging from $33\%$ to $57\%$. The uncertainty in each SR mass bin is treated as fully uncorrelated with the other SR mass bins thus yielding a conservative estimate.
+ 
+%Systematic variations in simulated event yields affect the determined multijet yields since they are directly constrained to the data. All other systematic uncertainties, which are described in detail below, are therefore propagated to the multijet estimation and dedicated estimates are derived for each variation individually. As a result, the impact of these other systematic uncertainties is reduced as the multijet estimate automatically compensates appearing variations. %With the exception of the \ttbar modeling uncertainties, which have a $5\%$ impact on the final result, all
+
+
