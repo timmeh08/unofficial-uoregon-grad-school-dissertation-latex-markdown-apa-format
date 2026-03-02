@@ -80,6 +80,8 @@
 \usepackage[normalem]{ulem}
 \usepackage{tabularx,xspace,multirow}
 \usepackage{array}
+\usepackage{cancel}
+\usepackage{siunitx}
 
 % Added by Jacob L. following https://tex.stackexchange.com/questions/148314/undefined-control-sequence-in-printbibliography-biblatex to allow UTF-8 (non-ASCII) characters in the bibliography .bib file.
 \usepackage[utf8]{inputenc}
@@ -141,3 +143,74 @@
 \providecommand{\pp}{\ensuremath{pp}\xspace}
 \providecommand{\allhad}{all-hadronic\xspace}
 \providecommand{\onelep}{one-lepton\xspace}
+\providecommand{\TeV}{\ensuremath{\mathrm{TeV}}\xspace}
+\providecommand{\GeV}{\ensuremath{\mathrm{GeV}}\xspace}
+\providecommand{\MeV}{\ensuremath{\mathrm{MeV}}\xspace}
+\providecommand{\ifb}{\ensuremath{\mathrm{fb}^{-1}}\xspace}
+\providecommand{\GEANT}{\textsc{Geant4}}
+\providecommand{\pt}{\ensuremath{p_{\mathrm{T}}}\xspace}
+\providecommand{\Ht}{\ensuremath{H_{\mathrm{T}}}\xspace}
+\providecommand{\mtop}{\ensuremath{m_{\mathrm{top}}}\xspace}
+\providecommand{\dave}{\ensuremath{m_{\mathbb{J}^{\text{had}}}+m_{\mathbb{J}^{\text{lep}}}}\xspace}
+\providecommand{\mgamc}{\textsc{MadGraph5\_aMC@NLO}\xspace}
+\providecommand{\pythia}{\textsc{Pythia}\xspace}
+\providecommand{\powheg}{\textsc{Powheg}\xspace}
+\providecommand{\powhegbox}{\textsc{Powheg-Box}\xspace}
+\providecommand{\powhegboxres}{\textsc{Powheg-Box-Res}\xspace}
+\providecommand{\sherpa}{\textsc{Sherpa}\xspace}
+\providecommand{\evtgen}{\textsc{EvtGen}\xspace}
+\providecommand{\openloops}{\textsc{OpenLoops}\xspace}
+\providecommand{\herwig}{\textsc{Herwig}\xspace}
+\providecommand{\nnpdftwo}{\textsc{NNPDF2.3}\xspace}
+\providecommand{\nnpdfnlo}{\textsc{NNPDF3.0NLO}\xspace}
+\providecommand{\nnpdfnnlo}{\textsc{NNPDF3.0NNLO}\xspace}
+\providecommand{\nnpdfonenlo}{\textsc{NNPDF3.1NLO}\xspace}
+\providecommand{\mmhtlo}{\textsc{MMHT2014lo}\xspace}
+\providecommand{\hdamp}{\ensuremath{h_{\mathrm{damp}}}\xspace}
+\providecommand{\antikt}{anti-$k_{t}$\xspace}
+\providecommand{\Vjets}{\ensuremath{V+\mathrm{jets}}\xspace}
+\providecommand{\ttbar}{\ensuremath{t\bar{t}}\xspace}
+\providecommand{\ttb}{\ensuremath{t\bar{t}+\geq1b}\xspace}
+\providecommand{\ttbb}{\ensuremath{t\bar{t}+b\bar{b}}\xspace}
+\providecommand{\ttc}{\ensuremath{t\bar{t}+\geq1c}\xspace}
+\providecommand{\ttlight}{\ensuremath{t\bar{t}+\mathrm{light}}\xspace}
+\providecommand{\ttHF}{\ensuremath{t\bar{t}+\mathrm{HF}}\xspace}
+\providecommand{\ttH}{\ensuremath{t\bar{t}H}\xspace}
+\providecommand{\ttV}{\ensuremath{t\bar{t}V}\xspace}
+\providecommand{\ttX}{\ensuremath{t\bar{t}X}\xspace}
+\providecommand{\tttt}{\ensuremath{t\bar{t}t\bar{t}}\xspace}
+\providecommand{\ttnb}{\ensuremath{t\bar{t}+\mathrm{nb}}\xspace}
+\providecommand{\ttt}{\ensuremath{ttt}\xspace}
+\providecommand{\ttHH}{\ensuremath{t\bar{t}HH}\xspace}
+\providecommand{\ttWH}{\ensuremath{t\bar{t}WH}\xspace}
+\providecommand{\ttWW}{\ensuremath{t\bar{t}WW}\xspace}
+\providecommand{\ttWZ}{\ensuremath{t\bar{t}WZ}\xspace}
+\providecommand{\ttZZ}{\ensuremath{t\bar{t}ZZ}\xspace}
+\providecommand{\bjet}{\ensuremath{b}\text{-jet}\xspace}
+\providecommand{\bjets}{\ensuremath{b}\text{-jets}\xspace}
+\providecommand{\cjets}{\ensuremath{c}\text{-jets}\xspace}
+\providecommand{\dpmass}{\ensuremath{m_{\pi_{D}}}\xspace}
+\providecommand{\madspin}{\textsc{MadSpin}\xspace}
+\providecommand{\jlepE}{\ensuremath{\mathbb{J_{\mathrm{8}}}^{lep}}\xspace}
+\providecommand{\jlep}{\ensuremath{J^{\text{lep}}}\xspace}
+\providecommand{\jhad}{\ensuremath{J^{\text{had}}}\xspace}
+\providecommand{\makttwelve}{\ensuremath{m_{\mathrm{jet,R=1.2}}}\xspace}
+\providecommand{\makttwelveone}{\ensuremath{m^{1}_{\mathrm{jet,R=1.2}}}\xspace}
+\providecommand{\makttwelvetwo}{\ensuremath{m^{2}_{\mathrm{jet,R=1.2}}}\xspace}
+\providecommand{\ptakttwelveone}{\ensuremath{p^{1}_{\mathrm{T,R=1.2}}}\xspace}
+\providecommand{\ptakttwelvetwo}{\ensuremath{p^{2}_{\mathrm{T,R=1.2}}}\xspace}
+\providecommand{\nlep}{\ensuremath{\mathrm{N}_{\mathrm{lep}}}\xspace}
+\providecommand{\njets}{\ensuremath{\mathrm{N}_{\mathrm{jets}}}\xspace}
+\providecommand{\nbjetsloose}{\ensuremath{\mathrm{N}^{\mathrm{loose}}_{\mathrm{b-jet}}}\xspace}
+\providecommand{\nbjets}{\ensuremath{\mathrm{N}_{b\text{-jets}}}\xspace}
+\providecommand{\bbbar}{\ensuremath{b\bar{b}}\xspace}
+\providecommand{\mptbb}{\ensuremath{m_{bb}/p_{\mathrm{T},bb}}\xspace}
+\providecommand{\drbj}{\ensuremath{\Delta R\left(j,b_{2}\right)}\xspace}
+\providecommand{\pitagi}{\ensuremath{\pi_{D,i}}\xspace}
+\providecommand{\pitagone}{\ensuremath{\pi_{D,1}}\xspace}
+\providecommand{\pitagtwo}{\ensuremath{\pi_{D,2}}\xspace}
+\providecommand{\bbinvm}{\ensuremath{m_{bb,\text{min}\Delta R}}\xspace}
+\providecommand{\deltaR}{\ensuremath{\Delta R (\ell,b_2)}\xspace}
+\providecommand{\mT}{\ensuremath{m_T}\xspace}
+\providecommand{\kttb}{\ensuremath{k(t\bar{t}+\geq 1b})\xspace}
+\providecommand{\kttnb}{\ensuremath{k(t\bar{t}+0b})\xspace}
