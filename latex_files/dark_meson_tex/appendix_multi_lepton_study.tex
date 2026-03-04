@@ -1,0 +1,108 @@
+\section{Multi-Lepton Channel Truth Study}
+\label{app:multi_lepton_study}
+
+As seen in figure~\ref{fig:eventSignatures}, decays with 2 or more leptons constitute a small fraction of $ttbb$ and $tttb$ final states. 
+The purpose of these studies is to investigate the benefits of adding the multi-lepton channel to the aforementioned Run 2 iteration of the dark meson analysis, or a potential Run 3 update of the analysis.
+Although the fractions are small, the potential of making the one-lepton channel inclusive is worth investigating to boost the sensitivity if the cost in backgrounds is not significant, however, it was not deemed justified to investigate backgrounds after conducting these studies.
+The $H_T$ and single-lepton triggers have high efficiencies for the signal, but there are some events that do not pass either.
+Signal and trigger efficiencies are calculated, then a final estimate of events that pass multi-lepton triggers, but do not pass the $H_T$ or single-lepton triggers is presented.
+
+\begin{figure}[tbp]
+  % The plots have been produced with the plot_eventSignatures.C script which can be found in the dark meson git space: https://gitlab.cern.ch/darkmesonsearch/darkscripts/-/blob/master/plot_eventSignatures.C
+  \centering
+  \subfloat[]{\includegraphics[width=0.32\textwidth]{../images/dark_meson/eventSignature_SU2L_gaugephobic.pdf}\phantomsubcaption\label{fig:evtsignatureSU2L}}
+  \subfloat[]{\includegraphics[width=0.32\textwidth]{../images/dark_meson/eventSignature_SU2R_gaugephobic.pdf}\phantomsubcaption\label{fig:evtsignatureSU2R}}
+  \caption{Most relevant final states for pair-produced dark pions from \protect\subref{fig:evtsignatureSU2L} gaugephobic \sul models and \protect\subref{fig:evtsignatureSU2R} gaugephobic \sur models.}
+  \label{fig:eventSignatures}
+\end{figure}
+
+\begin{figure}[tbp]
+  % The plots have been produced with the plot_branchingFractions.C script which can be found in the dark meson git space: https://gitlab.cern.ch/darkmesonsearch/darkscripts/blob/master/plot_branchingFractions.C
+  \centering
+  \subfloat[]{\includegraphics[page=3,width=0.32\textwidth]{../images/dark_meson/branchingFractions.pdf}\phantomsubcaption\label{fig:pi0branchingfractions}}
+  \subfloat[]{\includegraphics[page=4,width=0.32\textwidth]{../images/dark_meson/branchingFractions.pdf}\phantomsubcaption\label{fig:pipmbranchingfractions}} 
+  %\subfloat[]{\includegraphics[page=1,width=0.32\textwidth]{branchingFractions.pdf} %gaugephilic models
+  %\subfloat[]{\includegraphics[page=2,width=0.32\textwidth]{branchingFractions.pdf}
+  \caption{Branching fractions of the most relevant decay channels over the full dark pion mass range for neutral dark pions in \protect\subref{fig:pi0branchingfractions} and for positively charged dark pions in \protect\subref{fig:pipmbranchingfractions}. Not all possible decay channels are drawn and channels with small branching fractions are suppressed for clarity. About one third of dark pions in the \sul models are neutral, resulting in the $tttb$ event signature being twice as likely as the $ttbb$ signature. For \sur models only the $ttbb$ final state appears.}
+  \label{fig:branchingfractions}
+\end{figure}
+
+\subsection{Signal Samples}
+
+Dark pions can be pair-produced resonantly via the production of a dark rho or in Drell-Yann-type processes.
+Both production channels are simulated in \mgamc~v2.4.3~\cite{Alwall:2014hca}, where the matrix elements are calculated to NLO, interfaced with \pythia.212~\cite{Sjostrand:2007gs} for hadronisation and showering using production tags \texttt{e8005} for \sul and \texttt{e8207} for \sur samples in \texttt{athena r19}.
+Signal parameters were chosen to cover the relevant areas in ($m_{\pi_D}$,$\eta$) space for \sul and \sur models.
+The number of dark colours $N_D$ was set to $4$ for all signal points, the dark pion decays were simulated using the narrow width approximation.
+All events are passed through a detailed simulation of the ATLAS detector in \textsc{Geant4}~\cite{Agostinelli:2002hh,SOFT-2010-01}, where the detailed configuration is listed in tag \texttt{s3126}.
+The same reconstruction algorithms and the same \texttt{athena} software release is used for simulation and data.
+To mimic the pileup conditions during data taking, the simulated samples are overlaid with minimum-bias collisions, where the number of additional collisions approximate the pileup distributions observed in data.
+Since the pileup conditions changed over time, three distinct Monte Carlo campaigns are necessary to completely reproduce the pileup conditions in data.
+The mc16a campaign corresponds to data taken in 2015 and 2016 and is represented by tags \texttt{r9364\_r9315}, mc16d corresponds to data taken in 2017 and is considered in tags \texttt{r10201\_r10210}, while tags \texttt{r10724\_r10726} are used for the mc16e campaign representing the 2018 data.
+10K events are simulated for each signal point and Monte Carlo production campaign, with the exception of two samples per model for which 100K events per campaign have been simulated.
+These high-statistics samples are intended for detailed signal studies and correspond to ($m_{\pi_D}=400~\GeV$, $\eta=0.45$) and ($m_{\pi_D}=800~\GeV$, $\eta=0.25$) for \sul models, and for \sur models ($m_{\pi_D}=300~\GeV$, $\eta=0.45$) and ($m_{\pi_D}=400~\GeV$, $\eta=0.35$).
+All simulated signal samples are processed in an unskimmed \texttt{TOPQ1} derivation which can be used by both the all-hadronic and the 1-lepton channel. 
+A detailed list of all signal MC samples is given in appendix~\ref{app:list_of_mc_samples}, an overview of all simulated signal points and their distribution in $\eta$-$m_{\pi_D}$ space can be found in figure~\ref{fig:signalGrid}.
+
+The effect of multiple interactions in the same and neighbouring bunch crossings (pile-up) was modelled by overlaying the simulated hard-scattering event with inelastic proton--proton events generated with \pythia.186~\cite{Sjostrand:2007gs} using the \nnpdftwo set of parton distribution functions (PDF)~\cite{Ball2013} and the \textsc{A3} set of tuned parameters~\cite{ATL-PHYS-PUB-2016-017}.
+
+\subsection{Signal Efficiencies}
+
+Events are separated into all-hadronic, single-lepton, and multi-lepton; events with taus are not included in this multi-lepton study.
+Signal efficiencies are computed out of 10,000 events per sample.
+The dark pion to SM particle branching fractions in figure~\ref{fig:branchingfractions} are used to verify the signal efficiencies.
+The resulting signal efficiencies are plotted in figure~\ref{fig:multi_lepton_efficiencies}.
+The signal samples are similar to the expected efficiencies and no further verification was deemed necessary.
+Low efficiencies reflect the small fraction of $ttbb$ and $tttb$ final states.
+
+\begin{figure}[h]
+  % 
+  \centering
+  \includegraphics[width=0.49\textwidth, page=1]{../images/dark_meson/multilep_eff.pdf}
+  \includegraphics[width=0.49\textwidth, page=2]{../images/dark_meson/multilep_eff.pdf} 
+  \caption{Multi-lepton channel signal efficiencies for \sul (left) and \sur (right) out of 10,000 events. The blue gridpoints are the expected efficiencies for comparison.}
+  \label{fig:multi_lepton_efficiencies}
+\end{figure}
+
+
+ 
+\subsection{Trigger Efficiencies} 
+
+Events out of 10,000 that pass a multi-lepton trigger are used to calculate absolute trigger efficiencies for each gridpoint.
+An event that meets the $p_T$ threshold of any of the multi-lepton triggers is considered as passing the trigger.
+The multi-lepton triggers used in this study are as follows: HLT\_2e17\_lhvloose\_nod0\_L12EM15VHI, HLT\_2mu14, HLT\_e17\_lhloose\_nod0\_mu14, \\HLT\_e7\_lhmedium\_nod0\_mu24, HLT\_e12\_lhloose\_nod0\_2mu10, and HLT\_2e12\_lhloose\_nod0\_mu10.
+The results are plotted in figure~\ref{fig:multi_lepton_trigger_efficiencies}.
+
+\begin{figure}[h]
+  % 
+  \centering
+  \includegraphics[width=0.49\textwidth, page=1]{../images/dark_meson/multilep_trig_eff.pdf}
+  \includegraphics[width=0.49\textwidth, page=2]{../images/dark_meson/multilep_trig_eff.pdf} 
+  \caption{Absolute multi-lepton trigger efficiencies as a function of the dark pion mass and $\eta$ out of 10,000 events. \sul is plotted on the left and \sur on the right.}
+  \label{fig:multi_lepton_trigger_efficiencies}
+\end{figure}
+
+As expected, only a small fraction of events pass a multi-lepton trigger, with similar efficiencies across $\eta$ values.  
+The \sur model has very low efficiencies as it is made up of mostly $ttbb$ final states.
+\\
+Finally, events that pass a multi-lepton trigger exclusively with the correct weighting applied for 139 $fb^{-1}$ are shown in figure~\ref{fig:weighted_multi_lepton_trigger}. 
+Gridpoints at high $\eta$ and low dark pion mass are the most notable.  
+This is a consequence of the high cross sections at those points, and figure~\ref{fig:crossections} plots these cross sections as functions of $\eta$ and dark pion/rho mass for reference.
+Prior to weighting, most gridpoints contained, at most, 10's of unique events out of 10,000.  
+It was notice that most multi-lepton event's leading lepton passed a single lepton $p_T$ threshold, causing the low count of exclusive events.
+ 
+
+\begin{figure}[h]
+  % 
+  \centering
+  \includegraphics[width=0.49\textwidth, page=1]{../images/dark_meson/weighted_multilep_unique.pdf}
+  \includegraphics[width=0.49\textwidth, page=2]{../images/dark_meson/weighted_multilep_unique.pdf} 
+  \caption{Weighted exclusive multi-lepton trigger events for the full \sul (left) \sur (right) gridpoints.}
+  \label{fig:weighted_multi_lepton_trigger}
+\end{figure}
+ 
+\subsection{Conclusions} 
+ 
+Based on the findings of this preliminary truth study, a stand-alone multi-lepton analysis is not justified.  
+The amount of multi-lepton events are too few without considering backgrounds in an optimized multi-lepton signal region.
+However, the single-lepton search is sensitive to the high $\eta$, low dark pion mass gridpoints.
+It may be beneficial to make the single-lepton search inclusive, but a more detailed study addressing backgrounds would need to be done. 
