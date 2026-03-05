@@ -1,0 +1,122 @@
+\section{The extended ABCD method}
+\label{app:ABCD}
+
+The dominant background for this analysis, mutlijet, is estimated using a data-driven approach to extrapolate from the observed contribution in low signal contamination regions to an estimate in the signal region.  This four feature generalization of the ABCD method is similar to multi-jet estimation described in ~\cite{ATL-COM-PHYS-2016-1696}, but with tag definitions  which select dark pions rather than tops. The top tags are replaced by $\pi_D$ tags and single b-tags by bb-tags.
+% In this appendix the 4-variable ABCD method, including 2-tag correlation correction terms,
+
+
+\begin{figure}[htb]
+  \centering
+    \caption{4D ABCD estimate region definitions. These labels have been chosen to agree with the notation used in~\cite{ATL-COM-PHYS-2016-1696}. Tag definitions are described in the main body in table~\ref{tab:SRA_tags}.}
+  \label{app:fig:ABCDlabel}\includegraphics[width=0.45\textwidth]{../images/dark_meson/SRA_tables/Region_labels_ABCDtable.png}
+\end{figure}
+
+
+The method can be defined using $N_D$ different features. For $N_D$ = 2, define $N_{11}$ as the number of events passing both selections and $N_{ij}$ as the number of events passing some combination of selections and inverse selections specified by $1$ or $0$ for the $N$ subscripts.
+We define $f_i$ as the ratio of events passing and not passing selection $i$. We can write
+\begin{align}
+  f_1 &= \frac{N_{10}}{N_{00}}\\
+  f_2 &= \frac{N_{01}}{N_{00}}.
+\end{align}
+In the case of uncorrelated selections,
+\begin{align}
+  f_1 &= \frac{N_{11}}{N_{01}},\\
+  f_2 &= \frac{N_{11}}{N_{10}},
+\end{align}
+and
+\begin{align}
+  N_{10}  &= f_1 {N_{00}},\\
+  \hat{N}_{11}  &= f_2 {N_{10}},\\
+              &= f_2 f_1{N_{00}},\\
+              &= \frac{N_{10}N_{01}}{N_{00}}.
+\end{align}
+Which reproduces the conventional 2D ABCD method (with different notation) for extrapolating into signal region A,
+\begin{align}
+  \hat{N}_{A^*}  &= \frac{N_{B^*}N_{C^*}}{N_{D^*}}.
+\end{align}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{../images/dark_meson/ABCDfig.pdf}
+  \caption{Regions used in a conventional 2D ABCD estimate. Figure taken from~\cite{Gregor_2021}. Discriminating variables are f and g in this plot.}
+  \label{app:fig:ABCDregions}
+\end{figure}
+
+The ratio of the estimated region yield ${N}_{11}$ to the observed yield $\hat{N}_{11}$ is defined as the correlation between these selections,
+\begin{align}
+  k_{12} = \frac{N_{11}}{\hat{N}_{11}}= \frac{N_{11}N_{00}}{N_{10}N_{01}}.
+\end{align}
+In the notation of figure~\ref{app:fig:ABCDlabel} there are 6 k factors which are each determined by comparing the 2D ABCD estimate of the multijet background to data - MC in the two tag region,
+
+%where did these come from
+  % k_{\pi_{D,1},bb1} &= \frac{FA}{CE}, \\
+  % k_{\pi_{D,2},bb2} &= \frac{OA}{CI},\\
+  % k_{\pi_{D,1},bb2} &= \frac{DA}{BC},\\
+  % k_{\pi_{D,2},bb2} &= \frac{GA}{EI},\\
+  % k_{\pi_{D,1},\pi_{D,2}}  &= \frac{JA}{BE},\\
+  % k_{bb1,bb2}&= \frac{HA}{BC}.
+
+\begin{align}
+\label{eq:2tag}
+  k_{\pi_{D,1},\pi_{D,2}} &= \frac{FA}{CE}, \\
+  k_{\pi_{D,1},bb1} &= \frac{OA}{CI},\\
+  k_{\pi_{D,1},bb2} &= \frac{DA}{BC},\\
+  k_{\pi_{D,2},bb1} &= \frac{GA}{EI},\\
+  k_{\pi_{D,2},bb2}  &= \frac{JA}{BE},\\
+  k_{bb1,bb2}&= \frac{HA}{BI}.
+\label{eq:2tag2}
+\end{align}
+
+In the case of three discriminating variables with correlations between pairs of features,
+\begin{align}
+  f_1 &= \frac{N_{100}}{N_{000}},\\
+  f_2 &= \frac{N_{010}}{N_{000}},\\
+  f_3 &= \frac{N_{001}}{N_{000}},\\
+  k_{12} &= \frac{N_{110}}{f_1 f_2N_{000}},\\
+  k_{13} &= \frac{N_{101}}{f_1 f_3N_{000}},\\
+  k_{23} &=  \frac{N_{011}}{f_2 f_3N_{000}}.
+  % k_{12} &= \frac{N_{110}}{f_1 f_2N_{000}}\\
+  % k_{13} &= \frac{N_{101}}{f_1 f_3N_{000}}\\
+  % k_{23} &=  \frac{N_{011}}{f_2 f_3N_{000}}.\\
+\end{align}
+The expectation value of the two tag correlation terms $k_{ij}$ is 1 for the case of uncorrelated variables.
+
+Assuming that the correlation between any two 2-features does not depend on the third feature,
+\begin{align}
+  \hat{N}_{111} &= f_1f_2f_3k_{12}k_{23}k_{13}N_{000}.
+%            &= f_3k_{13}k_{23}N_{110}. \\                      
+\end{align}
+In the notation of figure~\ref{app:fig:ABCDlabel} there are four 3-tag regions which are estimated using the six k-factors defined in equations~\ref{eq:2tag}-\ref{eq:2tag2}.
+The four-region validation region estimates are,
+\begin{align}
+  \hat{K} &= \frac{JC}{A} k_{\pi_{D,1},\pi_{D,2}}  k_{\pi_{D,1},bb_2},\\
+  \hat{L} &= \frac{JI}{A} k_{\pi_{D,2},bb_{1}}  k_{bb_1,bb_2},\\
+  \hat{M} &= \frac{OE}{A} k_{\pi_{D,1},\pi_{D,2}}  k_{\pi_{D,2} ,bb_1},\\
+  \hat{N} &= \frac{OB}{A} k_{\pi_{D,1},bb_2}  k_{bb_1,bb_2}.                             
+\end{align}
+These multijet estimates are used to estimate the SM background in the VRs and define non-closure systematic uncertainties,
+\begin{equation}
+  \sigma_{ABCD} = | 1 - k_K k_L k_M k_N|.
+\end{equation}
+The VR k-factors are estimates of the 3-tag correlations,
+\begin{equation}
+  k_{VR} = \frac{N_{VR}}{\hat{N}_{VR}}\quad,
+\end{equation}  
+where $N$ is the data minus SM MC yield for a region.
+
+Extending to 4 variables and assuming that there are no  4-correlations, 
+\begin{align}
+  \hat{N}_{1111} &= f_1f_2f_3f_4k_{12}k_{13}k_{14}k_{23}k_{24}k_{34}N_{0000},\\
+             &= \frac{N_{1000}N_{0100}N_{0010}N_{0001}}{N_{0000}^3}k_{12}k_{13}k_{14}k_{23}k_{24}k_{34}.
+\end{align}
+Expressing this relation in the region notation used in this analysis, $\pi_{D,1},bb_1,\pi_{D,2},bb_2$ = 1, 2, 3, 4,
+\begin{align}
+  \hat{S}'_{\le \text{1 tag}} &= \prod_{\text{tags}=1} \frac{N_{(j)}}{N^3_A},\\
+  \hat{S}'_{\le \text{1 tag}} &= \frac{N_BN_EN_CN_I}{N^3_A},\\
+  \hat{S} &= \hat{S}'_{\le \text{1 tag}}k_{\pi_{D,1},bb_1} k_{\pi_{D,1},\pi_{D,2}} k_{\pi_{D,1},bb_2} k_{\pi_{D,2},bb_1} k_{bb_1,bb_2} k_{\pi_{D,2},bb_2}.
+\end{align}
+This is the 4-variable 2-correlation corrected ABCD estimate.
+The statistical uncertainty of this estimate is computed from the uncertainties on data minus SM MC for each $1$- and $2$-tag regions,
+\begin{align}
+  \sigma_S^2 &= \sum_{\text{1tag},\text{2tag}}\left(\frac{\partial{S}}{\partial{N}_i}\right)^2 \sigma^2_{N_i}. 
+\end{align}

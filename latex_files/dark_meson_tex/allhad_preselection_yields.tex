@@ -1,0 +1,237 @@
+%!TEX root = ../ANA-EXOT-2019-17-INT1.tex
+
+% \section{Preselection yields for the all-hadronic channel}
+% \subsubsection{All-Hadronic Channel}% [Galen]}
+
+% veral additional event cleaning and basic selection cuts must be passed for events to be considered in the analysis.> <
+In addition to the trigger, good run list, jet/muon cleaning, and derivation requirements, the selections listed in table~\ref{tab:allhad_pre} are applied for the all-hadronic channel.
+This preselection requires zero loose-leptons, \Ht greater than 1150 GeV and at least six jets in an event with $p_T$ > 25 GeV. This \Ht selection has been chosen to exclude the vast majority of the trigger onset region where the \Ht trigger does not have full efficiency yet and where the analysis would be susceptible to a mismodeling of the onset behaviour in simulation. A flavour tagging requirement of three b-tagged jets is applied to reject low b-tag backgrounds. The two large-R jets with the largest \pt are required to have mass over 190 GeV to exclude SM processes.
+% To ensure high top-tagger efficiency the leading two R=1.0 jets are required to have transverse momentum greater than 350 GeV.
+
+\begin{table}[!htb]
+  \caption{Summary of the preselection cuts used in the all-hadronic channel.}
+  \label{tab:allhad_pre}
+  \centering
+  \begin{tabular}{l|c}
+    \hline
+    \hline
+    Cut & Preselection \\
+    \hline
+    loose $\ell$   & $0$        \\
+    \HT      & $>~\SI{1150}{GeV}$\\
+    $p_{T,jet}^6$   & $>25$ GeV                                   \\
+    % \nbjetsloose        & $\ge 3$                        \\
+    \nbjets        & $\ge 3$                        \\
+    \makttwelveone  & $>190$ GeV                                \\
+    \makttwelvetwo  & $>190$ GeV                                \\
+    % \ptakttenone & $> 350$ GeV                               \\
+    %\ptakttentwo & $> 350$ GeV                               \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
+
+
+Event yields with this preselection applied are shown in table ~\ref{tab:SRA_pre}. 
+SM processes with final states containing multiple top or bottom quarks were investigated as potential backgrounds and are included in this table.
+The dominant background originates from multijet events as can be inferred by the large data yield compared to the sum of MC backgrounds.
+In signal and validation regions this multijet background is determined through a data driven method.
+The major MC background is \ttbar, with additional contributions from \Vjets, single-top and \ttbar+X.
+Multiboson backgrounds are almost entirely excluded by the preselection.% and for simplicity are not included in the studies presented in the remainder of this note. 
+\begin{table}[tb]
+  \centering
+  \caption{All-hadronic preselection yields for data and Monte Carlo samples.}
+  \begin{tabular}{l|c|c}
+    \hline
+Sample & Yield & Percent SM MC sum\\ \hline \hline
+ \ttbar & 8756.9 & 78.0 \\
+ \Vjets & 1688.3 & 15.0 \\
+ \ttbar + X & 405.6 & 3.6 \\
+ SingleTop & 375.0 & 3.3\\
+ Multiboson & 0.8  & $<1$ \\
+\hline SM sum & 11226.5 & 100\\
+ \hline 
+ %SU2L-25-400 & 1480.6 \\
+ SU2L-45-400 & 804.7 &\\
+ SU2L-35-500 & 867.3 &\\
+ SU2L-25-500 & 549.5 &\\
+ %SU2L-25-600 & 193.9 &\\
+\hline Data& 67339  \\
+\hline
+  \end{tabular}
+    \label{tab:SRA_pre}
+\end{table}
+
+\begin{sidewaystable}[h!tbp]
+    \caption{All-hadronic preselection cutflow for data and all considered simulated backgrounds at \lumi integrated luminosity.}
+    \label{tab:allhad_cuflow}
+    \centering
+    \setlength{\tabcolsep}{3pt}
+    \begin{tabular}{c||c||c||c|c|c|c|c|c||c}
+      \hline
+      \hline
+      Cut & data & All MC & $t\bar{t}$ allhad & $t\bar{t}$ nonallhad & $V$+jets & $t\bar{t}+X$ & single top & multiboson & Signal-25-500 \\
+      \hline
+      Derivation & $559740475$ & $74686277.3$ & $700250.6$ & $485751.5$ & $52752296.7$ & $234104.3$ & $20387641.6$ & $126232.6$ & $2650.2$ \\
+      GRL & $417309494$ & $74686277.3$ & $700250.6$ & $485751.5$ & $52752296.7$ & $234104.3$ & $20387641.6$ & $126232.6$ & $2650.2$ \\
+      Good Calo & $412694354$ & $74686277.3$ & $700250.6$ & $485751.5$ & $52752296.7$ & $234104.3$ & $20387641.6$ & $126232.6$ & $2650.2$ \\
+      Primary vertex & $412692263$ & $74686277.3$ & $700250.6$ & $485751.5$ & $52752296.7$ & $234104.3$ & $20387641.4$ & $126232.6$ & $2650.2$ \\
+      Trigger & $205205611$ & $3413076.8$ & $650091.2$ & $419676.5$ & $2188774.2$ & $21031.8$ & $132246.8$ & $1256.3$ & $2464.4$ \\
+      Bad muon veto & $205203444$ & $3412881.3$ & $650081.8$ & $419566.8$ & $2188717.7$ & $21028.4$ & $132231.3$ & $1255.3$ & $2464.2$ \\
+      Jet cleaning & $202840649$ & $3401193.6$ & $647806.6$ & $418105.5$ & $2181341.8$ & $20951.7$ & $131736.3$ & $1251.7$ & $2457.2$ \\
+      $H_{T}>1150~$GeV & $87703211$ & $1701555$ & $399278.5$ & $258393.7$ & $970739.3$ & $10700.4$ & $61920.1$ & $523.0$ & $2270.1$ \\
+      $N_{\text{jets}}\geq6$ & $45304007$ & $1207437.7$ & $363798.8$ & $207361.1$ & $581846.0$ & $9943.0$ & $44267.4$ & $221.4$ & $2039.9$ \\
+      $N_{\text{jets, R=1.2}}\geq2$ & $45005443$ & $1196438.1$ & $363209.0$ & $201599.1$ & $578272.9$ & $9792.5$ & $43347.0$ & $217.6$ & $1996.0$ \\
+      $N_{\text{b-jets}}\geq 3$ & $576239$ & $89564.5$ & $48886.3$ & $24779.6$ & $8697.4$ & $2696.3$ & $4484.4$ & $ 20.5$ & $1340.9$ \\
+      electron veto & $568304$ & $80167.3$ & $82489.7$ & $18600.3$ & $8682.5$ & $2359.6$ & $4094.0$ & $ 20.5$ & $1133.9$ \\
+      muon veto & $561409$ & $74916.9$ & $48686.5$ & $12526.6$ & $8667.2$ & $2048.2$ & $3707.3$ & $ 20.5$ & $941.6$ \\
+      $m^{1,2}_{\text{jet},R=1.2}>190~\GeV$ & $69879$ & $82489.7$ & $7205.5$ & $1660.0$ & $1734.0$ & $409.0$ & $384.2$ & $0.8$ & $560.0$ \\
+      $p^6_{T,\text{jet}}>25~\GeV$ & $67339$ & $11220.6$ & $7127.8$ & $1629.1$ & $1687.4$ & $405.6$ & $375.0$ & $0.8$ & $549.2$ \\
+      \hline
+      preselected & $67339$ & $11220.6$ & $7127.8$ & $1629.1$ & $1687.4$ & $405.6$ & $375.0$ & $0.8$ & $549.2$ \\
+      \hline
+      % Note to Jochen (from Jochen): This last part is currently not yet scripted since I was pressed for time. Please do so soon...
+      % 22 Feb 2023: Answer from Jochen (to Jochen): Yeah, had to do this again. Screw you for not automating it. But too lazy to do it now either. Hopefully we won't have to do this again...
+      lead. \mptbb > 0.25 & $59299$ & $10048$ & $6364.7$ & $1472.5$ & $1507.8$ & $365.1$ & $337.1$ & $0.8$ & $492.9$ \\
+      sub. \mptbb > 0.25 & $52917$ & $9075.8$ & $5782.9$ & $1309.9$ & $1347.9$ & $330.3$ & $304.3$ & $0.4$ & $449.9$ \\
+      lead. \makttwelve\ > 300 GeV & $20018$ & $3447.5$ & $2156.6$ & $514.2$ & $510.0$ & $138.7$ & $128.0$ & $0.0$ & $363.6$ \\
+      sub. \makttwelve\ > 250 GeV & $11444$ & $2040$ & $1234.5$ & $302.5$ & $343.6$ & $83.3$ & $76.0$ & $0.0$ & $302.7$ \\
+      lead. \drbj < 1.0 & $3365$ & $575.7$ & $411.1$ & $63.9$ & $52.5$ & $26.5$ & $21.7$ & $0.0$ & $167.0$ \\
+      sub. \drbj < 1.0 & $234$ & $46.2$ & $28.3$ & $7.9$ & $5.0$ & $3.4$ & $1.5$ & $0.0$ & $66.6$ \\
+    \end{tabular}
+\end{sidewaystable}
+
+Applying the event quality, trigger, and preselection cuts results in the data, MC and example signal point yields listed in the cutflow in table~\ref{tab:allhad_cuflow}. Each row of this table shows the weighted events yields after application of all cuts listed above. For completeness the table also contains event counts for the final selection which will be described in detail in section~\ref{sec:srDefinitions}.
+Appendix~\ref{app:rawcutflow} contains the preselection cutflow for raw event counts. 
+
+% signal yield
+Signal yields across the original signal point grid with the preselection applied are shown in figure~\ref{fig:pre_sigyield}. The preselection cuts were optimised using the $\eta=0.25$ and $\dpmass=500~\GeV$ signal point as a benchmark. The signal yields drop significantly at high dark pion masses and for small $\eta$ values due to the large decrease in production cross section as shown in figure~\ref{fig:crosssections}. Additionally, for the samples with $\eta=0.15$ Drell-Yan-type dark pion production becomes relevant and takes over as dominant production mechanism for $\dpmass>400~\GeV$ resulting in further reduced signal yields.
+
+\begin{figure}[h!tb]
+  \centering
+  \includegraphics[width=0.9\textwidth]{../images/dark_meson/all_had_events_25pt_cut.png}\\
+  \includegraphics[width=0.9\textwidth]{../images/dark_meson/all_had_eff_25pt_cut.png}
+  \caption{All-hadronic preselection yield and efficiency for SU2L signal points. The signal region has been optimized for $\eta=0.25$ and $\dpmass=500~\GeV$. SU2R is not targeted in the all hadronic channel due to the low cross section at large $\pi_D$ and $\rho_D$ masses in this model. Note that these plots were created with the old luminosity tag corresponding to $139~\ifb$, however we expect differences with the new luminosity tag at \lumi to be small.}
+    \label{fig:pre_sigyield}   
+\end{figure}
+
+
+% Distributions of all-hadronic preselection and signal region discriminating variables are shown in figures~\ref{fig:pre_plots1}-\ref{fig:pre_plots3}. These plots compare normalized distributions of MC backgrounds to three reference signal points. No multijet background estimate is included in these plots as they are intended to show signal discrimination from MC backgrounds. Kinematic distributions of jets in preselected data events and their stability over time have been studied in appendix~\ref{app:sec:dataPlots}, the sensitivity of the key preselection quantities to pileup were investigated more closely in appendix~\ref{app:allhadPileUp}.
+
+% \begin{figure}[h!tb]
+%   \centering
+%     \label{fig:pre_Jets_N}\includegraphics[width=0.495\textwidth]{figures/allhad/Plots_full_pre_MC/Internal_Jets-N.pdf}
+%     \label{fig:pre_BJets_N}\includegraphics[width=0.495\textwidth]{figures/allhad/Plots_full_pre_MC/Internal_BJets-N.pdf}\\
+%     \label{fig:pre_HT}\includegraphics[width=0.495\textwidth]{figures/allhad/Plots_full_pre_MC/Internal_HT.pdf}
+%     \caption{Plots of the all-hadronic preselection variables with the last bin including overflow events. Statistical uncertainties are indicated by the shaded region. Multijet background is not calculated at the preselection stage. Smaller $\eta$ values result in a more boosted topology which results in the merging of R=0.4 jets and a reduced number of jets.}
+%     \label{fig:pre_plots1}
+% \end{figure}
+% \begin{figure}[h!tb]
+%   \centering
+%     % \label{fig:pre_Jets_12_ttag_0}\includegraphics[width=0.495\textwidth]{figures/allhad/Plots_full_pre/Jets-12-ttag-0.pdf}
+%     % \label{fig:pre_Jets_12 _ttag_1}\includegraphics[width=0.495\textwidth]{figures/allhad/Plots_full_pre/Jets-12-ttag-1.pdf}\\
+%     \label{fig:pre_Jets_12_m_0}\includegraphics[width=0.495\textwidth]{figures/allhad/Plots_full_pre_MC/Internal_Jets-12-m-0.pdf}
+%     \label{fig:pre_Jets_12_m_1}\includegraphics[width=0.495\textwidth]{figures/allhad/Plots_full_pre_MC/Internal_Jets-12-m-1.pdf}
+%         \caption{Plots of the all-hadronic preselection variables with the last bin including overflow events. Statistical uncertainties are indicated by the shaded region. Multijet background is not calculated at the preselection stage. Signal region selections as described by table~\ref{tab:SRA_tags} are indicated with a vertical line. Individual SR bins select sub-regions of leading and sub-leading large-R jet mass for improved background discrimination.}
+%         \label{fig:pre_plots2}
+% \end{figure}
+% \begin{figure}[h!tb]
+%   \centering
+%     \label{fig:pre_Jets_12_dRb1_0}\includegraphics[width=0.495\textwidth]{figures/allhad/Plots_full_pre_MC/Internal_Jets-12-dRb1-0.pdf}
+%     \label{fig:pre_Jets_12_dRb1_1}\includegraphics[width=0.495\textwidth]{figures/allhad/Plots_full_pre_MC/Internal_Jets-12-dRb1-1.pdf}\\
+%     \label{fig:pre_Jets_12_mptbbp_0}\includegraphics[width=0.495\textwidth]{figures/allhad/Plots_full_pre_MC/Internal_Jets-12-mptbbp-0.pdf}
+%     \label{fig:pre_Jets_12_mptbbp_1}\includegraphics[width=0.495\textwidth]{figures/allhad/Plots_full_pre_MC/Internal_Jets-12-mptbbp-1.pdf}
+%     \caption{Plots of the all-hadronic preselection variables with the last bin including overflow events. The Multijet background is not estimated for this selection. The \mptbb > 0.25 selection is intended to suppress multijet events. Signal region selections as described by table~\ref{tab:SRA_tags} are indicated with a vertical line. Leading and sub-leading large-R jet $\mathrm{\Delta R(J,b_2)}$ is required to be less than 1.0. Statistical uncertainties are indicated by the shaded band. }
+%         \label{fig:pre_plots3}
+% \end{figure}
+
+
+% \ifthenelse{\boolean{compileAllHadOnly}}{}{ % The following section will not appear if variable is set to true
+% \subsubsection{1-Lepton Channel}% [Olga]
+% \label{1leppresel}
+% Since top quarks decay to a W boson and a b-quark, the 1-lepton final state occurs when exactly one of the W bosons decays leptonically, into a lepton and a neutrino, and the other W boson(s) decay hadronically to a quark anti-quark pair. In this analysis only the cases when the lepton is an electron or a muon are considered, and the cases where the lepton is a tau lepton are indirectly included when the tau lepton decays into either a muon or an electron and its corresponding neutrino.
+% The final state therefore comprises exactly one lepton (muon or electron), one neutrino, eight (tttb) or six (ttbb) quarks out of which four are b-quarks, and possibly an additional neutrino from the tau decay. 
+
+% Based on this, events are selected in the 1-lepton channel if they satisfy the following criteria: First they have to have exactly one tight and no additional loose leptons (electrons or muons), as defined in sections~\ref{electrons} and~\ref{muons}. Additionally, they are required to have at least four jets, as defined in section~\ref{jets}, out of which at least three also have to be identified as b-jets, following section~\ref{sec:flavourtagging}. 
+% %This sets the jet and b-jet multiplicity requirements slightly lower than expected from the target final state, due to the fact that the jet and b-jet identification is not fully efficient. 
+% Finally, the \HT of the event is required to be larger than 300 GeV to both increase the signal-to-background ratio and reduce the effects of mismodeling in the low end of the spectrum. 
+% The preselection of the 1-lepton channel is summarised in table~\ref{tab:1lpresel}.
+
+% %\begin{figure}[h!tb]
+% %  \centering
+% %    \includegraphics[width=0.495\textwidth]{figures/1L/PreselectionWithoutHT/HT-pt_xsec_log.png}
+% %    \caption{\HT shown in the preselection before the \HT>300 GeV requirement is made.}
+% %        \label{fig:HTmismodeling}
+% %\end{figure}
+
+% \begin{table}[hbtp]
+%   \footnotesize
+%   \centering
+%   \caption{Summary of the pre-selection used in the 1-lepton channel.}
+%   \label{tab:1lpresel}
+%   \begin{tabular}[ht]{lc}
+%     \hline
+%     \hline
+%    Number of leptons & == 1 \\
+%    Number of additional loose leptons & == 0 \\
+%    Number of jets & >= 4 \\
+%    Number of b-tagged jets & >= 3 \\
+%    \Ht & > \SI{300}{GeV} \\
+%     \hline
+%     \hline
+%   \end{tabular}
+% \end{table}
+
+% Figure~\ref{fig:MCagreement1lep} shows the agreement between data and simulation after the 1-lepton preselection for five kinematic distributions: leading jet \pt, \etmiss, \mt, \Ht, and lepton \pt. 
+% %The largest discrepancy can be seen in the \( p_\text{T}\) spectrum of the leading jet, where it increases to 25\% in the high-\(p_\text{T}\) tail, following a general trend of the NLO simulations to overestimate data in this region which is described in detail in \ref{sec:BGEstimate}. 
+
+% \begin{figure}[h!tb]
+%   \centering
+%   \includegraphics[width=0.4\textwidth]{figures/1L/Preselection/jet-pt-0_xsec_log.pdf}
+%   \includegraphics[width=0.4\textwidth]{figures/1L/Preselection/mT_xsec_log.pdf}\\
+%   \includegraphics[width=0.4\textwidth]{figures/1L/Preselection/HT_xsec_log.pdf} 
+%   \includegraphics[width=0.4\textwidth]{figures/1L/Preselection/Lepton-pt_xsec_log.pdf}\\
+%   \includegraphics[width=0.4\textwidth]{figures/1L/Preselection/deltaRLep2ndClosestBJet_xsec_log.pdf}
+%   \includegraphics[width=0.4\textwidth]{figures/1L/Preselection/bb-m-for-minDeltaR_xsec_log.pdf}
+%   \caption{Comparison between data and Monte Carlo prediction after preselection in the 1-lepton channel for \lumi for: 
+% Leading jet \pt (top left), \mt (top right), \Ht (mid left), lepton \pt (mid, right), \deltaR (botton, left) and \bbinvm (bottom, right).
+% The red line represents the sum of predicted background yields, and six benchmark signal samples are shown with dashed lines. The bottom panel shows the ratio of data to Monte Carlo events in each bin with black dots, as well as the ratio of \ttbar produced in association with heavy flavour quarks (tt+=>1b) and \ttbar without associated heavy flavour quarks (tt+0b) as a blue line.}
+%   \label{fig:MCagreement1lep}
+% \end{figure}
+
+% The full preselection cutflow is printed in table~\ref{tab:1lep_cuflow}. Each row of this table shows the weighted events yields after application of all cuts listed above. As an example the cutflow is also printed for the \sul signal point with $\eta=0.25$ and $\dpmass=500~\GeV$. A corresponding cutflow table showing the cutflow for raw event counts is given in appendix~\ref{app:rawcutflow}.
+
+% % This table is automatically generated by the script make_cutflow_tables.sh which can be found here: https://gitlab.cern.ch/darkmesonsearch/darkscripts/-/blob/master/make_cutflow_tables_1lepton.sh
+% \begin{sidewaystable}[htb]
+%     \caption{1-lepton channel preselection cutflow for data and all considered simulated backgrounds at \lumi integrated luminosity. \textbf{Note for reviewers:} There is an inconsistency of this table with the values given in table~\ref{tab:1lep_sel_yields}. The values in table~\ref{tab:1lep_sel_yields} are correct, the reason for the mismatch is that some files have been crashing when reading the leptonSF weight in the cutflow building. We are investigating, the mismatch however is small ($<1\%$, note that for \ttbar the values in table~\ref{tab:1lep_sel_yields} are after the NNLO reweighting, the values given here are before).}
+%     \label{tab:1lep_cuflow}
+%     \centering
+%     \setlength{\tabcolsep}{4pt}
+%     \begin{tabular}{c||c||c||c|c|c|c|c|c||c}
+%       \hline
+%       \hline
+%       Cut & data & All MC & $t\bar{t}$ & $t\bar{t}b\bar{b}$ & $V$+jets & $t\bar{t}+X$ & single top & multiboson & Signal-25-500 \\
+%       \hline
+%       Derivation & $4347158651$ & $4449107658.8$ & $104993139.7$ & $4014381.1$ & $4316572778.5$ & $185274.0$ & $18613595.3$ & $4728490.3$ & $2450.4$ \\
+%       GRL & $4249705009$ & $4449107658.8$ & $104993139.7$ & $4014381.1$ & $4316572778.5$ & $185274.0$ & $18613595.3$ & $4728490.3$ & $2450.4$ \\
+%       Good Calo & $4247341451$ & $4449107658.8$ & $104993139.7$ & $4014381.1$ & $4316572778.5$ & $185274.0$ & $18613595.3$ & $4728490.3$ & $2450.4$ \\
+%       Primary vertex & $4247339918$ & $4449106386.9$ & $104993139.2$ & $4014381.1$ & $4316571507.1$ & $185274.0$ & $18613595.2$ & $4728490.3$ & $2450.4$ \\
+%       Trigger & $3166828982$ & $2780217810.8$ & $25367729.3$ & $967237.7$ & $2745045665.1$ & $60180.9$ & $5502868.2$ & $3274129.7$ & $1092.3$ \\
+%       Bad muon veto & $3166691696$ & $2780150073.9$ & $25367271.1$ & $967220.4$ & $2744978584.6$ & $60179.7$ & $5502768.9$ & $3274049.2$ & $1092.3$ \\
+%       Jet cleaning & $3132324418$ & $2771444941.7$ & $25262502.8$ & $963585.8$ & $2736419885.1$ & $59922.1$ & $5479419.9$ & $3259625.9$ & $1088.5$ \\
+%       $t\bar{t}b\bar{b}$ overlap removal & $3132324418$ & $2770592223.1$ & $24665456.0$ & $707914.0$ & $2736419885.1$ & $59922.1$ & $5479419.9$ & $3259625.9$ & $1088.5$ \\
+%       $N_{l}^{\text{loose}}=1$ & $2306534763$ & $2514142564.2$ & $19195491.9$ & $510214.2$ & $2486613701.5$ & $43144.9$ & $4730259.9$ & $3049751.9$ & $603.2$ \\
+%       $N_{l}^{\text{tight}}=1$ & $1798122804$ & $2218596399.9$ & $17496673.3$ & $459568.5$ & $2193489534.8$ & $39260.7$ & $4311915.3$ & $2799447.2$ & $549.2$ \\
+%       $N_{\text{jets}}\geq4$ & $22092576$ & $23276233.1$ & $9461911.1$ & $322578.8$ & $12460786.6$ & $34203.4$ & $698734.1$ & $298019.1$ & $539.5$ \\
+%       $N_{\text{b-jets}}\geq 3$ & $615481$ & $572020.0$ & $427609.3$ & $106588.1$ & $9733.9$ & $5883.2$ & $21599.1$ & $606.4$ & $333.7$ \\
+%       Epicycle cuts & $365844$ & $341994.5$ & $240123.8$ & $78120.5$ & $5144.4$ & $5238.1$ & $12965.6$ & $402.2$ & $333.7$ \\
+%       \hline
+%       preselected & $365844$ & $341994.5$ & $240123.8$ & $78120.5$ & $5144.4$ & $5238.1$ & $12965.6$ & $402.2$ & $333.7$ \\
+%       \hline
+%     \end{tabular}
+% \end{sidewaystable}
+
+
+% } % from the if compileAllHadOnly statement
+
+% \FloatBarrier

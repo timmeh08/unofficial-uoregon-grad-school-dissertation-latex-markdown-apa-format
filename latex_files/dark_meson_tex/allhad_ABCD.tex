@@ -1,0 +1,80 @@
+\section{Extended ABCD method for single bin SR estimate}
+\label{app:ABCD}
+The dominant background for this analysis, QCD mutli-jet, is estimated using a data-driven approach to extrapolate from the observed contribution in low signal contamination regions to an estimate in the signal region.  This four feature generalization of the ABCD method is similar to multi-jet estimation described in ~\cite{ATL-COM-PHYS-2016-1696}, but with tag definitions  which select dark pions rather than tops. The top tags are replaced by $\pi_d$ tags and single b-tags by bb-tags as defined in table ~\ref{app:SRA_antitag}. The bin selections select a SR bin as described in the main body. In this appendix a QCD multijet exptrapolation for a single bin SR is shown for simplicity. In this selection the leading jet selection is leading \makttwelve > 300 GeV and subleading \makttwelve > 250 GeV.
+
+The equations used <>  are derived in appendix~\ref{app:NDABCD}.
+
+\begin{table}[!htb]
+  \centering
+\caption{All-hadronic binned tag selections applied to each signal-region bin.}
+  \begin{tabular}{l|c|c|c|c}
+    \hline
+    Large-R jet & Tag & Variable & Tag selection & Anti-tag selection  \\
+    \hline
+    Both large-R jets &  & \mptbb & \multicolumn{2}{c}{ $> 0.25$} \\
+    \hline
+    Leading large-R jet& $\pi_{d,1}$ & \makttwelve   & bin selection & $\leq 300$ GeV   \\
+    \hline
+    Subleading large-R jet & $\pi_{d,2}$ & \makttwelve & bin selection & $\leq 250$ GeV                \\
+    \hline
+    Leading large-R jet & $bb_1$ & $\drbj$ &  $<1.0$ &  $\geq 1.0$                           \\
+    \hline
+    Subleading large-R jet & $bb_2$ & $\drbj$ &  $<1.0$  &  $\geq 1.0$                     \\
+    \hline
+  \end{tabular}
+    \label{app:SRA_antitag}
+\end{table}
+
+
+\begin{figure}[htb]
+  \centering
+    \caption{Regions used for ABCD method.}
+  \label{fig:ABCDlabel}\includegraphics[width=0.45\textwidth]{../images/dark_meson/SRA_tables/Region_labels_ABCDtable.png}
+\end{figure}
+
+
+
+\begin{figure}[htb]
+  \centering
+    \label{fig:ABCDdataMC}\includegraphics[width=0.45\textwidth]{../images/dark_meson/VRA_tables/Data-MC_ABCDtable.png}
+    \label{fig:ABCDFull}\includegraphics[width=0.45\textwidth]{../images/dark_meson/VRA_tables/ABCDFull_ABCDtable.png}
+    \caption{Data - MC and QCD estimates for VR ABCD regions. The ABCD estimate shown is 2D, 3D or 4D depending on region.}
+\end{figure}
+
+
+The conventional ABCD method uses selections on two uncorrelated features to define four regions and then estimates the background in one region using the other three. Consider applying this method to regions ACEF,
+\begin{align*}
+  \frac{N_F}{N_C} &= \frac{N_EN_C}{N_A}\\
+  N_F &= \frac{N_E}{N_A}
+\end{align*}
+using data - MC values from table ~\ref{fig:ABCDdataMC}. The estimate shown is 16\% low for this region implying that there is a correlation between these tag states.
+
+\begin{align*}
+  k_{d1,bb1} &= \frac{FA}{CE} \\
+  k_{d2,bb2} &= \frac{OA}{CI}\\
+  k_{d1,bb2} &= \frac{DA}{BC} \\
+  k_{d2,bb2} &= \frac{GA}{EI}\\
+  k_{d1,d2}  &= \frac{JA}{BE}\\
+  k_{bb1,bb1}&= \frac{HA}{BC}\\
+\end{align*}
+
+
+In the extended ABCD method we compute the ratio of the QCD estimate to data - MC for each pair of features to determine correlation correction factors k. We then perform an ABCD estimate for region S using the zero and one tag regions with the k factors shown above included to correct for correlations.
+
+
+\begin{align*}
+  \hat{S} &= \hat{S}'_{\le 1\ tag} \cdot k_{d1,bb1} \cdot k_{d2,bb2} \cdot k_{d1,bb2} \cdot k_{d2,bb} \cdot k_{d1,d2} \cdot k_{bb1,bb1}\\
+  \hat{S}'_{\le 1\ tag} &= \prod^n_{j =1} \frac{N_{(j)}}{N^{n-1}_A}
+\end{align*}
+
+<We check that the three and four correlations between tag states are small through comparing the ABCD estimate to data - MC in a validation region.>
+
+
+%% \begin{align*}
+%%   k_{\pi_{d,1}\pi_{bb1} &= \frac{FA}{CE} \\
+%%   k_{\pi_{d,2}\pi_{bb,2}}&= \frac{OA}{CI}\\
+%%   k_{\pi_{d,1}\pi_{bb,2}}&= \frac{DA}{BC} \\
+%%   k_{\pi_{d,2}\pi_{bb,2}}&= \frac{GA}{EI}\\
+%%   k_{\pi_{d,1}\pi_{d,2}}&= \frac{JA}{BE}\\
+%%   k_{\pi_{bb,1}\pi_{bb,1}}&= \frac{HA}{BC}\\
+%% \end{align*}
