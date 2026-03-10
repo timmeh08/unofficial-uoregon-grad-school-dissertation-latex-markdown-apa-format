@@ -1,0 +1,166 @@
+A signal-plus-background fit is performed simultaneously in the CRs and in the SR, using a background-only Asimov dataset in the SR. The results have been cross-checked and found to be consistent with the background-only fit, as summarized in Appendix ~\ref{sec:bonly-appendix}. The appendix ~\ref{sec:bonly-nocr-appendix}, in addition, shows the results of a similar fit, without including the low \ETmiss\ significance region as a CR in the fit. The overall results are consistent with the nominal fit, but the nominal fit allows a better constrain the \jfakey\ background and avoid strong correlations of the systematic NP on the data-driven estimate with the signal strength and the $W\gamma$ or $Z\gamma$ k-factors. \\
+The combined dataset includes data collected in 2023 and 2024.\\
+Figures~\ref{fig:pre_plots} and ~\ref{fig:post_plots} show background and signal distributions before and after the fit in SR and in CRs, and the corresponding event yields are summarized in Tables~\ref{tab:yields_pre_syst} and~\ref{tab:yields_post_syst}. As mentioned before, in the TwoMuCR an inclusive bin is used due to limited statistics. Dedicated studies leading to this choice are explained in Appendix~\ref{sec:studies_TwoMuCR}.
+Two normalization factors $k_Z$ and $k_W$ are applied respectively to the $Z\gamma$ and $W\gamma$ MC simulations. While a bin-by-bin shape factor was initially used for $W\gamma$, thanks to the high enough statistics in the OneMuCR, it was later decided to move to an inclusive normalization factor to prevent free bin-by-bin parameters from artificially "absorbing" systematical effects. A comparison between the two configurations is shown in Appendix~\ref{sec:NormShape_appendix}.\\
+The fitted values of the k-factors and their related statistical uncertainties are shown in Figure~\ref{fig:kfactors_splusb}. Both $k_Z$ and $k_W$ values are very close to unity, with uncertainties of about $10\%$ and $8\%$ respectively. As expected, the signal strength, which is effectively the BR($H\to\gamma\gamma_D$),is fitted to a value perfectly consistent with 0: $BR(H\to\gamma\gamma_D)=0.0\pm 0.005$ (the value of the uncertainty in the figure is rounded to first significant digit).\\
+
+\begin{figure}[ht!]
+\centering
+    \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../images/dark_photon/images/statanalysis/FinalIntNote/SPLUSB_blind/Plots/SR.pdf}
+    \caption*{(a) Pre-fit SR.}
+    \label{fig:SR_syst}
+    \end{minipage}\\
+\quad
+    \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../images/dark_photon/images/statanalysis/FinalIntNote/SPLUSB_blind/Plots/LowMETsigVR.pdf}
+    \caption*{(b) Pre-fit Low MET sig. CR.}
+    \label{fig:LowMETsigCR_syst}
+    \end{minipage}
+\quad
+    \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../images/dark_photon/images/statanalysis/FinalIntNote/SPLUSB_blind/Plots/OneMuCR.pdf}
+    \caption*{(c) Pre-fit 1$\mu$CR.}
+    \label{fig:1mu_syst}
+    \end{minipage}
+\quad
+    \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../images/dark_photon/images/statanalysis/FinalIntNote/SPLUSB_blind/Plots/TwoMuCR_1bin.pdf}
+    \caption*{(d) Pre-fit 2$\mu$CR.}
+    \label{fig:2mu_syst}
+    \end{minipage}
+
+\caption{Pre-fit distributions in SR and CRs.}
+\label{fig:pre_plots}
+    
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+    \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../images/dark_photon/images/statanalysis/FinalIntNote/SPLUSB_blind/Plots/SR_postFit.pdf}
+    \caption*{(a) Post-fit SR.}
+    \label{fig:SR_syst_post}
+    \end{minipage}\\
+\quad
+    \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../images/dark_photon/images/statanalysis/FinalIntNote/SPLUSB_blind/Plots/LowMETsigVR_postFit.pdf}
+    \caption*{(b) Post-fit Low MET sig. CR.}
+    \label{fig:LowMETsigCR_syst_post}
+    \end{minipage}
+\quad
+    \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../images/dark_photon/images/statanalysis/FinalIntNote/SPLUSB_blind/Plots/OneMuCR_postFit.pdf}
+    \caption*{(c) Post-fit 1$\mu$CR.}
+    \label{fig:1mu_syst_post}
+    \end{minipage}
+\quad
+    \begin{minipage}{0.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../images/dark_photon/images/statanalysis/FinalIntNote/SPLUSB_blind/Plots/TwoMuCR_1bin_postFit.pdf}
+    \caption*{(d) Post-fit 2$\mu$CR.}
+    \label{fig:2mu_syst_post}
+    \end{minipage}
+
+\caption{Post-fit distributions in SR and CRs.}
+\label{fig:post_plots}
+    
+\end{figure}
+
+\begin{table}[htpb!]
+
+\centering
+\begin{tabular}{c|cccc}
+\hline
+\textbf{Process} & \textbf{SR}& \textbf{Low MET sig CR} & \textbf{1$\mu$CR} & \textbf{2$\mu$CR} \\
+\hline
+  ggF $H\to\gamma\gamma_D$   & 23100.9 $\pm$ 3296.4 & 2523.59 $\pm$ 679.372 & 0 $\pm$ 0 & 0 $\pm$ 0 \\ 
+  VBF $H\to\gamma\gamma_D$   & 5687.7 $\pm$ 559.092 & 957.365 $\pm$ 161.854 & 0 $\pm$ 0 & 0 $\pm$ 0 \\ 
+  WH $H\to\gamma\gamma_D$  & 1474.12 $\pm$ 140.534 & 140.518 $\pm$ 30.3936 & 14.9044 $\pm$ 1.1173 & 0 $\pm$ 0 \\ 
+  ZH $H\to\gamma\gamma_D$   & 818.952 $\pm$ 82.3651 & 71.7988 $\pm$ 18.0443 & 0.73135 $\pm$ 0.614402 & 2.4912 $\pm$ 0.510854 \\ 
+  $Z\gamma$   & 1202.04 $\pm$ 119.103 & 102.405 $\pm$ 21.0058 & 108.766 $\pm$ 11.5549 & 400.285 $\pm$ 37.3671 \\ 
+  $W\gamma$   & 2215.92 $\pm$ 241.61 & 260.61 $\pm$ 65.4505 & 3668.34 $\pm$ 321.701 & 0.746126 $\pm$ 0.027576 \\ 
+  j$\rightsquigarrow\gamma$   & 2712.71 $\pm$ 308.923 & 5893.85 $\pm$ 673.166 & 940.302 $\pm$ 107.039 & 189.975 $\pm$ 24.675 \\ 
+  $e\rightsquigarrow\gamma$   & 4839.45 $\pm$ 355.94 & 1301.98 $\pm$ 99.6493 & 126.071 $\pm$ 9.1365 & 10.9211 $\pm$ 0.840392 \\ 
+  $\gamma$j (direct)   & 175.971 $\pm$ 3.82313 & 2484.75 $\pm$ 81.408 & 0.047502 $\pm$ 0.00111815 & 2.88025e-06 $\pm$ 8.95178e-08 \\ 
+\hline 
+  Total  & 42227.7 $\pm$ 4230.16 & 13736.9 $\pm$ 1223.83 & 4859.16 $\pm$ 356.492 & 604.418 $\pm$ 47.4222 \\ 
+\hline 
+  data   & Blind & 9934 & 4802 & 596 \\ \hline
+
+\end{tabular}
+\caption{Pre-fit yields.}
+\label{tab:yields_pre_syst}
+\end{table}
+
+\begin{table}[htpb!]
+\centering
+\begin{tabular}{c|cccc}
+\hline
+\textbf{Process}  & \textbf{SR} & \textbf{Low MET sig CR} & \textbf{1$\mu$CR} & \textbf{2$\mu$CR} \\
+\hline
+  $Z\gamma$   & 1195.64 $\pm$ 89.3742 & 97.5021 $\pm$ 19.2576 & 108.2 $\pm$ 8.38695 & 394.202 $\pm$ 24.7508 \\ 
+  $W\gamma$   & 2209.5 $\pm$ 67.692 & 249.758 $\pm$ 60.4397 & 3632.98 $\pm$ 79.0741 & 0.724864 $\pm$ 0.0617249 \\ 
+  j$\rightsquigarrow\gamma$   & 2709.2 $\pm$ 109.19 & 5852.48 $\pm$ 157.212 & 937.427 $\pm$ 38.3908 & 189.804 $\pm$ 10.3135 \\ 
+  $e\rightsquigarrow\gamma$   & 4824.04 $\pm$ 124.592 & 1292.56 $\pm$ 43.8682 & 125.44 $\pm$ 3.70866 & 10.8912 $\pm$ 0.435298 \\ 
+  $\gamma$j (direct)   & 175.729 $\pm$ 3.59899 & 2442.98 $\pm$ 62.3493 & 0.0470017 $\pm$ 0.00104069 & 2.88138e-06 $\pm$ 8.4717e-08 \\ 
+\hline 
+  Total  & 11287.6 $\pm$ 101.293 & 9936.52 $\pm$ 98.514 & 4823.78 $\pm$ 69.247 & 614.611 $\pm$ 22.7193 \\ 
+\hline 
+  data   & 11327 & 9934 & 4802 & 596 \\ 
+\end{tabular}
+\caption{Post-fit yields.}
+\label{tab:yields_post_syst}
+\end{table}
+
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.6\linewidth]{../images/dark_photon/images/statanalysis/FinalIntNote/SPLUSB_blind/NormFactors.pdf}
+    \caption{Normalization factors for W and Z processes and signal strength, with related statistical uncertainties}
+    \label{fig:kfactors_splusb}
+\end{figure}
+
+
+
+All systematic uncertainties (data-driven, experimental and theoretical) enter the fit, with the correlation scheme described in Table \ref{tab:SysDescription}. A smoothing is applied to all experimental systematic uncertainties to avoid statistical fluctuations. The pruning summary is reported in Figure~\ref{fig:splusb_pruning}, while the nuisance parameters pull plot and correlation matrix are shown in Figures~\ref{fig:pullplot_splusb} (including the MC statistical uncertainties $\gamma$) and ~\ref{fig:corr_splusb}, respectively.\\
+In the pruning plot, it can be observed that in the TwoMuCR the systematics are always dropped in shape, reflecting the choice of having only one bin in this region. \\
+Looking at the pull plot, there are few nuisance parameters that are slightly pulled from their nominal value, but all of them remain within 1$\sigma$. 
+Also $\gamma$ parameters are consistent with unity within uncertainties. The most pulled and constrained systematic NPs are the ones related to the $W\gamma$ modeling, in particular the theoretical scale uncertainties, and data-driven systematic related to the jets faking photons. As discussed in Appendix~\ref{sec:NormShape_appendix}, both are expected to be constrained in the OneMuCR, where $W\gamma$ and \jfakey\ are the dominant contributions.\\
+Concerning the correlations, some systematic nuisance parameters show correlations with the $Z\gamma$ and $W\gamma$ normalization factors. This is expected as these backgrounds are indeed corrected to data through an interplay between these NPs and the two normalization factors. In addition, the two NPs associated to \efakey\ estimates are anti-correlated (also expected). Correlations between the two background normalization factors can arise through their mutual correlations with other nuisance parameters, given that both normalization factors and systematic uncertainties are treated as correlated across regions.\\
+The impact of each nuisance parameter on the fit signal strength is summarised in the ranking plot in figure~\ref{fig:rankingplot}, obtained through decomposition of covariance matrix. The analysis results statistically limited, with the dominant uncertainty contributions arising from statistical uncertainties, followed by pile-up related systematics. Thanks to the constraint provided by the low MET sig. CR, the impact due to the uncertainty on the data-driven \jfakey\ estimation is reduced. 
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.5\linewidth]{../images/dark_photon/images/statanalysis/FinalIntNote/SPLUSB_blind//Pruning.pdf}
+\caption{Pruning summary of the nuisance parameters.}
+\label{fig:splusb_pruning}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.45\linewidth]{../images/dark_photon/images/statanalysis/FinalIntNote/SPLUSB_blind/Pulls/All/NuisPar.pdf}
+    \includegraphics[width=0.45\linewidth]{../images/dark_photon/images/statanalysis/FinalIntNote/SPLUSB_blind/Gammas.pdf}
+    \caption{Nuisance parameters pull plot for the signal-plus-background fit: \texttt{ff\_jy} and \texttt{ff\_ey} are the systematic uncertainties on the data-driven $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ fake rates, while \texttt{fey\_syst} is the systematic on the trigger scale factor for $e \rightsquigarrow \gamma$ estimation.\\}
+    \label{fig:pullplot_splusb}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../images/dark_photon/images/statanalysis/FinalIntNote/SPLUSB_blind/CorrMatrix.pdf}
+    \caption{Correlation matrix for the signal-plus-background fit: \texttt{ff\_jy} and \texttt{ff\_ey} are the systematic uncertainties on the data-driven $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ fake rates, while \texttt{fey\_syst} is the systematic on the trigger scale factor for $e \rightsquigarrow \gamma$ estimation. Only the systematics with an effect bigger than the selected threshold (0.2) are shown. }
+    \label{fig:corr_splusb}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{../images/dark_photon/images/statanalysis/FinalIntNote/SPLUSB_blind/Ranking_BRHyyd_Breakdown.pdf}
+    \caption{Ranked impacts of the different sources of uncertainty (systematics, statistical uncertainties, normalization and shape factors) on the fit signal strength.}
+    \label{fig:rankingplot}
+\end{figure}

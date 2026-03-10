@@ -1,4 +1,43 @@
 
+\subsection{Isolation studies for \jfakey}
+
+As already discussed in the main text, different generators model the isolation of the \jfakey\ differently, and the one which best describes the data is Sherpa.
+The comparison between data and different generators is displayed in Figure~\ref{fig:jfy_appendix_isol_data_vs_MC}, for Loose and for all Loose' IDs. 
+
+\begin{figure}[h!tbp]
+  \centering
+  \includegraphics[width=0.48\columnwidth]{images/jfy/canvas_isol_DATA_vs_MCnoyiso_year2024_anatrigger_loose_cutW_logy.pdf}
+
+  \includegraphics[width=0.48\columnwidth]{images/jfy/canvas_isol_DATA_vs_MCnoyiso_year2024_anatrigger_loose5_cutW_logy.pdf}
+  \includegraphics[width=0.48\columnwidth]{images/jfy/canvas_isol_DATA_vs_MCnoyiso_year2024_anatrigger_L4_Wstot_cutW_logy.pdf}
+
+  \includegraphics[width=0.48\columnwidth]{images/jfy/canvas_isol_DATA_vs_MCnoyiso_year2024_anatrigger_L4_Ws3_cutW_logy.pdf}
+  \includegraphics[width=0.48\columnwidth]{images/jfy/canvas_isol_DATA_vs_MCnoyiso_year2024_anatrigger_L4_Fside_cutW_logy.pdf}
+  
+  \includegraphics[width=0.48\columnwidth]{images/jfy/canvas_isol_DATA_vs_MCnoyiso_year2024_anatrigger_L4_deltaE_cutW_logy.pdf}
+  \includegraphics[width=0.48\columnwidth]{images/jfy/canvas_isol_DATA_vs_MCnoyiso_year2024_anatrigger_L4_Eratio_cutW_logy.pdf}
+
+  \caption{Comparison of isolation profiles, for data and for several MC generators}
+  \label{fig:jfy_appendix_isol_data_vs_MC}
+\end{figure}
+
+
+As stated in the main text, the isolation for \jfakey\ depends on the applied ID. The effect, on MC, is best visible if no triggers are applied, while applying the analysis trigger the effect is mitigated, but still present: see Figure~\ref{fig:jfy_appendix_isol_vs_ID}.
+
+\begin{figure}[h!tbp]
+  \centering
+  \includegraphics[width=0.48\columnwidth]{images/jfy/canvas_isol_MCnoyiso_year2024_notrigger_sherpa_cutW.pdf}
+  \includegraphics[width=0.48\columnwidth]{images/jfy/canvas_isol_MCnoyiso_year2024_notrigger_sherpa_cutW_logy.pdf}
+
+  \includegraphics[width=0.48\columnwidth]{images/jfy/canvas_isol_MCnoyiso_year2024_anatrigger_sherpa_cutW.pdf}
+  \includegraphics[width=0.48\columnwidth]{images/jfy/canvas_isol_MCnoyiso_year2024_anatrigger_sherpa_cutW_logy.pdf}
+  \caption{Isolation profiles for \jfakey\ from Sherpa samples, for several IDs: without any trigger (top) and with analysis trigger applied (bottom)}
+  \label{fig:jfy_appendix_isol_vs_ID}
+\end{figure}
+
+\clearpage
+
+\subsection{Choice of the trigger}
 
 \begin{table}[H]
     \centering
@@ -274,112 +313,121 @@ $\eta$ bin & ff & $\sigma_{ff}$  & \% \\
     \label{tab: tableff_pre}
 \end{table}
 
-The following plots show the signal contamination in the two Validation Regions for jets faking photons. 
 
-% === Dmet ===
-\begin{figure}[H]
+\subsection{Validation region}
+
+The following plots show the signal contamination in the low $p_T^{miss}$ significance and $low \Delta\Phi$ Validation Regions for jets faking photons. 
+
+%plot di validation 
+
+%plot di validation 
+\begin{figure}[htbp]
   \centering
-  \subfloat[low $p_T^{miss}$ significance region]{
-    \includegraphics[width=0.45\textwidth]{images/Dmet_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore__BDT.png}
+  \subfloat[Low $p_T^{miss}$ significance VR]{
+    \includegraphics[width=0.45\textwidth]{images/check_sig_lowMETsig/withBDT/withDphijj/dphi_met_phterm_lowMETsigVR_BDT01_dphiCentralJJ_.png}
   }
   \hfill
-  \subfloat[low $\Delta \Phi$ region]{
-    \includegraphics[width=0.45\textwidth]{images/Dmet_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_dphiMetPhterm1_metsigval2_BDTscore__BDT.png}
+ \subfloat[Low $\Delta\Phi$ VR]{
+    \includegraphics[width=0.45\textwidth]{images/check_sig_lowDphi/withBDT/dphi_met_phterm_lowDphiVR_BDT01_dphiCentralJJ_.png}
   }
-  \caption{Distribution of variable $\Delta p_T^{miss}$ in the two Validation Regions for signal and backgrounds, estimated from MC simulations.}
+  \caption{Distribution for variable $\Delta \Phi (p_T^{miss}, [p_T^{miss}]_\gamma)$ in the Validation Region for signal and backgrounds in 2024. Jets and electrons faking photons are estimated using the data-driven technique.}
+\end{figure}
+
+
+% === Dmet ===
+\begin{figure}[!htbp]
+  \centering
+  \subfloat[Low $p_T^{miss}$ significance VR]{
+    \includegraphics[width=0.45\textwidth]{images/check_sig_lowMETsig/withBDT/withDphijj/dmet_lowMETsigVR_BDT01_dphiCentralJJ_.png}
+  }
+  \hfill
+ \subfloat[Low $\Delta\Phi$ VR]{
+    \includegraphics[width=0.45\textwidth]{images/check_sig_lowDphi/withBDT/dmet_lowDphiVR_BDT01_dphiCentralJJ_.png}
+  }
+  \caption{Distribution for variable $\Delta p_T^{miss}$ in the Validation Region for signal and backgrounds in 2024. Jets and electrons faking photons are estimated using the data-driven technique.}
 \end{figure}
 
 
 % === abspheta ===
-\begin{figure}[H]
+
+\begin{figure}[!htbp]
   \centering
-  \subfloat[low $p_T^{miss}$ significance region]{
-    \includegraphics[width=0.45\textwidth]{images/abspheta_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore__BDT.png}
+  \subfloat[Low $p_T^{miss}$ significance VR]{
+    \includegraphics[width=0.45\textwidth]{images/check_sig_lowMETsig/withBDT/withDphijj/ph_eta_lowMETsigVR_BDT01_dphiCentralJJ_.png}
   }
   \hfill
-  \subfloat[low $\Delta \Phi$ region]{
-    \includegraphics[width=0.45\textwidth]{images/abspheta_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_dphiMetPhterm1_metsigval2_BDTscore__BDT.png}
+ \subfloat[Low $\Delta\Phi$ VR]{
+    \includegraphics[width=0.45\textwidth]{images/check_sig_lowDphi/withBDT/ph_eta_lowDphiVR_BDT01_dphiCentralJJ_.png}
   }
-  \caption{Distribution of variable $\eta^\gamma$ in the two Validation Regions for signal and backgrounds, estimated from MC simulations.}
+  \caption{Distribution for variable $\eta^\gamma$ in the Validation Region for signal and backgrounds in 2024. Jets and electrons faking photons are estimated using the data-driven technique.}
 \end{figure}
-
 
 % === dphiMetJetterm ===
-\begin{figure}[H]
+\begin{figure}[!htbp]
   \centering
-  \subfloat[low $p_T^{miss}$ significance region]{
-    \includegraphics[width=0.45\textwidth]{images/dphiMetJetterm_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore__BDT.png}
+  \subfloat[Low $p_T^{miss}$ significance VR]{
+    \includegraphics[width=0.45\textwidth]{images/check_sig_lowMETsig/withBDT/withDphijj/dphi_met_jetterm_lowMETsigVR_BDT01_dphiCentralJJ_.png}
   }
   \hfill
-  \subfloat[low $\Delta \Phi$ region]{
-    \includegraphics[width=0.45\textwidth]{images/dphiMetJetterm_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_dphiMetPhterm1_metsigval2_BDTscore__BDT.png}
+ \subfloat[Low $\Delta\Phi$ VR]{
+    \includegraphics[width=0.45\textwidth]{images/check_sig_lowDphi/withBDT/dphi_met_jetterm_lowDphiVR_BDT01_dphiCentralJJ_.png}
   }
-  \caption{Distribution of variable $\Delta \Phi (p_T^{miss}, [p_T^{miss}]_{jet})$ in the two Validation Regions for signal and backgrounds, estimated from MC simulations.}
-\end{figure}
-
-% === dphiMetPhPt ===
-\begin{figure}[H]
-  \centering
-  \subfloat[low $p_T^{miss}$ significance region]{
-    \includegraphics[width=0.45\textwidth]{images/dphiMetPhterm_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore__BDT.png}
-  }
-  \hfill
-  \subfloat[low $\Delta \Phi$ region]{
-    \includegraphics[width=0.45\textwidth]{images/dphiMetPhterm_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_dphiMetPhterm1_metsigval2_BDTscore__BDT.png}
-  }
-  \caption{Distribution of variable $\Delta \Phi (p_T^{miss}, [p_T^{miss}]_\gamma)$ in the two Validation Regions for signal and backgrounds, estimated from MC simulations.}
+  \caption{Distribution for variable $\Delta \Phi (p_T^{miss}, [p_T^{miss}]_{jet})$ in the Validation Region for signal and backgrounds in 2024. Jets and electrons faking photons are estimated using the data-driven technique.}
 \end{figure}
 
 
 % === met ===
-\begin{figure}[H]
+
+\begin{figure}[!htbp]
   \centering
-  \subfloat[low $p_T^{miss}$ significance region]{
-    \includegraphics[width=0.45\textwidth]{images/met_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore__BDT.png}
+  \subfloat[Low $p_T^{miss}$ significance VR]{
+    \includegraphics[width=0.45\textwidth]{images/check_sig_lowMETsig/withBDT/withDphijj/met_lowMETsigVR_BDT01_dphiCentralJJ_.png}
   }
   \hfill
-  \subfloat[low $\Delta \Phi$ region]{
-    \includegraphics[width=0.45\textwidth]{images/met_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_dphiMetPhterm1_metsigval2_BDTscore__BDT.png}
+ \subfloat[Low $\Delta\Phi$ VR]{
+    \includegraphics[width=0.45\textwidth]{images/check_sig_lowDphi/withBDT/met_lowDphiVR_BDT01_dphiCentralJJ_.png}
   }
-  \caption{Distribution of variable $p_T^{miss}$ in the two Validation Regions for signal and backgrounds, estimated from MC simulations.}
+  \caption{Distribution for variable  $p_T^{miss}$ in the Validation Region for signal and backgrounds in 2024. Jets and electrons faking photons are estimated using the data-driven technique.}
 \end{figure}
 
+
 % === metsig ===
-\begin{figure}[H]
+\begin{figure}[!htbp]
   \centering
-  \subfloat[low $p_T^{miss}$ significance region]{
-    \includegraphics[width=0.45\textwidth]{images/metsig_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore__BDT.png}
+    \subfloat[Low $p_T^{miss}$ significance VR]{
+    \includegraphics[width=0.45\textwidth]{images/check_sig_lowMETsig/withBDT/withDphijj/metsig_lowMETsigVR_BDT01_dphiCentralJJ_.png}
   }
   \hfill
-  \subfloat[low $\Delta \Phi$ region]{
-    \includegraphics[width=0.45\textwidth]{images/metsig_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_dphiMetPhterm1_metsigval2_BDTscore__BDT.png}
+ \subfloat[Low $\Delta\Phi$ VR]{
+    \includegraphics[width=0.45\textwidth]{images/check_sig_lowDphi/withBDT/metsig_lowDphiVR_BDT01_dphiCentralJJ_.png}
   }
-  \caption{Distribution of variable $S_{p_T^{miss}}$ in the two Validation Regions for signal and backgrounds, estimated from MC simulations.}
+  \caption{Distribution for variable  $S_{p_T^{miss}}$ in the Validation Region for signal and backgrounds in 2024. Jets and electrons faking photons are estimated using the data-driven technique.}
 \end{figure}
 
 % === mt ===
-\begin{figure}[H]
+\begin{figure}[!htbp]
   \centering
-  \subfloat[low $p_T^{miss}$ significance region]{
-    \includegraphics[width=0.45\textwidth]{images/mt_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore__BDT.png}
+    \subfloat[Low $p_T^{miss}$ significance VR]{
+    \includegraphics[width=0.45\textwidth]{images/check_sig_lowMETsig/withBDT/withDphijj/mt_lowMETsigVR_BDT01_dphiCentralJJ_.png}
   }
   \hfill
-  \subfloat[low $\Delta \Phi$ region]{
-    \includegraphics[width=0.45\textwidth]{images/mt_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_dphiMetPhterm1_metsigval2_BDTscore__BDT.png}
+ \subfloat[Low $\Delta\Phi$ VR]{
+    \includegraphics[width=0.45\textwidth]{images/check_sig_lowDphi/withBDT/mt_lowDphiVR_BDT01_dphiCentralJJ_.png}
   }
-  \caption{Distribution of variable $m_T$ in the two Validation Regions for signal and backgrounds, estimated from MC simulations.}
+  \caption{Distribution for variable  $m_T$ in the Validation Region for signal and backgrounds in 2024. Jets and electrons faking photons are estimated using the data-driven technique.}
 \end{figure}
 
 % === phPt ===
-\begin{figure}[H]
-  \centering
-  \subfloat[low $p_T^{miss}$ significance region]{
-    \includegraphics[width=0.45\textwidth]{images/phPt_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_metsigint_BDTscore__BDT.png}
+\begin{figure}[!htbp]
+    \subfloat[Low $p_T^{miss}$ significance VR]{
+    \includegraphics[width=0.45\textwidth]{images/check_sig_lowMETsig/withBDT/withDphijj/ph_pt_lowMETsigVR_BDT01_dphiCentralJJ_.png}
   }
   \hfill
-  \subfloat[low $\Delta \Phi$ region]{
-    \includegraphics[width=0.45\textwidth]{images/phPt_nphSR_nel_nmu0_ntau_MET100_MT80_phPT50_njet_trigger_dphiMetPhterm05_dphiMetPhterm1_metsigval2_BDTscore__BDT.png}
+ \subfloat[Low $\Delta\Phi$ VR]{
+    \includegraphics[width=0.45\textwidth]{images/check_sig_lowDphi/withBDT/ph_pt_lowDphiVR_BDT01_dphiCentralJJ_.png}
   }
-  \caption{Distribution of variable $p_T^\gamma$ in the two Validation Regions for jets faking photons, }
+  \caption{Distribution for variable  $p_T^{\gamma}$ in the Validation Region for signal and backgrounds in 2024. Jets and electrons faking photons are estimated using the data-driven technique.}
 \end{figure}
+
+\clearpage
 

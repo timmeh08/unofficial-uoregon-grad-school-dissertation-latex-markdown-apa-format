@@ -1,6 +1,7 @@
-A background-only fit is performed simultaneously on data in the CR and asimov in the SR. The signal strength parameter is not included in this fit. The results are, as expected, consistent with the signal+background fit in the background only hypothesis, shown in section \ref{sec:splusb}. 
-The plots in figure \ref{fig:regions_jy_ey_Fit_syst_bonly} show the post-fit $m_T$ distributions in SR, low \ETmiss sig. CR, 1$\mu$CR and 2$\mu$CR. The values of the k-factors and their related statistical uncertainties are shown in figure \ref{fig:kfactors_syst_bonly}.\\
-Finally, figures \ref{fig:pullplot_syst_bonly}, \ref{fig:corr_syst_bonly} and \ref{fig:rankingplot_bonly} display the pull plots for systematics and MC statistical nuisance parameters, the correlation matrix and the ranked impacts. 
+The background-only fit is performed simultaneously on data in the CRs and SR. The signal strength parameter is not included in this fit. The results are, as expected, consistent with the signal+background fit in the background only hypothesis, shown in section \ref{sec:splusb_unblind}. 
+The plots in figure \ref{fig:regions_jy_ey_Fit_syst_bonly_unblind} show the post-fit $m_T$ distributions in SR, low \ETmiss sig. CR, 1$\mu$CR and 2$\mu$CR. The values of the k-factors and their related statistical uncertainties are shown in figure \ref{fig:kfactors_syst_bonly_unblind}.\\
+Finally, figures \ref{fig:pullplot_syst_bonly_unblind}, \ref{fig:corr_syst_bonly_unblind} and \ref{fig:rankingplot_bonly_unblind} display the pull plots for systematics and MC statistical nuisance parameters, the correlation matrix and the ranked impacts. 
+
 
 
 \begin{figure}[ht!]
@@ -9,31 +10,31 @@ Finally, figures \ref{fig:pullplot_syst_bonly}, \ref{fig:corr_syst_bonly} and \r
     \centering
     \includegraphics[width=\linewidth]{images/statanalysis/FinalIntNote/BOnly_blind/Plots/SR_postFit.pdf}
     \caption*{(a) Post-fit SR.}
-    \label{fig:SR_post_syst_bonly}
+    \label{fig:SR_post_syst_bonly_unblind}
     \end{minipage}\\
     \begin{minipage}{0.3\textwidth}
     \centering
     \includegraphics[width=\linewidth]{images/statanalysis/FinalIntNote/BOnly_blind/Plots/LowMETsigVR_postFit.pdf}
     \caption*{(b) Post-fit low \ETmiss sig. CR.}
-    \label{fig:LowMETsigCR_post_syst_bonly}
+    \label{fig:LowMETsigCR_post_syst_bonly_unblind}
     \end{minipage}
 \quad
     \begin{minipage}{0.3\textwidth}
     \centering
     \includegraphics[width=\linewidth]{images/statanalysis/FinalIntNote/BOnly_blind/Plots/OneMuCR_postFit.pdf}
     \caption*{(c) Post-fit 1$\mu$CR.}
-    \label{fig:1mu_post_syst_bonly}
+    \label{fig:1mu_post_syst_bonly_unblind}
     \end{minipage}
 \quad
     \begin{minipage}{0.3\textwidth}
     \centering
     \includegraphics[width=\linewidth]{images/statanalysis/FinalIntNote/BOnly_blind/Plots/TwoMuCR_postFit.pdf}
     \caption*{(d) Post-fit 2$\mu$CR.}
-    \label{fig:2mu_post_syst_bonly}
+    \label{fig:2mu_post_syst_bonly_unblind}
     \end{minipage}
 
 \caption{Post-fit distributions in SR and CRs.}
-\label{fig:regions_jy_ey_Fit_syst_bonly}
+\label{fig:regions_jy_ey_Fit_syst_bonly_unblind}
     
 \end{figure}
 
@@ -42,7 +43,7 @@ Finally, figures \ref{fig:pullplot_syst_bonly}, \ref{fig:corr_syst_bonly} and \r
     \centering
     \includegraphics[width=0.6\linewidth]{images/statanalysis/FinalIntNote/BOnly_blind/NormFactors.pdf}
     \caption{Normalization factors and related statistical uncertainties}
-    \label{fig:kfactors_syst_bonly}
+    \label{fig:kfactors_syst_bonly_unblind}
 \end{figure}
 
 \begin{figure}[ht!]
@@ -50,14 +51,14 @@ Finally, figures \ref{fig:pullplot_syst_bonly}, \ref{fig:corr_syst_bonly} and \r
     \includegraphics[width=0.45\linewidth]{images/statanalysis/FinalIntNote/BOnly_blind/Pulls/All/NuisPar.pdf}
     \includegraphics[width=0.45\linewidth]{images/statanalysis/FinalIntNote/BOnly_blind/Gammas.pdf}
     \caption{Nuisance parameters pull plot: \texttt{ff\_jy} and \texttt{ff\_ey} are the systematic uncertainties on the data-driven $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ fake rates, while \texttt{fey\_syst} is the systematic on the trigger scale factor for $e \rightsquigarrow \gamma$ estimation.}
-    \label{fig:pullplot_syst_bonly}
+    \label{fig:pullplot_syst_bonly_unblind}
 \end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\linewidth]{images/statanalysis/FinalIntNote/BOnly_blind/CorrMatrix.pdf}
     \caption{Correlation matrix: \texttt{ff\_jy} and \texttt{ff\_ey} are the systematic uncertainties on the data-driven $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ fake rates, while \texttt{fey\_syst} is the systematic on the trigger scale factor for $e \rightsquigarrow \gamma$ estimation. Only the systematics with an effect bigger than the selected threshold (0.2) are shown. }
-    \label{fig:corr_syst_bonly}
+    \label{fig:corr_syst_bonly_unblind}
 \end{figure}
 
 
@@ -65,7 +66,7 @@ Finally, figures \ref{fig:pullplot_syst_bonly}, \ref{fig:corr_syst_bonly} and \r
     \centering
     \includegraphics[width=0.5\linewidth]{images/statanalysis/FinalIntNote/BOnly_blind/Ranking_BRHyyd_Breakdown.pdf}
     \caption{Ranked impacts of the different sources of uncertainty (systematics, statistical uncertainties, normalization and shape factors) on the fit signal strength.}
-    \label{fig:rankingplot_bonly}
+    \label{fig:rankingplot_bonly_unblind}
 \end{figure}
 
 \clearpage

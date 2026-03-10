@@ -1,0 +1,171 @@
+A bug was recently reported in the evaluation of the calorimetric isolation, which causes the distributions of $E_T^{coneXX}$ in data to be largely shifted to lower values with respect to those in MC simulation.
+The issue has been reported at the Isolation and Fakes Forum\footnote{\url{https://indico.cern.ch/event/1600422/contributions/6743802/attachments/3157509/5608946/IFF_intro_20oct2025.pdf}}
+and at the egamma groups\footnote{\url{https://indico.cern.ch/event/1602748/contributions/6753450/attachments/3159458/5612860/Isolation_core_report-1.pdf}}.
+
+As this analysis uses isolated photons, here we assess the impact of the bug on data 2023 and 2024, keeping in mind that the bug is expected to affect mostly data, while having a much smaller effect on MC simulation. 
+The data N-tuples have been re-produced with AnalysisBase release 25.0.75, the first one with the bug fix implemented in SUSYTools. In the following plots, these new data N-tuples are referred to as ``data iso bug fix'', while the previous ones are referred to as simply ``data''.\\
+Figure \ref{fig:isolbug} show the relative photon isolation distributions for photons in data 2023 and 2024, comparing the previous N-tuples with the new ones with the bug fix. The ratio plot highlights the shift of the corrected distributions to higher values. To quantify the effect on the analysis, the efficiency of requiring the photon to be isolated is evaluated on top of baseline selections (also splitted into bins of \pTy) and SR selections and reported in table \ref{tab:isobug_eff}. The difference in efficiency between data with and without the bug-fix applied is of about 3\% in all cases.\\
+No effect is observed on the kinematic: in figures \ref{fig:isolbug2023_distr} and \ref{fig:isolbug2024_distr}, the distributions of the main variables used to define the SR are compared in data 2023 and 2024 respectively, with and without the bug fix, for events passing the SR selections, but with non isolated photons. The ratio is perfectly flat for both the datasets. \\
+
+ \begin{figure}[h!tbp]
+   \centering
+   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/isolation_baselineNoIsoData_.png}
+   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/isolation_baselineNoIsoData_24.png}
+   \caption{Comparison of relative photon isolation profiles after baseline selections for the data N-tuples the analysis is currently using, and data with isolation bug-fix included, for 2023 (left) and 2024 (right) datasets. }
+   \label{fig:isolbug}
+ \end{figure}
+
+
+
+\begin{table}[htbp]
+\caption{Efficiency of the photon isolation requirement on top of baseline and SR selections, for data 2023 and 2024, with and without the isolation bug-fix applied.}
+\label{tab:isobug_eff}
+\centering
+\begin{tabular}{lcc}
+\hline
+\textbf{2023} & No fix & With fix \\
+\hline
+Baseline            & 64\% & 61\% \\
+$50 < p_{T} < 75$ GeV   & 57\% & 54\% \\
+$75 < p_{T} < 100$ GeV  & 68\% & 64\% \\
+$p_{T} > 100$ GeV       & 71\% & 68\% \\
+SR                   & 72\% & 69\% \\
+\hline\hline
+\textbf{2024} & No fix & With fix \\
+\hline
+Baseline            & 63\% & 60\% \\
+$50 < p_{T} < 75$ GeV   & 57\% & 54\% \\
+$75 < p_{T} < 100$ GeV  & 67\% & 64\% \\
+$p_{T} > 100$ GeV       & 70\% & 67\% \\
+SR                  & 74\% & 71\% \\
+\hline
+\end{tabular}
+\end{table}
+
+
+ \begin{figure}[h!tbp]
+   \centering
+   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/mt_SRNonIsoData_.png}
+   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/ph_pt_SRNonIsoData_.png}\\
+   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/met_SRNonIsoData_.png}
+   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/metsig_SRNonIsoData_.png}\\
+   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/dphi_met_phterm_SRNonIsoData_.png}
+   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/dphi_met_jetterm_SRNonIsoData_.png}
+   \caption{Comparison of the distributions of the main kinematic variables with and without the bug-fix, after SR selections but with non-isolated photons, for 2023 data.}
+   \label{fig:isolbug2023_distr}
+ \end{figure}
+
+ \begin{figure}[h!tbp]
+   \centering
+   \includegraphics[width=0.45\textwidth]{images/caloisol-issue/mt_SRNonIsoData_24.png}
+   \includegraphics[width=0.45\textwidth]{images/caloisol-issue/ph_pt_SRNonIsoData_24.png}\\
+   \includegraphics[width=0.45\textwidth]{images/caloisol-issue/met_SRNonIsoData_24.png}
+   \includegraphics[width=0.45\textwidth]{images/caloisol-issue/metsig_SRNonIsoData_24.png}\\
+   \includegraphics[width=0.45\textwidth]{images/caloisol-issue/dphi_met_phterm_SRNonIsoData_24.png}
+   \includegraphics[width=0.45\textwidth]{images/caloisol-issue/dphi_met_jetterm_SRNonIsoData_24.png}
+   \caption{Comparison of the distributions of the main kinematic variables with and without the bug-fix, after SR selections but with non-isolated photons, for 2024 data.}
+   \label{fig:isolbug2024_distr}
+ \end{figure}
+
+To cross-check the assumption that the effect of the bug is smaller on MC, this has been verified specifically on the signal MC sample. Figure \ref{fig:isolbug-sig} shows the relative photon isolation distributions for photons in the $gg\to H\to\gamma\gamma_d$ MC sample, comparing the N-tuples with and without the bug fix. The effect is much smaller than in data, as expected: for MC, the efficiency of the photon isolation requirement on top of baseline selections, as shown in table \ref{tab:isobug_eff_sig}, is of only 0.2\%. Note that the different efficiency with respect to the data studies is due to the fact that signals will have mostly genuine photons, while data will be a combination of genuine and fake photons. For this reason, the isolation profiles and isolation efficiencies have been studied also for data in events with 2 muons and with $m_{\mu\mu\gamma} < 100$ GeV, to isolate genuine photons from radiative Z decay and make sure that the difference in the bug effect between MC signals and data is not due to the different type of photons. The isolation profile is shown next to the signal one in Figure \ref{fig:isolbug-sig}, while the efficiency is reported in table \ref{tab:isobug_eff}. \\
+
+ \begin{figure}[h!tbp]
+   \centering
+   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/isolation_baselineNoIsoData_24_sig.png}
+   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/isolation_baseline2muNoIso_muuyData_24_data.png}
+   \caption{Comparison of relative photon isolation profiles after baseline selections for the $gg\to H\to\gamma\gamma_d$ MC23e sample, and for Z radiative decay in 2024 data, with and without the isolation bug-fix included. }
+   \label{fig:isolbug-sig}
+ \end{figure}
+
+
+
+\begin{table}[htbp]
+\caption{Efficiency of the photon isolation requirement on top of baseline selections, with and without the isolation bug-fix applied, for the dark photon MC23e signal and for Z radiative decay in data 2024.}
+\label{tab:isobug_eff_sig}
+\centering
+\begin{tabular}{lcc}
+\hline
+\textbf{MC23e ggH signal} & No fix & With fix \\\hline
+Baseline & 80.8\% & 80.6\%\\
+\hline\hline
+\textbf{Data 24, 2 muons and $m_{\mu\mu\gamma}<100$ GeV} & No fix & With fix \\\hline
+Baseline & 85\% & 82\%\\
+\hline
+\end{tabular}
+\end{table}
+
+To evaluate the impact of these outcomes on the analysis results, the main aspects to consider are: the effect of the bug on data, the consistency between data and background for N-tuples affected by the isolation bug-fix, and the effect of the bug on signal MC simulations. 
+These ingredients can be summarized as following:
+
+\begin{itemize}
+  \item Effect on data: the bug leads to a relative increase in the efficiency of $\sim 4\%$;
+  \item Consistency between background and data for N-tuples affected by the isolation bug:
+  \begin{itemize}
+  \item the $\gamma$jets ``direct'' background is estimated based on pure MC simulation. Due to the fact that the effect of the bug is expected to be much smaller on MC than on data, this background contribution may be slightly under-estimated with respect to the "buggy" data, but it is a subdominant background;
+  \item for the $Z\gamma$ and $W\gamma$ backgrounds, normalization factors are used to correct them to data in the muon CRs. This will easily reabsorb the expected small difference in efficiency with respect to data; 
+  \item the \efakey\ background does not rely at all on MC simulation, therefore will be perfectly consistent with data;
+  \item for \jfakey\ background, the fake rates evaluation relies on an interplay between both data and MC, however the method is designed especially to deal with possible mismodelling of the isolation between data and MC, therefore the effect of the bug should be reabsorbed also in this case;
+  \end{itemize}
+  \item Effect on the signal: the signal prediction is based on pure MC simulation, where the effect of the bug is of only 0.2\%, therefore  the signal yields wil be quite close to the ones in a bug-free scenario.
+\end{itemize}
+
+To summarize, the background prediction and data would remain consistent with each other and both over-estimated by $\sim 4\%$ with respect to a scenario with correct isolation profile, while the signal efficiency would remain almost unchanged.
+This would produce a bias on the sensitivity $s/\sqrt{b}$ of $\sim -2\%$. Given that the uncertainty on the upper limit is $\sim 50\%$, we conclude that this bias may be neglected.
+
+% In order to test the effect of the bug on our analysis, we need to compare the isolation distribution in data and in MC for genuine photons. The purest photon data sample is obtained from $Z\to\mu^+\mu^-\gamma$ radiative decays, which are selected requiring a $\mu^+\mu^-\gamma$ final state satisfying $m_{\mu\mu\gamma}<100$~GeV.
+% As the effect of the bug is $p_T^\gamma$-dependent, increasing at larger $p_T^\gamma$, the data-vs-MC comparison is done in $p_T^\gamma$ bins: looking at the $p_T^\gamma$ distribution in the data $\mu^+\mu^-\gamma$ events, and in the MC $gg\to H\to\gamma\gamma_d$ sample (see Figure~\ref{fig:isolbug-pT_mumuy_ggHyyd}), the binning choice is $[45;55]$~GeV, $[55;70]$~GeV, and $[70;200]$~GeV.
+
+% \begin{figure}[h!tbp]
+%   \centering
+%   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/canvas_pTy_data_uuy.pdf}
+%   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/canvas_pTy_ggHyyd.pdf}
+%   \caption{Distributions of $p_T^\gamma$ in the data $\mu^+\mu^-\gamma$ events (left), and in the MC $gg\to H\to\gamma\gamma_d$ sample (right).}
+%   \label{fig:isolbug-pT_mumuy_ggHyyd}
+% \end{figure}
+
+% For each $p_T^\gamma$ bin, both $E_T^{cone40}$ and $isol=\dfrac{E_T^{cone40}-2450~\textrm{MeV}}{p_T^\gamma}$ are compared. Several MC samples are considered: $gg\to H\to\gamma\gamma_d$, $Z(\to\nu\nu)\gamma$, $Z\to\mu\mu\gamma$, $\gamma$jets direct and $\gamma$jets fragmentation --- the last being there only for completeness, but we know that its isolation profile is not comparable with others'. As discussed in the main text, isolation modelling depends on the MC sample. Here the reference MC sample to be compared to data is chosen to be $Z\to\mu\mu\gamma$, with the $m_{\mu\mu\gamma}<100$~GeV requirement enforced. The data-MC comparison is shown in Figure~\ref{fig:isolbug-isol_data_vs_MC-2023} and~\ref{fig:isolbug-isol_data_vs_MC-2024}, for years 2023 and 2024.
+
+% \begin{figure}[h!tbp]
+%   \centering
+%   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/2023/canvas_ETcone40_photons_ptbin01.pdf}
+%   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/2023/canvas_isol_photons_ptbin01.pdf}
+  
+%   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/2023/canvas_ETcone40_photons_ptbin02.pdf}
+%   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/2023/canvas_isol_photons_ptbin02.pdf}
+  
+%   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/2023/canvas_ETcone40_photons_ptbin03.pdf}
+%   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/2023/canvas_isol_photons_ptbin03.pdf}
+  
+%   \caption{Isolation profiles for $E_T^{cone40}$ (left) and $isol=\dfrac{E_T^{cone40}-2450~\textrm{MeV}}{p_T^\gamma}$ (right), for different $p_T^\gamma$ bins, for year 2023.}
+%   \label{fig:isolbug-isol_data_vs_MC-2023}
+% \end{figure}
+
+% \begin{figure}[h!tbp]
+%   \centering
+%   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/2024/canvas_ETcone40_photons_ptbin01.pdf}
+%   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/2024/canvas_isol_photons_ptbin01.pdf}
+  
+%   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/2024/canvas_ETcone40_photons_ptbin02.pdf}
+%   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/2024/canvas_isol_photons_ptbin02.pdf}
+  
+%   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/2024/canvas_ETcone40_photons_ptbin03.pdf}
+%   \includegraphics[width=0.48\textwidth]{images/caloisol-issue/2024/canvas_isol_photons_ptbin03.pdf}
+  
+%   \caption{Isolation profiles for $E_T^{cone40}$ (left) and $isol=\dfrac{E_T^{cone40}-2450~\textrm{MeV}}{p_T^\gamma}$ (right), for different $p_T^\gamma$ bins, for year 2024.
+%     Beware: the $gg\to H\to\gamma\gamma_d$ is taken from year 2023, as that for 2024 is not yet available.}
+%   \label{fig:isolbug-isol_data_vs_MC-2024}
+% \end{figure}
+
+% By applying the isolation cut $\dfrac{E_T^{cone40}-2450~\textrm{MeV}}{p_T^\gamma}<0.022$ to all the isolation profiles, the isolation efficiency can be computed for data and for each MC sample. The result is shown in Figure~\ref{fig:isolbug-isol_eff}, where data are to be compared with the $Z\to\mu\mu\gamma$ MC sample (in brown).
+
+% \begin{figure}[h!tbp]
+%   \centering
+%   \includegraphics[width=\textwidth]{images/caloisol-issue/2023/canvas_effisol_photons.pdf}
+%   \includegraphics[width=\textwidth]{images/caloisol-issue/2024/canvas_effisol_photons.pdf}
+%   \caption{Isolation efficiency, for data and various MC samples, for year 2023 (top) and 2024 (bottom). The MC sample to be compared with data is $Z\to\mu\mu\gamma$ (the brown histogram).}
+%   \label{fig:isolbug-isol_eff}
+% \end{figure}
+
+% In year 2024, the isolation efficiencies in data and in the $Z\to\mu\mu\gamma$ MC sample appear to be the same, while in 2023 a slight effect is visible. 
+
+\clearpage

@@ -1,5 +1,5 @@
-A statistical combination of the Run 3 $\Htoyyd$ search (Run-3 ggF channel) conducted in this study with the Run 2 searches for $\Htoyyd$ in $\gamma + \ETmiss + \text{VBF jets}$ (Run-2 VBF channel) and $\gamma + \ETmiss + Z(\to\ell\ell, \ell = e,\mu)$ (Run-2 $ZH$ channel) final states is performed for the SM Higgs boson scenario.
-The results of the Run-3 ggF channel are obtained from the simultaneous fit described in Section~\ref{sec:simfit}, {\color{red}implementing the data-driven estimations of the $\jfakey$ (Section~\ref{sec:jetfake}) and $\efakey$ (Section~\ref{sec:elefake}) backgrounds with their systematic uncertainties, while applying the flat systematic uncertainty of 10\% to all the other MC samples.}
+A statistical combination of the $\Htoyyd$ search using 135\fbinv of Run-3 data (Run-3 ggF channel) conducted in this study with the Run 2 searches for $\Htoyyd$ in $\gamma + \ETmiss + \text{VBF jets}$ (Run-2 VBF channel) and $\gamma + \ETmiss + Z(\to\ell\ell, \ell = e,\mu)$ (Run-2 $ZH$ channel) final states is performed for the SM Higgs boson scenario.
+The results of the Run-3 ggF channel are obtained from the simultaneous fit described in Section~\ref{sec:simfit}, implementing the data-driven estimations of the $\jfakey$ (Section~\ref{sec:jetfake}) and $\efakey$ (Section~\ref{sec:elefake}) backgrounds with their systematic uncertainties, while also including both the MC experimental and theoretical systematic uncertainties.
 The fit is performed using a so-called ``mixed-Asimov'' dataset, where data are unblinded in the $1\mu$ and $2\mu$ CRs, and ``modified pseudo-data'' -- extrapolated from a background-only fit to these CRs using real data -- are used in the SR.
 The Run-2 VBF channel results are taken from the analysis reported in Ref.~\cite{EXOT-2021-17}, whereas the results for the Run-2 $ZH$ channel are derived from Ref.~\cite{HDBS-2019-13}.
 The combination of these two searches was already done by the ATLAS Collaboration, resulting in an observed (expected) 95\% CL upper limit on the branching ratio $\mathcal{B}(\SMHtoyyd)$ of $1.3\%(1.5\%)$~\cite{ATLAS:2024cju}.
@@ -44,12 +44,14 @@ where the numerator indicates the values of $\bm{\kappa}$ and $\bm{\theta}$ that
 
 While the original POIs of the Run-3 ggF and Run-2 VBF channels are already $\mathcal{B}(\Htoyyd)$, the original Run-2 $ZH$ channel POI is defined as the signal strength assuming $\mathcal{B}(\Htoyyd) = 5\%$.
 It is therefore re-scaled by a factor of 0.05 to be correlated with the other channels' POIs in the combination.
+%In addition, due to the lack of MC23e signal samples in the Run-3 ggF channel, a factor of $\dfrac{L_\mathrm{int}^{2023}}{L_\mathrm{int}^{2023} + L_\mathrm{int}^{2024}} = \dfrac{25.2~\fbinv}{25.2~\fbinv + 109.4~\fbinv} = 0.19$ is applied for re-scaling its original POI to the full 2023 + 2024 luminosity.
 It should also be noted that the \textbf{current} combination results, presented below, are obtained using fully unblinded data in the Run-2 channels, while the SR of the Run-3 ggF channel remains blinded, and the aforementioned ``mixed-Asimov'' dataset is used for this channel.
 
 \subsection{Correlation scheme of systematic uncertainties}
 \label{sec:correlation_scheme}
 All systematic uncertainties considered in the input channels are included in the combination.
-The Run-3 ggF channel systematic uncertainties, including those related to the data-driven fake-photon background estimates, the trigger, and the flat uncertainty of 10\% are treated as uncorrelated in the combination. 
+The Run-3 ggF channel systematic uncertainties related to the data-driven fake-photon background estimates as well as the MC experimental uncertainties are treated as fully uncorrelated with those of the Run-2 channels in the combination.
+The MC theoretical uncertainties are also uncorrelated due to different implementations between Run-2 and Run-3.
 The correlation of systematic uncertainties between the Run-2 VBF and $ZH$ channels follows a scheme similar to that described in Ref.~\cite{ATLAS:2024cju}, as follows,
 \begin{itemize}
     \item Uncertainties related to the luminosity and pile-up modelling are correlated. 
@@ -59,15 +61,17 @@ The correlation of systematic uncertainties between the Run-2 VBF and $ZH$ chann
 \end{itemize}
 In addition, any uncertainties, which are over-constrained $(< 70\%)$ or pulled $(> 50\%)$ in the Run-2 VBF-$ZH$ combined fit to data, are also not correlated in this combination.
 
-\subsection{Preliminary results}
+\subsection{Results}
 \label{sec:combinationWithPublishedRun2_results}
 Table~\ref{tab:comb_massless} presents the preliminary 95\% CL upper limits on $\mathcal{B}(\SMHtoyyd)$, derived from the combination of the Run-3 ggF channel (the search conducted in this study) with the already published Run-2 VBF and $ZH$ channels.
 The statistical procedure follows the strategy outlined in Section~\ref{sec:stat_method}, and the treatment of uncertainty correlation is based on the scheme described in Section~\ref{sec:correlation_scheme}.
 In addition, the individual limits from each channel are also provided. 
 All the results are obtained using the combination framework\footnote{https://gitlab.cern.ch/zhangruiPhysics/DarkPhotonCombination} previously employed in the Run-2 combined search reported in Ref.~\cite{ATLAS:2024cju}.
-The Run-2 limits are reproduced using fully unblinded data and are consistent with the ``reference'' results in the respective publications. 
+The Run-2 limits are reproduced using fully unblinded data.
 In contrast, the combined limits and those from the Run-3 ggF channel are computed with the SR of the Run-3 ggF analysis remaining blinded, and the “mixed-Asimov” dataset is used instead.
-
+The ``reference'' Run-2 VBF and $ZH$ channels' limits from the respective publications as well as the ``reference'' Run-3 ggF channel's limits obtained from the fit mentioned in Section~\ref{sec:splusb} using TRexFitter are also provided to validate the Run-3 limits computed by the combination framework.
+In general, they are consistent with each others.
+In addition, the ``stat-only'' limits of the Run-3 ggF channel and the combination, without any Run-3 systematic uncertainties added, are shown to evaluate the impact of the systematic uncertainties in the Run-3 channel and the combination study as well.
 \begin{table}[!htbp]
     \centering
     \resizebox{\columnwidth}{!}{
@@ -88,15 +92,18 @@ In contrast, the combined limits and those from the Run-3 ggF channel are comput
             Run-2 $ZH$ Reference~\cite{HDBS-2019-13} & 0.02278    & 0.0282     & 0.01458       & 0.01976       & 0.04151       & 0.0606     \\
             Run-2 $ZH$ Reproduced  & 0.022766 & 0.028211 & 0.015142 & 0.020328 & 0.039938 & 0.057167 \\
             \midrule
-            Run-3 ggF & 0.019559 & 0.019585 & 0.010512 & 0.014112 & 0.027515 & 0.037947 \\
+            Run-3 ggF Reference (Table~\ref{tab:limit_syst}) & &  0.0114 & 0.0059 &  0.0081  & 0.0167 & 0.0238 \\
+            Run-3 ggF Reproduced (stat-only) & 0.006213352762703399 & 0.007019296030469012 & 0.0037674371434514827 & 0.0050577914678937436 & 0.009784348363271135 & 0.013175961348129244 \\
+            Run-3 ggF Reproduced & 0.01140677071739082 & 0.011434724438312175 & 0.006137311403740755 & 0.008239352130294331 & 0.016362246553786226 &  0.02337807182834774 \\
             \midrule
-            Run2+3 combined  & 0.010709 & 0.011668 & 0.006262 & 0.008407 & 0.016525 & 0.022082 \\
+            Run2+3 combined (stat-only)  & 0.005362133545514745 & 0.006250746306330235 &  0.0033549366925884135 & 0.004504008834916307 &  0.008707039273785772 &  0.01172990532908053 \\
+            Run2+3 combined  &  0.008245495835519617 & 0.008734023430358657 & 0.004687775546219571 & 0.006293347508738766 & 0.012279294253377322 & 0.01692993398965664 \\
             \bottomrule
 	    \end{tabular}
 	}
     \caption{
         Exclusion upper limits at 95\% CL on $\mathcal{B}(\SMHtoyyd)$ from the individual Run-3 ggF, Run-2 VBF and $ZH$ channels as well as their combination.
-        The Run-3 ggF and combination limits are obtained using the ``mixed-Asimov'' data, while the other Run-2 limits are reproduced in this combination study using fully unblinded data, and are verified with ``Reference'' results taken from the individual publications.
+        The Run-3 ggF and combination limits are obtained using the ``mixed-Asimov'' data, while the other Run-2 limits are reproduced in this combination study using fully unblinded data, and are verified with ``Reference'' results taken from the individual publications. The term ``stat-only'' means limits obtained without including the Run-3 systematic uncertainties.
     }
 	\label{tab:comb_massless}
 \end{table}
@@ -105,7 +112,7 @@ The limits of this combination and the input channels are also represented in Fi
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=.6\textwidth]{../images/combination_with_Run2/limits_mu_SIG.pdf}
+    \includegraphics[width=.6\textwidth]{../images/dark_photon/images/combination_with_Run2/limits_mu_SIG.pdf}
     \caption{
         95\% CL upper limits on $\mathcal{B}(\SMHtoyyd)$ from the individual Run-3 ggF, Run-2 VBF and $ZH$ channels as well as their combination.
         The Run-3 ggF and combination limits are obtained using the ``mixed-Asimov'' data, while the other Run-2 limits are reproduced in this combination study using fully unblinded data.
@@ -117,8 +124,8 @@ The expected and observed or ``mixed-Asimov'' values of the profile likelihood r
 
 \begin{figure}[htbp]
 	\centering
-	\subfloat[]{\includegraphics[scale=0.3]{../images/combination_with_Run2/likelihoods_mu_SIG_expected.pdf}\label{fig:exp_likelihood_scan}}
-	\subfloat[]{\includegraphics[scale=0.3]{../images/combination_with_Run2/likelihoods_mu_SIG_observed.pdf}\label{fig:obs_likelihood_scan}}
+	\subfloat[]{\includegraphics[scale=0.3]{../images/dark_photon/images/combination_with_Run2/likelihoods_mu_SIG_expected.pdf}\label{fig:exp_likelihood_scan}}
+	\subfloat[]{\includegraphics[scale=0.3]{../images/dark_photon/images/combination_with_Run2/likelihoods_mu_SIG_observed.pdf}\label{fig:obs_likelihood_scan}}
 	\caption{
         \ref{fig:exp_likelihood_scan} Expected and \ref{fig:obs_likelihood_scan} observed / ``mixed-Asimov'' value of $-2\ln\Lambda$, where $\Lambda$ denotes the profile likelihood ratio, as a function of $\mu \equiv \mathcal{B}(\SMHtoyyd)$ for the individual channels and their combination.}
 	\label{fig:comb_likelihood_scan}
@@ -128,18 +135,18 @@ Figure~\ref{fig:combined_corrmatrix} shows the correlation matrix of the POI $\m
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=1.\textwidth]{../images/combination_with_Run2/correlation.pdf}
+    \includegraphics[width=1.\textwidth]{../images/dark_photon/images/combination_with_Run2/corr_Run3ggFchannel_VBFchannel_ZHchannel-fullcorr_125-2.pdf}
     \caption{
         Correlation of the POI $\mu$, normalisation factors, and constrained NPs in the combination from the best fit to ``mixed-Asimov'' data. Parameters with all values less than 0.2 are pruned.
     }
     \label{fig:combined_corrmatrix}
 \end{figure}
 
-Top 20 constrained NPs having the highest impacts on the POI $\mu$ in the combined fit to ``mixed-Asimov'' data together with their post-fit pulls are represented in Figure~\ref{fig:combined_ranking20}.
+Top 20 constrained NPs having the highest impacts on the POI $\mu$ in the combined fit to ``mixed-Asimov'' data together with their post-fit pulls are represented in Figure~\ref{fig:combined_ranking20}. \textcolor{red}{TO DO: update the ranking plot for the combination with the latest Run-3 ggF channel workspace used}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=.9\textwidth]{../images/combination_with_Run2/ranking_rank_0001_to_0020.pdf}
+    \includegraphics[width=.9\textwidth]{../images/dark_photon/images/combination_with_Run2/ranking_rank_0001_to_0020.pdf}
     \caption{
         Top 20 ranking constrained NPs and their post-fit pulls for the combination, obtained using ``mixed-Asimov'' data.
         NPs related to the statistical uncertainties are represented with ``gamma'' prefix and centered at 1 but shifted to 0 for visualisation purpose.

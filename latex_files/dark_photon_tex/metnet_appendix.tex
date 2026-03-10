@@ -1,0 +1,154 @@
+The following section presents studies of the METNet ML algorithm within the dark photon analysis.
+Within ATLAS, \(E_T^{\text{miss}} \) is reconstructed using various working points.
+These working points differ in the selection criteria of input jets, such as  $p_T$ and JVT tagging requirements.
+Each analysis selects a WP based on performance in the relevant phase space and pileup rejection.
+These WPs have a high dependence on event topology, and are not optimal for every event that might enter the signal region.
+A new NN tool, METNet~\cite{hodkinson_2023}, has been developed to allow for WP selection on an event-by-event basis.
+
+METNet classifies events based on Equation~\ref{eq:metnet}, and the outputs are N weights, \( \omega_N \), corresponding to the likelihood that each WP is optimal for the event.
+The weights sum to unity, and are used to build a prediction for \(E_T^{\text{miss}} \) as shown in Equation~\ref{eq:metnet_etmiss}, summed in quadrature.
+
+\begin{equation}
+    Class = \text{argmin}_{WP} \left[ (p^{miss,WP}_{x} - p^{miss,true}_{x})^2 + (p^{miss,WP}_{y} - p^{miss,true}_{y})^2 \right]
+    \label{eq:metnet}
+\end{equation}
+\begin{equation}
+    p^{miss,METNet}_{x,y} = \sum_{WP} \omega_{WP} p^{miss,WP}_{x,y}
+    \label{eq:metnet_etmiss}
+\end{equation}
+
+Performance studies of METNet have been conducted previously and show an increase in performance on a variety of event topologies~\cite{hodkinson_2023,Horstmann2025metnet}, such as $t\bar{t}$ and $Z\rightarrow\mu\mu$.
+The CP task for the dark photon analysis is to validate the latest version of the METNet algorithm and to study the impact on our signal sensitivity.
+The METNet algorithm has been integrated into the analysis framework, and studies are presented here using four MC samples shown in table \ref{tab:metnet_samples}.
+A network file specific to Run 3 conditions was provided by the METNet developers.
+
+\begin{table}[htbp]
+    \centering
+    \caption{MC samples used for METNet studies.}
+    \begin{tabular}{l l}
+        \toprule
+        \hline
+        Process & Sample Name  \\
+        \hline
+        $ggF\rightarrow H \rightarrow\gamma\gamma_D$ & \tiny\texttt{\detokenize{mc23_13p6TeV.602402.PhPy8EG_ggH_H125yyd.deriv.DAOD_PHYS.e8537_e8528_s4159_s4114_r15224_r15225_p6320}}  \\
+        $\gamma$ + jets fragmentation & \tiny\texttt{\detokenize{mc23_13p6TeV.801649.Py8_gammajet_frag_DP8_17_FullSW.deriv.DAOD_PHYS.e8514_e8528_s4159_s4114_r15224_r15225_p6491}}  \\
+         & \tiny\texttt{\detokenize{mc23_13p6TeV.801650.Py8_gammajet_frag_DP17_35_FullSW.deriv.DAOD_PHYS.e8514_e8528_s4159_s4114_r15224_r15225_p6491}} \\
+         & \tiny\texttt{\detokenize{mc23_13p6TeV.801651.Py8_gammajet_frag_DP35_50_FullSW.deriv.DAOD_PHYS.e8514_e8528_s4159_s4114_r15224_r15225_p6491}} \\
+         & \tiny\texttt{\detokenize{mc23_13p6TeV.801652.Py8_gammajet_frag_DP50_70_FullSW.deriv.DAOD_PHYS.e8514_e8528_s4159_s4114_r15224_r15225_p6491}} \\
+         & \tiny\texttt{\detokenize{mc23_13p6TeV.801653.Py8_gammajet_frag_DP70_140_FullSW.deriv.DAOD_PHYS.e8514_e8528_s4159_s4114_r15224_r15225_p6491}} \\
+         & \tiny\texttt{\detokenize{mc23_13p6TeV.801654.Py8_gammajet_frag_DP140_280_FullSW.deriv.DAOD_PHYS.e8514_e8528_s4159_s4114_r15224_r15225_p6491}} \\
+         & \tiny\texttt{\detokenize{mc23_13p6TeV.801655.Py8_gammajet_frag_DP280_500_FullSW.deriv.DAOD_PHYS.e8514_e8528_s4159_s4114_r15224_r15225_p6491}} \\
+         & \tiny\texttt{\detokenize{mc23_13p6TeV.801656.Py8_gammajet_frag_DP500_800_FullSW.deriv.DAOD_PHYS.e8514_e8528_s4159_s4114_r15224_r15225_p6491}} \\
+         & \tiny\texttt{\detokenize{mc23_13p6TeV.801657.Py8_gammajet_frag_DP800_1000_FullSW.deriv.DAOD_PHYS.e8514_e8528_s4159_s4114_r15224_r15225_p6491}} \\
+         & \tiny\texttt{\detokenize{mc23_13p6TeV.801658.Py8_gammajet_frag_DP1000_1500_FullSW.deriv.DAOD_PHYS.e8514_e8528_s4159_s4114_r15224_r15225_p6491}} \\
+         & \tiny\texttt{\detokenize{mc23_13p6TeV.801659.Py8_gammajet_frag_DP1500_2000_FullSW.deriv.DAOD_PHYS.e8514_e8528_s4159_s4114_r15224_r15225_p6491}} \\
+         & \tiny\texttt{\detokenize{mc23_13p6TeV.801660.Py8_gammajet_frag_DP2000_inf_FullSW.deriv.DAOD_PHYS.e8514_e8528_s4159_s4114_r15224_r15225_p6491}} \\
+        $Z\rightarrow\mu\mu$ + jets & \tiny\texttt{\detokenize{mc23_13p6TeV.700789.Sh_2214_Zmumu_maxHTpTV2_BFilter.deriv.DAOD_PHYS.e8514_e8528_s4159_s4114_r15224_r15225_p6491}} \\
+         & \tiny\texttt{\detokenize{mc23_13p6TeV.700790.Sh_2214_Zmumu_maxHTpTV2_CFilterBVeto.deriv.DAOD_PHYS.e8514_e8528_s4159_s4114_r15224_r15225_p6491}} \\
+         & \tiny\texttt{\detokenize{mc23_13p6TeV.700791.Sh_2214_Zmumu_maxHTpTV2_CVetoBVeto.deriv.DAOD_PHYS.e8514_e8528_s4159_s4114_r15530_r15514_p6491}} \\
+        $Z\rightarrow\nu\nu+\gamma$ & \tiny\texttt{\detokenize{mc23_13p6TeV.700776.Sh_2214_nunugamma.deriv.DAOD_PHYS.e8514_e8528_s4159_s4114_r15224_r15225_p6491}} \\
+        \hline
+        \bottomrule
+    \end{tabular}
+    \label{tab:metnet_samples}
+\end{table}
+
+Besides the dark photon signal sample, three background samples are used for METNet studies: $\gamma$ + jets fragmentation, $Z\rightarrow\mu\mu$ + jets, and $Z\rightarrow\nu\nu+\gamma$.
+$Z\rightarrow\mu\mu$ + jets was chosen as a cross check for the performance studies conducted in \cite{hodkinson_2023,Horstmann2025metnet}, while $Z\rightarrow\nu\nu+\gamma$ provides a true \(E_T^{\text{miss}} \) environment.
+The $\gamma$ + jets fragmentation background enters the SR due to large amount of fake \(E_T^{\text{miss}} \) from primary vertex misidentification, making it a useful test of METNet performance in a challenging \(E_T^{\text{miss}} \) environment.
+
+The cross check of METNet performance using $Z\rightarrow\mu\mu$ + jets is shown in Figure~\ref{fig:metnet_zmumu} without any analysis selections, with the RMS of the \(E_T^{\text{miss}} \) in x and y used as the metric for resolution.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{../images/dark_photon/images/metnet/MET_zmumu_jets_netgood.pdf}
+        \caption*{(a) \(E_T^{\text{miss}} \)}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{../images/dark_photon/images/metnet/rms_hist_vs_npv_netgood_zmumu_jets_netgood.pdf}
+        \caption*{(b) RMS}
+    \end{minipage}
+    \caption{\(E_T^{\text{miss}} \) distribution (a) for METNet (blue), the tight WP (red), and truth (green) for $Z\rightarrow\mu\mu$ + jets. The resolution (b) is shown for all events in solid blue rectangles (METNet) and red triangles (tight WP), and plus marks and asterisks for good and bad reconstructed vertices respectively.}\label{fig:metnet_zmumu}
+\end{figure}
+
+As expected, METNet more closely matches the truth \(E_T^{\text{miss}} \) distribution compared to the tight WP.
+The resolution as a function of $N_{\text{PV}}$ outperforms the tight WP until reaching a high number of vertices.
+Interestingly, the difference in resolution for events with a bad reconstructed vertex is much larger for METNet compared to the tight WP. 
+This indicates that METNet is sensitive to the correct identification of the primary vertex.
+Overall, the results agree almost exactly with the previous studies~\cite{hodkinson_2023,Horstmann2025metnet}, confirming the proper integration of METNet into the analysis framework.
+
+The \(E_T^{\text{miss}} \) distributions for the four samples are shown in Figure~\ref{fig:metnet_etmiss} with the analysis preselections applied.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{../images/dark_photon/images/metnet/MET_ggHyyd_selections_netgood.pdf}
+        \caption*{(a) ggF $H\rightarrow\gamma\gamma_D$}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{../images/dark_photon/images/metnet/MET_gamma_jet_selections_netgood.pdf}
+        \caption*{(b) $\gamma$ + jets fragmentation}
+    \end{minipage}
+
+    \vspace{0.4cm}
+    
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{../images/dark_photon/images/metnet/MET_zmumu_jets_selections_netgood.pdf}
+        \caption*{(c) $Z\rightarrow\mu\mu$ + jets}
+    \end{minipage}\
+    \hfill
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{../images/dark_photon/images/metnet/MET_znunu_gamma_selections_netgood.pdf}
+        \caption*{(d) $Z\rightarrow\nu\nu+\gamma$}
+    \end{minipage}
+
+    \caption{\(E_T^{\text{miss}} \) distributions for METNet (blue), the tight WP (red), and truth (green) for: (a) ggF $H\rightarrow\gamma\gamma_D$, (b) $\gamma$ + jets fragmentation, (c) $Z\rightarrow\mu\mu$ + jets, and (d) $Z\rightarrow\nu\nu+\gamma$. Analysis preselections applied.}\label{fig:metnet_etmiss}
+\end{figure}
+
+The METNet distributions trend slightly lower than the tight WP for all samples, with overall agreement in shape between the two.
+While this brings METNet marginally more in line with truth for signal and $\gamma$ + jets, it appears to shift slightly lower than truth for $Z\rightarrow\nu\nu+\gamma$.
+Note that the analysis trigger removes almost all $Z\rightarrow\mu\mu$ + jets events, rendering the sample less useful for comparison.
+Resolutions with preselections applied are shown in Figure~\ref{fig:metnet_resolution}.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{../images/dark_photon/images/metnet/rms_hist_vs_npv_netgood_ggHyyd_selections_netgood.pdf}
+        \caption*{(a) ggF $H\rightarrow\gamma\gamma_D$}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{../images/dark_photon/images/metnet/rms_hist_vs_npv_netgood_gamma_jet_selections_netgood.pdf}
+        \caption*{(b) $\gamma$ + jets fragmentation}
+    \end{minipage}
+
+    \vspace{0.4cm}
+    
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{../images/dark_photon/images/metnet/rms_hist_vs_npv_netgood_zmumu_jets_selections_netgood.pdf}
+        \caption*{(c) $Z\rightarrow\mu\mu$ + jets}
+    \end{minipage}\
+    \hfill
+    \begin{minipage}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{../images/dark_photon/images/metnet/rms_hist_vs_npv_netgood_znunu_gamma_selections_netgood.pdf}
+        \caption*{(d) $Z\rightarrow\nu\nu+\gamma$}
+    \end{minipage}
+
+    \caption{Resolution as a function of $N_{\text{PV}}$ for METNet (blue) and the tight WP (red) for: (a) ggF $H\rightarrow\gamma\gamma_D$, (b) $\gamma$ + jets fragmentation, (c) $Z\rightarrow\mu\mu$ + jets, and (d) $Z\rightarrow\nu\nu+\gamma$. Analysis preselections applied.}\label{fig:metnet_resolution}
+\end{figure}
+
+The resolutions are generally comparable between METNet and the tight WP across all samples except for $Z\rightarrow\nu\nu+\gamma$.
+As seen before, METNet degrades in performance at high $N_{\text{PV}}$ for this sample, and is outperformed by the tight WP at an $N_{\text{PV}}$ of ~25.
+This could be due to the tight WP being specifically optimized for a true \(E_T^{\text{miss}} \) environment, while METNet may weight the other WPs too heavily for this topology.
+Most importantly, there is no siginificant increase in resolution for signal events using METNet.
+Acceptances for signal and the $\gamma$ + jets fragmentation background were calculated in comparison to the 100 GeV cut on \(E_T^{\text{miss}} \) used in the analysis.
+It was found that a 100 GeV cut on METNet achieves the same 1.43\% acceptance for signal (1.71x$10^{-4}$\% for $\gamma$ + jets fragmentation), giving no gain in efficiency.
+
+In summary, these studies have validated METNet performance on $Z\rightarrow\mu\mu$ + jets events, in agreement with previous studies.
+When applying analysis preselections, METNet shows comparable performance to the tight WP in \(E_T^{\text{miss}} \) resolution across four samples, with some degradation at high pileup for $Z\rightarrow\nu\nu+\gamma$ events.
+There is no significant improvement in resolution or signal acceptance using METNet compared to the tight WP, and the current recommendation of the tight WP is maintained.
+However, the dark photon analysis presents a challenging environment for \(E_T^{\text{miss}} \) reconstruction due to the high rate of fake \(E_T^{\text{miss}} \) from primary vertex misidentification.
+It is recommended that METNet be trained more extensively on events with low track activity and fake \(E_T^{\text{miss}} \), and revisited in the next iteration of the analysis.

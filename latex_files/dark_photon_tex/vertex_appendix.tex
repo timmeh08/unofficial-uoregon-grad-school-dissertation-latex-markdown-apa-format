@@ -1,0 +1,48 @@
+\subsection{Pile-up dependence study}
+
+A pile-up dependence study has been performed to evaluate the BDT performance under different pile-up conditions. The study consists of splitting the data into low and high pile-up regions, as shown in Figure~\ref{fig:bdt_pileup_regions}. The BDT performance is then assessed for each pile-up condition by plotting the ROC curves, as shown in Figure~\ref{fig:background_efficiency_vs_bdt}. The results show that the BDT indeed performs better in low pile-up conditions compared to high pile-up conditions.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/vertex_study/pileupDependency/pileupProfile.png} 
+    \caption{Pile-up distribution used to define low and high pile-up regions.}
+    \label{fig:bdt_pileup_regions}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/vertex_study/pileupDependency/BDT_score_of_each_region.png} 
+    \caption{ROC curves and BDT response distribution for low pile-up (left) and high pile-up (middle) regions, and the inclusive training for comparison (right).}
+    \label{fig:bdt_pileup_roc}
+\end{figure}
+
+\clearpage 
+
+\subsection{BDT response distribution}
+\begin{figure} [!htbp]%[!htbp] t!
+    \centering
+    \includegraphics[width=0.32\textwidth]{images/vertex_study/BDT_perf/BDT_Response_TrainTest_fold_1.pdf}
+    \includegraphics[width=0.32\textwidth]{images/vertex_study/BDT_perf/BDT_Response_TrainTest_fold_2.pdf}\\
+    \includegraphics[width=0.32\textwidth]{images/vertex_study/BDT_perf/BDT_Response_TrainTest_fold_3.pdf}
+    \includegraphics[width=0.32\textwidth]{images/vertex_study/BDT_perf/BDT_Response_TrainTest_fold_4.pdf}\\
+    \caption{BDT response for fold each fold, The solid blue (dashed blue) line represents the goodPV training (testing) sample, while the solid red (dashed red) line represents the wrongPV training (testing) sample (data 2023 only)}
+    \label{fig:bdt_roc_fold1}
+\end{figure}
+
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.4\linewidth]{images/vertex_study/BDT_perf/signal_eff_vs_bdt.pdf} 
+    \includegraphics[width=0.4\linewidth]{images/vertex_study/BDT_perf/background_eff_vs_bdt.pdf} \\
+    \includegraphics[width=0.4\linewidth]{images/vertex_study/BDT_perf/roc_cato_signal.pdf} 
+    \caption{Background efficiency as a function of the BDT score for each sample (data 2023 only)}
+    \label{fig:background_efficiency_vs_bdt}
+\end{figure}
+
+
+% \begin{figure}[!htbp]
+%     \centering
+%     \subfloat[]{\includegraphics[width=0.55\linewidth]{images/vertex_study/BDT_perf/Distributions_2023.pdf}}
+%     \subfloat[]{\includegraphics[width=0.55\linewidth]{images/vertex_study/BDT2024/Distributions_2024.pdf}}
+%     \caption{ BDT response, The solid lines represent the goodPV distribution for each fold, while the dashed lines represent the wrongPV distribution for each fold. (a) for 2023 data (b) for 2024 data}
+%     \label{fig:bdt_response_distribution}
+% \end{figure}

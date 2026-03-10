@@ -1,31 +1,32 @@
 In addition to the SR, orthogonal control regions (CR) and validation regions (VR) are defined. The two CRs are employed to correct for potential mismodelling in $Z\gamma$ and $W\gamma$ MC simulations, while 3 VRs are defined to validate the data-driven estimates described in detail in section \ref{sec:fakephotonintro}. 
 
-\subsection{Control regions}
-The control regions are defined to be enhanced with $W(\mu\nu)\gamma$ and $Z(\to\mu\mu)\gamma$ events, with the latter used as a proxy for the $Z(\to\nu\nu)\gamma$ process in the SR.
+\subsection{Control and validaton regions}
+\label{sec:CR}
+Two control regions are defined to be enhanced with $W(\mu\nu)\gamma$, $Z(\to\mu\mu)\gamma$, with the latter used as a proxy for the $Z(\to\nu\nu)\gamma$ process in the SR.
 To achieve this, the muon veto applied in the SR is inverted, and the $\ETmiss$ related variables are recomputed treating muons as invisible particle in the $\ETmiss$ reconstruction ($\ETmiss$(inv. $\mu$)), in order to mimic the kinematic of the SR. 
+An additional low \ETmiss significance CR is used to constrain the \jfakey background.
 \begin{itemize}
-    \item the $1\mu$ CR (designed for $W\gamma$) is obtained by applying the same selection as the SR, but requiring exactly one selected muon and using the $\ETmiss$(inv. $\mu$);
-    \item the $2\mu$ CR (designed for $Z\gamma$) requires exactly 2 muons and uses the $\ETmiss$(inv. $\mu$), but applies slightly looser selection than the SR to enhance the statistics. In addition, in order to reject the $Z\to\mu\mu\gamma$ decay, the invariant mass of the $\mu\mu\gamma$ system is required to be $m_{\mu\mu\gamma}>100$ GeV. The detailed selections are summarized in table \ref{tab:region_summary}.
+    \item The $1\mu$ CR (designed for $W\gamma$) is obtained by applying the same selection as the SR, but requiring exactly one selected muon and using the $\ETmiss$(inv. $\mu$);
+    \item The $2\mu$ CR (designed for $Z\gamma$) requires exactly 2 muons and uses the $\ETmiss$(inv. $\mu$), but applies slightly looser selection than the SR to enhance the statistics. In addition, in order to reject the $Z\to\mu\mu\gamma$ decay, the invariant mass of the $\mu\mu\gamma$ system is required to be $m_{\mu\mu\gamma}>100$ GeV. The detailed selections are summarized in table \ref{tab:region_summary}.
+    \item The low $\ETmiss$ significance CR is defined as the SR, but requiring $2 < \ETmiss sig < 6$. The lower threshold is applied to reject a mismodelled region, which is of no interest for the analysis.
 \end{itemize}
 
 Figure \ref{fig:MCcr} 
-shows the $\mT$ distributions in the two CRs, which are confirmed to be enhanced with the desired background process. The $\jfakey$ background contribution is determined through the data-driven method described in section \ref{sec:jetfake}
+shows the $\mT$ distributions in the three CRs, which are confirmed to be enhanced with the desired background process (75\% contribution from $W\gamma$ in the $1\mu$ CR, 67\% of $Z\gamma$ in $2\mu$ CR and 60\% of \jfakey\ in low \ETmiss sig CR) and largely free of signal contamination (<0.005\% in $1\mu$ CR and $2\mu$ CR, 0.4\% in low \ETmiss sig CR, assuming $BR(H\to\gamma\gamma_D)=1\%$). The $\jfakey$ background contribution is determined through the data-driven method described in section \ref{sec:jetfake}. Good modeling is observed in all the three CRs, already before the fit. 
 
 \begin{figure} [H]%[!htbp] t!
     \centering
-    \includegraphics[width=0.45\textwidth]{../images/MCplots/mt_1muCR.png}
-    \includegraphics[width=0.45\textwidth]{../images/MCplots/mt_2muCR.png}\\
-    \caption{Background and data $m_T$ distribution in the $1\mu$ CR and $2\mu$ CR. Data-driven $\jfakey$ are included in the plot. The bottom panel shows the MC/data ratio.}
+    \includegraphics[width=0.45\textwidth]{../images/dark_photon/images/PlotsFull/mt_1muCRData_.png}
+    \includegraphics[width=0.45\textwidth]{../images/dark_photon/images/PlotsFull/mt_2muCRData_.png}
+    \includegraphics[width=0.45\textwidth]{../images/dark_photon/images/lowMETsig_withBDT_withdphijj/mt_lowMETsigVR_BDT01_dphiCentralJJData_.png}
+    \caption{Background and data $m_T$ distribution in the $1\mu$ CR, $2\mu$ CR and low $\ETmiss$ significance CR, with $\jfakey$ and $\efakey$ as obtained through the data-driven estimation described in section \ref{sec:fakephotonintro}. For the $1\mu$ CR and $2\mu$ CR, the \mT is computed using \ETmiss with invisible muons. The signal contribution is shown on top (red line). The bottom panel shows the MC/data ratio.}
     \label{fig:MCcr}
 \end{figure}
 
-\subsection{Validation regions}
-Three validation regions are defined, two for the $\jfakey$ (low $\ETmiss$ significance VR, low $\dphimety$ VR) and one for the $\efakey$ estimates (low $\mT$ VR). 
-The choice of two VRs for $\jfakey$ validation is done in order to be able to cross-check the modelling both of the $\ETmiss$ significance variable and of the $\dphimety$ one. \\
+The low \ETmiss significance CR is also important to validate the \jfakey data-driven estimate described in section \ref{sec:jetfake}, together with a low $\dphimety$ VR defined by inverting the \dphimety selection.
+Looking at this two orthogonal regions allows to cross-check the modelling both of the $\ETmiss$ significance variable and of the $\dphimety$ one. Finally, a low $\mT$ region is defined to validate the \efakey data-driven estimation described in section \ref{sec:elefake}. Note that this region is actually not orthogonal to what we define as the SR, but it is still useful for validation, being depleted of signal: the $80<\mT<90$ GeV region is nevertheless retained in the fit to help constraining the \efakey background.  \\
 \begin{itemize}
-    \item The low $\ETmiss$ significance VR is defined as the SR, but requiring $2 < \ETmiss sig < 6$. The lower threshold is applied to reject a mismodelled region, which is of no interest for the analysis.
-    \item The low $\dphimety$ maintains the same selection as the SR, but requiring $0.5<$\dphimety$<1$. Also in this case, the lower cut excludes a not relevant mismodelled region.
-    \item The low $\mT$ region is obtained by inverting the $\mT$ cut ($80 <\mT < 90 $ GeV). This choice is determined by the fact that the main contribution to this background comes from $W(e\nu)jets$ events, where the electron is misidentified as a photon. Therefore, the $\mT$ will peak around the mass of the W boson.
+    \item The low $\dphimety$ VR maintains the same selection as the SR, but requiring $0.5<$\dphimety$<1$. Also in this case, the lower cut excludes a not relevant mismodelled region.
+    \item The low $\mT$ VR is obtained by inverting the $\mT$ cut ($80 <\mT < 90 $ GeV). This choice is determined by the fact that the main contribution to this background comes from $W(e\nu)jets$ events, where the electron is misidentified as a photon. Therefore, the $\mT$ will peak around the mass of the W boson.
 \end{itemize}
 The detailed study in these VRs can be found in sections \ref{sec:jetfake} and \ref{sec:elefake}.
-

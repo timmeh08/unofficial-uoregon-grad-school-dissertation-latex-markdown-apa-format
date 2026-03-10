@@ -17,22 +17,23 @@ whose expectation value is given by the sum of:
     acceptance and efficiency $L \times \varepsilon \times \sigma  \times BR$ :
     \item the expected yield (MC) for the Z$\gamma$ background, rescaled by a factor $k_Z$; 
     \item the expected yield (MC) for the W$\gamma$ background, rescaled by a factor $k_W$; 
-    \item the expected yield (MC) for the $\gamma$+jets background, 
+    \item the expected yield (MC) for the $\gamma$+jets (direct) background. This is a sub-dominant background, therefore no k-factor is applied; 
     \item the expected yields for electrons faking photons and jets faking photons background. 
 \end{itemize}
-The transverse mass ($m_T$) of the system represented by the visible photon and the missing transverse momentum is taken as discriminating variable between signal and background. Its spectrum is indeed expected to be peaked at $m_H\sim\SI{125}{GeV}$ for the signal, while it has a different distribution for the background processes. Data are thus split in different $m_T$ bins:
+The transverse mass (\mT) of the system represented by the visible photon and the missing transverse momentum is taken as discriminating variable between signal and background. Its spectrum is indeed expected to be peaked at $m_H\sim\SI{125}{GeV}$ for the signal, while it has a different distribution for the background processes. Data are thus split in different \mT bins:
 
 \begin{equation}
    \mu^{[R,i]}=\mu_s^{[R,i]}+\sum_b \mu_b^{[R,i]} 
 \end{equation}
 \noindent
-$i$ being the number of $m_T$ bins. The binning displayed in the next plots has been optimized in order to limit the impact of statistical uncertainties while keeping the signal sensitivity of each bin as high as possible. The chosen $m_T$ binning is the following: 
+$i$ being the number of \mT bins. The binning has been optimized in order to limit the impact of statistical uncertainties while keeping the signal sensitivity of each bin as high as possible. The chosen \mT binning is the following: 
 \begin{itemize}
-    \item (80-110) $\SI{}{GeV}$, the lowest edge at $\SI{80}{GeV}$ is set by the cut of the trigger and of the offline selections defining the SR; 
+    \item (80-110) $\SI{}{GeV}$, the lowest edge at $\SI{80}{GeV}$ is set by the cut of the trigger and of the offline selections defining the SR. This bin is dominated by \efakey and helps constraining this background; 
     \item (110-140) $\SI{}{GeV}$, the most sensitive bin centred on the Higgs mass, where signal distribution is expected to be peaked; 
-    \item (140-200) $\SI{}{GeV}$, the highest edge coincides with the end-point of the signal $m_T$ distribution; 
-    \item (200-300) $\SI{}{GeV}$, the last bin where there is no signal is only used for the normalization of the background. 
+    \item (140-200) $\SI{}{GeV}$, defined to contain most of the remaining signal that is not in the central bin;
+    \item (200-300) $\SI{}{GeV}$, the last bin, depleted of signal, used for the normalization of the background. Together with the previous bin, it can provide some shape discrimination between \jfakey and true photons, as well as between signal and backgrounds. 
 \end{itemize}
+This binning is used for SR, OneMuCR and lowMETsigCR, while for TwoMuCR, due to lack of statistic in the region, it has been chosen to use only one m${_T}$ bin (80-300) GeV, in order to limit statistical uncertainties.
 
 A simultaneous likelihood is then built by multiplying the likelihoods obtained for each region.
 
@@ -54,7 +55,7 @@ Considering the dependence of the parameters on uncertainties caused by the mode
      +\sum_j\frac{\nu_j^2}{2}
 \end{equation}
 }
-where there is the Poisson term and the Gaussian constraints. The free parameters of the fit are the Parameter of Interest,  the Branching Ratio $BR(H\rightarrow \gamma \gamma_d)$, and the k-factors used for the normalisation of $Z\gamma$ and $W\gamma$ background. With $\nu$ are denoted the Nuisance Parameters (NPs) associated to systematic uncertainties, these NPs give the background components a constraint modeled by a Gaussian distribution centered at zero with width given by the value of the corresponding uncertainty. The systematics given by data-driven estimations are included in the fit as correlated among the $m_T$ bins.\\
+where there is the Poisson term and the Gaussian constraints. The free parameters of the fit are the Parameter of Interest,  the Branching Ratio $BR(H\rightarrow \gamma \gamma_d)$, and the k-factors used for the normalisation of $Z\gamma$ and $W\gamma$ background. With $\nu$ are denoted the Nuisance Parameters (NPs) associated to systematic uncertainties, these NPs give the background components a constraint modeled by a Gaussian distribution centered at zero with width given by the value of the corresponding uncertainty. The systematics given by data-driven estimations are included in the fit as correlated among the \mT bins.\\
 
 The test statistics is defined by means of the profile likelihood ratio $\Lambda$, namely the ratio between the conditional maximum of $\mathcal{L}$ for the signal strength (s) under test and the absolute maximum of $\mathcal{L}$ occurring at $(\hat{s}, \hat{\nu})$:
 
@@ -72,15 +73,8 @@ where the hypothesis under test is the signal strength $s$ and the alternative h
 
 \noindent
 The definition of the likelihood function and the statistical treatment of the results is performed by means of the software TRExFitter. \\
-Different types of fit are performed in the analysis:
-\begin{itemize}
-    \item Background-only fit: performed on all CRs to estimate the k-factors needed to evaluate the
-    background yields in the SR before unblinding.
-    \item Model-dependent signal fit: performed on all CRs plus the SR including a signal component to
-    set exclusion/discovery limits. This strategy is employed after the unblinding of the SR.
-\end{itemize}
 Additional information on the fit can be found in Table \ref{tab: trex}. 
-\begin{longtable}{|l|l|p{5cm}|}
+\begin{longtable}{l|l|p{5cm}}
 \caption{TreXFitter parameters setting.}
 \label{tab: trex}\\
 \hline
@@ -99,29 +93,21 @@ Additional information on the fit can be found in Table \ref{tab: trex}.
 \endlastfoot
 
 
-\textbf{JOB} & Luminosity & 25.8 fb$^{-1}$ \\
+\textbf{JOB} & Luminosity & 134.6 fb$^{-1}$ \\
 \textbf{JOB} & MC stat Threshold & 0.001 \\
 \textbf{JOB} & MC stat Constraint & POISSON \\
-\textbf{JOB} & Syst Control Plots & TRUE \\
 \textbf{JOB} & Syst Pruning (Shape) & 0.01 \\
 \textbf{JOB} & Syst Pruning (Norm) & 0.01 \\
-\textbf{JOB} & Syst Category Tables & TRUE \\
-\textbf{JOB} & Remove Syst on Empty Sample & TRUE \\
 \textbf{JOB} & Correlation Threshold & 0.20 \\
-\textbf{JOB} & Histo Checks & NOCRASH \\
-\textbf{JOB} & Split Histo Files & TRUE \\
-\textbf{JOB} & Merge Under/Overflow & TRUE \\
-
-\textbf{FIT} & Fit Name & fit \\
 \textbf{FIT} & Fit Type & SPLUSB or BONLY \\
 \textbf{FIT} & Fit Region & CRSR \\
 \textbf{FIT} & POI Asimov Value & 0 \\
 \textbf{FIT} & Use Minos & all \\
-
 \textbf{LIMIT} & Limit Type & ASYMPTOTIC \\
 \textbf{LIMIT} & Fit Strategy & 3 \\
 
 \end{longtable}
 
-In the following results, data-driven estimations of $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ backgrounds are included, but the BDT score cut is not included yet (\textcolor{red}{will be updated soon, but we don't expect huge changes: the effect of the vertex BDT on top of the SR selections  and the effect of it's integration in the fit (stat only) was observed to be relatively negligible. The importance of it is mostly making sure to have the "cleanest" possible dataset in terms of vertex identification, especially for the validation of the jet faking photon estimate}). The fit takes into consideration the systematic uncertainties on the data-driven $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ estimations, together with the MC experimental systematic uncertainties. \\
-Each source of uncertainty is treated as correlated among the analysis regions, and MC systematics are also correlated among the different processes ($Z\gamma$ and $W\gamma$). A pruning threshold of 1\% is applied, acting separately on the normalization and shape effects of the various Nuisance Parameters. The effect of this pruning is summarized in figure \ref{fig:pruning}. \textcolor{red}{TO DO: check if any systematic needs smoothing due to high statistical fluctuation, and apply it using the TRexFitter utilities.}\\
+%The effect of the vertex BDT on top of the SR selections and its integration in the fit is observed to be relatively negligible. The importance of it is mostly making sure to have the "cleanest" possible dataset in terms of vertex identification, especially for the validation of the jet faking photon estimate. 
+The fit takes into consideration the uncertainties on the k-factors, the systematic uncertainties on the data-driven $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ estimations, together with the MC experimental and theoretical systematic uncertainties. \\
+Each source of uncertainty is treated as correlated among the analysis regions, and MC experimental systematics are also correlated among the different processes ($Z\gamma$ and $W\gamma$). A pruning threshold of 1\% is applied, acting separately on the normalization and shape effects of the various Nuisance Parameters. The normalization component of theoretical uncertainty on the $W\gamma$ and $Z\gamma$ backgrounds is not taken into account, to avoid strong correlation with the corresponding normalization factors (see appendix \ref{sec:noDropNorm_appendix}).\\

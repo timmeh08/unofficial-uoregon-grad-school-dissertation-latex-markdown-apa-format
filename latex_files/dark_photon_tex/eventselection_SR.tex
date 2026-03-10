@@ -1,93 +1,199 @@
 The kinematics of the signals and of the primary backgrounds have been studied in detail to identify key discriminating variables for an effective background suppression. Maintaining a reasonable signal acceptance is especially important for this analysis, as the trigger - though designed specifically for this signature - already rejects a significant portion of events as a compromise between acceptance and the trigger rate. 
-Additionally, the analysis phase space is challenging, being dominated by "fake" photons and "fake" $\ETmiss$ backgrounds, which are not well represented by Monte Carlo simulations. \\
-An important role in the optimization procedure has been given to the impact of wrong identification of primary vertices on the events kinematics: the misidentification of the primary vertex strongly affect the $\ETmiss$ related variables, thus affecting the background and signal acceptance. In particular, the $\ETmiss$ spectrum tends to become harder for signal, and looser for the background arising from $\gamma+$jets and multi-jet background, suppressing the former and enhancing the latter. Furthermore, the vertex identification, as a result of its impact on $\ETmiss$, artificially shapes the transverse mass distribution leading to a bulk of events (either background or signal) at $m_{T} \sim 150$ GeV. 
+Additionally, the analysis phase space is challenging, being dominated by fake photons and fake $\ETmiss$ backgrounds, which are not well represented by Monte Carlo simulations. \\
+An important role in the optimization procedure has been given to the impact of wrong identification of primary vertices on the events kinematics: the misidentification of the primary vertex strongly affect the $\ETmiss$ related variables, thus affecting the background and signal acceptance. In particular, the $\ETmiss$ spectrum tends to become harder for signal, and softer for the background arising from $\gamma+$jets and multi-jet background, suppressing the former and enhancing the latter. In particular, the efficiency of the \ETmiss>100 GeV selection on top of \ETmiss > 50 GeV and preselections is, for the signal ($\gamma$+jets background), 20\% (6\%) for events with correct vertex identification and 9\% (17\%) for events with misidentified vertex. Given that the fraction of events with misidentified PV at preselection level is 44\% for signal and 70\% for $\gamma$+jets background, this means that the efficiency is suppressed by $\sim30$\% on the signal, and increased by $\sim70$\% on the background. Furthermore, the vertex identification, as a result of its impact on $\ETmiss$, artificially shapes the transverse mass distribution leading to a bulk of events (either background or signal) at $m_{T} \sim 150$ GeV. 
 A comparison of the $\ETmiss$ and $m_{\mathrm{T}}$ distributions for events with correctly identified and misidentified Primary Vertex is shown,as an example, for the signal and for the $\gamma+$jets background, in figure \ref{fig:vertexstudy} \\  %\ref{fig:$\ETmiss$mt_vertex}. \\
 
 
 \begin{figure} [H]%[!htbp] t!
     \centering
-    \includegraphics[width=0.45\textwidth]{../images/MCplots/ggHyyd_met_goodvswrong.png}
-    \includegraphics[width=0.45\textwidth]{../images/MCplots/ggHyyd_mt_goodvswrong.png}
-    \includegraphics[width=0.45\textwidth]{../images/MCplots/gammajets_met_goodvswrong.png}
-    \includegraphics[width=0.45\textwidth]{../images/MCplots/gammajets_mt_goodvswrong.png}
-    \caption{Comparison between events with correctly identified and misidentified PV. The $\ETmiss$ (left) and $m_T$ (right) distributions are shown for the signal (top) and $\gamma$jets background (bottom)}
+    \includegraphics[width=0.45\textwidth]{../images/dark_photon/images/MCplots/ggHyyd_met_goodvswrong.png}
+    \includegraphics[width=0.45\textwidth]{../images/dark_photon/images/MCplots/ggHyyd_mt_goodvswrong.png}
+    \includegraphics[width=0.45\textwidth]{../images/dark_photon/images/MCplots/gammajets_met_goodvswrong.png}
+    \includegraphics[width=0.45\textwidth]{../images/dark_photon/images/MCplots/gammajets_mt_goodvswrong.png}
+    \caption{Comparison between events with correctly identified and misidentified PV. Only preselections are applied. The $\ETmiss$ (left) and $m_T$ (right) distributions are shown for the signal (top) and $\gamma$jets background (bottom)}
     \label{fig:vertexstudy}
 \end{figure}
 
 \paragraph{Optimization}
-Several variables have been considered for the preliminary optimization of the main analysis selections, including the kinematics of the photon, angular separations between $\ETmiss$, photons, and jets in different combinations, as well as other $\ETmiss$-related variables such as the $\ETmiss$ significance, the $\ETmiss$ soft term, and a $\DeltaMET=\ETmiss-\ETmissNoJVT$. The last variable is designed to enhance the rejection of events with misidentified PV, through the comparison between the standard $\ETmiss$ reconstruction and an alternative $\ETmiss$ with no PU subtraction ($\ETmissNoJVT$). If the vertex identified as HS vertex is actually a PU vertex, HS jets will be flagged as PU jets and not included into the $\ETmiss$ Jet Term, while PU jets will feed the Jet Term. In this scenario, assuming that the impact of loosing HS jets is greater than the effect of PU jets, the $\ETmissNoJVT$ is expected to be closer to the true $\ETmiss$ value than the standard one. This is observed indeed in the variable distribution in Figure \ref{fig:variables_dmet}, showing a bulk of events, with wrong vertex, at $-60 < \Delta\ETmiss < -20$ GeV, consistent with the $p_{T}$ region in which the JVT selection is applied.
+Several variables have been considered for the preliminary optimization of the main analysis selections, including the kinematics of the photon, angular separations between $\ETmiss$, photons, and jets in different combinations, as well as other $\ETmiss$-related variables such as the $\ETmiss$ significance, the $\ETmiss$ soft term, and a $\DeltaMET=\ETmiss-\ETmissNoJVT$. The last variable is designed to enhance the rejection of events with misidentified PV, through the comparison between the standard $\ETmiss$ reconstruction and the alternative $\ETmissNoJVT$ described in section \ref{sec:met}. If the vertex identified as HS vertex is actually a PU vertex, HS jets will be flagged as PU jets and not included into the $\ETmiss$ Jet Term, while PU jets will feed the Jet Term. In this scenario, assuming that the impact of loosing HS jets is greater than the effect of PU jets, the $\ETmissNoJVT$ is expected to be closer to the true $\ETmiss$ value than the standard one. This is observed indeed in the variable distribution in Figure \ref{fig:MCpresel}, showing a bulk of events, with wrong vertex, at $-60 < \Delta\ETmiss < -20$ GeV, consistent with the $p_{T}$ region in which the JVT selection is applied.
 The $\ETmiss$ significance helps suppressing events with fake $\ETmiss$, which are typically characterized by a lower value. 
 It is evaluated taking into account the resolution of the objects entering the $\ETmiss$ calculation, and defined as $\mathcal{S}=\frac{\ETmiss}{[\sigma^2_{L}(1-\rho_{LT}^2)]^{1/2}}$, where $\sigma_L$ is the  total standard deviation in the longitudinal plane with respect to $\ETmiss$, and $\rho_{LT}$ is the correlation factor between the longitudinal and transverse measurements.\\
 The photon $\eta$ was found to help reducing background from $W/Z+\gamma$. 
-Some of the most discriminating variables are shown in Figures \ref{fig:MCpresel} and \ref{fig:MCpreselbdt}, for preselection only and including also the selection on the vertex BDT respectively. The \Htoyyd signal (in gluon-gluon fusion channel) is compared to each background, with the bin-by-bin significance displayed in the lower panel.\\
+Some of the most discriminating variables are shown in Figures \ref{fig:MCpresel} and \ref{fig:MCpreselbdt}, for preselection only and including also the selection on the vertex BDT respectively. The \Htoyyd signal (in gluon-gluon fusion channel) is compared to each background, with the bin-by-bin $S/\sqrt{B}$ displayed in the lower panel.\\
 
 
-\begin{figure} [H]%[!htbp] t!
+\begin{figure} [H]%[!htbp] t! 
     \centering
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/mt_baseline_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/met_baseline_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/ph_eta_baseline_sigGoodPV_stack.png}\\
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/n_jet_central_baseline_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/metsig_baseline_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/dmet_baseline_sigGoodPV_stack.png}\\
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_met_phterm_baseline_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_met_jetterm_baseline_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_central_jj_baseline_sigGoodPV_stack.png}\\
-    \caption{Background vs signal comparison for the main discriminant variables, used to define the SR. Only preselection cuts are applied. The bottom panel shows the bin-by-bin significance ($s/\sqrt{b}$). A $BR(H\to\gamma\gamma)=1\%$ is represented as a benchmark.}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/mt_baseline_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/met_baseline_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/ph_eta_baseline_.png}\\
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/n_jet_central_baseline_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/metsig_baseline_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/dmet_baseline_.png}\\
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/dphi_met_phterm_baseline_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/dphi_met_jetterm_baseline_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/dphi_central_jj_baseline_.png}\\
+    \caption{Background vs signal comparison using MC23d+MC23e simulations, for the main discriminant variables, used to define the SR,with $\jfakey$ and $\efakey$ as obtained through the data-driven estimation described in section \ref{sec:fakephotonintro}. Only preselection cuts are applied. In the $\Delta\phi(j_1,j_2)$ plot, the bin at 10 correspond to events with less than 2 jets. The bottom panel shows the bin-by-bin significance ($s/\sqrt{b}$). A $BR(H\to\gamma\gamma_{d})=1\%$ is represented as a benchmark.}
     \label{fig:MCpresel}
 \end{figure}
 
 
 \begin{figure} [H]%[!htbp] t!
     \centering
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/mt_baseline_BDT01_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/met_baseline_BDT01_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/ph_eta_baseline_BDT01_sigGoodPV_stack.png}\\
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/n_jet_central_baseline_BDT01_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/metsig_baseline_BDT01_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/dmet_baseline_BDT01_sigGoodPV_stack.png}\\
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_met_phterm_baseline_BDT01_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_met_jetterm_baseline_BDT01_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_central_jj_baseline_BDT01_sigGoodPV_stack.png}\\
-    \caption{Background vs signal comparison for the main discriminant variables, used to define the SR. Only preselection cuts and the vertex BDT score selection are applied. The bottom panel shows the bin-by-bin significance ($s/\sqrt{b}$). A $BR(H\to\gamma\gamma)=1\%$ is represented as a benchmark.}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/mt_baseline_BDT01_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/met_baseline_BDT01_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/ph_eta_baseline_BDT01_.png}\\
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/n_jet_central_baseline_BDT01_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/metsig_baseline_BDT01_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/dmet_baseline_BDT01_.png}\\
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/dphi_met_phterm_baseline_BDT01_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/dphi_met_jetterm_baseline_BDT01_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/dphi_central_jj_baseline_BDT01_.png}\\
+    \caption{Background vs signal comparison using MC23d+MC23e simulations, for the main discriminant variables, used to define the SR, with $\jfakey$ and $\efakey$ as obtained through the data-driven estimation described in section \ref{sec:fakephotonintro}. Only preselection cuts and the vertex BDT score selection are applied. In the $\Delta\phi(j_1,j_2)$ plot, the bin at 10 correspond to events with less than 2 jets. The bottom panel shows the bin-by-bin significance ($s/\sqrt{b}$). A $BR(H\to\gamma\gamma_{d})=1\%$ is represented as a benchmark.}
     \label{fig:MCpreselbdt}
 \end{figure}
-The optimization was performed iteratively, starting with a set of 14 variables. At each step, ROC curves, significance plots and significance $\times$ acceptance plots were produced for each variable and collectively used as a metric to define which variable to prioritize, and identify the best cut. The optimization is repeated at each step, incorporating the previously defined selections, until a stable sensitivity is achieved. \\
+The optimization was performed iteratively, starting with a set of 14 variables. MC simulations have been used, ignoring the dijet contribution due to the high statistical fluctuations of the corresponding MC samples. At each step, ROC curves, significance plots and significance $\times$ acceptance plots were produced for each variable and collectively used as a metric to define which variable to prioritize, and identify the best cut. Example of these plots for the first and last step of the optimization are shown in appendix \ref{sec:app-optim}. The optimization is repeated at each step, incorporating the previously defined selections, until a stable sensitivity is achieved. At a later stage, this optimization has been validated and cross-checked integrating the data-driven estimates for $\efakey$ and $\jfakey$ and the full 2023+2024 statistics, obtaining similar results. \\
 The final SR selection, as determined by this procedure, is outlined in the following section.
 
 
 \paragraph{SR selections}
-The final set of rectangular cuts resulting from the previously described optimization is the following:
+The final set of rectangular cuts resulting from the previously described optimization, and including preselections, is the following:\\
+\textbf{Preselections:}
 \begin{itemize}[nosep]
+    \item Analysis trigger: \texttt{HLT\_g50\_tight\_xe40\_cell\_xe70\_pfopufit\_80mTAC\_L1eEM26M}
     \item $N_{\gamma}=1$, with  $N_{\gamma}$ the number of selected photons;
-    \item $N_{\text{leptons}}=0$, for baseline leptons
-    \item $N_{\text{jet,central}} \leq 3$
+    \item $N_{\text{leptons}}=0$, for baseline leptons;
+    \item $N_{\text{b-jets}}=0$
+    \item $N_{\text{jet,central}} \leq 3$;
     \item $\pTy > 50$ GeV;
-    \item $|\eta^\gamma|<1.75$;
     \item $\ETmiss > 100$ GeV;
+    \item $\mT>80$ GeV;
+\end{itemize}
+\textbf{Additional selections:}
+\begin{itemize}[nosep]
+    \item $BDT_{score}^{vertex}>0.1$;
     \item $\ETmiss$ significance $> 6$;
     \item $\DeltaMET > -10$ GeV;
-    \item $\mT>80$ GeV;
     \item $\dphimety>1.25$;
     \item $\dphimetj<0.75$;
     \item $\Delta\phi(j_1,j_2)<2.5$;
-    \item $BDT_{score}^{vertex}>0.1$;
+    \item $|\eta^\gamma|<1.75$;
 \end{itemize}
 
-The n-1 distributions after SR selections are shown in figure \ref{fig:MCsr}
+The distributions after SR selections, with the selection on the shown variable removed, are shown in figure \ref{fig:MCsr}
 
 
 \begin{figure} [H]%[!htbp] t!
     \centering
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/mt_SR_BDT01_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/met_SR_BDT01_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/ph_eta_SR_BDT01_sigGoodPV_stack.png}\\
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/n_jet_central_SR_BDT01_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/metsig_SR_BDT01_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/dmet_SR_BDT01_sigGoodPV_stack.png}\\
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_met_phterm_SR_BDT01_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_met_jetterm_SR_BDT01_sigGoodPV_stack.png}
-    \includegraphics[width=0.3\textwidth]{../images/MCplots/dphi_central_jj_SR_BDT01_sigGoodPV_stack.png}\\
-    \caption{Background vs signal comparison for the main discriminant variables, used to define the SR. The n-1 distributions are shown in SR. The bottom panel shows the bin-by-bin significance ($s/\sqrt{b}$). A $BR(H\to\gamma\gamma)=1\%$ is represented as a benchmark.}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/mt_SR_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/met_SR_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/ph_eta_SR_.png}\\
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/n_jet_central_SR_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/metsig_SR_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/dmet_SR_.png}\\
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/dphi_met_phterm_SR_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/dphi_met_jetterm_SR_.png}
+    \includegraphics[width=0.3\textwidth]{../images/dark_photon/images/PlotsFull/dphi_central_jj_SR_.png}\\
+    \caption{Background vs signal comparison using MC23d+MC23e simulations, for the main discriminant variables, used to define the SR, with $\jfakey$ and $\efakey$ as obtained through the data-driven estimation described in section \ref{sec:fakephotonintro}. The n-1 distributions (i.e. removing the selection applied to the plotted variable) are shown inthe SR. In the $\Delta\phi(j_1,j_2)$ plot, the bin at 10 correspond to events with less than 2 jets. The bottom panel shows the bin-by-bin significance ($s/\sqrt{b}$). A $BR(H\to\gamma\gamma)=1\%$ is represented as a benchmark.}
     \label{fig:MCsr}
 \end{figure}
+
+
+The impact of each selection on the signals on the analysis background processes is summarized in the cutflow tables \ref{tab:cutflow_mc23d_signal} and \ref{tab:cutflow_mc23d} for 2023, the former focusing on the signal in different Higgs production channel, while the cutflow for the 2024 dataset is reported in table \ref{tab:cutflow_mc23e}, for background and the main ggF signal. The \jfakey and \efakey yields correspond to the data-driven estimates obtained as described in Section \ref{sec:fakephotonintro}. In these tables, the N-tuples skim include a set of selections applied at the N-tuple production stage, i.e. the requirement of at least one photon, the lepton veto, photon $p_{\mathrm{T}}>45$ GeV and $\ETmiss>50$ GeV. No significant differences have been observed in the 2024 kinematics relative to 2023, therefore the cutflow remains similar, in terms of cut-by-cut acceptance, between the two datasets.
+An efficiency table for dark photon signals in the different Higgs production channel is provided in Appendix \ref{sec:evtsel-appendix}.
+
+\begin{table}[h!]
+\centering
+\caption{Cutflow for ggF, VBF and VH signal processes in the SR, in MC23d. The last line shows the yields in the \mT region that will drive the analysis sensitivity.}
+\scriptsize
+\label{tab:cutflow_mc23d_signal}
+\begin{tabular}{lcccc}
+\hline
+Selection & ggH$\to\gamma\gamma_D$ & VBF$\to\gamma\gamma_D$  & ZH$\to\gamma\gamma_D$  & WH$\to\gamma\gamma_D$  \\
+\hline
+All events & 13500 & 1050 & 243 & 229 \\
+N-tuple skim & $4330 \pm 10$ & $ 318 \pm 1 $ & $68.6 \pm 0.3$  & $84.2 \pm 0.3$ \\  
+Trigger & $1250 \pm 5$ & $105 \pm 0.7$ & $28.7 \pm 0.3$ & $31.3 \pm 0.2$ \\
+$E_{\mathrm{T}}^{\mathrm{miss}}>100$ GeV & $186 \pm 2$ & $35.4 \pm 0.4$ & $12.3 \pm 0.2$ & $11.8 \pm 0.1$ \\
+$m_{\mathrm{T}}>80$ GeV & $183 \pm 2$ & $34.3 \pm 0.4$ & $12.1 \pm 0.2$ & $11.6 \pm 0.1$ \\
+1 isolated photon & $156 \pm 2$ & $30.2 \pm 0.4$ & $10.7 \pm 0.2$ & $10.2 \pm 0.1$ \\
+$p_{\mathrm{T}}^{\gamma}>50$ GeV & $156 \pm 2$ & $30 \pm 0.4$ & $10.7 \pm 0.2$ & $10.1 \pm 0.1$ \\
+$N_{central\ jets}\leq 3$ & $141 \pm 2$ & $28.8 \pm 0.3$ & $9.57 \pm 0.17$ & $8.7 \pm 0.11$ \\
+$N_{b-jets}=0$ & $138 \pm 2$ & $28 \pm 0.3$ & $8.97 \pm 0.16$ & $8.49 \pm 0.11$ \\
+$\mathrm{BDT}_{vertex}>0.1$ & $72.1 \pm 1.3$ & $17.9 \pm 0.3$ & $3.62 \pm 0.1$ & $5.15 \pm 0.08$ \\
+$\mathrm{Sig.}\ E_{\mathrm{T}}^{\mathrm{miss}}>6$ & $64.2 \pm 1.2$ & $15.3 \pm 0.3$ & $3.31 \pm 0.1$ & $4.65 \pm 0.08$ \\
+$\Delta E_{\mathrm{T}}^{\mathrm{miss}} >-10$ GeV & $62.4 \pm 1.2$ & $14.6 \pm 0.2$ & $3.17 \pm 0.1$ & $4.49 \pm 0.08$ \\
+$\Delta\phi(E_{\mathrm{T}}^{\mathrm{miss}},E_{\mathrm{T}}^{\mathrm{miss},\gamma})>1.25$ & $56.2 \pm 1.1$ & $13.3 \pm 0.2$ & $2.06 \pm 0.08$ & $3.65 \pm 0.07$ \\
+$\Delta\phi(E_{\mathrm{T}}^{\mathrm{miss}},E_{\mathrm{T}}^{\mathrm{miss},jet})<0.75$ & $55.3 \pm 1.1$ & $13.1 \pm 0.2$ & $2 \pm 0.08$ & $3.57 \pm 0.07$ \\
+$\Delta\phi(j_1,j_2)<2.5$ & $52.8 \pm 1.1$ & $12.6 \pm 0.2$ & $1.93 \pm 0.08$ & $3.42 \pm 0.07$ \\
+$|\eta_{\gamma}|<1.75$ & $46.3 \pm 1$ & $11 \pm 0.2$ & $1.6 \pm 0.07$ & $2.85 \pm 0.06$ \\
+$100 < m_{\mathrm{T}} < 140$ GeV & $34.8 \pm 0.9$ & $8.48 \pm 0.19$ & $1.12 \pm 0.06$ & $2.18 \pm 0.05$ \\
+\hline
+
+\end{tabular}
+
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+\caption{Cutflow for the ggF signal and the background processes in the SR, in mc23d. The last line shows the yields in the \mT region that will drive the analysis sensitivity.}
+
+\scriptsize
+\label{tab:cutflow_mc23d}
+\begin{tabular}{lcccccc}
+\hline
+Selection & ggH$\to\gamma\gamma_D$ & $Z\gamma$ & $W\gamma$ & $\gamma\mathrm{(direct)+jet}$ & \jfakey & \efakey \\
+\hline
+Preselection & $4290 \pm 10$ & $5.63\cdot 10^{4} \pm 70$ & $9.76\cdot 10^{4} \pm 200$ & $3.18\cdot 10^{7} \pm 3\cdot 10^{4}$ & $4.37\cdot 10^{7} \pm 1\cdot 10^{4}$ & $8.44\cdot 10^{5} \pm 300$ \\
+Trigger & $1250 \pm 5$ & $2.58\cdot 10^{4} \pm 40$ & $2.39\cdot 10^{4} \pm 90$ & $1.44\cdot 10^{6} \pm 6\cdot 10^{3}$ & $9.96\cdot 10^{6} \pm 5\cdot 10^{3}$ & $6.44\cdot 10^{4} \pm 70$ \\
+$E_{\mathrm{T}}^{\mathrm{miss}}>100$ GeV & $186 \pm 2$ & $1.29\cdot 10^{4} \pm 20$ & $1\cdot 10^{4} \pm 50$ & $2.14\cdot 10^{5} \pm 2\cdot 10^{3}$ & $1.34\cdot 10^{6} \pm 2\cdot 10^{3}$ & $1.39\cdot 10^{4} \pm 30$ \\
+$m_{\mathrm{T}}>80$ GeV & $183 \pm 2$ & $1.29\cdot 10^{4} \pm 20$ & $9.84\cdot 10^{3} \pm 50$ & $2.13\cdot 10^{5} \pm 2\cdot 10^{3}$ & $1.33\cdot 10^{6} \pm 2\cdot 10^{3}$ & $1.27\cdot 10^{4} \pm 30$ \\
+1 isolated photon & $156 \pm 2$ & $1.03\cdot 10^{4} \pm 20$ & $7.43\cdot 10^{3} \pm 40$ & $1.75\cdot 10^{5} \pm 2\cdot 10^{3}$ & $2.32\cdot 10^{5} \pm 700$ & $1.27\cdot 10^{4} \pm 30$ \\
+$p_{\mathrm{T}}^{\gamma}>50$ GeV & $156 \pm 2$ & $1.03\cdot 10^{4} \pm 20$ & $7.41\cdot 10^{3} \pm 40$ & $1.74\cdot 10^{5} \pm 2\cdot 10^{3}$ & $2.29\cdot 10^{5} \pm 700$ & $1.27\cdot 10^{4} \pm 30$ \\
+$N_{central\ jets}\leq 3$ & $141 \pm 2$ & $9.69\cdot 10^{3} \pm 20$ & $6.6\cdot 10^{3} \pm 40$ & $1.67\cdot 10^{5} \pm 2\cdot 10^{3}$ & $1.96\cdot 10^{5} \pm 700$ & $1\cdot 10^{4} \pm 30$ \\
+$N_{b-jets}=0$ & $138 \pm 2$ & $9.51\cdot 10^{3} \pm 20$ & $6.46\cdot 10^{3} \pm 40$ & $1.64\cdot 10^{5} \pm 2\cdot 10^{3}$ & $1.83\cdot 10^{5} \pm 600$ & $7.77\cdot 10^{3} \pm 20$   \\
+$BDT_{vertex}>0.1$ & $72.1 \pm 1.3$ & $2.77\cdot 10^{3} \pm 10$ & $2.59\cdot 10^{3} \pm 20$ & $8.51\cdot 10^{3} \pm 190$ & $3.48\cdot 10^{4} \pm 300$ & $6.67\cdot 10^{3} \pm 20$ \\
+$\mathrm{Sig.}\ E_{\mathrm{T}}^{\mathrm{miss}}>6$ & $64.2 \pm 1.2$ & $2.64\cdot 10^{3} \pm 9$ & $2.35\cdot 10^{3} \pm 20$ & $2.84\cdot 10^{3} \pm 110$ & $9.42\cdot 10^{3} \pm 140$ & $5.44\cdot 10^{3} \pm 20$ \\
+$E_{\mathrm{noJVT,T}}^{\mathrm{miss}}-E_{\mathrm{T}}^{\mathrm{miss}}>-10$ GeV & $62.4 \pm 1.2$ & $2.58\cdot 10^{3} \pm 9$ & $2.26\cdot 10^{3} \pm 20$ & $2.63\cdot 10^{3} \pm 110$ & $8.66\cdot 10^{3} \pm 140$ & $5.25\cdot 10^{3} \pm 20$ \\
+$\Delta\phi(E_{\mathrm{T}}^{\mathrm{miss}},E_{\mathrm{T}}^{\mathrm{miss},y})>1.25$ & $56.2 \pm 1.1$ & $405 \pm 3$ & $737 \pm 9$ & $81.2 \pm 18$ & $1.26\cdot 10^{3} \pm 50$ & $1.84\cdot 10^{3} \pm 10$ \\
+$\Delta\phi(E_{\mathrm{T}}^{\mathrm{miss}},E_{\mathrm{T}}^{\mathrm{miss},jet})<0.75$ & $55.3 \pm 1.1$ & $346 \pm 3$ & $644 \pm 8$ & $47.5 \pm 16.5$ & $1.11\cdot 10^{3} \pm 50$ & $1.79\cdot 10^{3} \pm 10$ \\
+$\Delta\phi(j_1,j_2)<2.5$ & $52.8 \pm 1.1$ & $308 \pm 3$ & $571 \pm 8$ & $43.6 \pm 16.4$ & $959 \pm 46$ & $1.64\cdot 10^{3} \pm 10$ \\
+$|\eta_{\gamma}|<1.75$ & $46.3 \pm 1$ & $239 \pm 3$ & $434 \pm 7$ & $41.5 \pm 16.4$ & $619 \pm 34$ & $933 \pm 6$ \\
+$100 < m_{\mathrm{T}} < 140$ GeV & $34.8 \pm 0.9$ & $93.5 \pm 1.9$ & $186 \pm 5$ & $16.1 \pm 8.2$ & $304 \pm 24$ & $304 \pm 3$ \\
+\hline
+
+\end{tabular}
+
+\end{table}
+
+
+
+\begin{table}[h!]
+\caption{Cutflow for the background processes in the SR, in MC23e. The last line shows the yields in the \mT region that will drive the analysis sensitivity.}
+
+\scriptsize
+\label{tab:cutflow_mc23e}
+\begin{tabular}{lcccccc}
+\hline
+Selection & ggH$\to\gamma\gamma_D$ & $Z\gamma$ & $W\gamma$ & $\gamma\mathrm{(direct)+jet}$ & \jfakey & \efakey \\
+\hline
+Ntuples & $921 \pm 5$ & $5.54\cdot 10^{4} \pm 60$ & $4.46\cdot 10^{4} \pm 100$ & $1.14\cdot 10^{6} \pm 2\cdot 10^{4}$ & $5.1\cdot 10^{6} \pm 3\cdot 10^{3}$ & $6.48\cdot 10^{4} \pm 60$ \\
+$m_{\mathrm{T}}>80$ GeV & $905 \pm 5$ & $5.53\cdot 10^{4} \pm 60$ & $4.39\cdot 10^{4} \pm 100$ & $1.13\cdot 10^{6} \pm 2\cdot 10^{4}$ & $5.07\cdot 10^{6} \pm 3\cdot 10^{3}$ & $5.91\cdot 10^{4} \pm 60$ \\
+1 isolated photon & $753 \pm 5$ & $4.33\cdot 10^{4} \pm 50$ & $3.23\cdot 10^{4} \pm 100$ & $8.88\cdot 10^{5} \pm 2.3\cdot 10^{4}$ & $9.04\cdot 10^{5} \pm 1\cdot 10^{3}$ & $5.91\cdot 10^{4} \pm 60$ \\
+$p_{\mathrm{T}}^{\gamma}>50$ GeV & $749 \pm 5$ & $4.33\cdot 10^{4} \pm 50$ & $3.22\cdot 10^{4} \pm 100$ & $8.85\cdot 10^{5} \pm 2.3\cdot 10^{4}$ & $8.93\cdot 10^{5} \pm 1\cdot 10^{3}$ & $5.91\cdot 10^{4} \pm 60$ \\
+$N_{central\ jets}\leq 3$ & $679 \pm 5$ & $4.07\cdot 10^{4} \pm 50$ & $2.86\cdot 10^{4} \pm 100$ & $8.45\cdot 10^{5} \pm 2.3\cdot 10^{4}$ & $7.59\cdot 10^{5} \pm 1\cdot 10^{3}$ & $4.65\cdot 10^{4} \pm 50$ \\
+$N_{b-jets}=0$ &$660 \pm 4$ &  $4\cdot 10^{4} \pm 50$ & $2.8\cdot 10^{4} \pm 100$ & $8.31\cdot 10^{5} \pm 2.3\cdot 10^{4}$ & $7.11\cdot 10^{5} \pm 1\cdot 10^{3}$ & $3.61\cdot 10^{4} \pm 50$ \\
+$\mathrm{BDT}_{vertex}>0.1$ & $309 \pm 3$ & $1.07\cdot 10^{4} \pm 50$ & $4.6\cdot 10^{4} \pm 1.1\cdot 10^{3}$ & $1.44\cdot 10^{5} \pm 500$ & $3.18\cdot 10^{4} \pm 40$ \\
+$\mathrm{Sig.}\ E_{\mathrm{T}}^{\mathrm{miss}}>6$ & $268 \pm 3$ & $1.05\cdot 10^{4} \pm 20$ & $9.5\cdot 10^{3} \pm 50$ & $1.34\cdot 10^{4} \pm 500$ & $3.16\cdot 10^{4} \pm 200$ & $2.44\cdot 10^{4} \pm 40$ \\
+$\Delta E_{\mathrm{T}}^{\mathrm{miss}} >-10$ GeV &$257 \pm 3$ &  $1.02\cdot 10^{4} \pm 20$ & $9.09\cdot 10^{3} \pm 50$ & $1.21\cdot 10^{4} \pm 500$ & $2.87\cdot 10^{4} \pm 200$ & $2.32\cdot 10^{4} \pm 40$ \\
+$\Delta\phi(E_{\mathrm{T}}^{\mathrm{miss}},E_{\mathrm{T}}^{\mathrm{miss},\gamma})>1.25$ &$228 \pm 3$ &  $1.64\cdot 10^{3} \pm 8$ & $3.04\cdot 10^{3} \pm 20$ & $508 \pm 100$ & $3.78\cdot 10^{3} \pm 80$ & $7.69\cdot 10^{3} \pm 20$ \\
+$\Delta\phi(E_{\mathrm{T}}^{\mathrm{miss}},E_{\mathrm{T}}^{\mathrm{miss},jet})<0.75$ & $223 \pm 3$ & $1.4\cdot 10^{3} \pm 8$ & $2.66\cdot 10^{3} \pm 20$ & $271 \pm 76$ & $3.35\cdot 10^{3} \pm 70$ & $7.51\cdot 10^{3} \pm 20$ \\
+$\Delta\phi(j_1,j_2)<2.5$ & $211 \pm 2$ & $1.26\cdot 10^{3} \pm 8$ & $2.35\cdot 10^{3} \pm 20$ & $259 \pm 76$ & $2.83\cdot 10^{3} \pm 70$ & $6.84\cdot 10^{3} \pm 20$ \\
+$|\eta_{\gamma}|<1.75$ & $185 \pm 2$ & $968 \pm 7$ & $1.79\cdot 10^{3} \pm 20$ & $135 \pm 48$ & $2.09\cdot 10^{3} \pm 60$ & $4.24\cdot 10^{3} \pm 10$ \\
+$100 < m_{\mathrm{T}} < 140$ GeV &$139 \pm 2$ & $384 \pm 5$ & $763 \pm 13$ & $94.8 \pm 43.1$ & $1.07\cdot 10^{3} \pm 40$ & $1.38\cdot 10^{3} \pm 7$ \\
+\hline
+
+\end{tabular}
+
+\end{table}

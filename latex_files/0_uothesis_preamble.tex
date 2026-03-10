@@ -61,6 +61,7 @@
 % PACKAGES
 %------------------------------------------------------------------------------%
 \usepackage[USenglish,UKenglish]{babel}
+\usepackage{csquotes}
 \usepackage{mathtools,amsmath,amsfonts,amsthm,amssymb,bm, bbm}
 \usepackage{dcolumn,booktabs,longtable}
 \usepackage[singlelinecheck=false]{caption}
@@ -80,6 +81,7 @@
 \usepackage[normalem]{ulem}
 \usepackage{tabularx,xspace,multirow}
 \usepackage{array}
+\usepackage{makecell}
 \usepackage{cancel}
 \usepackage{siunitx}
 
@@ -129,6 +131,7 @@
 \newcommand{\gammad}{\ensuremath{\gamma_\mathrm{D}}\xspace}
 \providecommand{\ETmiss}{\ensuremath{E_{\mathrm{T}}^{\mathrm{miss}}}\xspace}
 \providecommand{\pT}{\ensuremath{p_{\mathrm{T}}}\xspace}
+\providecommand{\pTy}{\ensuremath{p_{\mathrm{T}}^{\gamma}}\xspace}
 \providecommand{\HT}{\ensuremath{H_{\mathrm{T}}}\xspace}
 \providecommand{\gammad}{\ensuremath{\gamma_{\mathrm{D}}}\xspace}
 \providecommand{\piD}{\ensuremath{\pi_{\mathrm{D}}}\xspace}
@@ -147,6 +150,7 @@
 \providecommand{\GeV}{\ensuremath{\mathrm{GeV}}\xspace}
 \providecommand{\MeV}{\ensuremath{\mathrm{MeV}}\xspace}
 \providecommand{\ifb}{\ensuremath{\mathrm{fb}^{-1}}\xspace}
+\providecommand{\fbinv}{\ensuremath{\mathrm{fb}^{-1}}\xspace}
 \providecommand{\GEANT}{\textsc{Geant4}}
 \providecommand{\pt}{\ensuremath{p_{\mathrm{T}}}\xspace}
 \providecommand{\Ht}{\ensuremath{H_{\mathrm{T}}}\xspace}
@@ -214,3 +218,23 @@
 \providecommand{\mT}{\ensuremath{m_T}\xspace}
 \providecommand{\kttb}{\ensuremath{k(t\bar{t}+\geq 1b})\xspace}
 \providecommand{\kttnb}{\ensuremath{k(t\bar{t}+0b})\xspace}
+
+\providecommand{\ETmissNoJVT}{\ensuremath{E_\mathrm{T,noJVT}^{\mathrm{miss}}}\xspace}
+\providecommand{\DeltaMET}{\ensuremath{\Delta E_\mathrm{T}^{\mathrm{miss}}}\xspace}
+\providecommand{\pTmiss}{\ensuremath{p_T^{\text{miss}}}\xspace}
+\providecommand{\pTmissvec}{\ensuremath{\vec{p}_T^{miss}}\xspace}
+\providecommand{\gammad}{\ensuremath{\gamma_{d}}\xspace}
+\providecommand{\anatrigger}{\ensuremath{\left[\gamma\&\&\pTmiss\&\&m_T^{(\gamma;\pTmissvec)}\right]}\xspace}
+\providecommand{\fakey}{\ensuremath{X\rightsquigarrow\gamma}\xspace}
+\providecommand{\jfakey}{\ensuremath{j\rightsquigarrow\gamma}\xspace}
+\providecommand{\efakey}{\ensuremath{e\rightsquigarrow\gamma}\xspace}
+\providecommand{\fey}{\ensuremath{f_{e\gamma}}\xspace}
+\providecommand{\fjy}{\ensuremath{f_{j\gamma}}\xspace}
+\providecommand{\Htoyyd}{\ensuremath{H\to\gamma\gamma_\mathrm{d}}\xspace}
+\providecommand{\SMHtoyyd}{\ensuremath{H_{125}\to\gamma\gamma_\mathrm{d}}\xspace}
+\providecommand{\fbinv}{\ensuremath{\text{fb}^{-1}}\xspace}
+\providecommand{\pTy}{\ensuremath{p_{T}^{\gamma}}\xspace}
+\providecommand{\mT}{\ensuremath{m_{T}(E_\mathrm{T}^{\mathrm{miss}},\gamma)}\xspace}
+\providecommand{\ETy}{\ensuremath{m_{T}^{E_\mathrm{T}^{\gamma}}}\xspace}
+\providecommand{\dphimety}{\ensuremath{\Delta\phi(E_\mathrm{T}^\mathrm{miss},E_\mathrm{T}^{\gamma})}\xspace}
+\providecommand{\dphimetj}{\ensuremath{\Delta\phi(E_\mathrm{T}^\mathrm{miss},E_\mathrm{T}^{jet})}\xspace}

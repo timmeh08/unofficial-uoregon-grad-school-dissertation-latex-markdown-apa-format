@@ -1,435 +1,373 @@
-\subsection{Blind fit with pure Monte Carlo}
-\label{sec:pureMC}
+\subsection{Background-only fit}
+\label{sec:bonly-appendix}
+\input{text/bonly.tex}
 
-A first attempt of blind simultaneous fit has been done relying on Monte Carlo samples for the signal and for all the background processes. MC samples included in the fit are: 
-\begin{itemize}
-    \item for the signal: ggF, VBF, ZH, WH; 
-    \item for the background: $W\gamma, Z\gamma,W$jets, $Z$jets, $\gamma$jets direct, $\gamma$jets fragmentation, dijets
-\end{itemize}
-A flat systematic of 10\% is applied to all the samples. 
-The composition of SR and CRs in terms of samples is showed in Figure \ref{fig:pie_onlyMC}. 
-\begin{figure}[!htbp]
+\subsection{Unblinded background-only fit}
+\label{sec:bonly-unblind-appendix}
+\input{text/bonly_unblind.tex}
+
+\subsection{Blind signal+background fit, wuthout \ETmiss sig. CR.}
+\label{sec:bonly-nocr-appendix}
+\input{text/splusb_noMETsigCR.tex}
+\clearpage
+\subsection{Studies for TwoMuCR}
+\label{sec:studies_TwoMuCR}
+The TwoMuCR presents lack of statistic expecially in the range of m${_T}$ between 80 GeV and 110 GeV. This bring out a mismodel in the first bin of the TwoMuCR.\newline
+In this regard, several studies were carried out and are summarized in this section. Note that the fit configurations considered in this appendix do not include the low \ETmiss sig. CR.\newline
+Figure \ref{fig:mismodel_TwoMuCR} show the pre-fit and post-fit m${_T}$ plot of TwoMuCR using the same binning of the other regions and combined dataset. In the first bin, the ratio plot has a mismodel. \newline
+\begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{images/MConly/PieChart.pdf} 
-    \caption{SR and CRs composition from Monte Carlo.}
-    \label{fig:pie_onlyMC}
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/mismodel_appendix/TwoMuCR.pdf}
+        \caption*{(a) Pre-fit.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/mismodel_appendix/TwoMuCR_postFit.pdf}
+        \caption*{(b) Post-fit.}
+    \end{minipage}
+    \caption{$2\mu$CR pre and post fit m${_T}$ distribution.}
+    \label{fig:mismodel_TwoMuCR}
 \end{figure}
-\begin{figure}[!htbp]
+\newline
+In Figure \ref{fig:mismodel_dataZJfy} is shown the m${_T}$ distribution of data, Z${(\mu\mu)\rightsquigarrow\gamma}$ and j${\rightsquigarrow\gamma}$. \newline
+\begin{figure}[!ht]
     \centering
-
-    \begin{minipage}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{images/MConly/SR.pdf}
-        \caption*{(a) Pre-fit SR}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{images/MConly/OneMuCR.pdf}
-        \caption*{(b) Pre-fit $1\mu$CR}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{images/MConly/TwoMuCR.pdf}
-        \caption*{(c) Pre-fit $2\mu$CR}
-    \end{minipage}
-
-    \vspace{0.5cm}
-
-    \begin{minipage}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{images/MConly/SR_postFit.pdf}
-        \caption*{(d) Post-fit SR}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{images/MConly/OneMuCR_postFit.pdf}
-        \caption*{(e) Post-fit $1\mu$CR}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{images/MConly/TwoMuCR_postFit.pdf}
-        \caption*{(f) Post-fit $2\mu$CR}
-    \end{minipage}
-
-    \caption{Pre-fit and post-fit distributions using Monte Carlo only in SR and control regions.}
-    \label{fig:prepost_onlyMC}
+    \includegraphics[width=0.6\textwidth]{images/statanalysis/mismodel_appendix/z_jet_distribution.png} 
+    \caption{m${_T}$ distribution of data, Z${(\mu\mu)\rightsquigarrow\gamma}$ and j${\rightsquigarrow\gamma}$ in TwoMuCR.}
+    \label{fig:mismodel_dataZJfy}
 \end{figure}
-
-Pre-fit and post-fit $m_T$ distribution in SR, $1\mu$CR and $2\mu$CR are showed in Figure \ref{fig:prepost_onlyMC}. Taking in consideration $m_T$ distribution in SR: 
-\begin{itemize}
-    \item $W$jets events are mainly located in the first bin, as these events are a background for the analysis only when the W decays in the electronic channel and the electron is mis-reconstructed as a photon; in such a case, the transverse mass $\gamma-p_T^{miss}$ is peaked on the W-boson mass ($\sim\SI{80}{GeV}$); 
-    \item $Z\gamma$ events have a $m_T$ distribution quite similar to the one of the signal, being the irreducible background, with a peak in the central bin; 
-    \item $W\gamma$ events contain real $p_T^{miss}$ so their spectrum reaches high values of $m_T$; 
-    \item $\gamma$jets direct events are absent in the last bin as for such events the $p_T^{miss}$ is fake and is unlikely that a huge fake $p_T^{miss}$ is mis-reconstructed.
-\end{itemize}
-Regarding ratio plots: 
-\begin{itemize}
-    \item in SR, the ratio plots are empty as data are blind; 
-    \item in $1\mu$CR, the ratio plot pre-fit presents the discrepancies between data and Monte Carlo, while post-fit Monte Carlo simulations are corrected with k-factors, so the ratio plot becomes flat; 
-    \item in $2\mu$CR, the post-fit ratio plot is not flat as an inclusive $k_Z$ is used due to low statistics. 
-\end{itemize}
-
-
-k-factors are showed in Table \ref{tab:kfac_onlyMC}. $k_Z$ is particularly far from 1, quite unexpected for an electroweak background such as $Z\gamma$. This is mostly due to the under-estimation of jets faking photons contribution to $2\mu$CR by Monte Carlo simulations. 
-
-\begin{table}[!htbp]
+\newline
+The mismodel is further investigated using different binning in the fit. Figure \ref{fig:90fit_TwoMuCR} shows the pre and post fit m${_T}$ plots of the SR and the CRs using the binning (90-110-140-200-300) GeV, while Figure \ref{fig:rebinfit_TwoMuCR} shows the pre and post fit m${_T}$ plots of the SR and the CRs using the binning (100-115-135-160-200-300) GeV. 
+\begin{figure}[!ht]
     \centering
-    \begin{tabular}{c|c|c|c}
-        \toprule
-        $m_T$ \textbf{bin [GeV]} & \textbf{$k_W$} & \textbf{Error up} & \textbf{Error down}  \\
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/mismodel_appendix/TwoMuCR_90.pdf}
+        \caption*{(a) Pre-fit $2\mu$CR from 90 GeV binning.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/mismodel_appendix/TwoMuCR_90_postFit.pdf}
+        \caption*{(b) Post-fit $2\mu$CR from 90 GeV binning.}
+    \end{minipage}
+    \caption{$2\mu$CR pre and post fit m${_T}$ distribution using 90 GeV binning.}
+    \label{fig:90fit_TwoMuCR}
+\end{figure}
+\newline
+\begin{figure}[!ht]
+    \centering
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/mismodel_appendix/TwoMuCR_rebin.pdf}
+        \caption*{(a) Pre-fit $2\mu$CR from 100 GeV binning.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/mismodel_appendix/TwoMuCR_rebin_postFit.pdf}
+        \caption*{(b) Post-fit $2\mu$CR from 100 GeV binning.}
+    \end{minipage}
+    \caption{$2\mu$CR pre and post fit m${_T}$ distribution using 100 GeV binning.}
+    \label{fig:rebinfit_TwoMuCR}
+\end{figure}
+In both cases, the mismodel improves a bit but it is still present. The reason for it, is due the fact there are very few events between 80 GeV and 110 GeV and this lead to a lack of statistic. In Tables \ref{tab:yield_90GeV} and \ref{tab:yield_100GeV} are listed the yield before and after the fit, where is possible to observe the lower number of events in TwoMuCR respect SR and OneMuCR. 
+\newline
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
         \hline
-         80-110 &  1.09996 &+0.139674 &-0.116532\\
-      
-        110-140 &  1.10981 &+0.103179 &-0.0936811\\
-    
-        140-200 & 1.22607 &+0.115021 &-0.0956884\\
-    
-        200-300 &  1.38527 &+0.15409 &-0.130573\\
-  \hline
-    $m_T$ \textbf{bin [GeV]} & \textbf{$k_Z$} & \textbf{Error up} & \textbf{Error down}  \\
-    \hline
-    inclusive & 1.41432& +0.155818 &-0.140022\\ 
-    \bottomrule
-    \end{tabular}
-    \caption{k-factors in the only Monte Carlo configuration. }
-    \label{tab:kfac_onlyMC}
-\end{table}
-
-The expected limit in this configuration is 0.015053. 
-\begin{table}[!htbp]
-    \centering
-    \begin{tabular}{l
-                    S[table-format=1.6]
-                    S[table-format=1.6]
-                    S[table-format=1.6]
-                    S[table-format=1.6]
-                    S[table-format=1.6]}
-        \toprule
-        & {Nominal} & {$-1\sigma$} & {$+1\sigma$} & {$-2\sigma$} & {$+2\sigma$} \\
-        \midrule
-        Expected limit &
-        0.015053 & 0.010567 & 0.021724 & 0.007740 & 0.030515 \\
-        
-        \bottomrule
-    \end{tabular}
-    \caption{Expected limit in the only Monte Carlo configuration. }
-\end{table}
-
-\subsection{Blind fit including data-driven jet faking photon}
-\label{sec:fit_fjy}
-Jets faking photons background is then estimated with the data-driven technique explained in Section \ref{sec:jetfake} and included in the fit with its systematic. The 10\% flat systematic is then applied to all the samples, with the exception of jets faking photons. $\gamma$jets fragmentation, dijets and $W$jets, $Z$jets without electrons faking photons have been then removed from the fit, while including the data-driven estimation. $W$jets, $Z$jets with electrons faking photons are selected requiring the truth type of the photon being equal to 2 (i.e. electron). This leads to a varied composition of backgrounds in SR, where jets faking photons account for a larger portion of background, as it can be seen in Figure \ref{fig:pie_jfy}. 
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=0.6\textwidth]{images/jfy/PieChart.pdf} 
-    \caption{SR and CRs composition.}
-    \label{fig:pie_jfy}
-\end{figure}
-Pre-fit and post-fit $m_T$ distribution in SR, $1\mu$CR and $2\mu$CR are showed in Figure \ref{fig:prepost_jfy}. Adding data-driven jets faking photons, $Z$jets contribution to background is very low, so that is not visible in the plots; this is expected as this events enter the SR only when multiple things happen at the same time: the Z boson decays in the electronic channel, an electron is lost giving a fake $p_T^{miss}$, the other electron is mis-reconstructed as photon. 
-\begin{figure}[!htbp]
-    \centering
-
-    % Prima riga
-    \begin{minipage}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{images/jfy/SR.pdf}
-        \caption*{(a) Pre-fit SR}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{images/jfy/OneMuCR.pdf}
-        \caption*{(b) Pre-fit $1\mu$CR}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{images/jfy/TwoMuCR.pdf}
-        \caption*{(c) Pre-fit $2\mu$CR}
-    \end{minipage}
-
-    \vspace{0.4cm}
-
-    % Seconda riga
-    \begin{minipage}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{images/jfy/SR_postFit.pdf}
-        \caption*{(d) Post-fit SR}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{images/jfy/OneMuCR_postFit.pdf}
-        \caption*{(e) Post-fit $1\mu$CR}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[b]{0.32\textwidth}
-        \includegraphics[width=\textwidth]{images/jfy/TwoMuCR_postFit.pdf}
-        \caption*{(f) Post-fit $2\mu$CR}
-    \end{minipage}
-
-    \caption{Pre-fit and post-fit distributions in SR and CRs using data-driven $j \to \gamma$ estimation.}
-    \label{fig:prepost_jfy}
-\end{figure}
-
-k-factors are showed in Table \ref{tab:kfac_jfy}. $k_Z$ is now closer to 1 with reference to the only Monte Carlo configuration, thanks to the data-driven estimation of jets faking photons. 
-\begin{table}[!htbp]
-    \centering
-    \begin{tabular}{c|c|c|c}
-        \toprule
-        $m_T$ \textbf{bin [GeV]} & \textbf{$k_W$} & \textbf{Error up} & \textbf{Error down}  \\
+        \textbf{Process} & \textbf{SR} & \textbf{1$\mu$CR} & \textbf{2$\mu$CR} \\
         \hline
-         80-110 & 0.826057 &+0.119916 &-0.103399\\
-      
-        110-140 & 0.831074 & +0.0905051 & -0.0871422 \\
-    
-        140-200 & 0.89956 &  +0.0983367 & -0.0859015\\
-    
-        200-300 &  1.1688 & +0.144942 & -0.124162\\
-  \hline
-    $m_T$ \textbf{bin [GeV]} & \textbf{$k_Z$} & \textbf{Error up} & \textbf{Error down}  \\
-    \hline
-    inclusive & 0.8081 &+0.131243 &-0.143476\\ 
-    \bottomrule
-    \end{tabular}
-        \caption{k-factors including data-driven jets faking photons. }
-    \label{tab:kfac_jfy}
-\end{table}
-The expected limit in this configuration is 0.016014. 
-\begin{table}[!htbp]
-    \centering
-    
-    \begin{tabular}{l
-                    S[table-format=1.6]
-                    S[table-format=1.6]
-                    S[table-format=1.6]
-                    S[table-format=1.6]
-                    S[table-format=1.6]}
-        \toprule
-        & {Nominal} & {$-1\sigma$} & {$+1\sigma$} & {$-2\sigma$} & {$+2\sigma$} \\
-        \midrule
-        Expected limit &
-        0.016014 & 0.011235 & 0.023131 & 0.008226 & 0.032520 \\
-        
-        \bottomrule
-    \end{tabular}
-    \caption{Expected limit including jets faking photons data-driven estimation.}
+        \textbf{$W\gamma$} &2008.63 $\pm$ 214.761 & 3435.55 $\pm$ 294.892 & 0.670482 $\pm$ 0.0243852 \\ \hline
+        \textbf{j$\rightsquigarrow\gamma$}   &2425.92 $\pm$ 272.368 & 901.996 $\pm$ 100.819 & 184.076 $\pm$ 23.6441 \\ \hline
+        \textbf{$e\rightsquigarrow\gamma$}   &3125.7 $\pm$ 219.48 & 118.648 $\pm$ 8.26017 & 10.4033 $\pm$ 0.762997\\ \hline
+        \textbf{$\gamma$j (direct)}   &172.813 $\pm$ 1.98201 & 0.047502 $\pm$ 0.000589642 & ${2.88025e^{-06} \pm 1.03039e^{-07}}$ \\ \hline
+        \textbf{$Z\gamma$}   &1147 $\pm$ 113.037 & 95.5677 $\pm$ 10.345 & 383.94 $\pm$ 35.2637 \\ \hline
+        \textbf{Total}  & 8880.06 $\pm$ 482.1 & 4551.81 $\pm$ 321.838 & 579.09 $\pm$ 44.2735 \\ \hline
+        \textbf{data}  & \textbf{Blind} &4514 & 562 \\ \hline
+        \end{tabular}
+        \caption*{(a) Yields pre-fit from 90 GeV binning.}
 \end{table}
 
-\subsection{Blind fit with data-driven backgrounds and BDT score cut}
+\begin{table}[!ht]
+        \centering 
+        \begin{tabular}{|c| c | c | c |}
+        \hline
+        \textbf{Process} & \textbf{SR} & \textbf{1$\mu$CR} & \textbf{2$\mu$CR}  \\
+        \hline
+        \textbf{$W\gamma$} &1992.59 $\pm$ 66.1118 & 3412.25 $\pm$ 80.6384 & 0.682127 $\pm$ 0.0373007 \\ \hline
+        \textbf{j$\rightsquigarrow\gamma$}   & 2392.23 $\pm$ 311.584 & 889.54 $\pm$ 101.213 & 180.571 $\pm$ 21.965 \\ \hline
+        \textbf{$e\rightsquigarrow\gamma$}   & 3128.61 $\pm$ 331.48 & 118.758 $\pm$ 11.1251 & 10.5021 $\pm$ 0.889273 \\ \hline
+        \textbf{$\gamma$j (direct)}   & 172.811 $\pm$ 3.52038 & 0.0475024 $\pm$ 0.000615539 & ${2.91461e^{-06} \pm 8.76093e^{-08}}$ \\ \hline
+        \textbf{$Z\gamma$}   &1128.46 $\pm$ 85.559 & 93.3922 $\pm$ 6.34811 & 371.031 $\pm$ 20.5816 \\ \hline
+        \textbf{Total}  & 8815.38 $\pm$ 442.58 & 4513.99 $\pm$ 93.4123 & 562.786 $\pm$ 27.9589 \\ \hline
+        \textbf{data}  & \textbf{Blind} &4514 & 562 \\ 
+        \hline
+        \end{tabular}
+        \caption*{(b) Yields post-fit from 90 GeV binning.}
+        \caption{Yields in SR and CRs using 90 GeV binning.}
+\label{tab:yield_90GeV}
+\end{table}
 
-This section displays the results of a blind simultaneous fit in which data-driven estimations of $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ backgrounds (see \ref{sec:jetfake} and \ref{sec:elefake} for details) are included, together with the selection applied on the BDT score obtained in section \ref{sec:vertex}. The fit takes into consideration the systematic uncertainties on the data-driven $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ estimations, and a "guess" 10\% flat systematic, applied to all other backgrounds so as to mimic the foreseen effects of the experimental and theoretical uncertainties that will be included later.\\
-To allow for the calculation of the exclusion limit, the configuration is a \textit{signal+background} (SPLUSB) fit, in which the POI was set to 0 in order to put ourselves in the case with no injected signal.\\
-Comparing the background composition in the three regions resulting from a fit with MC-estimated $e \rightsquigarrow \gamma$ (\ref{sec:stat-appendix}) and data-driven $e \rightsquigarrow \gamma$ (figure \ref{fig:piecharts}), it emerges that a data-driven estimation leads to $e \rightsquigarrow \gamma$ being the dominant background in SR, much differently from the case in which it was taken from MC simulations.\\
+\begin{table}[!ht]
+        \centering 
+        \begin{tabular}{|c| c | c | c |}
+        \hline
+        \textbf{Process} & \textbf{SR} & \textbf{1$\mu$CR} & \textbf{2$\mu$CR}  \\
+        \hline
+        \textbf{$W\gamma$} &1766.27 $\pm$ 187.705 & 3124.95 $\pm$ 268.039 & 0.71422 $\pm$ 0.0253448 \\ \hline
+        \textbf{j$\rightsquigarrow\gamma$}   & 2137.74 $\pm$ 240.035 & 820.851 $\pm$ 91.7407 & 169.374 $\pm$ 21.5873 \\ \hline
+        \textbf{$e\rightsquigarrow\gamma$}   &1851.56 $\pm$ 128.514 & 107.844 $\pm$ 7.50842 & 9.10924 $\pm$ 0.661535 \\ \hline
+        \textbf{$\gamma$j (direct)}   &170.058 $\pm$ 2.14594 & 0.047502 $\pm$ 0.000714371 & 2.88025e-06 $\pm$ 9.71499e-08 \\ \hline
+        \textbf{$Z\gamma$}   &1063.94 $\pm$ 104.365 & 80.5461 $\pm$ 8.7052 & 360.977 $\pm$ 33.3622 \\ \hline
+        \textbf{Total}  & 6989.56 $\pm$ 403.715 & 4134.24 $\pm$ 292.455 & 540.174 $\pm$ 41.4916 \\ \hline
+        \textbf{data}  & \textbf{Blind} &4087 & 516\\ 
+        \hline
+        \end{tabular}
+        \caption*{(a) Yields pre-fit from 100 GeV binning.}
+\end{table}
 
-\begin{figure}[h!]
-\centering
-    \begin{minipage}{0.45\textwidth}
+\begin{table}[!ht]
+        \centering 
+        \begin{tabular}{|c| c | c | c |}
+        \hline
+        \textbf{Process} & \textbf{SR} & \textbf{1$\mu$CR} & \textbf{2$\mu$CR} \\
+        \hline
+        \textbf{$W\gamma$} &1752.56 $\pm$ 80.9634 & 3093.05 $\pm$ 106.949 & 0.726278 $\pm$ 0.081707 \\ \hline
+        \textbf{j$\rightsquigarrow\gamma$}   &2105.38 $\pm$ 225.835 & 808.491 $\pm$ 86.9835 & 165.769 $\pm$ 20.2944 \\ \hline
+        \textbf{$e\rightsquigarrow\gamma$}   &1851.43 $\pm$ 107.523 & 107.837 $\pm$ 6.43068 & 9.08056 $\pm$ 0.581493 \\ \hline
+        \textbf{$\gamma$j (direct)}   &170.057 $\pm$ 2.04855 & 0.0475021 $\pm$ 0.000709918 & ${2.88905e^{-06} \pm 9.34507e^{-08}}$ \\ \hline
+        \textbf{$Z\gamma$}   & 1024.63 $\pm$ 99.8941 & 77.5194 $\pm$ 7.73676 & 341.329 $\pm$ 29.774 \\ \hline
+        \textbf{Total}  & 6904.16 $\pm$ 80.6249 & 4086.94 $\pm$ 63.3421 & 516.905 $\pm$ 21.421 \\ \hline
+        \textbf{data}  & \textbf{Blind} &4087 & 516\\ 
+        \hline
+        \end{tabular}
+        \caption*{(b) Yields post-fit from 100 GeV binning.}
+        \caption{Yields in SR and CRs using 100 GeV binning.}
+\label{tab:yield_100GeV}
+\end{table}
+
+
+This low number of events in the bin (80-110) GeV brings the fit to be more sensitive to statistical fluctuations, making it unstable. In Figure \ref{fig:nuianse_pull} is possible to observe nuianse parameter pull plots and most of the systematics are pulled and some of them are outside ${\pm1\sigma}$ and have non-symmetrical error bars. \newline
+For these reasons, it has been chosen to use one bin for TwoMuCR.
+\begin{figure}[!ht]
     \centering
-    \includegraphics[width=\linewidth]{images/PieChart.pdf}
-    \caption*{(a) Pre-fit pie charts.}
-    \label{fig:pie_pre}
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/mismodel_appendix/NuisPar_90.pdf}
+        \caption*{(a) Nuisance parameters fit from 90 GeV binning.}
     \end{minipage}
-\quad
-    \begin{minipage}{0.45\textwidth}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/mismodel_appendix/NuisPar_rebin.pdf}
+        \caption*{(b) Nuisance parameters fit from 100 GeV binning.}
+    \end{minipage}
+    \caption{Nuisance parameters pull plots using different binnings.}
+    \label{fig:nuianse_pull}
+\end{figure}
+\clearpage
+
+\subsection{Fit study using normalization factor and shape factor in OneMuCR}
+\label{sec:NormShape_appendix}
+In order to study the impact of using normalization or shape factors in OneMuCR, a fit has been performed using both the possible configurations in this control region. The low \ETmiss sig. CR is not included in the following fits. 
+Figure \ref{fig:Norm_factor_mt} show the pre-fit and post-fit m${_T}$ plot of signal and control regions using a normalization factor in OneMuCR and combined dataset.
+Figure \ref{fig:Shape_factor_mt} show the pre-fit and post-fit m${_T}$ plot of signal and control regions using a shape factor in OneMuCR and combined dataset.
+\begin{figure}[!ht]
     \centering
-    \includegraphics[width=\linewidth]{images/PieChart_postFit.pdf}
-    \caption*{(b) Post-fit pie charts.}
-    \label{fig:pie_post}
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Norm_SR.pdf}
+        \caption*{(a) Pre-fit SR using normalization factor in OneMuCR.}
     \end{minipage}
-
-\caption{Pre-fit and post-fit SR and CRs composition.}
-\label{fig:piecharts}
-
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Norm_OneMuCR.pdf}
+        \caption*{(b) Pre-fit OneMuCR using normalization factor in OneMuCR.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Norm_TwoMuCR_1bin.pdf}
+        \caption*{(c) Pre-fit TwoMuCR using normalization factor in OneMuCR.}
+    \end{minipage}
+    \newline
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Norm_SR_postFit.pdf}
+        \caption*{(d) Post-fit SR using normalization factor in OneMuCR.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}    
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Norm_OneMuCR_postFit.pdf}
+        \caption*{(e) Post-fit OneMuCR using normalization factor in OneMuCR.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Norm_TwoMuCR_1bin_postFit.pdf}
+        \caption*{(f) Post-fit TwoMuCR using normalization factor in OneMuCR.}
+    \end{minipage}
+    \caption{Pre-fit and post-fit m${_T}$ distribution in SR and CRs using normalization factor in OneMuCR.}
+    \label{fig:Norm_factor_mt}
 \end{figure}
 
-\noindent
-The 1$\mu$CR is populated by $e\rightsquigarrow\gamma$, differently from the pure MC case (section ??) due to processes such as $W(\rightarrow e\nu)W(\rightarrow \mu\nu)$ which are not used among the MC sample. 
-
-\vspace{1 cm}
-
-\noindent
-Numerically, the background yields displayed in the pie charts are summarized in tables \ref{tab:yields_pre} and \ref{tab:yields_post}.
-
-\begin{table}[h!]
+\begin{figure}[!ht]
     \centering
-    \begin{tabular}{|c|c|c|c|}
-    \hline
-       \textbf{Process}  & \textbf{SR} & \textbf{1$\mu$CR} & \textbf{2$\mu$CR} \\
-    \hline
-    $ggF_{dark}$ & 0 $\pm$ 0& 0 $\pm$ 0 & 0 $\pm$ 0\\
-    \hline
-     $VBF_{dark}$  & 0 $\pm$ 0 & 0 $\pm$ 0 & 0 $\pm$ 0 \\
-    \hline
-      $WH_{dark}$ & 0 $\pm$ 0 & 0 $\pm$ 0 & 0 $\pm$ 0 \\
-    \hline
-      $ZH_{dark}$ & 0 $\pm$ 0 & 0 $\pm$ 0 & 0 $\pm$ 0 \\
-    \hline
-      $W\gamma$ & 450.797 $\pm$ 45.6681& 739.316 $\pm$ 74.3611& 0.203071 $\pm$ 0.0207582\\
-    \hline
-      $Z\gamma$ & 251.242 $\pm$ 25.5152& 21.7076 $\pm$ 2.1859& 87.9189 $\pm$ 8.91118\\
-    \hline
-      $\gamma$jets(direct) &48.0859 $\pm$ 5.04346 &0.0358423 $\pm$ 0.00365839 & 3.94582e-06 $\pm$ 6.1096e-08\\
-    \hline
-     $j \rightsquigarrow \gamma$  &619.18 $\pm$ 105.79 & 263.35 $\pm$ 45.34& 53.22 $\pm$ 9.46\\
-    \hline
-     $e \rightsquigarrow \gamma$  & 835.789 $\pm$ 81.0756& 68.2427 $\pm$ 6.75506& 4e-06 $\pm$ 0\\
-    \hline
-     Total  &2205.09 $\pm$ 153.494 & 1092.65 $\pm$ 89.2254& 141.342 $\pm$ 13.0103\\
-    \hline
-     Data  & 0 & 937& 124\\
-    \hline
-    
-    \end{tabular}
-    \caption{Pre-fit yields.}
-    \label{tab:yields_pre}
-\end{table}
-
-
-\begin{table}[h!]
-    \centering
-    \begin{tabular}{|c|c|c|c|}
-    \hline
-       \textbf{Process}  & \textbf{SR} & \textbf{1$\mu$CR} & \textbf{2$\mu$CR} \\
-    \hline
-    $ggF_{dark}$ & 0.154324 $\pm$ 19.3776& 0 $\pm$ 0 & 0 $\pm$ 0\\
-    \hline
-     $VBF_{dark}$  & 0.0372225 $\pm$ 4.67381 & 0 $\pm$ 0 & 0 $\pm$ 0 \\
-    \hline
-      $WH_{dark}$ & 0.00935622 $\pm$ 1.1748 & 0.000513275 $\pm$ 0.0644495  & 0 $\pm$ 0 \\
-    \hline
-      $ZH_{dark}$ & 0.00610652 $\pm$ 0.76676 &  2.56389e-05 $\pm$ 0.00321934 & 0 $\pm$ 0 \\
-    \hline
-      $W\gamma$ & 345.859 $\pm$ 31.2352& 581.178 $\pm$ 48.6794& 0.154028 $\pm$ 0.014861\\
-    \hline
-      $Z\gamma$ & 194.355 $\pm$ 37.8637 & 16.7927 $\pm$ 3.27518 & 68.0693 $\pm$ 13.2259\\
-    \hline
-      $\gamma$jets(direct) & 48.0868 $\pm$ 4.92906 & 0.0358432 $\pm$ 0.00363269 & 3.9456e-06 $\pm$ 6.10261e-08\\
-    \hline
-     $j \rightsquigarrow \gamma$  & 636.495 $\pm$ 94.3173 & 270.771 $\pm$ 40.4266 & 54.7681 $\pm$ 8.43809\\
-    \hline
-     $e \rightsquigarrow \gamma$  & 835.7 $\pm$ 45.3879 & 68.2354 $\pm$ 3.78041 & 4e-06 $\pm$ 0 \\
-    \hline
-     Total  &2060.7 $\pm$ 45.0162 & 937.013 $\pm$ 29.8062 & 122.991 $\pm$ 9.63825\\
-    \hline
-     Data  & 0 & 937& 124\\
-    \hline
-    
-    \end{tabular}
-    \caption{Post-fit yields.}
-    \label{tab:yields_post}
-\end{table}
-
-\noindent
-The plots in figure \ref{fig:regions_jy_ey_Fit} show the pre- and post-fit $m_T$ distributions in SR, 1$\mu$CR and 2$\mu$CR:\\
-
-\begin{figure}[h!]
-\centering
-    \begin{minipage}{0.3\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/SR.pdf}
-    \caption*{(a) Pre-fit SR.}
-    \label{fig:SR}
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Shape_SR.pdf}
+        \caption*{(a) Pre-fit SR using shape factor in OneMuCR.}
     \end{minipage}
-\quad
-    \begin{minipage}{0.3\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/OneMuCR.pdf}
-    \caption*{(b) Pre-fit 1$\mu$CR.}
-    \label{fig:1mu}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Shape_OneMuCR.pdf}
+        \caption*{(b) Pre-fit OneMuCR using shape factor in OneMuCR.}
     \end{minipage}
-\quad
-    \begin{minipage}{0.3\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/TwoMuCR.pdf}
-    \caption*{(c) Pre-fit 2$\mu$CR.}
-    \label{fig:2mu}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Shape_TwoMuCR_1bin.pdf}
+        \caption*{(c) Pre-fit TwoMuCR using shape factor in OneMuCR.}
     \end{minipage}
-
-
-    \begin{minipage}{0.3\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/SR_postFit.pdf}
-    \caption*{(d) Post-fit SR.}
-    \label{fig:SR_post}
+    \newline
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Shape_SR_postFit.pdf}
+        \caption*{(d) Post-fit SR using shape factor in OneMuCR.}
     \end{minipage}
-\quad
-    \begin{minipage}{0.3\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/OneMuCR_postFit.pdf}
-    \caption*{(e) Post-fit 1$\mu$CR.}
-    \label{fig:1mu_post}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}    
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Shape_OneMuCR_postFit.pdf}
+        \caption*{(e) Post-fit OneMuCR using shape factor in OneMuCR.}
     \end{minipage}
-\quad
-    \begin{minipage}{0.3\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{images/TwoMuCR_postFit.pdf}
-    \caption*{(f) Post-fit 2$\mu$CR.}
-    \label{fig:2mu_post}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Shape_TwoMuCR_1bin_postFit.pdf}
+        \caption*{(f) Post-fit TwoMuCR using shape factor in OneMuCR.}
     \end{minipage}
-
-\caption{Pre-fit and post-fit distributions in SR and CRs.}
-\label{fig:regions_jy_ey_Fit}
-    
+    \caption{Pre-fit and post-fit m${_T}$ distribution in SR and CRs using shape factor in OneMuCR.}
+    \label{fig:Shape_factor_mt}
 \end{figure}
 
-\vspace{5cm}
-\noindent
-using a binned $k_W$ allows to have a data/background ratio exactly equal to 1, while an inclusive $k_Z$ provides a less precise ratio, but still within 1$\sigma$. The values of the k-factors and their related statistical uncertainties are listed in table \ref{tab:kfactors}.
 
-\begin{table}[h!]
+In both cases, the fit converges and the post-fit plots show good agreement between data and the total prediction. 
+Figure \ref{fig:NormShape_nuisance} shows the nuisance parameters pull plots for both fits. It is possible to observe that using a shape factor in OneMuCR the fit doesn't pull the nuisance parameters and the uncertainties are symmetrically distributed around zero.
+The pull plot using a normalization factor in OneMuCR shows some nuisance parameters pulled, specifically related to the dominant background contributions in the OneMuCR, as expected: the ones related to the $W\gamma$ modeling, in particular the theoretical scale uncertainties, and the jets faking photons systematic.
+\begin{figure}[!ht]
     \centering
-    \begin{tabular}{|c|c|c|c|}
-    \hline
-      \textbf{$m_T$ bin [GeV]} & \textbf{$k_W$} & \textbf{Error up} & \textbf{Error down} \\
-    \hline
-      80-110 & 0.710612 & +0.135519 & -0.11107  \\
-    \hline
-      110-140 & 0.69346 & +0.118731 &  -0.10161 \\
-    \hline
-      140-200   & 0.802358 & +0.135485 & -0.109737 \\
-    \hline
-     200-300 & 1.10656 & +0.174307 & -0.145853 \\
-    \hline
-     \textbf{$m_T$ bin [GeV]} & \textbf{$k_Z$} & \textbf{Error up} & \textbf{Error down}\\
-    \hline
-     Inclusive & 0.773567 & +0.183894 & -0.158675 \\
-    \hline
-    \end{tabular}
-    \caption{Normalization factors.}
-    \label{tab:kfactors}
-\end{table}
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Norm_NuisPar.pdf}
+        \caption*{(a) Nuisance parameters fit using normalization factor in OneMuCR.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Shape_NuisPar.pdf}
+        \caption*{(b) Nuisance parameters fit using shape factor in OneMuCR.}
+    \end{minipage}
+    \caption{Nuisance parameters pull plots using normalization and shape factors in OneMuCR.}
+    \label{fig:NormShape_nuisance}
+\end{figure}
 
-\noindent
-The expected upper limit on $BR(H\rightarrow \gamma \gamma_d)$ in this configuration is 0.019642 (see table \ref{tab:limit}):\\
-
-\begin{table}[h!]
+\begin{figure}[!ht]
     \centering
-    \begin{tabular}{|c|c|c|c|c|c|}
+        \includegraphics[width=0.6\textwidth]{images/statanalysis/NormShapeFit/OneMuCR_distributions.png}
+        \caption{m${_T}$ distribution of data, W$\gamma$ and j$\rightsquigarrow\gamma$ in OneMuCR.}
+    \label{fig:distribution_OneMuCR}
+\end{figure}
+
+Figure {\ref{fig:NormShape_ranking}} shows the ranking plots for both fits, while Figure {\ref{fig:NormShape_correlation}} shows the correlation matrices for both fits.
+\begin{figure}[!ht]
+    \centering
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Norm_Ranking.pdf}
+        \caption*{(a) Ranking plot using normalization factor in OneMuCR.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Shape_Ranking.pdf}
+        \caption*{(b) Ranking plot using shape factor in OneMuCR.}
+    \end{minipage}
+    \caption{Ranking plots using shape factors in OneMuCR.}
+    \label{fig:NormShape_ranking}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Norm_CorrMatrix.pdf}
+        \caption*{(a) Correlation matrix using normalization factor in OneMuCR.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{images/statanalysis/NormShapeFit/Shape_CorrMatrix.pdf}
+        \caption*{(b) Correlation matrix using shape factor in OneMuCR.}
+    \end{minipage}
+    \caption{Correlation matrices using shape factors in OneMuCR.}
+    \label{fig:NormShape_correlation}
+\end{figure}
+
+
+Figure \ref{fig:Norm_kfactors} and Figure \ref{fig:Shape_kfactors} shows the k-factors values obtained from the fit using, respectivly, normalization and shape factors in OneMuCR. 
+The k-factors obtained using a normalization factor in OneMuCR are closer to unity, while the k-factors obtained using a shape factor in OneMuCR are close to one expected for the second bin where the shape factor is more close to 0.9. 
+In conclusion, using shape factors in OneMuCR seem to absorb possible corrections due to systematic variations and statistical uncertainties of $W\gamma$ and \jfakey. These factors adjust the distribution of the $W\gamma$ process to match the data without any physical prior, thus giving the fit too much freedom. 
+\newline
+\begin{figure}[!ht]
+    \centering
+        \includegraphics[width=0.6\textwidth]{images/statanalysis/NormShapeFit/NormFactors.pdf}
+        \caption{K-factors values using normalization factor in OneMuCR.}
+    \label{fig:Norm_kfactors}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+        \includegraphics[width=0.6\textwidth]{images/statanalysis/NormShapeFit/ShapeFactors.pdf}
+        \caption{K-factors values using shape factor in OneMuCR.}
+    \label{fig:Shape_kfactors}
+\end{figure}
+
+Based on these studies, it has been decided to use normalization factors in OneMuCR for the final fit configuration.
+\newline
+\clearpage
+
+\subsection{Fit with normalization component of theory systematics retained}\label{sec:noDropNorm_appendix}
+Figures \ref{fig:corr_dropNorm} and \ref{fig:corr_noDropNorm} show the correlation matrices with and without dropping the normalization component of the theory systematics, highlighting the strong correlation between scale theory uncertainties for $W\gamma$ and $Z\gamma$ and the corresponding shape and normalization factors. Note that only the scale uncertainty appears in the correlation matrix because it's the largest one and tends to "absorb" all correlations. But if the normalization is dropped for the $W\gamma$ scale uncertainty, correlations appear between the interPDF theory uncertainty and the $k_W$ factors, as shown in Figure \ref{fig:corr_noDropNorm2}.
+
+
+\begin{figure}[!ht]
+    \centering
+        \includegraphics[width=\textwidth]{images/statanalysis/theory_appendix/CorrMatrix_dropnorm.pdf}
+        \caption{Correlation matrix as resulting from a fit with normalization component of theory systematics dropped.}
+    \label{fig:corr_dropNorm}
+\end{figure}
+
+
+\begin{figure}[!ht]
+    \centering
+        \includegraphics[width=\textwidth]{images/statanalysis/theory_appendix/CorrMatrix_nodropnorm.pdf}
+        \caption{Correlation matrix as resulting from a fit with normalization component of theory systematics retained.}
+    \label{fig:corr_noDropNorm}
+\end{figure}
+
+
+
+\begin{figure}[!ht]
+    \centering
+        \includegraphics[width=\textwidth]{images/statanalysis/theory_appendix/CorrMatrix_nodropnorm2.pdf}
+        \caption{Correlation matrix as resulting from a fit with normalization component of theory systematics retained, with exception of the scale uncertainty on $w\gamma$.}
+    \label{fig:corr_noDropNorm2}
+\end{figure}
+
+
+\subsection{Limits with different set of nuisance parameters}
+\label{sec:limits-appendix}
+
+Table \ref{tab:limit_syst_breakdown} shows the expected upper limit on $BR(H\rightarrow \gamma \gamma_d)$ at 95\% CL, starting from a statistical only fit and including first only the data-driven systematics, then the experimental ones and finally the theoretical ones. 
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{c|ccccc}
     \hline
        & \textbf{-2$\sigma$} & \textbf{-1$\sigma$} & \textbf{Median} & \textbf{1$\sigma$} & \textbf{2$\sigma$} \\
        \hline
-     \textbf{Expected limit} & 0.010329 & 0.013982 & 0.019642 & 0.027846 & 0.038455 \\
+     \textbf{Stat. only} & 0.0037 &  0.0050 &  0.0070 & 0.0098 & 0.0132 \\
+     \textbf{+ data-driven} & 0.0057 &  0.0077 &  0.0106 & 0.0147 & 0.0195 \\
+     \textbf{+ exp. syst. } & 0.0059 &  0.0079 &  0.0112 & 0.0161 & 0.0226 \\
+     \textbf{+ theory syst.} & 0.0059 &  0.0081 &  0.0114 & 0.0167 & 0.0238 \\
      \hline
     \end{tabular}
-    \caption{Expected upper limit on $BR(H\rightarrow \gamma \gamma_d)$ at 95\% CL.}
-    \label{tab:limit}
+    \caption{Expected upper limit on $BR(H\rightarrow \gamma \gamma_d)$ at 95\% CL, as resulting from a fit with different set of nuisance parameters included.}
+    \label{tab:limit_syst_breakdown}
 \end{table}
 
-\vspace{2 cm}
-\noindent
-The value of the limit is slightly lowered by the BDT selection applied in the three regions, with respect to the case in which it wasn't used.\\
-\noindent
-Figures \ref{fig:pullplot} and \ref{fig:corr} display the pull plot and the correlation matrix, respectively, referred to the nuisance parameters involved in the fit.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/NuisPar.pdf}
-    \caption{Nuisance parameters pull plot: \texttt{ff\_jy} and \texttt{ff\_ey} are the systematic uncertainties on the data-driven $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ fake rates, while \texttt{fey\_syst} is the systematic on the trigger scale factor for $e \rightsquigarrow \gamma$ estimation; \texttt{guess\_syst} refers to the 10\% guess systematic on MC backgrounds.\\
-    $[$Comment: TRExFitter seems not to include the inclusive normalization factor kz in the pull plot, while it is displayed in the correlation matrix$]$.}
-    \label{fig:pullplot}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.7\linewidth]{images/CorrMatrix.pdf}
-    \caption{Correlation matrix: \texttt{ff\_jy} and \texttt{ff\_ey} are the systematic uncertainties on the data-driven $j \rightsquigarrow \gamma$ and $e \rightsquigarrow \gamma$ fake rates, while \texttt{fey\_syst} is the systematic on the trigger scale factor for $e \rightsquigarrow \gamma$ estimation; \texttt{guess\_syst} refers to the 10\% guess systematic on MC backgrounds.}
-    \label{fig:corr}
-\end{figure}
 
 
-
-
-
+\clearpage

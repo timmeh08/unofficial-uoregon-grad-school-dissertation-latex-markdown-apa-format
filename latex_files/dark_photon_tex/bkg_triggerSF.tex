@@ -1,5 +1,5 @@
 
-The trigger used in the analysis is a combination of requirements on trigger-level cuts on $p_T^\gamma,~p_T^{miss},~m_T$, that correspond to analogous cuts on the offline variables, according to Table~\ref{tab:trig_offline_cuts}.
+The trigger used in the analysis is a combination of requirements on trigger-level cuts on $p_T^\gamma,~E_T^{miss},~m_T$, that correspond to analogous cuts on the offline variables, according to Table~\ref{tab:trig_offline_cuts}.
 
 \begin{table}[h]
   \begin{center}
@@ -7,8 +7,8 @@ The trigger used in the analysis is a combination of requirements on trigger-lev
       & trigger & offline \\
       \hline
       $p_T^\gamma$ & $>50$~GeV & $>50$~GeV \\
-      $p_T^{miss}$ & $>70$~GeV & $>100$~GeV \\
-      $m_T$        & $>80$~GeV & $>90$~GeV \\
+      $E_T^{miss}$ & $>70$~GeV & $>100$~GeV \\
+      $m_T$        & $>80$~GeV & $>80$~GeV \\
     \end{tabular}
   \end{center}
   \caption{
@@ -17,112 +17,119 @@ The trigger used in the analysis is a combination of requirements on trigger-lev
   \label{tab:trig_offline_cuts}
 \end{table}
 
-As a result, the efficiency of the trigger selection with respect to the offline selection, defined as
+In addition to the selection reported in table \ref{tab:trig_offline_cuts}, all preselections listed in section \ref{sec:presel} are applied in the following studies.
+
+The efficiency of the trigger selection with respect to the offline selection, defined as
 \begin{equation}
   \epsilon(\textrm{trigger}|\textrm{offline}) = \frac{ N(\textrm{trigger}~\&\&~\textrm{offline}) }{ N(\textrm{offline}) }
   \label{eq:trig_eff_wrt_offline}
 \end{equation}
-is lower than 100\% and needs to be evaluated. Figure~\ref{fig:trig_eff_MC} display the efficiency curves from MC, for the signal $H\to\gamma\gamma_d$ and for two background processes with $p_T^{miss}$, i.e. $Z(\to\nu\nu)\gamma$
-and $W(\to\mu\nu)\gamma$. As the muon is not consideret for trigger-level $p_T^{miss}$ evaluation, also the offline $p_T^{miss}$ and $m_T$ are computed treating the muon as invisible.
+is lower than 100\% and needs to be evaluated. Figure~\ref{fig:trig_eff_MC} display the efficiency curves from MC, for the signal $H\to\gamma\gamma_d$ and for two background processes with $E_T^{miss}$, i.e. $Z(\to\nu\nu)\gamma$
+and $W(\to\mu\nu)\gamma$. The inclusive $Z(\to\nu\nu/\ell\ell)\gamma$ case is shown as well. The efficiency curve for $W(\to\mu\nu)\gamma$ is shown for events with one reconstructed muon: as the muon is not considered for trigger-level $E_T^{miss}$ evaluation, also the offline $E_T^{miss}$ and $m_T$ are computed treating the muon as invisible.
 
 \begin{figure}[!htbp]
   \begin{center}
-    \includegraphics[width=0.48\columnwidth]{images/trigger_eff_MC_vs_pTy_pTy050_pTmiss100_mT090_allSigMC.pdf}
-    \includegraphics[width=0.48\columnwidth]{images/trigger_eff_MC_vs_pTmiss_pTy050_pTmiss100_mT090_allSigMC.pdf}
-
-    \includegraphics[width=0.48\columnwidth]{images/trigger_eff_MC_vs_mT_pTy050_pTmiss100_mT090_allSigMC.pdf}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/SR/ph_pt_baselineNoTrig_mc23d_mixed.png}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/SR/met_baselineNoTrig_mc23d_mixed.png}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/SR/mt_baselineNoTrig_mc23d_mixed.png}
   \end{center}
   \caption{
-    Efficiency curves of $\epsilon(\textrm{trigger}|\textrm{offline})$ as functions of $p_T^\gamma,~p_T^{miss},~m_T$, derived from MC. The vertical green lines display the position of the offline cuts: in each figure, the offline cuts
-    are applied except that on the displayed variable. Besides the trigger efficiency on the signal $H\to\gamma\gamma_d$ (red plot), the analogous for the $Z(\to\nu\nu)\gamma$ (orange) and for the $W(\to\mu\nu)\gamma$ (purple) processes are displayed
-    for comparison. The latter is obtained for final states containing a photon and a muon, which is treated as invisible in the evaluation of $p_T^{miss}$ and $m_T$.
+    Efficiency curves of $\epsilon(\textrm{trigger}|\textrm{offline})$ as functions of $p_T^\gamma,~E_T^{miss},~m_T$, derived from MC. The preselection cuts
+    are applied. Besides the trigger efficiency on the signal $H\to\gamma\gamma_d$ (black line), the analogous for the $Z(\to\nu\nu)\gamma$ (green) or $Z(\to\nu\nu/\ell\ell)\gamma$ (red) and for the $W(\to\mu\nu)\gamma$ (blue) processes are displayed. The latter is obtained for final states containing a photon and a muon, which is treated as invisible in the evaluation of $E_T^{miss}$ and $m_T$.
   }
   \label{fig:trig_eff_MC}
 \end{figure}
 
-The efficiency curves for $Z(\to\nu\nu)\gamma$ and $W(\to\mu\nu)\gamma$ are very similar --- confirming that the trigger is insensitive to the presence of the muon. However the efficiency curves for the signal exhibit large differences. The reason has been tracked down to the different kinematics of the signal, where the value of $m_T$ is constrained in an interval $[90;150]~\mathrm{GeV}$. To prove that this is indeed the reason, the efficiency curves have been extracted again only for events with $m_T<150~\mathrm{GeV}$: the result is visible in Figure~\ref{fig:trig_eff_MC_mT150}. Indeed, now the efficiency curves for $H\to\gamma\gamma_d$ and $Z(\to\nu\nu)\gamma$ do match.
+%The efficiency curves for $Z(\to\nu\nu)\gamma$ and $W(\to\mu\nu)\gamma$ are very similar --- confirming that the trigger is insensitive to the presence of the muon. However the efficiency curves for the signal exhibit large differences. The reason has been tracked down to the different kinematics of the signal, where the value of $m_T$ is constrained in an interval $[90;150]~\mathrm{GeV}$. To prove that this is indeed the reason, the efficiency curves have been extracted again only for events with $m_T<150~\mathrm{GeV}$: the result is visible in Figure~\ref{fig:trig_eff_MC_mT150}. Indeed, now the efficiency curves for $H\to\gamma\gamma_d$ and $Z(\to\nu\nu)\gamma$ do match.
+The efficiency curve for \mT\  does not exhibit the usual smooth turn-on; instead, it shows an irregular structure with an initial plateau around 100-150 GeV and a second plateau at higher values. This behavior originates from correlations between \mT\  and both the \ETmiss\  and \pTy. The two plateaus correspond to two distinct event populations depending on whether the photon and \ETmiss\  are back-to-back (low \dphimety), or more aligned (high \dphimety). Applying a requirement on $\dphimety>1.25$, consistent with the selection applied in the SR, removes this effect, as shown in Figure \ref{fig:trig_eff_MC_dphi}
 
 \begin{figure}[!htbp]
   \begin{center}
-    \includegraphics[width=0.48\columnwidth]{images/trigger_mTbelow150_eff_MC_vs_pTy_pTy050_pTmiss100_mT090_allSigMC.pdf}
-    \includegraphics[width=0.48\columnwidth]{images/trigger_mTbelow150_eff_MC_vs_pTmiss_pTy050_pTmiss100_mT090_allSigMC.pdf}
-
-    \includegraphics[width=0.48\columnwidth]{images/trigger_mTbelow150_eff_MC_vs_mT_pTy050_pTmiss100_mT090_allSigMC.pdf}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/SR/ph_pt_baselineNoTrig_dphiMetPhterm_mc23d_mixed.png}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/SR/met_baselineNoTrig_dphiMetPhterm_mc23d_mixed.png}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/SR/mt_baselineNoTrig_dphiMetPhterm_mc23d_mixed.png}
   \end{center}
   \caption{
-    Efficiency curves of $\epsilon(\textrm{trigger}|\textrm{offline})$ as functions of $p_T^\gamma,~p_T^{miss},~m_T$, derived from MC, for events with $m_T<150~\mathrm{GeV}$. The vertical green lines display the position of the offline cuts: in each figure, the offline cuts
-    are applied except that on the displayed variable. Besides the trigger efficiency on the signal $H\to\gamma\gamma_d$ (red plot), the analogous for the $Z(\to\nu\nu)\gamma$ (orange) and for the $W(\to\mu\nu)\gamma$ (purple) processes are displayed
-    for comparison. The latter is obtained for final states containing a photon and a muon, which is treated as invisible in the evaluation of $p_T^{miss}$ and $m_T$.
+    Efficiency curves of $\epsilon(\textrm{trigger}|\textrm{offline})$ as functions of $p_T^\gamma,~E_T^{miss},~m_T$, derived from MC. The preselection cuts
+    are applied, together with the selection $\dphimety>1.25$. Besides the trigger efficiency on the signal $H\to\gamma\gamma_d$ (black line), the analogous for the $Z(\to\nu\nu)\gamma$ (green) or $Z(\to\nu\nu/\ell\ell)\gamma$ (red) and for the $W(\to\mu\nu)\gamma$ (blue) processes are displayed. The latter is obtained for final states containing a photon and a muon, which is treated as invisible in the evaluation of $E_T^{miss}$ and $m_T$.
   }
-  \label{fig:trig_eff_MC_mT150}
+  \label{fig:trig_eff_MC_dphi}
 \end{figure}
 
-To assess the accuracy of the trigger simulation, the efficiency curves from MC must be compared to those derived by data. To do so, a baseline muon trigger is used, and the used final state contains a photon and a muon, which is treated as invisible in the evaluation of $p_T^{miss}$ and $m_T$. The efficiencies to be compared are defined as:
+In the high \dphimety\ region, the trigger efficiency curves as a function of \mT\  are relatively similar for the signal and the considered background processes. However, for the signal, the efficiency tends to decrease at high \mT\  due to its characteristic event topology. This drop in efficiency is reflected on the efficiencies as a function of \pTy\  and \ETmiss. For this reason, these efficiencies are also shown in the region with \mT\  below 150 GeV in figure \ref{fig:trig_eff_MC_dphi_lowmt}. The efficiency for the $Z\gamma$ sample is overall slightly lower than for $W\gamma$ and the signal, while the signal and $W\gamma$ exhibit very similar behavior. Therefore, we safely assume that any SF extracted for $W\gamma$ can be applied to the signal as well. 
+
+\begin{figure}[!htbp]
+  \begin{center}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/SR/ph_pt_baselineNoTrig_dphiMetPhterm_mc23d_lowmt_mixed.png}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/SR/met_baselineNoTrig_dphiMetPhterm_mc23d_lowmt_mixed.png}
+  \end{center}
+  \caption{
+    Efficiency curves of $\epsilon(\textrm{trigger}|\textrm{offline})$ as functions of $p_T^\gamma,~E_T^{miss}$, derived from MC. The preselection cuts
+    are applied, together with the selection $\dphimety>1.25$ and $\mT  <150$ GeV. Besides the trigger efficiency on the signal $H\to\gamma\gamma_d$ (black line), the analogous for the $Z(\to\nu\nu)\gamma$ (green) or $Z(\to\nu\nu/\ell\ell)\gamma$ (red) and for the $W(\to\mu\nu)\gamma$ (blue) processes are displayed. The latter is obtained for final states containing a photon and a muon, which is treated as invisible in the evaluation of $E_T^{miss}$ and $m_T$.
+  }
+  \label{fig:trig_eff_MC_dphi_lowmt}
+\end{figure}
+
+
+To assess the accuracy of the trigger simulation, the efficiency curves from MC must be compared to those derived from data. To do so, a baseline muon trigger is used, and the used final state contains a photon and a muon, which is treated as invisible in the evaluation of $E_T^{miss}$ and $m_T$. The efficiencies to be compared are defined as:
 \begin{equation}
   \epsilon(\textrm{trigger}~|~\textrm{offline}~\&\&~\mu\textrm{-trigger}) = \frac{ N(\textrm{trigger}~\&\&~\textrm{offline}~\&\&~\mu\textrm{-trigger}) }{ N(\textrm{offline}~\&\&~\mu\textrm{-trigger}) }
   \label{eq:trig_eff_wrt_offline_basetrigger}
 \end{equation}
-Data must be compared to the total background from MC simulation, as shown in Figure~\ref{fig:trig_eff_data}: there is good agreement between data and total background, while the agreement with $Z(\to\nu\nu)\gamma$ and $W(\to\mu\nu)\gamma$ processes is worse.
+Data must be compared to the total background, as shown in Figure~\ref{fig:trig_eff_data_2023} and ~\ref{fig:trig_eff_data_2024} for 2023 and 2024 dataset respectively. Offline selections include preselections with the additional requirement of the presence of one muon and $\dphimety>1.25$. The dominant background for events with one muon is $W\gamma$, with non negligible contribution from \jfakey\ which are part of the total background shown in magenta color. 
+For both datasets there is good agreement, well within statistical uncertainty, between data and $W\gamma$, as well as with the total background. We conclude that no SF, nor associated systematic uncertainty, is needed.  
+\begin{figure}[!htbp]
+  \begin{center}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/MC23d/ph_pt_baseline1muNoTrig_triggerMu_dphiMetPhterm_mc23d_nojetfake_nozgamma.png}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/MC23d/met_baseline1muNoTrig_triggerMu_dphiMetPhterm_mc23d_nojetfake_nozgamma.png}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/MC23d/mt_baseline1muNoTrig_triggerMu_dphiMetPhterm_mc23d_nojetfake_nozgamma.png}
+  \end{center}
+  \caption{
+    Efficiency curves of $\epsilon(\textrm{trigger}|\textrm{offline}~\&\&~\mu\textrm{-trigger})$ as functions of $p_T^\gamma,~E_T^{miss},~m_T$, from 2023 data (solid dots), MC23d $W\gamma$ (blue line) and total background (magenta line). The preselection cuts
+    are applied, together with the selection $\dphimety>1.25$. Events containing a photon and a muon, which is treated as invisible in the evaluation of $E_T^{miss}$ and $m_T$, are used. On top of the efficiency curves, the variable distribution for the data (gray shaded area) and total background (magenta shaded area) is displayed. 
+  }
+  \label{fig:trig_eff_data_2023}
+\end{figure}
 
 \begin{figure}[!htbp]
   \begin{center}
-    \includegraphics[width=0.48\columnwidth]{images/trigger_eff_data_vs_pTy_pTy050_pTmiss100_mT090_allSigMC.pdf}
-    \includegraphics[width=0.48\columnwidth]{images/trigger_eff_data_vs_pTmiss_pTy050_pTmiss100_mT090_allSigMC.pdf}
-
-    \includegraphics[width=0.48\columnwidth]{images/trigger_eff_data_vs_mT_pTy050_pTmiss100_mT090_allSigMC.pdf}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/MC23e/ph_pt_baseline1muNoTrig_triggerMu_dphiMetPhterm_mc23e_nojetfake_nozgamma.png}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/MC23e/met_baseline1muNoTrig_triggerMu_dphiMetPhterm_mc23e_nojetfake_nozgamma.png}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/MC23e/mt_baseline1muNoTrig_triggerMu_dphiMetPhterm_mc23e_nojetfake_nozgamma.png}
   \end{center}
   \caption{
-    Efficiency curves of $\epsilon(\textrm{trigger}|\textrm{offline}~\&\&~\mu\textrm{-trigger})$ as functions of $p_T^\gamma,~p_T^{miss},~m_T$, from data (solid dots) and MC (grey shaded histograms). The vertical green lines display the position of the offline cuts: in each figure, the offline cuts
-    are applied except that on the displayed variable. Efficiency curves for the $Z(\to\nu\nu)\gamma$ (orange) and for the $W(\to\mu\nu)\gamma$ (purple) processes are also displayed
-    for comparison. In all cases, the final states containing a photon and a muon, which is treated as invisible in the evaluation of $p_T^{miss}$ and $m_T$.
+    Efficiency curves of $\epsilon(\textrm{trigger}|\textrm{offline}~\&\&~\mu\textrm{-trigger})$ as functions of $p_T^\gamma,~E_T^{miss},~m_T$, from 2024 data (solid dots), MC23e $W\gamma$ (blue line) and total background (magenta line). The preselection cuts
+    are applied, together with the selection $\dphimety>1.25$. Events containing a photon and a muon, which is treated as invisible in the evaluation of $E_T^{miss}$ and $m_T$, are used. On top of the efficiency curves, the variable distribution for the data (gray shaded area) and total background (magenta shaded area) is displayed. 
   }
-  \label{fig:trig_eff_data}
+  \label{fig:trig_eff_data_2024}
 \end{figure}
 
-The trigger scale factors are evaluated as a ratio between the trigger efficiency in data and in MC. This can be done as a function of any of the $p_T^\gamma,~p_T^{miss},~m_T$ variables, as displayed in Figure~\ref{fig:trig_scf}.
-In each plot, the bottom panel shows the scale factor as a function fo the kinematic variable; overlayed is the kinematic spectrum of the signal; the average scale factor is computed as a weighted average of the binned scale factors, accounting for the kinematic spectrum of the signal, according to:
-\begin{equation}
-  \langle\mathrm{scf}\rangle = \sum_{i} \frac{n_s[i]}{n_s^{tot}}\mathrm{scf}[i]
-  \label{eq:avg-trig-scf}
-\end{equation}
-where $\mathrm{scf}[i]$ is the scale factor computed for the $i$-th bin, $n_s[i]$ is the number of signal events in that bin, and $n_s^{tot}=\sum_i n_s[i]$.
+A similar conclusion can be drawn, though with limited statistics, for $Z\gamma$, as shown in figures \ref{fig:trig_eff_data_2023_zgamma} and \ref{fig:trig_eff_data_2024_zgamma}, for 2023 and 2024 respectively. In this case, events with 2 muons are considered the be enriched with the process of interest, using as baseline trigger an OR of di-muon triggers.
 
 \begin{figure}[!htbp]
   \begin{center}
-    \includegraphics[width=0.48\columnwidth]{images/trigger_scf_vs_pTy_pTy050_pTmiss100_mT090_finalstate_ymu_allSigMC.pdf}
-    \includegraphics[width=0.48\columnwidth]{images/trigger_scf_vs_pTmiss_pTy050_pTmiss100_mT090_finalstate_ymu_allSigMC.pdf}
-
-    \includegraphics[width=0.48\columnwidth]{images/trigger_scf_vs_mT_pTy050_pTmiss100_mT090_finalstate_ymu_allSigMC.pdf}
-  \caption{
-    Efficiency curves for $\epsilon(\textrm{trigger}|\textrm{offline}~\&\&~\mu\textrm{-trigger})$ (top panels) and trigger scale factors (bottom panels), as functions of $p_T^\gamma,~p_T^{miss},~m_T$. The top panels display the efficiency curves for data (solid dots) and MC total background (grey shaded histograms). Events are selected with a final state containing a photon and a muon, which is treated as invisible in the evaluation of $p_T^{miss}$ and $m_T$.
-    The bottom panels also display the expected kinematic spectrum of the signal (hatched red histograms). The average scale factors are also displayed,
-  }
-  \label{fig:trig_scf}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/MC23d/ph_pt_baseline2muNoTrig_trigger2Mu_dphiMetPhterm_mc23d_nojetfake.png}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/MC23d/met_baseline2muNoTrig_trigger2Mu_dphiMetPhterm_mc23d_nojetfake.png}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/MC23d/mt_baseline2muNoTrig_trigger2Mu_dphiMetPhterm_mc23d_nojetfake.png}
   \end{center}
+  \caption{
+    Efficiency curves of $\epsilon(\textrm{trigger}|\textrm{offline}~\&\&~\mu\textrm{-trigger})$ as functions of $p_T^\gamma,~E_T^{miss},~m_T$, from 2023 data (solid dots), MC23d $Z\gamma$ (red line) and total background (magenta line). The preselection cuts
+    are applied, together with the selection $\dphimety>1.25$. Events containing a photon and a muon, which is treated as invisible in the evaluation of $E_T^{miss}$ and $m_T$, are used. On top of the efficiency curves, the variable distribution for the data (gray shaded area) and total background (magenta shaded area) is displayed. 
+  }
+  \label{fig:trig_eff_data_2023_zgamma}
 \end{figure}
 
-The scale factors as functions of $p_T^\gamma$ and $m_T$ appear somewhat ``jumpy'': this is due to fluctuations in the efficiency curve of the MC background, as it is evident from the figures. On the opposite, the scale factors as functions of $p_T^{miss}$ appear smoother, and compatible with 1: their values are displayed in Table~\ref{tab:trig_scf_vs_pTmiss}. The averaged scale factor is:
-\begin{equation}
-  \langle\mathrm{scf}\rangle_{p_T^{miss}} = 1.015 \pm 0.015
-  \label{eq:trig_avg_scf_vs_pTmiss}
-\end{equation}
-which will be used as a correction factor to the signal selection efficiency.
-
-\begin{table}[!htbp]
+\begin{figure}[!htbp]
   \begin{center}
-    \begin{tabular}{c|c}
-      $p_T^{miss}~\in$ & scf \\
-      \hline
-      $[100;125]$ & $1.020\pm0.010$ \\
-      $[125;150]$ & $1.016\pm0.009$ \\
-      $[150;200]$ & $1.003\pm0.008$ \\
-      $[200;300]$ & $0.993\pm0.009$ 
-    \end{tabular}
-    \caption{
-      Trigger scale factors evaluated in bins of $p_T^{miss}$.
-    }
-    \label{tab:trig_scf_vs_pTmiss}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/MC23e/ph_pt_baseline2muNoTrig_trigger2Mu_dphiMetPhterm_mc23e_nojetfake.png}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/MC23e/met_baseline2muNoTrig_trigger2Mu_dphiMetPhterm_mc23e_nojetfake.png}
+    \includegraphics[width=0.30\columnwidth]{../images/dark_photon/images/trigger/MC23e/mt_baseline2muNoTrig_trigger2Mu_dphiMetPhterm_mc23e_nojetfake.png}
   \end{center}
-\end{table}
+  \caption{
+    Efficiency curves of $\epsilon(\textrm{trigger}|\textrm{offline}~\&\&~\mu\textrm{-trigger})$ as functions of $p_T^\gamma,~E_T^{miss},~m_T$, from 2024 data (solid dots), MC23e $Z\gamma$ (red line) and total background (magenta line). The preselection cuts
+    are applied, together with the selection $\dphimety>1.25$. Events containing a photon and a muon, which is treated as invisible in the evaluation of $E_T^{miss}$ and $m_T$, are used. On top of the efficiency curves, the variable distribution for the data (gray shaded area) and total background (magenta shaded area) is displayed. 
+  }
+  \label{fig:trig_eff_data_2024_zgamma}
+\end{figure}
 
 \clearpage

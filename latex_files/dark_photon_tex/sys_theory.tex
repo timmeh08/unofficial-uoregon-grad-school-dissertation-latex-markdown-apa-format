@@ -1,12 +1,265 @@
-\textcolor{red}{PRELIMINARY draft }
-Theory uncertainties for MC samples are estimated following the PmgSystematics recommendations, using the on-the-fly weights available in the MC samples. 
+\subsection{Recipes of evaluating theoretical systematic uncertainties}
+This section summarizes the procedures used to evaluate theoretical systematic uncertainties following the prescriptions recommended by PMG. Three main types of theoretical uncertainties are considered: renormalization and factorization scale variations, PDF variations, $\alpha_{S}$ variations.
+\subsubsection{Scale Uncertainties}
+Uncertainties in event yields due to renormalization ($\mu_R$) and factorization ($\mu_F$) scales are evaluated using a 7-point reweighting scheme. Individual events are reweighted with rescaled $(\mu_R, \mu_F)$ pairs according to the combinations listed in Table~\ref{tab:scalevar}, excluding those where the two scales differ by a factor of four.
+The rescaled yields are computed in each analysis bin, and the asymmetric systematic uncertainty is obtained by taking the envelope of the resulting yields with respect to the nominal one:
+\begin{equation}
+n^{\text{up}}{\text{bin}} = \max_i \left( n^i{\text{bin}} \right), \qquad
+n^{\text{down}}{\text{bin}} = \min_i \left( n^i{\text{bin}} \right)
+\end{equation}
+\begin{table}[h!]
+\centering
+\caption{7-point rescaling scheme. Events are weighted with rescaled $(\mu_R, \mu_F)$ pairs, where (1, 1) corresponds to the nominal choice.}
+\label{tab:scalevar}
+\begin{tabular}{c|ccccccc}
+\hline
+$\mu_R$ & 0.5 & 1 & 0.5 & 1 & 2 & 1 & 2 \\
+$\mu_F$ & 0.5 & 0.5 & 1 & 1 & 1 & 2 & 2 \\
+\hline
+\end{tabular}
+\end{table}
 
-%An uncertainty of $\pm6\%$ is assigned on the inclusive \ttbar production cross-section at NNLO+NNLL which is the result of adding in quadrature contributions from renormalisation and factorisation scale variations (obtained by independently varying the parameters $\mu_R$ and $\mu_F$ by a factor $0.5$ and $2.0$ and taking the envelope), PDF and $\alpha_S$ variations (where variations follow the PDF4LHC treatment~\cite{ThePDF4LHCWorGroIntRec} with the typical \texttt{Var3c} variations of the strong coupling constant $\alpha_S$) and mass uncertainty (which follows from variations of the top mass by $\pm 1~\GeV$)~\cite{syst:ttbarxsec}. The associated systematic is labelled \texttt{ttbar\_cross\_section}.
-Missing higher order contributions are estimated by adding in quadrature contributions from renormalisation and factorisation scale variations, which are obtained by independently varying the parameters $\mu_R$ and $\mu_F$ by a factor $0.5$ and $2.0$ and taking the envelope. 
+The figures \ref{fig:ggH_ScaleVariations}, \ref{fig:Zgamma_ScaleVariations}, and \ref{fig:Wgamma_ScaleVariations} and the tables \ref{tab:scalevar_results_alternative_2023} and \ref{tab:scalevar_results_alternative_2024}, below show the scale variations for the ggH signal process, Zgamma background, and Wgamma background in the mT distribution SR.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../images/dark_photon/images/theorysyst/systematics_envelope_ggHyyd_y_bdt_ggHyyd_scale_variation.pdf}
+    \caption{Scale variations for the ggH signal process in the mT distribution data 2023}
+    \label{fig:ggH_ScaleVariations}
+\end{figure}
 
-Uncertainties on the choice of the PDF set used for event simulation are estimated by using the PDF4LHC and NNPDF error sets following the typical PDF4LHC recommendation~\cite{ThePDF4LHCWorGroIntRec} and taking the envelope.  The uncertainty on the strong coupling constant $\alpha_S$ is evaluated by using the same PDF set with two different choices of $\alpha_S$. In the fit, both parameters are added in quadrature and treated as correlated parameters.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../images/dark_photon/images/theorysyst/systematics_envelope_Zgamma_y_bdt_Zgamma_scale_variation.pdf}
+    \caption{Scale variations for the Zgamma background in the mT distribution data 2023}
+    \label{fig:Zgamma_ScaleVariations}
+\end{figure}
 
-The initial state radiation (ISR) modelling, i.e. the amount of predicted ISR in an event by the parton showering algorithm can be estimated by making use of the built-in up and down variations of the \texttt{Var3c} parameter. 
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../images/dark_photon/images/theorysyst/systematics_envelope_Wgamma_y_bdt_Wgamma_scale_variation.pdf}
+    \caption{Scale variations for the Wgamma background in the mT distribution data 2023}
+    \label{fig:Wgamma_ScaleVariations}
+\end{figure}
 
-The amount of final state radiation (FSR) in an event is estimated by varying the factorisation scale by factors $0.5$ and $2.0$ inside \texttt{Pythia}. 
+
+
+%2023 data
+\begin{table}[!htbp]
+    \centering
+    \caption{Scale variations for all samples in SR, $1\mu$ CR, and $2\mu$ CR data 2023}
+    \label{tab:scalevar_results_alternative_2023}
+    \setlength{\tabcolsep}{5pt} % Set column separation to 5pt
+    \begin{tabular}{
+        c c | % Sample and BinRange
+        c c | % SR
+        c c | % 1mu CR
+        c c   % 2mu CR
+    }
+        \toprule
+        & & \multicolumn{2}{c}{SR} & \multicolumn{2}{c}{$1\mu$ CR} & \multicolumn{2}{c}{$2\mu$ CR} \\
+        \cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8}
+        Sample & BinRange & Up & Down & Up & Down & Up & Down \\ % Shortened headers
+               &          & $(\%)$ & $(\%)$ & $(\%)$ & $(\%)$ & $(\%)$ & $(\%)$ \\
+        \midrule
+        ggHyyd & 80--110  & 4.48 & -13.20 & \text{--} & \text{--} & \text{--} & \text{--} \\
+        ggHyyd & 110--140 & 4.00 & -13.17 & \text{--} & \text{--} & \text{--} & \text{--} \\
+        ggHyyd & 140--200 & 4.31 & -13.07 & \text{--} & \text{--} & \text{--} & \text{--} \\
+        ggHyyd & 200--300 & 0.00 & 0.00  & \text{--} & \text{--} & \text{--} & \text{--} \\
+        \midrule
+        Zgamma & 80--110  & 21.28 & -10.12 & 18.87 & -11.06 & 31.18 & -14.47 \\
+        Zgamma & 110--140 & 21.40 & -9.46  & 27.39 & -11.91 & 33.48 & -14.69 \\
+        Zgamma & 140--200 & 22.59 & -10.05 & 21.63 & -12.84 & 38.62 & -15.69 \\
+        Zgamma & 200--300 & 25.44 & -12.19 & 31.79 & -13.95 & 38.06 & -17.74 \\
+        \midrule
+        Wgamma & 80--110  & 26.81 & -10.94 & 21.80 & -9.79  & \text{--} & \text{--} \\
+        Wgamma & 110--140 & 26.60 & -9.24  & 22.44 & -9.06  & \text{--} & \text{--} \\
+        Wgamma & 140--200 & 28.21 & -10.44 & 26.35 & -10.37 & \text{--} & \text{--} \\
+        Wgamma & 200--300 & 32.64 & -14.62 & 27.72 & -11.40 & \text{--} & \text{--} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+%2024
+\begin{table}[!htbp]
+    \centering
+    \caption{Scale variations for all samples in SR, $1\mu$ CR, and $2\mu$ CR data 2024}
+    \label{tab:scalevar_results_alternative_2024}
+    \setlength{\tabcolsep}{5pt} % Set column separation to 5pt
+    \begin{tabular}{
+        c c | % Sample and BinRange
+        c c | % SR
+        c c | % 1mu CR
+        c c   % 2mu CR
+    }
+        \toprule
+        & & \multicolumn{2}{c}{SR} & \multicolumn{2}{c}{$1\mu$ CR} & \multicolumn{2}{c}{$2\mu$ CR} \\
+        \cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8}
+        Sample & BinRange & Up & Down & Up & Down & Up & Down \\ % Shortened headers
+               &          & $(\%)$ & $(\%)$ & $(\%)$ & $(\%)$ & $(\%)$ & $(\%)$ \\
+        \midrule
+        \midrule
+        Zgamma & 80--110  & 22.32 & -9.7  & 24.24 & -9.85  & 39.26  & -13.28 \\
+        Zgamma & 110--140 & 20.59 & -10.21 & 29.12 & -15.10 & 32.40 & -12.48 \\
+        Zgamma & 140--200 & 22.82 & -10.24 & 33.19 & -13.23 & 36.64 & -14.88 \\
+        Zgamma & 200--300 & 27.05 & -11.50 & 29.73 & -10.75 & 39.30 & -15.21 \\
+        \midrule
+        Wgamma & 80--110  & 24.28 & -10.58 & 25.24 & -10.44  & \text{--} & \text{--} \\
+        Wgamma & 110--140 & 25.83 & -10.20  & 23.55 & -10.36  & \text{--} & \text{--} \\
+        Wgamma & 140--200 & 27.37 & -10.88 & 24.82 & -10.39 & \text{--} & \text{--} \\
+        Wgamma & 200--300 & 29.05 & -11.46 & 27.04 & -11.60 & \text{--} & \text{--} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\subsubsection{PDF Uncertainties \& Alpha\_S Uncertainties}
+PDF uncertainties are categorized into two types: variations within a given PDF set (intra-PDF) and differences between distinct PDF sets (inter-PDF).
+
+\subsubsection{Intra-PDF Set Uncertainties}
+PDF fits carry intrinsic uncertainties arising from the fitting procedure. As a result, each PDF set includes multiple replicas (the PDF error set), each with a slightly different parametrization. These variations must be propagated to estimate the uncertainty on the final-state observables.
+The signal samples are generated using the PDF4LHC21\_40\_pdfas (LHAPDF ID 93300) set \cite{PDF4LHC}, which has 40 replicas. The background samples are generated using the NNPDF3\_nnlo\_as\_0118\_hessian (LHAPDF ID 303200)~\cite{nnpdf} set, which contains 100 replicas. For each replica, the event weights are used to compute the yield in each $m_{\mathrm{T}}$ bin. The uncertainty is then calculated as the standard deviation of the yields across all replicas:
+
+\begin{equation}
+    \Delta X = \sqrt{\frac{1}{N} \sum_i \left( X_i - X_0 \right)^2 }
+\end{equation}
+
+where $\Delta X$ represents the absolute uncertainty on the predicted yield $X$, $X_0$ is the nominal yield, and $X_i$ corresponds to the yield obtained with the $i$-th PDF replica.\\
+
+\subsubsection{Inter-PDF Set Uncertainties}
+Different PDF sets use distinct parameterizations and input datasets, resulting in differences between the central PDFs. These differences can lead to variations in final-state observables that are important to consider.
+To assess uncertainties between different PDF families, for signal sample is also generated using alternative PDF sets, namely \texttt{CT18NLO} (LHAPDF ID 14400) and \texttt{MSHT20nlo\_as118} (LHAPDF ID 27100). The nominal member of each set is compared against the nominal PDF4LHC21\_40\_pdfas set to evaluate the inter-PDF variation. For background samples, alternative PDF sets \texttt{CT18NNLO} (LHAPDF ID 14100) and \texttt{MSHT20nnlo\_as118} (LHAPDF ID 27400) are used. The nominal member of each set is compared against the nominal set to evaluate the inter-PDF variation.
+\subsubsection{$\alpha_{S}$ Uncertainties}
+The uncertainty associated with the strong coupling constant $\alpha_S$ is evaluated by utilizing PDF sets generated with different $\alpha_S$ values for $\alpha_S = 0.117$ and $\alpha_S = 0.119$ and the uncertainty is determined using the formula:
+\begin{equation}
+    \Delta X_{\alpha_S} = \frac{\left| X_{\alpha_S^+} - X_{\alpha_S^-} \right|}{2}
+\end{equation}
+where $X_{\alpha_S^+}$ and $X_{\alpha_S^-}$ are the yields computed with the increased and decreased $\alpha_S$ values, respectively.
+
+
+The final systematic uncertainty from PDF and $\alpha_S$ variations is obtained by adding the intra-PDF, inter-PDF, and $\alpha_S$ uncertainties in quadrature for each bin:
+
+\begin{equation}
+    \Delta X_{\text{total}} = \sqrt{\Delta X_{\text{intra\_PDF}}^2 + \Delta X_{\text{inter\_PDF}}^2 + \Delta X_{\alpha_S}^2}
+\end{equation}
+
+The tables \ref{tab:combined_pdf_uncertainties_2023} and \ref{tab:combined_pdf_uncertainties_2024} summarize the PDF and $\alpha_S$ uncertainties evaluated for the all samples in SR, for MC23d and MC23e respectively.
+
+
+\begin{table}[!htbp]
+    \centering
+    \caption{Combined Intra-PDF, Inter-PDF, and $\text{Alpha}\_S$ uncertainties for all samples and regions (SR, $1\mu$ CR, $2\mu$ CR) data 2023}
+    \label{tab:combined_pdf_uncertainties_2023}
+    \setlength{\tabcolsep}{6pt}
+    \begin{tabular}{
+        c
+        c
+        c @{\hspace{6pt}}
+        S[table-format=1.4] @{\hspace{6pt}}
+        S[table-format=1.2] @{\hspace{6pt}}
+        S[table-format=1.4]
+    }
+        \toprule
+        & & & \multicolumn{1}{c}{Intra-PDF} & \multicolumn{1}{c}{Inter-PDF} & \multicolumn{1}{c}{$\text{Alpha}\_S$} \\
+        \cmidrule(lr){4-4} \cmidrule(lr){5-5} \cmidrule(lr){6-6}
+        Sample & BinRange & Region & {Variation (\%)} & {Variation (\%)} & {Variation (\%)} \\
+        \midrule
+        \multirow{12}{*}{\centering ggHyyd} & 80--110 & SR & \pm 4.5102 & \pm 4.44 & \pm 1.8849 \\
+        & 110--140 & SR & \pm 8.2125 & \pm 4.08 & \pm 1.8682 \\
+        & 140--200 & SR & \pm 1.0859 & \pm 4.05 & \pm 1.8446 \\
+        & 200--300 & SR & \pm 0.0000 & \pm 0.00 & \pm 0.0000 \\
+        \cmidrule{2-6}
+        & 80--110 & $1\mu$ CR & \text{--} & \text{--} & \text{--} \\
+        & 110--140 & $1\mu$ CR & \text{--} & \text{--} & \text{--} \\
+        & 140--200 & $1\mu$ CR & \text{--} & \text{--} & \text{--} \\
+        & 200--300 & $1\mu$ CR & \text{--} & \text{--} & \text{--} \\
+        \cmidrule{2-6}
+        & 80--110 & $2\mu$ CR & \text{--} & \text{--} & \text{--} \\
+        & 110--140 & $2\mu$ CR & \text{--} & \text{--} & \text{--} \\
+        & 140--200 & $2\mu$ CR & \text{--} & \text{--} & \text{--} \\
+        & 200--300 & $2\mu$ CR & \text{--} & \text{--} & \text{--} \\
+        \midrule
+        \multirow{12}{*}{\centering Zgamma} & 80--110 & SR & \pm 0.0462 & \pm 2.22 & \pm 0.0837 \\
+        & 110--140 & SR & \pm 0.0773 & \pm 3.43 & \pm 0.1231 \\
+        & 140--200 & SR & \pm 0.0925 & \pm 2.21 & \pm 0.1874 \\
+        & 200--300 & SR & \pm 0.0388 & \pm 2.59 & \pm 0.2961 \\
+        \cmidrule{2-6}
+        & 80--110 & $1\mu$ CR & \pm 0.0140 & \pm 3.48 & \pm 0.1390 \\
+        & 110--140 & $1\mu$ CR & \pm 0.0090 & \pm 6.02 & \pm 0.5870 \\
+        & 140--200 & $1\mu$ CR & \pm 0.0090 & \pm 4.62 & \pm 0.7370 \\
+        & 200--300 & $1\mu$ CR & \pm 0.0040 & \pm 3.00 & \pm 0.2470 \\
+        \cmidrule{2-6}
+        & 80--110 & $2\mu$ CR & \pm 0.0250 & \pm 4.38 & \pm 0.2203 \\
+        & 110--140 & $2\mu$ CR & \pm 0.0650 & \pm 5.54 & \pm 0.0288 \\
+        & 140--200 & $2\mu$ CR & \pm 0.1150 & \pm 4.34 & \pm 1.1363 \\
+        & 200--300 & $2\mu$ CR & \pm 0.0230 & \pm 4.60 & \pm 0.6611 \\
+        \midrule
+        \multirow{12}{*}{\centering Wgamma} & 80--110 & SR & \pm 0.2141 & \pm 4.76 & \pm 0.0319 \\
+        & 110--140 & SR & \pm 0.2017 & \pm 5.10 & \pm 0.1550 \\
+        & 140--200 & SR & \pm 0.2002 & \pm 3.54 & \pm 0.0517 \\
+        & 200--300 & SR & \pm 0.0640 & \pm 4.45 & \pm 0.3250 \\
+        \cmidrule{2-6}
+        & 80--110 & $1\mu$ CR & \pm 0.2527 & \pm 4.30 & \pm 0.1171 \\
+        & 110--140 & $1\mu$ CR & \pm 0.2906 & \pm 0.00 & \pm 0.3905 \\
+        & 140--200 & $1\mu$ CR & \pm 0.3098 & \pm 1.24 & \pm 0.1792 \\
+        & 200--300 & $1\mu$ CR & \pm 0.1303 & \pm 0.29 & \pm 0.0637 \\
+        \cmidrule{2-6}
+        & 80--110 & $2\mu$ CR & \text{--} & \text{--} & \text{--} \\
+        & 110--140 & $2\mu$ CR & \text{--} & \text{--} & \text{--} \\
+        & 140--200 & $2\mu$ CR & \text{--} & \text{--} & \text{--} \\
+        & 200--300 & $2\mu$ CR & \text{--} & \text{--} & \text{--} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+%2024
+
+\begin{table}[!htbp]
+    \centering
+    \caption{Combined Intra-PDF, Inter-PDF, and $\text{Alpha}\_S$ uncertainties for all samples and regions (SR, $1\mu$ CR, $2\mu$ CR) data 2024}
+    \label{tab:combined_pdf_uncertainties_2024}
+    \setlength{\tabcolsep}{6pt}
+    \begin{tabular}{
+        c
+        c
+        c @{\hspace{6pt}}
+        S[table-format=1.4] @{\hspace{6pt}}
+        S[table-format=1.2] @{\hspace{6pt}}
+        S[table-format=1.4]
+    }
+        \toprule
+        & & & \multicolumn{1}{c}{Intra-PDF} & \multicolumn{1}{c}{Inter-PDF} & \multicolumn{1}{c}{$\text{Alpha}\_S$} \\
+        \cmidrule(lr){4-4} \cmidrule(lr){5-5} \cmidrule(lr){6-6}
+        Sample & BinRange & Region & {Variation (\%)} & {Variation (\%)} & {Variation (\%)} \\
+        \midrule
+        \multirow{12}{*}{\centering Zgamma} & 80--110 & SR & \pm 0.19 & \pm 2.90 & \pm 0.47 \\
+        & 110--140 & SR & \pm 0.24 & \pm 3.35 & \pm 0.55 \\
+        & 140--200 & SR & \pm 0.29 & \pm 2.82 & \pm 0.35 \\
+        & 200--300 & SR & \pm 0.12 & \pm 3.19 & \pm 0.28 \\
+        \cmidrule{2-6}
+        & 80--110 & $1\mu$ CR & \pm 0.03   & \pm 5.27 & \pm 0.88 \\
+        & 110--140 & $1\mu$ CR & \pm 0.05  & \pm 1.08 & \pm 1.118 \\
+        & 140--200 & $1\mu$ CR & \pm 0.03  & \pm 5.10 & \pm 0.26 \\
+        & 200--300 & $1\mu$ CR & \pm 0.001 & \pm 4.33 & \pm 0.22 \\
+        \cmidrule{2-6}
+        & 80--110 & $2\mu$ CR & \pm 0.07 & \pm 4.55 & \pm 0.06 \\
+        & 110--140 & $2\mu$ CR & \pm 0.1 & \pm 4.38 & \pm 0.014 \\
+        & 140--200 & $2\mu$ CR & \pm 0.18 & \pm 4.43 & \pm 0.75 \\
+        & 200--300 & $2\mu$ CR & \pm 0.07 & \pm 4.24 & \pm 0.34 \\
+        \midrule
+        \multirow{12}{*}{\centering Wgamma} & 80--110 & SR & \pm 0.69 & \pm 4.64 & \pm 0.2 \\
+        & 110--140 & SR & \pm 0.7 & \pm 3.57 & \pm 0.9 \\
+        & 140--200 & SR & \pm 0.5 & \pm 3.77 & \pm 0.5 \\
+        & 200--300 & SR & \pm 0.17 & \pm 4.08 & \pm 1.0 \\
+        \cmidrule{2-6}
+        & 80--110 & $1\mu$ CR & \pm 0.82 & \pm 2.91 & \pm 0.0 \\
+        & 110--140 & $1\mu$ CR & \pm 1.04 & \pm 3.07 & \pm 0.06 \\
+        & 140--200 & $1\mu$ CR & \pm 1.06 & \pm 3.63 & \pm 0.33 \\
+        & 200--300 & $1\mu$ CR & \pm 0.42 & \pm 4.11 & \pm 0.19 \\
+        \cmidrule{2-6}
+        & 80--110 & $2\mu$ CR & \text{--} & \text{--} & \text{--} \\
+        & 110--140 & $2\mu$ CR & \text{--} & \text{--} & \text{--} \\
+        & 140--200 & $2\mu$ CR & \text{--} & \text{--} & \text{--} \\
+        & 200--300 & $2\mu$ CR & \text{--} & \text{--} & \text{--} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 

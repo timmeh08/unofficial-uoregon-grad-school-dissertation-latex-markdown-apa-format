@@ -532,66 +532,39 @@ All tested configurations are presented separately for each channel.
 
 \clearpage
 
-\subsection{Signal contamination in low transverse mass region}
+\subsection{Validation in low transverse mass region}
 
-\begin{figure}[htbp]
-  \centering
-  \subfloat[$m_T$]{
-    \includegraphics[width=0.45\textwidth]{plot_efy/validation/mt_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
-  }
-  \hfill
-  \subfloat[$p_T^{\gamma}$]{
-    \includegraphics[width=0.45\textwidth]{plot_efy/validation/phPt_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
-  }
-  \caption{Signal contamination in the low $m_T$ region for different kinematic variables. Here the electrons faking photons and the jet faking photons backgrounds are derived from MC simulations.}
+Figures \ref{fig:efy_VRData__allvariables} and \ref{fig:efy_VR_allvariables} show respectively the signal contamination and the agreement between background and data in the low \mT\ VR, using the full 2023+2024 statistics. 
+\begin{figure} [H]%[!htbp] t!
+    \centering
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/mt_lowMTVR_contamination.png}
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/met_lowMTVR_contamination.png}
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/ph_eta_lowMTVR_contamination.png}\\
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/n_jet_central_lowMTVR_contamination.png}
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/metsig_lowMTVR_contamination.png}
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/dmet_lowMTVR_contamination.png}\\
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/dphi_met_phterm_lowMTVR_contamination.png}
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/dphi_met_jetterm_lowMTVR_contamination.png}
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/dphi_central_jj_lowMTVR_contamination.png}\\
+    \caption{Signal contamination in the low \mT\ region for the main discriminant variables, used to define the SR. A $BR(H\to\gamma\gamma)=1\%$ is represented as a benchmark. For both \jfakey\ and \efakey\ backgrounds, the data-driven estimates are shown.}
+    \label{fig:efy_VRData__allvariables}
 \end{figure}
 
-\begin{figure}[htbp]
-  \centering
-  \subfloat[$|\eta^{\gamma}|$]{
-    \includegraphics[width=0.45\textwidth]{plot_efy/validation/abspheta_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
-  }
-  \hfill
-  \subfloat[$p_T^{\text{miss}}$]{
-    \includegraphics[width=0.45\textwidth]{plot_efy/validation/met_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
-  }
-  \caption{Signal contamination in the low $m_T$ region for different kinematic variables. Here the electrons faking photons and the jet faking photons backgrounds are derived from MC simulations.}
+
+\begin{figure} [H]%[!htbp] t!
+    \centering
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/mt_lowMTVRData_.png}
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/met_lowMTVRData_.png}
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/ph_eta_lowMTVRData_.png}\\
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/n_jet_central_lowMTVRData_.png}
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/metsig_lowMTVRData_.png}
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/dmet_lowMTVRData_.png}\\
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/dphi_met_phterm_lowMTVRData_.png}
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/dphi_met_jetterm_lowMTVRData_.png}
+    \includegraphics[width=0.3\textwidth]{../images/LowMTVR/dphi_central_jj_lowMTVRData_.png}\\
+    \caption{Comparison between background and data in the low \mT\ region for the main discriminant variables, used to define the SR. For both \jfakey\ and \efakey\ backgrounds, the data-driven estimates are shown.}
+    \label{fig:efy_VR_allvariables}
 \end{figure}
 
-\begin{figure}[htbp]
-  \centering
-  \subfloat[$S_{p_T^{\text{miss}}}$]{
-    \includegraphics[width=0.45\textwidth]{plot_efy/validation/metsig_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
-  }
-  \hfill
-  \subfloat[$\Delta p_T^{\text{miss}}$]{
-    \includegraphics[width=0.45\textwidth]{plot_efy/validation/Dmet_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
-  }
-  \caption{Signal contamination in the low $m_T$ region for different kinematic variables. Here the electrons faking photons and the jet faking photons backgrounds are derived from MC simulations.}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \subfloat[$\Delta \Phi(j_1, j_2)$]{
-    \includegraphics[width=0.45\textwidth]{plot_efy/validation/dphiJJ_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
-  }
-  \hfill
-  \subfloat[$\Delta \Phi(p_T^{\text{miss}}, \{p_T^{\text{miss}}\}_{\text{jet}})$]{
-    \includegraphics[width=0.45\textwidth]{plot_efy/validation/dphiMetPhterm_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
-  }
-  \caption{Signal contamination in the low $m_T$ region for different kinematic variables. Here the electrons faking photons and the jet faking photons backgrounds are derived from MC simulations.}
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \subfloat[$\Delta \Phi(p_T^{\text{miss}}, p_T^{\gamma})$]{
-    \includegraphics[width=0.45\textwidth]{plot_efy/validation/dphiMetPhPt_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
-  }
-  \hfill
-  \subfloat[$\Delta \Phi(p_T^{\text{miss}}, \{p_T^{\text{miss}}\}_{\gamma})$]{
-    \includegraphics[width=0.45\textwidth]{plot_efy/validation/dphiMetJetterm_nel_nmu0_ntau_nphSR_MET100_MT80_MT90low_phPT50_njet_trigger_dphiMetPhterm_dphiMetJetterm_metsig_Dmet_dphiJJ_BDTscore_signal_BDT.pdf}
-  }
-  \caption{Signal contamination in the low $m_T$ region for different kinematic variables. Here the electrons faking photons and the jet faking photons backgrounds are derived from MC simulations.}
-\end{figure}
 
 \clearpage
