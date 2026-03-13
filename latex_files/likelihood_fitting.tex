@@ -1,0 +1,48 @@
+%--------------------------------------------------------------------------------%
+% start my deeper dive into fitting here, documenting the motivation for fitting and the details of the fit itself.
+Most analyses with the ATLAS experiment are essentially counting experiments, where the number of events observed in data is compared to the number of events expected from the background-only hypothesis and the signal-plus-background hypothesis. 
+The likelihood function is a powerful tool that quantifies the agreement between observed data and these hypotheses, taking into account both statistical and systematic uncertainties. 
+By maximizing the likelihood function, we can estimate the parameters of interest, such as the signal strength, and determine how well our data supports the presence of a signal. 
+In this section, the fitting techniques used in this analysis will be described, using the statistical framework from TRExFitter and data/MC events from the dark photon analysis as described above.
+
+The likelihood function is written as:
+
+\begin{equation}\label{eq:likelihood}
+\mathcal{L}(\mu,\boldsymbol{\theta}, \gamma, \tau)
+=
+\prod_{i=1}^{N_{\text{bins}}}
+\mathrm{Pois}\!\left(N_i \mid \mu s_i(\boldsymbol{\theta}) +b_i(\boldsymbol{\theta},\gamma,\tau)\right)
+\;
+\prod_{\theta\in\boldsymbol{\theta}}
+\frac{1}{\sqrt{2\pi}}e^{-\theta_k^2/2}
+\;
+\prod_{i=1}
+G\!\left(n^{MC}_i \mid \gamma_i\right).
+\end{equation}
+
+where $\mu$ is the signal strength, $\boldsymbol{\theta}$ are the nuisance parameters associated with systematic uncertainties, $\gamma$ are the parameters associated with the MC statistical uncertainties, and $\tau$ are the background normalization factors.
+The first product runs over the terms per bin of the histograms used in the fit.
+This includes the number of data events, number of expected signal events $s_i$, and number of expected background events $b_i$.
+$\mu$ scales the signal yield, while the nuisance parameters $\boldsymbol{\theta}$ affect both signal and background yields, and the $\gamma$ parameters affect only the background yields.
+The second product runs over the nuisance parameters, or systematic uncertainties, which are constrained by Gaussian distributions centered at zero with a width of one.
+Examples of systematic uncertainties include those related to the reconstruction of physics objects or detector related effects, calibration, theoretical modeling, MC modeling, and data-driven background estimation.
+This adds degrees of freedom to the fit, allowing the fit to adjust the expected yields within the uncertainties to better match the observed data.
+Nuisance parameters can affect the shape of the distributions used in the fit, as well as the overall normalization.
+Systematic uncertainties in the dark photon analysis are described in more detail in Section \ref{sec:systs}.
+Ideally, MC simulations would have infinite statistics, but in practice they are limited by computational resources, leading to statistical uncertainties in the predicted yields.
+The final product in the likelihood function accounts for the statistical uncertainties in the MC predictions, which can be modeled as Poisson or Gaussian distributions depending on the number of MC events in each bin.
+$\gamma$ nuisance parameters are introduced in this final product, and scale the total signal plus background yields in each bin.
+It is important to note that there is only one $\gamma$ parameter per bin, which means that the MC statistical uncertainty is treated as a single source of uncertainty that affects all processes in that bin, rather than having separate $\gamma$ parameters for each process.
+It is common to use the negative log-likelihood (NLL) for numerical stability and convenience, as it transforms the product of probabilities into a sum, which is easier to handle computationally.
+The NNL is defined as:
+
+\begin{equation}\label{eq:nll}
+    -\ln\mathcal{L}(\mu,\boldsymbol{\theta}, \gamma, \tau) = -\sum_{i=1}^{N_{\text{bins}}} \ln \mathrm{Pois}\!\left(N_i \mid \mu s_i(\boldsymbol{\theta}) +b_i(\boldsymbol{\theta},\gamma,\tau)\right) - \sum_{\theta\in\boldsymbol{\theta}} \ln \frac{1}{\sqrt{2\pi}}e^{-\theta_k^2/2} - \sum_{i=1} \ln G\!\left(n^{MC}_i \mid \gamma_i\right).
+\end{equation}
+
+Maximizing the likelihood function (or equivalently minimizing the NLL) allows us to find the best-fit values of the parameters, including the signal strength $\mu$ and the nuisance parameters $\boldsymbol{\theta}$ and $\gamma$.
+The parameter of interest (POI) is the signal strength $\mu$, which quantifies the presence of a signal in the data, and in the case of the dark photon analysis, the branching ratio $BR(H\rightarrow \gamma \gamma_d)$ is considered a free parameter, as well as the k-factors used for the normalization of $Z\gamma$ and $W\gamma$ background.
+
+\subsection{TRExFitter Framework}
+
+The likelihood function is implemented and maximized using the TRExFitter framework\footnote{\href{https://trexfitter-docs.web.cern.ch/trexfitter-docs/latest/}{TRExFitter documentation}}, which is a software tool developed by the ATLAS collaboration for performing statistical analysis in particle physics.

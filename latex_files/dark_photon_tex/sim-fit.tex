@@ -1,3 +1,4 @@
+% save this intro
 Given the Signal and Control Regions (SR and CRs) previously described, a simultaneous fit technique is used to derive an upper limit on the branching ratio $BR(H\rightarrow \gamma \gamma_d)$, exploiting the constraint given by data in SR and all CRs at the same time. The simultaneous fitting technique is used as the baseline technique for the background estimation and for the signal interpretation. This approach allows the estimation of signal and background yields in Control Regions (CRs) and Signal Region (SR), leveraging data constraints across all these regions at once. By using a simultaneous fitting method, multiple CRs can be combined easily, and the correlation of systematic uncertainties across different regions can be treated in a consistent way.
 
 We can define the mean number of events counted in each region (R) as
@@ -34,6 +35,11 @@ $i$ being the number of \mT bins. The binning has been optimized in order to lim
     \item (200-300) $\SI{}{GeV}$, the last bin, depleted of signal, used for the normalization of the background. Together with the previous bin, it can provide some shape discrimination between \jfakey and true photons, as well as between signal and backgrounds. 
 \end{itemize}
 This binning is used for SR, OneMuCR and lowMETsigCR, while for TwoMuCR, due to lack of statistic in the region, it has been chosen to use only one m${_T}$ bin (80-300) GeV, in order to limit statistical uncertainties.
+
+%--------------------------------------------------------------------------------%
+% start my deeper dive into fitting here, documenting the motivation for fitting and the details of the fit itself.
+
+
 
 A simultaneous likelihood is then built by multiplying the likelihoods obtained for each region.
 
