@@ -16,7 +16,7 @@ The likelihood function is written as:
 \prod_{\theta\in\boldsymbol{\theta}}
 \frac{1}{\sqrt{2\pi}}e^{-\theta_k^2/2}
 \;
-\prod_{i=1}
+\prod_{i=1}^{N_{\text{bins}}}
 G\!\left(n^{MC}_i \mid \gamma_i\right).
 \end{equation}
 
@@ -34,7 +34,7 @@ The final product in the likelihood function accounts for the statistical uncert
 $\gamma$ nuisance parameters are introduced in this final product, and scale the total signal plus background yields in each bin.
 It is important to note that there is only one $\gamma$ parameter per bin, which means that the MC statistical uncertainty is treated as a single source of uncertainty that affects all processes in that bin, rather than having separate $\gamma$ parameters for each process.
 It is common to use the negative log-likelihood (NLL) for numerical stability and convenience, as it transforms the product of probabilities into a sum, which is easier to handle computationally.
-The NNL is defined as:
+The NLL is defined as:
 
 \begin{equation}\label{eq:nll}
     -\ln\mathcal{L}(\mu,\boldsymbol{\theta}, \gamma, \tau) = -\sum_{i=1}^{N_{\text{bins}}} \ln \mathrm{Pois}\!\left(N_i \mid \mu s_i(\boldsymbol{\theta}) +b_i(\boldsymbol{\theta},\gamma,\tau)\right) - \sum_{\theta\in\boldsymbol{\theta}} \ln \frac{1}{\sqrt{2\pi}}e^{-\theta_k^2/2} - \sum_{i=1} \ln G\!\left(n^{MC}_i \mid \gamma_i\right).
@@ -45,4 +45,51 @@ The parameter of interest (POI) is the signal strength $\mu$, which quantifies t
 
 \subsection{TRExFitter Framework}
 
-The likelihood function is implemented and maximized using the TRExFitter framework\footnote{\href{https://trexfitter-docs.web.cern.ch/trexfitter-docs/latest/}{TRExFitter documentation}}, which is a software tool developed by the ATLAS collaboration for performing statistical analysis in particle physics.
+The likelihood function is implemented and maximized in the dark photon analysis using the TRExFitter framework\footnote{\href{https://trexfitter-docs.web.cern.ch/trexfitter-docs/latest/}{TRExFitter documentation}}, which is a software tool developed by the ATLAS collaboration for performing statistical analysis in particle physics.
+TRExFitter is run using a configuration file that specifies the details of the fit, including the input histograms, the parameters to be fitted, and the systematic uncertainties to be included.
+A workspace is created for the fit, containing the the parameters of interest, the physics samples, and the systematic uncertainties.
+The fit is performed on the workspace, either with real data or with Asimov data.
+Asimov data is generated based on the expected yields from the MC templates, without any statistical fluctuations, and is used to evaluate the expected sensitivity of the analysis.
+The fit results include the best-fit values of the parameters, a breakdown of their uncertainties, and the correlations between the parameters.
+Prefit and postfit distributions can be produced to visualize the agreement between the data and the fitted model, as well as the impact of the systematic uncertainties on the fit results.
+Expected or observed limits on the POI can be extracted from the fit, providing a quantitative measure of the sensitivity of the analysis on the Higgs to photon and dark photon decay.
+
+\subsection{Walkthrough of the dark photon fit}
+
+This section provides a walkthrough of the fitting procedure in the dark photon analysis, using the TRExFitter framework and the likelihood function described above.
+Note that theoritical uncertainties are not included in the plots shown in this section, but they are included in section FILL IN LATER for the final fit results of the analysis.
+There are two fits conducted in the dark photon analysis: a signal-plus-background fit that is blinded, and a signal-plus-background fit that is unblinded.
+Fitting is performed in bins of transverse mass $m_T$, calculated using the photon and the \ETmiss.
+The blinded fit is performed on Asimov data in the signal region, with real data in the control regions.
+The unblinded fit is performed on real data in both the signal and control regions, with the data summarized in section \ref{sec:dark_photon_samples}.
+
+As seen in Fig.~\ref{fig:asimov_prefit}, asimov data matches exactly with the expected yields from the background MC templates, with no statistical fluctuations.
+This allows for the evaluation of the expected sensitivity of the analysis without biasing the results by looking at the real data in the signal region, as well as acting as a check of the fit configuration and the implementation of the systematic uncertainties.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/SR_asimov_dec31.png}
+    \caption{Prefit distribution of the transverse mass $m_T$ in the signal region, with Asimov data.}
+    \label{fig:asimov_prefit}
+\end{figure}
+
+\subsubsection{Control Regions}
+
+The various backgrounds in an analysis can be very correlated, and it can be difficult to disentangle their contributions in the signal region.
+One way to address this is to define control regions that are enriched in specific backgrounds, and use the data in these control regions to constrain the normalizations of the backgrounds in the fit.
+These backgrounds can then be free to ``float" in the fit, and the fit will adjust their normalization factors to best match the data in the control regions, which in turn constrains their contributions in the signal region.
+This is fitting is done simultaneously with the fit in the signal region for the dark photon analysis.
+Ideally, the control regions should be designed to be as orthogonal as possible to the signal region to avoid signal contamination, while still being close enough in phase space to the signal region to ensure that the background compositions are similar.
+
+There are three control regions defined in the dark photon analysis, each enriched with a specific background: The one and two muon control regions, which are enriched in $W\gamma$ and $Z\gamma$ backgrounds respectively, and the low \ETmiss significance control region, which is used to constrain the jets faking photons background.
+These regions are defined in section \ref{sec:selections}.
+An example of the prefit distributions in the CRs can be seen in Fig.~\ref{fig:cr_prefit}, where the data is compared to the yields from the background MC templates.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/OneMuCR_dec31.png}
+    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/TwoMuCR_1bin_dec31.png}
+    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/LowMETSigCR_dec31.png}
+    \caption{Prefit distributions of the transverse mass $m_T$ in the control regions, with Asimov data.}
+    \label{fig:cr_prefit}
+\end{figure}
