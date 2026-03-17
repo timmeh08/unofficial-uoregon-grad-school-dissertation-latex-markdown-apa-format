@@ -51,7 +51,12 @@ A workspace is created for the fit, containing the the parameters of interest, t
 The fit is performed on the workspace, either with real data or with Asimov data.
 Asimov data is generated based on the expected yields from the MC templates, without any statistical fluctuations, and is used to evaluate the expected sensitivity of the analysis.
 The fit results include the best-fit values of the parameters, a breakdown of their uncertainties, and the correlations between the parameters.
-Prefit and postfit distributions can be produced to visualize the agreement between the data and the fitted model, as well as the impact of the systematic uncertainties on the fit results.
+There are multiple regions defined and fed into the fit.
+A signal region (SR) is optimized with selections that enhance the signal contribution, while control regions (CRs) are defined to constrain the background contributions.
+Validation regions (VRs) can also be defined to check the modeling of the backgrounds.
+They are constrained by the fit, but the fit parameters are used to check for closure in the region.
+The various regions used in the dark photon analysis are described in more detail in section \ref{sec:selections}.
+Prefit and postfit distributions can be produced to visualize the agreement between the data and the fitted model in all regions, as well as the impact of the systematic uncertainties on the fit results.
 Expected or observed limits on the POI can be extracted from the fit, providing a quantitative measure of the sensitivity of the analysis on the Higgs to photon and dark photon decay.
 
 \subsection{Walkthrough of the dark photon fit}
@@ -87,9 +92,60 @@ An example of the prefit distributions in the CRs can be seen in Fig.~\ref{fig:c
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/OneMuCR_dec31.png}
-    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/TwoMuCR_1bin_dec31.png}
-    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/LowMETSigCR_dec31.png}
+    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/OneMuCR_dec31.pdf}
+    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/TwoMuCR_1bin_dec31.pdf}
+    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/LowMETSigCR_dec31.pdf}
     \caption{Prefit distributions of the transverse mass $m_T$ in the control regions, with Asimov data.}
     \label{fig:cr_prefit}
+\end{figure}
+
+
+\subsubsection{Impact of the jets faking photons background}
+
+The low \ETmiss significance control region was originally a validation region to check the modeling of the jets faking photons background.
+During fitting, however, the jets faking photons background was found to have a large impact on the fit results.
+The uncertainty on the fake factor was significant, surpassing the statistical uncertainties in the low statistic bins.
+Correlations between the jets faking photons background and the signal strength were observed, as well as with the normalization factors of the $W\gamma$ and $Z\gamma$ backgrounds.
+The breakdown of the nuisance parameter ranking in the fit, as well as the correlation matrix are shown in Fig.~\ref{fig:ranking_dec31}.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.35\textwidth]{../images/dark_photon/images/tim_fit/Ranking_BRHyyd_Breakdown_dec31.pdf}
+    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/CorrMatrix_dec31.pdf}
+    \caption{Ranking of the nuisance parameters in the fit, showing the impact of each nuisance parameter on the signal strength $\mu$ (right). Correlation matrix of the fit parameters, showing the correlations between the signal strength $\mu$ and the normalization factors of the backgrounds (left). Both plots are with the low \ETmiss significance validation region included in the fit.}
+    \label{fig:ranking_dec31}
+\end{figure}
+
+It was proposed to transform the low \ETmiss significance validation region into a control region to constrain the jets faking photons background, and this was implemented in the fit.
+The argument for this was that if the low \ETmiss significance validation region is stable and well modeled, it is then safe to rerun the fit with this region included as a control region, which would help constrain the jets faking photons background and reduce its impact on the fit results.
+As seen in Fig.~\ref{fig:pre_post_VR}, the fit confirms that the low \ETmiss significance validation region is stable, and can be safely used as a control region.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/LowMETSigVR_dec31.pdf}
+    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/LowMETSigVR_postFit_dec31.pdf}
+    \caption{Prefit (left) and postfit (right) distributions of the transverse mass $m_T$ in the low \ETmiss significance validation region. The fit confirms that the low \ETmiss significance region is stable, and can be safely used to constrain the jets faking photons background.}
+    \label{fig:pre_post_VR}
+\end{figure}
+
+The low \ETmiss significance control region was then included in the fit, and studied with data and asimov data.
+Postfit distributions of the low \ETmiss significance control region can be seen in Fig.~\ref{fig:cr_postfit}.
+The background expectations are stable with all configurations of the fit, and the data is well modeled.
+It can be seen in Fig.~\ref{fig:ranking_jets} that the jets faking photons fake factor uncertainty is better constrained, and the correlations with the signal strength and the normalization factors are reduced.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/LowMETSigVR_postFit.pdf}
+    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/LowMETSigVR_postFit_asimov.pdf}
+    \caption{Postfit distributions of the transverse mass $m_T$ in the low \ETmiss significance control region with data (left) and Asimov data (right). The background expectations are stable with all configurations of the fit, and the data is well modeled.}
+    \label{fig:cr_postfit}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.35\textwidth]{../images/dark_photon/images/tim_fit/Ranking_BRHyyd_Breakdown.pdf}
+    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/CorrMatrix.pdf}
+    \caption{Ranking of the nuisance parameters in the fit, showing the impact of each nuisance parameter on the signal strength $\mu$ (right). Correlation matrix of the fit parameters, showing the correlations between the signal strength $\mu$ and the normalization factors of the backgrounds (left). Both plots are with the low \ETmiss significance control region included in the fit.}
+    \label{fig:ranking_jets}
 \end{figure}
