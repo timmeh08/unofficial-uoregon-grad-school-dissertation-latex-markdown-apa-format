@@ -57,12 +57,19 @@ Validation regions (VRs) can also be defined to check the modeling of the backgr
 They are constrained by the fit, but the fit parameters are used to check for closure in the region.
 The various regions used in the dark photon analysis are described in more detail in section \ref{sec:selections}.
 Prefit and postfit distributions can be produced to visualize the agreement between the data and the fitted model in all regions, as well as the impact of the systematic uncertainties on the fit results.
+Diagnostic plots such as the ranking of the nuisance parameters and the correlation matrix can be produced to understand the impact of each systematic uncertainty on the fit results and the correlations between the parameters.
+When two or more parameters are correlated, checking if the correlation is expected based on the analysis or the fit configuration is important, as unexpected correlations could indicate issues with the fit or the modeling of the systematic uncertainties.
+In the ranking, the impact of each nuisance parameter on the signal strength $\mu$ is shown, which indicates how much the signal strength would change if that nuisance parameter were fixed to its prefit value.
+Understanding which systematics have the largest impact on the POI or the fit results can help identify areas of improvement in the analysis, or allow for corrections to the fit configuration or the modeling of the systematic uncertainties.
+Pull plots can also be produced to show the pulls of the fitted parameters, which indicate how much the fitted values deviate from their expected values based on the input MC templates and the data.
+Ideally, the nuisance parameters should center around zero, and can be slightly constrained by the fit, but they should not be pulled to extreme values, which could indicate issues with the fit configuration or the modeling of the systematic uncertainties.
 Expected or observed limits on the POI can be extracted from the fit, providing a quantitative measure of the sensitivity of the analysis on the Higgs to photon and dark photon decay.
+Examples of the various diagnostic plots and fit results will be shown in the next section, where a walkthrough of the fitting procedure in the dark photon analysis will be provided.
 
 \subsection{Walkthrough of the dark photon fit}
 
 This section provides a walkthrough of the fitting procedure in the dark photon analysis, using the TRExFitter framework and the likelihood function described above.
-Note that theoritical uncertainties are not included in the plots shown in this section, but they are included in section FILL IN LATER for the final fit results of the analysis.
+Note that theoretical uncertainties are not included in the plots shown in this section, but they are included in section FILL IN LATER for the final fit results of the analysis.
 There are two fits conducted in the dark photon analysis: a signal-plus-background fit that is blinded, and a signal-plus-background fit that is unblinded.
 Fitting is performed in bins of transverse mass $m_T$, calculated using the photon and the \ETmiss.
 The blinded fit is performed on Asimov data in the signal region, with real data in the control regions.
@@ -95,7 +102,7 @@ An example of the prefit distributions in the CRs can be seen in Fig.~\ref{fig:c
     \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/OneMuCR_dec31.pdf}
     \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/TwoMuCR_1bin_dec31.pdf}
     \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/LowMETSigCR_dec31.pdf}
-    \caption{Prefit distributions of the transverse mass $m_T$ in the control regions, with Asimov data.}
+    \caption{Prefit distributions of the transverse mass $m_T$ in the control regions.}
     \label{fig:cr_prefit}
 \end{figure}
 
@@ -133,6 +140,7 @@ The low \ETmiss significance control region was then included in the fit, and st
 Postfit distributions of the low \ETmiss significance control region can be seen in Fig.~\ref{fig:cr_postfit}.
 The background expectations are stable with all configurations of the fit, and the data is well modeled.
 It can be seen in Fig.~\ref{fig:ranking_jets} that the jets faking photons fake factor uncertainty is better constrained, and the correlations with the signal strength and the normalization factors are reduced.
+Along with the low $\delta\phi(E^{miss}_T, E^{\gamma}_T)$ VR as described in section~\ref{sec:selections}, the low \ETmiss significance control region also serves as a cross check of the modelling of the jets faking photons background and the \ETmiss significance variable.
 
 \begin{figure}[htbp]
     \centering
@@ -146,6 +154,20 @@ It can be seen in Fig.~\ref{fig:ranking_jets} that the jets faking photons fake 
     \centering
     \includegraphics[width=.35\textwidth]{../images/dark_photon/images/tim_fit/Ranking_BRHyyd_Breakdown.pdf}
     \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/CorrMatrix.pdf}
-    \caption{Ranking of the nuisance parameters in the fit, showing the impact of each nuisance parameter on the signal strength $\mu$ (right). Correlation matrix of the fit parameters, showing the correlations between the signal strength $\mu$ and the normalization factors of the backgrounds (left). Both plots are with the low \ETmiss significance control region included in the fit.}
+    \caption{Ranking of the nuisance parameters in the fit after including the low \ETmiss significance control region, showing the impact of each nuisance parameter on the signal strength $\mu$ (right). Correlation matrix of the fit parameters, showing the correlations between the signal strength $\mu$ and the normalization factors of the backgrounds (left). Both plots are with the low \ETmiss significance control region included in the fit.}
     \label{fig:ranking_jets}
+\end{figure}
+
+Another check of how the fit compares with and without the low \ETmiss significance control region is to look at the normalization factor pulls of the backgrounds.
+Prefit values are always at 1, and are constrained by data in the fit. 
+Even though the two normalization factors should mostly be constrained by the one and two muon control regions, as said above, there were correlations between the backgrounds, and the jets faking photons background had a large impact on the fit results.
+Now that the jets faking photons background is better constrained, the normalization factors should still be consistent with the values obtained without the low \ETmiss significance control region.
+This is indeed the case, as seen in Fig.~\ref{fig:pulls}, where the normalization factor pulls of the $W\gamma$ and $Z\gamma$ backgrounds are consistent between the fit with and without the low \ETmiss significance control region.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/NormFactors_CR.pdf}
+    \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/NormFactors_dec31.pdf}
+    \caption{Normalization factor pulls of the $W\gamma$ and $Z\gamma$ backgrounds with the low \ETmiss significance control region included in the fit (left) and without it (right). The normalization factors are consistent between the two fits, showing that the inclusion of the low \ETmiss significance control region does not bias the fit results.}
+    \label{fig:pulls}
 \end{figure}
