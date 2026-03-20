@@ -1,0 +1,25 @@
+The physics of the dark photon analysis necessarily creates a challenging environment for vertex tagging.
+In the ggF production mode, the observable signature is a photon, \ETmiss, and less than four initial state radiation jets.
+This is a low track multiplicitiy environment, and tradition vertex tagging techniques are shown to be not as efficient, as described in section~\ref{sec:vertex}.
+Briefly, the vertex that is selected as the primary vertex is the one with the highest sum of track \pt squared, $\sum p_{T}^2$.
+The method is robust and performs well in high track multiplicity environments, but is shown to be less efficient in a low track multiplicity environment, such as the dark photon analysis. 
+In this section, preliminary studies are shown using a neural network classifier approach to improve the vertex tagging efficiency for a future iteration of the dark photon analysis, potentially a full Run 3 search.
+
+\subsection{Current vertex tagging performance and motivation}
+
+As stated above, the standard ATLAS hard-scatter vertex selection chooses the vertex with the highest $\sum p_{T}^2$ of associated tracks as the primary vertex.
+In Run 3 with a $$\langle \mu \rangle$$ of 60, there are multiple reconstructed vertices per event, each built from at least two tracks, and a transverse momentum of at least 400 MeV.
+The final state of the dark photon analysis is a photon + \ETmiss, and as a result, the track activity is low.
+This is mainly due to the absence of charged leptons or jets in the final state.
+Relying on the standard vertex tagging method can lead to a pile-up vertex, the result of multiple soft scatter interactions, being incorrectly identified as the primary vertex since it may have a higher $\sum p_{T}^2$ than the actual hard-scatter vertex.
+This misidentification can lead to a significant inaccuracy in the \ETmiss calculation, as seen in Fig.~\ref{fig:etmiss_misidentification}, and can degrade the overall sensitivity of the search for dark photons.
+When the primary vertex is misidentified, pile-up jets can be incorrectly associated with the hard-scatter vertex, leading to an overestimation of the \ETmiss.
+This motivates the need for improved vertex tagging techniques that can better distinguish between the hard-scatter vertex
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../images/dark_photon/vertexing/fake_met.png}
+    \caption{Diagram of a hard scatter jet and photon and a pile-up vertex with a jet, with the hard scatter vertex correctly identified as the primary vertex (left) and incorrectly identified as the pile-up vertex (right). The misidentification of the primary vertex leads to a significant miscalculation of the \ETmiss.}
+    \label{fig:etmiss_misidentification}
+\end{figure}
+
