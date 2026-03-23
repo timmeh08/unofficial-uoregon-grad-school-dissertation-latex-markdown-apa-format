@@ -8,13 +8,12 @@ In this section, preliminary studies are shown using a neural network classifier
 \subsection{Current vertex tagging performance and motivation}
 
 As stated above, the standard ATLAS hard-scatter vertex selection chooses the vertex with the highest $\sum p_{T}^2$ of associated tracks as the primary vertex.
-In Run 3 with a $$\langle \mu \rangle$$ of 60, there are multiple reconstructed vertices per event, each built from at least two tracks, and a transverse momentum of at least 400 MeV.
+In Run 3 with a $\langle \mu \rangle$ of 60, there are multiple reconstructed vertices per event, each built from at least two tracks, and a transverse momentum of at least 400 MeV.
 The final state of the dark photon analysis is a photon + \ETmiss, and as a result, the track activity is low.
 This is mainly due to the absence of charged leptons or jets in the final state.
 Relying on the standard vertex tagging method can lead to a pile-up vertex, the result of multiple soft scatter interactions, being incorrectly identified as the primary vertex since it may have a higher $\sum p_{T}^2$ than the actual hard-scatter vertex.
 This misidentification can lead to a significant inaccuracy in the \ETmiss calculation, as seen in Fig.~\ref{fig:etmiss_misidentification}, and can degrade the overall sensitivity of the search for dark photons.
 When the primary vertex is misidentified, pile-up jets can be incorrectly associated with the hard-scatter vertex, leading to an overestimation of the \ETmiss.
-This motivates the need for improved vertex tagging techniques that can better distinguish between the hard-scatter vertex
 
 \begin{figure}[htbp]
     \centering
@@ -22,4 +21,57 @@ This motivates the need for improved vertex tagging techniques that can better d
     \caption{Diagram of a hard scatter jet and photon and a pile-up vertex with a jet, with the hard scatter vertex correctly identified as the primary vertex (left) and incorrectly identified as the pile-up vertex (right). The misidentification of the primary vertex leads to a significant miscalculation of the \ETmiss.}
     \label{fig:etmiss_misidentification}
 \end{figure}
+
+How often the primary vertex is misidentified in the dark photon analysis varies, with up to 30 percent of signal events and 90 percent of $\gamma$ + jets background events incorrectly tagged with preselections applied.
+Misidentification presents a gaussian distributed background if the reconstructed z position of the primary vertex is plotted against the true z position of the hard-scatter vertex, as shown in Fig.~\ref{fig:vertex_misidentification}.
+It appears that either the correct vertex is identified exactly, or a random pile-up vertex is identified, leading to a gaussian distribution around the diagonal line representing perfect vertex tagging.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/pv_baseline_vs_truth_ggHyyd.pdf}
+    \caption{The reconstructed z position of the primary vertex plotted against the true z position of the hard-scatter vertex for signal events. The diagonal line represents perfect vertex tagging, while the gaussian distribution around the diagonal line represents misidentification.}
+    \label{fig:vertex_misidentification}
+\end{figure}    
+
+With a \ETmiss cut of 100 GeV in the signal region, this leads to a significant amount of background events entering the signal region, seen in Fig.~\ref{fig:etmiss_misidentification}, which can degrade the sensitivity of the analysis.
+This motivates the need for improved vertex tagging techniques that can better distinguish between the hard-scatter vertex.
+
+\subsection{Preliminary studies with a neural network classifier}
+
+To address the issue of vertex misidentification for the next iteration of the dark photon analysis, preliminary studies have been conducted using a neural network classifier approach.
+The goal of this approach is to improve the vertex tagging efficiency by training a neural network to distinguish between the hard-scatter vertex and pile-up vertices based on various features of the vertices, while also taking into account the geometic information from the photon showers in the calorimeter.
+The reconstructed photon showers in the first and second layers of the calorimeter are used in combination with the top three primary vertex candidates ordered in $\sum p_{T}^2$.
+A linear fit is then performed using the z and R positions of the photon showers and the z positions of the three primary vertex candidates to extract a $\chi^2$ value as an input to the neural network, also called a ``geometric input" to the neural network.
+This fitting method can be seen in the diagrams in Fig.~\ref{fig:vertexing_fit}, showing the 2 layers of the EM calorimeter, the photon showers, and the three primary vertex candidates.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/vertexing_fit.png}
+    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/fit_goodreco6.png}
+    \caption{Diagram of the linear fit performed using the z and R positions of the photon showers and the z positions of the three primary vertex candidates (left). Actual line of best fit example for a signal event (right). The star is the true vertex, and the $\chi^2$ value from this fit is used as an input to the neural network classifier.}
+    \label{fig:vertexing_fit}
+\end{figure}
+
+A supervised MLP classifier from scikit-learn is used for this preliminary study, and the features used for training are listed in Table~\ref{tab:nn_features}.
+
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Feature & Description \\
+        \hline
+        $log(\sum p_{T}^2)$ & Logarithm of the sum of the squared transverse momentum of tracks associated with the vertex \\
+        $N_{\text{tracks}}$ & Number of tracks associated with the vertex \\
+        $z_{\text{vertex}}$ & z position of the vertex \\
+        $\gamma$ pointing = $\frac{z_\gamma - z_{\text{vertex}}}{\sigma_{z_\gamma}}$ & Photon pointing variable \\
+        $\Delta E^{miss}_T$ & Difference between \ETmiss calculation with and without pile-up jets \\
+        $\chi^2$ & Chi-squared value from the linear fit of photon showers and vertex positions \\
+        \hline
+    \end{tabular}
+    \caption{Features used for training the neural network classifier to improve vertex tagging efficiency.}
+    \label{tab:nn_features}
+
+\end{table}
 
