@@ -100,6 +100,11 @@ The $log(\sum p_{T}^2)$ and $\chi^2$ variables also provide significant discrimi
 
 Predicted probabilities from the neural network classifier are used to select the primary vertex candidate with the highest score, and the performance of the classifier is evaluated on the test set.
 These probabilities are plotted for candidates split into correctly identified vertices and incorrectly identified vertices, as shown in Fig.~\ref{probabilities}, for both the training with preselections and without preselections.
+For the $\gamma$ + jets background slice, the classifier shows excellent separation for no preselections, with the majority of true PV candidates having predicted probabilities close to 1.
+With preselections, the separation is still good, especially compared to the stand reconstruction.
+In signal events, there is a decent separation between the true PV candidates and pile-up vertices, but there is a large fraction of candidates centered around a probability of 0.2 without preselections.
+As expected, the preselections clean up the signal events, leading to a grouping of true PV candidates around higher predicted probabilities, while the pile-up vertices are grouped around zero.
+
 
 \begin{figure}[htbp]
     \centering
@@ -107,9 +112,38 @@ These probabilities are plotted for candidates split into correctly identified v
     \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/prob_distribution_ggHyyd.pdf}
     \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/prob_distribution_gammajet_frag_70_140_presel_weighted.pdf}
     \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/prob_distribution_ggHyyd_presel.pdf}
-    \caption{Predicted probabilities from the neural network classifier for candidates split into correctly identified vertices and incorrectly identified vertices, for both the training with preselections (bottom) and without preselections (top), and split by background (left) and signal (right). The classifier shows good separation between correctly identified vertices and incorrectly identified vertices, with correctly identified vertices having higher predicted probabilities.}
+    \caption{Predicted probabilities from the neural network classifier for candidates split into correctly identified vertices and incorrectly identified vertices, for both the training with preselections (bottom) and without preselections (top), and split by background (left) and signal (right). The classifier shows good separation between the true PV candidates and pile-up vertices, especially in the background slice.}
     \label{probabilities}
 \end{figure}
 
-The final performance of the classifier is evaluated using a simple accuracy metric, which is the fraction of events where the primary vertex is correctly identified.
+The final performance of the classifier is evaluated using a simple accuracy metric, which is the percentage of events where the primary vertex is correctly identified.
+These percentages are listed in Table~\ref{tab:nn_performance} for both the training with preselections and without preselections, and compared to the performance of the standard vertex tagging method. % this table is actually a png from another pdf generated from a latex table. 
+With preselections applied, the classifer shows a significant improvement in vertex tagging efficiency, especially in the background slice, where the efficiency increases from ~20\% to ~51\%. 
+In signal events, the efficiency also improves from ~65\% to ~72\%, which is a significant improvement.
+For a preliminary study, these results are very promising, especially in the background rejection potential of the classifier.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{../images/dark_photon/vertexing/table_results.png}
+    \caption{Table of the vertex tagging efficiency for the standard vertex tagging method and the neural network classifier, for both the training with preselections and without preselections, and split by background and signal. The neural network classifier shows a significant improvement in vertex tagging efficiency compared to the standard method, especially in the background slice.}
+    \label{tab:nn_performance}
+\end{figure}
+
+The $\Delta_z$ between the reconstructed primary vertex and the true vertex is also plotted for both the standard vertex tagging method and the neural network classifier, as shown in Fig.~\ref{delta_z}, for the training with preselections, and split by background and signal.
+There is a significant improvement in the $\Delta_z$ distribution for the neural network classifier, with a sharper peak around zero for correctly identified vertices, especially in the background slice, indicating that the classifier is more accurately identifying the primary vertex compared to the standard method.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/delta_z_combined_gammajet_vs_signal.pdf}
+    \caption{The $\Delta_z$ between the reconstructed primary vertex and the true vertex for both the standard vertex tagging method (solid) and the neural network classifier (dashed) with preselections applied, and split by background (red) and signal (blue). The neural network classifier shows a significant improvement in the $\Delta_z$ distribution, with a sharper peak around zero for correctly identified vertices, especially in the background slice.}
+    \label{delta_z}
+\end{figure}
+
+\subsection{Future work and conclusions}
+
+While these preliminary results are promising, there is still work to be done to further optimize the neural network classifier and evaluate its performance in a full analysis context.
+Future work includes exploring different neural network architectures, such as a Boosted Decision Tree (BDT) or a more complex deep learning model, and performing a more detailed evaluation of the classifier's performance in terms of its impact on the overall sensitivity of the dark photon analysis by including more backgrounds.
+Additionally, a more comprehensive metric for performance evaluation would be to run the full particle flow reconstruction and evaluate the \ETmiss resolution and the impact on the signal significance in the analysis.
+With these preliminary studies, a conservative estimate for the improvement in signal sensitivity for the dark photon analysis with the neural network classifier is around ~10\%.
+This is based on the asymptotic scaling of the signal significance with the square root of background reduction over the increase in signal events.
+In conclusion, these preliminary studies show that a neural network approach to vertex tagging has the potential to significantly improve the vertex tagging efficiency in the dark photon analysis for a full Run 3 search.
