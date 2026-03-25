@@ -53,19 +53,22 @@ This fitting method can be seen in the diagrams in Fig.~\ref{fig:vertexing_fit},
     \label{fig:vertexing_fit}
 \end{figure}
 
-A supervised MLP classifier from scikit-learn is used for this preliminary study, and the features used for training are listed in Table~\ref{tab:nn_features}.
-
+\subsubsection{Neural network architecture and training}
+A supervised binary MLP classifier from scikit-learn is used for this preliminary study, and the features used for training are listed in Table~\ref{tab:nn_features}.
+This is a feed-forward network with the task of scoring the three primary vertex candidates, with the highest score being selected as the primary vertex.
+It is important to note that all features are candidate specific except for the $\Delta E^{miss}_T$ and photon pointing, which are the same for all three candidates in an event.
 
 \begin{table}[htbp]
     \centering
-    \begin{tabular}{|c|c|}
+    \small
+    \begin{tabular}{|p{0.34\textwidth}|p{0.58\textwidth}|}
         \hline
         Feature & Description \\
         \hline
         $log(\sum p_{T}^2)$ & Logarithm of the sum of the squared transverse momentum of tracks associated with the vertex \\
         $N_{\text{tracks}}$ & Number of tracks associated with the vertex \\
         $z_{\text{vertex}}$ & z position of the vertex \\
-        $\gamma$ pointing = $\frac{z_\gamma - z_{\text{vertex}}}{\sigma_{z_\gamma}}$ & Photon pointing variable \\
+        $\gamma$ pointing $= \frac{z_\gamma - z_{\text{vertex}}}{\sigma_{z_\gamma}}$ & Photon pointing variable \\
         $\Delta E^{miss}_T$ & Difference between \ETmiss calculation with and without pile-up jets \\
         $\chi^2$ & Chi-squared value from the linear fit of photon showers and vertex positions \\
         \hline
@@ -74,4 +77,39 @@ A supervised MLP classifier from scikit-learn is used for this preliminary study
     \label{tab:nn_features}
 
 \end{table}
+
+The architecture of the neural network consists of two hidden layers with 32 and 16 neurons respectively, using the ReLU activation function, and an output layer with a single neuron using the sigmoid activation function for binary classification.
+Two-class softmax is used as the loss function, and the Adam optimizer is employed for training.
+The probability for class "True PV" is used as the score for each vertex candidate, and the candidate with the highest score is selected as the primary vertex.
+Training is done on 30\% of the available signal and a $p_T$ slice from 70 GeV to 140 GeV of $\gamma$ + jets background events, with the remaining 70\% used for testing and evaluation, with a maximum number of iterations set to 200.
+The background slice of events are weighted.
+Two sets of training are performed: one on events without selections, and one with preselections applied as defined in section~\ref{sec:selection}, to evaluate the performance of the classifier in both scenarios.
+At most, there is one positive candidate per event, closest to the true vertex within .5 mm, else all candidates are labeled as negative.
+As seen in Fig.~\ref{pointing}, the photon pointing variable is a powerful discriminator between the hard-scatter vertex and pile-up vertices, as the pointing for incorrectly identified vertices is much broader than the pointing for correctly identified vertices, which is more peaked around zero.
+The $log(\sum p_{T}^2)$ and $\chi^2$ variables also provide significant discrimination power as expected.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/feature_ph_vtx_gamma_jets.pdf}
+    \caption{Distribution of the photon pointing variable for correctly identified vertices and incorrectly identified vertices in the background slice. The photon pointing variable shows good separation between correctly identified vertices and incorrectly identified vertices, with correctly identified vertices having a more peaked distribution around zero, while incorrectly identified vertices have a broader distribution.}
+    \label{pointing}
+\end{figure}
+
+
+\subsubsection{Preliminary results and performance evaluation}
+
+Predicted probabilities from the neural network classifier are used to select the primary vertex candidate with the highest score, and the performance of the classifier is evaluated on the test set.
+These probabilities are plotted for candidates split into correctly identified vertices and incorrectly identified vertices, as shown in Fig.~\ref{probabilities}, for both the training with preselections and without preselections.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/prob_distribution_gammajet_frag_70_140_weighted.pdf}
+    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/prob_distribution_ggHyyd.pdf}
+    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/prob_distribution_gammajet_frag_70_140_presel_weighted.pdf}
+    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/prob_distribution_ggHyyd_presel.pdf}
+    \caption{Predicted probabilities from the neural network classifier for candidates split into correctly identified vertices and incorrectly identified vertices, for both the training with preselections (bottom) and without preselections (top), and split by background (left) and signal (right). The classifier shows good separation between correctly identified vertices and incorrectly identified vertices, with correctly identified vertices having higher predicted probabilities.}
+    \label{probabilities}
+\end{figure}
+
+The final performance of the classifier is evaluated using a simple accuracy metric, which is the fraction of events where the primary vertex is correctly identified.
 
