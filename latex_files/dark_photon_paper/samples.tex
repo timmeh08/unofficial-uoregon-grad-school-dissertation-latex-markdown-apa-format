@@ -1,0 +1,66 @@
+
+
+This search uses proton--proton (\(pp\)) collision data at a centre-of-mass energy of 13.6 TeV, collected in 2023 and 2024 by the ATLAS experiment. Only data recorded during stable beam conditions and with all sub-detectors operational are considered, corresponding to a total integrated luminosity of $134.6~\mathrm{fb}^{-1}$, with an uncertainty of 1.9\%~\cite{ATL-DAPR-PUB-2025-001}. Events are selected using a dedicated trigger (``analysis trigger'') optimised for the $\gamma+\met$ final state and described in Section \ref{sec:trigger}. In addition, samples with \ee, \ye\ and \ymu\ final states, used for the modelling of the background from electrons misidentified as photons (Sections~\ref{sec:signature},~\ref{sec:fey}) and for the trigger efficiency studies (Section~\ref{sec:trigger}), are selected using a  logical OR of dielectron, single-electron, and single-muon triggers, respectively.
+
+Monte Carlo (MC) simulations are used to model the signal and a subset of the background processes. In particular, among the dominant backgrounds affecting the analysis (described in Section \ref{sec:signature}), those containing genuine photons are largerly based on MC simulations. For the remaining ones, the data-driven methods described in Section~\ref{sec:bkg} are employed, with $W$+jets and $Z$+jets MC samples used as input for the background induced by jets misidentified as photons (Section~\ref{sec:fjy}).
+
+The simulation of the geometry and response of the ATLAS detector is performed using \textsc{Geant4}, and all simulated events are processed through the same reconstruction chain as collision data. The effect of multiple interactions in the same and neighbouring bunch crossings (pile-up, PU), 
+is modeled by overlaying~\cite{SIMU-2020-01} the simulated hard-scattering event 
+with inelastic \(pp\) events generated using \EPOS[2.0.1.4]~\cite{Werner:2005jf} and \PYTHIA[8.308]~\cite{Bierlich:2022pfr}.
+The \EPOS events are generated with the \EPOS LHC tune~\cite{Pierog:2013ria} 
+and the \PYTHIA events with the A3 tune~\cite{ATL-PHYS-PUB-2016-017} 
+and the \NNPDF[2.3lo]~\cite{Ball:2012cx} set of parton distribution functions (PDF).
+\PYTHIA PU events include either a high \pT jet, 
+a prompt photon, or a lepton from a $b$-hadron decay, 
+while events generated using \EPOS are filtered to simulate all remaining PU events in the overlay sample.
+The individual simulations are first reweighted to ensure a smooth connection across jet \pt. The combination is then reweighted to match the distribution of the actual number of interactions per bunch crossing measured in data. 
+ 
+The signal samples include multiple Higgs production channels: the dominant process and main target of the analysis is the ggF channel, but non-negligible contribution arises from the VBF and from the $WH$ and $ZH$ channels. One MC sample for each production mode is generated, with $WH$ production divided into $W^+H$ and $W^-H$. The matrix elements are estimated
+using \POWHEG[v2] \cite{Alioli:2010xd,Frixione:2007vw} at NLO, with the NNPDF3.0 parton density libraries \cite{Martin:2009iq}. The samples are generated with the SM Higgs boson mass of 125 GeV, a width set to 4 MeV and the complex pole scheme turned off. The decay into photon and dark photons, as well as the hadronisation and showering, is simulated using \Pythia [8.245] with the CTEQ6L1 PDF set and the AZNLO tune \cite{Pumplin:2002vw}. The Hidden Valley scenario \cite{Carloni_2010} is used for modelling the $H\to\gamma\gammad$ decay. 
+
+The $V\gamma$ and $V+$jets processes are generated using \Sherpa[2.2.14] generator \cite{Bothmann:2019yzt}, with up to 1 (2) jet at NLO and up to 3 additional jets at LO for $Z\gamma$ and $W\gamma$ ($Z+$jets and $W+$jets). The matrix elements are matched and merged with the \Sherpa parton shower \cite{Schumann:2007mg}, using the MEPS@NLO prescription \cite{Hoeche:2011fd,Catani:2001cc} and the NNPDF3.0 NNLO PDF set \cite{Martin:2009iq} with the dedicated \Sherpa\ tune. 
+The \yjetdirect\ sample is generated at LO using \Pythia[8.186] \cite{Mrenna:2016sih,Sjostrand:2007gs}, and showered using the NNPDF2.3 LO PDF set and the A14 tune. 
+Table \ref{tab:mc_summary} summarises the configurations used for the signal and background MC simulations used in the analysis. 
+%The irreducible background is constituted of processes containing a prompt photon in the final state and genuine missing transverse momentum. These include $Z\gamma$ and $W\gamma$ production, where the vector boson decays either to neutrinos or to charged leptons that are not reconstructed. \textcolor{red}{add simulation description}\\
+
+%Additional background contributions originate from events with misidentified photons and/or non-genuine \ETmiss. Backgrounds with jets misidentified as photons (\jfakey) are mainly due to multi-jets and $\gamma$+jets with fragmentation photons ($\yjetfrag$), as well as $Z$+jets or $W$+jets, to a lesser extent. The $Z(\to ee)$+jets and, mainly, $W(\to e\nu)$+jets processes constitute the dominant contributions to the background due to electrons misidentified as photons (\efakey). In addition to the presence of a non-genuine photon, the multi-jet and $\gamma$+jets samples containing fragmentation photons are also characterised by non-genuine \ETmiss\ arising from jet mismeasurement, from non reconstructed jets outside the detector acceptance, or from hard-scatter jets mistakenly flagged as PU jets and rejected due to an incorrect primary vertex assignment. Both the \jfakey\ and \efakey\ contribution are estimated by means of data-driven techniques. While the \efakey\ estimation does not rely at all on MC simulations, inclusive $W$ and $Z$ MC samples are used as inputs to the \jfakey\ method. \textcolor{red}{add simulation description}\\
+%One last, subdominant, background contribution arises from $\gamma$+jets events with a prompt (direct) photon ($\yjetdirect$), entering the analysis regions exclusively due to the presence of non-genuine \ETmiss. \textcolor{red}{add simulation description}
+
+
+
+\begin{table}[]
+  \centering
+  \scriptsize
+  \caption{The configurations used for event generation of signal and background MC samples. The matrix element (ME) order refers to the order in the strong coupling constant of the perturbative calculation in the MC event generation. PDF refers to the parton density libraries used with the generator. The tune refers to the underlying-event tune of the parton shower model.}
+  \label{tab:mc_summary}
+  \begin{tabular}{lccccc}
+    \toprule\midrule
+    Process & ~~Generator~~ & ~~ME order~~ & ~~PDF~~ & ~~ Parton Shower ~~& ~~Tune~~ \\
+    \midrule
+    $(ggF,VBF,VH)H\to\gamma\gammad$ & \POWHEG[v2] & NLO & PDF4LHC21 & \Pythia [8.245] & AZNLO \\
+    $Z\gamma, W\gamma$ & \Sherpa[v2.2.14] & 0,1j@NLO + 2,3,4j@LO & NNPDF3.0 NNLO & \Sherpa & \Sherpa  \\
+    $Z$+jets, $W$+jets & \Sherpa[v2.2.14] & 0,1,2j@NLO + 3,4,5j@LO & NNPDF3.0 NNLO & \Sherpa & \Sherpa \\
+    $\gamma$(direct)+jets & \Pythia [8.186] & LO & NNPDF2.3 LO & \Pythia [8.186] & A14 \\
+    \midrule
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+
+\section{Analysis trigger}\label{sec:trigger}
+The ``analysis trigger'' combines selections on the photon \pT, the \ETmiss\ and the \mT. At L1, the trigger selects electrons or photons with \pT\ of 26~GeV. The HLT further requires a %50~GeV tight ID photon. 
+50~GeV photon fulfilling tight identification criteria. As the input rate of L1 electrons can reach 20 kHz, a two-stage sequence of algorithms is employed, starting with the ``cell'' \pTmiss\ computed using only the calorimeter cells as input~\cite{TRIG-2019-01}. This fast step is followed by a more sophisticated \pTmiss\ algorithm using particle flow~\cite{PERF-2015-09} constituents   with a dedicated PU subtraction algorithm unique to the HLT (``pfopufit'')~\cite{TRIG-2022-01}. A threshold of 40~GeV is applied for the first ``cell'' \pTmiss\ requirement, while the second ``pfopufit'' step has a threshold of 70~GeV. 
+To further reduce the rate, the trigger requires a minimum \mT\ of $80$~GeV. 
+As muons deposit less than a GeV of energy in the calorimeters, they are invisible to the ``cell'' \pTmiss\ algorithm~\cite{TCAL-2010-01,OrdonezSanz:2009tja}. Furthermore, to preserve the same behaviour in ``pfopufit'', particle flow constituents consistent with muons are removed. Therefore both the ``cell'' and the ``pfopufit'' algorithms are insensitive to the presence of muons, which are treated as invisible in the computation of \pTmiss. This feature allows to use the analysis trigger also to select samples with reconstructed muons in the final state.
+
+The accuracy of the simulation of the analysis trigger has been investigated. The trigger efficiency curve, as a function of reconstructed \pTy, \pTmiss\ and \mT, is studied in \ymu\ final states, using a baseline muon-trigger. The muon is treated as invisible in the computation of \pTmiss\ and \mT. The result is displayed in Figure~\ref{fig:trigger_eff}, where MC simulation and data are compatible within statistical uncertainty. For this reason, no trigger SF is needed.
+
+\begin{figure}[ht]
+    \centering
+    \subfloat[]{\includegraphics[width=0.40\linewidth]{../images/dark_photon_paper/trigger_mt_full.png}\label{fig:trig_mt}}\\
+    \subfloat[]{\includegraphics[width=0.40\linewidth]{../images/dark_photon_paper/trigger_ph_pt_full.png}\label{fig:trig_phpt}}
+    \subfloat[]{\includegraphics[width=0.40\linewidth]{../images/dark_photon_paper/trigger_metnew_full.png}\label{fig:trig_met}}
+    \caption{Trigger efficiency curves as function of \mT\ (\ref{fig:trig_mt}), \pTy\ (\ref{fig:trig_phpt}) and \pTmiss\ (\ref{fig:trig_met}), for data, MC simulation of the dominant background $W\gamma$ and total background. The \textit{baseline} selections are applied together with the selection $\dphimety>1.25$. Events selected by single-muon baseline trigger, containing one photon and one muon treated as invisible in the evaluation of \pTmiss\ and \mT, are used.}
+    \label{fig:trigger_eff}
+\end{figure}

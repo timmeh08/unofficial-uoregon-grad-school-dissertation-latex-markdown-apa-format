@@ -238,3 +238,60 @@
 \providecommand{\ETy}{\ensuremath{m_{T}^{E_\mathrm{T}^{\gamma}}}\xspace}
 \providecommand{\dphimety}{\ensuremath{\Delta\phi(E_\mathrm{T}^\mathrm{miss},E_\mathrm{T}^{\gamma})}\xspace}
 \providecommand{\dphimetj}{\ensuremath{\Delta\phi(E_\mathrm{T}^\mathrm{miss},E_\mathrm{T}^{jet})}\xspace}
+\providecommand{\met}{\ensuremath{p^{\mathrm{miss}}_T}\xspace}
+\providecommand{\ye}{\ensuremath{\gamma e}}
+\providecommand{\ymu}{\ensuremath{\gamma\mu}}
+\providecommand{\ee}{\ensuremath{e^+e^-}}
+\providecommand{\yjetfrag}{\ensuremath{\gamma(\mathrm{frag})\mathrm{+jets}}}
+\providecommand{\yjetdirect}{\ensuremath{\gamma(\mathrm{direct})\mathrm{+jets}}}
+\providecommand{\lowMETsig}{\ensuremath{{\mathrm{low}\ {\mathcal{S}_{E_{\mathrm{T}}^{\mathrm{miss}}}}}}}
+
+\providecommand{\T}{\ensuremath{\texttt{Tight}}}
+\providecommand{\Loose}{\ensuremath{\texttt{Loose}}}
+\providecommand{\Lp}{\ensuremath{{\texttt{Loose}'}}}
+\providecommand{\Lpp}{\ensuremath{{\texttt{Loose}''}}}
+%\providecommand{\isol}{\ensuremath{(isol)}} % could be improved?
+\providecommand{\isol}{\ensuremath{\Upsilon}} % could be improved?
+\providecommand{\ETiso}{\ensuremath{E_\mathrm{T}^\mathrm{cone}}}
+\providecommand{\yNI}{\ensuremath{\gamma^\mathrm{non-isol}}}
+\providecommand{\Data}{\ensuremath{\mathrm{data}}}
+
+\providecommand{\dmet}{\ensuremath{\Delta p_\mathrm{T}^{\mathrm{miss}}}}
+\providecommand{\pTmissvecNoJVT}{\ensuremath{\vec{p}_\mathrm{T,noJVT}^{\mathrm{miss}}}}
+\providecommand{\ETmissNoJVT}{\ensuremath{p_\mathrm{T,noJVT}^{\mathrm{miss}}}}
+\providecommand{\DeltaMET}{\ensuremath{\Delta p_\mathrm{T}^{\mathrm{miss}}}}
+\providecommand{\gammad}{\ensuremath{\gamma_{d}}}
+\providecommand{\anatrigger}{\ensuremath{\left[\gamma\&\&\pTmiss\&\&m_T^{(\gamma;\pTmissvec)}\right]}}
+
+\providecommand{\fakey}{\ensuremath{X\rightsquigarrow\gamma}}
+\providecommand{\jfakey}{\ensuremath{j\rightsquigarrow\gamma}}
+\providecommand{\efakey}{\ensuremath{e\rightsquigarrow\gamma}}
+\providecommand{\fey}{\ensuremath{f_{e\gamma}}}
+\providecommand{\fjy}{\ensuremath{f_{j\gamma}}}
+
+\providecommand{\Htoyyd}{\ensuremath{H\to\gamma\gamma_\mathrm{d}}}
+\providecommand{\SMHtoyyd}{\ensuremath{H_{125}\to\gamma\gamma_\mathrm{d}}}
+
+\providecommand{\ETmissSig}{\ensuremath{\mathcal{S}_{\pTmiss}}}
+\providecommand{\metsig}{\ensuremath{\mathcal{S}_{\pTmiss}}}
+
+\providecommand{\btagged}{\ensuremath{b\text{-tagged}}\xspace}
+
+
+\usepackage{xparse}
+\NewDocumentCommand{\EPOS}{o}{\textsc{EPOS}}
+\NewDocumentCommand{\PYTHIA}{o}{%
+  \IfNoValueTF{#1}{\textsc{Pythia}}{\textsc{Pythia}\,#1}%
+}
+\NewDocumentCommand{\NNPDF}{o}{%
+\IfNoValueTF{#1}{\textsc{NNPDF}}{\textsc{NNPDF}#1}%
+}
+\NewDocumentCommand{\POWHEG}{o}{%
+\IfNoValueTF{#1}{\textsc{Powheg}}{\textsc{Powheg},#1}%
+}
+\NewDocumentCommand{\Pythia}{o}{%
+  \IfNoValueTF{#1}{\textsc{Pythia}}{\textsc{Pythia}\,#1}%
+}
+\NewDocumentCommand{\Sherpa}{o}{%
+  \IfNoValueTF{#1}{\textsc{Sherpa}}{\textsc{Sherpa}\,#1}%
+}

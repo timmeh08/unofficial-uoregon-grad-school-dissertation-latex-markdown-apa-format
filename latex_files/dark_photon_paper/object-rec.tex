@@ -1,0 +1,70 @@
+For each event, primary vertex (PV) candidates 
+are required to have at least two associated tracks with \mbox{\pT > 500 MeV}. Among the reconstructed PV candidates, the hard-scattering (HS) PV is selected as the one with the highest sum of squared transverse momenta of contributing tracks \cite{ATL-PHYS-PUB-2015-026}.
+
+Electrons are reconstructed by matching energy clusters in the ECAL to tracks in the
+ID \cite{EGAM-2018-01,
+PERF-2017-03}. Baseline electrons must satisfy $p_{\mathrm{T}}>10$ GeV and $|\eta|<2.47$ and be consistent with originating from the PV through requirements on the longitudinal and transverse impact parameters, $|z_0\sin(\theta)|<5$~mm and $|d_0/\sigma(d_0)|<5$. All baseline electron candidates are required to satisfy \textit{loose} likelihood-based identification criteria \cite{PERF-2013-03}, based on calorimeter, tracking and combined variables that provide separation between electrons and jets. Selected electrons are further required to satisfy \textit{tight} identification and \textit{tight} isolation requirements.
+
+Muons are reconstructed by matching ID tracks to MS tracks or track segments, by matching ID tracks to calorimeter energy deposits compatible with a minimum-ionizing particle, or by identifying MS tracks
+passing the \textit{loose} requirement and compatible with the interaction point \cite{MUON-2018-03,PERF-2015-10}. Baseline muon candidates must satisfy $p_{\mathrm{T}}>10$ GeV and $|\eta|<2.7$ and \textit{medium} identification criteria. Similar selections on the impact parameter as for electrons are applied, but with $|d_0/\sigma(d_0)| < 3$. Selected muons are further required to satisfy \textit{loose} isolation selections. 
+
+Photon candidates are reconstructed from clustered energy deposits in the ECAL \cite{EGAM-2018-01,
+PERF-2017-03}. Baseline photons must
+satisfy $\pTy>25$ GeV, $|\eta|<2.37$, outside the transition region between the ECAL barrel and endcaps ($1.37< |\eta| < 1.52$). Photon candidates undergo a \T\ identification criterion, based on several requirements on the ``shower shape'' variables~\cite{PERF-2013-04,PERF-2017-02}, that can be grouped into three categories: energy leakage in the HCAL, width in the middle layer of the ECAL, and shape in the strips. 
+Selected photon candidates are additionally required to be isolated: a dimensionless isolation variable is introduced:
+\begin{equation}\label{eq:iso}
+\isol=\dfrac{\ETiso-2450~\MeV}{\pTy},
+\end{equation}
+where \ETiso\ is the transverse energy flow measured by the ECAL in a cone of size $\Delta R=0.4$ around the photon candidate, from which an offset is subtracted in order to centre the distribution around zero. Isolated photons are required to satisfy $\isol<0.022$. 
+Non-isolated photons are used in the evaluation of the background induced by jets misidentified as photons (see Sections~\ref{sec:signature},~\ref{sec:fjy}).
+%background from \jfakey\ (see Section~\ref{sec:fjy}), 
+In this context, a \Loose\ photon selection is also exploited, with relaxed cuts on the HCAL and middle layer, and no strips cuts. Removing \T\ photons from the \Loose\ sample, provides a \Lp\ sample enriched in fake photons from hadronic jets. Further photon selections $\Lpp\subset\Lp$ are introduced by applying to the HCAL and middle layer shower shapes the same cuts as for \T, but no cuts or at most one cut on the strips shower shapes.
+
+Particle flow (PFlow) jets are reconstructed using the anti-$k_t$ algorithm \cite{
+Cacciari:2008gp}, as implemented in FastJet \cite{
+Cacciari:2006sm}, with a radius parameter
+$R = 0.4$. The algorithm takes PFlow objects as inputs, which combine measurements from the ATLAS ID and the calorimeters \cite{PERF-2015-09}.
+Central jets ($|\eta| < 2.5$) are classified as originating from the HS interaction using a neural-network-based jet-vertex-tagger (NN-JVT) (evolution of the JVT described in Ref. \cite{PERF-2014-03}), while a forward jet vertex tagging (fJVT) algorithm \cite{PERF-2016-06} is applied to forward jets ($|\eta| > 2.5$).
+Jets containing b-hadrons (\bjets) are identified using a Graph Neural Network tagger with 85\% efficiency b-tagging efficiency \cite{gnn-btagging}.
+In order to suppress the background originating from detector noise, hardware issues, beam-induced background or cosmic-ray muons, events containing jets failing \textit{loose} jet-quality criteria are rejected \cite{ATLAS-CONF-2012-020}. 
+
+Hadronically decaying $\tau$-leptons ($\tau_\mathrm{had}$) are seeded by anti-$k_t$ jets with R=0.4 and identified using a recurrent neural network algorithm that uses
+as inputs tracks and calorimeter clusters associated to $\tau_\mathrm{had}$ candidates, as well as high-level discriminating
+variables \cite{ATL-PHYS-PUB-2019-033}. Baseline $\tau_\mathrm{had}$ are required to satisfy a \textit{Medium} identification working point and have $\pT>20$ GeV and $|\eta| < 2.5$.  
+%No SF related to the trigger efficiency is applied, since good agreement between data and MC is observed, within statistical uncertainties. 
+%The study is performed using a sample selected with the logical OR of single-muon triggers, containing one photon and one muon, where the muon is treated as invisible for the evaluation of $\pTmiss$ and $\mT$.
+%\\
+
+The $\pTmissvec$, with magnitude $\pTmiss=|\pTmissvec|$, is defined as the negative vector sum of the transverse momenta of all \textit{selected} objects and of the “soft term” estimated from charged PFlow objects associated with the primary vertex and not matched to any of the hard reconstructed objects~\cite{METPERF_2025,JETM-2020-03,Balunas:2023fpu}. In the \pTmissvec\ calculation, a NN-JVT selection is applied to the jets for PU subtraction. An alternative \pTmissvec\ with no PU subtraction, denoted as \pTmissvecNoJVT, is also exploited in this analysis to help tagging events with misidentified PV, as explained in section \ref{sec:selections}. In addition, a key quantity to identify events with fake \ETmiss\ is the \ETmiss\ significance $\metsig=\frac{\ETmiss}{[\sigma^2_{L}(1-\rho_{LT}^2)]^{1/2}}$, where $\sigma_L$ is the  total standard deviation in the longitudinal plane with respect to $\ETmiss$, and $\rho_{LT}$ is the correlation factor between the longitudinal and transverse measurements. 
+
+Scale factors (SFs) are derived in data control samples for all reconstructed objects and applied to MC simulations to correct the identification, reconstruction, and isolation efficiencies to match those observed in data. After the reconstruction of all physics objects, a sequential overlap removal procedure (Table~\ref{tab:or}) is applied to resolve ambiguities by keeping only one object in cases of overlap, based on $\Delta R$ matching or shared ID tracks, according to a predefined priority.
+
+\begin{table}[ht]
+  % \resizebox{\textwidth}{!}{
+  \caption{Overview of the sequential overlap removal procedure applied to reconstructed objects and the corresponding matching criteria based on the $\Delta R$ separation and shared Inner Detector (ID) tracks.}%
+  \label{tab:or}
+  \centering 
+  \begin{tabular}{lll}
+    \toprule\midrule
+    Remove & Keep & Matching criteria \\
+    \midrule
+    Muon     	& Electron & muon with calorimeter deposits and shared ID track \\
+    Electron 	& Muon     & shared ID track \\
+    Jet      		& Electron & \(\Delta R < 0.2\) \\
+    Electron 	& Jet      & \(0.2\ < \Delta R < 0.4\) \\
+    Electron	& Electron & shared ID track,  electron with lower \pT\ removed\\
+    Jet      		& Muon     & number of tracks < 3 and \(\Delta R < 0.2\) \\
+    Muon 	    & Jet      & \(0.2\ < \Delta R < 0.4\) \\
+    Tau      	 	& Electron & \(\Delta R <\) 0.2 \\
+    Tau       	 	& Muon     & \(\Delta R <\) 0.2 \\
+    Jet      		& Tau      & \(\Delta R < 0.2\) \\
+    Photon   	& Electron & \(\Delta R < 0.4\) \\
+    Photon   	& Muon     & \(\Delta R < 0.4\) \\
+    Jet   	& Photon      & \(\Delta R < 0.4\) \\
+ %   Fat-jet  		& Electron & \(\Delta R < 1.0\) \\
+  %  Jet      		& Fat-jet  & \(\Delta R < 1.0\) \\
+  \midrule
+    \bottomrule
+  \end{tabular}
+  % }
+\end{table}

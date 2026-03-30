@@ -1,0 +1,307 @@
+%The background can be classified in two main categories, depending on whether the observed photon is genuine or not (``fake photon''). A more accurate classification leads to the following categories:
+% \begin{itemize}
+% \item {\bf irreducible}, i.e. with one genuine photon, genuine \pTmiss, and no leptons: this comes from $Z(\to\nu\nu)\gamma$ processes;
+% \item {\bf genuine photon and lost lepton(s)}, coming from $W(\to\ell\nu)\gamma$ and $Z(\to\ell\ell)\gamma$ events;
+% \item {\bf genuine photon and fake \pTmiss}, whose main contribution is from $\gamma+\mathrm{jets}$ processes;
+% \item {\bf electron faking photon}, \efakey, mostly coming from $W(\to e\nu)+\mathrm{jets}$ events;
+% \item {\bf jet faking photon}, \jfakey, coming from $Z(\to\nu\nu)+\mathrm{jets}$ and multijets processes.
+% \end{itemize}
+% \textcolor{red}{fix intro}
+The analysis strategy is based on a binned maximum-likelihood fit to the $m_{\mathrm{T}}$ distribution, performed in the SR and in the three CRs summarised in Table~\ref{tab:region_summary}. %All the analysis regions, including the Probe Regions (PR) and Validation Regions (VR) exploited for the modeling and validation of \jfakey\ and \efakey\ background contributions, are illustrated in Figure \ref{fig:regions_sketch}.} 
+
+The $1\mu$~CR and the $2\mu$ CR are employed to normalise the MC simulations of $W\gamma$ and $Z\gamma$ respectively to data. They are defined similarly to the SR, but requiring one or two selected muons. To emulate the SR kinematics, muons are treated as invisible in the \ETmiss\ reconstruction. In the $2\mu$ CR, some SR selections are loosened or removed to increase the available statistics. The contribution from the  \yjetdirect\ background due to fake \ETmiss\ is subdominant, accounting for few percent of the total, and therefore it is estimated purely from MC.
+
+The background from fake photons, either \efakey\ or \jfakey, is estimated in all the analysis regions by rescaling data in probe regions (PR), illustrated in Figure~\ref{fig:regions_sketch}, by fake factors evaluated as described in Sections \ref{sec:fey} and \ref{sec:fjy}. For \efakey\ background, electron PRs are defined for each analysis region, replacing the selected photon by a selected electron, passing a single electron trigger. Similarly, for \jfakey\ background, non-isolated PRs are introduced, by requiring the photon to be non isolated, \yNI, with $\isol>0.1$ as defined in eq.~\ref{eq:iso}. Due to the large systematic uncertainty affecting the \jfakey\ component, the low~\metsig~CR, defined by requiring $2 <\metsig <6 $, is included in the fit to provide an additional constraint on this background. The \efakey\ contribution is further constrained in the low \mT\ region of the SR, dominated by $W(e\nu)+$jets events with the electron being misidentified as a photon, yielding a \mT\ value close to the $W$ mass. In particular, the low \mT\ validation vegion (VR), with $80<\mT<90$~GeV, is well depleted of signal, and it is used also to validate the \efakey\ background before performing the fit. In addition, a low $\Delta\phi$ VR, with $0.8<\dphimety<1.1$, provides a sample orthogonal both to the SR and the low \metsig\ CR to validate the modeling of the \jfakey\ background also at high \metsig\ values. The two VRs are illustrated in Figure~\ref{fig:regions_sketch}.
+% \textcolor{red}{The background from fake photons is treated with a fake factor method. A generic object $X$ (be it an electron or a jet) may be reconstructed as a photon (\fakey) or as something else: depending on what happens, it is called signal-like-object (SLO), or background-like-object (BLO). The fake factor is defined as 
+% $f=\dfrac{N(X\rightsquigarrow\mathrm{SLO})}{N(X\rightsquigarrow\mathrm{BLO})}$.
+% A probe region (BLO-PR) is defined with the same criteria as the SR, except that the isolated photon is replaced by the BLO. Then, all events in the BLO-PR are multiplied by $f$ to infer the amount of SLOs in the SR.
+% For both \efakey\ and \jfakey, the SLO is an isolated \T\ photon, $\gamma$; the BLO is either an electron $e$ or a non-isolated \T\ photon $\yNI$, respectively for \efakey\ or \jfakey. The corresponding fake factors are defined as
+% \begin{equation}
+%     \fey=\frac{N(\efakey)}{N(e\rightsquigarrow e)}
+%     ~~~~;~~~~
+%     \fjy=\frac{N(\jfakey)}{N(j\rightsquigarrow\yNI)}
+% % \label{eq:def-fey-fjy}
+% \end{equation}
+% Both are estimated with data-driven techniques, and applied to the related BLO-PR, as explained in \ref{sec:fey} and \ref{sec:fjy}.
+% }
+%\begin{table}[ht]
+%\caption{
+%Definition of BLO and SLO for the computation of the fake factor, and in the BLO-PR and SR. Here $\gamma$ means reconstructed photon passing Tight identification and isolation (unless ``nonisol'' appears), and $e$ means selected electron; ``analysis'' under the ``trigger'' columns means analysis trigger, which requires a trigger-level tight photon.
+%}
+%\label{tab:SLO-BLO}
+%\centering
+%\begin{tabular}{c||cc|cc||cc|cc}
+%    & \multicolumn{4}{c||}{$f$ computation} & \multicolumn{4}{c}{SLO estimation in SR} \\
+%    & SLO & SLO trigger & BLO & BLO trigger & SR & SR trigger & BLO-PR & BLO-PR trigger \\
+%    \hline
+%    \efakey & $\gamma$ & --- & $e$ & $e$ & $\gamma$ & analysis & $e$ & analysis \&\& $e$ \\
+%    \jfakey & $\gamma$ & analysis & $\yNI$ & analysis & $\gamma$ & analysis & $\yNI$ & analysis
+%\end{tabular}
+%\end{table}
+
+\subsection{Estimation of \efakey}
+\label{sec:fey}
+
+\begin{table}[htbp]
+\caption{Objects and data samples used for the \efakey\ background. In the electron~probe region (PR) an electron replaces the photon.}
+\label{tab:obj-samples-efakey}
+\centering
+\begin{tabular}{ccc|cc}
+\toprule
+\midrule
+\multicolumn{3}{c|}{Evaluation of \fey} & \multicolumn{2}{c}{Electron PR} \\
+\midrule
+$\gamma$ & from \ye\ & $e$-trigger & \\
+$e$ & from both $e^+,~e^-$ & $ee$-trigger & 1 $e$ and no $\gamma$ & $e$-trigger \&\& analysis trigger \\
+\midrule\bottomrule
+\end{tabular}
+\end{table}
+
+The fake factor for \efakey\ estimation is defined as:
+\begin{equation}
+    \fey=\frac{N(\efakey)}{N(e\rightsquigarrow e)}.
+\label{eq:def-fey-fjy}
+\end{equation}
+
+The values of \fey\ are computed directly from data, exploiting the $Z\to\ee$ process, where genuine photons are absent. 
+$N(\efakey)$ is counted from reconstructed \ye\ final state selected by a single electron trigger, while $N(e\rightsquigarrow e)$ is counted from both $e^+$ and $e^-$ in \ee\ final state selected by a dielectron trigger --- see Table~\ref{tab:obj-samples-efakey}. Both counts are collected in an invariant mass window $m_{inv}\in[80,100]~\GeV$ about the $Z$-peak.
+
+% \textcolor{red}{
+% \begin{table}[ht]
+% \caption{Definition of SLO, BLO and event selections for \efakey\ evaluation and application.}
+% \label{tab:SLO-BLO-efakey}
+% \centering
+% \begin{tabular}{cc|cc|cc}
+% \hline
+% \multicolumn{4}{c|}{\efakey\ evaluation} & \multicolumn{2}{c}{SR and BLO-PR} \\
+% \multicolumn{2}{c|}{object} & event selection & trigger & event selection & trigger \\
+% \hline\hline
+% SLO & $\gamma$ & $\gamma e$ & $e$-trigger & SR & analysis trigger \\
+% \hline
+% BLO & $e$ & $\ee$ & $ee$-trigger & $e$-PR & analysis trigger \&\& $e$-trigger \\
+% & & & & ($\gamma$ replaced by $e$) \\
+% \hline
+% \end{tabular}
+% \end{table}
+% }
+% \textcolor{red}{The values of \fey\ are extracted directly from data, using $Z\to\ee$ events, where genuine photons are absent. The BLOs and SLOs are collected respectively from both the \epm\ in reconstructed \ee\ final states, and from the $\gamma$ in reconstructed $\gamma\epm$ final states --- see Table~\ref{tab:SLO-BLO-efakey}. Data are selected by di-electron and single-electron triggers, such that the BLO always passes an electron-trigger, while the SLO does not undergo any trigger selection. Both BLOs and SLOs are collected in an invariant mass window $m_{inv}\in[80,100]~\GeV$ about the $Z$-peak.
+% }
+
+While the \ee\ events provide a rather pure sample of $Z\to\ee$, the $\gamma e^{\pm}$ events contain a large amount of genuine photons, mostly from the $W(\to e^{\pm}\nu)\gamma$ process, which needs to be subtracted. This is achieved by exploiting the lepton universality, and selecting a sample of $\gamma\mu$ events. To account for the different reconstruction efficiency for $e$ and $\mu$, the invariant mass spectrum of the $\gamma\mu$ events is normalised to that of the $\gamma e$ on the two sidebands $m_{inv}<70~\GeV$ and $m_{inv}>110~\GeV$, as displayed in Figure~\ref{fig:efakey_minv}. 
+The master formula of the fake factor is therefore
+\begin{equation}
+\fey=\dfrac{N_{\gamma e}^\mathrm{peak}-N_{\gamma\mu}^\mathrm{peak}\dfrac{N_{\gamma e}^\mathrm{side}}{N_{\gamma\mu}^\mathrm{side}}}{N_{ee}^\mathrm{peak}}.
+\label{eq:calc-fey}
+\end{equation}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{../images/dark_photon_paper/canvas_paper_ye_ymu_rebinned.pdf}
+    \caption{Invariant mass for reconstructed $\gamma e$ and $\gamma\mu$ pairs from data, the latter being rescaled such to match its sidebands to those of the former. The vertical dashed lines limit the window used to compute \fey, while the vertical dotted lines mark the sidebands used for the renormalization of the $\gamma\mu$ distribution.}
+    \label{fig:efakey_minv}
+\end{figure}
+
+The value of \fey\ is computed, separately for 2023 and 2024, as a function of \etay, as it appears flat versus \pTy. The values of \fey\ are weakly dependent on the choice of the peak width and on the sidebands: each variation is treated as a systematic uncertainty, and are all combined in quadrature with the statistical uncertainty. The values of \fey\ range between $\sim0.027$ in the barrel, and $\sim0.054$ in the endcaps, with overall relative uncertainties between $3\%$ and $8\%$.
+
+%The result is displayed in Table~\ref{tab:fey}.
+
+% \begin{table}[ht]
+% \caption{Values of \fey}
+% \label{tab:fey}
+% \centering
+% \begin{tabular}{c|cccc}
+% \hline
+% $|\eta|$ range & $[0.00,0.60]$ & $[0.60,1.37]$ & $[1.52,1.81]$ & $[1.81,2.37]$ \\
+% \hline
+% year 2023 & $0.0270\pm0.0018$ & $0.0282\pm0.0017$ & $0.0541\pm0.0042$ & $0.1019\pm0.0048$ \\
+% year 2024 & $0.0373\pm0.0013$ & $0.0287\pm0.0010$ & $0.0486\pm0.0040$ & $0.0925\pm0.0030$ \\
+% \hline
+% \end{tabular}
+% \end{table}
+
+
+The $e$-PR must fulfil both the analysis trigger, to guarantee the same event topology as the SR and CRs, and the electron trigger, for consistency with the \fey\ evaluation --- as detailed in Table~\ref{tab:obj-samples-efakey}. However, the \fey\ evaluation does not consider the analysis trigger, therefore a further correction is needed, to account for the efficiency of the analysis trigger on reconstructed $\gamma$ and $e$:
+\begin{equation}
+\fey^\mathrm{corr} = \fey \frac{\epsilon_\gamma^\mathrm{trig}}{\epsilon_e^\mathrm{trig}}.
+\label{eq:calc-fey-corr}
+\end{equation}
+
+% \textcolor{red}{The electron probe region, $e$-PR, is defined similarly to the SR, with the requirement of $e$ instead of $\gamma$, and must fulfil both the analysis trigger, to guarantee the same event topology as the SR, and the electron trigger, for consistency with the BLO selection in the \fey\ evaluation --- see Table~\ref{tab:SLO-BLO-efakey}. On the opposite, in the evaluation of \fey, the BLO fulfills only the electron trigger, and the SLO is not subject to any trigger: therefore the obtained values of \fey\ are not directly usable for the $e$-PR, and a further correction must be introduced, to account for the effect of the analysis trigger on both the BLO and the SLO:}
+
+The only trigger requirement affecting the evaluation of \fey\ is that on the reconstructed photon, therefore the effects of the \pTmiss\ and \mT\ selections need to be disentangled.
+This is achieved by applying offline cuts on \pTmiss\ and \mT\ higher than the trigger-level cuts, to ensure being in the plateau of the trigger efficiency turn-on curves. 
+% : the offline cuts values were chosen such to maximise the statistics, but within the plateau of the trigger efficiency curve.
+To evaluate $\epsilon_\gamma^\mathrm{trig}$, $\gamma\mu$ events are selected from data by a muon trigger are used. The muon is treated as invisible in the offline evaluation of \pTmiss, and requirements $\ETmissInvMuon>150~\GeV$ and $(\mT)^{\mu\textrm{-inv}}>100~\GeV$ are applied. The trigger-level evaluation of \pTmiss\ does not consider muons, therefore they are treated as invisible also by the analysis trigger. The fraction of events that pass the analysis trigger provides the value of $\epsilon_\gamma^\mathrm{trig}$.
+Similarly, $\epsilon_e^\mathrm{trig}$ is evaluated on events with an electron, selected from data by an electron trigger, and fulfilling $\pTmiss>200~\GeV$ and $\mT>100~\GeV$. The fraction of events that pass the analysis trigger provides the value of $\epsilon_e^\mathrm{trig}$.
+Both $\epsilon_\gamma^\mathrm{trig}$ and $\epsilon_e^\mathrm{trig}$ are computed as functions of \pT, to better track the trigger efficiency turn-on. While $\epsilon_\gamma^\mathrm{trig}$ reaches full efficiency for $\pT>60$~GeV, $\epsilon_e^\mathrm{trig}$ saturates at about 90\%, as a photon trigger is not fully optimal for electrons.
+The variations of 
+$\epsilon_\gamma^\mathrm{trig},~\epsilon_e^\mathrm{trig}$ when applying different cuts on \pTmiss\ and \mT\ are treated as systematic uncertainties and combined in quadrature. The resulting trigger correction factor is between 1.06 and 1.26 with an overall relative uncertainty between $3\%$ and $12\%$.
+
+%The resulting trigger correction factor is displayed in Table~\ref{tab:fey-corr}.
+
+% \begin{table}[ht]
+% \caption{Trigger correction factor $\dfrac{\epsilon^\mathrm{trig}_\gamma}{\epsilon^\mathrm{trig}_e}$ for the \fey.}
+% \label{tab:fey-corr}
+% \centering
+% \begin{tabular}{c|cc}
+% \hline
+% \pTy\ range [GeV] & year 2023 & year 2024 \\
+% \hline
+% $[50,52]$         & $1.26\pm0.18$ & $1.32\pm0.16$ \\
+% $[52,54]$         & $1.04\pm0.20$ & $1.10\pm0.07$ \\
+% $[54,56]$         & $1.10\pm0.26$ & $1.12\pm0.06$ \\
+% $[56,58]$         & $1.06\pm0.05$ & $1.34\pm0.08$ \\
+% $[58,60]$         & $1.08\pm0.08$ & $1.11\pm0.02$ \\
+% $[60,62]$         & $1.11\pm0.08$ & $1.13\pm0.07$ \\
+% $[62,65]$         & $1.09\pm0.14$ & $1.14\pm0.07$ \\
+% $[65,70]$         & $1.08\pm0.07$ & $1.11\pm0.06$ \\
+% $[70,80]$         & $1.07\pm0.03$ & $1.13\pm0.05$ \\
+% $[80,100]$        & $1.10\pm0.05$ & $1.12\pm0.05$ \\
+% $[100,+\infty]$ & $1.10\pm0.03$ & $1.11\pm0.03$ \\
+% \end{tabular}
+% \end{table}
+
+The validation of the \efakey\ background in the low \mT\ VR is displayed in Figure~\ref{fig:efakey-VR}, showing a good agreement already before the fit.
+
+\begin{figure}[htbp]
+    \centering
+    %\includegraphics[width=0.4\textwidth]{figures/mt_lowmTVR_BDT01Data_2.pdf}
+    \includegraphics[width=0.4\textwidth]{../images/dark_photon_paper/LowMTVR.pdf}
+    \caption{Comparison between data and pre-fit background estimates in the low \mT\ VR. The uncertainty includes both statistical and systematic contributions from the \efakey\ and \jfakey\ data-driven methods.}
+    \label{fig:efakey-VR}
+\end{figure}
+
+\subsection{Estimation of \jfakey}
+\label{sec:fjy}
+
+% \begin{table}[htbp]
+% \caption{Objects and samples used for the \jfakey\ background.}
+% \label{tab:obj-samples-jfakey}
+% \centering
+% \begin{tabular}{ccc|cc}
+% \hline
+% \multicolumn{3}{c|}{evaluation of \fjy} & \multicolumn{2}{c}{non-isolated PR} \\
+% \hline
+% $\gamma$ & from 1~$\gamma$ (no isolation requirement) & analysis trigger & \\
+% \yNI\ & from 1~$\gamma$ (no isolation requirement) & analysis trigger & \yNI\ instead of $\gamma$ & analysis trigger \\
+% \hline\hline
+% \Lp\ $\gamma$ & from 1~\Lp~$\gamma$ (no isolation requirement) & analysis trigger & \\
+% \hline
+% \end{tabular}
+% \end{table}
+
+% \begin{table}[ht]
+% \caption{Definition of SLO, BLO and event selections for \jfakey\ evaluation and application.}
+% \label{tab:SLO-BLO-jfakey}
+% \centering
+% \begin{tabular}{cc|cc|cc}
+% \hline
+% \multicolumn{4}{c|}{\jfakey\ evaluation} & \multicolumn{2}{c}{SR and BLO-PR} \\
+% \multicolumn{2}{c|}{object} & event selection & trigger & event selection & trigger \\
+% \hline\hline
+% SLO & $\gamma$ & $\gamma$ & analysis trigger & SR & analysis trigger \\
+% \hline
+% BLO & $\yNI$ & $\yNI$ & analysis trigger & $\yNI$-PR & analysis trigger \\
+% & & & & ($\gamma$ replaced by $\yNI$) \\
+% \hline\hline
+% \multicolumn{2}{c|}{\Lp\ $\gamma$} & \Lp\ $\gamma$ & analysis trigger \\
+% \hline
+% \end{tabular}
+% \end{table}
+
+% The SLO and BLO are respectively isolated and non-isolated photons obtained from events with one \T\ photon and no leptons, passing the analysis trigger --- see Table~\ref{tab:SLO-BLO-jfakey}. A consistent use of the same trigger in the \fjy\ evaluation and in the \yNI-PR definition guarantees topological consistency with the SR, and implies no further corrections (as were necessary for \efakey). 
+%As explained later on, in evaluating \fjy, samples of \Lp\ photons are also used, taken from events passing the analysis trigger: this is possible, as the \T\ selection at trigger level is looser than that at analysis level.
+The \jfakey\ fake factor is defined as
+\begin{equation}
+    \fjy=\frac{N(\jfakey)}{N(j\rightsquigarrow\yNI)}.
+\label{eq:def-fey-fjy}
+\end{equation}
+
+Isolated and non-isolated reconstructed photons are defined by requiring isolation $\isol<0.022$ and $\isol>0.1$, respectively: the former cut is standard in ATLAS analyses, while the latter is chosen to ensure a negligible contamination from genuine photons. The evaluation of the fake factor relies on the distribution $\Phi^\T(\isol)$ of the isolation for \jfakey\ passing the \T\ identification: 
+\begin{equation}
+\fjy=\frac{\int_{-\infty}^{+0.022}d\isol\,\Phi^\T(\isol)}{\int_{+0.1}^{+\infty}d\isol\,\Phi^\T(\isol)}.
+\label{eq:calc-fjy}
+\end{equation}
+
+The $\Phi^\T(\isol)$ distribution cannot be directly extracted from data, as the \T\ photon sample contains comparable contributions from \jfakey\ and genuine $\gamma$. Moreover, the MC modeling of $\Phi^\T(\isol)$ is not accurate and depends on the used MC generator.
+%An alternative \Lp\ sample, enriched of \jfakey, is obtained exploiting a looser photon selection, from which \T\ photons are removed. Both \T\ and \Lp\ samples are taken from events passing the analysis trigger.
+On the other hand, photons passing the \Lp\ selection\footnote{
+\Lp\ photons are collected from events passing the analysis trigger: this is possible, as the \T\ selection at trigger level is looser than at analysis level.
+} (see Section~\ref{sec:object-rec}) are enriched of \jfakey, therefore the isolation distribution $\Phi^\Lp(\isol)$ can be extracted from data. However, the photon selection affects the isolation, making $\Phi^\Lp$ broader than $\Phi^\T$. To extrapolate $\Phi^\T$ from $\Phi^\Lp$, an affine transform is applied:
+\begin{equation}
+\isol^\T_{\Data} = m^\T_{\Data} + \frac{w^\T_{\Data}}{w^\Lp_{\Data}}\left(\isol^\Lp_{\Data}-m^\Lp_{\Data}\right),
+\label{eq:affine-transf}
+\end{equation}
+where $m$ and $w$ are the median and the 16\%-to-84\% half-width of the isolation distributions in \Lp\ and \T\ samples. While $m^\Lp_{\Data}$ and $w^\Lp_{\Data}$ can be computed on data from the observed $\Phi^\Lp$, $m^\T_{\Data}$ and $w^\T_{\Data}$ must be inferred, assuming that the change in shape from $\Phi^\Lp$ to $\Phi^\T$ is similar in data and in \jfakey\ MC. This assumption is encoded into the following equations:
+\begin{equation}
+\left(\frac{m^\T_{\Data}-m^\Lp_{\Data}}{w^\Lp_{\Data}}\right) = R_m \left(\frac{m^\T_{\jfakey}-m^\Lp_{\jfakey}}{w^\Lp_{\jfakey}}\right)
+~~~~~~;~~~~~~
+\left(\frac{w^\T_{\Data}}{w^\Lp_{\Data}}\right) = R_w \left(\frac{w^\T_{\jfakey}}{w^\Lp_{\jfakey}}\right).
+\label{eq:def-Rm-Rw}
+\end{equation}
+The values of $R_m$ and $R_w$ are computed exploiting the \Lpp\ photon selection (see Section~\ref{sec:object-rec}), that is closer to the \T\ selection, but non-overlapping: the \Lpp\ sample in data is still dominated by \jfakey, therefore $m^\Lpp$ and $w^\Lpp$ can be evaluated on data from the observed $\Phi^\Lpp$, and Equation~\ref{eq:def-Rm-Rw} can be used with the \Lpp\ instead of the \T\ sample, to derive $R_m$ and $R_w$.
+In synthesis, the affine transform of equation~\ref{eq:affine-transf} depends on the $R_m$ and $R_w$ parameters: these are evaluated to achieve a $\Lp\to\Lpp$ extrapolation that reproduces at best the observed \Lpp\ sample, and then applied to the $\Lp\to\T$ extrapolation. This process is symbolised as \mbox{$\Lp(\to\Lpp)\to\T$}. The observed isolation distribution for \Lp\ photons and the extrapolated one for \T\ photons are displayed in Figure~\ref{fig:jfakey_isol_extr}.
+
+There are several ways to define the \Lpp\ selection, depending on the requirements on the strips shower shapes. The reliability of the extrapolation has been validated with several combinations of them, comparing the isolation of the $\Lp(\to\Lpp_a)\to\Lpp_b$ extrapolation with that of the observed $\Lpp_b$ sample, as shown in Figure~\ref{fig:jfakey_isol_extr}.
+For each $\Lpp_a$ selection, a different extrapolated distribution $\Phi^\T_a(\isol)$ is obtained, and therefore a different fake factor $(\fjy)_a$. The final fake factor is computed as the arithmetic mean of all $(\fjy)_a$, and a conservative systematic uncertainty is set as half the envelope of all their values.\\
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{../images/dark_photon_paper/canvas_paper_isol_extr_closure_L4_deltaE_liny.pdf}
+    \caption{Isolation distributions for reconstruted photons, used for the \jfakey\ background estimate. The figure displays the distribution from the \Lp\ photon sample (enriched of \jfakey), and an example of extrapolated distribution for the \T\ sample ($\Lp(\to\Lpp_a)\to\T$), using a $\Lpp_a$ sample to compute $R_m$ and $R_w$. 
+    The two dashed vertical lines mark the ``isolated'' ($\isol<0.022$) and the ``non-isolated'' ($\isol>0.1$) regions.
+    %As a visual check of the extrapolation method, t
+    The figure also shows the observed and extrapolated distributions for a different $\Lpp_b$ sample.}
+    \label{fig:jfakey_isol_extr}
+\end{figure}
+
+
+
+% Figure \ref{fig:jfy_closure} summarises the procedure, showing in the histograms with filled area the initial $\Phi^\Lp_i\isol$ and the extrapolated $\Phi^\T_i\isol$ distributions. The other histograms show one of the $\Lpp_i$ photon isolation, and the distributions extrapolated from $\Lp$ via the $\Lp(\to\Lpp_{j})\to\Lpp_i$ extrapolations. The fake factors for each distribution are reported in the legend. 
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.5\linewidth]{../images/dark_photon_paper/immagine.png}
+%     \caption{Photon isolation distributions used for the \jfakey\ background estimate. The histograms with filled area display the isolation profile for Loose' photons, and the extrapolated profile for Tight photons. The empty histograms show the different $\Lp(\to\Lpp_{j})\to\Lpp_i$ extrapolations, compared to the $\Lpp_i$ shown by black dots. The fake factors for each distribution are reported in the legend.}
+%     \label{fig:jfy_closure}
+% \end{figure}
+
+The fake factor, separately for 2023 and 2024, is computed as a function of \etay: the limited MC statistics does not allow to study the dependence on \pTy. 
+The values of \fjy\ range from $\sim1.5$ in the ECAL barrel, up to $\sim2.5$ in the endcaps, with relative uncertainties between 10\% and 15\%.
+
+The obtained \jfakey\ prediction is validated, before the fit, in both the low \metsig\ CR and the low \dphi VR, as shown in Figure~\ref{fig:VRs}.
+
+\begin{figure}[htbp]
+    \centering
+    %\subfloat[]{\includegraphics[width=0.4\textwidth]{figures/mt_lowMETsigVR_BDT01Data_-1.pdf}\label{fig:lowmetsig-vr}}
+    \subfloat[]{\includegraphics[width=0.4\textwidth]{../images/dark_photon_paper/mt_lowMETsigPR.pdf}\label{fig:lowmetsig-vr}}
+    \hspace{0.05\textwidth}
+    %\subfloat[]{\includegraphics[width=0.4\textwidth]{figures/mt_lowDphiVR2_BDT01Data_.pdf}\label{fig:lowdphi-vr}}
+    \subfloat[]{\includegraphics[width=0.4\textwidth]{../images/dark_photon_paper/mt_lowDphiPR.pdf}\label{fig:lowdphi-vr}}
+    \caption{Comparison between data and pre-fit background estimates in the low \metsig\ CR (\ref{fig:lowmetsig-vr}) and the low $\Delta\phi$ VR (\ref{fig:lowdphi-vr}), enriched of \jfakey. The uncertainty includes both statistical and systematic contributions from the \efakey\ and \jfakey\ data-driven methods.}
+    \label{fig:VRs}
+\end{figure}
+
+%\textcolor{red}{say that this is done separately for 2023 and 2024? Give ranges separately for the 2 years?}
+
+% The result is displayed in Table~\ref{tab:fjy}.
+
+% \begin{table}[ht]
+% \caption{Values of \fjy}
+% \label{tab:fjy}
+% \centering
+% \begin{tabular}{c|cccc}
+% \hline
+% $|\eta|$ range & $[0.00,0.60]$ & $[0.60,1.37]$ & $[1.52,1.81]$ & $[1.81,2.37]$ \\
+% \hline
+% year 2023 & $1.55\pm0.18$ & $1.84\pm0.25$ & $2.46\pm0.35$ & $2.96\pm0.58$ \\
+% year 2024 & $1.47\pm0.15$ & $1.60\pm0.17$ & $1.94\pm0.22$ & $1.55\pm0.24$ \\
+% \hline
+% \end{tabular}
+% \end{table}
+% \begin{itemize}
+% \item  a low-\mT\ VR, $m_T\in[80,90]~\GeV$ for \efakey: this VR is enriched of $W(\to e\nu)$ events, with \efakey;
+% \item  a low \pTmiss\ significance VR, $\metsig\in[2,6]$: this VR is dominated by events with fake \pTmiss, with a large contribution from multijet events;
+% \item {\bf ADD OTHER VR}
+% \end{itemize}
+% All VRs show a good agreement between observed data and estimated background sources.

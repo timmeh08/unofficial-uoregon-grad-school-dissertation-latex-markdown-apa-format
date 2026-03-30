@@ -1,0 +1,60 @@
+Multiple sources of systematic uncertainty are considered in the analysis. The experimental and theoretical uncertainties are applied only to the MC simulations of the signal and $V\gamma$ background, while their impact on the \yjetdirect\ simulation is expected to be negligible compared to its statistical fluctuations. Additional systematic uncertainties arise from the data-driven background estimates. 
+The impact of the different sources of uncertainty on the fitted value of \br\ is summarised in Table~\ref{tab:impacts}. The contributions are evaluated using the covariance matrix decomposition method and include both statistical and systematic components. The total uncertainty is dominated by the statistical component (80\%), including both the statistical uncertainty on the data and on the background. The dominant systematic contribution arises from from experimental systematic uncertainties (29\%), primarily driven by jet-related effects, followed by uncertainties on the \efakey\ and \jfakey\ data-driven methods (17\%) and  theoretical uncertainties (11\%).
+
+\begin{table}[!htbp]
+
+  \center
+  \caption{Impact of each category of uncertainty on the signal yields, as obtained through the covariance matrix decomposition method.}
+  \label{tab:impacts}
+    \begin{tabular}{ l  c  }
+      \toprule\midrule
+       %\textbf{Category} & \makecell{\textbf{Relative uncertainty on \br} \\ 
+    %$\br = 0.002^{+0.05}_{-0.04}$}\\\midrule
+    \textbf{Category} & \textbf{Contribution to uncertainty on the \br} \\\midrule
+      \textbf{Statistical} & 80\%\\ 
+      Data & 65\%\\
+      Background & 47\%\\\midrule
+      \textbf{Experimental systematic} &  29\%\\
+      Pile-up reweighting & 5.7\%\\
+      Pile-up corrections in jets calibration & 22\%\\
+      Jets & 18\%\\
+      Photons & 5.2\%\\
+      Muons & 2.3\% \\
+      \ETmiss & <1\% \\\midrule
+      \textbf{Systematic on data-driven methods} &  17\%\\
+      $\jfakey$ & 11\%\\
+      $\efakey$ & 13\%\\
+      \midrule
+      \textbf{Theoretical systematic} & 11\% \\\midrule\bottomrule
+    \end{tabular}
+\end{table}
+%, are described in the following sections, \textcolor{red}{while the latter is described in details in section \ref{sec:fakephotonintro}}. \\
+
+
+
+\subsection{Experimental uncertainties}
+Luminosity and PU modelling uncertainties affect the event as a whole. The uncertainty on the integrated luminosity is 1.9\%, derived from the calibration of the LUCID-2 detector and complemented by information from the ID and the calorimeters ~\cite{ATL-DAPR-PUB-2023-001}. This uncertainty is applied as a global normalization uncertainty to all MC samples, including both signal and background processes. The uncertainty associated with the modelling of PU interactions is estimated by varying the average number of interactions per bunch crossing by 4\% in the simulation.    
+
+Further uncertainties are associated with the reconstruction and isolation efficiency and with the energy calibration and resolution of photons, muons and jets.   Photon efficiency uncertainties are estimated using Run-2 data and MC simulations \cite{EGAM-2018-01}, with an additional uncertainty included to account for differences between Run-2 and Run-3, as derived from simulation. The uncertainties related to photons energy calibration and resolution are evaluated following the methodology described in Ref.~\cite{PERF-2017-03}, using the Run-3 data collected between 2022 and 2024. All contributions are summed in quadrature and considered fully correlated in photon $\eta$, resulting in one systematic associated to the energy calibration, and one to the energy resolution. 
+
+Multiple sources of uncertainties are considered for muons. The uncertainties affecting the muon momentum scale and resolution are separated into charge-dependent and charge-independent components~\cite{MUON-2018-03}. The former include statistical uncertainties, data--MC non-closure effects, and non-sagitta effects in the end-cap region, while the latter accounts for track resolution and momentum scale variations. Additional uncertainties are associated with muon reconstruction and isolation efficiencies, as well as with the track-to-vertex association efficiency; each of these is split into statistical and systematic components~\cite{PERF-2015-10}. 
+
+Jet reconstruction is affected by uncertainties related to jet vertex tagging and to the jet energy scale (JES) and resolution (JER). The uncertainty on the NN-JVT and fJVT calibrations~\cite{PERF-2014-03,PERF-2016-06} is derived from $Z\to\mu\mu$ and $Z\to ee$ events in 2022--2023 data and is dominated by PU modelling uncertainties,  particularly at low \pT.  
+The JES and JER uncertainties~\cite{PERF-2014-07,PERF-2015-09,JETM-2018-05} include contributions from area subtraction, PU residual corrections, absolute energy scale, and Global Sequential Calibration, and are evaluated using Run-3 MC simulations. The uncertainty on the in-situ calibration is derived from Run-2 data, with an additional non-closure uncertainty included to cover differences between Run-2 and Run-3. Further non-closure uncertainties account for residual effects related to variations in the vertexing algorithm, calorimeter noise thresholds, and modelling differences in the forward calorimeter region. Among these systematic uncertainties, the dominant contribution arises from PU residual corrections, which is quoted separately in Table~\ref{tab:impacts}. An additional jet-related source of systematic uncertainty arises from flavour tagging~\cite{FTAG-2018-01}.
+
+Finally, the \ETmiss\ is affected by three sources of systematic uncertainty~\cite{JETM-2020-03,Balunas:2023fpu}, related to the modelling of its soft term and evaluated using Run-3 data collected in 2022--2023 and the corresponding MC simulations. One scale uncertainty is obtained by scaling the soft-term magnitude up and down along the direction of the hard term, while two resolution uncertainties are derived by smearing the soft-term magnitude in directions parallel and perpendicular to the hard-term direction.
+
+
+\subsection{Uncertainties on data-driven methods}
+Three additional sources of systematic uncertainty are associated with the data-driven estimates of the \efakey\ and \jfakey\ backgrounds.
+As described in Section~\ref{sec:fey}, for the \efakey\ background, one systematic uncertainty accounts for the dependence of the $f_{e\gamma}$ fake factor on the peak width and the definition of the sidebands, while the second contribution is associated to the trigger correction factors. % and is evaluated by varying the offline selection criteria used in their determination.
+The third data-driven systematic uncertainty is associated to the extrapolation from $\Phi^\Lp$ to $\Phi^\T$ in the \jfakey\ estimation, 
+%. This uncertainty is derived by varying the \Lpp\ working point used to extract the $R_m$ and $R_w$ correction factors in the $\Lp(\to\Lpp)\to\T$ process 
+as described in Section~\ref{sec:fjy}.
+
+\subsection{Theoretical uncertainties}
+Theoretical uncertainties related to the modelling of QCD effects are considered, arising from variations of the renormalisation and factorisation scales, the value of the strong coupling constant, and the choice of parton distribution functions (PDFs). Their contribution is evaluated following the PDF4LHC21 prescription~\cite{Ball:2022oua}.
+
+The uncertainty associated with missing higher-order corrections is evaluated by independently varying the renormalisation and factorisation scales by factors of 0.5 and 2.0 with respect to their nominal values. The resulting variations are combined using the envelope method.
+
+The uncertainty related to the strong coupling constant $\alpha_{\mathrm{S}}$ is obtained by varying its value by $\pm 0.001$, while the PDF uncertainty is evaluated accounting for both the internal uncertainties of the nominal PDF set and the differences with respect to alternative PDF sets. These two PDF contributions are combined using the envelope method. For the signal samples, the \texttt{CT18NLO} and \texttt{MSHT20nlo\_as118} PDF sets are used as systematic variations with respect to the nominal PDF4LHC21 set. For the background samples, the \texttt{CT18NNLO} and \texttt{MSHT20nnlo\_as118} sets are compared to the nominal \texttt{NNPDF3.0} set.

@@ -1,0 +1,126 @@
+
+%The target signal is characterised by the presence of a single photon and missing transverse momentum (\ETmiss), with the transverse mass of the photon--\ETmiss\ system ($m_{\mathrm{T}}$) peaking near the Higgs boson mass. Due to the trigger thresholds on \ETmiss\ and photon transverse momentum (\pTy), the selected signal events are mostly constituted by Higgs bosons recoiling against jets from initial- or final-state radiation, resulting in a boosted topology. \\
+%This analysis phase space is particularly challenging, being dominated by background processes with jets and electrons misidentified as photons, as well as events with large non-genuine $\ETmiss$. Moreover, the low track activity characteristic of this signature leads to a non-negligible probability of misidentifying the primary vertex (PV). 
+Events passing the trigger selections described in Section \ref{sec:trigger} are further required to satisfy a set of \textit{offline} requirements on reconstructed variables, designed to isolate the signal. 
+
+\subsection{Baseline selection}
+\label{sec:sel-baseline}
+
+Events are required to have exactly one selected photon with $\pTy > 50$~GeV and $\ETmiss > 100$~GeV, a transverse mass $\mT > 80$~GeV, no reconstructed leptons nor \btagged\ jets, and at most three central jets. %The photon is required to be isolated and satisfy tight identification criteria. 
+The requirements on \pTy\ and \mT\ are aligned with the trigger thresholds, exploiting the fast trigger turn-on, while a more conservative requirement is applied on \ETmiss\  as a compromise between signal acceptance and background rejection.
+\\
+As discussed in Section~\ref{sec:signature}, the low track activity can lead to an incorrect identification of the PV. This effect has a significant impact on \ETmiss-related observables, particularly when HS jets are misclassified as PU jets and consequently excluded from the \ETmiss\ reconstruction. In such events, the reconstructed \ETmiss\ distribution becomes artificially harder for $\gamma$+jets and multijet backgrounds and softer for the signal, enhancing background acceptance while reducing signal efficiency. Moreover, the PV misidentification distorts the transverse mass distribution, resulting in values of $\mT \sim 150$~GeV for both signal and background, thereby degrading the signal-to-background discrimination.
+%A comparison of the $\ETmiss$ and $m_{\mathrm{T}}$ distributions for events with correctly identified and misidentified Primary Vertex is shown,as an example, for the signal and for the $\gamma+$jets background, in figure \ref{fig:vertexstudy} \\  %\ref{fig:$\ETmiss$mt_vertex}. \\
+To mitigate this effect, a boosted decision tree (BDT) is trained on signal and background simulations using TMVA AdaBoost \cite{FREUND1997119}, to identify and reject events with a misidentified PV. The BDT uses information related to the reconstructed vertex properties, jet multiplicity, and the angular separation between the photon, jets, and \ETmiss, as summarised in Table~\ref{tab:bdt_features}. %The distribution of the vertex BDT score ($\mathrm{BDT}_{\mathrm{vertex}}$) for events with good and wrong PV is shown in Figure \ref{fig:bdt}. 
+As shown in Figure \ref{fig:bdt}, a requirement on the vertex BDT score of $\mathrm{BDT}_{\mathrm{vertex}}>0.1$ provides an almost complete suppression of events with misidentified PV for both signal and background, especially when combined with the Signal Region selections described in Section \ref{sec:sel-SR}.\\
+
+
+\begin{table}[!htbp]
+  \centering
+  \renewcommand{\arraystretch}{1.5}
+  \small
+  \caption{Description of the input features of the vertex BDT, in order of importance.}
+  \label{tab:bdt_features}
+  \begin{tabular}{p{3.5cm} p{7.5cm}}
+    \toprule\midrule
+    \textbf{Variable} & \textbf{Description} \\
+    \midrule
+    $\log\!\left(\sum p_{\mathrm{T}}^{2}(\text{tracks})\right)$ 
+      &  Logarithm of the sum of the squared transverse momenta of tracks associated with the vertex. \\
+
+    $|\Delta\phi(\vec{p}_{\mathrm{vtx}},\vec{p}_{\gamma})|$ 
+      & Azimuthal separation between the vertex momentum vector and the photon direction. \\
+
+    $\dphimetj$
+      & Azimuthal separation between the missing transverse momentum and the leading jet. \\
+
+    $|\Delta\phi(\text{j}_1,\text{j}_2)|$ 
+      & Azimuthal separation between the two leading jets. \\
+
+    $\dmet$ 
+      & Difference between the missing transverse momentum computed without JVT requirements and the nominal reconstruction. \\
+
+    \metsig 
+      & Significance of the missing transverse momentum. \\
+
+    $(z_{\mathrm{vtx}}-z_{\gamma})/\sigma(z_{\gamma})$ 
+      & Distance along $z$ between the reconstructed primary vertex and the vertex position inferred from the photon trajectory (photon pointing), normalized by the photon pointing resolution. The photon trajectory is reconstructed using its energy deposits in the first and second layer of the ECAL. \\
+
+    $z_{\mathrm{skew}}$ 
+      & Skewness of the longitudinal ($z$) distribution of tracks associated with the vertex. \\
+
+    Number of central jets  
+      & Number of reconstructed jets in the central region ($|\eta|<2.5$). \\
+
+    $(\pTmiss+\pTy)/\sum{p_{\mathrm{T}}^{\mathrm{jet}}}$ 
+      & Transverse momentum balance between the photon+$\ETmiss$ system and the reconstructed jets. \\
+
+    $z_{\mathrm{kurt}}$ 
+      & Kurtosis of the longitudinal ($z$) distribution of tracks associated with the vertex. \\
+    \midrule\bottomrule
+  \end{tabular}
+\end{table}
+ \begin{figure}[!htbp]
+     \centering
+     \includegraphics[trim=0 5cm 0 4cm, clip, width=\linewidth]{../images/dark_photon_paper/bdt-purity.pdf}
+     \caption{ Fraction of events with correct primary vertex (PV) for the $H\to\gamma\gamma_d$ signals and for different background processes, with different selections applied: baseline selection are shown in blue and green, signal region (SR) selections are shown in orange and red. No selection on the $\mathrm{BDT}_{\mathrm{vertex}}$ is applied for the blue and orange dots, while $\mathrm{BDT}_{\mathrm{vertex}}\geq 0.1$ is applied for the green and red ones.}
+     \label{fig:bdt}
+ \end{figure}
+
+\subsection{Signal Region}
+\label{sec:sel-SR}
+
+In addition to the \textit{baseline} selections,  the signal region (SR) definition includes requirements on the photon kinematics, angular separations between the photon, \ETmiss\ and jets, as well as further \ETmiss-related variables. These include the \metsig\ and the difference $\dmet=\ETmissNoJVT-\ETmiss$, where $\ETmissNoJVT$ is defined in Section \ref{sec:object-rec}.  
+In particular, the requirement of $\metsig>6$ further suppresses events with \textit{fake} \ETmiss\, which typically exhibit lower significance values. Moreover, events are required to satisfy $\dmet > -10$~GeV to reduce the contribution from wrong PV identification. If a PU vertex is identified as the HS one, the standard \ETmiss\ computation rejects the HS jets while retaining PU jets. In this scenario, the $\ETmissNoJVT$ is expected to be closer to the true \ETmiss\ than the standard reconstruction, resulting in negative $\dmet$ values.
+Additionally, restricting the photon pseudorapidity to $|\eta_{\gamma}| < 1.75$ reduces background contributions from $W/Z+\gamma$ processes. Finally the requirements $\dphimety > 1.25$, $\dphimetj < 0.75$, and $|\Delta\phi(j_1, j_2)| < 2.5$ are imposed, where $\vec{p}_{\mathrm{T}}^{\mathrm{miss},\gamma}$ and $\vec{p}_{\mathrm{T}}^{\mathrm{miss,jet}}$ are the jet and photon term of the \met, i.e. the inverse vector sum of the \pT\ of all photons or jets in the event. The selection on \dphimety\ is particularly effective in rejecting residual background from misidentified PV while preserving the acceptance of the boosted Higgs signal. 
+The full list of selection is summarised in Table~\ref{tab:region_summary}, together with the definition of three control regions (CR) defined in Section~\ref{sec:bkg}. 
+
+%\begin{figure} [H]%[!htbp] t!
+%    \centering
+%    \includegraphics[width=0.45\textwidth]{../images/%MCplots/ggHyyd_met_goodvswrong.png}
+%    \includegraphics[width=0.45\textwidth]{../images/%MCplots/ggHyyd_mt_goodvswrong.png}
+%    \includegraphics[width=0.45\textwidth]{../images/MCplots/gammajets_met_goodvswrong.png}
+%    \includegraphics[width=0.45\textwidth]{../images/MCplots/gammajets_mt_goodvswrong.png}
+%    \caption{Comparison between events with correctly identified and misidentified PV. Only preselections are applied. The $\ETmiss$ (left) and $m_T$ (right) distributions are shown for the signal (top) and $\gamma$jets background (bottom)}
+%    \label{fig:vertexstudy}
+%\end{figure}
+
+\begin{table}[ht]
+  \centering
+  \caption{Summary of the selections applied in the signal (SR) and control (CR) regions. In the CRs with muons, the \ETmiss\ is recomputed treating muons as invisible particles.}
+  \label{tab:region_summary}
+  \begin{tabular}{l|c|c|c|c}
+    \toprule\midrule
+    Selection & ~~SR~~ & ~~Low \metsig\ CR~~ & ~~$1\mu$ CR~~ & ~~$2\mu$ CR~~ \\
+    \midrule
+    Photon & \multicolumn{4}{c}{1 (selected) with $\pt>50$~GeV} \\
+    $\ETmiss$           & \multicolumn{4}{c}{$>100$~GeV}  \\
+    $\mT$               & \multicolumn{4}{c}{$>80$~GeV} \\
+    $\mathrm{BDT}_{\mathrm{vertex}}$ & \multicolumn{4}{c}{$>0.1$} \\
+    $N_{e,\tau}$        & \multicolumn{4}{c}{0 (baseline)} \\\hline
+    $N_{\mathrm{jet}}^{\mathrm{central}}$ & \multicolumn{3}{c|}{$\leq 3$} & --- \\\hline
+    $N_{\mu}$           & \multicolumn{2}{c|}{0 (baseline)} & 1 (selected) & 2 (selected) \\\hline
+    $\metsig$ & $>6$ & $[2,6]$ & $>6$ & --- \\\hline
+    $\dphimety$ & \multicolumn{4}{c}{$>1.25$} \\\hline
+    $\dmet$             & \multicolumn{3}{c|}{$>-10$~GeV} & --- \\
+    $\dphimetj$ & \multicolumn{3}{c|}{$<0.75$} & --- \\
+    $|\Delta\phi(j_1,j_2)|$ & \multicolumn{3}{c|}{$<2.5$} & --- \\
+    $m_{\mu\mu\gamma}$  & \multicolumn{3}{c|}{---} & $>100$~GeV \\
+    \midrule
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% \begin{figure}[ht]
+%     \centering
+%     \includegraphics[width=0.75\linewidth]{figures/region_sketch_4.png}
+%     \caption{Schematic overview of the signal (SR), control (CR), and validation (VR) regions used in the analysis.}
+%     \label{fig:regions_sketch}
+% \end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.85\linewidth]{../images/dark_photon_paper/regions-sketch.pdf}
+    \caption{Schematic overview of the signal (SR), control (CR),  validation (VR) and probe (PR) regions used in the analysis. Different colours correspond to different final states: events with one isolated photons are selected in the SR (continuous lines), CRs (dashed lines) and VRs (dotted lines), while events with single electron or non isolated photon are used for the corresponding PRs. Data in the PRs are scaled by the fake factors indicated by the blue and green arrows (\fey\ and \fjy) to estimate the \jfakey\ and \efakey\ contribution in each analysis region.}
+    \label{fig:regions_sketch}
+\end{figure}

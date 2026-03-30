@@ -1,0 +1,73 @@
+To maximise the sensitivity to the Higgs boson mass peak, the transverse mass \mT\ is used as the discriminating variable in the binned maximum-likelihood fit in all regions, except for the $2\mu$ CR, which is treated as a single inclusive bin due to limited statistical precision. 
+The \mT\ binning is optimised such that the bulk of the expected signal is contained in the two central bins, defined as $110<m_T<140$~GeV and $140<m_T<200$~GeV, while the lower and upper bins provide additional constraints on the background normalisation. In particular, the first bin ($80<m_T<110$~GeV) contains the low-\mT\ VR and is dominated by the \efakey\ background, allowing an effective constraint on this contribution.
+
+The likelihood function is constructed as the product of Poisson probability distribution functions describing the event counts in each \mT\ bin of the SR and CRs, as functions of the expected signal and background yields. The branching ratio \br\ is included in the fit as the Parameter of Interest (POI). In addition, two  normalisation factors, $k_{W\gamma}$ and $k_{Z\gamma}$, are applied to the $W\gamma$ and $Z\gamma$ background processes respectively, and included as free parameters in the fit, primarily constrained by the corresponding 1$\mu$ and 2$\mu$ CRs.
+Systematic uncertainties affecting the signal and background yields are incorporated into the likelihood model as nuisance parameters with a Gaussian constraint centered at zero with a width corresponding to the associated uncertainty. The experimental and data-driven systematics are treated as fully correlated across all regions, and experimental systematics are also correlated among the background MC samples. Theoretical uncertainties are treated as fully uncorrelated. All nuisance parameters are assumed to be mutually uncorrelated.
+
+A background-only fit is first performed in the SR and CRs, with \br\ set to zero, and  the $k_{W\gamma}$ and $k_{Z\gamma}$ normalisation factors left free to float. The fitted values are
+$k_{W\gamma} = 0.92^{+0.08}_{-0.07}$ and
+$k_{Z\gamma} = 1.04^{+0.12}_{-0.11}$. 
+The post-fit \mT\ distributions for data and the expected SM background are shown in Figure~\ref{fig:postfit_mt}, while the corresponding yields are reported in Table~\ref{tab:postfit_yields}. The yields and background composition in each analysis region, including the VRs, are also summarised in Figure \ref{fig:summary_plot}. Good agreement is observed between data and the SM background expectation in all the analysis regions, and the data are consistent with the background-only hypothesis with an observed $p_0$-value of 0.31. 
+
+\begin{figure}
+    \centering
+    \subfloat[]{\includegraphics[width=0.4\linewidth]{../images/dark_photon_paper/SR_postFit.pdf}\label{fig:sr}}
+    \subfloat[]{\includegraphics[width=0.4\linewidth]{../images/dark_photon_paper/LowMETsigVR_postFit.pdf}\label{fig:lowmetsig}}
+    \\
+    \subfloat[]{\includegraphics[width=0.4\linewidth]{../images/dark_photon_paper/OneMuCR_postFit.pdf}\label{fig:onemu}}
+    \subfloat[]{\includegraphics[width=0.4\linewidth]{../images/dark_photon_paper/TwoMuCR_1bin_postFit.pdf}\label{fig:twomu}}
+    \caption{Distribution of \mT\ for data and for the expected SM background after the background-only fit, in the SR (\ref{fig:sr}) and CRs (\ref{fig:lowmetsig}, \ref{fig:onemu}, \ref{fig:twomu}). The $H\to\gamma\gamma_d$ signal with $\br=1\%$ is shown as a dashed red line, including the ggF, VBF, WH and ZH channels. The pre-fit prediction is overlaid as a dashed blue line. The uncertainties include both the statistical and the systematic component determined by the multiple-bin fit. The lower panel shows the ratio of data to expected background event yields post-fit (black dots) and pre-fit (dashed blue line).}
+    \label{fig:postfit_mt}
+\end{figure}
+
+
+\begin{table}[htbp]
+\centering
+\caption{Data and background yields in the SR and CRs, after the background-only fit. Uncertainties include statistical and systematic components.}\label{tab:postfit_yields}
+\begin{tabular}{l|cccc}
+\toprule
+\midrule
+ & {SR} & {\lowMETsig\ CR} & {1 $\mu$ CR} & {2 $\mu$ CR} \\
+\midrule 
+$Z\gamma$   & 1337 $\pm$ 93 & 93.8 $\pm$ 21 & 120.6 $\pm$ 8.8 & 412 $\pm$ 25 \\ 
+$W\gamma$   & 2251 $\pm$ 69 & 221 $\pm$ 57 & 3634 $\pm$ 80 & 0.679 $\pm$ 0.058 \\ 
+\efakey   & 4808 $\pm$ 113 & 1302 $\pm$ 43 & 124.5 $\pm$ 3.5 & 11.46 $\pm$ 0.45 \\ 
+\jfakey   & 2727 $\pm$ 106 & 5882 $\pm$ 150 & 941 $\pm$ 37 & 188 $\pm$ 10 \\ 
+$\gamma(\mathrm{direct})$+jets   & 175.7 $\pm$ 3.6 & 2438 $\pm$ 62 & 0.0468 $\pm$ 0.0010 & $(2.84 \pm 0.08)\times 10^{-6}$ \\ 
+\midrule 
+Total  & 11299 $\pm$ 101 & 9936 $\pm$ 98 & 4820 $\pm$ 69 & 612 $\pm$ 23 \\
+\midrule
+Data & 11327 & 9934 & 4802 & 596 \\
+\midrule\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{../images/dark_photon_paper/Summary_postFit_VR.pdf}
+    \caption{
+    Observed data and post-fit background yields in the SR, CRs, and VRs after the background-only fit. The expected signal yields are overlaid assuming $\br=10\%$ for visualisation purposes. The lower panel shows the signal contamination, defined as $1 + S/B$, where $S$ denotes the signal yield with $\br=1\%$ and $B$ the total background yield.}
+    \label{fig:summary_plot}
+\end{figure}
+
+A second fit is then performed including the signal contribution and the branching ratio \br\ as POI. The results are consistent with the background-only hypothesis, with 
+% \textcolor{red}{remove: fitted background normalisation factors 
+% $k_{W\gamma} = 0.92^{+0.09}_{-0.08}$ and
+% $k_{Z\gamma} = 1.03^{+0.12}_{-0.11}$,
+% and } 
+the best-fit value 
+$\br = 0.002^{+0.05}_{-0.04}$.
+Since no significant excess over the SM prediction is observed, upper limits on the branching ratio of the exotic decay $H\to\gamma\gamma_d$ are set using the profile likelihood ratio test statistic and the CL$_\text{s}$ approach \cite{Read:2002hq}, in the asymptotic approximation \cite{Cowan:2010js}. An observed (expected) upper limit on \br\ of $1.10\%$ ($0.94^{+0.45}_{-0.29}\%$) is obtained at 95\%~CL.
+% \textcolor{purple}{This result can be compared with former searches carried out on the VBF~\cite{EXOT-2021-17} and $ZH$~\cite{HDBS-2019-13} production channels in Run-2, that were combined as described in~\cite{ATLAS:2024cju}: the summary plot of the obtained limits is displayed in Figure~\ref{fig:summary-limits}, showing that the present result improves the limit with respect to the Run-2 combination.}
+This result can be compared with former searches carried out on the VBF~\cite{EXOT-2021-17} and $ZH$~\cite{HDBS-2019-13} production channels in Run-2, as well as their combination ~\cite{ATLAS:2024cju}, as summarised in Figure ~\ref{fig:summary-limits}: the present analysis improves 
+the observed (expected) upper limit of 1.3\% (1.5\%) achieved in the Run-2, thanks to its sensitivity to the ggF production channel.
+The combination of Run-2 results with the present analysis, yields an observed (expected) upper limit of 0.82\% (0.77\%) on \br.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\linewidth]{../images/dark_photon_paper/limits_mu_SIG_v3_bugfix.pdf}
+    \caption{Summary of the 95\%~CL upper limits on \br, achieved by the Run-2 searches (top three rows: $ZH$~\cite{HDBS-2019-13}, VBF~\cite{EXOT-2021-17}, and their combination~\cite{ATLAS:2024cju}) and by the present analysis (4th row). The overall Run2+Run3 combination is displayed in the bottom row.}
+    \label{fig:summary-limits}
+\end{figure}
+
+\FloatBarrier

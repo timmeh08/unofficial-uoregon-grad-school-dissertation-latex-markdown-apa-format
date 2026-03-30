@@ -1,0 +1,22 @@
+
+To assess the accuracy of the trigger efficiency in the MC simulations, the efficiency curves from MC are compared to those derived from data. The comparison is done in a final state containing one photon and one muon, which is treated as invisible in the evaluation of $E_T^{miss}$ and $m_T$ both at trigger level and at \textit{offline} reconstruction level. An OR of single muon triggers is used as a baseline trigger, to define trigger efficiency as:
+\begin{equation}
+  \epsilon(\textrm{trigger}~|~\textrm{offline}~\&\&~\mu\textrm{-trigger}) = \frac{ N(\textrm{trigger}~\&\&~\textrm{offline}~\&\&~\mu\textrm{-trigger}) }{ N(\textrm{offline}~\&\&~\mu\textrm{-trigger}) }
+  \label{eq:trig_eff_wrt_offline_basetrigger}
+\end{equation}
+Data are compared to the total background in Figure~\ref{fig:trig_eff_data}. The \textit{offline} selections include \textit{baseline} selections with the additional requirement of the presence of one muon and $\dphimety>1.25$. The dominant background for events with one muon is $W\gamma$, with non negligible contribution from \jfakey\ which is part of the total background shown in magenta color. 
+A good agreement, well within statistical uncertainty, is observed between data and $W\gamma$, as well as with respect to the total background, therefore no scale factor (SF), nor associated systematic uncertainty is needed.  \textcolor{red}{keep only mc23d+mc23e} 
+\begin{figure}[!htbp]
+  \begin{center}
+    \includegraphics[width=0.30\columnwidth]{figures/trigger_phpt_mc23e.png}
+    \includegraphics[width=0.30\columnwidth]{figures/trigger_met_mc23e.png}
+    \includegraphics[width=0.30\columnwidth]{figures/trigger_mt_mc23e.png}
+  \end{center}
+  \caption{
+    Efficiency curves of $\epsilon(\textrm{trigger}|\textrm{offline}~\&\&~\mu\textrm{-trigger})$ as functions of $p_T^\gamma,~E_T^{miss},~m_T$, from data (solid dots), $W\gamma$ (blue line) and total background (magenta line). The \textit{baseline} cuts
+    are applied, together with the selection $\dphimety>1.25$. Events containing one photon and one muon, which is treated as invisible in the evaluation of $E_T^{miss}$ and $m_T$, are used. On top of the efficiency curves, the variable distribution for the data (gray shaded area) and total background (magenta shaded area) is displayed. 
+  }
+  \label{fig:trig_eff_data}
+\end{figure}
+
+
