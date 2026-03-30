@@ -1,6 +1,6 @@
 The physics of the dark photon analysis necessarily creates a challenging environment for vertex tagging.
 In the ggF production mode, the observable signature is a photon, \ETmiss, and less than four initial state radiation jets.
-This is a low track multiplicitiy environment, and tradition vertex tagging techniques are shown to be not as efficient, as described in section~\ref{sec:vertex}.
+This is a low track multiplicitiy environment, and tradition vertex tagging techniques are shown to be not as efficient, as described in section~\ref{sec:selections}.
 Briefly, the vertex that is selected as the primary vertex is the one with the highest sum of track \pt squared, $\sum p_{T}^2$.
 The method is robust and performs well in high track multiplicity environments, but is shown to be less efficient in a low track multiplicity environment, such as the dark photon analysis. 
 In this section, preliminary studies are shown using a neural network classifier approach to improve the vertex tagging efficiency for a future iteration of the dark photon analysis, potentially a full Run 3 search.
@@ -83,7 +83,7 @@ Two-class softmax is used as the loss function, and the Adam optimizer is employ
 The probability for class "True PV" is used as the score for each vertex candidate, and the candidate with the highest score is selected as the primary vertex.
 Training is done on 30\% of the available signal and a $p_T$ slice from 70 GeV to 140 GeV of $\gamma$ + jets background events, with the remaining 70\% used for testing and evaluation, with a maximum number of iterations set to 200.
 The background slice of events are weighted.
-Two sets of training are performed: one on events without selections, and one with preselections applied as defined in section~\ref{sec:selection}, to evaluate the performance of the classifier in both scenarios.
+Two sets of training are performed: one on events without selections, and one with preselections applied as defined in section~\ref{sec:selections}, to evaluate the performance of the classifier in both scenarios.
 At most, there is one positive candidate per event, closest to the true vertex within .5 mm, else all candidates are labeled as negative.
 As seen in Fig.~\ref{pointing}, the photon pointing variable is a powerful discriminator between the hard-scatter vertex and pile-up vertices, as the pointing for incorrectly identified vertices is much broader than the pointing for correctly identified vertices, which is more peaked around zero.
 The $log(\sum p_{T}^2)$ and $\chi^2$ variables also provide significant discrimination power as expected.

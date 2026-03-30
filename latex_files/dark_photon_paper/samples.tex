@@ -7,12 +7,12 @@ Monte Carlo (MC) simulations are used to model the signal and a subset of the ba
 The simulation of the geometry and response of the ATLAS detector is performed using \textsc{Geant4}, and all simulated events are processed through the same reconstruction chain as collision data. The effect of multiple interactions in the same and neighbouring bunch crossings (pile-up, PU), 
 is modeled by overlaying~\cite{SIMU-2020-01} the simulated hard-scattering event 
 with inelastic \(pp\) events generated using \EPOS[2.0.1.4]~\cite{Werner:2005jf} and \PYTHIA[8.308]~\cite{Bierlich:2022pfr}.
-The \EPOS events are generated with the \EPOS LHC tune~\cite{Pierog:2013ria} 
-and the \PYTHIA events with the A3 tune~\cite{ATL-PHYS-PUB-2016-017} 
+The \EPOS  events are generated with the \EPOS  LHC tune~\cite{Pierog:2013ria} 
+and the \PYTHIA  events with the A3 tune~\cite{ATL-PHYS-PUB-2016-017} 
 and the \NNPDF[2.3lo]~\cite{Ball:2012cx} set of parton distribution functions (PDF).
-\PYTHIA PU events include either a high \pT jet, 
+\PYTHIA  PU events include either a high \pT jet, 
 a prompt photon, or a lepton from a $b$-hadron decay, 
-while events generated using \EPOS are filtered to simulate all remaining PU events in the overlay sample.
+while events generated using \EPOS  are filtered to simulate all remaining PU events in the overlay sample.
 The individual simulations are first reweighted to ensure a smooth connection across jet \pt. The combination is then reweighted to match the distribution of the actual number of interactions per bunch crossing measured in data. 
  
 The signal samples include multiple Higgs production channels: the dominant process and main target of the analysis is the ggF channel, but non-negligible contribution arises from the VBF and from the $WH$ and $ZH$ channels. One MC sample for each production mode is generated, with $WH$ production divided into $W^+H$ and $W^-H$. The matrix elements are estimated
