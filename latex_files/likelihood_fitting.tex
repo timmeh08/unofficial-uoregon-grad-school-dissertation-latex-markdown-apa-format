@@ -3,7 +3,7 @@
 Most analyses with the ATLAS experiment are essentially counting experiments, where the number of events observed in data is compared to the number of events expected from the background-only hypothesis and the signal-plus-background hypothesis. 
 The likelihood function is a powerful tool that quantifies the agreement between observed data and these hypotheses, taking into account both statistical and systematic uncertainties. 
 By maximizing the likelihood function, we can estimate the parameters of interest, such as the signal strength, and determine how well our data supports the presence of a signal. 
-In this section, the fitting techniques used in this analysis will be described, using the statistical framework from TRExFitter and data/MC events from the dark photon analysis as described above.
+In this section, the fitting techniques used in this analysis will be described, using the statistical framework from TRExFitter and data/MC events from the dark photon analysis as described in appendix~\ref{app:dark_photon_mc}.
 
 The likelihood function is written as:
 
@@ -69,7 +69,7 @@ Examples of the various diagnostic plots and fit results will be shown in the ne
 \subsection{Walkthrough of the dark photon fit}
 
 This section provides a walkthrough of the fitting procedure in the dark photon analysis, using the TRExFitter framework and the likelihood function described above.
-Note that theoretical uncertainties are not included in the plots shown in this section, but they are included in section FILL IN LATER for the final fit results of the analysis.
+Note that theoretical uncertainties are not included in the plots shown in this section, but they are included in section \ref{sec:simfit} for the final fit results of the analysis.
 There are two fits conducted in the dark photon analysis: a signal-plus-background fit that is blinded, and a signal-plus-background fit that is unblinded.
 Fitting is performed in bins of transverse mass $m_T$, calculated using the photon and the \ETmiss.
 The blinded fit is performed on Asimov data in the signal region, with real data in the control regions.

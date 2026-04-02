@@ -12,7 +12,8 @@ All signal samples used for the multi-lepton truth studies are listed in Table~\
 \begin{table}[!hbtp]
   \tiny
   \centering
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llllllll}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llllllll}
     \hline
     \hline
     DSID & Name of Sample & Tags & TOPQ1 & TOPQ4 & $\sigma\times\epsilon$ [fb] & $N_{\text{events}}$ (AOD) & Int. Lumi [fb$^{-1}$] \\
@@ -176,7 +177,8 @@ All signal samples used for the multi-lepton truth studies are listed in Table~\
     510918 & MGPy8EG\_DarkPions\_SU2L\_gphobic\_20\_600 & e8419\_s3126\_r9364 & p4514 & - & $1.9923$ & $20000$ & $10038.6$\\
     \hline
     \hline
-  \end{tabular*}
+  \end{tabular}%
+  }
   \caption{List of all used MC16a signal samples with associated TOPQ1 and TOPQ4 derivation tags, cross sections, number of produced events and equivalent integrated luminosity.}
   \label{tab:MC16a_signal_samples}
 \end{table}
