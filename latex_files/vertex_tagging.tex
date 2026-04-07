@@ -17,7 +17,7 @@ When the primary vertex is misidentified, pile-up jets can be incorrectly associ
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{../images/dark_photon/vertexing/fake_met.png}
+    \includegraphics[width=0.6\textwidth]{../images/clean_vertexing/fake_met.png}
     \caption{Diagram of a hard scatter jet and photon and a pile-up vertex with a jet, with the hard scatter vertex correctly identified as the primary vertex (left) and incorrectly identified as the pile-up vertex (right). The misidentification of the primary vertex leads to a significant miscalculation of the \ETmiss.}
     \label{fig:etmiss_misidentification}
 \end{figure}
@@ -28,7 +28,7 @@ It appears that either the correct vertex is identified exactly, or a random pil
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/pv_baseline_vs_truth_ggHyyd.pdf}
+    \includegraphics[width=0.45\textwidth]{../images/clean_vertexing/clean_pv_baseline_vs_truth_ggHyyd.pdf}
     \caption{The reconstructed z position of the primary vertex plotted against the true z position of the hard-scatter vertex for signal events. The diagonal line represents perfect vertex tagging, while the gaussian distribution around the diagonal line represents misidentification.}
     \label{fig:vertex_misidentification}
 \end{figure}    
@@ -47,8 +47,8 @@ This fitting method can be seen in the diagrams in Fig.~\ref{fig:vertexing_fit},
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/vertexing_fit.png}
-    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/fit_goodreco6.png}
+    \includegraphics[width=0.45\textwidth]{../images/clean_vertexing/vertexing_fit.png}
+    \includegraphics[width=0.45\textwidth]{../images/clean_vertexing/fit_goodreco6.png}
     \caption{Diagram of the linear fit performed using the z and R positions of the photon showers and the z positions of the three primary vertex candidates (left). Actual line of best fit example for a signal event (right). The star is the true vertex, and the $\chi^2$ value from this fit is used as an input to the neural network classifier.}
     \label{fig:vertexing_fit}
 \end{figure}
@@ -90,7 +90,7 @@ The $log(\sum p_{T}^2)$ and $\chi^2$ variables also provide significant discrimi
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/feature_ph_vtx_gamma_jets.pdf}
+    \includegraphics[width=0.45\textwidth]{../images/clean_vertexing/clean_feature_ph_vtx_gamma_jets.pdf}
     \caption{Distribution of the photon pointing variable for correctly identified vertices and incorrectly identified vertices in the background slice. The photon pointing variable shows good separation between correctly identified vertices and incorrectly identified vertices, with correctly identified vertices having a more peaked distribution around zero, while incorrectly identified vertices have a broader distribution.}
     \label{pointing}
 \end{figure}
@@ -108,10 +108,10 @@ As expected, the preselections clean up the signal events, leading to a grouping
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/prob_distribution_gammajet_frag_70_140_weighted.pdf}
-    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/prob_distribution_ggHyyd.pdf}
-    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/prob_distribution_gammajet_frag_70_140_presel_weighted.pdf}
-    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/prob_distribution_ggHyyd_presel.pdf}
+    \includegraphics[width=0.45\textwidth]{../images/clean_vertexing/clean_prob_distribution_gammajet_frag_70_140_weighted.pdf}
+    \includegraphics[width=0.45\textwidth]{../images/clean_vertexing/clean_prob_distribution_ggHyyd.pdf}
+    \includegraphics[width=0.45\textwidth]{../images/clean_vertexing/clean_prob_distribution_gammajet_frag_70_140_presel_weighted.pdf}
+    \includegraphics[width=0.45\textwidth]{../images/clean_vertexing/clean_prob_distribution_ggHyyd_presel.pdf}
     \caption{Predicted probabilities from the neural network classifier for candidates split into correctly identified vertices and incorrectly identified vertices, for both the training with preselections (bottom) and without preselections (top), and split by background (left) and signal (right). The classifier shows good separation between the true PV candidates and pile-up vertices, especially in the background slice.}
     \label{probabilities}
 \end{figure}
@@ -124,7 +124,7 @@ For a preliminary study, these results are very promising, especially in the bac
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.9\textwidth]{../images/dark_photon/vertexing/table_results.png}
+    \includegraphics[width=0.9\textwidth]{../images/clean_vertexing/table_results.png}
     \caption{Table of the vertex tagging efficiency for the standard vertex tagging method and the neural network classifier, for both the training with preselections and without preselections, and split by background and signal. The neural network classifier shows a significant improvement in vertex tagging efficiency compared to the standard method, especially in the background slice.}
     \label{tab:nn_performance}
 \end{figure}
@@ -134,7 +134,7 @@ There is a significant improvement in the $\Delta z$ distribution for the neural
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{../images/dark_photon/vertexing/delta_z_combined_gammajet_vs_signal.pdf}
+    \includegraphics[width=0.45\textwidth]{../images/clean_vertexing/clean_delta_z_combined_gammajet_vs_signal.pdf}
     \caption{The $\Delta z$ between the reconstructed primary vertex and the true vertex for both the standard vertex tagging method (solid) and the neural network classifier (dashed) with preselections applied, and split by background (red) and signal (blue). The neural network classifier shows a significant improvement in the $\Delta z$ distribution, with a sharper peak around zero for correctly identified vertices, especially in the background slice.}
     \label{delta_z}
 \end{figure}
