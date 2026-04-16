@@ -139,7 +139,8 @@ There are over 170,000 readout channels in the EM calorimeters.
 The readout of the EM calorimeters is delayed by the ion drift time in the LAr, which varies between 450-600 ns depending on the layer \cite{LARG-2009-02}.
 This delayed signal is longer than the LHC collision rate of 24 ns, necessitating the use of pulse shaping to mitigate out-of-time pileup from previous bunch crossings.
 Analog circuits in the front end electronics use a bipolar shaping filter to create a sharply peaked pulse and long negative tail as shown in Fig. \ref{pulse_shaping}.
-The shaped pulse has a total integral of zero, canceling out contributions from out-of-time pileup.
+The triangle shape is the ionization drift inside the detector.
+A capacitively coupled input forces the shaped pulse to have a total integral of zero, canceling out contributions from out-of-time pileup.
 
 \begin{figure}[htbp]
     \centering
@@ -252,6 +253,7 @@ The two end cap toroids are each made of eight superconducting coils arranged in
 At the LHC bunch crossing rate of 40 MHz, ATLAS produces an enormous amount of data at a rate of over 1 PB per second if all detector information were to be recorded.
 Storing and processing this amount of data is not feasible, so a trigger system is implemented to select events based on distinctive features or characteristics that indicate physics processes of interest.
 The ATLAS Trigger and Data Acquisition (TDAQ) system \cite{tdaq_2016} utilizes a two-level trigger system to reduce the 40 MHz LHC bunch crossing rate to a manageable 1 kHz in Run 2 for offline storage and analysis.
+It is important to note that while 1 kHz is the target rate, the actual rate is allowed to be higher in practice, and there are multiple streams of physics data.
 Events are selected based on trigger signatures designed to capture the interesting physics while rejecting backgrounds, optimized for the computing and storage resources available.
 Triggers are prioritized based on physics goals and needs of analysis groups, with high event yield triggers prescaled to reduce their rate.
 The TDAQ system can be seen in Fig. \ref{tdaq_system}.
@@ -340,7 +342,7 @@ With full detector information available and higher granularity calorimeter data
 While the two-level trigger architecture remains the same, both the L1 and HLT systems were improved to support the new detector readout from the calorimeters and NSW and advance the ATLAS physics goals for Run 3.
 Within the L1 system, new feature extractor (FEX) boards exploit the higher granularity calorimeter data to perform more advanced object reconstruction and identification.
 These include the eFEX for electrons, photons, and taus; jFEX for jets, taus, and $E_T^{\text{miss}}$; gFEX for large-R jets, $E_T^{\text{miss}}$, and the scalar sum of transverse momenta of jets, ($H_T$).
-The FEXs use custom FPGA-based hardware to implement fast algorithms for reconstruction within the L1 latency budget.
+The FEXes use custom FPGA-based hardware to implement fast algorithms for reconstruction within the L1 latency budget.
 Tile calorimeter energies are now digitized by the Tile REciever EXchange (TREX) board.
 The L1Muon system was also upgraded to incorporate the NSW data for improved muon triggering in the end cap regions.
 The HLT was refined to handle the data more efficiently and implement more advanced algorithms.
