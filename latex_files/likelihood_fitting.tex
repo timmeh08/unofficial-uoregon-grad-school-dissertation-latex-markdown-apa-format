@@ -48,8 +48,8 @@ The parameter of interest (POI) is the signal strength $\mu$, which quantifies t
 The likelihood function is implemented and maximized in the dark photon analysis using the TRExFitter framework\footnote{\href{https://trexfitter-docs.web.cern.ch/trexfitter-docs/latest/}{TRExFitter documentation}}, which is a software tool developed by the ATLAS collaboration for performing statistical analysis in particle physics.
 TRExFitter is run using a configuration file that specifies the details of the fit, including the input histograms, the parameters to be fitted, and the systematic uncertainties to be included.
 A workspace is created for the fit, containing the the parameters of interest, the physics samples, and the systematic uncertainties.
-The fit is performed on the workspace, either with real data or with Asimov data.
-Asimov data is generated based on the expected yields from the MC templates, without any statistical fluctuations, and is used to evaluate the expected sensitivity of the analysis.
+The fit is performed on the workspace, either with real data or with Asimov samples.
+Asimov samples are generated based on the expected yields from the MC templates, without any statistical fluctuations, and are used to evaluate the expected sensitivity of the analysis \cite{Cowan_2011}.
 The fit results include the best-fit values of the parameters, a breakdown of their uncertainties, and the correlations between the parameters.
 There are multiple regions defined and fed into the fit.
 A signal region (SR) is optimized with selections that enhance the signal contribution, while control regions (CRs) are defined to constrain the background contributions.
@@ -136,7 +136,7 @@ As seen in Fig.~\ref{fig:pre_post_VR}, the fit confirms that the low \ETmiss sig
     \label{fig:pre_post_VR}
 \end{figure}
 
-The low \ETmiss significance control region was then included in the fit, and studied with data and asimov data.
+The low \ETmiss significance control region was then included in the fit, and studied with data and Asimov samples.
 Postfit distributions of the low \ETmiss significance control region can be seen in Fig.~\ref{fig:cr_postfit}.
 The background expectations are stable with all configurations of the fit, and the data is well modeled.
 It can be seen in Fig.~\ref{fig:ranking_jets} that the jets faking photons fake factor uncertainty is better constrained, and the correlations with the signal strength and the normalization factors are reduced.
@@ -146,7 +146,7 @@ Along with the low $\Delta\phi(E^{miss}_T, E^{\gamma}_T)$ VR as described in sec
     \centering
     \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/clean_LowMETSigVR_postFit.pdf}
     \includegraphics[width=.45\textwidth]{../images/dark_photon/images/tim_fit/clean_LowMETSigVR_postFit_asimov.pdf}
-    \caption{Postfit distributions of the transverse mass $m_T$ in the low \ETmiss significance control region with data (left) and Asimov data (right). The background expectations are stable with all configurations of the fit, and the data is well modeled.}
+    \caption{Postfit distributions of the transverse mass $m_T$ in the low \ETmiss significance control region with data (left) and Asimov samples (right). The background expectations are stable with all configurations of the fit, and the data is well modeled.}
     \label{fig:cr_postfit}
 \end{figure}
 

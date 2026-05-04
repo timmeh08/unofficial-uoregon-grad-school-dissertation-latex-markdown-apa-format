@@ -21,10 +21,10 @@ Since the phenomenological consequences remain unchanged for values of $N_D$ tha
 \begin{figure}[tbp]
   % The Feynman diagrams were produced in LaTeX and are defined in FeynmanDiagram.tex, which can be found in the dark meson git space: https://gitlab.cern.ch/darkmesonsearch/darkscripts/tree/master/FeynmanDiagrams
   \centering
-  \subfloat[]{\includegraphics[page=6,width=0.31\textwidth]{../images/dark_meson/FeynmanDiagram.pdf}\phantomsubcaption\label{fig:FeynmanW}} \hspace{2mm}
+  \begin{subfigure}{0.31\textwidth}\centering\includegraphics[page=6,width=\textwidth]{../images/dark_meson/FeynmanDiagram.pdf}\phantomsubcaption\label{fig:FeynmanW}\end{subfigure} \hspace{2mm}
   %\subfloat[]{\includegraphics[page=7,width=0.32\textwidth]{FeynmanDiagram.pdf}\label{fig:FeynmanB}} %\hspace{20mm}
-  \subfloat[]{\includegraphics[page=2,width=0.31\textwidth]{../images/dark_meson/FeynmanDiagram.pdf}\phantomsubcaption\label{fig:FeynmanDY}} \hspace{2mm}
-  \subfloat[]{\includegraphics[width=0.31\textwidth]{../images/dark_meson/pionttbb.pdf}\phantomsubcaption\label{fig:FeynmanDecay}} %\hspace{20mm}
+  \begin{subfigure}{0.31\textwidth}\centering\includegraphics[page=2,width=\textwidth]{../images/dark_meson/FeynmanDiagram.pdf}\phantomsubcaption\label{fig:FeynmanDY}\end{subfigure} \hspace{2mm}
+  \begin{subfigure}{0.31\textwidth}\centering\includegraphics[width=\textwidth]{../images/dark_meson/pionttbb.pdf}\phantomsubcaption\label{fig:FeynmanDecay}\end{subfigure} %\hspace{20mm}
   \caption{Examples of leading Feynman diagrams of dark pion pair production. The diagram in \protect\subref{fig:FeynmanW} shows resonant production via kinetic mixing with the \Wboson-field resulting in either a neutral or charged dark rho meson, a mixing with the $B$-field that can only result in a neutral dark rho meson is also possible, \protect\subref{fig:FeynmanDY} shows Drell--Yan-type pair production of dark pions, and \protect\subref{fig:FeynmanDecay} shows an illustrative diagram of the dark pion decay into a top and a bottom quark for dark pion production.}
   \label{fig:feynmangraphs}
 \end{figure}
@@ -68,8 +68,8 @@ For gaugephobic models the decay to top and bottom quarks dominates at high mass
   % The plots have been produced with the plot_crossSections.C script which can be found in the dark meson git space: https://gitlab.cern.ch/darkmesonsearch/darkscripts/blob/master/plot_crossSections.C
   \centering
   %\includegraphics[width=0.32\textwidth]{crossSections_darkRho.pdf}
-  \subfloat[]{\includegraphics[width=0.495\textwidth]{../images/dark_meson/crossSections_su2l_gaugephobic.pdf}\phantomsubcaption\label{fig:crosssections_su2l}}
-  \subfloat[]{\includegraphics[width=0.495\textwidth]{../images/dark_meson/crossSections_su2r_gaugephobic.pdf}\phantomsubcaption\label{fig:crosssections_su2r}}
+  \begin{subfigure}{0.495\textwidth}\centering\includegraphics[width=\textwidth]{../images/dark_meson/crossSections_su2l_gaugephobic.pdf}\phantomsubcaption\label{fig:crosssections_su2l}\end{subfigure}%
+  \begin{subfigure}{0.495\textwidth}\centering\includegraphics[width=\textwidth]{../images/dark_meson/crossSections_su2r_gaugephobic.pdf}\phantomsubcaption\label{fig:crosssections_su2r}\end{subfigure}
   \caption{Pair-production cross-sections for dark pions as a function of dark pion mass for four different values of $\etaD$ in \protect\subref{fig:crosssections_su2l} an \sul model and \protect\subref{fig:crosssections_su2r} an \sur model. The dashed colored lines indicate the contribution of the resonant production mode to the total dark pion production cross-section.}
   \label{fig:crossections}
 \end{figure}
@@ -77,8 +77,8 @@ For gaugephobic models the decay to top and bottom quarks dominates at high mass
 \begin{figure}[tbp]
   % The plots have been produced with the plot_crossSections.C script which can be found in the dark meson git space: https://gitlab.cern.ch/darkmesonsearch/darkscripts/blob/master/plot_crossSections.C
   \centering
-  \subfloat[]{\includegraphics[page=3,width=0.495\textwidth]{../images/dark_meson/branchingFractions.pdf}\phantomsubcaption\label{fig:pi0branchingfraction}}
-  \subfloat[]{\includegraphics[page=4,width=0.495\textwidth]{../images/dark_meson/branchingFractions.pdf}\phantomsubcaption\label{fig:pipbranchingfraction}}
+  \begin{subfigure}{0.495\textwidth}\centering\includegraphics[page=3,width=\textwidth]{../images/dark_meson/branchingFractions.pdf}\phantomsubcaption\label{fig:pi0branchingfraction}\end{subfigure}%
+  \begin{subfigure}{0.495\textwidth}\centering\includegraphics[page=4,width=\textwidth]{../images/dark_meson/branchingFractions.pdf}\phantomsubcaption\label{fig:pipbranchingfraction}\end{subfigure}
   %\includegraphics[width=0.32\textwidth]{crossSections_su2r_gaugephobic.pdf}
   \caption{Branching fractions of the available decays of dark pions from gaugephobic \sul and \sur  models are shown for \protect\subref{fig:pi0branchingfraction} neutral dark pions and \protect\subref{fig:pipbranchingfraction} positively charged dark pions. Channels with small branching fractions are suppressed for clarity.}
   \label{fig:branchingfractions}

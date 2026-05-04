@@ -10,8 +10,8 @@ Signal and trigger efficiencies are calculated, then a final estimate of events 
 \begin{figure}[tbp]
   % The plots have been produced with the plot_eventSignatures.C script which can be found in the dark meson git space: https://gitlab.cern.ch/darkmesonsearch/darkscripts/-/blob/master/plot_eventSignatures.C
   \centering
-  \subfloat[]{\includegraphics[width=0.32\textwidth]{../images/dark_meson/eventSignature_SU2L_gaugephobic.pdf}\phantomsubcaption\label{fig:evtsignatureSU2L}}
-  \subfloat[]{\includegraphics[width=0.32\textwidth]{../images/dark_meson/eventSignature_SU2R_gaugephobic.pdf}\phantomsubcaption\label{fig:evtsignatureSU2R}}
+  \begin{subfigure}{0.32\textwidth}\centering\includegraphics[width=\textwidth]{../images/dark_meson/eventSignature_SU2L_gaugephobic.pdf}\phantomsubcaption\label{fig:evtsignatureSU2L}\end{subfigure}%
+  \begin{subfigure}{0.32\textwidth}\centering\includegraphics[width=\textwidth]{../images/dark_meson/eventSignature_SU2R_gaugephobic.pdf}\phantomsubcaption\label{fig:evtsignatureSU2R}\end{subfigure}
   \caption{Most relevant final states for pair-produced dark pions from \protect\subref{fig:evtsignatureSU2L} gaugephobic \sul models and \protect\subref{fig:evtsignatureSU2R} gaugephobic \sur models.}
   \label{fig:eventSignatures}
 \end{figure}
@@ -19,8 +19,8 @@ Signal and trigger efficiencies are calculated, then a final estimate of events 
 \begin{figure}[tbp]
   % The plots have been produced with the plot_branchingFractions.C script which can be found in the dark meson git space: https://gitlab.cern.ch/darkmesonsearch/darkscripts/blob/master/plot_branchingFractions.C
   \centering
-  \subfloat[]{\includegraphics[page=3,width=0.32\textwidth]{../images/dark_meson/branchingFractions.pdf}\phantomsubcaption\label{fig:pi0branchingfractions}}
-  \subfloat[]{\includegraphics[page=4,width=0.32\textwidth]{../images/dark_meson/branchingFractions.pdf}\phantomsubcaption\label{fig:pipmbranchingfractions}} 
+  \begin{subfigure}{0.32\textwidth}\centering\includegraphics[page=3,width=\textwidth]{../images/dark_meson/branchingFractions.pdf}\phantomsubcaption\label{fig:pi0branchingfractions}\end{subfigure}%
+  \begin{subfigure}{0.32\textwidth}\centering\includegraphics[page=4,width=\textwidth]{../images/dark_meson/branchingFractions.pdf}\phantomsubcaption\label{fig:pipmbranchingfractions}\end{subfigure}
   %\subfloat[]{\includegraphics[page=1,width=0.32\textwidth]{branchingFractions.pdf} %gaugephilic models
   %\subfloat[]{\includegraphics[page=2,width=0.32\textwidth]{branchingFractions.pdf}
   \caption{Branching fractions of the most relevant decay channels over the full dark pion mass range for neutral dark pions in \protect\subref{fig:pi0branchingfractions} and for positively charged dark pions in \protect\subref{fig:pipmbranchingfractions}. Not all possible decay channels are drawn and channels with small branching fractions are suppressed for clarity. About one third of dark pions in the \sul models are neutral, resulting in the $tttb$ event signature being twice as likely as the $ttbb$ signature. For \sur models only the $ttbb$ final state appears.}
