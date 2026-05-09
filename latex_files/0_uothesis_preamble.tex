@@ -51,7 +51,7 @@
 %     - ...and probably more.
 
 % Examples:
-\documentclass[dissertation, final, approved, copyright]{uothesis} % For final copies
+\documentclass[dissertation, final, approved, copyright, apacite]{uothesis} % For final copies
 
 % \documentclass[dissertation, draftcopy]{uothesis} % For draft copies (enables line numbering, and puts black bars where there is text that overflows a line where latex can't figure out how to break it onto another line (in non-draft modes, this will result in an "overfull hbox" error, so draft mode is a good way of spotting these, following http://tex.stackexchange.com/a/39/56363)
 
@@ -87,7 +87,7 @@
 
 % Added by Jacob L. following https://tex.stackexchange.com/questions/148314/undefined-control-sequence-in-printbibliography-biblatex to allow UTF-8 (non-ASCII) characters in the bibliography .bib file.
 \usepackage[utf8]{inputenc}
-\usepackage[numbers,sort&compress]{natbib} % numeric [1], [1–3]
+% natbib is loaded via apacite in uothesis.cls
 \usepackage{hyperref}                      % load after natbib
 \pdfstringdefDisableCommands{\def\uppercase#1{#1}}
 % \usepackage[switch,modulo]{lineno} % line numbers on outer margin in twoside docs
@@ -114,8 +114,7 @@
 % \renewcommand*{\numberline}[1]{\hb{#1  \hfil}}
 %
 %--- Or, if you want to change the citation style to e.g. acm
-% AIP numeric bibliography style
-\bibliographystyle{aipnum4-1}
+% Bibliography style is set in uothesis.cls (apacite) to avoid conflicts.
 
 %------------------------------------------------------------------------------%
 % MATH EQUATIONS AND THEOREMS (.cls also restructures theorem layout)
